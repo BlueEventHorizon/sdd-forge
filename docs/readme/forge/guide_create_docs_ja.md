@@ -1,0 +1,244 @@
+# 文書作成ガイド
+
+要件定義 → 設計 → 計画の 3 段階で開発文書を作成する。各スキルは前段階の成果物を入力とし、AI レビュー → 検索インデックス更新 → commit の共通完了処理で締める。
+
+```
+start-requirements → start-design → start-plan → start-implement
+ (何を作るか)         (どう作るか)     (いつ作るか)   (作る)
+```
+
+## 共通の仕組み
+
+### コンテキスト収集
+
+3 つのスキルは共通のコンテキスト収集パターンを採用する。文書作成前に、並列 Agent が以下を収集し、結果を return value（markdown リスト）で返す:
+
+| Agent       | 収集対象                     | 検索手段                 |
+| ----------- | ---------------------------- | ------------------------ |
+| specs agent | 仕様書（要件定義書・設計書） | `/forge:query-db-specs`  |
+| rules agent | プロジェクトルール文書       | `/forge:query-db-rules`  |
+| code agent  | 既存実装・参照コード         | `Grep` / `Glob` 直接探索 |
+
+起動する Agent はスキルごとに異なる。start-design は、要件定義書を置き場から特定し、Agent で集めるのはプロジェクトのルールだけである（既存の実装は、設計の後の照合で読む）。
+
+### 完了処理
+
+文書作成後は以下を順次実行する:
+
+1. `/forge:review --files {作成した文書} --auto` — AI レビュー + 自動修正
+2. `/forge:update-db-specs` — 検索インデックス更新（利用可能な場合）
+3. `/anvil:commit` — commit/push 確認
+
+---
+
+## start-requirements
+
+要件定義書を作成する。3 つのモードに対応し、入力源が異なる。
+
+```
+/forge:start-requirements [feature] [--mode interactive|reverse-engineering|from-figma]
+```
+
+| 引数      | 説明                                                   |
+| --------- | ------------------------------------------------------ |
+| `feature` | Feature 名（省略時は、要件定義書を書く直前に確定する） |
+| `--mode`  | モード指定（省略時は選択肢提示）                       |
+
+### モード選択ガイド
+
+| モード                | 入力源                 | いつ使うか                       | 前提条件              |
+| --------------------- | ---------------------- | -------------------------------- | --------------------- |
+| `interactive`         | ユーザーとの対話       | ゼロから要件を定義したいとき     | `.doc_structure.yaml` |
+| `reverse-engineering` | 既存ソースコード       | 既存コードを文書化したいとき     | ソースコード          |
+| `from-figma`          | Figma デザインファイル | デザインから要件を抽出したいとき | Figma MCP 対応環境    |
+
+### 使用例
+
+```bash
+# ゼロから対話で要件定義
+/forge:start-requirements user-auth --mode interactive
+
+# 既存コードから要件を逆算
+/forge:start-requirements dashboard --mode reverse-engineering
+
+# Figma デザインから要件抽出
+/forge:start-requirements product-catalog --mode from-figma
+```
+
+### 実行フロー
+
+1. モードの確定
+2. モード別ワークフロー実行（対話 / ソース解析 / Figma 解析）。`interactive` は、スキルの起動前に話した内容を聞き直さず確認し、要件定義書のドラフトを先に書いて、対話しながら仕上げる
+3. 要件定義書を書く直前に、Feature 名・出力先・ファイル名を決める。`interactive` は、差分開発かどうかを既存の要件定義書との関係から判定し、ユーザーの承認を得る
+4. 完了処理（レビュー → 検索インデックス更新 → commit）
+
+### 出力
+
+`.doc_structure.yaml` で解決した置き場（例: `specs/{feature}/requirements/`。プロジェクトで最初の要件定義書には Feature の階層がない）に要件定義書（Markdown）を生成。ID 体系:
+
+| プレフィックス | 種別                 |
+| -------------- | -------------------- |
+| APP-xxx        | アプリ概要・全体方針 |
+| SCR-xxx        | 画面仕様             |
+| FNC-xxx        | 機能仕様             |
+| NFR-xxx        | 非機能要件           |
+
+### 参考ドキュメント
+
+- `plugins/forge/docs/requirement_format.md` — 要件定義書テンプレート
+- `plugins/forge/docs/spec_design_boundary_spec.md` — 要件/設計の境界ガイド
+
+---
+
+## start-design
+
+要件定義書から設計書を作成する。要件定義書だけから上流の設計を組み立て、その後に既存の実装・設計パターンと照合して、修正せずに使える既存の実装を再利用する。
+
+```
+/forge:start-design [feature] [--requirement <path|ID|name>]
+```
+
+| 引数            | 説明                                                                                           |
+| --------------- | ---------------------------------------------------------------------------------------------- |
+| `feature`       | Feature 名（省略時は、要件定義書のパスから決める）                                             |
+| `--requirement` | 設計する要件定義書（パス・ID・ファイル名。省略時は会話の文脈から特定し、分からなければ尋ねる） |
+
+### いつ使うか
+
+- 要件定義書が完成した後
+- アーキテクチャ・モジュール構成を文書化したいとき
+
+### 実行フロー
+
+1. **要件定義書の特定**（会話の文脈から特定し、分からなければ尋ねる。置き場に 1 件も無ければ `/forge:start-requirements` を案内して終了）
+2. Feature 名の確定（特定した要件定義書のパスから決める。引数と食い違えば確認する）
+3. **状態の表の提示**: 型（完全新規・純粋追加型・差分開発型）・出力先の設計書の有無・feature・要件定義書（一時マーカーの有無）を表で示す。型が未定なら「未定」と示し、照合の後に確定したら表を更新する。「出力先に設計書なし（新規作成モード）」は出力先ディレクトリの状態であり、完全新規を意味しない
+4. プロジェクト設計ルールの収集（`/forge:query-db-rules`）
+5. **上流の設計**（要件だけで）: シナリオ表と上流の設計でユーザーが承認する
+6. **既存の実装・設計パターンとの照合と再設計**
+7. **詳細設計**と整合性の確認（追跡表）
+8. **レビュー**（自己レビュー → `/forge:review --auto` → ユーザーレビュー）
+9. 完了処理（検索インデックス更新 → commit）
+
+### 設計原則
+
+- **要件から組み立てる**: 既存の実装・設計パターンを出発点にせず、要件定義書とプロジェクトのルールだけから上流の設計を作る
+- **既存資産の活用**: 上流の設計の後に既存を読み、修正せずに使える既存コンポーネントがあれば新規作成せず活用する
+- **What/How の境界**: 要件（何を作るか）と設計（どう作るか）を明確に分離する
+- **トレーサビリティ**: 全要件が設計のどこに反映されているかを追跡可能にする
+
+### 出力
+
+`specs/{feature}/design/` に設計書（Markdown）を生成。ID 体系: `DES-xxx`
+
+### 参考ドキュメント
+
+- `plugins/forge/docs/design_method.md` — 設計の手順と成果物
+- `plugins/forge/docs/design_principles_spec.md` — 設計原則ガイド
+- `plugins/forge/docs/spec_design_boundary_spec.md` — What/How の境界
+
+---
+
+## start-plan
+
+設計書からタスクを抽出し、JSON 形式の計画書を作成する。
+
+```
+/forge:start-plan [feature]
+```
+
+| 引数      | 説明                             |
+| --------- | -------------------------------- |
+| `feature` | Feature 名（省略時は対話で確定） |
+
+### いつ使うか
+
+- 設計書が完成した後
+- 実装作業の分担・スケジュールを決めるとき
+
+### 実行フロー
+
+1. Feature 名の確定
+2. **コンテキスト収集**（2 Agent 並列）
+   - 要件定義書 + 設計書の取得
+   - 計画書ルールの収集
+3. 既存計画書の確認（更新モードの場合）
+4. 計画書の作成・更新（タスク抽出 → 粒度チェック → ID 採番）
+5. 完了処理（レビュー → 検索インデックス更新 → commit）
+
+### タスク粒度の基準
+
+| 基準       | 要件                                       |
+| ---------- | ------------------------------------------ |
+| 実行単位   | 1 Agent が単独で実行・完結できる粒度       |
+| 内容量     | やるべき内容 5〜10 項目程度                |
+| 完結性     | タスク完了時にビルド・テスト成功が条件     |
+| ファイル数 | 1 ファイル or 密接に関連する 2〜3 ファイル |
+
+### 計画書の構造（最小完全 JSON）
+
+計画書は JSON 形式の `{feature}_plan.json`。**Markdown ではない**。
+top-level は `requirements_traceability` / `design_traceability` / `tasks` の 3 キーのみ。計画書には追加開発時も frontmatter を付与しない（追加 feature の計画書かは、`requirements_traceability` が参照する要件定義書、または `design_traceability` が参照する設計書の、いずれかの `feature_type: temporary-feature` で判定する）。計画書ファイルへの書き込みと構造検証は script（`write_plan.py` 等）が行うため、AI はファイル形式そのものを意識する必要はない。
+
+```json
+{
+  "requirements_traceability": [
+    {
+      "requirement_id": "REQ-001",
+      "title": "要件のタイトル",
+      "design_id": "DES-001",
+      "status": "pending"
+    }
+  ],
+  "design_traceability": [
+    {
+      "design_id": "DES-001",
+      "title": "設計書のタイトル",
+      "requirement_ids": ["REQ-001"],
+      "task_ids": ["TASK-001"]
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "TASK-001",
+      "title": "タスク名",
+      "priority": 90,
+      "status": "pending",
+      "design_id": "DES-001",
+      "depends_on": [],
+      "group_id": null,
+      "build_check": "per_task",
+      "description": ["やるべきこと 1", "やるべきこと 2"],
+      "acceptance_criteria": "受け入れ基準の記述",
+      "required_reading": ["specs/{feature}/design/DES-001_xxx.md"]
+    }
+  ]
+}
+```
+
+**フィールドの値域**:
+
+- `status`（要件）: `pending` / `completed`
+- `priority`: 高 70-99・中 40-69・低 1-39
+- `status`（タスク）: `pending` / `in_progress` / `completed`
+- `design_id`: 設計書なしは `null`（`-` ではない）
+- `depends_on`: 依存タスク ID 配列。なければ `[]`
+- `group_id`: 独立タスクは `null`、`"GROUP-001 (1/3)"` 等
+- `build_check`: `per_task` / `skip` / `on_group_complete`
+- `acceptance_criteria`: なければ `null`
+- `required_reading`: 必読文書パスの配列。なければ `[]`
+
+### 重要な原則
+
+- `description` は設計書の該当セクションを特定できるレベルにとどめる（実装詳細は書かない）
+- 依存関係に循環がないか確認
+- トレーサビリティマトリクスで全要件・全設計が反映されていることを検証
+
+### 出力
+
+`specs/{feature}/plan/{feature}_plan.json` に計画書（JSON）を生成。**Markdown 形式の計画書は出力しない**。
+Claude Code plan mode が生成する Markdown plan とは別物（Markdown plan を入力に要件定義書を作る場合は `/forge:create-requirements-from-plan-mode` を使う）。
+
+### 参考ドキュメント
+
+- `plugins/forge/docs/plan_principles_spec.md` — タスク粒度・グループ化の考え方

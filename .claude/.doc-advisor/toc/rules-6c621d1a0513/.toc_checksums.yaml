@@ -1,0 +1,12 @@
+# ToC checksums for key: rules
+# Auto-generated - do not edit
+generated_at: 2026-10-23T02:09:57Z
+file_count: 7
+checksums:
+  docs/rules/agent_data_exchange_rules.md: eccb938b1f931b73149070712cee213f7263f2d7435afb65124018e600dae2cb
+  docs/rules/claude_code_authoring_guide.md: 15ead05245f0e5fa97a835f5cc54a99f4494fe794d4aab620960331cd02088d4
+  docs/rules/claude_code_reference.md: 4e21572fa85832b848e524dbb027b5ea332e5db311ce3430457097f432fc39c5
+  docs/rules/forge_doc_access_principle.md: 1149d5c786b38094056928a59dabc372dedd59a4bc24dff42e6b51e68f58b4a5
+  docs/rules/forge_document_type_roles.md: c18e0f1699e15dfec756cb86498990d57856dee5dbf5a5b518adcac3f9ec9cba
+  docs/rules/implementation_guidelines.md: 42c7f179e3348ea127ea524308e2853b9ef9906a7c90da1b4184a589ceefc893
+  docs/rules/script_error_output_rules.md: 845ce9c226e23b2cd1402aed683344eff7336953d8bd638095ba5dc27f64c4fa

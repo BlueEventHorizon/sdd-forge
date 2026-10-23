@@ -1,0 +1,22 @@
+{
+  "name": "sdd-forge",
+  "metadata": {
+    "description": "Document lifecycle management and AI-searchable document indexing",
+    "version": "0.1.0"
+  },
+  "owner": {
+    "name": "k2moons"
+  },
+  "plugins": [
+    {
+      "name": "forge",
+      "description": "AI-powered document lifecycle tool. Create, review, and auto-fix requirements/design/plan docs and code.",
+      "version": "0.6.1",
+      "author": {
+        "name": "k2moons"
+      },
+      "source": "./plugins/forge",
+      "homepage": "https://github.com/BlueEventHorizon/sdd-forge"
+    }
+  ]
+}

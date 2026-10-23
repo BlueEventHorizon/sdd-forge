@@ -2,20 +2,6 @@
 
 プロジェクトの初期設定、バージョン管理、ルール整理などの運用系スキル。
 
-## setup-doc-structure
-
-プロジェクトのドキュメント配置場所と種別を宣言する `.doc_structure.yaml` を生成する。forge がドキュメントのパス解決に用いる基盤。
-
-> 詳細は [文書構造ガイド](../guide_doc_structure_ja.md) を参照。
-
-```
-/forge:setup-doc-structure
-```
-
-引数なし。対話的にプロジェクトをスキャンし、推奨構成を提示する。
-
----
-
 ## setup-version-config
 
 プロジェクトをスキャンしてバージョン管理対象を検出し、`.version-config.yaml` を生成する。`update-version` の前提条件。
@@ -40,7 +26,27 @@
 
 ### 設定の構造
 
-`targets` / `changelog` / `git` の3セクションで構成される。スキーマの詳細は `DES-023` §2 または `setup-version-config` の Schema Reference を参照。
+```yaml
+targets:
+  - name: forge # ターゲット名
+    version_file: plugins/forge/.claude-plugin/plugin.json # バージョンファイル
+    version_path: version # JSON パス
+    sync_files: # 同期するファイル
+      - path: README.md
+        pattern: "| **forge** | {version} |"
+        filter: "| **forge**"
+
+changelog:
+  file: CHANGELOG.md
+  format: keep-a-changelog
+  git_log_auto: false
+
+git:
+  tag_format: "{target}-v{version}"
+  commit_message: "chore: bump {target} to {version}"
+  auto_tag: false
+  auto_commit: false
+```
 
 ---
 

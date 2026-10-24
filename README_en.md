@@ -43,7 +43,7 @@ flowchart LR
 
 | Plugin    | Version | Description                                                                                              |
 | --------- | ------- | -------------------------------------------------------------------------------------------------------- |
-| **forge** | 0.6.1   | AI-powered document lifecycle tool. Create, review, and auto-fix requirements/design/plan docs and code. |
+| **forge** | 0.1.0   | AI-powered document lifecycle tool. Create, review, and auto-fix requirements/design/plan docs and code. |
 
 > **The document-search backends (doc-advisor / doc-db) are external dependencies**: doc-advisor ships from a separate repository, [BlueEventHorizon/DocAdvisor](https://github.com/BlueEventHorizon/DocAdvisor). Install with `/plugin marketplace add BlueEventHorizon/DocAdvisor` → `/plugin install doc-advisor@DocAdvisor`. doc-db is a locally running document-search server; when the `doc-db` command is installed, it becomes an available candidate, and forge starts and uses it automatically when the ordered list selects it. Neither backend is gated on a version: availability is judged by whether the required features can be used.
 

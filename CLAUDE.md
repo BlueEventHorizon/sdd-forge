@@ -20,14 +20,14 @@ forge の文書検索は doc-advisor / doc-db の 2 backend 構成で、**どち
 
 **プラグインという仕組みそのもの**が担う範囲を知らなければ、機構が済ませていることを自分で実装し、機構が置換する記述をシェルの記法と取り違える。
 
-正本は **Claude Code 公式ドキュメント**である。ただし SKILL.md・agent・manifest の書き方や挙動は、まず `meta:skill-creator` / `meta:plugin-creator` が持つ参照（公式ページの本文と照合した写し）で確かめる。公式ドキュメントを読むのは、写しに無い挙動、写しの照合日より後の変更が疑われるとき、配布に関わる重要な判断のとき、または meta プラグインが使えない環境のときに限る。SKILL.md の通常の編集のたびに読みに行かない。
+正本は **Claude Code 公式ドキュメント**である。ただし SKILL.md・agent・manifest の書き方や挙動は、まず `meta:author-skill` / `meta:author-plugin` が持つ参照（公式ページの本文と照合した写し）で確かめる。公式ドキュメントを読むのは、写しに無い挙動、写しの照合日より後の変更が疑われるとき、配布に関わる重要な判断のとき、または meta プラグインが使えない環境のときに限る。SKILL.md の通常の編集のたびに読みに行かない。
 
 - Plugins reference: `https://code.claude.com/docs/en/plugins-reference`
 - Plugins guide: `https://code.claude.com/docs/en/plugins`
 - Plugin marketplaces: `https://code.claude.com/docs/en/plugin-marketplaces`
 - Skills: `https://code.claude.com/docs/en/skills`
 
-**要約ツール越しに読んだものを一次情報と呼ばない。** WebFetch が返すのは取得したページではなく、それを別モデルに要約させた出力である。要約は元の文面を保証しないため、根拠に用いて断定できない。とくに「ドキュメントに記載が無い」という否定の主張は、要約側の見落としと区別がつかない。
+**要約ツール越しに読んだものを一次情報と呼ばない。** WebFetch が返すのは取得したページではなく、それを別モデルに要約させた出力である。要約は元の文面を保証しないため、根拠に用いて断定できない。とくに「ドキュメントに記載が無い」という否定の主張は、要約側の見落としと区別がつかない。原文を確かめるときは、各ページの Markdown 版（`https://code.claude.com/docs/en/<page>.md`）を `curl` で `.temp/` に取得し、Read / grep で読んで引用する。
 
 公式ドキュメントで確かめきれない挙動は推測で補わず、確認できない事項として明示する。
 
@@ -135,7 +135,7 @@ forge の文書検索は doc-advisor / doc-db の 2 backend 構成で、**どち
 
 ## Development
 
-ビルド・パッケージ管理のシステムは無い。**外部依存は、`plugins/` 配下と `tests/` 配下のどちらでも、標準ライブラリのみ使用する**（外部依存禁止。例外は設けない）。
+ビルド・パッケージ管理のシステムは無い。**外部依存は、`plugins/` 配下と `tests/` 配下のどちらでも、標準ライブラリのみを基本とする**。別ライブラリの使用はユーザに許諾を取ること。
 
 `makefile` は MCP サーバーの接続・切断用であり、プラグインのインストールには使わない。
 
@@ -172,18 +172,9 @@ git -C <実体パス> show main:<契約を定める SKILL.md やスクリプト>
 
 ## Testing [CRITICAL]
 
-`plugins/` 配下の Python スクリプトにはテストが必須。SKILL.md はテスト困難なため例外。
-`.claude/` 配下のローカルスキル・スクリプトはテスト対象外。
+`plugins/` 配下の Python スクリプトにはテストが必須。
 
-テストは `tests/` にプラグイン名・スキル名で分類して配置する。
-
-```bash
-# 一括実行
-python3 -m unittest discover -s tests -p 'test_*.py' -v
-
-# 特定モジュールのみ
-python3 -m unittest tests.forge.review.test_xxx -v
-```
+**テストを実行・追加・変更する前に、[DEVELOPMENT.md](DEVELOPMENT.md) の「4. テスト」を Read する。** 実行コマンド、`tests/`（単体テスト）と `ai_tests/`（AI の判断を試すテスト）の使い分け、配置の規則は、そこにだけ書いてある。読まずにコマンドや置き場を推測しない。
 
 <!-- FORGE_ONBOARDING_START hash=6a3a278b2d31 -->
 

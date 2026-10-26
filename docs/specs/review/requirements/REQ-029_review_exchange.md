@@ -108,7 +108,7 @@ sequenceDiagram
 
 ### 1. 受け渡し
 
-**本節と「3. 書き出しと終了の値」は、[agent_data_exchange_rules.md](../../../rules/agent_data_exchange_rules.md) が定める受け渡しの型を review に当てはめたものである。** 型そのもの（識別値だけを運ぶ・script が書く・パスを得て直接読む・終了の値で成否を表す）はそちらが定め、本書は review における具体（`review_id` と `round_number`・依頼と結果の構成・採番）を定める。
+**本節と「3. 書き出しと終了の値」は、[forge_agent_data_exchange_rules.md](../../../rules/forge_agent_data_exchange_rules.md) が定める受け渡しの型を review に当てはめたものである。** 型そのもの（識別値だけを運ぶ・script が書く・パスを得て直接読む・終了の値で成否を表す）はそちらが定め、本書は review における具体（`review_id` と `round_number`・依頼と結果の構成・採番）を定める。
 
 #### FNC-302: 入力は `review_id` と `round_number` で受け渡す [MANDATORY]
 

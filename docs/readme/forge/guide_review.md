@@ -100,7 +100,7 @@ You need it when an implementation is split into stages. Reviewing one stage in 
 Names the rule and specification documents to hand to the reviewer. For each axis you pass, the skill does not run `/forge:query-db-rules` / `/forge:query-db-specs` itself:
 
 ```bash
-/forge:review --files src/foo.py --project-rules docs/rules/implementation_guidelines.md
+/forge:review --files src/foo.py --project-rules docs/rules/plugin_implementation_guidelines.md
 ```
 
 The main purpose is to avoid running the same search twice for one task when an upstream skill (such as `/forge:start-implement`) has already done it. If you pass only one axis, only the other one is queried.

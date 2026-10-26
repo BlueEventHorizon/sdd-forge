@@ -75,13 +75,13 @@ forge の文書検索は doc-advisor / doc-db の 2 backend 構成で、**どち
 ### 配布物
 
 - **配布物に、配布物に含まれない具体パスと本リポジトリ固有の事情を書かない**: 固有の事情とは、内部文書の ID・仕様名（`DES-085_adr_writer_design` 等）、`meta/`、worktree 配置、原本 SoT である立場等。**配布物の公開名（`sdd-forge` / `forge`）と、forge が連携する外部プラグインの公開名（`anvil` / `doc-advisor`）は固有の事情ではない**（利用者が install 時に指定し、現に目にする名前）
-- **配布物のうち利用者環境で読まれるもの（SKILL.md / agents / commands / 内蔵 docs）からプロジェクト文書を参照しない**: パスも spec ID も禁止。規範は配布物側に本文で持たせる。script のコメント・docstring は対象外
+- **配布物のうち利用者環境で読まれるもの（SKILL.md / agents / commands / 内蔵 docs）からプロジェクト文書を参照しない**: パスも spec ID も禁止。規範は配布物側に本文で持たせる。script のコメント・docstring は対象外（前項の内部文書の ID も含む）
 - **下流での回避で済ませず、本リポジトリの原本（`plugins/forge/`）を直す**: `~/.claude/plugins/cache/` を書き換えても次の install で消える。memory に回避策を残すのは修正ではない
 - **agent / SKILL のプロンプト指示は、出力を組み立てる 1 箇所にだけ置く**: 近接箇所への同一指示は重複
 
 ### 実装
 
-全文は [implementation_guidelines.md](docs/rules/implementation_guidelines.md)。
+全文は [plugin_implementation_guidelines.md](docs/rules/plugin_implementation_guidelines.md)。
 
 - **他コンポーネントへの窓口は SKILL だけ**: 依拠してよいのは SKILL.md が公開する引数・出力の契約だけ。他コンポーネントの script を直接呼ばない。内部設計 ID・内部文書をインターフェースにしない。設計書を読んで同じ動作を自分で実装しない
 - **フォールバックを反射的に書かない**: 正しいリカバリとして具体的に説明できるものだけ書く。説明できなければ、隠さずエラーとして報告し、構造的に起こらないよう設計を直す

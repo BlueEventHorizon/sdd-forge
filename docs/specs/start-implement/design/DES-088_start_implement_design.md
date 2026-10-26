@@ -16,7 +16,7 @@
 - 計画書の書き換えは決定論的な処理が行い、書き換えるのはオーケストレータだけである（REQ-034 FNC-008）
 - executor agent の結果は return value で受け取り、受け取る側が 1 か所で検査する（REQ-034 FNC-009）
 - 計画書とタスクコンテキストの構造・置き場・書き込みは決定論的な処理が担い、AI は内容だけを決める（REQ-034 FNC-009）
-- agent に渡すデータは、識別値だけを運ぶ。データは script が書き、読む側は script が返したパスを直接読む（[agent_data_exchange_rules.md](../../../rules/agent_data_exchange_rules.md)）
+- agent に渡すデータは、識別値だけを運ぶ。データは script が書き、読む側は script が返したパスを直接読む（[forge_agent_data_exchange_rules.md](../../../rules/forge_agent_data_exchange_rules.md)）
 
 ## 2. シナリオ表
 
@@ -517,9 +517,9 @@ sequenceDiagram
 | レビュー依頼     | `/forge:review` の呼び出し（SKILL.md に書く）                                                   | 同上                                      | なし                                                                                 |
 | 並行文書判定     | Script                                                                                          | `scripts/doc_structure/feature_marker.py` | **そのまま使う**                                                                     |
 
-- **executor agent をカスタム Agent にする理由**: 毎タスク、同じロールで起動する。親の context が肥大する（[claude_code_authoring_guide.md](../../../rules/claude_code_authoring_guide.md)）。手順は agent 定義が持つ
+- **executor agent をカスタム Agent にする理由**: 毎タスク、同じロールで起動する。親の context が肥大する（[plugin_claude_code_authoring_guide.md](../../../rules/plugin_claude_code_authoring_guide.md)）。手順は agent 定義が持つ
 - **状態遷移を 1 つの入口にする理由**: 5 つの遷移は、同じ計画書への順序付き位相であり、各場面の呼び出しが確定している（DES-024 §2.2）。モードは `--to in_progress|implemented|completed|failed|pending` とする
-- **新規 script の終了コード**: `0`（完了）・`1`（区別のないエラー）・`2`（引数）だけを返す。エラーの内容は、標準出力の `errors`（自然文の配列）に載せる（[script_error_output_rules.md](../../../rules/script_error_output_rules.md)）
+- **新規 script の終了コード**: `0`（完了）・`1`（区別のないエラー）・`2`（引数）だけを返す。エラーの内容は、標準出力の `errors`（自然文の配列）に載せる（[plugin_script_error_output_rules.md](../../../rules/plugin_script_error_output_rules.md)）
 
 ### 6.2 データの具体構造
 
@@ -532,7 +532,7 @@ sequenceDiagram
 `TaskContext`（REQ-034 5.2）のとおり。次を定める。
 
 - **識別値**: `context_id`。`{task_id}-{8 桁の 16 進}` とし、`文脈作成` が生成する。AI は組み立てない
-- **置き場**: 計画書と同じディレクトリの `tasks/{context_id}.json`。パスは計画書パスと識別値から script が決める。script が書き、読む側が script の返したパスを読む型の置き場である（[agent_data_exchange_rules.md](../../../rules/agent_data_exchange_rules.md)）。計画書の隣に置くのは、計画書・実装戦略書と同じライフサイクルで扱うためである。全タスク完了時の存廃の確認（O-08）で 3 つを一緒に残すか消すので、消す場所が 1 か所になり、途中で止まった実行の残骸もそこで消える。識別値を渡す側（オーケストレータ・executor agent）は、計画書パスも識別値として渡す
+- **置き場**: 計画書と同じディレクトリの `tasks/{context_id}.json`。パスは計画書パスと識別値から script が決める。script が書き、読む側が script の返したパスを読む型の置き場である（[forge_agent_data_exchange_rules.md](../../../rules/forge_agent_data_exchange_rules.md)）。計画書の隣に置くのは、計画書・実装戦略書と同じライフサイクルで扱うためである。全タスク完了時の存廃の確認（O-08）で 3 つを一緒に残すか消すので、消す場所が 1 か所になり、途中で止まった実行の残骸もそこで消える。識別値を渡す側（オーケストレータ・executor agent）は、計画書パスも識別値として渡す
 - **`verification.build`**: 計画書の `build_check` から決める。`per_task` と `on_group_complete` は `required`（`build_reason` は `null`）、`skip` は `skipped`（`build_reason` は「計画書の build_check が skip である」）
 - **`verification.tests` と `tests_reason`**: 候補入力の値をそのまま置く。`required` のとき理由は `null`、それ以外は単一行の理由を要する
 - **`spec_authority`**: 並行状態にある文書のパスの配列。タスクコンテキストのトップレベルに置く（`implementation_instructions` への文字列連結にしない）。値は分類結果だけであり、行動の指示を含めない（REQ-025 FNC-002）。`scope_in` / `scope_out` は拡張しない（並行状態は、タスクの範囲とは別軸の情報である）
@@ -740,11 +740,11 @@ stateDiagram-v2
 
 ### 6.6 利用ライブラリ
 
-Python の標準ライブラリだけを使う（`json`・`argparse`・`pathlib`・`subprocess`・`os`・`re`）。外部依存を持ち込まない（[implementation_guidelines.md](../../../rules/implementation_guidelines.md)）。YAML も、frontmatter の解析（`feature_marker.py` の正規表現）と `.doc_structure.yaml` の解決（`resolve_doc_structure.py`）が、既に担っている。
+Python の標準ライブラリだけを使う（`json`・`argparse`・`pathlib`・`subprocess`・`os`・`re`）。外部依存を持ち込まない（[plugin_implementation_guidelines.md](../../../rules/plugin_implementation_guidelines.md)）。YAML も、frontmatter の解析（`feature_marker.py` の正規表現）と `.doc_structure.yaml` の解決（`resolve_doc_structure.py`）が、既に担っている。
 
 ### 6.7 executor agent の編集範囲
 
-規約（[claude_code_authoring_guide.md](../../../rules/claude_code_authoring_guide.md)）は、書き込む Agent に、編集可能ファイルの allowlist を課すことを推奨する。本設計は、executor agent に allowlist を課さない。
+規約（[plugin_claude_code_authoring_guide.md](../../../rules/plugin_claude_code_authoring_guide.md)）は、書き込む Agent に、編集可能ファイルの allowlist を課すことを推奨する。本設計は、executor agent に allowlist を課さない。
 
 - **理由**: 計画書のタスクは、変更するファイルの一覧を持たない。新規ファイルの作成も許す必要がある。一覧を AI が推測して作れば、実装できるものを妨げ、または範囲外を許すことになる
 - **代わりの拘束**: ① executor agent の Role で、1 タスクだけを実装し、範囲外・計画書・設計書・要件定義書を変更しないことを、否定形で定める ② レビューが、到達目標（範囲外の項目を含む）に照らして、範囲外の変更を所見として挙げる（RV-01・6.3 レビュー依頼）

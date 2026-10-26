@@ -30,7 +30,7 @@ keywords:
   - semantic choice boundary
   - dependency direction
   - wrapper
-body_hash: sha256:9eff67b2fb075a36ac852b381fd33f2f85b4f7ee53f06744303bc159584dde07
+body_hash: sha256:8fbf8182049f72c98770d4bb46e65859025dc90c803e498f0f7709db62b4bf08
 ---
 
 # DES-024 SKILL.md と script の配置・契約設計
@@ -365,4 +365,4 @@ CLAUDE.md の `plugins/forge/skills/*/scripts/` テスト必須要件に従う�
 | 単一 wrapper に判断を伴う複合操作を畳み込む                       | §2.4 の決定論的連鎖という制約を侵す                                                   |
 
 [req-003]: ../requirements/REQ-003_skill_script_separation.md
-[script-error-output]: ../../../rules/script_error_output_rules.md
+[script-error-output]: ../../../rules/plugin_script_error_output_rules.md

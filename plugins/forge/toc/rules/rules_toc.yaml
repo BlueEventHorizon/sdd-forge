@@ -5,7 +5,7 @@
 metadata:
   name: Document Search Index (forge-rules)
   key: forge-rules
-  generated_at: 2026-10-21T06:23:32Z
+  generated_at: 2026-10-26T01:48:51Z
   file_count: 42
 
 docs:
@@ -862,33 +862,34 @@ docs:
       - new document
       - recommendation
   plugins/forge/skills/consult/docs/dialogue_revision_handling.md:
-    title: Procedure for Revision via Dialogue (consult)
-    purpose: Defines how consult runs dialogue-based revision where decisions are applied on the spot, including console display format, presentation state, and execution rules for decided items
+    title: Dialogue-based Revision Procedure for consult
+    purpose: "Defines how consult handles dialogue-based revision, where decisions are reflected step by step: input from context, console and HTML display roles, console table and issue formats, presentation state, and execution rules."
     content_details:
-      - Input taken from conversation context instead of a review evaluation file
-      - Console overview table with number, issue, status, result, and blocker columns
-      - "Status markers: in-progress mark on the number and updated or new labels on changed rows"
-      - Current issue block with decision, summary, recommendation, and location bullets
-      - Locations written as bullets with repository-root path and line, not inside tables
-      - Single-issue case omits the table and states decision, summary, recommendation, and location
-      - Presentation state kept in conversation context until an HTML display script exists
-      - No consult brief recorded for dialogue revision because record identifier and storage are undecided
-      - Decided issues executed immediately while undecided issues are not executed
-      - Final overview table reprinted as the result when the dialogue ends
+      - Input taken from conversation context instead of a review evaluation file, with consult extracting issues from it
+      - "Display roles: console gives an overview re-shown at each step, HTML gives details (script not yet implemented)"
+      - Console issue list table with columns for number, issue, state, result, and pending items
+      - "Markers: the current item gets a triangle mark, changed rows get the updated suffix, new rows get the new suffix, and no importance column"
+      - Current issue block with decision needed, summary, recommended option, and path-line position bullets
+      - Positions written as bullets in path:line form rather than table cells
+      - Presentation state kept in conversation context until an HTML script exists
+      - consult brief not recorded during dialogue-based revision
+      - "Single-issue case: no list, only decision, summary, recommendation, and position"
+      - Only user-decided issues are executed; final list re-shown as the result
     applicable_tasks:
-      - Running consult for dialogue-based revision within a conversation
-      - Presenting the consult issue overview and current issue in the console
-      - Handling reports or question answers through consult dialogue
-      - Applying decided dialogue items immediately during consult
+      - Dialogue-based revision using consult
+      - Running consult sessions where user decisions are applied during the conversation
+      - Formatting consult console output for issue lists and the current issue
+      - Implementing the HTML display for consult once its script design is settled
+      - Handling presentation state and consult brief recording in consult dialogue
     keywords:
-      - dialogue revision
-      - consult
-      - overview table
+      - consult dialogue revision
+      - dialogue_revision_handling
+      - consult brief
+      - issue list
       - current issue
       - presentation state
       - console display
-      - consult brief
-      - decided issues
+      - HTML display
   plugins/forge/skills/consult/docs/review_handling.md:
     title: Procedure for Handling Consult Delegated from Review
     purpose: Defines how consult handles topics delegated from the review skill, including review-specific display, consult brief recording through a script, and returning decisions to review

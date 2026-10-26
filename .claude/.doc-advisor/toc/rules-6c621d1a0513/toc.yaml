@@ -5,125 +5,96 @@
 metadata:
   name: Document Search Index (rules)
   key: rules
-  generated_at: 2026-10-23T02:09:57Z
-  file_count: 7
+  generated_at: 2026-10-26T15:07:00Z
+  file_count: 9
 
 docs:
-  docs/rules/agent_data_exchange_rules.md:
-    title: Agent Data Exchange Rules
-    purpose: Defines rules for exchanging transient data between SKILL and custom Agent during processing cycle, ensuring data integrity regardless of size
+  docs/rules/forge_agent_data_exchange_rules.md:
+    title: Data exchange with agents
+    purpose: "Norm for passing one-time request and result data between a SKILL and custom agents: pass only identifiers, scripts write data, readers use returned paths, and a terminal value signals success."
     content_details:
-      - Identification values only - script generates, AI passes unchanged
-      - Data written by script, not AI - values not generated or summarized
-      - Path-based reading - reader obtains absolute path and reads directly
-      - Value integrity - no omission, transformation, or fragmentation
-      - Meaning in definition - SKILL/agent definition holds field semantics
-      - Deterministic writing - complete before writing, no overwriting
-      - Exit values for success/failure - normal is zero, errors as closed set
-      - No runtime format validation
-      - Absolute paths allowed for transient data
+      - Pass only script-generated identifiers between SKILL and agent and never the data body
+      - Scripts write data while AI never assembles JSON and values are stored unchanged
+      - Drafts stay hidden until complete and are then published in one operation
+      - Readers receive an absolute path from the script and read the file directly
+      - Script withholds the path and fails when data is not ready to read
+      - Values survive intact including newlines, quote-like and special characters and non-ASCII text
+      - Field meanings live in SKILL and agent definitions rather than in transmitted values
+      - Success is terminal value 0 with a closed error-value set judged by the script
+      - No runtime format validation and no overwrite operation after writing
+      - Temporary data is deleted after processing and permanent documents are out of scope
     applicable_tasks:
-      - Designing inter-Agent communication protocols
-      - Implementing data exchange between SKILL and Agent
-      - Reviewing Agent data handling for integrity
-      - Planning custom Agent development
-      - Troubleshooting data corruption in Agent calls
+      - Designing data handoff between a SKILL and a custom agent
+      - Implementing request and result passing through scripts
+      - Reviewing agent data exchange design or implementation
+      - Modifying script-written result files exchanged with agents
     keywords:
-      - agent
-      - SKILL
-      - identification value
-      - script
-      - exit value
-      - JSON
-      - path-based reading
-  docs/rules/claude_code_authoring_guide.md:
-    title: Claude Code Authoring Guide (SKILL / Custom Agent)
-    purpose: Defines rules for combining SKILL and custom Agent in forge and local skills, covering execution model, launch path choice, multi-layer defense, completion waiting, and user confirmation.
+      - agent data exchange
+      - identifier passing
+      - terminal value
+      - error value set
+      - absolute path
+      - one-time data
+      - request and result
+      - script-written data
+      - returned path
+      - data handoff
+  docs/rules/forge_claude_code_authoring_policy.md:
+    title: Claude Code authoring policy (forge)
+    purpose: "Authoring policy that forge and local skills adopt on top of the general Claude Code guide: the SKILL execution model, rules for inherited SKILLs and custom agents, and how questions are asked to the user."
     content_details:
-      - "Launch path selection order: Bash subprocess, generic Agent, custom Agent, inherited SKILL"
-      - "Inherited SKILL execution model: no context fork, scope statement, minimal args without parent context"
-      - Custom Agent criteria and required frontmatter fields name, description, tools, model
-      - "Multi-layer defense table: Agent boundary, Role constraint, allowlist via tools or allowed-tools, physical deny via permissions.deny"
-      - allowed-tools and disallowed-tools are not prohibition means; disallowed-tools does not hold across turns
-      - "Naming rules: short launch path names, subagent_type limited to built-in or defined custom Agent names, no slash notation in prompts"
-      - Prohibition of self-invocation via Skill tool to avoid infinite loops
-      - Waiting for Agent completion by ending the turn instead of ScheduleWakeup
-      - Dependent SKILL existence check via available-skills
-      - Questions via AskUserQuestion and no disallowed-tools AskUserQuestion; disable-model-invocation for irreversible operations such as deploy, push, tag, version update
+      - Confirm official specs with the claude-code-guide Agent before writing since citations are summaries
+      - All SKILLs are written as inherited type with no context fork or agent field, checked by test_no_fork_skill
+      - Work needing isolated context goes to custom agents launched via the Agent tool as plugin:name
+      - An inherited SKILL must state at its opening that it only does X and must not take over other work of the parent
+      - A new custom agent needs its rationale recorded in the plugin design doc and a test verifying Role constraints
+      - Questions and confirmations use AskUserQuestion rather than plain text
+      - Discussion-driven SKILLs present background, essence, recommendation and options in prose as an exception
+      - Do not seal questions with disallowed-tools AskUserQuestion because it fails across multiple turns
+      - SKILL.md descriptions are written in Japanese
+      - Individual SKILL construction follows the meta plugin author-skill
     applicable_tasks:
-      - Creating a new SKILL or custom Agent in forge or local skills
-      - Choosing the launch path (Agent tool, inherited SKILL, custom Agent) for a skill
-      - Reviewing SKILL and custom Agent prompts for role constraints and allowlist settings
-      - Modifying frontmatter settings such as tools, allowed-tools, or disable-model-invocation
-      - Writing user confirmation flow in SKILL.md
+      - Creating or modifying a forge SKILL that follows the inherited execution model
+      - Creating a new custom agent for forge
+      - Reviewing SKILL and agent definitions against the forge authoring policy
+      - Writing user confirmation steps in SKILL.md
     keywords:
-      - custom Agent
+      - forge authoring policy
       - inherited SKILL
-      - fork-type SKILL
-      - launch path
-      - allowed-tools
-      - disable-model-invocation
+      - custom agent
+      - context fork
       - AskUserQuestion
-      - ScheduleWakeup
-      - multi-layer defense
       - Role constraint
-  docs/rules/claude_code_reference.md:
-    title: Claude Code Reference (SKILL / Plugin / Agent)
-    purpose: Collects verified Claude Code facts on launch paths, subagent_type values, tool restriction scope, and Agent foreground or background behavior that forge and local skill design depends on, with sources.
-    content_details:
-      - Five launch path types (inherited SKILL, fork SKILL, general-purpose Agent, custom Agent, Bash subprocess) with short names, invocation, parent context, and output
-      - "Known context fork issues (#18394, #34164, #60720, #55592, #34328, #19751, #17283, #17351, #68233) with Anthropic responses and reasons fork SKILL is not adopted"
-      - "Valid subagent_type values: built-in names and plugin agents under the plugin:name namespace"
-      - Scope of allowed-tools (cleared on next user message) versus disallowed-tools (restriction cleared on next user message)
-      - "Decision order for Agent foreground or background: teammate, CLAUDE_CODE_DISABLE_BACKGROUND_TASKS, then fork mode"
-      - Interactive Agent tool has no run_in_background argument and always runs in background
-      - Background subagents observed without AskUserQuestion, with cause unconfirmed
-      - ScheduleWakeup is for /loop dynamic mode; background completion is notified by the harness
-      - "Source annotation rule: investigation date, version, and source kind (official, observed, or official issue) on each behavior line"
-    applicable_tasks:
-      - Designing SKILL and Agent combinations for forge and local skills
-      - Choosing a launch path for a new inherited SKILL, fork SKILL, or custom Agent
-      - Reviewing subagent_type values and plugin agent namespace usage
-      - Verifying tool restriction scope for allowed-tools or disallowed-tools
-      - Investigating background Agent behavior and AskUserQuestion limitations
-      - Updating Claude Code behavior facts and source annotations in this reference
-    keywords:
-      - "context: fork"
-      - subagent_type
-      - allowed-tools
       - disallowed-tools
-      - run_in_background
-      - CLAUDE_CODE_DISABLE_BACKGROUND_TASKS
-      - ScheduleWakeup
-      - AskUserQuestion
-      - fork mode
-      - custom Agent
+      - claude-code-guide
+      - test_no_fork_skill
+      - SKILL execution model
   docs/rules/forge_doc_access_principle.md:
     title: forge Document Access Principle
-    purpose: "Defines the development rule for how forge internals (SKILL, agent, scripts) reach documents: two routes only, direct reference to built-in docs and query for project specs and rules, with anti-patterns to avoid."
+    purpose: "Defines the two routes by which forge internals reach documents: direct reference to built-in docs and query-based discovery of project specs and rules. Also lists prohibited access patterns for developers of the forge plugin."
     content_details:
-      - "Route A: direct reference to forge built-in docs at CLAUDE_PLUGIN_ROOT/docs/ or same-skill CLAUDE_SKILL_DIR/docs/ paths"
-      - "Route B: query project specs and rules via /forge:query-db-specs and /forge:query-db-rules"
-      - "Restriction: a skill must not directly reference another skill skills/{skill}/docs/ files; shared docs are promoted to plugins/forge/docs"
-      - "Rationale: built-in docs travel with forge releases so fixed paths stay valid, while project specs change often so queries are needed"
-      - "Anti-pattern: querying built-in docs when a fixed path suffices"
-      - "Anti-pattern: referencing project specs or rules from distributed files by path or spec ID"
-      - "Anti-pattern: passing session_dir and exchanging results through files as a third route"
-      - "External use: /forge:query-forge-rules is the end-user entry point for built-in docs and is outside this principle"
+      - "Route A direct reference to forge built-in docs via CLAUDE_PLUGIN_ROOT or the same skill's CLAUDE_SKILL_DIR docs"
+      - Route B query access to project specs and rules via query-db-specs and query-db-rules
+      - "Rule that a skill may directly reference only its own docs and never another skill's docs/*"
+      - Rationale that built-in docs have fixed paths while project docs change often and need dynamic discovery
+      - "Anti-patterns: querying built-in docs, referencing project docs from distributed files, putting procedures in docs, passing session_dir for file-based results, referencing other skills' docs"
+      - Promotion rule moving docs needed by multiple skills to the plugin-shared plugins/forge/docs
+      - Note that the external-use entry point query-forge-rules is outside this principle
     applicable_tasks:
-      - Designing how a forge SKILL, agent, or script references documents
-      - Reviewing document reference paths in forge SKILL.md files and agents
-      - Modifying document lookup logic in forge skills
-      - Deciding whether a shared document should be promoted to plugins/forge/docs
+      - Implementation of forge skills or agents that need to read documents
+      - Review of document access paths in forge SKILL.md or agent prompts
+      - Decision on whether a document should be referenced directly or via query
+      - Refactoring of cross-skill document references into plugin-shared docs
     keywords:
+      - document access principle
+      - Route A direct reference
+      - Route B query
       - CLAUDE_PLUGIN_ROOT
       - CLAUDE_SKILL_DIR
       - query-db-specs
       - query-db-rules
-      - query-forge-rules
-      - plugins/forge/docs
-      - direct reference
-      - session_dir
+      - shared docs promotion
+      - cross-skill docs reference
   docs/rules/forge_document_type_roles.md:
     title: Document Types and Roles in forge Distribution
     purpose: Defines development conventions for forge repository files, specifying which document type contains structure/format, principles, implementation procedures, and review criteria
@@ -150,58 +121,162 @@ docs:
       - principles
       - procedures
       - naming conventions
-  docs/rules/implementation_guidelines.md:
-    title: Plugin Implementation Guidelines
-    purpose: "Defines plugin-independent rules for implementing Claude Code plugin scripts (Python and Bash) and SKILL.md: dependencies, tests, placement, temp files, error handling, and the boundary between distributed and development-only documents."
+  docs/rules/plugin_claude_code_authoring_guide.md:
+    title: Claude Code Authoring Guide (SKILL / Custom Agent)
+    purpose: Defines project-independent conventions for combining SKILLs and custom Agents in plugins, covering launch path selection, custom Agent constraints, defense-in-depth layers, and invocation rules.
     content_details:
-      - Python scripts use the standard library only; Bash is used for external commands and file operations
-      - Distributed .py scripts require tests named test_{module}.py; SKILL.md is exempt and AI-judgment tests stay out of the CI gate
-      - SKILL.md must not contain inline script logic; it calls independent scripts instead
-      - "Placement: skills/{skill}/scripts and docs for single-skill assets, plugin-root scripts and docs for shared assets; no direct reference into another skill"
-      - Temp files are written with the Write tool under .temp/<plugin>/<skill>/ with the session ID in the name, not via heredoc or the mktemp default
-      - Distributed files must not reference development-only documents by path or spec ID
-      - Other components are reached only through the public argument and output contract of their SKILL
-      - Unused code is deleted rather than commented out or marked deprecated
-      - Scripts parse structured data only; user input interpreted by AI is not passed to script parsers
-      - Fallbacks are written only when they are explained as correct recovery; otherwise errors are reported
-      - Version-related files are not edited in ordinary work; the release procedure owns them
+      - "Launch path naming: use the reference short names (inherited SKILL, fork SKILL, general-purpose Agent, custom Agent, Bash subprocess) and avoid bare subagent"
+      - subagent_type must be a built-in or defined custom Agent name, and prompts must not contain slash notation
+      - "Launch path selection order: Bash subprocess, general-purpose Agent, custom Agent, then inherited SKILL"
+      - "Custom Agent criteria: same role used from multiple callers, constant write boundary, or parent context bloat"
+      - Custom Agent frontmatter fields name, description, tools, model, with negative prohibitions on nested launch, task takeover, and writes outside the allowlist
+      - Inherited SKILL arguments stay minimal and never carry parent context, issue bodies, or diffs
+      - "Defense-in-depth layers A to D: Agent boundary, role constraint, tools or allowed-tools allowlist, and settings permissions.deny"
+      - Fork SKILL (context fork) is avoided by default due to known defects listed in the reference
+      - Cross-skill calls are written as instructions to Claude and self-invocation via the Skill tool is prohibited
+      - Agent completion is awaited by ending the turn, not by ScheduleWakeup
     applicable_tasks:
-      - Implementing a new plugin Python or Bash script
-      - Writing or revising SKILL.md for a plugin skill
-      - Reviewing plugin implementation against placement and dependency rules
-      - Designing error handling and fallback behavior for a plugin script
+      - Creating or modifying custom Agents and SKILLs that work together in a plugin
+      - Selecting a launch path among Bash subprocess, general-purpose Agent, custom Agent, and inherited SKILL
+      - Reviewing Agent launch prompts and inherited SKILL argument design
+      - Reviewing custom Agent frontmatter, role constraints, and allowlist configuration
+      - Reviewing cross-skill invocation and self-invocation prohibitions in SKILL documents
+      - Reviewing how a SKILL waits for Agent completion
     keywords:
-      - standard library only
-      - test_{module}.py
-      - CLAUDE_SKILL_DIR
-      - CLAUDE_PLUGIN_ROOT
-      - .temp directory
-      - inline script in SKILL.md
-      - fallback design
-      - version files
-  docs/rules/script_error_output_rules.md:
-    title: Script Error Output Rules
-    purpose: "Defines how Python scripts return exit codes and errors: 0, 1, and 2 have fixed common meanings, codes 3 and above are declared only in the returning script docstring, and errors are reported as JSON on stdout."
+      - custom Agent
+      - inherited SKILL
+      - fork SKILL
+      - launch path
+      - subagent_type
+      - ScheduleWakeup
+      - allowed-tools
+      - defense-in-depth
+      - Skill tool
+      - Bash subprocess
+  docs/rules/plugin_claude_code_reference.md:
+    title: Claude Code Reference (SKILL / Plugin / Agent)
+    purpose: Collects sourced facts about Claude Code launch paths, subagent_type values, and Agent behavior that plugin authors rely on, including known official issues affecting fork SKILLs.
     content_details:
-      - Exit codes 0 (completed), 1 (generic failure), and 2 (argparse argument error); codes 3 and above are meaningful only in the script that returns them
-      - "Result content does not decide completion: zero findings or no changes still exit 0 with details in the stdout JSON"
-      - Scripts returning codes 3 or above must declare the full exit code table, including 0, in their module docstring
-      - Callers branch on a value only when the producing docstring declares it; undeclared values and code 1 are reported as generic errors
-      - "Stdout format: result JSON on 0, error JSON with an errors array of natural-language strings on non-zero, except argparse code 2"
-      - Diagnostics may go to stderr, but error content must also appear in the stdout JSON
-      - "Exception: scripts whose I/O contract is fixed by a harness such as Claude Code hooks follow that contract"
-      - Applies to newly placed scripts; existing scripts are revised at opportunities for change
+      - "Five launch paths with short names: inherited SKILL, fork SKILL, general-purpose Agent, custom Agent, and Bash subprocess, each with trigger, instruction source, context inheritance, and output form"
+      - "Known official issues for context fork (#18394, #34164, #60720, #55592, #34328, #19751, #17283, #17351, #68233) with Anthropic response status"
+      - Recommendation to avoid fork SKILL by default based on the listed context fork issues
+      - "subagent_type value range: built-in names general-purpose, Explore, Plan, claude, statusline-setup, claude-code-guide"
+      - Plugin Agents use a plugin-name namespace such as deploy-tools:reviewer
+      - SKILL names, slash notation, and file paths are invalid as subagent_type
+      - Agent tool in interactive sessions has no run_in_background argument, so agents run in background and results arrive by completion notification in a later turn
+      - Background subagents lacked AskUserQuestion even when listed in tools, with cause unconfirmed
+      - ScheduleWakeup is a scheduling tool for /loop dynamic mode, and harness notifies background completion
+      - "Source notation rules: Claude Code behavior needs a source line with date, version, and source, while unknown dates and unverifiable items are marked explicitly"
     applicable_tasks:
-      - Implementing exit codes and error output for a new Python script
-      - Reviewing script error handling and exit code declarations
-      - Writing caller logic that branches on script exit codes in SKILL.md
-      - Adding an exit code table to a script module docstring
+      - Verifying Claude Code behavior before writing a plugin SKILL or custom Agent that depends on it
+      - Deciding whether to use a fork SKILL given the known context fork issues
+      - Choosing a valid subagent_type value for an Agent tool call
+      - Reviewing source notation and dating of Claude Code behavior claims in documentation
+      - Diagnosing missing AskUserQuestion inside background subagents
+      - Reviewing how Agent completion is delivered and why ScheduleWakeup is not used for waiting
+    keywords:
+      - context fork
+      - subagent_type
+      - general-purpose
+      - Agent tool
+      - run_in_background
+      - AskUserQuestion
+      - ScheduleWakeup
+      - fork SKILL
+      - plugin namespace
+      - completion notification
+  docs/rules/plugin_implementation_guidelines.md:
+    title: Plugin Implementation Guidelines
+    purpose: Defines plugin-independent rules for implementing plugin scripts and SKILL.md, covering language choice, testing, file placement, temp file handling, fallback policy, and version file editing.
+    content_details:
+      - "Language choice: Python for structured data processing, Bash for external commands and file operations, Python standard library only unless the user approves a third-party library"
+      - Distributed Python scripts require tests named test_module.py with test directories named after the skill, and AI judgment tests are kept out of the CI gate
+      - No processing logic inline in SKILL.md; logic goes into independent scripts that SKILL.md only invokes
+      - Skill-specific scripts and docs go under skills/skill/, plugin-shared ones at plugin root, and other skills internal directories are never referenced
+      - Temp files are written with the Write tool to .temp/plugin/skill/ with session ID in the name, never via shell heredoc, trap cleanup, default mktemp location, or fixed names
+      - Distributed files such as SKILL.md, agents, commands, and bundled docs must not reference development-only documents by path or spec ID, while script comments and docstrings are exempt
+      - Other components are reached only through SKILL.md argument and output contracts, never by calling their scripts directly or reimplementing their design
+      - Scripts handle structured data only (YAML or JSON), and user input interpreted by AI is never parsed by script parsers
+      - Fallbacks are allowed only when they can be explained as correct recovery for the abnormal case, otherwise the error is reported explicitly
+      - Version-related files such as plugin.json version, marketplace version, README version table, CHANGELOG, and git tags are not edited in ordinary work
+    applicable_tasks:
+      - Implementing or modifying Python or Bash scripts in a plugin
+      - Writing or editing SKILL.md files that call scripts or handle temp files
+      - Reviewing test requirements for distributed scripts and their directory naming
+      - Deciding placement of scripts and docs between skill directories and plugin root
+      - Designing error handling and fallback behavior in plugin scripts
+      - Editing version-related files during feature work, refactoring, or release
+    keywords:
+      - standard library
+      - SKILL.md
+      - temp file
+      - session ID
+      - test_module.py
+      - placement
+      - fallback
+      - plugin.json version
+      - interface contract
+      - development document reference
+  docs/rules/plugin_script_error_output_rules.md:
+    title: Script Error Output Rules
+    purpose: Defines exit code and error output contract for Claude Code plugin Python scripts, aimed at AI readers of machine-readable output. Applies to newly placed scripts, with hook-harness scripts exempt.
+    content_details:
+      - Exit code 0 means the requested operation completed, shared by all scripts
+      - Exit code 1 means failed with no distinguishable reason, shared by all scripts
+      - Exit code 2 is reserved for argparse rejecting arguments
+      - Exit code 3 and above are defined only by the script that returns them
+      - Zero findings or zero targets still return 0 with the result in stdout JSON
+      - Scripts returning 3 or above must declare a full exit code table in their module docstring, including 0
+      - Scripts without a declaration return only 0, 1, or 2
+      - Wrapper scripts passing through other exit codes must declare the range or fold to 0, 1, 2
+      - Stdout JSON holds the result on success and an errors array of natural language strings on failure
+      - Error content must appear in stdout JSON, with stderr used only for supplementary diagnostics
+    applicable_tasks:
+      - Implementation of new plugin Python scripts with exit codes and error output
+      - Review of script exit code and error JSON compliance
+      - Modification of script exit code handling or error output format
+      - Writing module docstring exit code tables for scripts
+      - Implementing caller side branching on script exit codes in SKILL.md
     keywords:
       - exit code
-      - errors array
-      - module docstring
+      - error output
+      - sys.exit
       - argparse exit 2
+      - module docstring
+      - errors JSON
       - stdout JSON
-      - stderr
-      - exit code declaration
-      - harness hook
+      - stderr diagnostics
+      - exit code 3
+      - plugin script
+  docs/rules/plugin_uv_usage_rules.md:
+    title: uv Usage Rules
+    purpose: "Defines rules for running Python scripts and managing their dependencies with uv: declaration placement, locking, updating, Python version selection, and a 3-day exclude-newer policy against freshly published package versions."
+    content_details:
+      - "Applicability: applies only when project instructions mandate uv; standard-library-only scripts are exempt from dependency management"
+      - "Declaration placement: PEP 723 inline metadata for standalone and distributed scripts, pyproject.toml with package = false for multi-script groups with shared modules and tests"
+      - Distributed scripts cannot use pyproject.toml, so shared-module dependencies are declared in every importing entry script
+      - "Execution: run Python scripts with uv run, never bare python3; Python version and dependencies declared per script"
+      - Dependency add and remove via uv add --script with --bounds lower and uv remove --script; version numbers are never written by hand
+      - "Lock file: uv lock --script after adding, committed with the script including distribution hashes; uv run --locked detects mismatches"
+      - "Update procedure: uv tree --script --outdated, then uv lock --upgrade or --upgrade-package, reviewing the lock diff before commit"
+      - exclude-newer = 3 days in the script [tool.uv] metadata, with exclude-newer-package for urgent security fixes
+      - requires-python lower bound follows the latest stable Python; pick the newest non-prerelease from uv python list
+    applicable_tasks:
+      - Setting up uv-based execution for Python scripts
+      - Adding or removing dependencies in a PEP 723 script or pyproject.toml
+      - Creating or maintaining uv.lock lock files for Python scripts
+      - Reviewing and upgrading outdated dependencies with uv lock --upgrade
+      - Deciding dependency declaration placement for new Python scripts
+      - Reviewing the exclude-newer supply-chain safeguard configuration
+      - Selecting the Python version for requires-python
+    keywords:
+      - uv run
+      - PEP 723
+      - uv add --script
+      - uv lock --script
+      - exclude-newer
+      - pyproject.toml
+      - uv.lock
+      - requires-python
+      - bounds lower
+      - uv python list

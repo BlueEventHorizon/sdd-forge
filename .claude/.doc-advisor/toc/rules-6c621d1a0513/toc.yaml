@@ -5,7 +5,7 @@
 metadata:
   name: Document Search Index (rules)
   key: rules
-  generated_at: 2026-10-26T15:07:00Z
+  generated_at: 2026-10-27T08:06:26Z
   file_count: 9
 
 docs:
@@ -40,35 +40,31 @@ docs:
       - returned path
       - data handoff
   docs/rules/forge_claude_code_authoring_policy.md:
-    title: Claude Code authoring policy (forge)
-    purpose: "Authoring policy that forge and local skills adopt on top of the general Claude Code guide: the SKILL execution model, rules for inherited SKILLs and custom agents, and how questions are asked to the user."
+    title: Claude Code Authoring Policy for forge
+    purpose: "Defines forge-specific Claude Code authoring policy: official spec verification order, SKILL execution model (inheriting type only, no context fork), custom Agent use for isolated work, user questions via AskUserQuestion, and Japanese SKILL descriptions."
     content_details:
-      - Confirm official specs with the claude-code-guide Agent before writing since citations are summaries
-      - All SKILLs are written as inherited type with no context fork or agent field, checked by test_no_fork_skill
-      - Work needing isolated context goes to custom agents launched via the Agent tool as plugin:name
-      - An inherited SKILL must state at its opening that it only does X and must not take over other work of the parent
-      - A new custom agent needs its rationale recorded in the plugin design doc and a test verifying Role constraints
-      - Questions and confirmations use AskUserQuestion rather than plain text
-      - Discussion-driven SKILLs present background, essence, recommendation and options in prose as an exception
-      - Do not seal questions with disallowed-tools AskUserQuestion because it fails across multiple turns
+      - "Official spec verification order: meta author-skill and author-plugin reference first, then claude-code-guide Agent"
+      - "SKILL execution model: all SKILLs are inheriting type with no context fork or agent frontmatter, checked by test_no_fork_skill.py"
+      - Isolated context work goes to custom Agents under agents/name.md launched via the Agent tool
+      - Inheriting SKILL must declare it performs only X and must not take over other parent work
+      - New custom Agent requires rationale recorded in the plugin design doc and a Role constraint test
+      - User questions use AskUserQuestion instead of plain text, with discussion-driven SKILL exceptions declared in the body
+      - Do not seal AskUserQuestion with disallowed-tools because it fails over multiple turns
       - SKILL.md descriptions are written in Japanese
-      - Individual SKILL construction follows the meta plugin author-skill
     applicable_tasks:
-      - Creating or modifying a forge SKILL that follows the inherited execution model
-      - Creating a new custom agent for forge
-      - Reviewing SKILL and agent definitions against the forge authoring policy
-      - Writing user confirmation steps in SKILL.md
+      - Creating a new SKILL or custom Agent under forge conventions
+      - Reviewing SKILL execution model and fork usage in a plugin
+      - Reviewing user confirmation flow written with AskUserQuestion in SKILL.md
+      - Verifying official Claude Code plugin specification before authoring
     keywords:
-      - forge authoring policy
-      - inherited SKILL
-      - custom agent
-      - context fork
+      - "context: fork"
       - AskUserQuestion
-      - Role constraint
+      - custom Agent
+      - inheriting SKILL
       - disallowed-tools
-      - claude-code-guide
       - test_no_fork_skill
-      - SKILL execution model
+      - official spec verification
+      - SKILL.md Japanese description
   docs/rules/forge_doc_access_principle.md:
     title: forge Document Access Principle
     purpose: "Defines the two routes by which forge internals reach documents: direct reference to built-in docs and query-based discovery of project specs and rules. Also lists prohibited access patterns for developers of the forge plugin."
@@ -187,36 +183,31 @@ docs:
       - completion notification
   docs/rules/plugin_implementation_guidelines.md:
     title: Plugin Implementation Guidelines
-    purpose: Defines plugin-independent rules for implementing plugin scripts and SKILL.md, covering language choice, testing, file placement, temp file handling, fallback policy, and version file editing.
+    purpose: "Defines plugin-independent implementation rules for Claude Code plugin scripts and SKILL.md: language and dependencies, testing, file placement, temp files, distribution references, and fallback policy."
     content_details:
-      - "Language choice: Python for structured data processing, Bash for external commands and file operations, Python standard library only unless the user approves a third-party library"
-      - Distributed Python scripts require tests named test_module.py with test directories named after the skill, and AI judgment tests are kept out of the CI gate
-      - No processing logic inline in SKILL.md; logic goes into independent scripts that SKILL.md only invokes
-      - Skill-specific scripts and docs go under skills/skill/, plugin-shared ones at plugin root, and other skills internal directories are never referenced
-      - Temp files are written with the Write tool to .temp/plugin/skill/ with session ID in the name, never via shell heredoc, trap cleanup, default mktemp location, or fixed names
-      - Distributed files such as SKILL.md, agents, commands, and bundled docs must not reference development-only documents by path or spec ID, while script comments and docstrings are exempt
-      - Other components are reached only through SKILL.md argument and output contracts, never by calling their scripts directly or reimplementing their design
-      - Scripts handle structured data only (YAML or JSON), and user input interpreted by AI is never parsed by script parsers
-      - Fallbacks are allowed only when they can be explained as correct recovery for the abnormal case, otherwise the error is reported explicitly
-      - Version-related files such as plugin.json version, marketplace version, README version table, CHANGELOG, and git tags are not edited in ordinary work
+      - "Script language table: Python for structured data processing, Bash for external commands and file operations"
+      - Python scripts use the standard library only, and any external library needs user approval
+      - Distributed .py files require tests named test_{module}.py, while AI judgment tests stay outside the CI gate
+      - SKILL.md must not contain inline processing logic; it calls independent scripts via CLAUDE_SKILL_DIR
+      - "Placement: skills/{skill}/scripts and docs for single-skill assets, plugin root for shared assets, and no direct reference into other skills directories"
+      - Temp files are written with the Write tool to .temp/plugin/skill with session ID in the filename, never via mktemp or heredoc
+      - Distributed files must not reference development-only documents by path or spec ID, while script comments are excluded
+      - Other components are reached only through SKILL public arguments and outputs, and AI must not parse user input with script parsers
     applicable_tasks:
-      - Implementing or modifying Python or Bash scripts in a plugin
-      - Writing or editing SKILL.md files that call scripts or handle temp files
-      - Reviewing test requirements for distributed scripts and their directory naming
-      - Deciding placement of scripts and docs between skill directories and plugin root
-      - Designing error handling and fallback behavior in plugin scripts
-      - Editing version-related files during feature work, refactoring, or release
+      - Implementing new Python or Bash scripts in a Claude Code plugin
+      - Writing or revising SKILL.md processing flow and script invocation
+      - Adding tests for distributed Python scripts
+      - Reviewing plugin file placement and cross-skill references
+      - Reviewing temp file handling and fallback design in plugin implementation
     keywords:
-      - standard library
-      - SKILL.md
-      - temp file
-      - session ID
-      - test_module.py
-      - placement
-      - fallback
-      - plugin.json version
-      - interface contract
-      - development document reference
+      - CLAUDE_SKILL_DIR
+      - CLAUDE_PLUGIN_ROOT
+      - standard library only
+      - test_{module}.py
+      - inline script in SKILL.md
+      - mktemp
+      - .temp/plugin/skill
+      - reflexive fallback
   docs/rules/plugin_script_error_output_rules.md:
     title: Script Error Output Rules
     purpose: Defines exit code and error output contract for Claude Code plugin Python scripts, aimed at AI readers of machine-readable output. Applies to newly placed scripts, with hook-harness scripts exempt.

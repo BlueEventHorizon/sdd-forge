@@ -16,6 +16,10 @@ __pycache__/
 *.bak
 .DS_Store
 
+# 認証情報を含みうる環境ファイル
+.env
+.env.*
+
 # Claude Code
 .claude/settings.local.json
 .claude/scheduled_tasks.lock

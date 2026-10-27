@@ -205,12 +205,12 @@ sequenceDiagram
 
 ### 6.1 手段
 
-| 責務・資産                      | 手段                                                 | 置き場                                                        | 理由                                                                            |
-| ------------------------------- | ---------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------------------------- |
-| 対話進行、brief作成             | AI（メインの claude）。consult の SKILL が手順を持つ | `plugins/forge/skills/consult/SKILL.md`                       | 要件が、作るのはメインの claude と定めている（FNC-012）                         |
-| 記録書込                        | Script（Python、標準ライブラリのみ）                 | `plugins/forge/skills/consult/scripts/record_review_brief.py` | consult だけが使う資産は、そのスキルの配下に置く。外部依存は禁止されている      |
-| review から委譲されたときの手順 | 文書                                                 | `plugins/forge/skills/consult/docs/review_handling.md`        | review に固有の扱い全体を、consult の SKILL とは別ファイルに置く（NFR-002）     |
-| 記録書込のテスト                | unittest                                             | `tests/forge/consult/test_record_review_brief.py`             | `plugins/` 配下の Python にはテストが必須。テストの置き場はスキル名と一致させる |
+| 責務・資産                      | 手段                                                 | 置き場                                                        | 理由                                                                                                   |
+| ------------------------------- | ---------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
+| 対話進行、brief作成             | AI（メインの claude）。consult の SKILL が手順を持つ | `plugins/forge/skills/consult/SKILL.md`                       | 要件が、作るのはメインの claude と定めている（FNC-012）                                                |
+| 記録書込                        | Script（Python、標準ライブラリのみ）                 | `plugins/forge/skills/consult/scripts/record_review_brief.py` | consult だけが使う資産は、そのスキルの配下に置く。外部依存は原則持たない（使うにはユーザの許諾が要る） |
+| review から委譲されたときの手順 | 文書                                                 | `plugins/forge/skills/consult/docs/review_handling.md`        | review に固有の扱い全体を、consult の SKILL とは別ファイルに置く（NFR-002）                            |
+| 記録書込のテスト                | unittest                                             | `tests/forge/consult/test_record_review_brief.py`             | `plugins/` 配下の Python にはテストが必須。テストの置き場はスキル名と一致させる                        |
 
 **consult の SKILL の構成**: SKILL は、この設計に合わせて次のとおり書く。
 
@@ -268,7 +268,7 @@ AI は、SKILL が示す 2 つのパスに、本文をそのまま書く。パ�
 
 ### 6.3 利用ライブラリ
 
-標準ライブラリのみ（`argparse`・`json`・`os`・`tempfile`・`pathlib`）。`plugins/` 配下の Python は外部依存を持たない規則による。
+標準ライブラリのみ（`argparse`・`json`・`os`・`tempfile`・`pathlib`）。`plugins/` 配下の Python は外部依存を原則持たない規則による。
 
 ### 6.4 アルゴリズム
 

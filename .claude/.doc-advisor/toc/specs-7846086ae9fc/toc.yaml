@@ -5,40 +5,41 @@
 metadata:
   name: Document Search Index (specs)
   key: specs
-  generated_at: 2026-10-22T15:59:32Z
+  generated_at: 2026-10-27T02:59:20Z
   file_count: 43
 
 docs:
   docs/specs/adr-writer/design/DES-085_adr_writer_design.md:
-    title: ADR Writer Design (DES-085)
-    purpose: Defines the design of the ADR writer, which combines the write-adr SKILL, the adr-writer custom Agent, and the adr_exchange.py script to record all decisions of one feature in a single ADR file per feature.
+    title: DES-085 ADR Writer Design
+    purpose: Defines the design of the ADR writer, which consists of a write-adr SKILL, an adr-writer agent, and adr_exchange.py, and writes one ADR file per feature.
     content_details:
-      - write-adr SKILL as the inheriting-type entry that assembles the request, launches the Agent, branches on the judgement, and runs completion processing
-      - adr-writer custom Agent with Read Grep Glob Bash Write Edit tools, no Agent Skill or AskUserQuestion, and writes only the ADR file
-      - adr_exchange.py subcommands open request-path finish check and which caller invokes each
-      - Closed judgement set created rejected insufficient recorded by finish and returned by check
-      - "Destination rule: one ADR-NNN_feature.md per feature, with an error when adr_dir holds two or more ADR files"
-      - Request kinds approval-record judgement update and the baseline_sha256 consistency check in finish
-      - Exit codes limited to 0 1 2 with an errors array in the JSON output on failure
-      - Rationale for an Agent instead of context fork, including the isolation of the write boundary
-      - Test targets tests/forge/adr/test_adr_exchange.py and tests/forge/adr/test_adr_writer_contract.py
+      - Entry SKILL write-adr as an inherited SKILL without context fork, handling request assembly, Agent launch, verdict branching, and completion
+      - Custom agent adr-writer with tools Read Grep Glob Bash Write Edit, restricted to writing the ADR file only
+      - adr_exchange.py subcommands open, request-path, finish, and check and the role of each
+      - "ADR destination rule: one ADR file per feature as adr_dir/ADR-NNN_feature.md, failing when two or more ADR files exist"
+      - Request and result files adr_request_{request_id}.json and adr_result_{request_id}.json under adr_dir
+      - Request kinds approval-record, judgement, update and verdicts created, rejected, insufficient
+      - finish consistency check comparing the verdict with ADR file state using baseline_sha256
+      - Exit codes limited to 0, 1, 2, with rejected and insufficient returning exit code 0
+      - "Design decisions: Agent instead of fork, no format validation in script, return value limited to rejection and insufficiency reasons"
+      - Test design for adr_exchange.py and ADR writer contract tests plus manual evaluation cases
     applicable_tasks:
-      - implementation of the write-adr SKILL and the adr-writer Agent
-      - implementation or modification of adr_exchange.py
-      - review of the ADR creation workflow design
-      - test creation for adr_exchange.py and the ADR writer contract
-      - modification of the ADR writing flow for approval records, judgement records, and updates
+      - Implementation of the ADR writer workflow across write-adr SKILL, adr-writer agent, and adr_exchange.py
+      - Modification of request, result, or verdict handling in adr_exchange.py
+      - Review of ADR writer design consistency with ADR principles and format
+      - Creation of unit tests for adr_exchange.py and contract tests for the ADR writer
+      - Investigation of ADR file placement and the one-file-per-feature rule
     keywords:
       - adr-writer
       - write-adr
       - adr_exchange.py
+      - ADR-NNN
       - request_id
       - baseline_sha256
       - approval-record
-      - ADR-NNN
+      - judgement
+      - insufficient verdict
       - adr_dir
-      - finish
-      - check
   docs/specs/adr-writer/requirements/REQ-030_adr_writer.md:
     title: REQ-030 ADR Writer Requirements Specification
     purpose: Defines the behavior and responsibilities of the ADR Writer to review, validate, and document architectural decisions independently from the design process, ensuring proper formatting and compliance with ADR standards.
@@ -122,91 +123,91 @@ docs:
       - retains_context
       - fail closed
   docs/specs/common/adr/ADR-089_common.md:
-    title: ADR-089 common Decision Record for Retaining the Responsibility Declaration in Inherited-Type SKILLs
-    purpose: Records the decision to keep the norm requiring a responsibility declaration at the top of every inherited-type SKILL, even though no current problem occurs, and rejects deleting it
+    title: ADR-089 common Decision Record
+    purpose: "Records decisions for common ADR items: keeping the responsibility declaration rule for inherited-type SKILLs even without current problems, and declaring uv exclude-newer settings in PEP 723 script or pyproject.toml metadata instead of command options."
     content_details:
-      - "Background: fork-type SKILLs are not adopted because of unfixed Claude Code bugs such as $ARGUMENTS not being substituted and output not reaching the Desktop UI"
-      - Inherited-type SKILLs have no context isolation from the parent, so the SKILL must declare its own scope instead
-      - "Decision: retain the responsibility declaration norm at the top of every inherited-type SKILL and do not delete it"
-      - The declaration states that the SKILL performs only its own scope and does not take over other parent-session work such as implementation, PR creation or Issue updates
-      - Scope applies to all inherited-type SKILLs regardless of launch path, including SKILLs launched from other SKILLs
-      - "Rejected alternatives: deleting the norm because no problem currently occurs, and limiting the norm to SKILLs launched from other SKILLs"
-      - Deleting the norm would require consistent removal across norms, design documents, tests and each SKILL wording
+      - Keep the responsibility declaration rule for inherited-type SKILLs, not deleted even when no problem currently occurs
+      - "Rationale: inherited-type SKILLs have no fork isolation, so the declaration is a substitute defense against taking over unrelated parent work"
+      - "Scope: applies to all inherited-type SKILLs regardless of launch path"
+      - "Rejected alternatives: deleting the rule because no problem occurs, and limiting scope to SKILLs launched from other SKILLs"
+      - Declare uv exclude-newer in PEP 723 script [tool.uv] or pyproject.toml [tool.uv] instead of --exclude-newer command options
+      - "Rationale: lock and uv run --locked stay consistent without flags, and exclude-newer-package works in either location"
+      - "Rejected: passing --exclude-newer to uv add, uv lock, or uv lock --upgrade, which makes uv run --locked fail with lockfile needs update"
+      - UV_EXCLUDE_NEWER environment variable workaround depends on human and AI vigilance
+      - Uv behavior verified only on uv 0.13.5 macOS
     applicable_tasks:
-      - Review of the responsibility declaration norm for inherited-type SKILLs
-      - Deletion or revision proposal for the responsibility declaration norm
-      - Authoring the responsibility declaration in a new inherited-type SKILL.md
-      - Evaluating whether a fork-type SKILL should be adopted instead of an inherited-type SKILL
+      - Creating or revising responsibility declarations for inherited-type SKILLs
+      - Reviewing proposals to remove the responsibility declaration rule for SKILLs
+      - Configuring uv exclude-newer for Python script dependencies
+      - Reviewing uv lockfile update and uv run --locked procedures
+      - Deciding placement of uv exclude-newer settings in pyproject.toml or PEP 723 metadata
     keywords:
       - inherited-type SKILL
       - fork-type SKILL
       - responsibility declaration
-      - context isolation
-      - $ARGUMENTS
-      - scope declaration
-      - parent context
-      - Claude Code bug
-      - ADR-089
+      - exclude-newer
+      - exclude-newer-package
+      - PEP 723
+      - "[tool.uv]"
+      - uv run --locked
+      - UV_EXCLUDE_NEWER
+      - uv 0.13.5
   docs/specs/common/requirements/COMMON-REQ-001_versioned_migration.md:
-    title: "COMMON-REQ-001: Versioned Migration Requirements Specification"
-    purpose: Defines requirements for a stepwise migration framework that keeps backward compatibility for versioned data formats by converting old-version data to the current version one version at a time in memory.
+    title: "COMMON-REQ-001: Versioned Migration Requirements"
+    purpose: Defines a stepwise migration framework that converts versioned data from older formats to the current version one version at a time, using pure migration functions registered in a registry, so newer applications can read older data.
     content_details:
-      - Version detection using integer major version numbers, with v1 assumed when no version identifier exists
-      - Stepwise chain migration v1 to v2 to v3 with no direct jump between non-adjacent versions
-      - Migration registry keyed by target version, applied in ascending order where detected_version < v <= current_version
-      - "Migration function contract: pure, idempotent, no file I/O or network access"
-      - "Error handling: exceptions propagate as code bugs with no silent fallback; unknown future versions are skipped as-is"
-      - "Extensibility: adding a version needs one new function, one registry entry, and a CURRENT_VERSION update without changing existing functions"
-      - "Non-functional: in-memory conversion only without rewriting source data, standard library only"
-      - "Applied example: .doc_structure.yaml with doc_structure_version comment handled by migrate_doc_structure.py"
-      - "Terminology: stepwise migration, migration registry, current_version, detected_version"
+      - "FR-01 version detection: detect the integer major version from data, treat a missing version identifier as v1"
+      - "FR-02 stepwise migration: apply migrations one version at a time (v1 to v2 to v3, no direct jump), in ascending order for detected < v <= current"
+      - FR-02 registry keyed by target version, each function receives the previous version output as input (chain execution)
+      - "FR-03 migration function contract: input is the previous version format, output is the target format, idempotent, no side effects such as file I/O or network"
+      - "FR-04 error handling: exceptions in pure migration functions propagate as code bugs with no silent fallback, unknown future versions are skipped, detection failure is treated as the oldest version"
+      - "FR-05 extensibility: a new version needs one migration function, one registry entry and a CURRENT_VERSION update, existing functions unchanged (Open-Closed)"
+      - NFR-01 in-memory conversion only without rewriting original data, NFR-02 standard library preferred and external libraries need user approval
+      - Applied to .doc_structure.yaml via migrate_doc_structure.py using the doc_structure_version comment
     applicable_tasks:
-      - Implementation of versioned data migration logic
-      - Creation of a new migration function when a data format version is bumped
-      - Review of backward compatibility handling for versioned data
-      - Modification of the migration registry or the CURRENT_VERSION constant
-      - Design review of .doc_structure.yaml version migration
+      - implementation of versioned data migration logic
+      - addition of a new data format version migration
+      - review of backward compatibility handling for versioned data
+      - modification of migrate_doc_structure.py migration behavior
     keywords:
-      - MIGRATIONS
-      - CURRENT_VERSION
       - apply_migrations
+      - MIGRATIONS registry
+      - CURRENT_VERSION
       - detected_version
       - stepwise migration
-      - migration registry
-      - doc_structure_version
-      - migrate_doc_structure.py
       - backward compatibility
+      - migrate_doc_structure
+      - doc_structure_version
+      - pure migration function
   docs/specs/common/requirements/COMMON-REQ-002_error_handling_policy.md:
     title: "COMMON-REQ-002: Error Handling Policy Requirements"
-    purpose: Defines a policy that prohibits silent fallbacks hiding internal bugs and limits exception catching to external-cause errors, applied to all Python scripts and SKILL.md files in the project.
+    purpose: Defines the error handling policy that forbids silent fallbacks hiding internal bugs, limits exception catches to external-cause errors with specific types, and requires errors to be reported to callers across all Python scripts and SKILL.md files.
     content_details:
-      - Exception catching limited to external-cause errors, with broad catches such as except Exception and bare except prohibited (FR-01-1, FR-01-2)
-      - Internal bugs such as TypeError, KeyError, IndexError and AttributeError propagate to the caller (FR-01-3)
-      - "Permitted catches: file I/O errors FileNotFoundError, IOError, OSError, UnicodeDecodeError (FR-02-1)"
-      - "Permitted catches: network errors ConnectionError and TimeoutError (FR-02-2)"
-      - "Permitted catch: ValueError from int() conversion, with the try block limited to the conversion only (FR-02-3)"
-      - except Exception allowed only in HTTP server request handling as a framework pattern that calls handle_error() (FR-02-4)
-      - Error information must reach the caller via exit code, stdout or stderr per the script error output rules (FR-03)
-      - Exceptions inside pure functions fn(data) to data are code bugs, with no try/except rollback and test-based guarantees (FR-04)
-      - "Anti-pattern: silent fallback returning the original data on except Exception in apply_migrations (design patterns)"
-      - "Applied history: except Exception narrowed in toc_utils.py to IOError and OSError, and in resolve_doc_references.py to specific types"
+      - FR-01 exception catching limited to external-cause errors, broad except Exception or bare except forbidden, internal bugs such as TypeError KeyError IndexError AttributeError propagate
+      - "FR-02 allowed catches: file I/O errors (FileNotFoundError IOError OSError UnicodeDecodeError), network errors (ConnectionError TimeoutError), and ValueError from type conversion with the try block limited to the conversion"
+      - FR-02-4 except Exception allowed only for HTTP server request handling with handle_error
+      - FR-03 caught errors must be reported to callers, destination and format defined by the script error output rules
+      - FR-04 exceptions in pure functions (fn(data) returns data) are code bugs, no try/except rollback or original-data return, guaranteed by tests instead
+      - Correct and forbidden code patterns for load_config and apply_migrations
+      - "Decision flowchart: external cause means catch with specific type and report, otherwise propagate, pure function means no try/except"
+      - Applied history table of versions v0.0.25 and v0.0.26 removing except Exception across the project
     applicable_tasks:
-      - Implementation of exception handling in Python scripts
-      - Review of exception handling for silent fallback patterns
-      - Review of error reporting in SKILL.md and scripts
-      - Implementation of error propagation for pure migration functions
-      - Modification of except clauses in toc_utils.py and resolve_doc_references.py
+      - review of exception handling in Python scripts
+      - implementation of error handling for file I/O or network calls
+      - code review for silent fallback or broad exception catches
+      - implementation of pure migration functions error propagation
+      - modification of SKILL.md error handling instructions
     keywords:
       - except Exception
       - silent fallback
-      - bare except
-      - handle_error
-      - FileNotFoundError
-      - OSError
-      - UnicodeDecodeError
-      - ConnectionError
+      - external-cause error
       - internal bug
-      - external cause error
+      - pure function exception
+      - specific exception type
+      - handle_error
+      - error propagation
+      - bare except
+      - FR-04-1
   docs/specs/consult/agenda/design/DES-075_agenda_mechanism_design.md:
     title: DES-075 Agenda Mechanism Design
     purpose: "Defines the agenda mechanism shared by review and consult: JSON record storage, state transitions based on decision completeness, structural judgment gating, and render triggering after writes."
@@ -361,36 +362,35 @@ docs:
       - remaining count
   docs/specs/consult/design/DES-078_consult_dialogue_flow_design.md:
     title: DES-078 consult Dialogue Flow Design
-    purpose: "Defines the consult dialogue flow: topic list progression, consult brief creation and presentation order, recording via script, and review-specific handling separated from the consult SKILL."
+    purpose: "Defines consult dialogue flow for REQ-017: progress table redisplayed per step, consult brief presented after research and recorded by script, review-specific handling split from the SKILL."
     content_details:
-      - Topic list as a progress table with columns for number, topic, importance, status, result and open issues
-      - Status values not started, in progress, settled, on hold, out of scope, withdrawn, with report-only for non-decision evaluations
-      - Rule that consult brief creation, including investigation, completes before any user output
-      - consult brief as two fields, summary and recommendation, about 10 lines in total, with confidence marks on claims
-      - Recording via record_review_brief.py writing consult_brief_N.json with a sequence number taken by the script
-      - "Atomic publish: write a temp file in the evaluation directory, then hard-link it to the final name without overwriting"
-      - Handoff body files for summary and recommendation, passed by absolute path and deleted only on success
-      - Exit codes 0 recorded, 1 error with errors JSON, 2 argparse rejection
-      - "review_handling.md procedure: report-only evaluations, flawed_premise exclusion, batch fix offer, result return"
-      - Presentation state kept only in the conversation, not persisted, with no resume path after interruption
+      - Progress table columns (topic number, topic name, importance, status, result, open issues) and status values such as not started, in progress, settled, on hold, out of scope, withdrawn, report only
+      - Consult brief with two fields, summary and recommendation, kept within about 10 lines with confidence marks on conclusions
+      - "Order rule: research completes before any output to the user; the first output is a failure notice or the consult brief"
+      - record_review_brief.py invocation taking evaluation JSON path, review_id, round_number, finding_ids, and summary and recommendation files
+      - consult_brief_N.json record structure with review_id, round_number, sequence, finding_ids, summary, recommendation
+      - Sequence number is max existing plus one, published by hardlink from a temp file so records are never overwritten
+      - Body files are deleted only on success; failure leaves them for retry and the next topic may overwrite them
+      - Record failure is reported to the user without default values, and brief presentation continues
+      - "review_handling.md procedure: report-only items, wrap-up offer for passing items, result return with adoption and reasons"
+      - "Test points for the record script: exit codes 0, 1, 2, atomic write, no partial records"
     applicable_tasks:
-      - consult dialogue flow implementation
-      - consult brief creation and recording design review
-      - review_handling procedure modification
-      - record_review_brief.py implementation or test creation
-      - consult SKILL.md modification
-      - consult topic list presentation review
+      - Implementation of the consult dialogue flow when delegated from review
+      - Modification of consult SKILL progress or brief presentation order
+      - Implementation or unit testing of the record_review_brief.py recording script
+      - Review of the consult brief format and recording contract
+      - Creation or revision of the review_handling procedure document for consult
     keywords:
-      - record_review_brief.py
+      - consult dialogue flow
       - consult brief
-      - consult topic
-      - review_handling.md
+      - record_review_brief.py
       - consult_brief_N.json
-      - hard-link publish
-      - topic list
-      - sequence number
-      - handoff body
-      - DES-078
+      - review_handling.md
+      - progress table
+      - finding_ids
+      - review_id
+      - round_number
+      - hardlink publish
   docs/specs/consult/requirements/REQ-017_consult_skill.md:
     title: REQ-017 consult Dialogue Progression Skill Requirements
     purpose: Defines requirements for the consult dialogue skill covering consult topic intake, two-part consult briefs with recommendations, progress tracking, decision capture, and no execution before user decision.
@@ -424,36 +424,36 @@ docs:
       - confidence mark
   docs/specs/doc-db/design/DES-057_doc_db_backend_selection_design.md:
     title: DES-057 doc-db Backend Selection Design
-    purpose: Defines ordered backend selection for four document search wrappers, covering doc-db HTTP access, on-demand startup, index-missing approval, doc-advisor availability checks, and failure handling without silent backend switching
+    purpose: Defines backend selection for document-search wrappers by an ordered preference list, doc-db HTTP access and startup, index-missing approval flow, and no backend switch after operation failure.
     content_details:
-      - Backend selection by doc_backend.prefer in .claude/.forge.yaml with doc-advisor as default first
-      - "Three-way outcome split: doc-db success, doc-db unavailable (exit 10), and doc-db operation failure (exit 20) without switching backend"
-      - Index-missing detection with exit code 30 (index_missing), user approval, update-db delegation with pinned backend, and single query retry
-      - "doc-db HTTP client sequence: initialize, notifications/initialized, tools/call with Mcp-Session-Id and JSON or SSE response parsing"
-      - On-demand doc-db startup via shutil.which and subprocess.Popen with probe timeouts and default port 58080
-      - Project key format {project_name}-{category} and series fixed to current git branch with list_indexes pre-check
-      - doc-advisor availability judged only by presence of index-docs and query-docs with no version checks
-      - Path existence filtering of query results and fixed Required documents output format
-      - Error classification by data.code identifiers KEY_NOT_FOUND and KEY_TRASHED, never by message text
-      - Module layout and dependency direction for query and update wrappers and shared doc_backend scripts
+      - Ordered backend preference list from .claude/.forge.yaml doc_backend.prefer with doc-advisor as default, resolved by resolve_backend_order.py and failing with settings_invalid on bad values
+      - "Responsibility split: each backend owns its availability check, while only the calling SKILL owns the selection order"
+      - Exit codes 0 success, 10 unavailable, 20 operation_error, 30 index_missing and how the SKILL handles each
+      - "doc-db HTTP client sequence: initialize, notifications/initialized, tools/call with JSON and SSE response parsing"
+      - On-demand doc-db startup via shutil.which and detached Popen with localhost connection probe timeouts and reason codes
+      - doc-advisor availability requires index-docs and query-docs skills together, with no version condition
+      - "Index-missing flow: user approval, delegation to update-db SKILL with backend specified, then one query rerun"
+      - Series fixed to current git branch, with KEY_NOT_FOUND and KEY_TRASHED error identifiers handled separately
+      - Desired-state sync through sync_documents using --start and --status polling, refusing sync when target count is zero
+      - Filtering of query result paths that no longer exist, with the excluded count reported
     applicable_tasks:
-      - Implementation of backend selection logic in query-db and update-db wrappers
-      - Modification of doc_backend.prefer settings handling and resolve_backend_order behavior
-      - Review of doc-db HTTP client, startup, and reconnection behavior
-      - Review of index-missing approval and update-db delegation flow
-      - Implementation of doc-advisor availability check for query-docs and index-docs
-      - Test design for query_docdb, sync_docdb, and backend selection scripts
+      - Implementation of backend selection in query-db and update-db wrappers
+      - Modification of the doc_backend.prefer setting and resolve_backend_order behavior
+      - Review of doc-db and doc-advisor fallback and error handling
+      - Implementation of the doc-db HTTP client and on-demand startup
+      - Test design for backend selection, exit codes, and the index-missing flow
+      - Review of index-missing approval and delegation to update-db skills
     keywords:
       - resolve_backend_order.py
-      - docdb_runtime.py
-      - query_docdb.py
       - doc_backend.prefer
+      - docdb_runtime.py
+      - docdb_client.py
       - index_missing
-      - KEY_NOT_FOUND
-      - Mcp-Session-Id
+      - settings_invalid
+      - KEY_TRASHED
       - list_indexes
-      - advisor_absent
-      - doc-db backend selection
+      - Required documents
+      - prepare_advisor_index.py
   docs/specs/doc-db/requirements/REQ-014_doc_db_backend_selection_spec.md:
     title: REQ-014 doc-db Backend Selection Requirements Specification
     purpose: Defines requirements for automatic backend selection between doc-advisor and doc-db for search and index update operations, enabling transparent fallback when backends are unavailable
@@ -491,34 +491,34 @@ docs:
       - query wrapper
       - update wrapper
   docs/specs/forge/design/DES-001_forge_query_abstraction_design.md:
-    title: DES-001 Document Search Wrapper Design (forge to Document Search Backend)
-    purpose: "Defines the abstraction of forge's four document search and index update wrapper SKILLs, covering key mapping, output contract, and the doc-advisor forwarding contract. Backend selection is owned by DES-057."
+    title: DES-001 Document Search Wrapper (forge to Document Search Backend) Design
+    purpose: Defines the abstraction by which forge delegates document search and index update to doc-advisor or doc-db backends, covering key mapping, output contract, and SKILL contract
     content_details:
-      - Four wrapper SKILLs query-db-rules query-db-specs update-db-rules update-db-specs mapping rules and specs to keys
-      - Query flow resolving backend order via resolve_backend_order.py and using the first available backend with no grep fallback
-      - Shared Required documents output contract regardless of backend
-      - Query SKILL as inherited dispatcher with allowed-tools Skill Read Bash AskUserQuestion and no Grep
-      - Query argument limited to search keywords and a short task description without parent context
-      - Update flow with --backend override and prepare_advisor_index.py resolving dirs and exclude from doc_structure
-      - Forwarding to doc-advisor index-docs with dirs-json and exclude-json in dirs mode
-      - Desired-state rule where paths missing from the target set are removed from the index
-      - Prerequisites that at least one backend is available and keys do not collide with reserved key all
+      - Four wrapper SKILLs (query-db-rules, query-db-specs, update-db-rules, update-db-specs) and their mapping to the rules and specs keys
+      - Backend order resolution via resolve_backend_order.py, with explicit error on invalid settings instead of silent fallback
+      - "Query flow: query never rewrites the index, and index maintenance is delegated to the update SKILLs with approval"
+      - "Output contract: Required documents path list relative to project root, shared across backends"
+      - "Update flow: --backend override, and the doc-advisor path via prepare_advisor_index.py and index-docs with --dirs-json and --exclude-json"
+      - "Desired-state principle: paths missing from .doc_structure.yaml are removed from the index"
+      - "SKILL contract: inherited-type search SKILL without context fork, allowed-tools Skill Read Bash AskUserQuestion, and no Grep"
+      - Test locations under tests/forge and tests/common for SKILL isolation and the advisor contract
     applicable_tasks:
-      - Implementation of query-db-rules and query-db-specs wrapper SKILLs
-      - Modification of the update-db-rules and update-db-specs index update flow
-      - Review of the doc-advisor forwarding contract for forge document search
-      - Design review of key mapping between forge categories and doc-advisor keys
+      - Implementation of forge document query SKILLs
+      - Modification of query-db-rules or query-db-specs backend routing
+      - Modification of update-db-rules or update-db-specs index update flow
+      - Review of the doc-advisor or doc-db backend delegation contract
+      - Design review of the forge document search abstraction
     keywords:
       - query-db-rules
       - query-db-specs
       - update-db-rules
       - update-db-specs
-      - doc-advisor
-      - index-docs
-      - dirs-json
-      - exclude-json
+      - resolve_backend_order.py
       - prepare_advisor_index.py
-      - Required documents
+      - doc-advisor
+      - desired-state
+      - doc_backend.prefer
+      - index-docs
   docs/specs/forge/design/DES-010_create_skills_orchestrator_design.md:
     title: DES-010 Create-Skills Orchestrator Design
     purpose: Describes the design of start-design, start-plan, and start-requirements as orchestrators sharing a common context gathering framework with return value contracts, agent application matrix, and failure handling.
@@ -669,65 +669,64 @@ docs:
       - update-db-specs
       - reuse of existing implementation
   docs/specs/forge/design/DES-019_create_plan_workflow_design.md:
-    title: DES-019 forge Plan Creation Workflow Design
-    purpose: Defines the start-plan orchestrator workflow that derives an implementation strategy from design docs, extracts tasks, and creates or updates plan documents through AI review and user approval
+    title: DES-019 forge Plan Document Creation Workflow Design
+    purpose: Describes the start-plan orchestrator workflow that derives an implementation strategy from design docs, extracts tasks, writes the plan, and runs AI review and human approval
     content_details:
-      - Phase structure from context collection through strategy formulation, plan creation, AI review and completion
-      - "Delegation table: general-purpose Agent for document collection, forge:plan-strategist for strategy, /forge:review for AI review"
-      - strategy_exchange.py subcommands open, request-path, finish and check and the role of each
-      - "Exchange contract: strategy request JSON fields, strategy result file, and no error values"
-      - Design doc as mandatory input and requirements doc as optional input with manual path fallback
-      - temporary-feature marker detection via feature_marker.py to decide additive development mode
-      - "Strategy doc content for additive development: mismatches and actions such as modify, delete, create, merge and split"
-      - "Task granularity: one Agent per task, 5 to 10 items, build success as completion criteria"
-      - "Completeness checks: phase priority mapping, requirement to design to task traceability, dependency consistency"
-      - "Update mode: checking reflection status of the existing plan document and pending tasks"
+      - "Delegation table: general-purpose Agent for document collection, custom forge:plan-strategist Agent for strategy, and /forge:review for AI review"
+      - strategy_exchange.py with four subcommands (open, request-path, finish, check) and the request and result file contract
+      - "Strategy request fields: feature, requirement_docs, design_docs (at least one), rules_docs, existing_strategy, and strategy_path, all absolute paths"
+      - Phase 1 to 6 flow, where the design doc is mandatory and the requirements doc is optional
+      - "Differential development: the strategy must list mismatches between existing code and new spec with dispositions (modify, delete, create, merge, split)"
+      - "Task granularity: one Agent can complete each task, 5 to 10 items, build success as completion criterion"
+      - "Completeness check: phase priority mapping, requirement-design-task traceability matrix, and dependency consistency"
+      - Plan-strategist writes only the single strategy file and must not rewrite specs or code
     applicable_tasks:
-      - Implementation of the start-plan orchestrator workflow
-      - Modification of the strategy_exchange handoff between orchestrator and plan-strategist
-      - Creation or update of plan documents from design documents
-      - Review of plan task granularity and requirement-design-task traceability
+      - Implementation of the start-plan orchestrator flow
+      - Modification of strategy_exchange open, check, finish, or request-path behavior
+      - Creation or update of implementation plan documents from design docs
+      - Review of the plan creation workflow design against orchestrator pattern requirements
+      - Modification of plan-strategist Agent input and output contract
     keywords:
       - start-plan
       - plan-strategist
-      - strategy_exchange
-      - strategy_request
+      - strategy_exchange.py
       - implementation strategy
-      - task extraction
+      - write_plan.py
       - traceability matrix
-      - feature_marker
+      - task granularity
       - temporary-feature
-      - write_plan
+      - strategy_request.json
+      - update-db-specs
   docs/specs/forge/design/DES-022_parallel_agent_output_contract_design.md:
-    title: DES-022 Parallel Agent Output Contract Design
-    purpose: "Defines the output contract for parallel Agent tool launches: agents return results as return values and never write shared files, so write races are prevented; orchestrator alone writes artifacts"
+    title: DES-022 Parallel Agent Output Contract Pattern Design
+    purpose: Defines an output contract that prevents write races on shared resources when parallel Agent tool calls run, by returning results as return values instead of shared files
     content_details:
-      - "Race condition problem: parallel agents writing the same shared YAML or JSON file overwrite each other because the Agent tool provides no process-level locking"
-      - "Basic principle: agents pass results only as Agent tool return values, never through shared resources or intermediate files"
-      - Collector agents (search, investigation, review) must not write artifacts; the orchestrator writes artifacts once in the main context after all agents complete
-      - Ban on intermediate files and session directories for passing agent results, with rationale that return values need no naming, collection, cleanup, or merge machinery
-      - "Agent responsibilities: return results via return value, return self-contained results, Read is unrestricted"
-      - "Orchestrator responsibilities: wait for all agents, merge return values in main context, write artifacts, decide partial-failure policy (collectors fail-open per DES-013)"
-      - "Scope: applies to the result-delivery path; write-type agents editing their assigned artifacts are governed by scope separation in REQ-001 FNC-004; per-document data exchange is governed by agent_data_exchange_rules"
-      - "Anti-patterns: shared file direct writes, agent-side Read-Modify-Write, file locking via flock, per-agent result files"
-      - Checklist of five items for designing new parallel agents
+      - Race condition on shared YAML or JSON files when parallel agents write the same file, and the lack of file locking in Agent tool environments
+      - "Basic principle: agents return results as Agent tool return values, and collecting agents never write deliverables"
+      - Orchestrator keeps return values in main context and performs the single write of deliverables after all agents complete
+      - Prohibition of intermediate files or session directories for passing agent results
+      - "Scope: write-capable executor agents are outside the contract, while the data exchange rule covers script-written request and result JSON"
+      - "Orchestrator duties: wait for all agents, merge return values, and decide partial failure handling (fail-open for collection agents, DES-013)"
+      - Application examples for context collection in start-requirements, start-design, and start-plan
+      - "Anti-patterns: shared file direct write, Read-Modify-Write in agent, file locking with flock, and intermediate result files"
+      - Checklist of five items for designing a new parallel agent
     applicable_tasks:
-      - Designing a new parallel agent workflow with result collection
-      - "Reviewing whether an agent's output path avoids shared-file writes"
-      - Implementing orchestrator merge of agent return values
-      - Reviewing collector agent write behavior in create or review skills
-      - Deciding whether intermediate files are allowed for agent result passing
+      - Design of a new parallel agent or parallel Agent tool orchestration
+      - Review of agent output handling for race condition risks
+      - Modification of orchestrator result aggregation in forge skills
+      - Review of collecting agent write permissions against this contract
+      - Implementation of partial failure handling for parallel agents
     keywords:
       - parallel agent
       - return value
-      - output contract
       - race condition
-      - shared file write
+      - shared file
+      - Read-Modify-Write
       - intermediate file
-      - session directory
+      - orchestrator
       - fail-open
-      - orchestrator merge
-      - Agent tool
+      - collecting agent
+      - flock
   docs/specs/forge/design/DES-023_version_management_workflow_design.md:
     title: DES-023 Version Management Workflow Design
     purpose: Defines the version management workflow for multi-plugin repositories, centralizing version updates through .version-config.yaml to prevent inconsistencies across multiple metadata files
@@ -909,33 +908,33 @@ docs:
       - analysis failure
   docs/specs/forge/requirements/REQ-001_orchestrator_pattern.md:
     title: REQ-001 Orchestrator Pattern Requirements
-    purpose: "Defines the orchestrator pattern requirements for forge skills: delegating detailed work to agents, parallel execution structure, data passing rules, document format selection, and the common completion flow after document generation."
+    purpose: "Defines orchestrator-pattern requirements for forge skills: delegating work to agents, self-contained reference docs, parallel agent data passing, document format criteria, and the common finalize flow."
     content_details:
-      - FNC-001 orchestrator design where the orchestrator handles progress control and user dialogue and delegates detailed work to agents
-      - FNC-003 self-contained reference documents placed under plugins/forge/docs with an exception for skill-specific perspective definitions
-      - FNC-004 parallel-executable structure where agents return results as return values and no shared intermediate files are used
-      - "FNC-005 format selection rule: JSON for machine-processed plans, Markdown for requirements and designs"
-      - "FNC-006 common completion flow for start-requirements, start-design, start-plan: review --auto, update-db-specs ToC update, commit/push confirmation"
-      - FNC-007 AI interprets user input directly and argument parsing scripts are prohibited, with AskUserQuestion for missing arguments
-      - Applicability table listing review, start-design, start-plan, start-requirements and start-implement with their delegation and data passing methods
-      - "Background problems of the God-Skill structure: context consumption, lower instruction-following accuracy, no parallelism, and loss of intermediate results on compression"
+      - "Orchestrator design FNC-001: orchestrator manages progress, branching and user dialogue, delegates detail work to general or custom agents, SKILL.md states what to delegate and not how"
+      - "Self-contained reference documents FNC-003: agent reference docs live under plugins/forge/docs, with an exception for skill-specific viewpoint docs under the skill docs directory"
+      - "Parallel-capable structure FNC-004: results returned as agent return values, no shared intermediate files, identifier-only passing via script-written JSON path, no document bodies pasted into prompts"
+      - "Document format criteria FNC-005: JSON for machine-updated plans with task ID, priority, dependencies and status; Markdown for requirements and designs with mermaid diagrams"
+      - "Common finalize flow FNC-006: review with --files and --auto, update-db-specs for ToC update, commit confirmation; no independent finalize skill"
+      - "AI-driven input interpretation FNC-007: no argument-parsing scripts, AskUserQuestion fills missing arguments, scripts limited to YAML and JSON processing"
+      - "Applicability table: review, start-design, start-plan, start-requirements and start-implement with their data passing methods"
+      - "Background: God-Skill problems of context consumption, instruction-following degradation, no parallelism and loss by context compaction"
     applicable_tasks:
-      - Orchestrator skill design for forge
-      - Agent delegation design for start-design, start-plan, start-requirements or start-implement
-      - Parallel agent output contract design
-      - Completion flow implementation after document generation
-      - Document format selection for new forge-generated documents
+      - Creating an orchestrator-based forge skill SKILL.md design
+      - Modifying agent delegation and return-value data passing in forge skills
+      - Creating or revising self-contained reference documents for agents under plugins/forge/docs
+      - Selecting JSON or Markdown format for a forge-generated document
+      - Reviewing the finalize flow of start-design, start-plan or start-requirements
+      - Reviewing orchestrator design compliance of the review skill
     keywords:
-      - orchestrator
+      - orchestrator pattern
       - God-Skill
-      - delegation
-      - return value
-      - parallel agent
+      - return value collection
       - self-contained reference
-      - document format
-      - completion flow
+      - parallel agent output
+      - finalize flow
+      - document format selection
       - AskUserQuestion
-      - argument parsing
+      - REQ-001
   docs/specs/forge/requirements/REQ-003_skill_script_separation.md:
     title: REQ-003 SKILL.md and Script Responsibility Separation
     purpose: Defines responsibility separation between SKILL.md for user intent and decision branching, and script for fixed values and deterministic processing to maintain cognitive clarity
@@ -1106,33 +1105,34 @@ docs:
       - delete_review.py
   docs/specs/review/design/DES-084_reviewer_design.md:
     title: DES-084 Reviewer and Exchange Mechanism Design
-    purpose: Defines the design of the review exchange from backend selection through the reviewer stage, covering JSON placement, request and finding results, finding_id numbering, exit values, and script contracts.
+    purpose: Defines the design of the request and result exchange between the review skill body and the reviewer, covering JSON layout, script contracts, exit value rules, and finding ID numbering
     content_details:
-      - resolve_review_backend.py returns candidates and retains_context, and the main body starts a review with publish_request.py creating review_id and round 1
-      - review_request.json and per-round review_result.json placement under .temp/forge/review with script-decided paths
-      - exit value and success rules where resolve_review_path.py fails on error values, missing exit, or missing results
-      - finding_id assigned by append_result.py as the max across all rounds plus one
-      - reviewer wrappers reviewer_resolve_request, reviewer_add_finding, reviewer_finish, reviewer_abort fixing kind options
-      - reviewer target reading by targets keys paths, base_branch, and diff
-      - target type decision via resolve_doc_structure.py --match-path with adr treated as design and exclude not applied
-      - script common contract for JSON output, exit codes 1 and 2, stdin values, atomic writes, and absolute paths
+      - Sequence from reviewer backend selection through publish_request.py to reviewer rounds
+      - Class diagram of body, reviewer, scripts, and JSON files
+      - review_request.json and review_result.json layout under .temp/forge/review/<review_id>/<round>/
+      - "Exit value rules: exit 0 and target_unreadable, with resolve_review_path.py failure cases"
+      - finding_id assigned by append_result.py as the maximum existing ID plus one across all rounds
+      - Script contracts for publish_request, append_result, seal_result, and resolve_review_path
+      - Reviewer wrapper scripts reviewer_resolve_request, reviewer_add_finding, reviewer_finish, reviewer_abort
+      - resolve_review_backend retains_context table and backend_undeclared error with exit code 20
+      - resolve_doc_structure --match-path extension and target type judgment performed by the reviewer
+      - Unit, contract, and integration test targets for the exchange scripts
     applicable_tasks:
-      - reviewer agent implementation or modification
-      - review SKILL main body modification for launching reviewer and publishing requests
-      - review exchange JSON schema and append_result or seal_result script modification
-      - resolve_doc_structure match-path extension and target type decision review
-      - resolve_review_backend retains_context extension review
+      - Implementation of review request and result exchange scripts
+      - Modification of reviewer wrapper scripts and the reviewer agent definition
+      - Review of the review skill JSON exchange and finding numbering design
+      - Test design for review exchange scripts
     keywords:
-      - reviewer
-      - review_request.json
-      - review_result.json
-      - finding_id
       - publish_request.py
       - append_result.py
       - seal_result.py
       - resolve_review_path.py
+      - review_request.json
+      - review_result.json
+      - finding_id
       - retains_context
       - target_unreadable
+      - reviewer_add_finding
   docs/specs/review/requirements/REQ-026_evaluator_perspective.md:
     title: REQ-026 Evaluator Independent Evaluation and Meta Perspective Requirements
     purpose: "Defines evaluator behavior for review findings: meta perspectives for judging disposition (root cause, source accuracy, ADR limits), adding new findings, and no error values. Shared contract is REQ-029."
@@ -1192,67 +1192,67 @@ docs:
       - review_criteria_code
       - review_priorities_spec.md
   docs/specs/review/requirements/REQ-029_review_exchange.md:
-    title: REQ-029 Common Contract of the Review Mechanism Requirements
-    purpose: "Defines the common review mechanism contract: exchange by review_id and round_number, script-built requests, finding_id numbering, exit-value success or failure, review body duties, and the JSON structures of requests and results."
+    title: REQ-029 Common Contract Requirements for the Review Mechanism
+    purpose: "Defines the common review contract: round flow between review body and reviewer/evaluator agents, finding_id numbering, exit values, request and result data structures, and body responsibilities"
     content_details:
-      - Exchange of review_id and round_number only; the agent gets a verified absolute path from a script and reads the JSON file directly, with no JSON content passed through the agent
-      - Request structure with targets (paths, base_branch, diff), focus, scope, and references; a request is published once and never changed during the review
-      - Result structure of findings or evaluations plus an exit value; exit `0` means success and any other value is a defined error value
-      - finding_id assigned by script as one sequence per review, never reset between rounds; evaluator new findings continue the same sequence
-      - Every reviewer finding_id must be referenced by an evaluation before the evaluator writes its exit value
-      - Evaluation disposition values valid, invalid, misunderstanding, out_of_scope, flawed_premise; severity values critical, major, minor taken from the criteria catalog
-      - Termination when no valid or flawed_premise evaluation remains, or when the user decides to end; the loop applies when retains_context is false
-      - flawed_premise is never auto-fixed, even in auto mode
-      - Review body is the final decision maker and must verify findings itself rather than follow confidence or disposition values blindly
+      - "Round flow sequence: body generates review_id, runs reviewer then evaluator per round, and deletes retained data at review end"
+      - Only review_id and round_number are passed between body and agents; scripts assemble inputs and return verified absolute paths
+      - Request structure (DM-301) with targets, focus, scope, references; target keys paths, base_branch, diff; request is fixed for the whole review
+      - finding_id assigned by script as one continuous sequence per review, never renumbered, evaluator-added findings continue after reviewer maximum
+      - "Exit value rules (FNC-311): string 0 for normal completion, closed set of error values, unwritten abnormal end treated as error"
+      - Result structure (DM-305) for reviewer findings and evaluator evaluations, each carrying an exit value
+      - "Evaluation fields (DM-201): disposition valid/invalid/misunderstanding/out_of_scope/flawed_premise, severity critical/major/minor, confidence confirmed/inferred/unverified, fix_confident boolean"
+      - "Termination (FNC-318): no valid or flawed_premise disposition remains, or user decides to end; retains_context selects branch (FNC-316)"
+      - flawed_premise is never auto-fixed, even in auto mode (FNC-204)
+      - "Path and location notation (DM-304): absolute paths in transient JSON, location as file:line or file:start-end, placeholder marker when position cannot be identified"
     applicable_tasks:
-      - Implementation or modification of the exchange between review body, reviewer, and evaluator
-      - Change of finding_id numbering rules across review rounds
-      - Design or modification of review request and result JSON structures and exit value handling
-      - Review of termination conditions and flawed_premise handling in the review loop
+      - Implementation or modification of the review mechanism
+      - Contract design review of reviewer and evaluator agent interaction
+      - Implementation or modification of the review body that drives rounds
+      - Implementation of finding_id numbering and exit value handling
+      - Creation or modification of review request and result data structures
     keywords:
       - review_id
       - round_number
       - finding_id
       - retains_context
-      - disposition
       - flawed_premise
+      - disposition
+      - evaluator
+      - reviewer
       - exit value
-      - FNC-313
       - FNC-318
-      - DM-305
   docs/specs/start-implement/design/DES-088_start_implement_design.md:
     title: DES-088 start-implement Design
-    purpose: Defines design for start-implement, which selects plan tasks, runs executor agents per task unit, inspects results, handles failures, and requests review and final checks.
+    purpose: "Defines design for start-implement: task selection, plan state transitions, executor agent handoff, review and final checks, and error recovery under REQ-034"
     content_details:
-      - Startup check for no plan, leftover in-progress tasks, and uncommitted changes before selection
-      - Plan state transitions to in_progress, implemented, completed, failed, and pending via one state transition script
-      - Task selection algorithm by priority with group member co-selection and done_task_ids
-      - Task context creation with context_id format task_id plus 8 hex digits, stored under tasks/ next to the plan
-      - "Executor agent contract: one task per run, verification retry once, FAILURE on design document errors"
-      - Result inspection rules that turn contract violations into FAILURE results
-      - Review request via forge review with diff, scope, project rules and specs, and per-unit file scoping
-      - Final check of acceptance criteria with ok or gap items, and group completion only when all members are implemented
-      - Required reading collection from plan documents plus design and requirement lookups, and parallel-document judgment via feature marker
-      - Failure propagation that returns dependent implemented tasks to pending
+      - Scenario table SC-01 to SC-27 mapping requirements FNC-001 to FNC-013 and NFR-001
+      - "Task execution unit: one ungrouped task or one task group, with parallel execution only across units"
+      - State transitions among pending, in_progress, implemented, completed, failed, with failure cascading to revert dependent implemented tasks to pending
+      - "Task selection algorithm: priority ordering, task_id tie-break, group member expansion into task_ids and done_task_ids"
+      - Result inspection RS-01 turning contract violations into FAILURE results
+      - Review invocation via /forge:review with --diff, --scope, --project-rules and --project-specs including concurrent-state documents
+      - "Group completion: scope derivation over all members, one review, final check, then completing all members together"
+      - Task context file tasks/{context_id}.json beside the plan, with context_id format {task_id}-{8 hex}
+      - Startup state no_plan, leftover, clear, and uncommitted-change confirmation (SC-27)
+      - Plan JSON written only by state transition script via temp file and rename, with no locking
     applicable_tasks:
-      - start-implement skill implementation
-      - start-implement task selection script implementation
-      - plan state transition script implementation
-      - executor agent definition and modification
-      - result inspection script implementation
-      - review request integration design review
-      - failure recovery and re-run design review
+      - Implementation of start-implement orchestration skill and its scripts
+      - Modification of task selection, state transition, or startup check logic
+      - Review of start-implement design consistency with REQ-034
+      - Creation or modification of executor agent and task context handling
+      - Test design for plan state transitions, task selection, and result inspection
     keywords:
       - start-implement
+      - DES-088
       - executor agent
-      - TaskContext
+      - task execution unit
       - context_id
       - done_task_ids
-      - SEL-01
-      - ST-04
-      - RS-01
-      - classify_feature_marker
-      - implemented state
+      - scope_out
+      - state transition
+      - task selection
+      - TaskResult
   docs/specs/start-implement/requirements/REQ-034_start_implement_spec.md:
     title: REQ-034 start-implement Requirements Specification
     purpose: Defines requirements for the start-implement command covering task selection, resumable progress state, failure and retry handling, final completion checks, task groups, review handling, and plan updates

@@ -30,7 +30,7 @@ keywords:
   - semantic choice boundary
   - dependency direction
   - wrapper
-body_hash: sha256:9eff67b2fb075a36ac852b381fd33f2f85b4f7ee53f06744303bc159584dde07
+body_hash: sha256:347ce9bb1a5aac9e61d163e595e44a5efe045de21069a23219b40f4b45c61505
 ---
 
 # DES-024 SKILL.md と script の配置・契約設計
@@ -329,7 +329,7 @@ stderr 契約 (失敗時のみ stderr 先頭行に付与):
 
 ## 8. テスト原則
 
-CLAUDE.md の `plugins/forge/skills/*/scripts/` テスト必須要件に従う。
+`plugins/` 配下の Python にはテストが必須。テストの置き場はスキル名と一致させる。
 
 - SKILL 固有値・固定方針が正しく束縛されること
 - 許可された operation と実行時データだけを受理すること
@@ -365,4 +365,4 @@ CLAUDE.md の `plugins/forge/skills/*/scripts/` テスト必須要件に従う�
 | 単一 wrapper に判断を伴う複合操作を畳み込む                       | §2.4 の決定論的連鎖という制約を侵す                                                   |
 
 [req-003]: ../requirements/REQ-003_skill_script_separation.md
-[script-error-output]: ../../../rules/script_error_output_rules.md
+[script-error-output]: ../../../rules/plugin_script_error_output_rules.md

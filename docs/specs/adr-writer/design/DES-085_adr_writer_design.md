@@ -354,5 +354,5 @@ sequenceDiagram
 
 該当なし。
 
-[reference]: ../../../rules/claude_code_reference.md
-[authoring-guide]: ../../../rules/claude_code_authoring_guide.md
+[reference]: ../../../rules/plugin_claude_code_reference.md
+[authoring-guide]: ../../../rules/plugin_claude_code_authoring_guide.md

@@ -26,6 +26,25 @@ claude --plugin-dir ./plugins/forge
 
 > ローカル変更を反映するには `--plugin-dir` を使う。マーケットプレイス経由はリモートの公開版を取得する。
 
+### 1.3 manifest と配布経路の検証
+
+`marketplace.json` と `plugin.json` を変えたときは、次を実行し、どちらも `Validation passed` になることを確かめる。
+
+```bash
+claude plugin validate . --strict                  # marketplace.json
+claude plugin validate ./plugins/forge --strict    # plugin.json
+```
+
+`--plugin-dir` は `marketplace.json` を読まない。カタログ自体（`source` のパスなど）の確認は、ローカルのリポジトリを marketplace として登録して行う。
+
+```
+/plugin marketplace add ./
+/plugin install forge@sdd-forge
+/reload-plugins
+```
+
+> `.DS_Store` と、アイコンが無いことの警告は、無視してよい。前者はコミットされておらず、後者は公式ディレクトリへ申請するときの項目である。
+
 ---
 
 ## 2. スキル動作の確認手順
@@ -63,7 +82,16 @@ python3 plugins/forge/scripts/doc_structure/classify_dirs.py [プロジェクト
 
 ---
 
-## 4. テスト実行
+## 4. テスト
+
+テストは 2 種類ある。テストの実行・追加・配置の判断では、本節を読む。
+
+| 種類                  | 置き場      | 対象                                | 実行                                |
+| --------------------- | ----------- | ----------------------------------- | ----------------------------------- |
+| 単体テスト            | `tests/`    | `plugins/` 配下の Python スクリプト | 下記コマンド。CI のゲートに含まれる |
+| AI の判断を試すテスト | `ai_tests/` | Agent・SKILL の判断（AI の出力）    | 手動。CI のゲートに含めない         |
+
+### 4.1 単体テスト
 
 ```bash
 # 全テスト一括実行
@@ -73,7 +101,19 @@ python3 -m unittest discover -s tests -p 'test_*.py' -v
 python3 -m unittest tests.forge.review.test_xxx -v
 ```
 
-テストの配置ルールは `CLAUDE.md` の「Testing」セクションを参照。
+- `plugins/` 配下の Python スクリプトにはテストが必須。SKILL.md は自動テストが難しいため例外
+- `.claude/` 配下のローカルスキル・スクリプトはテスト対象外
+- `tests/` にプラグイン名・スキル名で分類して置く（例: `tests/forge/review/`、プラグイン横断は `tests/common/`）
+- ファイル名は `test_{module}.py`
+- テストのディレクトリ名は、対象のスキル名と一致させる。スキルを改名したら、テストのディレクトリも同じ変更で改名する
+
+### 4.2 AI の判断を試すテスト
+
+判定が揺れ、実行に費用がかかるため、CI のゲートに含めず、手動で実行する。
+
+- Markdown だけで書く。置き場は `ai_tests/<プラグイン名>/<対象名>/`（例: `ai_tests/forge/adr-writer/`）
+- 各ディレクトリの `README.md` に、目的・手順・結果の読み方を書く。実行はその手順に従う
+- 実行を補助するスクリプトは置かない（道具がテストの対象になるため）
 
 ---
 
@@ -109,6 +149,7 @@ dprint check    # 差分チェックのみ（CI 向け）
 ## 7. 参考
 
 - `CLAUDE.md` — リポジトリ全体の規約・構成説明
-- [docs/rules/claude_code_authoring_guide.md](docs/rules/claude_code_authoring_guide.md) — SKILL.md / カスタム Agent の書き方の規約
-- [docs/rules/claude_code_reference.md](docs/rules/claude_code_reference.md) — Claude Code の SKILL・プラグイン・Agent の仕組みの事実
-- `docs/rules/implementation_guidelines.md` — 実装ガイドライン
+- [docs/rules/plugin_claude_code_authoring_guide.md](docs/rules/plugin_claude_code_authoring_guide.md) — SKILL.md / カスタム Agent の書き方の規約（汎用）
+- [docs/rules/plugin_claude_code_reference.md](docs/rules/plugin_claude_code_reference.md) — Claude Code の SKILL・プラグイン・Agent の仕組みの事実（汎用）
+- [docs/rules/forge_claude_code_authoring_policy.md](docs/rules/forge_claude_code_authoring_policy.md) — forge が決めた作成方針
+- [docs/rules/plugin_implementation_guidelines.md](docs/rules/plugin_implementation_guidelines.md) — 実装ガイドライン（汎用）

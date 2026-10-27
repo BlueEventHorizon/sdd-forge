@@ -954,4 +954,4 @@ forge のテストは doc-advisor の内部判断に依存させない。**索�
 - 外部依存: doc-db の参考実装 SKILL は検索の既定を series 指定とする（0.3.2 以降）。切り離された削除済み文書の混入という理由を §4.1 に、series 未登録検証と `sync-start` / `sync-status` の対応を §4.5 に反映した。
 - REQ-014 BL-004 / BL-005: 未整備（承認を得て整備し継続）と障害（切り替えず失敗）の区別、および検索結果のパス実在確認を §2.1・§4.1・§4.2・§6.2・§7・§9 に反映した。
 
-[authoring-guide]: ../../../rules/claude_code_authoring_guide.md
+[authoring-guide]: ../../../rules/plugin_claude_code_authoring_guide.md

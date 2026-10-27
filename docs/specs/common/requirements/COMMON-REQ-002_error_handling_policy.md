@@ -139,4 +139,4 @@ def apply_migrations(content, detected_version):
 | v0.0.26    | toc_utils.py              | `except Exception` → `except (IOError, OSError)` に限定         |
 | v0.0.26    | resolve_doc_references.py | `except Exception` → 具体的な例外型に限定                       |
 
-[script-error-output]: ../../../rules/script_error_output_rules.md
+[script-error-output]: ../../../rules/plugin_script_error_output_rules.md

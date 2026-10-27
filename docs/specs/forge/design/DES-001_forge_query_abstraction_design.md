@@ -63,7 +63,7 @@ wrapper は category を固定し、当該 SKILL が必要とする操作だけ�
 ### SKILL 契約 [MANDATORY]
 
 `/forge:query-db-rules` / `/forge:query-db-specs` は **継承型検索 SKILL**
-（[Claude Code 作成ガイド][authoring-guide]「SKILL 実行モデル」に従い、`context: fork` を指定しない）。
+（[Claude Code 作成方針][authoring-policy]「SKILL 実行モデル」に従い、`context: fork` を指定しない）。
 doc-advisor 経路の転送先 `doc-advisor:query-docs` も継承型 dispatcher であり、実検索は read-only なカスタム Agent（`doc-advisor:query-worker`）へ隔離される。隔離境界は Agent ツール起動が担うため、forge 側・doc-advisor 側のいずれも `context: fork` を使わない。
 `allowed-tools: Skill, Read, Bash, AskUserQuestion`（Bash は wrapper / 順序リスト解決 CLI の実行に使い、
 `AskUserQuestion` はセッション内変更の確認と索引整備の承認に使う。`Grep` は許可しない —
@@ -122,4 +122,5 @@ grep による代替検索は行わない）。書き込み・コミット・自
   doc-advisor 契約（`test_advisor_contract.py`）を検証する。
 - `tests/forge/{query,update}-db-{rules,specs}/` — SKILL 固有 wrapper の透過性を検証する。
 
-[authoring-guide]: ../../../rules/claude_code_authoring_guide.md
+[authoring-guide]: ../../../rules/plugin_claude_code_authoring_guide.md
+[authoring-policy]: ../../../rules/forge_claude_code_authoring_policy.md

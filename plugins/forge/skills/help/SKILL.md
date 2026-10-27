@@ -5,7 +5,7 @@ description: |
   トリガー: "forge help", "forge の使い方", "ヘルプ", "どのスキルを使えばいい"
 user-invocable: true
 argument-hint: ""
-allowed-tools: AskUserQuestion
+allowed-tools: AskUserQuestion, Skill
 ---
 
 # /forge:help
@@ -32,7 +32,7 @@ forge スキルの使い方をガイドし、そのまま実行できる。
   start-uxui-design                : デザイントークン・UI 視覚仕様を創造
   create-requirements-from-plan-mode: plan mode の Markdown plan から要件定義書を作成
   merge-specs                      : 2 つの仕様 DIR（基本 / 追加）の齟齬を内容単位で解消
-  onboarding                       : プロジェクトを調査し CLAUDE.md へ規範ブロックを生成
+  onboarding                       : forge の基盤文書を読み、規範ブロックを CLAUDE.md へ転記（承認のうえ）
   query-db-rules                   : プロジェクトのルール文書を検索
   query-db-specs                   : プロジェクトの仕様文書を検索
   update-db-rules                  : ルール文書の索引を更新

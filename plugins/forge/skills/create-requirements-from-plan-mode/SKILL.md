@@ -17,16 +17,16 @@ allowed-tools: Bash, Read, Skill, AskUserQuestion, Glob
 
 Claude Code の plan mode で生成された **Markdown plan** を入口に、要件定義書を作成する薄いオーケストレーション skill。
 
-- 入力: **Markdown plan**（`~/.claude/plans/*.md` 形式を想定。任意のパスも可）
+- 入力: **Markdown plan**（plan mode が保存する `*.md`。置き場は設定 `plansDirectory`、未設定なら `~/.claude/plans/`。任意のパスも可）
 - 出力: 要件定義書（`forge:start-requirements` の出力）。設計書は作らない
 - 対象外: forge の実装計画書 `{feature}_plan.json`（JSON 構造の計画書） — こちらは `/forge:start-plan` が作成・更新する
 
 > ⚠️ **「plan」の語の使い分け** [MANDATORY]
 >
-> | 用語                                       | 形式     | 作成元                                         | 本 skill との関係     |
-> | ------------------------------------------ | -------- | ---------------------------------------------- | --------------------- |
-> | **Markdown plan**                          | Markdown | Claude Code plan mode (`~/.claude/plans/*.md`) | **本 skill の入力**   |
-> | **forge 実装計画書 `{feature}_plan.json`** | JSON     | `/forge:start-plan`                            | **本 skill の対象外** |
+> | 用語                                       | 形式     | 作成元                                        | 本 skill との関係     |
+> | ------------------------------------------ | -------- | --------------------------------------------- | --------------------- |
+> | **Markdown plan**                          | Markdown | Claude Code plan mode (`plansDirectory` 配下) | **本 skill の入力**   |
+> | **forge 実装計画書 `{feature}_plan.json`** | JSON     | `/forge:start-plan`                           | **本 skill の対象外** |
 >
 > 本文書で単に「plan」と呼ぶときは **Markdown plan** を指す。
 > forge 実装計画書のことを指すときは必ず `{feature}_plan.json` と明示する。
@@ -45,9 +45,9 @@ Phase 完了後は立ち止まらず次の Phase に自動で進む。不明点�
 /forge:create-requirements-from-plan-mode [plan-file-path]
 ```
 
-| 引数           | 内容                                                                               |
-| -------------- | ---------------------------------------------------------------------------------- |
-| plan-file-path | **Markdown plan** のパス（省略時は `~/.claude/plans/` から直近を提示して確認する） |
+| 引数           | 内容                                                                         |
+| -------------- | ---------------------------------------------------------------------------- |
+| plan-file-path | **Markdown plan** のパス（省略時は plan の置き場から直近を提示して確認する） |
 
 ---
 
@@ -59,13 +59,15 @@ Phase 完了後は立ち止まらず次の Phase に自動で進む。不明点�
 
 ### 1.2 引数なし → 直近候補の提示
 
-`~/.claude/plans/` から直近の plan を取得する:
+plan の置き場から直近の plan を取得する。置き場は script が、設定 `plansDirectory`（未設定なら `~/.claude/plans/`）から決め、JSON の `plans_dir` に返す:
 
 ```bash
-python3 "${CLAUDE_SKILL_DIR}/scripts/list_recent_plans.py" --limit 8
+python3 "${CLAUDE_SKILL_DIR}/scripts/list_recent_plans.py" --project-root "${CLAUDE_PROJECT_DIR}" --limit 8
 ```
 
-JSON 出力を読み、`status` で分岐:
+終了コードが `1` のときは、標準出力の `errors` の内容をそのまま利用者に伝え、AskUserQuestion で plan ファイルパスの直接入力を求める（置き場を既定へ戻して続けない）。
+
+終了コードが `0` のときは、JSON 出力を読み、`status` で分岐:
 
 | status      | 動作                                                                                                     |
 | ----------- | -------------------------------------------------------------------------------------------------------- |
@@ -79,7 +81,7 @@ JSON 出力を読み、`status` で分岐:
 
 ### 1.4 plan の Read
 
-確定した plan ファイルを Read で全文読み込む。**plan の内容を以降の Phase で参照するため、Read 結果はコンテキストに保持しておく**。`~/.claude/plans/` の plan は通常数十 KB 以内で context window に収まるため、無条件に全文を読む。
+確定した plan ファイルを Read で全文読み込む。**plan の内容を以降の Phase で参照するため、Read 結果はコンテキストに保持しておく**。plan は通常数十 KB 以内で context window に収まるため、無条件に全文を読む。
 
 ---
 

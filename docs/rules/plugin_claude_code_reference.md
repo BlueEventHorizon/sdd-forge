@@ -1,17 +1,17 @@
 # Claude Code リファレンス（SKILL / プラグイン / Agent）
 
-SKILL と Agent を組み合わせて forge とローカル skill を組むときに依拠する、Claude Code の仕組みの事実と本リポジトリの定義を集める。個別の SKILL の作り方（frontmatter・description・引数・ファイル構成・命名）は `meta:skill-creator` に従う。規約は [Claude Code 作成ガイド][authoring-guide] が持つ。
+SKILL と Agent を組み合わせてプラグインを組むときに依拠する、Claude Code の仕組みの事実と、この文書群が定める語彙を集める。特定のプロジェクトに依らない。個別の SKILL の作り方（frontmatter・description・引数・ファイル構成・命名、`allowed-tools` / `disallowed-tools` の効く範囲、Agent の起動方式の判定と完了の待ち方）は、meta プラグインの `author-skill` に従う。規約は [Claude Code 作成ガイド][authoring-guide] が持つ。
 
 ## 出典の記し方
 
-- Claude Code の挙動には `出典:` 行を付ける（調査日 / 版 / 出典）。本リポジトリの定義には付けない
+- Claude Code の挙動には `出典:` 行を付ける（調査日 / 版 / 出典）。この文書群が定める語彙には付けない
 - 出典は「公式」（URL と原文の引用。claude-code-guide Agent の WebFetch 経由で、逐語一致は保証されない）、「観測」、「公式 Issue」のいずれか
 - 記録の無い調査日は「不明（初出 commit の日付）」、確かめられない事項は「確認できず」と書く
 - 事実が変わったら書き換え、旧い記述を残さない
 
 ## 1. 起動経路 5 種と短縮名称
 
-分類と短縮名称は本リポジトリの定義。各経路の挙動は Claude Code の挙動。
+分類と短縮名称は、この文書群が定める語彙。各経路の挙動は Claude Code の挙動。
 
 | 短縮名称            | 起動                                                                      | 手順書                              | 親 context | 出力               |
 | ------------------- | ------------------------------------------------------------------------- | ----------------------------------- | ---------- | ------------------ |
@@ -26,7 +26,7 @@ SKILL と Agent を組み合わせて forge とローカル skill を組むと�
 
 ### `context: fork` の不具合
 
-fork 型 SKILL を採用しない根拠。Anthropic の対応は issue の扱い（修正済み / 直さない / 未対応）。
+fork 型 SKILL を採用しない（または避ける）根拠。Anthropic の対応は issue の扱い（修正済み / 直さない / 未対応）。
 
 | 公式 Issue | 内容                                                                               | Anthropic の対応                                           |
 | ---------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------- |
@@ -40,7 +40,7 @@ fork 型 SKILL を採用しない根拠。Anthropic の対応は issue の扱い
 | #17351     | 入れ子の SKILL が、呼び出し元ではなく main context に戻る                          | 未対応（OPEN）                                             |
 | #68233     | 再帰ガードが誤爆し、正当な fork の起動を止める（Agent ツールの `fork` 種別も対象） | 直さない（not planned）                                    |
 
-- 出典: 2026-09-28 / 不明 / 公式 Issue anthropics/claude-code（`gh issue view` で状態を取得）。修正された版は `meta:skill-creator` の記録（検証日 2026-07-17）による
+- 出典: 2026-10-25 / 不明 / 公式 Issue anthropics/claude-code（`gh issue view` で状態を取得）。修正された版は meta の `author-skill` の記録（検証日 2026-09-28）による
 
 ## 2. `subagent_type` の値域
 
@@ -50,27 +50,12 @@ fork 型 SKILL を採用しない根拠。Anthropic の対応は issue の扱い
 
 - 出典: 2026-09-26 / 2.1.283 / 公式 [Subagents](https://code.claude.com/docs/en/sub-agents)「four built-in subagents … Other Helper Agents: `claude`, `statusline-setup`, `claude-code-guide`」、[Plugins reference](https://code.claude.com/docs/en/plugins-reference)「an agent `reviewer` in plugin `deploy-tools` appears as `deploy-tools:reviewer`」
 
-## 3. ツール制限の効く範囲
+## 3. Agent の起動に関する観測
 
-- `allowed-tools` は呼び出したターンだけツールを事前承認する。他のツールの呼び出しは制限しない
-- `disallowed-tools` で外したツールは、利用者が次のメッセージを送ると再び使える。多ターンの対話では 2 通目以降に効かない
+起動方式（foreground / background）の判定は、meta の `author-skill`（`frontmatter_spec.md`）が持つ。ここには、そこに無い観測だけを置く。
 
-- 出典: 2026-09-26 / 2.1.283 / 公式 [Skills](https://code.claude.com/docs/en/skills)（`allowed-tools`「Grant clears when user sends next message」、`disallowed-tools`「Restriction clears when user sends next message」）
-- 出典（`disallowed-tools` の解除）: 不明（初出 commit の日付: 2026-08-11） / 2.1.227 / 観測（frontmatter スキーマの実測）
-
-## 4. Agent の起動方式
-
-foreground / background は次の最初に当てはまるもので決まる。
-
-1. in-process の agent team の teammate が起動 → foreground
-2. `CLAUDE_CODE_DISABLE_BACKGROUND_TASKS=1` → foreground
-3. fork mode ON（対話セッションの既定） → background
-4. fork mode OFF（`-p` / Agent SDK の既定） → 既定 background、結果が要るとき foreground
-
-- 出典: 2026-09-26 / 2.1.283 / 公式 [Subagents](https://code.claude.com/docs/en/sub-agents)「Claude Code picks foreground or background from the first of these cases that applies」「Where fork mode is on, as it is by default in an interactive session, Claude Code runs the subagent in the background」
 - 対話セッションの Agent ツールには `run_in_background` 引数が無く、常に background で動き、結果は後のターンに完了通知で届いた。出典: 2026-09-26 / 2.1.283 / 観測
 - background で動いた subagent には AskUserQuestion が無かった。`tools:` に AskUserQuestion を列挙したカスタム Agent でも、`tools:` を省いた `general-purpose` でも同じだった。原因は確認できず。出典: 2026-09-28 / 2.1.283 / 観測
-- SKILL の frontmatter から起動方式を指定する手段は確認できず。Agent 定義の `background: true` は fork mode OFF のときだけ効く。出典: 2026-09-26 / 2.1.283 / 公式 [Subagents](https://code.claude.com/docs/en/sub-agents)
 - `ScheduleWakeup` は `/loop` 動的モードの起動予約ツールであり、background 作業の完了はハーネスが通知する。出典: 2026-09-26 / 2.1.283 / 観測（ツール説明「Schedule when to resume work in /loop dynamic mode」）
 
-[authoring-guide]: claude_code_authoring_guide.md
+[authoring-guide]: plugin_claude_code_authoring_guide.md

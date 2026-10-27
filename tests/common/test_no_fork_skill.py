@@ -2,7 +2,7 @@
 """
 fork 型 SKILL 不採用の継続的検証テスト
 
-「fork 型 SKILL 不採用 + カスタム Agent 起動」方針（docs/rules/claude_code_authoring_guide.md
+「fork 型 SKILL 不採用 + カスタム Agent 起動」方針（docs/rules/forge_claude_code_authoring_policy.md
 「SKILL 実行モデル」）の継続的な再発防止用静的検証。
 フィーチャー完了後は ALL_SKILLS_FORK_FREE=True で全 SKILL.md を対象に検査する。
 
@@ -31,7 +31,7 @@ WORKING_SKILLS: list[Path] = []
 
 # ALL_SKILLS_FORK_FREE: True のとき plugins/*/skills/*/SKILL.md を全件対象に検査する。
 # True のとき、新規に context: fork を持つ SKILL.md を追加すると本テストが fail する
-# (docs/rules/claude_code_authoring_guide.md の fork 不採用方針の継続的な再発防止)。
+# (docs/rules/forge_claude_code_authoring_policy.md の fork 不採用方針の継続的な再発防止)。
 ALL_SKILLS_FORK_FREE: bool = True
 
 # frontmatter 内の `context: fork` を検出する正規表現。
@@ -80,7 +80,7 @@ class TestWorkingSkillsForkFree(unittest.TestCase):
                 self.assertFalse(
                     _has_context_fork(skill_path),
                     f"{skill_path.relative_to(REPO_ROOT)} の frontmatter に "
-                    f"`context: fork` が残っている。docs/rules/claude_code_authoring_guide.md "
+                    f"`context: fork` が残っている。docs/rules/forge_claude_code_authoring_policy.md "
                     f"「SKILL 実行モデル」に従い、"
                     f"対応する Agent (plugins/forge/agents/<name>.md) へ移行し "
                     f"`context: fork` を削除すること",
@@ -106,7 +106,7 @@ class TestAllSkillsForkFree(unittest.TestCase):
                 self.assertFalse(
                     _has_context_fork(skill_path),
                     f"{skill_path.relative_to(REPO_ROOT)} の frontmatter に "
-                    f"`context: fork` が残っている。docs/rules/claude_code_authoring_guide.md "
+                    f"`context: fork` が残っている。docs/rules/forge_claude_code_authoring_policy.md "
                     f"「SKILL 実行モデル」の "
                     f"fork 不採用方針に違反するため、カスタム Agent (plugins/forge/agents/<name>.md) "
                     f"に置き換えるか、継承型 SKILL に戻すこと",

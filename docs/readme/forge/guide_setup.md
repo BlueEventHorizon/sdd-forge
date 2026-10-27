@@ -2,20 +2,6 @@
 
 Project setup, version management, rule cleanup, and other operational skills.
 
-## setup-doc-structure
-
-Generate `.doc_structure.yaml`, which declares where documents live and what types they are. The foundation forge uses to resolve document paths.
-
-> For details, see the [Document Structure Guide](../guide_doc_structure.md).
-
-```
-/forge:setup-doc-structure
-```
-
-No arguments. Interactively scans the project and proposes a recommended structure.
-
----
-
 ## setup-version-config
 
 Scan the project to detect version targets and generate `.version-config.yaml`. Prerequisite for `update-version`.

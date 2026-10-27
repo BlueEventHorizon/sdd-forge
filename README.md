@@ -4,7 +4,7 @@
 
 **仕様駆動開発（Spec-Driven Development）** のための Claude Code プラグイン — 仕様を先に書き、AI がフルコンテキストで実装・レビューする。
 
-**マーケットプレイスバージョン: 0.1.0**
+**マーケットプレイスバージョン: 0.1.1**
 
 マーケットプレイスは **forge** プラグインを配布する。forge の検索系スキルは、順序リストに基づいて文書検索 backend（**doc-advisor** / **doc-db**）を選択する。既定は doc-advisor 先位で、`.claude/.forge.yaml` の `doc_backend.prefer` で変更できる。doc-advisor は別リポジトリ [BlueEventHorizon/DocAdvisor](https://github.com/BlueEventHorizon/DocAdvisor) が提供する（`index-docs` / `query-docs`）。
 
@@ -47,7 +47,7 @@ flowchart LR
 
 | プラグイン | バージョン | 説明                                                                                                                    |
 | ---------- | ---------- | ----------------------------------------------------------------------------------------------------------------------- |
-| **forge**  | 0.6.1      | AI によるドキュメントライフサイクルツール。要件定義・設計・計画書の作成、コード・文書レビュー、自動修正、品質確定に対応 |
+| **forge**  | 0.1.1      | AI によるドキュメントライフサイクルツール。要件定義・設計・計画書の作成、コード・文書レビュー、自動修正、品質確定に対応 |
 
 > **文書検索 backend（doc-advisor / doc-db）は外部依存**: doc-advisor は別リポジトリ [BlueEventHorizon/DocAdvisor](https://github.com/BlueEventHorizon/DocAdvisor) として配布される。インストールは `/plugin marketplace add BlueEventHorizon/DocAdvisor` → `/plugin install doc-advisor@DocAdvisor`。doc-db はローカルで稼働する文書検索サーバで、`doc-db` コマンドとして導入されていれば利用可能な候補として扱われ、順序リストに従って選択されたときに forge が自動的に起動・利用する。いずれの backend もバージョンを条件にせず、必要な機能が利用できるかで判定する。
 

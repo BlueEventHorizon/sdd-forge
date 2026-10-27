@@ -104,7 +104,7 @@
 レビュアへ渡すルール文書・仕様書を明示指定する。指定した軸については、スキルが自前で `/forge:query-db-rules` / `/forge:query-db-specs` を実行しない:
 
 ```bash
-/forge:review --files src/foo.py --project-rules docs/rules/implementation_guidelines.md
+/forge:review --files src/foo.py --project-rules docs/rules/plugin_implementation_guidelines.md
 ```
 
 主な用途は、上流のスキル（`/forge:start-implement` 等）が既に同じ検索を済ませている場合に、**同一タスクに対して同じ検索が 2 回走るのを避ける**ことである。片方だけ渡した場合、渡さなかった軸だけがクエリされる。

@@ -3,7 +3,7 @@
 検索系 SKILL の subagent 隔離 / read-only 制約テスト
 
 対象 SKILL.md / Agent 定義について、本テストは次の項目を検証する
-（B 層の Role 制約は docs/rules/claude_code_authoring_guide.md「多重防御」に基づく。
+（B 層の Role 制約は docs/rules/plugin_claude_code_authoring_guide.md「多重防御」に基づく。
 git 管理ファイル書き換え禁止と引数解釈ガードは、本テストが独自に課す項目）:
 
 - fork 型 SKILL の frontmatter に `context: fork` が含まれている

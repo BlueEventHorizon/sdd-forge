@@ -1,14 +1,14 @@
 # ToC checksums for key: rules
 # Auto-generated - do not edit
-generated_at: 2026-10-26T15:07:00Z
+generated_at: 2026-10-27T08:06:26Z
 file_count: 9
 checksums:
   docs/rules/forge_agent_data_exchange_rules.md: eccb938b1f931b73149070712cee213f7263f2d7435afb65124018e600dae2cb
-  docs/rules/forge_claude_code_authoring_policy.md: 0b3c21a23fe82bd4285e0a6815c90ad64e227e6f62f06bb19b3fb60f6cbaca0c
+  docs/rules/forge_claude_code_authoring_policy.md: dee3a8b50e8271bd55573fea43d231694c1fccc37b8c14bbf208a55f84505a76
   docs/rules/forge_doc_access_principle.md: aa56e11832640980c85f60e0ce63baa6b4329d56ee558dee55d261b5d5360423
   docs/rules/forge_document_type_roles.md: c18e0f1699e15dfec756cb86498990d57856dee5dbf5a5b518adcac3f9ec9cba
   docs/rules/plugin_claude_code_authoring_guide.md: 3f333153214e01da0ef6d7abbc5a17fbd622231644c1eefb77614fe4d1e6baa5
   docs/rules/plugin_claude_code_reference.md: 002db132450de15a6951e84ad9f5a57cac6d4f40320678b7d3bb5f128fcec781
-  docs/rules/plugin_implementation_guidelines.md: 717d857bab0ce6cb9734003afe7b463116dc71b0da0b4ed0fabb3db98f6119a2
+  docs/rules/plugin_implementation_guidelines.md: 6479c6e115ed4e4bd79f7ac3a5cf0b15bd1620ab96d7301a10c4f0f873a1e529
   docs/rules/plugin_script_error_output_rules.md: 562e43b085a5bb9c9107d441db98133145c642d018df605596b5648da07208a5
   docs/rules/plugin_uv_usage_rules.md: 5c5ae4d681d8c1bc14aa9ed278d3ce90260233b3501f856a6e320dd90c72766f

@@ -5,7 +5,7 @@
 metadata:
   name: Document Search Index (specs)
   key: specs
-  generated_at: 2026-10-26T12:47:17Z
+  generated_at: 2026-10-27T02:59:20Z
   file_count: 43
 
 docs:
@@ -1223,36 +1223,36 @@ docs:
       - exit value
       - FNC-318
   docs/specs/start-implement/design/DES-088_start_implement_design.md:
-    title: DES-088 start-implement Design Specification
-    purpose: Defines the design of start-implement, which selects plan tasks, runs one executor agent per task unit, checks results, verifies and reviews changes, and manages plan state transitions to satisfy REQ-034
+    title: DES-088 start-implement Design
+    purpose: "Defines design for start-implement: task selection, plan state transitions, executor agent handoff, review and final checks, and error recovery under REQ-034"
     content_details:
-      - SC-01 to SC-27 scenario table mapped to REQ-034 FNC-001 to FNC-013 and NFR-001
-      - "Responsibility classes: orchestrator, startup check, task selection, state transition, plan validation, required reading collection, scope derivation, task context creation, executor agent, result check, review request, parallel document judgment"
-      - Plan state transitions pending, in_progress, implemented, completed, failed and the rule that failing a task reverts dependent implemented tasks to pending (ST-04)
-      - "Task selection algorithm: executable tasks ordered by priority, group member expansion, done_task_ids for implemented group members"
-      - Task context file tasks/{context_id}.json with context_id format {task_id}-{8 hex digits} and spec_authority from classify_feature_marker
-      - Review invocation as /forge:review with --diff --auto, --scope, --project-rules and --project-specs, excluding strategy documents and required_reading
-      - Final check O-06 with ok or gap per checked item, evidence-based, not relying on orchestrator instructions
-      - Result check RS-01 converting contract violations into FAILURE results and verification consistency rules
-      - Plan written only by the state transition script via temporary file and rename, with no lock and status changes serialized by the orchestrator
+      - Scenario table SC-01 to SC-27 mapping requirements FNC-001 to FNC-013 and NFR-001
+      - "Task execution unit: one ungrouped task or one task group, with parallel execution only across units"
+      - State transitions among pending, in_progress, implemented, completed, failed, with failure cascading to revert dependent implemented tasks to pending
+      - "Task selection algorithm: priority ordering, task_id tie-break, group member expansion into task_ids and done_task_ids"
+      - Result inspection RS-01 turning contract violations into FAILURE results
+      - Review invocation via /forge:review with --diff, --scope, --project-rules and --project-specs including concurrent-state documents
+      - "Group completion: scope derivation over all members, one review, final check, then completing all members together"
+      - Task context file tasks/{context_id}.json beside the plan, with context_id format {task_id}-{8 hex}
+      - Startup state no_plan, leftover, clear, and uncommitted-change confirmation (SC-27)
+      - Plan JSON written only by state transition script via temp file and rename, with no locking
     applicable_tasks:
-      - Implementation of the start-implement skill and its scripts
-      - Modification of task selection or state transition logic for start-implement
-      - Review of start-implement design against REQ-034 requirements
-      - Implementation of task context creation and executor agent result checking
-      - Creation of tests for start-implement scripts under tests/forge
-      - Implementation of the executor agent definition used by start-implement
+      - Implementation of start-implement orchestration skill and its scripts
+      - Modification of task selection, state transition, or startup check logic
+      - Review of start-implement design consistency with REQ-034
+      - Creation or modification of executor agent and task context handling
+      - Test design for plan state transitions, task selection, and result inspection
     keywords:
       - start-implement
       - DES-088
-      - REQ-034
       - executor agent
       - task execution unit
-      - state transition
       - context_id
-      - spec_authority
-      - SelectionResult
       - done_task_ids
+      - scope_out
+      - state transition
+      - task selection
+      - TaskResult
   docs/specs/start-implement/requirements/REQ-034_start_implement_spec.md:
     title: REQ-034 start-implement Requirements Specification
     purpose: Defines requirements for the start-implement command covering task selection, resumable progress state, failure and retry handling, final completion checks, task groups, review handling, and plan updates

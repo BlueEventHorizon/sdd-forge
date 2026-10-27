@@ -27,7 +27,7 @@ forge の文書検索は doc-advisor / doc-db の 2 backend 構成で、**どち
 - Plugin marketplaces: `https://code.claude.com/docs/en/plugin-marketplaces`
 - Skills: `https://code.claude.com/docs/en/skills`
 
-**要約ツール越しに読んだものを一次情報と呼ばない。** WebFetch が返すのは取得したページではなく、それを別モデルに要約させた出力である。要約は元の文面を保証しないため、根拠に用いて断定できない。とくに「ドキュメントに記載が無い」という否定の主張は、要約側の見落としと区別がつかない。原文を確かめるときは、各ページの Markdown 版（`https://code.claude.com/docs/en/<page>.md`）を `curl` で `.temp/` に取得し、Read / grep で読んで引用する。
+公式仕様の根拠は、公式ページの本文と照合した meta の写し、写しに無いときは claude-code-guide Agent の返答とする。確かめ方の全文は [forge_claude_code_authoring_policy.md](docs/rules/forge_claude_code_authoring_policy.md)「公式仕様の確かめ方」を参照。
 
 公式ドキュメントで確かめきれない挙動は推測で補わず、確認できない事項として明示する。
 

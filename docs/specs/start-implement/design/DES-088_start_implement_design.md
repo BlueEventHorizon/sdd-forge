@@ -500,7 +500,7 @@ sequenceDiagram
 
 ### 6.1 手段と配置
 
-配置は DES-024 に従い、`SKILL.md → SKILL ローカル実体 → 共有低レベル script` の一方向とする。スクリプトは標準ライブラリだけで書く（外部依存の禁止。PyYAML も要らない）。
+配置は DES-024 に従い、`SKILL.md → SKILL ローカル実体 → 共有低レベル script` の一方向とする。スクリプトは標準ライブラリだけで書く（外部依存は原則持たない。PyYAML も要らない）。
 
 | 責務             | 手段                                                                                            | 配置                                      | 既存の使用                                                                           |
 | ---------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------- | ------------------------------------------------------------------------------------ |
@@ -740,7 +740,7 @@ stateDiagram-v2
 
 ### 6.6 利用ライブラリ
 
-Python の標準ライブラリだけを使う（`json`・`argparse`・`pathlib`・`subprocess`・`os`・`re`）。外部依存を持ち込まない（[plugin_implementation_guidelines.md](../../../rules/plugin_implementation_guidelines.md)）。YAML も、frontmatter の解析（`feature_marker.py` の正規表現）と `.doc_structure.yaml` の解決（`resolve_doc_structure.py`）が、既に担っている。
+Python の標準ライブラリだけを使う（`json`・`argparse`・`pathlib`・`subprocess`・`os`・`re`）。外部依存は原則持ち込まない（[plugin_implementation_guidelines.md](../../../rules/plugin_implementation_guidelines.md)）。YAML も、frontmatter の解析（`feature_marker.py` の正規表現）と `.doc_structure.yaml` の解決（`resolve_doc_structure.py`）が、既に担っている。
 
 ### 6.7 executor agent の編集範囲
 

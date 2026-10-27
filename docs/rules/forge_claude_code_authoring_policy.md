@@ -4,7 +4,7 @@ forge とローカル skill で、汎用の [Claude Code 作成ガイド][guide]
 
 ## 公式仕様の確かめ方
 
-- 公式仕様は claude-code-guide Agent で確かめてから書く。その引用は要約であり、原文ではない（原文の取り方は `CLAUDE.md`「Claude Code プラグインとは何か」）
+- 公式仕様は、meta の参照（`meta:author-skill` / `meta:author-plugin` が持つ、公式ページの本文と照合した写し）→ 必要なら claude-code-guide Agent の順で確かめてから書く。出典の記し方は [plugin_claude_code_reference.md](plugin_claude_code_reference.md) に従う
 
 ## SKILL 実行モデル [MANDATORY]
 

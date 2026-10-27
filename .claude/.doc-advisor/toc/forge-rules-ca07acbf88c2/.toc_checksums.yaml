@@ -1,6 +1,6 @@
 # ToC checksums for key: forge-rules
 # Auto-generated - do not edit
-generated_at: 2026-10-26T01:48:51Z
+generated_at: 2026-10-27T02:03:43Z
 file_count: 42
 checksums:
   plugins/forge/docs/additive_development_spec.md: 028c93350676db14d7366b226122eb54799384e4ac93469199e6334c614675db
@@ -25,8 +25,8 @@ checksums:
   plugins/forge/docs/plan_principles_spec.md: 76d33ed27d1b41c993d205d71a7cf03e72350bf56a4f997ee289e201bdd47b0a
   plugins/forge/docs/requirement_format.md: f22da6f458f5c0f53bde48398463c2b9fa0f2bc5bd8c57f514b0844820e5cbec
   plugins/forge/docs/requirement_principles_spec.md: 14d884d3b6e72545a321449611b486f3009bfd8bf9515c07599cb302ca98a35b
-  plugins/forge/docs/review_priorities_spec.md: 2e5c0229fe1b7255c0dde9b42c7310a9b097809bde474487e54a5cc388d985d4
-  plugins/forge/docs/scope_proportionality_spec.md: 9bfe8f9adfe02fea4c68eba7eca645f63bde73dc6fad57595976b7a67b6aa637
+  plugins/forge/docs/review_priorities_spec.md: 4c249cc75dba8cca9e508536c780663fdc1b92a72620deeadf33726735ce8f25
+  plugins/forge/docs/scope_proportionality_spec.md: bdb7b1de2d423ec2063fde36d2601bec997b406d56bc45573971f8bb06b47897
   plugins/forge/docs/spec_design_boundary_spec.md: b1caeffd124924e4bc3c2c2e16f0ed277778d8eabee38ca6d38067318faeaedb
   plugins/forge/docs/spec_priorities_spec.md: 544b5ceb86914d6239b1c3a3ad4e7d14c0e8b93218c8d400ff122ae6357bd81c
   plugins/forge/docs/strategy_principles_spec.md: 28a4e51a89b5e837631db832f8419f64b1bd0153fe268bebc4e424f0109352e6

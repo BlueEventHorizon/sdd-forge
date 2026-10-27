@@ -5,7 +5,7 @@
 metadata:
   name: Document Search Index (forge-rules)
   key: forge-rules
-  generated_at: 2026-10-26T01:48:51Z
+  generated_at: 2026-10-27T02:03:43Z
   file_count: 42
 
 docs:
@@ -654,58 +654,61 @@ docs:
       - implementation method
   plugins/forge/docs/review_priorities_spec.md:
     title: Review Priorities Specification
-    purpose: Defines review priorities P1 to P3, the independence of priority and severity, criteria exclusions, the three conditions for the create_issue recommendation, and the fixed three-section structure of review criteria files.
+    purpose: Defines review priorities P1 to P3, independent priority and severity axes, the document-reference severity catalog, exclusion rules, create_issue conditions, and fixed review criteria structure.
     content_details:
-      - Definitions of P1 rule conformance, P2 contradiction and inconsistency, and P3 unnecessary complexity
-      - Priority as finding origin and severity as fix urgency are independent axes
-      - Severity single source of truth is the severity catalog of the delegated principles documents
-      - "Exclusions: missing coverage is not P2, subjective simplicity is not P3, and no fixed perspectives such as logic or resilience"
-      - Fix proportionality check limited to three categories of scope proportionality spec
-      - Document-reference severity catalog items 3 to 8, where an unreachable reference path is critical
-      - "Three conditions for create_issue: no applicable rule, recurrence or objectivity, and codifiable granularity"
-      - "Fixed three sections of review criteria files: SSOT reference, check order, and judgment rules"
-      - Dropping a finding based on an ADR requires confirming the rejection premise still holds and recording the ADR number
+      - P1 rule conformance checks against project rules, built-in forge principles, and related specs
+      - P2 contradiction detection between descriptions within a document, within code, or between document and code
+      - P3 Yes/No judgment of unnecessary complexity when an alternative with fewer elements exists without rationale
+      - priority (finding origin P1/P2/P3) and severity (critical/major/minor) as independent axes
+      - Severity single source of truth delegated to the referenced principles severity catalog; criteria declare no severity
+      - "Document-reference severity catalog: SKILL/agents/commands referencing docs/ by relative path is critical; path-only mentions and CLAUDE_PLUGIN_ROOT in docs/ are major; unnecessary related-documents section is minor"
+      - "Exclusions: missing-item detection is outside P2; subjective simplicity or readability is outside P3"
+      - Ban on unique perspectives such as logic, resilience, maintainability, architecture in criteria files
+      - Proportionality check for fix judgment limited to three speculative-defense categories, referencing scope_proportionality_spec section 4
+      - Three create_issue conditions (no applicable rule, recurrence or objectivity, codifiable granularity); findings dropped by expired ADR rationale must record the ADR number
     applicable_tasks:
-      - Classifying review findings by priority and severity
-      - Creating or revising a review criteria file with the fixed three-section structure
-      - Deciding between create_issue and skip for a finding
-      - Applying severity from the principles catalog to a finding
-      - Judging whether a fix finding requires the proportionality check
-      - Dropping a finding based on an ADR rejection rationale
+      - Creation or full rewrite of review criteria files
+      - Priority and severity classification of review findings
+      - Judgment between create_issue, skip, fix, and needs_review recommendations
+      - Applying exclusion rules when filtering review findings
+      - Writing review criteria with the required three-section structure
     keywords:
-      - review priority
-      - P1 P2 P3
-      - severity catalog
+      - P1 rule conformance
+      - P2 contradiction
+      - P3 unnecessary complexity
       - create_issue
+      - severity catalog
       - review_criteria
-      - rule conformance
-      - contradiction
-      - unnecessary complexity
-      - review_priorities_spec
+      - SSOT reference
+      - priority and severity
   plugins/forge/docs/scope_proportionality_spec.md:
-    title: Scope Proportionality Specification
-    purpose: Defines the principle and decision gate for evaluating whether to adopt countermeasures (fixes, features, defensive implementations) for catastrophic failures or theoretical risks, preventing system bloat while maintaining practical safety
+    title: Scope Proportionality Principle
+    purpose: Defines the proportionality principle against over-design, limiting the three-point check to three speculative-defense categories and excluding catastrophic external failures from scope.
     content_details:
-      - "Purpose: Prevents unlimited accumulation of countermeasures for theoretically possible failure scenarios"
-      - "Three applicable types for proportionality check: catastrophic external factors, speculative defensive implementation, unsupported quality improvement"
-      - "Types NOT subject to check: explicit requirement/design/rule violations, specific runtime risks, data loss/security/destructive operations"
-      - "Catastrophic external factors scope: OS-level failures, filesystem corruption, disk exhaustion (outside normal operations)"
-      - "Three-point check: trigger doesn't break other prerequisites, existing safety net prevents harm, cost-benefit balance is justified"
+      - "Three applicable categories: catastrophic external defense, speculative defense with no concrete path or very rare cases, and unfounded immediate quality improvement fixes"
+      - "Findings exempt from the three-point check: explicit requirement or rule violations, reproducible runtime bugs, data loss, security, destructive operations, and mandatory test violations"
+      - A finding being discovered in review is not a reason to skip it
+      - "Catastrophic external failures out of scope: OS-level kill, power loss, filesystem corruption, disk exhaustion, hardware failure"
+      - Normal operation bugs such as logic bugs, data inconsistency, config errors, and race conditions remain normal fix targets
+      - "Three-point check item 1: whether other preconditions are already broken when the trigger condition holds"
+      - "Three-point check item 2: whether an independent existing safety net such as type checks, CI, or other-layer validation stops the failure before harm"
+      - "Three-point check item 3: whether defense cost is balanced against the damage prevented, including the harm of added branches and hidden real errors"
+      - Ambiguous applicability is treated as not applicable and handled as a normal fix target
+      - Ambiguous three-point check result leads to skip or create_issue with the rationale recorded
     applicable_tasks:
-      - Code review decision making for edge case handling
-      - Evaluating defensive implementation proposals
-      - Determining fix adoption for speculative protection
-      - Preventing overengineering in design review
+      - Evaluating whether a fix proposal is over-engineered defensive code
+      - Applying the three-point check to review findings before fix adoption
+      - Deciding skip versus fix for speculative defense measures
+      - Scoping error handling against catastrophic external failures
     keywords:
-      - proportionality-principle
-      - scope-proportionality
-      - catastrophic-failure
-      - speculative-defense
-      - trigger-condition
-      - three-point-check
-      - safety-net
-      - cost-benefit-analysis
-      - overdesign-prevention
+      - proportionality principle
+      - over-design
+      - speculative defense
+      - three-point check
+      - catastrophic external failure
+      - fix adoption
+      - skip
+      - create_issue
   plugins/forge/docs/spec_design_boundary_spec.md:
     title: Requirement and Design Boundary Clarification Guide
     purpose: Clarifies the boundary between requirement documents (What) and design documents (How) to support judgment on content placement and document structure decisions

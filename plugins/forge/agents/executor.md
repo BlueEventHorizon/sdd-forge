@@ -126,7 +126,7 @@ python3 "${CLAUDE_PLUGIN_ROOT}/skills/start-implement/scripts/resolve_task_conte
 `verification` に従って実施する。
 
 - **`build` が `required`**: プロジェクトのビルドコマンドを実行する。コマンドは、ルール文書や既存の設定から特定する。`skipped` なら実行せず、`build_reason` を結果に書く
-- **`tests` が `required`**: タスクに関連するテストを実行する。`optional` なら、実行するかを自分で判断し、実行しないときは理由を書く。`skipped` なら実行せず、`tests_reason` を結果に書く
+- **`tests` が `required`**: タスクに関連するテストを実行する。コマンドは、ビルドと同じく、ルール文書や既存の設定から特定する。`optional` なら、実行するかを自分で判断し、実行しないときは理由を書く。`skipped` なら実行せず、`tests_reason` を結果に書く
 - **常に（`build`・`tests` の値に依らず）**: 作成・変更した各ファイルが、構文として成立することを確かめる。言語に応じて、構文検査・コンパイル・パーサーのうち `Bash` で実行できるもの（例: Python は `python3 -m py_compile`、JSON は読み込み）を使う。確かめる手段が無い種類のファイルは、そのことを `notes` に書く
 
 検証がエラーになったときは、エラーを分析して原因を直し、検証を最初からやり直す。**再検証は 1 回まで**（初回と再検証で最大 2 回）。再検証もエラーになったとき、または自力で解決できないと判断したときは、修正をやめ、`FAILURE` を返す。

@@ -2,7 +2,7 @@
 """
 forge カスタム Agent (`plugins/forge/agents/*.md`) の frontmatter 妥当性検証
 
-fork 型 SKILL を採用せず Agent 起動に置き換える方針は `docs/rules/claude_code_authoring_guide.md`
+fork 型 SKILL を採用せず Agent 起動に置き換える方針は `docs/rules/forge_claude_code_authoring_policy.md`
 「SKILL 実行モデル」が持つ。tools allowlist は各 Agent の frontmatter（`plugins/forge/agents/*.md`）自体を
 正とし、本テストは frontmatter が構文的・慣習的に妥当であることを静的に検証する。
 

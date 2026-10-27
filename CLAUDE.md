@@ -20,14 +20,14 @@ forge の文書検索は doc-advisor / doc-db の 2 backend 構成で、**どち
 
 **プラグインという仕組みそのもの**が担う範囲を知らなければ、機構が済ませていることを自分で実装し、機構が置換する記述をシェルの記法と取り違える。
 
-正本は **Claude Code 公式ドキュメント**である。ただし SKILL.md・agent・manifest の書き方や挙動は、まず `meta:skill-creator` / `meta:plugin-creator` が持つ参照（公式ページの本文と照合した写し）で確かめる。公式ドキュメントを読むのは、写しに無い挙動、写しの照合日より後の変更が疑われるとき、配布に関わる重要な判断のとき、または meta プラグインが使えない環境のときに限る。SKILL.md の通常の編集のたびに読みに行かない。
+正本は **Claude Code 公式ドキュメント**である。ただし SKILL.md・agent・manifest の書き方や挙動は、まず `meta:author-skill` / `meta:author-plugin` が持つ参照（公式ページの本文と照合した写し）で確かめる。公式ドキュメントを読むのは、写しに無い挙動、写しの照合日より後の変更が疑われるとき、配布に関わる重要な判断のとき、または meta プラグインが使えない環境のときに限る。SKILL.md の通常の編集のたびに読みに行かない。
 
 - Plugins reference: `https://code.claude.com/docs/en/plugins-reference`
 - Plugins guide: `https://code.claude.com/docs/en/plugins`
 - Plugin marketplaces: `https://code.claude.com/docs/en/plugin-marketplaces`
 - Skills: `https://code.claude.com/docs/en/skills`
 
-**要約ツール越しに読んだものを一次情報と呼ばない。** WebFetch が返すのは取得したページではなく、それを別モデルに要約させた出力である。要約は元の文面を保証しないため、根拠に用いて断定できない。とくに「ドキュメントに記載が無い」という否定の主張は、要約側の見落としと区別がつかない。
+公式仕様の根拠は、公式ページの本文と照合した meta の写し、写しに無いときは claude-code-guide Agent の返答とする。確かめ方の全文は [forge_claude_code_authoring_policy.md](docs/rules/forge_claude_code_authoring_policy.md)「公式仕様の確かめ方」を参照。
 
 公式ドキュメントで確かめきれない挙動は推測で補わず、確認できない事項として明示する。
 
@@ -75,13 +75,13 @@ forge の文書検索は doc-advisor / doc-db の 2 backend 構成で、**どち
 ### 配布物
 
 - **配布物に、配布物に含まれない具体パスと本リポジトリ固有の事情を書かない**: 固有の事情とは、内部文書の ID・仕様名（`DES-085_adr_writer_design` 等）、`meta/`、worktree 配置、原本 SoT である立場等。**配布物の公開名（`sdd-forge` / `forge`）と、forge が連携する外部プラグインの公開名（`anvil` / `doc-advisor`）は固有の事情ではない**（利用者が install 時に指定し、現に目にする名前）
-- **配布物のうち利用者環境で読まれるもの（SKILL.md / agents / commands / 内蔵 docs）からプロジェクト文書を参照しない**: パスも spec ID も禁止。規範は配布物側に本文で持たせる。script のコメント・docstring は対象外
+- **配布物のうち利用者環境で読まれるもの（SKILL.md / agents / commands / 内蔵 docs）からプロジェクト文書を参照しない**: パスも spec ID も禁止。規範は配布物側に本文で持たせる。script のコメント・docstring は対象外（前項の内部文書の ID も含む）
 - **下流での回避で済ませず、本リポジトリの原本（`plugins/forge/`）を直す**: `~/.claude/plugins/cache/` を書き換えても次の install で消える。memory に回避策を残すのは修正ではない
 - **agent / SKILL のプロンプト指示は、出力を組み立てる 1 箇所にだけ置く**: 近接箇所への同一指示は重複
 
 ### 実装
 
-全文は [implementation_guidelines.md](docs/rules/implementation_guidelines.md)。
+全文は [plugin_implementation_guidelines.md](docs/rules/plugin_implementation_guidelines.md)。
 
 - **他コンポーネントへの窓口は SKILL だけ**: 依拠してよいのは SKILL.md が公開する引数・出力の契約だけ。他コンポーネントの script を直接呼ばない。内部設計 ID・内部文書をインターフェースにしない。設計書を読んで同じ動作を自分で実装しない
 - **フォールバックを反射的に書かない**: 正しいリカバリとして具体的に説明できるものだけ書く。説明できなければ、隠さずエラーとして報告し、構造的に起こらないよう設計を直す
@@ -135,7 +135,7 @@ forge の文書検索は doc-advisor / doc-db の 2 backend 構成で、**どち
 
 ## Development
 
-ビルド・パッケージ管理のシステムは無い。**外部依存は、`plugins/` 配下と `tests/` 配下のどちらでも、標準ライブラリのみ使用する**（外部依存禁止。例外は設けない）。
+ビルド・パッケージ管理のシステムは無い。**外部依存は、`plugins/` 配下と `tests/` 配下のどちらでも、標準ライブラリのみを基本とする**。別ライブラリの使用はユーザに許諾を取ること。
 
 `makefile` は MCP サーバーの接続・切断用であり、プラグインのインストールには使わない。
 
@@ -172,18 +172,9 @@ git -C <実体パス> show main:<契約を定める SKILL.md やスクリプト>
 
 ## Testing [CRITICAL]
 
-`plugins/` 配下の Python スクリプトにはテストが必須。SKILL.md はテスト困難なため例外。
-`.claude/` 配下のローカルスキル・スクリプトはテスト対象外。
+`plugins/` 配下の Python スクリプトにはテストが必須。
 
-テストは `tests/` にプラグイン名・スキル名で分類して配置する。
-
-```bash
-# 一括実行
-python3 -m unittest discover -s tests -p 'test_*.py' -v
-
-# 特定モジュールのみ
-python3 -m unittest tests.forge.review.test_xxx -v
-```
+**テストを実行・追加・変更する前に、[DEVELOPMENT.md](DEVELOPMENT.md) の「4. テスト」を Read する。** 実行コマンド、`tests/`（単体テスト）と `ai_tests/`（AI の判断を試すテスト）の使い分け、配置の規則は、そこにだけ書いてある。読まずにコマンドや置き場を推測しない。
 
 <!-- FORGE_ONBOARDING_START hash=6a3a278b2d31 -->
 

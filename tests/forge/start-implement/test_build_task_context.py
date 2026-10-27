@@ -35,7 +35,7 @@ PARALLEL_FRONTMATTER = ["feature_type: temporary-feature"]
 REQ = "docs/requirements/REQ-001.md"
 DES = "docs/design/DES-001.md"
 STRATEGY = "docs/plan/foo_strategy.md"
-RULE = "docs/rules/implementation_guidelines.md"
+RULE = "docs/rules/plugin_implementation_guidelines.md"
 CODE = "src/foo.py"
 
 

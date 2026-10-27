@@ -36,7 +36,7 @@ Agent A と Agent B が同時に同一ファイルを更新すると、最後に
 
 書き込み系 agent（start-implement の executor agent 等）が**担当範囲の成果物を編集すること自体は本契約の対象ではない**。その安全性は、担当範囲の分離・対象を絞った起動・指摘と無関係なリファクタリングの禁止・構文検証が担う（[Claude Code 作成ガイド][authoring-guide]「カスタム Agent」）。分離の方法は、当該スキルの要件が定める（REQ-001 FNC-004）。並列起動する場合も、担当範囲が分離されていれば複数 agent が同一リソースを触らないため、§2.1 の競合は成立しない。
 
-1 回の処理の間だけ存在するデータ（review の依頼・所見・評価、agent へ渡す入力）も、本契約の対象ではない。識別値だけを渡し、script が書いた JSON のパスを読む型は [agent_data_exchange_rules.md](../../../rules/agent_data_exchange_rules.md) が定める。書き手は script であり agent は共有リソースへ直接書かない。並列に起動する agent へ渡す入力も、識別値ごとに別の置き場が与えられ、agent は読むだけなので、§2.1 の競合は成立しない。
+1 回の処理の間だけ存在するデータ（review の依頼・所見・評価、agent へ渡す入力）も、本契約の対象ではない。識別値だけを渡し、script が書いた JSON のパスを読む型は [forge_agent_data_exchange_rules.md](../../../rules/forge_agent_data_exchange_rules.md) が定める。書き手は script であり agent は共有リソースへ直接書かない。並列に起動する agent へ渡す入力も、識別値ごとに別の置き場が与えられ、agent は読むだけなので、§2.1 の競合は成立しない。
 
 ### 3.1 基本原則
 
@@ -141,4 +141,4 @@ Claude Code の Agent 環境ではファイルロック（`flock` 等）の信�
 | 4 | 一部の agent が結果を返さなかった場合の方針は定義されているか                        |
 | 5 | 結果の受け渡しに中間ファイル・セッションディレクトリを使っていないか                 |
 
-[authoring-guide]: ../../../rules/claude_code_authoring_guide.md
+[authoring-guide]: ../../../rules/plugin_claude_code_authoring_guide.md

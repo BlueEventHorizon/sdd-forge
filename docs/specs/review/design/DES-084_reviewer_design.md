@@ -282,8 +282,8 @@ finding は `finding_id`（`append_result.py` が採番）、`location`（`--loc
 script は `plugins/forge/scripts/review/` に置く。基本の script が処理を持ち、ラッパーは呼ぶ主体から決定論的に決まるオプションを固定して基本の script を呼ぶだけである（§6.6）。AI が判断して決める値（`disposition`、位置、確信度など）は、ラッパーに畳まず引数として渡す。
 
 - **引数:** `<project_root> <review_id> <round_number>` の順に、位置引数で渡す。持たない script は右から省く（`publish_request.py` は `<project_root>` だけ）。プロジェクトルートは、定義のコマンド行に書いた `${CLAUDE_PROJECT_DIR}` が置換されたものを渡す（REQ-029 FNC-314）。script ファイルの中にプレースホルダは書かない（置換するのはスキル機構であり、script ファイルは機構を通らない）。
-- **標準出力:** 成功時は JSON object を 1 つ出力する。返す値が無ければ `{}`。失敗時は終了コード `1` と、自然文の日本語の配列 `errors` を持つ JSON object。引数の誤りは終了コード `2`（`argparse` が返す）。`3` 以上は使わない（[script_error_output_rules.md](../../../rules/script_error_output_rules.md)）。
-- **標準入力:** 自由記述は標準入力の全体を 1 つの値として、加工せずに受け取る。値の内容を理由に拒まない（REQ-029 FNC-304）。`focus` / `scope` だけは、2 つの自由記述を 1 回の操作で渡すため、本体が Write ツールで `<project_root>/.temp/forge/review/review_focus.txt`・`review_scope.txt` に書いたファイルで受け取り、`publish_request.py` が読んで削除する（[implementation_guidelines.md](../../../rules/implementation_guidelines.md) の一時ファイルの節）。
+- **標準出力:** 成功時は JSON object を 1 つ出力する。返す値が無ければ `{}`。失敗時は終了コード `1` と、自然文の日本語の配列 `errors` を持つ JSON object。引数の誤りは終了コード `2`（`argparse` が返す）。`3` 以上は使わない（[plugin_script_error_output_rules.md](../../../rules/plugin_script_error_output_rules.md)）。
+- **標準入力:** 自由記述は標準入力の全体を 1 つの値として、加工せずに受け取る。値の内容を理由に拒まない（REQ-029 FNC-304）。`focus` / `scope` だけは、2 つの自由記述を 1 回の操作で渡すため、本体が Write ツールで `<project_root>/.temp/forge/review/review_focus.txt`・`review_scope.txt` に書いたファイルで受け取り、`publish_request.py` が読んで削除する（[plugin_implementation_guidelines.md](../../../rules/plugin_implementation_guidelines.md) の一時ファイルの節）。
 - **書き込み:** JSON は、同じディレクトリの一時ファイルへ書いてから置き換える。読み手が途中の状態を読まない。文字コードは UTF-8 とする。
 - **絶対パス:** 依頼と結果が持つパスと位置は、すべて絶対パスである（REQ-029 DM-304）。
 - **共通の部品:** 上の約束を実現する部品（JSON の出力、失敗の返し方、一時ファイルを経由した公開、絶対パスの検査）は、`plugins/forge/scripts/review/review_common.py` に 1 つだけ置き、各 script が import する。script ごとに複製しない。後続の script が必要とする部品は、必要になったときにここへ足す。

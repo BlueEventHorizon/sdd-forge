@@ -51,7 +51,7 @@ agent に渡す参照文書（ガイド・フォーマット定義等）は自�
 受け渡しの規定:
 
 - **agent の return value 収集で受け渡す**。フェーズ間の中間成果物を共有するための永続領域は設けない
-- **例外**: 1 回の処理の間だけ存在するデータは、識別値だけを渡し、script が書いた JSON のパスを読む型で受け渡す（[agent_data_exchange_rules.md](../../../rules/agent_data_exchange_rules.md)）。並列に起動する agent の結果の返却は、上記のとおり return value である
+- **例外**: 1 回の処理の間だけ存在するデータは、識別値だけを渡し、script が書いた JSON のパスを読む型で受け渡す（[forge_agent_data_exchange_rules.md](../../../rules/forge_agent_data_exchange_rules.md)）。並列に起動する agent の結果の返却は、上記のとおり return value である
 - **プロンプト経由のデータ受け渡しは最小限にする**。渡すのはパス・種別・フラグ等の構造化引数に限り、文書やコードの本文をプロンプトへ貼り付けない（agent は渡されたパスを自ら Read する）
 
 ### FNC-005: 文書フォーマットの選定基準

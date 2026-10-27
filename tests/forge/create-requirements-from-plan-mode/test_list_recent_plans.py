@@ -26,7 +26,13 @@ SCRIPT_DIR = (
 )
 sys.path.insert(0, str(SCRIPT_DIR))
 
-from list_recent_plans import _extract_title, list_plans, main  # noqa: E402
+from list_recent_plans import (  # noqa: E402
+    PlansDirError,
+    _extract_title,
+    list_plans,
+    main,
+    resolve_plans_dir,
+)
 
 
 class TestExtractTitle(unittest.TestCase):
@@ -118,6 +124,97 @@ class TestListPlans(unittest.TestCase):
         self.assertEqual(Path(result["plans"][0]["path"]).name, "note.md")
 
 
+class TestResolvePlansDir(unittest.TestCase):
+    """探索先の決定。優先順位は flag > env > settings（local > project > user）> default。"""
+
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(self.tmp.cleanup)
+        base = Path(self.tmp.name).resolve()
+        self.root = base / "project"
+        self.home = base / "home"
+        (self.root / ".claude").mkdir(parents=True)
+        (self.home / ".claude").mkdir(parents=True)
+
+    def _write(self, where: Path, name: str, body) -> Path:
+        """`<where>/.claude/<name>` に設定を書く。body が文字列ならそのまま、そうでなければ JSON にする。"""
+        path = where / ".claude" / name
+        path.write_text(
+            body if isinstance(body, str) else json.dumps(body), encoding="utf-8"
+        )
+        return path
+
+    def test_default_when_nothing_is_set(self):
+        plans_dir, source = resolve_plans_dir(self.root, self.home, None, None)
+        self.assertEqual(plans_dir, self.home / ".claude" / "plans")
+        self.assertEqual(source, "default")
+
+    def test_flag_beats_env_and_settings(self):
+        self._write(self.root, "settings.json", {"plansDirectory": "from-settings"})
+        plans_dir, source = resolve_plans_dir(
+            self.root, self.home, str(self.root / "flag"), str(self.root / "env")
+        )
+        self.assertEqual(plans_dir, self.root / "flag")
+        self.assertEqual(source, "flag")
+
+    def test_env_beats_settings(self):
+        self._write(self.root, "settings.json", {"plansDirectory": "from-settings"})
+        plans_dir, source = resolve_plans_dir(
+            self.root, self.home, None, str(self.root / "env")
+        )
+        self.assertEqual(plans_dir, self.root / "env")
+        self.assertEqual(source, "env")
+
+    def test_project_settings_is_relative_to_project_root(self):
+        path = self._write(self.root, "settings.json", {"plansDirectory": "docs/plans"})
+        plans_dir, source = resolve_plans_dir(self.root, self.home, None, None)
+        self.assertEqual(plans_dir, self.root / "docs" / "plans")
+        self.assertEqual(source, f"settings:{path}")
+
+    def test_local_beats_project_and_user(self):
+        self._write(self.home, "settings.json", {"plansDirectory": "user-plans"})
+        self._write(self.root, "settings.json", {"plansDirectory": "project-plans"})
+        path = self._write(
+            self.root, "settings.local.json", {"plansDirectory": "local-plans"}
+        )
+        plans_dir, source = resolve_plans_dir(self.root, self.home, None, None)
+        self.assertEqual(plans_dir, self.root / "local-plans")
+        self.assertEqual(source, f"settings:{path}")
+
+    def test_project_beats_user(self):
+        self._write(self.home, "settings.json", {"plansDirectory": "user-plans"})
+        self._write(self.root, "settings.json", {"plansDirectory": "project-plans"})
+        plans_dir, _ = resolve_plans_dir(self.root, self.home, None, None)
+        self.assertEqual(plans_dir, self.root / "project-plans")
+
+    def test_user_settings_is_used_when_project_defines_nothing(self):
+        self._write(self.root, "settings.json", {"model": "x"})
+        path = self._write(self.home, "settings.json", {"plansDirectory": "user-plans"})
+        plans_dir, source = resolve_plans_dir(self.root, self.home, None, None)
+        self.assertEqual(plans_dir, self.root / "user-plans")
+        self.assertEqual(source, f"settings:{path}")
+
+    def test_unreadable_settings_is_an_error_not_a_fallback(self):
+        self._write(self.root, "settings.json", "{ broken")
+        with self.assertRaises(PlansDirError):
+            resolve_plans_dir(self.root, self.home, None, None)
+
+    def test_non_string_value_is_an_error(self):
+        self._write(self.root, "settings.json", {"plansDirectory": 3})
+        with self.assertRaises(PlansDirError):
+            resolve_plans_dir(self.root, self.home, None, None)
+
+    def test_empty_value_is_an_error(self):
+        self._write(self.root, "settings.json", {"plansDirectory": "  "})
+        with self.assertRaises(PlansDirError):
+            resolve_plans_dir(self.root, self.home, None, None)
+
+    def test_outside_project_root_is_an_error(self):
+        self._write(self.root, "settings.json", {"plansDirectory": "../elsewhere"})
+        with self.assertRaises(PlansDirError):
+            resolve_plans_dir(self.root, self.home, None, None)
+
+
 class TestCli(unittest.TestCase):
     def setUp(self):
         self.tmp = tempfile.TemporaryDirectory()
@@ -160,6 +257,69 @@ class TestCli(unittest.TestCase):
         payload = json.loads(proc.stdout)
         self.assertEqual(payload["status"], "empty")
         self.assertEqual(payload["plans_dir"], str(self.dir))
+
+    def test_cli_reports_the_source_of_the_plans_dir(self):
+        proc = subprocess.run(
+            [
+                sys.executable,
+                str(SCRIPT_DIR / "list_recent_plans.py"),
+                "--plans-dir",
+                str(self.dir),
+            ],
+            capture_output=True,
+            text=True,
+            check=True,
+        )
+        self.assertEqual(json.loads(proc.stdout)["plans_dir_source"], "flag")
+
+    def test_cli_reads_plans_directory_from_project_settings(self):
+        project = self.dir / "project"
+        (project / ".claude").mkdir(parents=True)
+        (project / ".claude" / "settings.json").write_text(
+            json.dumps({"plansDirectory": "my-plans"}), encoding="utf-8"
+        )
+        (project / "my-plans").mkdir()
+        (project / "my-plans" / "x.md").write_text("# Configured\n", encoding="utf-8")
+
+        env = os.environ.copy()
+        env.pop("PLANS_DIR", None)
+        proc = subprocess.run(
+            [
+                sys.executable,
+                str(SCRIPT_DIR / "list_recent_plans.py"),
+                "--project-root",
+                str(project),
+            ],
+            capture_output=True,
+            text=True,
+            check=True,
+            env=env,
+        )
+        payload = json.loads(proc.stdout)
+        self.assertEqual(payload["status"], "found")
+        self.assertEqual(payload["plans"][0]["title"], "Configured")
+        self.assertTrue(payload["plans_dir_source"].startswith("settings:"))
+
+    def test_cli_exits_1_with_errors_for_invalid_settings(self):
+        project = self.dir / "project"
+        (project / ".claude").mkdir(parents=True)
+        (project / ".claude" / "settings.json").write_text("{ broken", encoding="utf-8")
+
+        env = os.environ.copy()
+        env.pop("PLANS_DIR", None)
+        proc = subprocess.run(
+            [
+                sys.executable,
+                str(SCRIPT_DIR / "list_recent_plans.py"),
+                "--project-root",
+                str(project),
+            ],
+            capture_output=True,
+            text=True,
+            env=env,
+        )
+        self.assertEqual(proc.returncode, 1)
+        self.assertEqual(len(json.loads(proc.stdout)["errors"]), 1)
 
     def test_main_function_returns_zero(self):
         # main() 自体の戻り値と stdout 形式を確認

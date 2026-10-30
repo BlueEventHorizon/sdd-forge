@@ -124,7 +124,7 @@ dprint fmt      # Python / TOML / Markdown / YAML に適用
 dprint check    # 差分チェックのみ（CI 向け）
 ```
 
-設定ファイル: `dprint.json`
+設定ファイル: `dprint.jsonc`
 
 ---
 

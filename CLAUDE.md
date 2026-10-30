@@ -140,7 +140,7 @@ forge の文書検索は doc-advisor / doc-db の 2 backend 構成で、**どち
 `makefile` は MCP サーバーの接続・切断用であり、プラグインのインストールには使わない。
 
 - **Python 3.14 以上をサポート対象とする**。Python 3.13 以下は対象外
-- **CI（`.github/workflows/ci.yml`）のゲートは 2 つ**: `python3 -m unittest discover -s tests -p 'test_*.py'` と `dprint check`。Python / TOML / Markdown / YAML を編集したら [dprint](https://dprint.dev/) で `dprint fmt` を通す（設定は `dprint.json`）。通さないと CI が落ちる
+- **CI（`.github/workflows/ci.yml`）のゲートは 2 つ**: `python3 -m unittest discover -s tests -p 'test_*.py'` と `dprint check`。Python / TOML / Markdown / YAML を編集したら [dprint](https://dprint.dev/) で `dprint fmt` を通す（設定は `dprint.jsonc`）。通さないと CI が落ちる
 - ローカル読み込み: `claude --plugin-dir ./plugins/forge`。詳細は [DEVELOPMENT.md](DEVELOPMENT.md)
 - `AGENTS.md` は `CLAUDE.md` へのシンボリックリンク（Codex 向け）。どちらを編集しても同一実体が変わる
 

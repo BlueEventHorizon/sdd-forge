@@ -1168,7 +1168,8 @@ def find_doc(config, category, doc_type, name, project_root):
     1. プロジェクトルートからのパスが完全一致
     2. パスの末尾が一致（`foo/requirements/REQ-001_x.md` の一部など）
     3. ファイル名が一致（`.md` の有無は問わない）
-    4. ファイル名が `ID_` で始まる（ID は `{ID}_{名前}.md` の `{ID}`）
+    4. ファイル名に ID が含まれる（`REQ-032` は `REQ-032_x.md` にも `REQ-032-x.md` にも当たる。
+       ID の後ろの区切りは問わない。複数に当たれば全件を返す）
 
     Returns:
         dict: status='ok' のとき count / matches（0 件も正常）、
@@ -1198,9 +1199,7 @@ def find_doc(config, category, doc_type, name, project_root):
         [f for f in files if f.split("/")[-1] in (base, base + ".md")]
         if "/" not in target
         else [],
-        [f for f in files if f.split("/")[-1].startswith(stem + "_")]
-        if "/" not in target
-        else [],
+        [f for f in files if stem in f.split("/")[-1]] if "/" not in target else [],
     ]
     matches = next((s for s in stages if s), [])
     return {

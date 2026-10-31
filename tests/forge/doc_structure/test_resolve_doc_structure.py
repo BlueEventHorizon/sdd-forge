@@ -1479,6 +1479,11 @@ class TestFindDoc(unittest.TestCase):
             result = rds.find_doc(config, "specs", "requirement", "REQ-1", tmpdir)
             self.assertEqual(result["count"], 2)
 
+    def test_empty_name_matches_nothing(self):
+        """ID が空になる名前（空・`.md`・`/`）は、全件に当たらず 0 件を返す"""
+        for name in ("", ".md", "/"):
+            self.assertEqual(self._find(name)["count"], 0, repr(name))
+
     def test_by_file_name(self):
         for name in ("REQ-032_secret-linter.md", "REQ-032_secret-linter"):
             self.assertEqual(self._find(name)["matches"], [self.FILES[1]], name)

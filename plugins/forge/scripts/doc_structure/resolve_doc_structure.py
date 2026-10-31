@@ -1199,7 +1199,9 @@ def find_doc(config, category, doc_type, name, project_root):
         [f for f in files if f.split("/")[-1] in (base, base + ".md")]
         if "/" not in target
         else [],
-        [f for f in files if stem in f.split("/")[-1]] if "/" not in target else [],
+        [f for f in files if stem in f.split("/")[-1]]
+        if "/" not in target and stem
+        else [],
     ]
     matches = next((s for s in stages if s), [])
     return {

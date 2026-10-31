@@ -170,6 +170,20 @@ class CollectFunctionTest(_ProjectCase):
         )
         self.assertEqual(result["problems"], [])
 
+    def test_docs_named_with_hyphen_after_id_are_found(self):
+        """ID の後ろが `_` でない命名（`DES-008-content-rules.md`）でも見つかる"""
+        design = self.write("docs/specs/design/DES-008-content-rules.md")
+        req = self.write("docs/specs/requirements/REQ-002-document-id.md")
+        result, errors = self.collect(
+            _task(design_id="DES-008"),
+            design_traceability=[_trace("DES-008", ["REQ-002"])],
+        )
+        self.assertEqual(errors, [])
+        self.assertEqual(result["paths"], [design, req])
+        self.assertEqual(result["design_lookup"]["status"], "found")
+        self.assertEqual(result["requirement_lookup"][0]["status"], "found")
+        self.assertEqual(result["problems"], [])
+
     def test_only_the_requirements_of_this_design_are_added(self):
         design = self.write("docs/specs/f/design/DES-001_x.md")
         req1 = self.write("docs/specs/f/requirements/REQ-001_x.md")

@@ -1449,9 +1449,40 @@ class TestFindDoc(unittest.TestCase):
         self.assertEqual(result["count"], 1)
         self.assertEqual(result["matches"], [self.FILES[1]])
 
-    def test_id_does_not_match_a_longer_number(self):
-        """REQ-03 は REQ-032 にも REQ-003 にも当たらない"""
-        self.assertEqual(self._find("REQ-03")["count"], 0)
+    def test_id_followed_by_any_delimiter(self):
+        """ID の後ろの区切りは問わない（`_` 以外の命名のプロジェクト）"""
+        files = [
+            "docs/specs/requirements/REQ-002-document-id.md",
+            "docs/specs/requirements/REQ-005.references.md",
+            "docs/specs/requirements/REQ-007 spaced name.md",
+        ]
+        with tempfile.TemporaryDirectory() as tmpdir:
+            create_test_project(tmpdir, files)
+            config = rds.parse_config(DIR_OF_CONFIG)
+            for requirement_id, expected in zip(
+                ("REQ-002", "REQ-005", "REQ-007"), files
+            ):
+                result = rds.find_doc(
+                    config, "specs", "requirement", requirement_id, tmpdir
+                )
+                self.assertEqual(result["matches"], [expected], requirement_id)
+
+    def test_id_contained_in_a_longer_id_returns_all_hits(self):
+        """0 埋めしない ID は、REQ-1 が REQ-10 にも当たり、全件を返す（呼び出し側が曖昧として扱う）"""
+        files = [
+            "docs/specs/requirements/REQ-1_a.md",
+            "docs/specs/requirements/REQ-10_b.md",
+        ]
+        with tempfile.TemporaryDirectory() as tmpdir:
+            create_test_project(tmpdir, files)
+            config = rds.parse_config(DIR_OF_CONFIG)
+            result = rds.find_doc(config, "specs", "requirement", "REQ-1", tmpdir)
+            self.assertEqual(result["count"], 2)
+
+    def test_empty_name_matches_nothing(self):
+        """ID が空になる名前（空・`.md`・`/`）は、全件に当たらず 0 件を返す"""
+        for name in ("", ".md", "/"):
+            self.assertEqual(self._find(name)["count"], 0, repr(name))
 
     def test_by_file_name(self):
         for name in ("REQ-032_secret-linter.md", "REQ-032_secret-linter"):

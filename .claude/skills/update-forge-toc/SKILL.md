@@ -46,22 +46,19 @@ stdout JSON の `rules` 配列（project-root-relative パス）を取得する�
 
 完了レポート JSON の `toc_path`（例: `.claude/doc-advisor/toc/forge-rules-<hash>/toc.yaml`）を取得する。
 
-### Step 3: 同梱 ToC へコピー + 鮮度検証用 checksums の更新 [MANDATORY]
+### Step 3: 同梱場所へコピー [MANDATORY]
 
-生成された ToC を forge プラグイン同梱の場所へコピーし（配布されるのはこのファイル）、同一操作内で
-鮮度検証用 checksums（sha256）を再生成する。**この 2 つは `finalize_toc.py` 1 回の実行に統合されており、
-片方だけを実行することはできない**（コピーと checksums 再生成を別々の手動手順にすると、
-checksums だけが再生成され ToC 本体が stale なまま commit される事故が起きたため）:
+doc-advisor が生成した `toc.yaml` と、同じディレクトリの `.toc_checksums.yaml` を、forge プラグイン同梱の
+場所へコピーする（配布されるのは `rules_toc.yaml`）。checksums は doc-advisor が `toc.yaml` と同時に書くため、
+forge は再計算せず、内容を変えずにコピーする。**2 つとも必ずコピーする**
+（片方だけだと、鮮度の契約テストが失敗する）:
 
 ```bash
-python3 plugins/forge/scripts/doc_structure/finalize_toc.py \
-  --doc-structure .claude/skills/update-forge-toc/forge_doc_structure.yaml \
-  --toc-src "<Step 2 の toc_path>" \
-  --toc-dest plugins/forge/toc/rules/rules_toc.yaml \
-  --checksums-output plugins/forge/toc/rules/.toc_checksums.yaml
+cp "<Step 2 の toc_path>" plugins/forge/toc/rules/rules_toc.yaml
+cp "$(dirname "<Step 2 の toc_path>")/.toc_checksums.yaml" plugins/forge/toc/rules/.toc_checksums.yaml
 ```
 
-checksums ファイルは mtime ではなく内容 hash ベースで鮮度を検証するための契約テスト専用ファイルであり、
+checksums ファイルは、鮮度の契約テストが現在のソース文書と突き合わせるために使う。
 `rules_toc.yaml` と必ずセットでコミットする。
 
 ### Step 4: 完了報告

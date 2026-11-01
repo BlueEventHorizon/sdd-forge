@@ -9,7 +9,7 @@
 - doc_type は `glossary` とする（[doc_structure_format.md](doc_structure_format.md)）
 - 要件側の用語集は、要件定義書と同じ ID 体系で採番する。プロジェクトに要件 ID の体系が無いときは、[requirement_format.md](requirement_format.md) の要件ID カタログの `GLS` を使う
 - 設計側の用語集は、設計書と同じ ID 体系で採番する（設計書の既定は `DES`）
-- 採番は、要件定義書・設計書と同じ手順で行う。手で番号を決めない
+- 採番は、`next-spec-id` スキルで行う（要件定義書・設計書と同じ）。手で番号を決めない
 - ファイル名は `{用語集 ID}_{name}_glossary.md` とする。`{name}` は英語のスネークケースで、その用語集が対象とする範囲を表す名前にする
 
 ## 文書冒頭の用語集の行

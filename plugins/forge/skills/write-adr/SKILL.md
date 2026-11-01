@@ -67,14 +67,9 @@ doc_type `adr`、feature `{feature}` で ADR の出力先ディレクトリ（`{
 
 ## Phase 2: 採番
 
-`next-spec-id` の採番スクリプトで、次の番号を得る。
+`Skill` ツールで `next-spec-id` を、`args` を `ADR ADR,DES` として呼び、次の番号を得る（第 1 引数が発行するプレフィックス、第 2 引数が通し番号を共有するプレフィックス）。
 
-```bash
-SCAN_SCRIPT="${CLAUDE_PLUGIN_ROOT}/skills/next-spec-id/scripts/scan_spec_ids.py"
-python3 "$SCAN_SCRIPT" ADR --share-prefixes ADR,DES
-```
-
-JSON 出力の `next_id` を使う。ADR ファイルがまだ無いときだけ、ファイル名の番号に使われる（ADR ファイルがあるときは使われない）。`duplicates` が空でない場合は、利用者に提示する。手動での番号決定は行わない。
+返された `next_id` を使う。ADR ファイルがまだ無いときだけ、ファイル名の番号に使われる（ADR ファイルがあるときは使われない）。`duplicates` が空でない場合は、利用者に提示する。手動での番号決定は行わない。
 
 ---
 

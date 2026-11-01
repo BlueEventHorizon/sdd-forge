@@ -119,17 +119,9 @@ graph TD
 
 要件定義書のファイルを書く前に、`start-requirements/SKILL.md` の「要件定義書を書く直前の決定」の手順 3〜5（feature・出力先・ファイル名）に従って決める。このワークフローは、差分開発かどうかの判定（手順 2）を行わない。
 
-続けて、使用するプレフィックスごとに次の連番を取得する。手動での番号決定は禁止:
+続けて、使用するプレフィックスごとに、`Skill` ツールで `next-spec-id` を呼び、次の連番を取得する。手動での番号決定は禁止。`args` の第 1 引数に、発行するプレフィックスを渡す（画面要件は `SCR`、UI コンポーネントは `CMP`、機能要件は `FNC`）。
 
-```bash
-SCAN_SCRIPT="${CLAUDE_PLUGIN_ROOT}/skills/next-spec-id/scripts/scan_spec_ids.py"
-python3 "$SCAN_SCRIPT" SCR   # 画面要件
-python3 "$SCAN_SCRIPT" CMP   # UIコンポーネント
-python3 "$SCAN_SCRIPT" FNC   # 機能要件
-# 使用するプレフィックスごとに実行する
-```
-
-JSON 出力の `next_id` をファイル名・要件 ID として使用する。`duplicates` が空でない場合は警告を表示する。
+返された `next_id` をファイル名・要件 ID として使用する。`duplicates` が空でない場合は警告を表示する。
 
 ### 3.1 画面要件（SCR-xxx）の抽出
 

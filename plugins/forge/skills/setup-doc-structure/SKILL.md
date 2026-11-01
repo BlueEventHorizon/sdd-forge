@@ -25,9 +25,9 @@ argument-hint: ""
 
 ## 生成内容の不変条件 [CRITICAL]
 
-`.doc_structure.yaml` を生成・更新するときに必ず満たす条件。Step 1 のレビューと Step 5 の提示の両方で照合する。
+このスキルが `.doc_structure.yaml` を生成・更新するときに満たす条件（forge の運用であり、`.doc_structure.yaml` の仕様が利用者に要求するものではない）。Step 1 のレビューと Step 5 の提示の両方で照合する。
 
-1. **forge が置き場を解決する doc_type を宣言する**: specs の `root_dirs` と `doc_types_map` に、doc_type `requirement` / `design` / `plan` / `adr` / `glossary` のエントリをそれぞれ**ちょうど 1 つ**置く。forge は要件定義書・設計書・計画書・ADR・用語集の作成先・読込先を `doc_types_map` の該当エントリから解決するため、宣言が無いと要件定義・設計・計画・実装・ADR 記録・用語集の作成と読込のスキルが止まる。エントリが複数あると置き場を一意に決められず、同じく止まる。キーの形は specs の構成に揃える（Feature ごとの構成なら `docs/specs/**/plan/` のような glob、フラットな構成なら `docs/specs/plan/`）。スキャンで検出されなかったものも宣言するが、ディレクトリは作らない（各スキルが文書の作成時に作る）
+1. **forge が置き場を解決する doc_type を、既定で宣言する**: specs の `root_dirs` と `doc_types_map` に、doc_type `requirement` / `design` / `plan` / `adr` / `glossary` のエントリを、このスキルが既定でそれぞれ 1 つ置く。forge は要件定義書・設計書・計画書・ADR・用語集の作成先・読込先を `doc_types_map` の該当エントリから解決するため、宣言が無いと、該当するスキルは解決できず止まる。エントリが複数あると置き場を一意に決められず、同じく止まる。キーの形は specs の構成に揃える（Feature ごとの構成なら `docs/specs/**/plan/` のような glob、フラットな構成なら `docs/specs/plan/`）。スキャンで検出されなかったものも宣言するが、ディレクトリは作らない（各スキルが文書の作成時に作る）
 2. **plan を索引から除外する**: specs の `patterns.exclude` に、plan エントリの末尾のディレクトリ名（通常は `plan`）を入れる。計画書・実装戦略書・タスクコンテキストは実装の完了後に破棄しうる一時文書であり、検索索引に載せると、破棄後に実在しない文書を指す索引が残る。除外は索引の範囲だけを決め、置き場の解決には影響しない（1 の宣言と両立する）
 3. **作成したディレクトリを宣言する**: Step 4 で作成したディレクトリは、すべて `root_dirs` と `doc_types_map` に含める
 

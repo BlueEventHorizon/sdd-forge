@@ -5,7 +5,7 @@
 metadata:
   name: Document Search Index (forge-rules)
   key: forge-rules
-  generated_at: 2026-11-01T09:23:14Z
+  generated_at: 2026-11-01T11:15:21Z
   file_count: 43
 
 docs:
@@ -417,36 +417,35 @@ docs:
       - validation boundary
   plugins/forge/docs/doc_structure_format.md:
     title: .doc_structure.yaml Format Specification
-    purpose: Specifies the .doc_structure.yaml format declaring document locations and doc_types for rules and specs, covering root_dirs, doc_types_map, exclude patterns, required doc_types, and path resolution.
+    purpose: Defines the .doc_structure.yaml format that declares document root directories, doc_type mappings, and exclusion patterns for the rules and specs categories used by forge and doc-advisor indexing
     content_details:
-      - Schema with rules and specs sections, each holding root_dirs, doc_types_map, and patterns with target_glob and exclude
-      - "root_dirs glob rules: single-level star and recursive double-star, with a trailing slash recommended"
-      - doc_types_map examples mapping paths such as docs/specs/*/design/ to the design doc_type
-      - "Recommended specs doc_types: requirement, design, plan, adr, glossary, api, reference"
-      - "Recommended rules doc_types: rule, workflow, guide"
-      - Required declarations for requirement, design, plan, adr, and glossary, each with exactly one root_dirs and doc_types_map entry
-      - patterns.exclude matches directory names exactly at any depth, and slash-containing patterns match as path substrings
-      - plan exclusion from the index because plan documents are temporary and would leave dangling index entries
-      - doc_structure_version comment with major and minor change semantics
-      - External doc-advisor does not read this file; forge resolves paths via resolve_doc_structure.py and passes them as paths-json to index-docs
+      - Top-level rules and specs sections, each with root_dirs, doc_types_map and patterns
+      - "root_dirs entries: project-root-relative paths with glob star for one level and double star for any depth"
+      - "doc_types_map: maps each root_dirs path to a doc_type, with recommended specs names requirement design plan adr glossary api reference and rules names rule workflow guide"
+      - "Placement resolution: forge resolves requirement design plan adr and glossary locations from doc_types_map; an undeclared doc_type stops the skill and duplicate entries make placement ambiguous"
+      - "patterns.exclude: directory names matched exactly at any depth, with slash-containing patterns matched as path substrings"
+      - "plan exclusion rationale: plan documents are temporary and excluded from the index, while exclude does not affect placement resolution"
+      - doc_structure_version comment line with major breaking and minor optional-field rules
+      - Flat, Feature-based and Nested Feature-based configuration examples
+      - External doc-advisor does not read this file; forge resolves paths and passes them via paths-json to index-docs
     applicable_tasks:
-      - Setting up or editing the project .doc_structure.yaml declaration file
-      - Adding a new feature directory and deciding its root_dirs and doc_types_map entries
-      - Choosing exclude patterns for the search index such as plan or archived
-      - Resolving document paths for doc_type requirement, design, plan, adr, or glossary
-      - Reviewing format compliance of a .doc_structure.yaml change
-      - Implementing consumers that read document paths from the structure file
+      - Creating or modifying the .doc_structure.yaml configuration file
+      - Reviewing rules and specs declarations in .doc_structure.yaml
+      - Setting up root_dirs and doc_types_map entries for a new project layout
+      - Reviewing exclude patterns and the plan exclusion decision
+      - Implementing or modifying resolve_doc_structure path resolution logic
+      - Investigating how forge resolves document placement and index target paths
     keywords:
       - doc_structure.yaml
-      - root_dirs
       - doc_types_map
-      - target_glob
+      - root_dirs
       - patterns.exclude
+      - target_glob
       - doc_structure_version
       - resolve_doc_structure.py
-      - paths-json
-      - Feature-Based Structure
+      - doc_type
       - plan exclusion
+      - paths-json
   plugins/forge/docs/document_style_guide.md:
     title: Document Style Guide
     purpose: "Generic writing style for requirement, design, and plan documents: tag usage, heading levels, emphasis, reference notation, placeholder naming, no history or related-document sections, and terminology."

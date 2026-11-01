@@ -81,7 +81,7 @@ doc_type `plan`、feature `{feature}` で出力先ディレクトリを求める
 
 - **`${CLAUDE_PLUGIN_ROOT}/docs/plan_principles_spec.md`** — 計画書作成原則・タスク設計ガイドライン（計画書ファイルの形式そのものは script が保証するため、AI が読む必要はない）
 - **`${CLAUDE_PLUGIN_ROOT}/docs/strategy_principles_spec.md`** — 実装戦略書の定義と原則（計画書との線引き・差分開発の扱いを含む）
-- **`${CLAUDE_PLUGIN_ROOT}/docs/document_style_guide.md`** — 文書スタイル指針（タグ・見出し・参照記法）
+- **`${CLAUDE_PLUGIN_ROOT}/docs/document_style_guide.md`** — 文書スタイル指針（タグ・見出し・参照記法・用語）
 
 ---
 
@@ -242,6 +242,8 @@ python3 "$SCRIPT" check --output-dir "{output_dir}" --feature "{feature}"
 
 **実装戦略書の必読化**: すべてのタスクの `required_reading` に `{output_dir}/{feature}_strategy.md` を含める。executor が単一タスクだけを実装する場合でも、全体戦略・フェーズ意図・リスク対策を理解したうえで実装判断できるようにするため。
 
+**用語集の必読化**: 入力の設計書・要件定義書の冒頭にある用語集の ID（`用語集: {ID}`）ごとに、`${CLAUDE_PLUGIN_ROOT}/skills/doc-structure/SKILL.md` の「ID・ファイル名から文書を探す」手順（doc_type `glossary`）でパスを求め、すべてのタスクの `required_reading` に含める。executor が `[用語]` を日常の意味で読まないようにするため。冒頭に用語集の ID が無い文書からは、何も加えない。
+
 **タスクの粒度・グループ化**: タスク・グループとも「1つの Agent 実行で完結する」単位であることを基準とする。詳細な判定基準は `plan_principles_spec.md`「タスクの粒度」「タスクグループ」節に従う（事前準備で読み込み済み）。
 
 ### 4.3 計画書の作成・更新
@@ -282,6 +284,7 @@ python3 "$SCRIPT" check --output-dir "{output_dir}" --feature "{feature}"
 計画書のスキーマ検査（3 キー構成・`tasks[]` 必須フィールド・enum 値）は 4.3 の script が行うため、AI は以下の**計画品質検査**（意味的な妥当性）のみを確認する:
 
 - [ ] すべての `tasks[].required_reading` に `{output_dir}/{feature}_strategy.md` が含まれている
+- [ ] 入力の設計書・要件定義書の冒頭に用語集の ID がある場合、すべての `tasks[].required_reading` にその用語集のパスが含まれている
 - [ ] 実装戦略のフェーズ分割がタスクの優先度に反映されているか
 - [ ] 要件トレーサビリティマトリクスが全要件を網羅しているか
 - [ ] 設計トレーサビリティマトリクスが全設計書をカバーしているか

@@ -90,6 +90,7 @@ doc_types_map:
 | `design`      | 技術設計書、アーキテクチャ仕様。宣言は必須                                                          |
 | `plan`        | 実装計画、ロードマップ、タスク分割。宣言は必須で、索引からは除外する（[plan の除外](#plan-の除外)） |
 | `adr`         | アーキテクチャ決定記録。feature ごとに 1 つの ADR ファイル。宣言は必須                              |
+| `glossary`    | 用語集。構造・ID・ファイル名は [glossary_format.md](glossary_format.md)。宣言は必須                 |
 | `api`         | API 仕様、エンドポイント定義                                                                        |
 | `reference`   | 参考資料、データ辞書                                                                                |
 
@@ -103,7 +104,7 @@ doc_types_map:
 
 ### 宣言が必須の doc_type
 
-specs の `requirement` / `design` / `plan` / `adr` は、`root_dirs` と `doc_types_map` にそれぞれちょうど 1 つのエントリを宣言する。forge は要件定義書・設計書・計画書・ADR の作成先・読込先を、`doc_types_map` の該当エントリから解決する。宣言が無ければ解決できず、複数あれば置き場を一意に決められない。ディレクトリがまだ無くても宣言する（文書の作成時に作られる）。
+specs の `requirement` / `design` / `plan` / `adr` / `glossary` は、`root_dirs` と `doc_types_map` にそれぞれちょうど 1 つのエントリを宣言する。forge は要件定義書・設計書・計画書・ADR・用語集の作成先・読込先を、`doc_types_map` の該当エントリから解決する。宣言が無ければ解決できず、複数あれば置き場を一意に決められない。ディレクトリがまだ無くても宣言する（文書の作成時に作られる）。
 
 ## patterns.exclude
 

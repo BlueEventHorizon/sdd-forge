@@ -27,7 +27,7 @@ argument-hint: ""
 
 `.doc_structure.yaml` を生成・更新するときに必ず満たす条件。Step 1 のレビューと Step 5 の提示の両方で照合する。
 
-1. **forge が置き場を解決する doc_type を宣言する**: specs の `root_dirs` と `doc_types_map` に、doc_type `requirement` / `design` / `plan` / `adr` のエントリをそれぞれ**ちょうど 1 つ**置く。forge は要件定義書・設計書・計画書・ADR の作成先・読込先を `doc_types_map` の該当エントリから解決するため、宣言が無いと要件定義・設計・計画・実装・ADR 記録のスキルが止まる。エントリが複数あると置き場を一意に決められず、同じく止まる。キーの形は specs の構成に揃える（Feature ごとの構成なら `docs/specs/**/plan/` のような glob、フラットな構成なら `docs/specs/plan/`）。スキャンで検出されなかったものも宣言するが、ディレクトリは作らない（各スキルが文書の作成時に作る）
+1. **forge が置き場を解決する doc_type を宣言する**: specs の `root_dirs` と `doc_types_map` に、doc_type `requirement` / `design` / `plan` / `adr` / `glossary` のエントリをそれぞれ**ちょうど 1 つ**置く。forge は要件定義書・設計書・計画書・ADR・用語集の作成先・読込先を `doc_types_map` の該当エントリから解決するため、宣言が無いと要件定義・設計・計画・実装・ADR 記録・用語集の作成と読込のスキルが止まる。エントリが複数あると置き場を一意に決められず、同じく止まる。キーの形は specs の構成に揃える（Feature ごとの構成なら `docs/specs/**/plan/` のような glob、フラットな構成なら `docs/specs/plan/`）。スキャンで検出されなかったものも宣言するが、ディレクトリは作らない（各スキルが文書の作成時に作る）
 2. **plan を索引から除外する**: specs の `patterns.exclude` に、plan エントリの末尾のディレクトリ名（通常は `plan`）を入れる。計画書・実装戦略書・タスクコンテキストは実装の完了後に破棄しうる一時文書であり、検索索引に載せると、破棄後に実在しない文書を指す索引が残る。除外は索引の範囲だけを決め、置き場の解決には影響しない（1 の宣言と両立する）
 3. **作成したディレクトリを宣言する**: Step 4 で作成したディレクトリは、すべて `root_dirs` と `doc_types_map` に含める
 
@@ -85,7 +85,7 @@ python3 ${CLAUDE_PLUGIN_ROOT}/scripts/doc_structure/classify_dirs.py
 | `docs/rules/`     | rule      | 開発ルール・規約                                          |
 | `docs/reference/` | reference | 参考文献・技術調査メモ（今後利用予定）                    |
 
-`requirement` / `design` / `plan` / `adr` は推奨ディレクトリとして作成せず、検出されなかった場合も「常に宣言」として候補リストに載せる（「生成内容の不変条件」1）。
+`requirement` / `design` / `plan` / `adr` / `glossary` は推奨ディレクトリとして作成せず、検出されなかった場合も「常に宣言」として候補リストに載せる（「生成内容の不変条件」1）。
 
 > スキャンで類似ディレクトリが検出済みの場合（例: `rules/` が既にある場合に `docs/rules/` は推奨しない）、重複する推奨は追加しない。
 
@@ -116,6 +116,7 @@ python3 ${CLAUDE_PLUGIN_ROOT}/scripts/doc_structure/classify_dirs.py
 常に宣言（未検出でも宣言する。ディレクトリは作らない）:
   - docs/specs/**/plan/                  — plan（計画書の置き場。検索索引から除外。「生成内容の不変条件」1・2）
   - docs/specs/**/adr/                   — adr（ADR の置き場。「生成内容の不変条件」1）
+  - docs/specs/**/glossary/              — glossary（用語集の置き場。「生成内容の不変条件」1）
 ```
 
 各候補には、分類の根拠（どのパスコンポーネント・frontmatter・本文から判定したか）を必ず添える。根拠が無いと、利用者は分類を変えるべきかを判断できない。
@@ -148,6 +149,7 @@ AskUserQuestion を使用して方針を確認する:
   - docs/specs/**/design/       — design（設計書の置き場。「生成内容の不変条件」1）
   - docs/specs/**/plan/         — plan（計画書の置き場。検索索引から除外。「生成内容の不変条件」1・2）
   - docs/specs/**/adr/          — adr（ADR の置き場。feature ごとに 1 ファイル。「生成内容の不変条件」1）
+  - docs/specs/**/glossary/     — glossary（用語集の置き場。「生成内容の不変条件」1）
 ```
 
 AskUserQuestion を使用して方針を確認する:
@@ -282,12 +284,14 @@ specs:
     - <design_dir_path>
     - <plan_dir_path>
     - <adr_dir_path>
+    - <glossary_dir_path>
     - <dir_path>
   doc_types_map:
     <requirement_dir_path>: requirement
     <design_dir_path>: design
     <plan_dir_path>: plan
     <adr_dir_path>: adr
+    <glossary_dir_path>: glossary
     <dir_path>: <doc_type>
   patterns:
     target_glob: "**/*.md"
@@ -296,7 +300,7 @@ specs:
       - plan
 ```
 
-requirement / design / plan / adr の 4 エントリは常に置く（生成内容の不変条件 1）。`<dir_path>: <doc_type>` はそれ以外に検出・作成したディレクトリである。
+requirement / design / plan / adr / glossary の 5 エントリは常に置く（生成内容の不変条件 1）。`<dir_path>: <doc_type>` はそれ以外に検出・作成したディレクトリである。
 
 ### 生成例（Feature-Based）
 
@@ -316,11 +320,13 @@ specs:
   root_dirs:
     - "docs/specs/**/adr/"
     - "docs/specs/**/design/"
+    - "docs/specs/**/glossary/"
     - "docs/specs/**/plan/"
     - "docs/specs/**/requirement/"
   doc_types_map:
     "docs/specs/**/adr/": adr
     "docs/specs/**/design/": design
+    "docs/specs/**/glossary/": glossary
     "docs/specs/**/plan/": plan
     "docs/specs/**/requirement/": requirement
   patterns:
@@ -340,5 +346,6 @@ glob パターン（`*` または `**`）を使う場合、root_dirs と doc_typ
 | specs    | plan        | 「どの順で作るか」の作業計画           | タスク分割、実装順序、マイルストーン、スプリント計画、移行計画                        |
 | specs    | adr         | 採らなかった案とその理由の決定記録     | 優れた方式がありそうなのに採らなかった決定（feature ごとに 1 ファイル）               |
 | specs    | api         | 外部インターフェースの契約             | REST エンドポイント定義、リクエスト/レスポンス仕様、OpenAPI/Swagger、GraphQL スキーマ |
-| specs    | reference   | 判断の根拠となる補助文書               | 技術調査メモ、比較検討資料、外部仕様の要約、議事録、用語集                            |
+| specs    | glossary    | 用語の定義（特有の意味を持つ語）       | 要件側の用語集、設計側の用語集                                                        |
+| specs    | reference   | 判断の根拠となる補助文書               | 技術調査メモ、比較検討資料、外部仕様の要約、議事録                                    |
 | specs    | spec        | 上記に該当しない仕様文書（デフォルト） | 分類不明な仕様文書の一時的な受け皿                                                    |

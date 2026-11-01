@@ -74,7 +74,7 @@ doc_type `requirement`、feature `{feature}` で出力先ディレクトリを�
 **常駐知識**として以下を **必ず** Read する。この文書は全 Phase を通じてコンテキスト内に保持する:
 
 - `${CLAUDE_PLUGIN_ROOT}/skills/start-uxui-design/docs/design_philosophy.md` — デザイン哲学の統合フレームワーク（3 層モデル）。全てのデザイン判断の基盤
-- `${CLAUDE_PLUGIN_ROOT}/docs/document_style_guide.md` — 文書スタイル指針（タグ・見出し・参照記法）
+- `${CLAUDE_PLUGIN_ROOT}/docs/document_style_guide.md` — 文書スタイル指針（タグ・見出し・参照記法・用語）
 
 その他の知識ベース（`apple_design_principles.md`、プラットフォームガイド、テンプレート）はワークフロー内で Phase 別に JIT 読み込みする。一括読み込みしない。
 

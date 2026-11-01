@@ -17,11 +17,13 @@ specs:
   root_dirs:
     - "docs/specs/**/adr/"
     - "docs/specs/**/design/"
+    - "docs/specs/**/glossary/"
     - "docs/specs/**/plan/"
     - "docs/specs/**/requirements/"
   doc_types_map:
     "docs/specs/**/adr/": adr
     "docs/specs/**/design/": design
+    "docs/specs/**/glossary/": glossary
     "docs/specs/**/plan/": plan
     "docs/specs/**/requirements/": requirement
   patterns:

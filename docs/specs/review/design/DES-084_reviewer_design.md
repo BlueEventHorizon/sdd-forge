@@ -398,7 +398,7 @@ script は `plugins/forge/scripts/review/` に置く。基本の script が処�
 | 入力   | `--match-path PATH`。既存の排他の指定に並べる。`PATH` は絶対パス、またはプロジェクトルートからの相対パス。`--category`（省略すると `specs`）と `--project-root` を使う                                                                                                                                                                  |
 | 動作   | `PATH` をプロジェクトルートからの相対パスにし、`--feature-of` と同じ照合（`_find_entry`。ディレクトリのセグメントをパターンだけで照合し、ファイルシステムを見ない）で `doc_types_map` を引く。ディスクに無いパス（削除されたファイル）にも同じ規則で答える。`exclude` は適用しない。プロジェクトルートの外のパスには、種別を返さない    |
 | 違い   | `--feature-of` は、宣言に合わないパス・プロジェクトルート外のパス・feature を求められないキーに当たったパスをエラーにする。`--match-path` は種別だけを求めるので、いずれもエラーにせず `doc_type` を `null`（feature を求められないキーでは、宣言の種別）とする。reviewer は「決まらない」を所見にもエラーにもしない（REQ-027 FNC-307） |
-| 出力   | `{"status": "ok", "category": …, "path": <相対パス>, "doc_type": "design" \| "plan" \| "requirement" \| "adr" \| null}`。宣言に合わないパスは `null`                                                                                                                                                                                    |
+| 出力   | `{"status": "ok", "category": …, "path": <相対パス>, "doc_type": <宣言された doc_type。"design" \| "plan" \| "requirement" \| "adr" \| "glossary" 等> \| null}`。宣言に合わないパスは `null`                                                                                                                                            |
 | エラー | `.doc_structure.yaml` が無い、または不正なときは、既存と同じ（`status: error`、終了コード 1）                                                                                                                                                                                                                                           |
 
 ## 7. テスト設計

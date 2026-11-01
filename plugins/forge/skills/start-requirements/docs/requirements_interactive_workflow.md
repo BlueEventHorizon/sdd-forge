@@ -20,7 +20,7 @@ applicable_when:
 - **`${CLAUDE_PLUGIN_ROOT}/docs/requirement_format.md`** — 要件定義書テンプレート
 - **`${CLAUDE_PLUGIN_ROOT}/docs/spec_design_boundary_spec.md`** — 要件・設計の境界ガイド（What/How の判断基準）
 - **`${CLAUDE_PLUGIN_ROOT}/docs/spec_priorities_spec.md`** — 要件・設計で優先する価値観（構造品質の定量化禁止など）
-- **`${CLAUDE_PLUGIN_ROOT}/docs/document_style_guide.md`** — 文書スタイル指針（タグ・見出し・参照記法）
+- **`${CLAUDE_PLUGIN_ROOT}/docs/document_style_guide.md`** — 文書スタイル指針（タグ・見出し・参照記法・用語）
 
 ## 目的
 
@@ -255,7 +255,7 @@ graph LR
 - **新しい概念**: 名前を付けて以後一貫して使う
 - **概念 overload の警戒**: 同じ言葉が 2 つの意味を持ちそうなら、早期に分離する (例: 「キー」が tree path 識別子と field 名の両方を指していないか)
 
-確定した用語は**グロッサリー（用語集）**として蓄積する。グロッサリーは対話の進行とともに育てていく「生きた文書」であり、設計フェーズにも引き継がれる。
+確定した用語は**グロッサリー（用語集）**として蓄積する。グロッサリーは対話の進行とともに育てていく「生きた文書」であり、設計フェーズにも引き継がれる。蓄積した用語は、要件定義書を書く直前に、SKILL.md の「用語集を書く」節に従って、用語集のファイルにする。
 
 #### システム的 feature の場合: 探索順を厳守
 

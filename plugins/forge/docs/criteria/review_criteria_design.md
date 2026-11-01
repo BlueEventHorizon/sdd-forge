@@ -8,20 +8,20 @@
 
 P1 で照合すべき委譲先文書一覧。各文書は「規範本体 + 重大度カタログ (拡充済み)」を保持する SoT である。複数文書間の優先順位は「プロジェクト固有 > 内蔵」とする (review_priorities_spec.md)。
 
-| priority | path                                                                                 | doc_type   | 役割                                                                                                                                             |
-| -------- | ------------------------------------------------------------------------------------ | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| P1       | [spec_design_boundary_spec.md](../spec_design_boundary_spec.md)                      | principles | 要件と設計の境界 (What/How 境界、§3 カテゴリ別ガイド / §5 グレーゾーン許容範囲、規範本体 + 重大度カタログ)                                       |
-| P1       | [design_principles_spec.md](../design_principles_spec.md)                            | principles | 設計原則 (定量目標の扱い / よくある失敗パターン / 記載してはいけない内容、規範本体 + 重大度カタログ)                                             |
-| P1       | [design_method.md](../design_method.md)                                              | method     | 設計の手順と成果物 (成果物の定義。severity は `design_principles_spec.md` 重大度カタログを参照)                                                  |
-| P1       | [additive_development_spec.md](../additive_development_spec.md)                      | principles | 追加開発ワークフロー (`feature_type: temporary-feature` 文書の判定基準 §1 / 旧仕様の置き換え §2 / P2 矛盾除外規定の前提を提供)                   |
-| P1       | [frontmatter_format.md](../frontmatter_format.md)                                    | format     | frontmatter キー定義 (`feature_type`/`doc_status` の値域・付与対象・解除条件)                                                                    |
-| P1       | [adr_format.md](../adr_format.md)                                                    | format     | ADR 書式 (ファイルの構成・決定の節の構成・否決の書き方。severity は宣言しない)                                                                   |
-| P1       | [adr_principles_spec.md](../adr_principles_spec.md)                                  | principles | ADR 運用 (書く対象・吟味の基準・可変性・否決の書き方、規範本体 + 重大度カタログ)                                                                 |
-| P1       | [document_style_guide.md](../document_style_guide.md)                                | format     | 文書スタイル規約 (§5 文書参照記法 / §8 関連文書セクション。規範本体。severity は [review_priorities_spec.md](../review_priorities_spec.md) §2.3) |
-| P1       | [deterministic_generation_spec.md](../deterministic_generation_spec.md)              | principles | 決定論的な生成物の作り手 (AI が組み立てる生成物・検査の置き場・適用しない場面、規範本体 + §8 重大度カタログ)                                     |
-| P1       | `(query-db-rules: "設計レビューに関するプロジェクト固有のアーキテクチャ・設計規約")` | rules      | プロジェクト固有のアーキテクチャ・設計規約 (存在する場合のみ、規範本体 + 重大度カタログ)                                                         |
-| P2       | target ファイル内部 + 関連要件定義書                                                 | specs      | 矛盾検出 (target_files 内部の相反記述 + 関連 REQ との整合性を突合。追加 feature 除外規定は §2 P2 節を参照)                                       |
-| P3       | [spec_priorities_spec.md](../spec_priorities_spec.md)                                | principles | 不要な複雑化判定 (§3.4 直接数値化禁止 / §4 倒錯パターン、Yes/No 判定原則)                                                                        |
+| priority | path                                                                                 | doc_type   | 役割                                                                                                                                                              |
+| -------- | ------------------------------------------------------------------------------------ | ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| P1       | [spec_design_boundary_spec.md](../spec_design_boundary_spec.md)                      | principles | 要件と設計の境界 (What/How 境界、§3 カテゴリ別ガイド / §5 グレーゾーン許容範囲、規範本体 + 重大度カタログ)                                                        |
+| P1       | [design_principles_spec.md](../design_principles_spec.md)                            | principles | 設計原則 (定量目標の扱い / よくある失敗パターン / 記載してはいけない内容、規範本体 + 重大度カタログ)                                                              |
+| P1       | [design_method.md](../design_method.md)                                              | method     | 設計の手順と成果物 (成果物の定義。severity は `design_principles_spec.md` 重大度カタログを参照)                                                                   |
+| P1       | [additive_development_spec.md](../additive_development_spec.md)                      | principles | 追加開発ワークフロー (`feature_type: temporary-feature` 文書の判定基準 §1 / 旧仕様の置き換え §2 / P2 矛盾除外規定の前提を提供)                                    |
+| P1       | [frontmatter_format.md](../frontmatter_format.md)                                    | format     | frontmatter キー定義 (`feature_type`/`doc_status` の値域・付与対象・解除条件)                                                                                     |
+| P1       | [adr_format.md](../adr_format.md)                                                    | format     | ADR 書式 (ファイルの構成・決定の節の構成・否決の書き方。severity は宣言しない)                                                                                    |
+| P1       | [adr_principles_spec.md](../adr_principles_spec.md)                                  | principles | ADR 運用 (書く対象・吟味の基準・可変性・否決の書き方、規範本体 + 重大度カタログ)                                                                                  |
+| P1       | [document_style_guide.md](../document_style_guide.md)                                | format     | 文書スタイル規約 (§5 文書参照記法 / §8 関連文書セクション / §9 用語。規範本体。severity は [review_priorities_spec.md](../review_priorities_spec.md) §2.3 / §2.4) |
+| P1       | [deterministic_generation_spec.md](../deterministic_generation_spec.md)              | principles | 決定論的な生成物の作り手 (AI が組み立てる生成物・検査の置き場・適用しない場面、規範本体 + §8 重大度カタログ)                                                      |
+| P1       | `(query-db-rules: "設計レビューに関するプロジェクト固有のアーキテクチャ・設計規約")` | rules      | プロジェクト固有のアーキテクチャ・設計規約 (存在する場合のみ、規範本体 + 重大度カタログ)                                                                          |
+| P2       | target ファイル内部 + 関連要件定義書                                                 | specs      | 矛盾検出 (target_files 内部の相反記述 + 関連 REQ との整合性を突合。追加 feature 除外規定は §2 P2 節を参照)                                                        |
+| P3       | [spec_priorities_spec.md](../spec_priorities_spec.md)                                | principles | 不要な複雑化判定 (§3.4 直接数値化禁止 / §4 倒錯パターン、Yes/No 判定原則)                                                                                         |
 
 委譲先ルールが未整備の場合は forge 内蔵ルールへフォールバックする。`(query-db-rules: "設計レビューに関するプロジェクト固有のアーキテクチャ・設計規約")` の解決結果が 0 件の場合は P1 を内蔵 principles のみで構成する。
 

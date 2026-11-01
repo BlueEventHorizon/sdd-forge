@@ -5,7 +5,7 @@
 metadata:
   name: Document Search Index (forge-rules)
   key: forge-rules
-  generated_at: 2026-11-01T11:15:21Z
+  generated_at: 2026-11-01T13:51:01Z
   file_count: 43
 
 docs:
@@ -68,36 +68,37 @@ docs:
       - scope section
       - section numbering
   plugins/forge/docs/adr_principles_spec.md:
-    title: ADR Operational Principles
-    purpose: "Defines principles for writing and revising ADRs: qualifying decisions, scope field conditions, review acceptance criteria, mutable revision rules, and ADR file placement and numbering."
+    title: ADR Operating Principles
+    purpose: "Defines principles for creating and revising ADRs: what to record and exclude, review criteria, reference rules, mutable-document handling, and file placement with ID numbering."
     content_details:
-      - Definition of ADR as a record of rejected alternatives for decisions that cannot otherwise be traced
-      - "Exclusion list: spec or rule bodies, decisions evident from code, decisions with no real choice, obviously correct choices, and work history"
-      - "Two-condition test: a plausible future proposal exists and code, rules, or specs do not show it is wrong"
-      - Scope field is optional and written only when readers cannot tell what an ADR file decides
-      - Review criteria table with reject, revise, and insufficient verdicts; approval records are never rejected
-      - Decision revision rewrites the same section, keeps section numbers, and forbids changelog or status sections
-      - Rejection of a decision merges the old alternative into the same section instead of adding a new ADR
-      - One ADR file per feature, numbered once via next-spec-id with --share-prefixes ADR,DES
-      - Severity catalog for ADR violations, with section-number changes rated critical
+      - ADR scope limited to decisions whose rationale would be lost if unrecorded, excluding rules, specification bodies, implementation notes and one-off incidents
+      - "Recording requires two conditions together: a better alternative is foreseeable, and the proposal being wrong is not evident from code, rules or specs"
+      - Exception for recording user-approved designs that deviate from requirements, including the approval fact and its reason
+      - ADR must not copy specification or rule bodies; it references them with markdown links including section numbers
+      - Optional scope field, written only when parallel requirements or designs exist for the same target and the decided extent is unclear
+      - Review criteria table for rejecting, revising or flagging insufficient ADR drafts, with approval records never rejected
+      - "ADR is a mutable document: a reversed decision section is rewritten in place, section numbers are kept, and no change log or status history section is created"
+      - Decision reversal moves the old option into rejected alternatives with its reason, without creating a separate ADR or a deprecated mark
+      - "Placement: one ADR file per feature named ADR-NNN_feature.md, with the number assigned once via next-spec-id using the shared ADR,DES prefix"
+      - Severity catalog for ADR violations, where changing or deleting section numbers is critical
     applicable_tasks:
-      - ADR creation for a newly settled design decision
-      - ADR revision or rewrite of an existing decision section
-      - Review of ADR content for acceptance or rejection
-      - Judging whether a design change qualifies for an ADR
-      - Deciding whether an ADR scope field is needed
-      - Numbering and placement of an ADR file
+      - Creating a new ADR for a design decision
+      - Revising or reversing an existing ADR decision section
+      - Reviewing whether a decision qualifies for ADR recording
+      - Deciding ADR file placement and ID numbering for a feature
+      - Writing rejected alternatives and rationale in an ADR
+      - Reviewing ADR documents against severity criteria
     keywords:
       - ADR
+      - architecture decision record
       - rejected alternatives
-      - scope field
-      - section number
+      - ADR scope
       - next-spec-id
-      - decision revision
-      - approval record
-      - write-adr
       - ADR-NNN
-      - adr_principles_spec
+      - decision reversal
+      - write-adr
+      - mutable document
+      - section numbering
   plugins/forge/docs/adr_usage_spec.md:
     title: Architecture Decision Record Usage Principles
     purpose: Defines the obligations of those who use Architecture Decision Records as a basis for decision-making, specifying how to evaluate rejection reasons, verify underlying premises, and document decision basis
@@ -562,31 +563,36 @@ docs:
       - specification-marker
   plugins/forge/docs/glossary_format.md:
     title: Glossary Default Format
-    purpose: Defines the structure, ID numbering, file naming, and table format of glossary documents, plus the glossary ID line placed at the top of requirement and design documents that use a glossary.
+    purpose: Defines the structure, ID assignment, file naming, header line placement and table format of glossary documents used together with requirement and design documents.
     content_details:
-      - Glossary doc_type glossary and placement rules
-      - Requirement glossary ID numbering, with GLS from the requirement ID catalog as fallback when no requirement ID system exists
-      - Design glossary numbering following the design document ID system with DES as default
-      - File name pattern {glossary ID}_{name}_glossary.md with an English snake_case scope name
-      - Glossary ID line placed right after the title line, multiple IDs separated by a Japanese comma
-      - Design document lists its own glossary ID followed by the input requirement glossary ID
-      - Body table columns for term, definition, prerequisite terms, and unused paraphrases
-      - One term per row, prerequisite terms defined in earlier rows, and none written as a placeholder when absent
-      - Numbering done by the same procedure as requirement and design documents, never by hand
+      - Glossary doc_type is glossary; requirement-side glossary uses the requirement ID system, falling back to the GLS prefix from the requirement ID catalog
+      - Design-side glossary uses the design ID system, with DES as the default prefix
+      - IDs are assigned via the next-spec-id skill, never by hand
+      - File name pattern is glossary ID, underscore, English snake_case scope name, then _glossary.md
+      - Header line with glossary IDs placed directly after the title line of a requirement or design document
+      - Design document lists its own design-side glossary ID first, then the input requirement glossary ID
+      - Body table columns are term, definition, prerequisite terms and banned paraphrases
+      - Prerequisite terms must be defined on earlier rows, with a none placeholder when there are none
+      - Banned paraphrases appearing in body text are treated as term confusion
+      - Documents without a glossary omit the header line
     applicable_tasks:
-      - Creating a glossary document for a requirement or design document
-      - Assigning glossary IDs and file names for a new glossary
-      - Adding the glossary ID line to a requirement or design document header
-      - Writing or reviewing glossary table rows and unused paraphrase entries
+      - Creating a new glossary document for requirements or design
+      - Assigning glossary IDs and file names for a glossary
+      - Adding a glossary header line to a requirement or design document
+      - Writing glossary table rows with definitions and banned paraphrases
+      - Reviewing glossary format compliance
+      - Modifying glossary structure or ID scheme
     keywords:
-      - glossary_format
       - glossary
-      - 用語集
+      - term definition
+      - banned paraphrase
+      - prerequisite term
       - GLS
+      - DES
       - _glossary.md
-      - 前提の用語
-      - 使わない言い換え
-      - glossary ID line
+      - glossary ID
+      - next-spec-id
+      - glossary header line
   plugins/forge/docs/plan_principles_spec.md:
     title: Plan Authoring Principles
     purpose: Defines plan document structure, task ID and priority, task granularity, required_reading, task groups, dependency management, acceptance criteria, test rules, and requirement traceability for plan JSON files.
@@ -974,89 +980,84 @@ docs:
       - usage scenarios
       - terminology
   plugins/forge/skills/start-requirements/docs/requirements_from_figma_workflow.md:
-    title: Figma Requirements Document Creation Workflow
-    purpose: "Defines the workflow for creating requirements documents from Figma design files: design tokens, screen and component extraction, function requirements, asset policy, and completion checks."
+    title: Figma Requirements Definition Workflow
+    purpose: Workflow for writing requirements documents from a Figma design file. Covers design token and theme extraction, SCR/CMP/FNC requirement drafting, asset management policy, and review steps.
     content_details:
-      - Mandatory reference documents for requirement definition (principles, format, spec/design boundary, priorities, style guide)
-      - Figma MCP availability check and user confirmation questions before extraction
-      - "Two-layer design system: primitive tokens (HEX colors, typography, spacing, radius, shadows) and semantic theme"
+      - Figma MCP availability check and error exit when the tool is unavailable
+      - "Two-layer design system: primitive tokens (Colors, Typography, Spacing, Radius, Shadows) and semantic theme definitions"
       - Reusable component identification (Button, Card, Input, Navigation, Dialog, Loading)
-      - SCR-xxx screen requirement extraction with ASCII layout diagrams and screen-specific part names
-      - CMP-xxx UI component and FNC-xxx function requirement extraction
-      - "Supplementary requirements checklist: error handling, loading, empty state, accessibility, performance, persistence, external integration"
-      - Glossary creation and image asset triage (icons, illustrations, logos, backgrounds)
-      - next-spec-id scan_spec_ids.py for sequential ID assignment per prefix
-      - Design and requirement quality checks, then forge review and ToC update
+      - Screen requirements (SCR-xxx) with ASCII layout diagrams and screen-specific part names
+      - UI component (CMP-xxx) and function (FNC-xxx) extraction with states and behaviors
+      - Supplementary requirements not shown in the design (error handling, loading, empty state, accessibility, performance, persistence, external integration)
+      - Image asset triage (icon, illustration, logo, background) and snake_case asset naming policy
+      - Design token and requirement document quality checks, followed by forge review and specs ToC update
     applicable_tasks:
-      - Requirements document creation from Figma design files
+      - Requirements document creation from a Figma design
       - Design token extraction from Figma
-      - Screen and UI component requirement extraction from Figma
-      - Completion check of a Figma-based requirements document
+      - Screen and component requirement drafting from Figma
+      - Requirements review after Figma-driven drafting
     keywords:
       - Figma
-      - design token
+      - design tokens
       - SCR-xxx
       - CMP-xxx
-      - FNC-xxx
-      - requirements from Figma
-      - Figma MCP
+      - theme layer
+      - next-spec-id
       - asset management
+      - snake_case
   plugins/forge/skills/start-requirements/docs/requirements_interactive_workflow.md:
     title: Interactive Requirements Definition Workflow
-    purpose: "Defines the workflow for creating requirements documents interactively without Figma or screen designs: draft first, refine through dialogue, and judge additive versus difference-development type."
+    purpose: Workflow for drafting a requirements document first and refining it through dialogue when no Figma or screen design exists. Covers scope confirmation, additive-type judgment, glossary, and finalization steps.
     content_details:
-      - Phase structure from prior check through draft creation, refinement, and completion
-      - Full-new versus additive judgment based on presence of existing requirements documents
-      - Additive type judgment (pure additive vs difference development) and temporary-feature marker rules
-      - Draft creation with doc_status draft and TBD unconfirmed items
-      - Scenario, screen and interface list, and navigation flow organization in detail design
-      - Glossary building and bottom-up exploration order (terms, architecture, state, data model, requirements)
-      - Requirement ID catalog selection (SCR, FNC, BL, DM) with scan_spec_ids numbering
-      - Form, content, and consistency quality checks with unconfirmed items table
-      - Special rules for unconfirmed items and review criteria for ambiguity and How mixing
-      - Anti-pattern table; dialogue principles delegated to the consult skill
+      - Phase 0 check of conversation context and complete-new versus existing-app determination by existing requirement documents
+      - Phase 1 retrieval of rules and existing specs via query-db-rules and query-db-specs, skipped for complete-new apps
+      - Phase 2 confirmation of vision, value, success criteria, main functions, and out-of-scope items
+      - Pure-addition versus differential-development type judgment with user approval, and temporary-feature marker only for differential type
+      - Draft requirements document with doc_status draft and TBD open items before dialogue
+      - Scenario, screen list, navigation flow, and glossary construction before detailed specs
+      - "Bottom-up exploration order: glossary, architecture, state model, data model, then FNC/BL/NFR"
+      - Grep sweep for stale terms after rewrites and removal of doc_status after review
+      - Requirement ID selection (SCR, FNC, BL, DM) with next-spec-id numbering
     applicable_tasks:
-      - Interactive requirements creation for new applications without Figma designs
-      - Requirements addition for new features to existing applications
-      - Additive or difference-development type judgment for requirements
-      - Draft requirements document creation and dialogue-based refinement
+      - Interactive requirements drafting for a new app or new feature
+      - Additive-type judgment of a requirement document against existing specs
+      - Requirements refinement through dialogue from a draft
+      - Scope and TBD management during requirements creation
     keywords:
-      - interactive requirements
-      - draft requirements
-      - additive development
-      - difference development
-      - temporary-feature
       - doc_status
+      - feature_type
+      - temporary-feature
+      - additive development
       - glossary
       - TBD
+      - next-spec-id
+      - pure addition
   plugins/forge/skills/start-requirements/docs/requirements_reverse_engineering_workflow.md:
-    title: Requirements Definition Workflow for Existing App Analysis
-    purpose: Defines the workflow for extracting requirements from existing application source code and writing requirements documents for rebuilds, keeping functions while redesigning the UI.
+    title: Requirements Definition Workflow from Existing App Source
+    purpose: Workflow for extracting requirements from the source code of an existing app to rebuild it from scratch. Covers APP, SCR, FNC, BL, and DM drafting with design refresh and function retention policy, plus quality checks.
     content_details:
-      - Confirmation of design policy (redesign or keep) and source code path before analysis
-      - Parallel rules agent and code agent collection with return values held in the main context
-      - Screen and navigation map analysis from View classes and screen transition diagrams
-      - Function extraction from user actions, conditional branches, data persistence, and error handling
-      - Function extraction checklist covering user actions, UI elements, data processing, transitions, business rules, external integration
-      - Extraction priority from APP-001 overview through SCR, FNC, BL, DM, and other IDs
-      - Document creation order (APP-001, then SCR, then other requirements) with scan_spec_ids numbering
-      - What-only recording rule using the user-manual test to separate requirements from design
-      - Quality checks for mandatory files, content completeness, and absence of implementation names
-      - AI review via forge review and specs ToC update
+      - User confirmation of design policy (refresh or keep) and source code path
+      - Parallel rules and code collection agents whose return values stay in main context
+      - Enumeration of View and screen classes and screen transition map from source
+      - Function extraction from user actions, conditional branches, persistence, and error handling in source
+      - Function extraction checklist covering actions, UI elements, data processing, transitions, business rules, and external integration
+      - Requirement priority order APP-001, SCR, FNC, BL, DM, then CMP/NAV/API/EXT/NFR/SEC/ERR
+      - What-only description rule that excludes class names and implementation details
+      - Required-file checks for APP-001, all SCR documents, and main FNC documents
+      - Requirement review via forge review, then specs ToC update and commit
     applicable_tasks:
-      - Requirements extraction from existing application source code
-      - Requirements document creation for rebuilding a legacy app with a new architecture
-      - Design policy confirmation (redesign or keep) for existing app analysis
-      - Completion check of requirements documents derived from existing code
+      - Requirements creation from existing app source code
+      - Requirements reverse engineering for legacy app rebuild
+      - Screen and function requirement extraction from code
+      - Requirements quality check after source-based extraction
     keywords:
       - reverse engineering
+      - legacy app
       - APP-001
-      - existing app analysis
+      - screen transition
       - source code analysis
-      - requirement extraction
-      - screen transition map
-      - legacy rebuild
-      - redesign
+      - rebuild from scratch
+      - BL-xxx
   plugins/forge/skills/start-uxui-design/docs/apple_design_principles.md:
     title: Apple Design Principles & UX/UI Philosophy Knowledge Base
     purpose: "Knowledge base for design analysis, defining Apple's design philosophy, HIG principles, typography system, color semantics, usability heuristics, visual perception principles, and accessibility standards"

@@ -237,7 +237,7 @@ ADR ライターは独立した書き手であり、「作成」は、できた�
 
 1. **出力先の解決**: `doc-structure` スキルの「出力先ディレクトリの解決」手順で、文書種別 `adr`、feature `{feature}` の出力先を求める。種別の宣言が無ければ、同手順の引き継ぎに従う
 2. **内容の整理**: 呼び出し元の会話から、決定・文脈・検討した代替案と棄却理由・関連する文書を整理し、Write ツールで入力ファイルへ書く。承認記録では、利用者の承認の発言を逐語で引用する。更新では、対象の決定の節と、変更の内容と理由を書く。会話に無い情報は、利用者に確認する
-3. **採番**: `next-spec-id` の採番スクリプトを `ADR --share-prefixes ADR,DES` で実行し、`next_id` を得る。ADR ファイルがまだ無いときだけ、記載先の名前に使われる。`duplicates` が空でなければ、利用者に提示する。採番は `docs/specs/` 全体で共有される
+3. **採番**: `next-spec-id` スキルを、プレフィックス `ADR`・共有するプレフィックス `ADR,DES` を渡して呼び、`next_id` を得る。ADR ファイルがまだ無いときだけ、記載先の名前に使われる。`duplicates` が空でなければ、利用者に提示する。採番は `docs/specs/` 全体で共有される
 4. **依頼の公開**: `adr_exchange.py open` を実行し、`request_id` を得る
 5. **Agent の起動**: Agent ツールで `forge:adr-writer` を起動する。prompt に書くのは、識別値（`adr_dir`、`request_id`）だけである
 6. **判定の取得**: `adr_exchange.py check` を実行する。失敗なら、Agent の return value を添えて利用者へ報告し、再実行か中止かを確認する。再実行は 2 からやり直す（`check` が依頼を削除し、`open` が入力ファイルを削除しているため）。棄却と不足の理由は、Agent の return value から読み取る
@@ -321,12 +321,10 @@ sequenceDiagram
 | ------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------- |
 | 受け渡しの型の先例        | `plugins/forge/scripts/plan/strategy_exchange.py`、`plugins/forge/agents/plan-strategist.md` | `open` / `request-path` / `finish` / `check` の型  |
 | 出力先の解決              | `plugins/forge/skills/doc-structure/SKILL.md`                                                | 文書種別 `adr` の出力先、宣言が無い場合の引き継ぎ  |
-| 採番                      | `plugins/forge/skills/next-spec-id/scripts/scan_spec_ids.py`                                 | ADR ファイルの番号。`ADR --share-prefixes ADR,DES` |
+| 採番                      | `plugins/forge/skills/next-spec-id/SKILL.md`                                                 | ADR ファイルの番号。`ADR`・共有 `ADR,DES`          |
 | Agent の frontmatter 検査 | `tests/forge/agents/test_agent_frontmatter.py`                                               | tools の allowlist の回帰検査                      |
 | ADR の参照と書式の検査    | `tests/common/test_adr_reference_integrity.py`                                               | `adr/` 配下の ADR ファイルを `rglob` で走査する    |
 | ADR のレビュー観点        | `plugins/forge/docs/criteria/review_criteria_design.md`                                      | `target_files` に ADR が含まれる場合の「ADR 運用」 |
-
-`scan_spec_ids.py` は、他の SKILL（`start-design` など）も直接呼ぶ。skill 固有の配置にあるものを複数の SKILL が呼ぶ現状は、本設計では変えない。
 
 ## 6. テスト設計
 

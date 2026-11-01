@@ -166,16 +166,9 @@ Phase 0 の確認で判明した内容に基づき、必要な場合のみ:
 
 #### ID 採番
 
-要件 ID を付与する際は、必ず以下のスクリプトで次の連番を取得する。手動での番号決定は禁止:
+要件 ID を付与する際は、必ず `Skill` ツールで `next-spec-id` を呼び、次の連番を取得する。手動での番号決定は禁止。`args` の第 1 引数に、発行するプレフィックスを渡す（画面要件なら `SCR`、機能要件なら `FNC`）。使用するプレフィックスごとに呼ぶ。
 
-```bash
-SCAN_SCRIPT="${CLAUDE_PLUGIN_ROOT}/skills/next-spec-id/scripts/scan_spec_ids.py"
-python3 "$SCAN_SCRIPT" SCR   # 画面要件の場合
-python3 "$SCAN_SCRIPT" FNC   # 機能要件の場合
-# 使用するプレフィックスごとに実行する
-```
-
-JSON 出力の `next_id` をファイル名・要件 ID として使用する。`duplicates` が空でない場合は警告を表示する。
+返された `next_id` をファイル名・要件 ID として使用する。`duplicates` が空でない場合は警告を表示する。
 
 ### 3.3 ドラフトの作成
 

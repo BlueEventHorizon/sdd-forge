@@ -185,14 +185,9 @@ prompt:
 
 Step 1 の承認後、設計書ファイルを作り、以降の成果物はこのファイルに書く。
 
-設計 ID はプロジェクトのルールに従う（ルールがない場合は `DES-XXX` 形式を推奨）。必ず以下のスクリプトで次の連番を取得する。手動での番号決定は禁止:
+設計 ID はプロジェクトのルールに従う（ルールがない場合は `DES-XXX` 形式を推奨）。必ず `Skill` ツールで `next-spec-id` を、`args` を `DES ADR,DES` として呼び、次の連番を取得する（第 1 引数が発行するプレフィックス、第 2 引数が通し番号を共有するプレフィックス）。手動での番号決定は禁止。
 
-```bash
-SCAN_SCRIPT="${CLAUDE_PLUGIN_ROOT}/skills/next-spec-id/scripts/scan_spec_ids.py"
-python3 "$SCAN_SCRIPT" DES --share-prefixes ADR,DES
-```
-
-JSON 出力の `next_id` をファイル名・設計 ID として使用する。`duplicates` が空でない場合は警告を表示する（`duplicates` には「異なるファイルが同じ ID / 共有番号を主張している」実際の衝突のみが報告される。同一履歴由来の複数ブランチ出現はノイズとして除外済みのため、空でなければ必ずユーザーに提示する）。
+返された `next_id` をファイル名・設計 ID として使用する。`duplicates` が空でない場合は警告を表示する（`duplicates` には「異なるファイルが同じ ID / 共有番号を主張している」実際の衝突のみが報告される。同一履歴由来の複数ブランチ出現はノイズとして除外済みのため、空でなければ必ずユーザーに提示する）。
 
 - **作成場所**: 事前準備「出力先の解決」で確定した出力先ディレクトリ
 - **フォーマット**: Markdown (.md) ファイル
@@ -206,7 +201,7 @@ JSON 出力の `next_id` をファイル名・設計 ID として使用する。
 設計で新しく名付けた、特有の意味を持つ概念があるときだけ作る（無ければ作らない）。命名と表記は `document_style_guide.md` §9 に、構造は `${CLAUDE_PLUGIN_ROOT}/docs/glossary_format.md` に従う。要件の用語は再定義しない。
 
 - **出力先**: `${CLAUDE_PLUGIN_ROOT}/skills/doc-structure/SKILL.md` の「出力先ディレクトリの解決」手順に従い、doc_type `glossary`、feature `{feature}` で求める
-- **ID とファイル名**: `glossary_format.md`「配置と ID」に従う。採番は設計 ID と同じ手順（2.2）で行う
+- **ID とファイル名**: `glossary_format.md`「配置と ID」に従う。採番は設計 ID と同じ手順（2.2。`next-spec-id` スキルを呼ぶ）で行う
 - **設計書との対応**: 設計書は、冒頭に用語集の行を書き（同「文書冒頭の用語集の行」）、本文では用語を `[用語]` と書く（`document_style_guide.md` §9.3）
 
 ---

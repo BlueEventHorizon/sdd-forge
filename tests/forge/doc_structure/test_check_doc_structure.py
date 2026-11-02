@@ -11,7 +11,8 @@ import unittest
 from pathlib import Path
 
 # テスト対象のスクリプトパスを追加
-REPO_ROOT = Path(__file__).resolve().parent.parent.parent.parent
+from tests import REPO_ROOT
+
 SCRIPTS_DIR = REPO_ROOT / "plugins" / "forge" / "scripts" / "doc_structure"
 sys.path.insert(0, str(SCRIPTS_DIR))
 

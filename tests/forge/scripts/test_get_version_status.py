@@ -15,11 +15,10 @@ import tempfile
 import unittest
 from pathlib import Path
 from unittest.mock import patch, MagicMock
+from tests import REPO_ROOT
 
 # テスト対象モジュールへのパスを追加
-sys.path.insert(
-    0, str(Path(__file__).resolve().parents[3] / "plugins" / "forge" / "scripts")
-)
+sys.path.insert(0, str(REPO_ROOT / "plugins" / "forge" / "scripts"))
 
 from get_version_status import (
     _parse_version_config_yaml,

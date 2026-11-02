@@ -33,7 +33,8 @@ import sys
 import unittest
 from pathlib import Path
 
-REPO_ROOT = Path(__file__).resolve().parents[3]
+from tests import REPO_ROOT
+
 DOC_STRUCTURE_SCRIPTS = REPO_ROOT / "plugins" / "forge" / "scripts" / "doc_structure"
 DOC_STRUCTURE_PATH = ".claude/skills/update-forge-toc/forge_doc_structure.yaml"
 TOC_DIR = REPO_ROOT / "plugins" / "forge" / "toc"

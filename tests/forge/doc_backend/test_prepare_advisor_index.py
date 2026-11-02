@@ -21,9 +21,10 @@ import sys
 import tempfile
 import unittest
 from pathlib import Path
+from tests import REPO_ROOT
 
 _SCRIPT_PATH = (
-    Path(__file__).resolve().parents[3]
+    REPO_ROOT
     / "plugins"
     / "forge"
     / "scripts"

@@ -19,7 +19,8 @@ import unittest
 from pathlib import Path
 
 
-REPO_ROOT = Path(__file__).resolve().parents[3]
+from tests import REPO_ROOT
+
 SCRIPT_DIR = REPO_ROOT / "plugins" / "forge" / "scripts" / "review"
 RESOLVE = SCRIPT_DIR / "resolve_review_path.py"
 PUBLISH = SCRIPT_DIR / "publish_request.py"

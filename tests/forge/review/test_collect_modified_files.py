@@ -15,9 +15,10 @@ import subprocess
 import tempfile
 import unittest
 from pathlib import Path
+from tests import REPO_ROOT
 
 _SCRIPT_PATH = (
-    Path(__file__).resolve().parents[3]
+    REPO_ROOT
     / "plugins"
     / "forge"
     / "skills"
@@ -137,7 +138,7 @@ class MainTest(unittest.TestCase):
             ["python3", str(_SCRIPT_PATH)],
             capture_output=True,
             text=True,
-            cwd=str(Path(__file__).resolve().parents[3]),
+            cwd=str(REPO_ROOT),
         )
         self.assertEqual(result.returncode, 0)
         payload = json.loads(result.stdout)

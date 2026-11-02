@@ -106,6 +106,7 @@ python3 -m unittest tests.forge.review.test_xxx -v
 - `tests/` にプラグイン名・スキル名で分類して置く（例: `tests/forge/review/`、プラグイン横断は `tests/common/`）
 - ファイル名は `test_{module}.py`
 - テストのディレクトリ名は、対象のスキル名と一致させる。スキルを改名したら、テストのディレクトリも同じ変更で改名する
+- テストがリポジトリのルートを必要とするときは、`from tests import REPO_ROOT` で得る。`Path(__file__).resolve().parents[N]` で自力では求めない（ディレクトリを動かすと `N` がずれる）。このため、テストはリポジトリのルートから実行する
 
 ### 4.2 AI の判断を試すテスト
 

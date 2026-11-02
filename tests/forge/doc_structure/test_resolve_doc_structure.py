@@ -9,14 +9,13 @@ import tempfile
 import unittest
 from pathlib import Path
 
+from tests import REPO_ROOT
+
 # テスト対象モジュールの import
 sys.path.insert(
     0,
     os.path.join(
-        os.path.dirname(__file__),
-        "..",
-        "..",
-        "..",
+        REPO_ROOT,
         "plugins",
         "forge",
         "scripts",
@@ -945,10 +944,7 @@ class TestValidateDocStructure(unittest.TestCase):
             os.makedirs(os.path.join(tmpdir, ".git"))
 
             script = os.path.join(
-                os.path.dirname(__file__),
-                "..",
-                "..",
-                "..",
+                REPO_ROOT,
                 "plugins",
                 "forge",
                 "scripts",
@@ -1568,10 +1564,7 @@ class TestCliDirOfAndFeatureOf(unittest.TestCase):
     """--dir-of / --feature-of の CLI テスト（終了コードと JSON）"""
 
     SCRIPT = os.path.join(
-        os.path.dirname(__file__),
-        "..",
-        "..",
-        "..",
+        REPO_ROOT,
         "plugins",
         "forge",
         "scripts",
@@ -1747,10 +1740,7 @@ class TestMatchPathCli(unittest.TestCase):
     """--match-path（DES-084 §6.8）。"""
 
     SCRIPT = os.path.join(
-        os.path.dirname(__file__),
-        "..",
-        "..",
-        "..",
+        REPO_ROOT,
         "plugins",
         "forge",
         "scripts",

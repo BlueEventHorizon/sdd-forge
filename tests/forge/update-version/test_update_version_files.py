@@ -13,7 +13,8 @@ import tempfile
 import unittest
 from pathlib import Path
 
-REPO_ROOT = Path(__file__).resolve().parent.parent.parent.parent
+from tests import REPO_ROOT
+
 SCRIPTS_DIR = REPO_ROOT / "plugins" / "forge" / "skills" / "update-version" / "scripts"
 sys.path.insert(0, str(SCRIPTS_DIR))
 

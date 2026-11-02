@@ -17,7 +17,8 @@ import unittest
 from pathlib import Path
 from unittest import mock
 
-REPO_ROOT = Path(__file__).resolve().parents[3]
+from tests import REPO_ROOT
+
 WRAPPER_PATH = (
     REPO_ROOT
     / "plugins"

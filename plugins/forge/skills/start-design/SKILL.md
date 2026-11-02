@@ -71,10 +71,14 @@ Phase 完了後は立ち止まらず次の Phase に自動で進む。立ち止�
 
 ### 差分開発かどうかの確認
 
-「要件定義書の特定」で特定した要件定義書が、差分 feature の一時マーカー（`feature_type: temporary-feature`）を持つかを、`Skill` ツールで `feature-marker` を、`args` を `paths {要件定義書のパス}...` として呼んで判定し、判定の出発点にする。
+「要件定義書の特定」で特定した要件定義書が、差分 feature の一時マーカー（`feature_type: temporary-feature`）を持つかを、次の script で判定し、判定の出発点にする。
 
-- **`status` が `ok`**: `any_marker` が `true` なら「持つ」、`false` なら「持たない」
-- **`status` が `error`**: `errors` をそのままユーザーに伝える。推測で「持たない」としない。原因は文書の frontmatter の書式なので、その修正を促す
+```bash
+python3 "${CLAUDE_PLUGIN_ROOT}/scripts/doc_structure/feature_marker.py" --paths {要件定義書のパス}...
+```
+
+- **終了コード 0**: JSON の `any_marker` が `true` なら「持つ」、`false` なら「持たない」
+- **終了コード 1**: JSON の `errors` をそのままユーザーに伝える。推測で「持たない」としない。原因は文書の frontmatter の書式なので、その修正を促す
 
 型は文書ごとに判定するため（`additive_development_spec.md` §0）、要件の上では既存と重ならなくても、設計してみると既存の設計書を変える・重なることがある。Phase 3 で設計書について確かめ直す。
 

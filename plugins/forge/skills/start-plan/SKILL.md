@@ -140,10 +140,14 @@ Phase 1 の 2 agent の return value を起点に、必要なファイルを Rea
 
 ### 2.2 追加開発かどうかの判定
 
-2.1 で読んだ設計書と要件定義書（あれば）が、差分 feature の一時マーカー（`feature_type: temporary-feature`）を持つかを、`Skill` ツールで `feature-marker` を、`args` を `paths {設計書・要件定義書のパス}...` として呼んで判定する。引数では指定しない。
+2.1 で読んだ設計書と要件定義書（あれば）が、差分 feature の一時マーカー（`feature_type: temporary-feature`）を持つかを、次の script で判定する。引数では指定しない。
 
-- **`status` が `ok`**: `any_marker` が `true` なら追加開発、`false` なら追加開発ではない
-- **`status` が `error`**: 判定できない文書がある。`errors` をそのままユーザーに伝え、AskUserQuestion で確認する。推測で「追加開発ではない」としない
+```bash
+python3 "${CLAUDE_PLUGIN_ROOT}/scripts/doc_structure/feature_marker.py" --paths {設計書・要件定義書のパス}...
+```
+
+- **終了コード 0**: JSON の `any_marker` が `true` なら追加開発、`false` なら追加開発ではない
+- **終了コード 1**: 判定できない文書がある。JSON の `errors` をそのままユーザーに伝え、AskUserQuestion で確認する。推測で「追加開発ではない」としない
 
 追加開発のときは、以下を Read し、判定基準・旧仕様の置き換え・merge 手順を把握したうえで Phase 3 に進む:
 

@@ -19,9 +19,8 @@ SCRIPT_DIR = os.path.join(
     "..",
     "plugins",
     "forge",
-    "skills",
-    "feature-marker",
     "scripts",
+    "doc_structure",
 )
 sys.path.insert(0, SCRIPT_DIR)
 import feature_marker as fm

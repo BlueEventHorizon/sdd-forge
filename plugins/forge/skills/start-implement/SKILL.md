@@ -349,13 +349,16 @@ python3 "${CLAUDE_SKILL_DIR}/scripts/derive_scope.py" --review-text \
 次の 3 つを用意する。
 
 - **規範（ルール）**: 必読文書の種別 `rule_docs` のパス
-- **規範（仕様）**: 種別 `design_docs` と `requirement_docs` のパスに、**並行状態にある文書**を足したもの。並行状態にある文書は、下記の `feature-marker` で求める。戦略書と `additional` は、並行状態にあるものを除いて渡さない（実装手順の指示であり、規範ではない）
+- **規範（仕様）**: 種別 `design_docs` と `requirement_docs` のパスに、**並行状態にある文書**を足したもの。並行状態にある文書は、次の script で求める。戦略書と `additional` は、並行状態にあるものを除いて渡さない（実装手順の指示であり、規範ではない）
 - **対象**: 未コミットの変更（`--diff`）。実装済みのまま残るメンバーを持つタスクグループは、1.4 のとおり単独で実行するため、`--diff` で全メンバーの変更を対象にできる。並列に実行した組のタスク実行単位は、同じ作業ツリーに他のタスク実行単位の変更が同居するため、`--diff` の代わりに、そのタスク実行単位の結果の `files_modified` を `--files`（カンマ区切り）に指定する
 
-`Skill` ツールで `feature-marker` を、`args` を `paths {design_docs・requirement_docs・additional のパス（空白区切り）}` として呼ぶ。
+```bash
+python3 "${CLAUDE_PLUGIN_ROOT}/scripts/doc_structure/feature_marker.py" \
+  --paths {design_docs・requirement_docs・additional のパス（空白区切り）}
+```
 
-- `status` が `ok`: `marker_paths` が、並行状態にある文書である（無ければ空）
-- `status` が `error`: 判定できない文書がある。`errors` を利用者へ報告し、レビューを依頼せず、エラーの扱いに従う
+- 終了コード 0: 標準出力の `marker_paths` が、並行状態にある文書である（無ければ空）
+- 終了コード 1: 判定できない文書がある。`errors` を利用者へ報告し、レビューを依頼せず、エラーの扱いに従う
 
 タスクグループは、メンバー全員の `design_docs` / `requirement_docs` / `additional` / `rule_docs` を合わせ、重複を除く。
 
@@ -476,11 +479,15 @@ commit の確認フローを担うスキルが available-skills にあるとき�
 
 ### 7.3 差分開発の merge 案内
 
-7.2 で「すべて完了した」ときだけ行う。2.4 で `design_docs` と `requirement_docs` に分類した文書が、差分 feature の一時マーカー（`feature_type: temporary-feature`）を持つかを、`Skill` ツールで `feature-marker` を、`args` を `paths {設計書・要件定義書のパス}...` として呼んで判定する。
+7.2 で「すべて完了した」ときだけ行う。2.4 で `design_docs` と `requirement_docs` に分類した文書が、差分 feature の一時マーカー（`feature_type: temporary-feature`）を持つかを、次の script で判定する。
 
-- **`status` が `ok` かつ `any_marker` が `true`** → 差分開発である。実装を経て新旧の仕様を 1 つへ統合する段階に入ったため、報告に merge の案内を含める（`${CLAUDE_PLUGIN_ROOT}/docs/additive_development_spec.md` §4。merge は自動で実行しない）
-- **`status` が `ok` かつ `any_marker` が `false`** → merge の案内は含めない
-- **`status` が `error`** → `errors` をそのまま利用者に伝え、merge の要否は利用者の判断に委ねる旨を報告に含める。推測で「差分開発ではない」としない
+```bash
+python3 "${CLAUDE_PLUGIN_ROOT}/scripts/doc_structure/feature_marker.py" --paths {設計書・要件定義書のパス}...
+```
+
+- **終了コード 0 かつ `any_marker` が `true`** → 差分開発である。実装を経て新旧の仕様を 1 つへ統合する段階に入ったため、報告に merge の案内を含める（`${CLAUDE_PLUGIN_ROOT}/docs/additive_development_spec.md` §4。merge は自動で実行しない）
+- **終了コード 0 かつ `any_marker` が `false`** → merge の案内は含めない
+- **終了コード 1** → JSON の `errors` をそのまま利用者に伝え、merge の要否は利用者の判断に委ねる旨を報告に含める。推測で「差分開発ではない」としない
 
 差分開発と判定したときは、7.2 の報告に続けて次を示す（示すのはユーザー入力のコマンド例であり、本スキルから merge-specs を起動しない）:
 

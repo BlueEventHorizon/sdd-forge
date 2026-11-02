@@ -5,7 +5,7 @@
 metadata:
   name: Document Search Index (forge-rules)
   key: forge-rules
-  generated_at: 2026-11-01T13:51:01Z
+  generated_at: 2026-11-02T05:09:52Z
   file_count: 43
 
 docs:
@@ -1260,31 +1260,31 @@ docs:
       - multi-window
   plugins/forge/skills/start-uxui-design/docs/uxui_analysis_workflow.md:
     title: UX/UI Design Creation Workflow (Phase 1-6)
-    purpose: Defines the Phase 1-6 workflow that creates visual design (design tokens, component visual specs, UX self-evaluation) from a requirements document, including Design Intent acquisition, branching by distinctiveness level, document generation, and consult-based dialogue rules.
+    purpose: Defines the phased workflow that creates visual design from a requirements document, covering Design Intent, design direction, design tokens, component visual specs, and UX self-evaluation.
     content_details:
-      - Phase 1 requirements loading from SCR/CMP/FNC/THEME documents and optional reference images
-      - Phase 2.0 Design Intent structure (user_experience, tension_axis, distinctiveness, references, anti_goals, signature_required)
-      - Phase 2.2-2.6 tension axis, cultural references, 3-direction provocations, recommended and reserve direction
-      - Phase 3 color palette (60-30-10, light and dark modes), typography scale, 8pt spacing scale, radius and shadow design
-      - Phase 3.5 signature rule tokenization and Phase 3.6 token quality checklist with 4.5:1 contrast
-      - Phase 4 ASCII-art-to-visual-spec conversion, component naming, iOS and macOS state definitions
-      - Phase 5 Don Norman 3-level check, Dieter Rams check, Distinctiveness and Memorability metrics
-      - Phase 6 output files THEME-001, CMP-001, UXEVAL-001 and review, specs ToC update, completion guidance
+      - Position in the chain from start-requirements through start-uxui-design and start-design to start-plan and start-implement
+      - Design Intent acquisition with user_experience, tension_axis, distinctiveness importance, references, anti_goals, and signature_required
+      - Branching rules that switch Phases 2.2-2.5, 3.5, 4.5, and 5.4 on by distinctiveness importance and signature_required
+      - "Phase 2 direction: two-axis brand tension, cultural references, three provocations, and recommended and reserved options"
+      - "Phase 3 design token creation: base colors with HEX values, 60-30-10 color rule, light and dark modes, 8pt spacing scale, radius and shadows"
+      - "Phase 4 component visual design: converting ASCII art in SCR specs to HIG components with per-platform states and naming rules"
+      - "Phase 5 UX self-evaluation: Norman three levels, Dieter Rams principles, distinctiveness and memorability checks, anti-goal safety"
+      - Phase 6 outputs THEME-001, CMP-001, and UXEVAL-001 documents followed by forge review and commit confirmation
     applicable_tasks:
-      - UX/UI design creation from a requirements document
-      - Design token design (color, typography, spacing, radius)
-      - UI component visual specification definition
-      - Design Intent confirmation and design direction selection
-      - UX self-evaluation of a design system
-      - Distinctiveness and Memorability review of visual design
+      - Creating visual design from a requirements document (UX/UI design creation)
+      - Defining Design Intent before design direction work
+      - Designing design tokens (THEME) for colors, typography, spacing, radius, and shadows
+      - Defining component visual specifications (CMP) from requirement screen specs
+      - UX self-evaluation of a created design system (UXEVAL)
+      - Modification of the UX/UI design workflow phases or branching conditions
     keywords:
-      - start-uxui-design
       - Design Intent
       - tension_axis
       - distinctiveness
       - signature_required
+      - anti_goals
       - design tokens
-      - THEME-001
-      - CMP-001
-      - UXEVAL-001
-      - Phase 2.4 provocation
+      - THEME-xxx
+      - CMP-xxx
+      - UXEVAL-xxx
+      - Provocation

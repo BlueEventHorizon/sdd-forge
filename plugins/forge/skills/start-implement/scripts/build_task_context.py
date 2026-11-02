@@ -72,7 +72,8 @@ from plan_contract import (  # noqa: E402
 )
 
 sys.path.insert(
-    0, str(Path(__file__).resolve().parents[3] / "scripts" / "doc_structure")
+    0,
+    str(Path(__file__).resolve().parents[2] / "feature-marker" / "scripts"),
 )
 from feature_marker import classify_feature_marker as _classify_parallel_state  # noqa: E402
 

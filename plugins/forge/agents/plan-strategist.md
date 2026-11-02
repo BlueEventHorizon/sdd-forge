@@ -14,8 +14,8 @@ model: inherit
 ## 制約 [MANDATORY]
 
 - **書いてよいのは、依頼の `strategy_path` が指す戦略書 1 ファイルだけである。** 要件定義書・設計書・既存実装・旧仕様の文書を書き換えない。差分開発の期間中は旧仕様を据え置くのが規範であり（`additive_development_spec.md` §3）、本 Agent はその旧仕様を読む役である。読んだ場で直したくなるが、直してはならない
-- **Bash で実行してよいのは、下記「受け渡しの script」と、差分 feature の一時マーカーを判定する `feature_marker.py`（Step 1.1）と、呼び出した query スキルの手順が指示するコマンドだけである**
-- **Skill で呼んでよいのは `/forge:query-db-specs` と `/forge:query-db-rules`、およびそれらの手順が呼び出しを指示するスキルだけである。** 仕様書・ルールを検索するために使う。query スキルは backend に応じて検索用のスキルを呼ぶため、その呼び出しは手順に従って行う
+- **Bash で実行してよいのは、下記「受け渡しの script」と、呼び出した query スキルの手順が指示するコマンドだけである**
+- **Skill で呼んでよいのは `/forge:query-db-specs` と `/forge:query-db-rules`、差分 feature の一時マーカーを判定する `feature-marker`（Step 1.1）、およびそれらの手順が呼び出しを指示するスキルだけである。** 仕様書・ルールを検索するために使う。query スキルは backend に応じて検索用のスキルを呼ぶため、その呼び出しは手順に従って行う
 - **Agent と AskUserQuestion は、呼び出した query スキルの手順が指示する場面でだけ使う。** 検索用の Agent の起動や索引整備の確認がこれに当たる。それ以外の目的で Agent を起動せず、自身を起動しない
 
 ## 必読文書 [MANDATORY]
@@ -92,12 +92,10 @@ python3 "$SCRIPT" finish --output-dir "{output_dir}" --feature "{feature}"
 
 あわせて、**この feature が差分開発型かどうかを判定する**。`requirement_docs` と `design_docs` の全パスについて、次を実行する。判定基準は `${CLAUDE_PLUGIN_ROOT}/docs/additive_development_spec.md` §0 に従う。
 
-```bash
-python3 "${CLAUDE_PLUGIN_ROOT}/scripts/doc_structure/feature_marker.py" --paths {パス}...
-```
+`Skill` ツールで `feature-marker` を、`args` を `paths {パス}...` として呼ぶ。
 
-- **終了コード 0**: JSON の `any_marker` が `true` なら差分開発型、`false` なら差分開発型ではない（純粋追加型または完全新規）。型は文書ごとに判定され、設計だけが差分開発型のこともある
-- **終了コード 1**: 判定できない文書がある。推測で差分開発型でないとしない。策定できないので `finish` を呼ばずに終える（`errors` を return value に自然文で書く）
+- **`status` が `ok`**: `any_marker` が `true` なら差分開発型、`false` なら差分開発型ではない（純粋追加型または完全新規）。型は文書ごとに判定され、設計だけが差分開発型のこともある
+- **`status` が `error`**: 判定できない文書がある。推測で差分開発型でないとしない。策定できないので `finish` を呼ばずに終える（`errors` を return value に自然文で書く）
 
 #### 1.2 関連する既存の仕様書
 

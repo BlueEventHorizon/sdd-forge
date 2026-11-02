@@ -183,7 +183,10 @@ class CliTest(unittest.TestCase):
     def test_no_plan_exit_0(self):
         result = self._run("--plan-path", str(self.plan_path))
         self.assertEqual(result.returncode, 0)
-        self.assertEqual(json.loads(result.stdout), {"state": "no_plan"})
+        self.assertEqual(
+            json.loads(result.stdout),
+            {"state": "no_plan", "plan_path": str(self.plan_path)},
+        )
 
     def test_leftover_exit_0(self):
         self.plan_path.write_text(json.dumps(_plan("in_progress")), encoding="utf-8")
@@ -191,14 +194,57 @@ class CliTest(unittest.TestCase):
         self.assertEqual(result.returncode, 0)
         self.assertEqual(
             json.loads(result.stdout),
-            {"state": "leftover", "in_progress_task_ids": ["TASK-001"]},
+            {
+                "state": "leftover",
+                "in_progress_task_ids": ["TASK-001"],
+                "plan_path": str(self.plan_path),
+            },
         )
 
     def test_clear_exit_0(self):
         self.plan_path.write_text(json.dumps(_plan("completed")), encoding="utf-8")
         result = self._run("--plan-path", str(self.plan_path))
         self.assertEqual(result.returncode, 0)
-        self.assertEqual(json.loads(result.stdout), {"state": "clear"})
+        self.assertEqual(
+            json.loads(result.stdout),
+            {"state": "clear", "plan_path": str(self.plan_path)},
+        )
+
+    def test_plan_dir_and_feature_build_the_plan_path(self):
+        """置き場と feature から `<置き場>/<feature>_plan.json` を組み立てて判定する"""
+        plan_dir = Path(self._tmp.name) / "plan"
+        plan_dir.mkdir()
+        expected = plan_dir / "login_plan.json"
+        expected.write_text(json.dumps(_plan("completed")), encoding="utf-8")
+        result = self._run("--plan-dir", str(plan_dir) + "/", "--feature", "login")
+        self.assertEqual(result.returncode, 0)
+        self.assertEqual(
+            json.loads(result.stdout),
+            {"state": "clear", "plan_path": str(expected)},
+        )
+
+    def test_plan_dir_without_plan_is_no_plan_with_the_built_path(self):
+        result = self._run("--plan-dir", self._tmp.name, "--feature", "login")
+        self.assertEqual(result.returncode, 0)
+        payload = json.loads(result.stdout)
+        self.assertEqual(payload["state"], "no_plan")
+        self.assertEqual(
+            payload["plan_path"], str(Path(self._tmp.name) / "login_plan.json")
+        )
+
+    def test_plan_dir_requires_feature(self):
+        self.assertEqual(self._run("--plan-dir", self._tmp.name).returncode, 2)
+
+    def test_empty_feature_is_rejected(self):
+        """空の feature から `_plan.json` という名前の計画書を組み立てない"""
+        result = self._run("--plan-dir", self._tmp.name, "--feature", "")
+        self.assertEqual(result.returncode, 2)
+
+    def test_plan_path_is_exclusive_with_plan_dir(self):
+        result = self._run(
+            "--plan-path", str(self.plan_path), "--plan-dir", self._tmp.name
+        )
+        self.assertEqual(result.returncode, 2)
 
     def test_broken_plan_exit_1_with_errors(self):
         self.plan_path.write_text("{ not json", encoding="utf-8")

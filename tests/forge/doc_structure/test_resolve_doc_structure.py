@@ -1467,17 +1467,60 @@ class TestFindDoc(unittest.TestCase):
                 )
                 self.assertEqual(result["matches"], [expected], requirement_id)
 
-    def test_id_contained_in_a_longer_id_returns_all_hits(self):
-        """0 埋めしない ID は、REQ-1 が REQ-10 にも当たり、全件を返す（呼び出し側が曖昧として扱う）"""
-        files = [
-            "docs/specs/requirements/REQ-1_a.md",
-            "docs/specs/requirements/REQ-10_b.md",
-        ]
+    def _find_in(self, files, name):
         with tempfile.TemporaryDirectory() as tmpdir:
             create_test_project(tmpdir, files)
             config = rds.parse_config(DIR_OF_CONFIG)
-            result = rds.find_doc(config, "specs", "requirement", "REQ-1", tmpdir)
-            self.assertEqual(result["count"], 2)
+            return rds.find_doc(config, "specs", "requirement", name, tmpdir)
+
+    def test_id_does_not_match_a_longer_number(self):
+        """0 埋めしない ID でも、REQ-1 は REQ-10 に当たらない（番号の終端まで照合する）"""
+        files = [
+            "docs/specs/requirements/REQ-1_a.md",
+            "docs/specs/requirements/REQ-10_b.md",
+            "docs/specs/requirements/REQ-100.md",
+        ]
+        self.assertEqual(self._find_in(files, "REQ-1")["matches"], [files[0]])
+        self.assertEqual(self._find_in(files, "REQ-10")["matches"], [files[1]])
+
+    def test_missing_id_is_not_completed_by_another_id(self):
+        """REQ-1 が無く REQ-10 だけがあるとき、REQ-10 を返さない（0 件）"""
+        files = ["docs/specs/requirements/REQ-10_other.md"]
+        result = self._find_in(files, "REQ-1")
+        self.assertEqual(result["status"], "ok")
+        self.assertEqual(result["count"], 0)
+
+    def test_id_does_not_match_a_zero_padded_number(self):
+        """REQ-1 と REQ-001 は別の ID である"""
+        files = ["docs/specs/requirements/REQ-001_a.md"]
+        self.assertEqual(self._find_in(files, "REQ-1")["count"], 0)
+
+    def test_id_does_not_match_when_it_is_not_at_the_start_of_the_file_name(self):
+        """別の ID の途中・語の途中には当たらない"""
+        files = [
+            "docs/specs/requirements/XREQ-1_a.md",
+            "docs/specs/requirements/ADR-REQ-1.md",
+        ]
+        self.assertEqual(self._find_in(files, "REQ-1")["count"], 0)
+
+    def test_id_does_not_match_when_followed_by_a_letter_or_digit(self):
+        files = [
+            "docs/specs/requirements/REQ-1a_x.md",
+            "docs/specs/requirements/REQ-12_y.md",
+        ]
+        self.assertEqual(self._find_in(files, "REQ-1")["count"], 0)
+
+    def test_id_matches_when_the_file_name_is_the_id_only(self):
+        files = ["docs/specs/requirements/REQ-1.md"]
+        self.assertEqual(self._find_in(files, "REQ-1")["matches"], files)
+
+    def test_same_id_in_two_places_still_returns_both_after_the_boundary_rule(self):
+        files = [
+            "docs/specs/a/requirements/REQ-1_x.md",
+            "docs/specs/b/requirements/REQ-1-y.md",
+            "docs/specs/c/requirements/REQ-10_z.md",
+        ]
+        self.assertEqual(self._find_in(files, "REQ-1")["matches"], files[:2])
 
     def test_empty_name_matches_nothing(self):
         """ID が空になる名前（空・`.md`・`/`）は、全件に当たらず 0 件を返す"""
@@ -1563,6 +1606,28 @@ class TestCliDirOfAndFeatureOf(unittest.TestCase):
             proc = self._run(tmpdir, "--dir-of", "requirement")
             self.assertEqual(proc.returncode, 0)
             self.assertEqual(json.loads(proc.stdout)["dir"], "docs/specs/requirements/")
+
+    def test_dir_of_without_feature_reports_existing_files(self):
+        """feature なしの問い合わせは、既存ファイルの有無（完全新規かどうか）も答える"""
+        with tempfile.TemporaryDirectory() as tmpdir:
+            self._project(tmpdir)
+            proc = self._run(tmpdir, "--dir-of", "requirement")
+            data = json.loads(proc.stdout)
+            self.assertFalse(data["has_existing"])
+            self.assertNotIn("existing_files", data)
+
+            create_test_project(tmpdir, ["docs/specs/requirements/REQ-001.md"])
+            data = json.loads(self._run(tmpdir, "--dir-of", "requirement").stdout)
+            self.assertTrue(data["has_existing"])
+
+    def test_dir_of_with_feature_does_not_report_existing_files(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            self._project(tmpdir)
+            data = json.loads(
+                self._run(tmpdir, "--dir-of", "design", "--feature", "forge").stdout
+            )
+            self.assertNotIn("existing_files", data)
+            self.assertNotIn("has_existing", data)
 
     def test_dir_of_unknown_doc_type_exits_1(self):
         with tempfile.TemporaryDirectory() as tmpdir:
@@ -1883,6 +1948,168 @@ class TestMatchPathCli(unittest.TestCase):
                 self.assertEqual(
                     rds.match_path(config, "specs", path, "/p")[1], "design"
                 )
+
+
+SEARCH_DIRS_CONFIG = """\
+# doc_structure_version: 3.0
+
+rules:
+  root_dirs:
+    - docs/rules/
+    - docs/rules/archived/
+  doc_types_map:
+    docs/rules/: rule
+  patterns:
+    target_glob: "**/*.md"
+    exclude:
+      - archived
+
+specs:
+  root_dirs:
+    - "docs/specs/**/design/"
+    - "specs/*/requirements/"
+  doc_types_map:
+    "docs/specs/**/design/": design
+    "specs/*/requirements/": requirement
+  patterns:
+    target_glob: "**/*.md"
+    exclude: []
+"""
+
+
+class TestSearchDirsAndSpecRootCli(unittest.TestCase):
+    """--search-dirs / --spec-root（doc-structure SKILL の search-dirs / spec-root 操作の裏付け）。"""
+
+    SCRIPT = TestMatchPathCli.SCRIPT
+
+    def setUp(self):
+        self._tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(self._tmp.cleanup)
+        self.root = self._tmp.name
+        with open(os.path.join(self.root, ".doc_structure.yaml"), "w") as f:
+            f.write(SEARCH_DIRS_CONFIG)
+        create_test_project(
+            self.root,
+            [
+                "docs/specs/feat/design/DES-001.md",
+                "specs/main/requirements/REQ-001.md",
+                "other/dir/",
+            ],
+        )
+
+    def _run(self, *args, root=None):
+        import subprocess
+
+        proc = subprocess.run(
+            [sys.executable, self.SCRIPT, "--project-root", root or self.root, *args],
+            capture_output=True,
+            text=True,
+        )
+        return proc.returncode, proc.stdout
+
+    def _ok(self, *args):
+        code, out = self._run(*args)
+        self.assertEqual(code, 0, out)
+        return json.loads(out)
+
+    # --- search-dirs ---
+
+    def test_search_dirs_returns_declared_values_as_is(self):
+        data = self._ok("--search-dirs", "--category", "specs")
+        self.assertEqual(
+            data,
+            {
+                "status": "ok",
+                "category": "specs",
+                "dirs": ["docs/specs/**/design/", "specs/*/requirements/"],
+                "exclude": [],
+                "filtered_dirs": ["docs/specs/**/design/", "specs/*/requirements/"],
+            },
+        )
+
+    def test_search_dirs_filtered_dirs_drops_entries_named_in_exclude(self):
+        data = self._ok("--search-dirs", "--category", "rules")
+        self.assertEqual(data["dirs"], ["docs/rules/", "docs/rules/archived/"])
+        self.assertEqual(data["exclude"], ["archived"])
+        self.assertEqual(data["filtered_dirs"], ["docs/rules/"])
+
+    def test_search_dirs_default_category_is_specs(self):
+        self.assertEqual(self._ok("--search-dirs")["category"], "specs")
+
+    def test_search_dirs_missing_doc_structure_is_error(self):
+        with tempfile.TemporaryDirectory() as empty:
+            code, out = self._run("--search-dirs", root=empty)
+        self.assertEqual(code, 1)
+        self.assertEqual(json.loads(out)["status"], "error")
+
+    # --- spec-root ---
+
+    def test_spec_root_existing_relative_dir_is_returned_as_is(self):
+        data = self._ok("--spec-root", "other/dir")
+        self.assertEqual(data["resolved"], "other/dir")
+        self.assertEqual(data["source"], "as-is")
+
+    def test_spec_root_absolute_dir_is_returned_as_is(self):
+        absolute = os.path.join(self.root, "other", "dir")
+        data = self._ok("--spec-root", absolute)
+        self.assertEqual(data["resolved"], absolute)
+        self.assertEqual(data["source"], "as-is")
+
+    def test_spec_root_alias_is_resolved_under_spec_root_candidates(self):
+        """`specs/*/requirements/` の `*` より前（`specs/`）の下に `main/` がある。"""
+        data = self._ok("--spec-root", "main")
+        self.assertEqual(data["resolved"], "specs/main/")
+        self.assertEqual(data["source"], "spec-root")
+
+    def test_spec_root_alias_under_doublestar_candidate(self):
+        data = self._ok("--spec-root", "feat")
+        self.assertEqual(data["resolved"], "docs/specs/feat/")
+        self.assertEqual(data["source"], "spec-root")
+
+    def test_spec_root_unknown_alias_is_null_not_error(self):
+        data = self._ok("--spec-root", "nothing-here")
+        self.assertEqual(data["status"], "ok")
+        self.assertIsNone(data["resolved"])
+        self.assertIsNone(data["source"])
+
+    def test_spec_root_empty_alias_is_unresolved(self):
+        """空の短縮名を、プロジェクトルート（as-is）として解決しない"""
+        for alias in ("", "  "):
+            with self.subTest(alias=alias):
+                data = self._ok("--spec-root", alias)
+                self.assertIsNone(data["resolved"])
+                self.assertIsNone(data["source"])
+
+    def test_spec_root_alias_with_trailing_slash_and_dot_prefix_is_normalized(self):
+        for alias in ("main/", "./main", "main//"):
+            with self.subTest(alias=alias):
+                data = self._ok("--spec-root", alias)
+                self.assertEqual(data["resolved"], "specs/main/")
+                self.assertEqual(data["source"], "spec-root")
+
+    def test_spec_root_alias_with_hierarchy(self):
+        create_test_project(self.root, ["specs/main/sub/"])
+        data = self._ok("--spec-root", "main/sub")
+        self.assertEqual(data["resolved"], "specs/main/sub/")
+
+    def test_spec_root_alias_escaping_the_spec_root_is_unresolved(self):
+        """spec ルートの下を探す段階（手順 2）で、`..` により外へ出る短縮名は解決しない"""
+        for alias in ("../main", "main/../../other"):
+            with self.subTest(alias=alias):
+                data = self._ok("--spec-root", alias)
+                self.assertIsNone(data["resolved"])
+
+    def test_spec_root_candidates_are_deduplicated(self):
+        config = rds.parse_config(SEARCH_DIRS_CONFIG)
+        self.assertEqual(rds._spec_root_candidates(config), ["docs/specs/", "specs/"])
+
+    def test_new_options_are_exclusive_with_existing_options(self):
+        for other in (["--type", "all"], ["--features"], ["--version"]):
+            with self.subTest(other=other):
+                code, _ = self._run("--search-dirs", *other)
+                self.assertEqual(code, 2)
+                code, _ = self._run("--spec-root", "main", *other)
+                self.assertEqual(code, 2)
 
 
 class TestToProjectRelativePath(unittest.TestCase):

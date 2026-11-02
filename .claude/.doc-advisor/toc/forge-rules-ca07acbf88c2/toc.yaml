@@ -5,7 +5,7 @@
 metadata:
   name: Document Search Index (forge-rules)
   key: forge-rules
-  generated_at: 2026-11-02T05:09:52Z
+  generated_at: 2026-11-02T09:10:24Z
   file_count: 43
 
 docs:
@@ -449,36 +449,37 @@ docs:
       - paths-json
   plugins/forge/docs/document_style_guide.md:
     title: Document Style Guide
-    purpose: "Generic writing style for requirement, design, and plan documents: tag usage, heading levels, emphasis, reference notation, placeholder naming, no history or related-document sections, and terminology."
+    purpose: "Defines generic writing style for forge-generated documents: tag usage criteria, heading levels, emphasis, document reference notation, placeholder naming, and terminology notation"
     content_details:
-      - Tags MANDATORY, CRITICAL, and IMPORTANT placed at the end of the heading line, with MANDATORY limited to 0 to 3 per document under criteria A to E
-      - Heading levels limited to H1 through H4 with one H1 per file
-      - Emphasis phrases NEVER, MUST, DO NOT, ALWAYS, italics avoided, and GFM alert types NOTE, TIP, IMPORTANT, WARNING, CAUTION
-      - Long vowel omission per JIS Z 8301 for words such as directory, category, and entry
-      - "Three reference systems: plugin docs use relative links, SKILL and agent files use full CLAUDE_PLUGIN_ROOT paths, and project documents use ID or relative path links"
-      - Reference-style link definitions collected at the document end so that moving a file needs only definition edits
-      - Placeholder names such as Foo, Bar, Hoge, Fuga with type suffixes instead of concrete domain terms
-      - No history sections or migration narratives; history belongs to CHANGELOG and git
-      - No related-document list sections; only external URLs or consolidated references are allowed
-      - "Terminology: glossary terms written in brackets at every body occurrence, defined first, and reused unchanged by downstream documents"
+      - MANDATORY tag placement and criteria A to E for applying the tag with a guideline of 0 to 3 per document
+      - CRITICAL and IMPORTANT tags, prohibited tag placements, and the downgrade order MANDATORY to CRITICAL to IMPORTANT to none
+      - Heading levels limited to h1 through h4 with the role of each level
+      - "Emphasis rules: bold for key terms, code spans for file names, paths, and identifiers, and italics prohibited"
+      - GFM alert types NOTE TIP IMPORTANT WARNING CAUTION with a few-line limit and no use in headings
+      - Table limit of 6 columns, no code blocks in table cells, and code blocks requiring a language tag
+      - Long vowel omission per JIS Z 8301 with examples such as directory, category, and repository
+      - Document reference notation for plugin docs, SKILL/agent/command files using the full CLAUDE_PLUGIN_ROOT path, and project documents using ID or Markdown relative links
+      - Reference-style link label definitions collected at the end of a document so that path changes touch one place
+      - Placeholder naming with Foo and Bar examples, and generic terms replacing concrete domain words in examples
     applicable_tasks:
-      - Writing a new requirement, design, or plan document in the house style
-      - Reviewing a document for tag misuse, heading depth, or emphasis conventions
-      - Checking document reference notation for project documents and plugin docs
-      - Auditing documents for history sections or related-document list sections
-      - Applying bracketed terminology and glossary links in a document body
-      - Naming placeholder examples in rule or guidance documents
+      - Writing new requirement, design, or plan documents under the forge style rules
+      - Reviewing MANDATORY and other tag placement in forge-generated documents
+      - Reviewing document reference notation and Markdown link paths in forge documents
+      - Editing heading levels, emphasis, tables, and code blocks in forge documents
+      - Choosing placeholder names for examples in rule or guideline documents
+      - Writing terminology notation and glossary references in requirement or design documents
+      - Removing history sections and related-document list sections from forge documents
     keywords:
-      - MANDATORY tag
-      - CRITICAL tag
-      - heading level
+      - MANDATORY
+      - CRITICAL
+      - IMPORTANT
+      - GFM alert
       - reference-style link
       - CLAUDE_PLUGIN_ROOT
-      - glossary term brackets
+      - glossary term notation
       - JIS Z 8301
-      - GFM alert
+      - heading level
       - placeholder naming
-      - related documents section
   plugins/forge/docs/error_classification_spec.md:
     title: Error Definition, Classification, and Cause Specification
     purpose: Defines what an error is, classifies errors as recoverable or fatal, separates causes (bug, fault, user input or environment) from events, and sets criteria for adding new error values.

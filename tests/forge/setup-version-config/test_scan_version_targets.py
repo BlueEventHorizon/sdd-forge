@@ -18,17 +18,13 @@ import tempfile
 import unittest
 from contextlib import redirect_stdout
 from pathlib import Path
+from tests import REPO_ROOT
 
 # テスト対象モジュールへのパスを追加
 sys.path.insert(
     0,
     str(
-        Path(__file__).resolve().parents[3]
-        / "plugins"
-        / "forge"
-        / "skills"
-        / "setup-version-config"
-        / "scripts"
+        REPO_ROOT / "plugins" / "forge" / "skills" / "setup-version-config" / "scripts"
     ),
 )
 

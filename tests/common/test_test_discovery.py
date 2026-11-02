@@ -13,7 +13,9 @@ CI ゲートは `python3 -m unittest discover -s tests -p 'test_*.py'` である
 import unittest
 from pathlib import Path
 
-_TESTS_ROOT = Path(__file__).resolve().parents[1]
+from tests import REPO_ROOT
+
+_TESTS_ROOT = REPO_ROOT / "tests"
 
 
 def _dirs_containing_tests() -> set[Path]:

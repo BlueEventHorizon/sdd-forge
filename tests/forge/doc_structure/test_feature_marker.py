@@ -12,11 +12,10 @@ import sys
 import tempfile
 import unittest
 
+from tests import REPO_ROOT
+
 SCRIPT_DIR = os.path.join(
-    os.path.dirname(__file__),
-    "..",
-    "..",
-    "..",
+    REPO_ROOT,
     "plugins",
     "forge",
     "scripts",

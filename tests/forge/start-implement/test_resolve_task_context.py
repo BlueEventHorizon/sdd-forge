@@ -16,7 +16,8 @@ import unittest
 from pathlib import Path
 
 
-REPO_ROOT = Path(__file__).resolve().parents[3]
+from tests import REPO_ROOT
+
 SCRIPTS_DIR = REPO_ROOT / "plugins" / "forge" / "skills" / "start-implement" / "scripts"
 SCRIPT = SCRIPTS_DIR / "resolve_task_context.py"
 BUILD_SCRIPT = SCRIPTS_DIR / "build_task_context.py"

@@ -23,7 +23,8 @@ import re
 import unittest
 from pathlib import Path
 
-REPO_ROOT = Path(__file__).resolve().parents[2]
+from tests import REPO_ROOT
+
 
 # WORKING_SKILLS: 個別の SKILL.md に対して「fork 不在」を assert したいときの部分検査リスト。
 # 通常は空でよい (ALL_SKILLS_FORK_FREE で全件カバーされるため)。

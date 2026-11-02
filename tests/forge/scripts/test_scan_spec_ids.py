@@ -18,17 +18,11 @@ import tempfile
 import unittest
 from pathlib import Path
 from unittest.mock import MagicMock, patch, call
+from tests import REPO_ROOT
 
 sys.path.insert(
     0,
-    str(
-        Path(__file__).resolve().parents[3]
-        / "plugins"
-        / "forge"
-        / "skills"
-        / "next-spec-id"
-        / "scripts"
-    ),
+    str(REPO_ROOT / "plugins" / "forge" / "skills" / "next-spec-id" / "scripts"),
 )
 
 from scan_spec_ids import (
@@ -743,7 +737,7 @@ class TestCLISharePrefixes(unittest.TestCase):
 
     def test_cli_share_prefixes(self):
         script = str(
-            Path(__file__).resolve().parents[3]
+            REPO_ROOT
             / "plugins"
             / "forge"
             / "skills"
@@ -774,7 +768,7 @@ class TestCLISharePrefixes(unittest.TestCase):
     def test_cli_without_share_prefixes(self):
         """--share-prefixes 未指定時は従来通りの CLI 出力（後方互換）"""
         script = str(
-            Path(__file__).resolve().parents[3]
+            REPO_ROOT
             / "plugins"
             / "forge"
             / "skills"
@@ -800,7 +794,7 @@ class TestCLISharePrefixes(unittest.TestCase):
             encoding="utf-8",
         )
         script = str(
-            Path(__file__).resolve().parents[3]
+            REPO_ROOT
             / "plugins"
             / "forge"
             / "skills"

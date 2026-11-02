@@ -25,7 +25,8 @@ import sys
 import unittest
 from pathlib import Path
 
-REPO_ROOT = Path(__file__).resolve().parents[2]
+from tests import REPO_ROOT
+
 UPDATE_VERSION_SCRIPTS = (
     REPO_ROOT / "plugins" / "forge" / "skills" / "update-version" / "scripts"
 )

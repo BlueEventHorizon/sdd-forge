@@ -17,9 +17,10 @@ import sys
 import unittest
 from pathlib import Path
 from unittest import mock
+from tests import REPO_ROOT
 
 _SCRIPT_PATH = (
-    Path(__file__).resolve().parents[3]
+    REPO_ROOT
     / "plugins"
     / "forge"
     / "skills"

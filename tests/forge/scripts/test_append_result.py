@@ -25,7 +25,8 @@ import unittest
 from pathlib import Path
 
 
-REPO_ROOT = Path(__file__).resolve().parents[3]
+from tests import REPO_ROOT
+
 SCRIPT_DIR = REPO_ROOT / "plugins" / "forge" / "scripts" / "review"
 APPEND = SCRIPT_DIR / "append_result.py"
 SEAL = SCRIPT_DIR / "seal_result.py"

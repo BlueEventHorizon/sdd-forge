@@ -30,14 +30,10 @@ import sys
 import tempfile
 import unittest
 from pathlib import Path
+from tests import REPO_ROOT
 
 _SCRIPT_PATH = (
-    Path(__file__).resolve().parents[3]
-    / "plugins"
-    / "forge"
-    / "scripts"
-    / "doc_backend"
-    / "query_docdb.py"
+    REPO_ROOT / "plugins" / "forge" / "scripts" / "doc_backend" / "query_docdb.py"
 )
 
 _spec = importlib.util.spec_from_file_location("doc_backend_query_docdb", _SCRIPT_PATH)

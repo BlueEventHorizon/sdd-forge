@@ -14,14 +14,10 @@ import importlib.util
 import sys
 import unittest
 from pathlib import Path
+from tests import REPO_ROOT
 
 _MODULE_PATH = (
-    Path(__file__).resolve().parents[3]
-    / "plugins"
-    / "forge"
-    / "scripts"
-    / "agenda"
-    / "agenda_render.py"
+    REPO_ROOT / "plugins" / "forge" / "scripts" / "agenda" / "agenda_render.py"
 )
 _SPEC = importlib.util.spec_from_file_location("agenda_render", _MODULE_PATH)
 agenda_render = importlib.util.module_from_spec(_SPEC)

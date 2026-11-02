@@ -23,7 +23,8 @@ REQ-014 FNC-002 は query wrapper が索引を書き換えないことを定め�
 import unittest
 from pathlib import Path
 
-REPO_ROOT = Path(__file__).resolve().parents[3]
+from tests import REPO_ROOT
+
 SKILLS_ROOT = REPO_ROOT / "plugins" / "forge" / "skills"
 
 QUERY_SKILLS = ("query-db-rules", "query-db-specs")

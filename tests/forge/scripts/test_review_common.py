@@ -15,7 +15,8 @@ from pathlib import Path
 from unittest import mock
 
 
-REPO_ROOT = Path(__file__).resolve().parents[3]
+from tests import REPO_ROOT
+
 MODULE = REPO_ROOT / "plugins" / "forge" / "scripts" / "review" / "review_common.py"
 
 _spec = importlib.util.spec_from_file_location("review_common", MODULE)

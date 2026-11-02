@@ -30,7 +30,8 @@ import tempfile
 import unittest
 from pathlib import Path
 
-REPO_ROOT = Path(__file__).resolve().parents[2]
+from tests import REPO_ROOT
+
 SPECS_DIR = REPO_ROOT / "docs" / "specs"
 
 #: `ADR-NNN §X.Y` 形式の参照を走査する対象。`.claude/` は生成物なので除く。

@@ -13,7 +13,8 @@ import tempfile
 import unittest
 from pathlib import Path
 
-REPO_ROOT = Path(__file__).resolve().parents[3]
+from tests import REPO_ROOT
+
 SKILL_PATH = REPO_ROOT / "plugins" / "forge" / "skills" / "agent-review" / "SKILL.md"
 AGENT_PATH = REPO_ROOT / "plugins" / "forge" / "agents" / "reviewer.md"
 EVALUATOR_PATH = REPO_ROOT / "plugins" / "forge" / "agents" / "evaluator.md"

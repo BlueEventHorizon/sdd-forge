@@ -48,18 +48,17 @@ Phase 完了後は立ち止まらず次の Phase に自動で進む。不明点�
 
 - `${CLAUDE_PLUGIN_ROOT}/docs/additive_development_spec.md` §0 — フィーチャーの概念定義
 
-`${CLAUDE_PLUGIN_ROOT}/skills/doc-structure/SKILL.md` の「feature の決定」手順に従い、doc_type `plan` で決める。
-引数で feature が渡されていれば `--feature` に渡す（変更せずそのまま使用。AI による置き換え禁止）。
-`decision` の扱いは同手順が定める（決められなければ AskUserQuestion で対象 Feature を確認する）。
+`Skill` ツールで `doc-structure` を、`args` を `decide-feature doc_type=plan` として呼んで決める。
+引数で feature が渡されていれば `feature={feature}` も渡す（変更せずそのまま使用。AI による置き換え禁止）。
+`decision` の扱いは `doc-structure` の `decide-feature` の契約に従う（決められなければ `ask` が返るので、AskUserQuestion で対象 Feature を確認する）。
 
 ### 出力先の解決
 
 計画書の出力先を特定する。入力文書（設計書）は Phase 1 で agent が特定する。
 
-`${CLAUDE_PLUGIN_ROOT}/skills/doc-structure/SKILL.md` の「出力先ディレクトリの解決」手順に従い、
-doc_type `plan`、feature `{feature}` で出力先ディレクトリを求める。
+`Skill` ツールで `doc-structure` を、`args` を `dir-of doc_type=plan feature={feature}` として呼び、出力先ディレクトリを求める。
 
-エントリが無い場合の扱いは同手順が定める（本スキルは既定パスを持たず、出力先を独自に尋ねない）。
+宣言が無い・エントリが無い場合の扱いは `doc-structure` が担う（本スキルは既定パスを持たず、出力先を独自に尋ねない）。
 
 ### モード判定
 
@@ -141,14 +140,10 @@ Phase 1 の 2 agent の return value を起点に、必要なファイルを Rea
 
 ### 2.2 追加開発かどうかの判定
 
-2.1 で読んだ設計書と要件定義書（あれば）が、差分 feature の一時マーカー（`feature_type: temporary-feature`）を持つかを、次の script で判定する。引数では指定しない。
+2.1 で読んだ設計書と要件定義書（あれば）が、差分 feature の一時マーカー（`feature_type: temporary-feature`）を持つかを、`Skill` ツールで `feature-marker` を、`args` を `paths {設計書・要件定義書のパス}...` として呼んで判定する。引数では指定しない。
 
-```bash
-python3 "${CLAUDE_PLUGIN_ROOT}/scripts/doc_structure/feature_marker.py" --paths {設計書・要件定義書のパス}...
-```
-
-- **終了コード 0**: JSON の `any_marker` が `true` なら追加開発、`false` なら追加開発ではない
-- **終了コード 1**: 判定できない文書がある。JSON の `errors` をそのままユーザーに伝え、AskUserQuestion で確認する。推測で「追加開発ではない」としない
+- **`status` が `ok`**: `any_marker` が `true` なら追加開発、`false` なら追加開発ではない
+- **`status` が `error`**: 判定できない文書がある。`errors` をそのままユーザーに伝え、AskUserQuestion で確認する。推測で「追加開発ではない」としない
 
 追加開発のときは、以下を Read し、判定基準・旧仕様の置き換え・merge 手順を把握したうえで Phase 3 に進む:
 
@@ -242,7 +237,7 @@ python3 "$SCRIPT" check --output-dir "{output_dir}" --feature "{feature}"
 
 **実装戦略書の必読化**: すべてのタスクの `required_reading` に `{output_dir}/{feature}_strategy.md` を含める。executor が単一タスクだけを実装する場合でも、全体戦略・フェーズ意図・リスク対策を理解したうえで実装判断できるようにするため。
 
-**用語集の必読化**: 入力の設計書・要件定義書の冒頭にある用語集の ID（`用語集: {ID}`）ごとに、`${CLAUDE_PLUGIN_ROOT}/skills/doc-structure/SKILL.md` の「ID・ファイル名から文書を探す」手順（doc_type `glossary`）でパスを求め、すべてのタスクの `required_reading` に含める。executor が `[用語]` を日常の意味で読まないようにするため。冒頭に用語集の ID が無い文書からは、何も加えない。
+**用語集の必読化**: 入力の設計書・要件定義書の冒頭にある用語集の ID（`用語集: {ID}`）ごとに、`Skill` ツールで `doc-structure` を、`args` を `find-in doc_type=glossary name={ID}` として呼んでパスを求め、すべてのタスクの `required_reading` に含める。executor が `[用語]` を日常の意味で読まないようにするため。冒頭に用語集の ID が無い文書からは、何も加えない。
 
 **タスクの粒度・グループ化**: タスク・グループとも「1つの Agent 実行で完結する」単位であることを基準とする。詳細な判定基準は `plan_principles_spec.md`「タスクの粒度」「タスクグループ」節に従う（事前準備で読み込み済み）。
 

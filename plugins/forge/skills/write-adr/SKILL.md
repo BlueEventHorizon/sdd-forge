@@ -42,10 +42,9 @@ Phase 完了後は立ち止まらず次の Phase に自動で進む。不明点�
 
 ### 出力先の解決
 
-`${CLAUDE_PLUGIN_ROOT}/skills/doc-structure/SKILL.md` の「出力先ディレクトリの解決」手順に従い、
-doc_type `adr`、feature `{feature}` で ADR の出力先ディレクトリ（`{adr_dir}`）を求める。
+`Skill` ツールで `doc-structure` を、`args` を `dir-of doc_type=adr feature={feature}` として呼び、ADR の出力先ディレクトリ（`{adr_dir}`）を求める。
 
-エントリが無い場合の扱いは同手順が定める（本スキルは既定パスを持たず、出力先を独自に尋ねない）。
+宣言が無い・エントリが無い場合の扱いは `doc-structure` が担う（本スキルは既定パスを持たず、出力先を独自に尋ねない）。
 
 ---
 

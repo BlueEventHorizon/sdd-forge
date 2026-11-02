@@ -21,15 +21,19 @@
 ## 使い方
 
     check_startup.py --plan-path <計画書のパス>
+    check_startup.py --plan-dir <計画書の置き場> --feature <feature>
+
+後者は、置き場（`doc-structure` が解決したディレクトリ）と feature から、計画書のパス
+`<置き場>/<feature>_plan.json` を組み立てる。組み立てた値は出力の `plan_path` で返る。
 
 ## 出力
 
-標準出力に JSON を 1 つ書く。
+標準出力に JSON を 1 つ書く。`plan_path` は、判定した計画書のパスである。
 
-    {"state": "no_plan"}
-    {"state": "leftover", "in_progress_task_ids": ["TASK-004"]}
-    {"state": "clear"}
-    {"state": "clear", "failed_task_ids": ["TASK-002"]}
+    {"state": "no_plan", "plan_path": "docs/specs/x/plan/x_plan.json"}
+    {"state": "leftover", "in_progress_task_ids": ["TASK-004"], "plan_path": "..."}
+    {"state": "clear", "plan_path": "..."}
+    {"state": "clear", "failed_task_ids": ["TASK-002"], "plan_path": "..."}
 
 ## 終了コード
 
@@ -98,6 +102,11 @@ def determine_startup_state(plan_path):
     return state
 
 
+def build_plan_path(plan_dir, feature):
+    """計画書の置き場と feature から、計画書のパス `<置き場>/<feature>_plan.json` を組み立てる。"""
+    return str(Path(plan_dir) / f"{feature}_plan.json")
+
+
 def _emit(payload):
     json.dump(payload, sys.stdout, ensure_ascii=False, sort_keys=True)
     sys.stdout.write("\n")
@@ -107,11 +116,22 @@ def run_cli(argv=None):
     parser = argparse.ArgumentParser(
         description="起動時の状態の判定（計画書なし・実行中が残っている・残りなし）"
     )
-    parser.add_argument("--plan-path", required=True, help="計画書のパス")
+    parser.add_argument("--plan-path", help="計画書のパス")
+    parser.add_argument("--plan-dir", help="計画書の置き場（--feature と併用する）")
+    parser.add_argument("--feature", help="feature 名（--plan-dir と併用する）")
     args = parser.parse_args(argv)
 
+    if args.plan_path is not None:
+        if args.plan_dir is not None or args.feature is not None:
+            parser.error("--plan-path は --plan-dir / --feature と併用できない")
+        plan_path = args.plan_path
+    elif args.plan_dir is not None and args.feature:
+        plan_path = build_plan_path(args.plan_dir, args.feature)
+    else:
+        parser.error("--plan-path か、--plan-dir と --feature の組が必要")
+
     try:
-        _emit(determine_startup_state(args.plan_path))
+        _emit({**determine_startup_state(plan_path), "plan_path": plan_path})
     except (PlanContractError, InvalidPlanError) as exc:
         _emit({"errors": [str(exc)]})
         return 1

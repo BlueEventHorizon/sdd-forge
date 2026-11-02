@@ -86,7 +86,7 @@ feature・出力先・ファイル名は、ここでは決めない。要件定�
 
 ### 1. 完全新規かどうか
 
-`${CLAUDE_PLUGIN_ROOT}/skills/doc-structure/SKILL.md` の「出力先ディレクトリの解決」手順に従い、doc_type `requirement` で、feature を指定せずに、既存の要件定義書の有無を求める。既存の要件定義書が 1 件も無ければ完全新規である（`additive_development_spec.md` §0）。interactive は、既存資産の確認の要否を決めるために、この判定を Phase 0 で先に行い、結果を使う。
+`Skill` ツールで `doc-structure` を、`args` を `dir-of doc_type=requirement` として呼び（feature を指定しない）、既存の要件定義書の有無を、返された `has_existing` で求める。既存の要件定義書が 1 件も無ければ完全新規である（`additive_development_spec.md` §0）。interactive は、既存資産の確認の要否を決めるために、この判定を Phase 0 で先に行い、結果を使う。
 
 ### 2. 差分開発かどうかの判定（interactive のみ）
 
@@ -94,15 +94,15 @@ feature・出力先・ファイル名は、ここでは決めない。要件定�
 
 ### 3. feature の決定
 
-`${CLAUDE_PLUGIN_ROOT}/skills/doc-structure/SKILL.md` の「feature の決定」手順に従い、doc_type `requirement` で決める。引数で feature が指定されていれば `--feature` に渡す（変更せずそのまま使用。AI による置き換え禁止）。`decision` の扱いは同手順が定める（決められなければ AskUserQuestion でフィーチャー名を確認する）。
+`Skill` ツールで `doc-structure` を、`args` を `decide-feature doc_type=requirement` として呼んで決める。引数で feature が指定されていれば `feature={feature}` も渡す（変更せずそのまま使用。AI による置き換え禁止）。`decision` の扱いは `doc-structure` の `decide-feature` の契約に従う（決められなければ `ask` が返るので、AskUserQuestion でフィーチャー名を確認する）。
 
 差分開発型のときは、旧仕様と分離して管理するため、差分 feature を使う（`additive_development_spec.md` §0）。決定した feature が既存の feature を指す場合は、AskUserQuestion で確認する。
 
 ### 4. 出力先ディレクトリの解決
 
-`${CLAUDE_PLUGIN_ROOT}/skills/doc-structure/SKILL.md` の「出力先ディレクトリの解決」手順に従い、doc_type `requirement`、feature `{feature}` で出力先ディレクトリを求める。
+`Skill` ツールで `doc-structure` を、`args` を `dir-of doc_type=requirement feature={feature}` として呼び、出力先ディレクトリを求める。
 
-エントリが無い場合の扱いは同手順が定める（本スキルは既定パスを持たない）。
+宣言が無い・エントリが無い場合の扱いは `doc-structure` が担う（本スキルは既定パスを持たない）。
 
 ### 5. ファイル名の決定
 
@@ -117,7 +117,7 @@ feature・出力先・ファイル名は、ここでは決めない。要件定�
 各ワークフローは、用語集のファイルを作る位置で、本節に従う。用語の命名と本文での表記は `${CLAUDE_PLUGIN_ROOT}/docs/document_style_guide.md` §9 が、用語集の構造・ID・ファイル名は `${CLAUDE_PLUGIN_ROOT}/docs/glossary_format.md` が定める。
 
 1. **作るか決める**: 特有の意味を持つ語があるときだけ作る。無ければ作らない（空の用語集を作らない）
-2. **出力先**: `${CLAUDE_PLUGIN_ROOT}/skills/doc-structure/SKILL.md` の「出力先ディレクトリの解決」手順に従い、doc_type `glossary`、feature `{feature}` で出力先ディレクトリを求める。エントリが無い場合の扱いは同手順が定める
+2. **出力先**: `Skill` ツールで `doc-structure` を、`args` を `dir-of doc_type=glossary feature={feature}` として呼び、出力先ディレクトリを求める。宣言が無い・エントリが無い場合の扱いは `doc-structure` が担う
 3. **ID とファイル名**: `glossary_format.md`「配置と ID」に従う。採番は、`next-spec-id` スキルで行う（各ワークフローの要件 ID の採番と同じ）
 4. **要件定義書との対応**: 要件定義書は、冒頭に用語集の行を書き（同「文書冒頭の用語集の行」）、本文では用語を `[用語]` と書く（`document_style_guide.md` §9.3）
 

@@ -55,6 +55,7 @@ import fnmatch
 import glob as glob_module
 import json
 import os
+import posixpath
 import re
 import sys
 import unicodedata
@@ -1168,8 +1169,11 @@ def find_doc(config, category, doc_type, name, project_root):
     1. プロジェクトルートからのパスが完全一致
     2. パスの末尾が一致（`foo/requirements/REQ-001_x.md` の一部など）
     3. ファイル名が一致（`.md` の有無は問わない）
-    4. ファイル名に ID が含まれる（`REQ-032` は `REQ-032_x.md` にも `REQ-032-x.md` にも当たる。
-       ID の後ろの区切りは問わない。複数に当たれば全件を返す）
+    4. ファイル名が ID で始まり、その直後が英数字でない（`REQ-032` は `REQ-032_x.md` にも
+       `REQ-032-x.md` にも `REQ-032.md` にも当たる。ID の後ろの区切りは問わない）。
+       ID は番号の終端まで照合する。`REQ-1` は `REQ-10_x.md` にも `REQ-001_x.md` にも
+       `XREQ-1_x.md` にも当たらない（存在しない ID を、別の ID で補わない）。
+       複数に当たれば全件を返す
 
     Returns:
         dict: status='ok' のとき count / matches（0 件も正常）、
@@ -1193,14 +1197,17 @@ def find_doc(config, category, doc_type, name, project_root):
     base = target.split("/")[-1]
     stem = base[:-3] if base.endswith(".md") else base
 
+    # ID は、ファイル名の先頭から番号の終端まで（直後が英数字でない）で照合する
+    id_pattern = re.compile(re.escape(stem) + r"(?![0-9A-Za-z])") if stem else None
+
     stages = [
         [f for f in files if f == target],
         [f for f in files if f.endswith("/" + target)] if "/" in target else [],
         [f for f in files if f.split("/")[-1] in (base, base + ".md")]
         if "/" not in target
         else [],
-        [f for f in files if stem in f.split("/")[-1]]
-        if "/" not in target and stem
+        [f for f in files if id_pattern.match(f.split("/")[-1])]
+        if "/" not in target and id_pattern
         else [],
     ]
     matches = next((s for s in stages if s), [])
@@ -1212,6 +1219,91 @@ def find_doc(config, category, doc_type, name, project_root):
         "count": len(matches),
         "matches": matches,
     }
+
+
+def search_dirs(config, category):
+    """文書検索の対象ディレクトリ一覧を返す。
+
+    `dirs` / `exclude` は宣言の値そのまま（glob 展開しない）。そのまま下流ツール
+    （doc-advisor の `--dirs-json` / `--exclude-json` 等）へ転送する用途に使う。
+    `filtered_dirs` は、末尾のディレクトリ名が exclude のいずれかに一致する
+    `dirs` のエントリを除いたもの（自前で Grep 等に渡す用途の参考値。ネストした
+    除外ディレクトリの混入は許容する）。
+
+    Returns:
+        dict: status='ok', category, dirs, exclude, filtered_dirs
+    """
+    section = config.get(category, {})
+    dirs = list(section.get("root_dirs", []))
+    exclude = list(section.get("patterns", {}).get("exclude", []))
+    excluded_names = {normalize_path(p).strip("/") for p in exclude}
+    filtered = [
+        d
+        for d in dirs
+        if normalize_path(d).strip("/").split("/")[-1] not in excluded_names
+    ]
+    return {
+        "status": "ok",
+        "category": category,
+        "dirs": dirs,
+        "exclude": exclude,
+        "filtered_dirs": filtered,
+    }
+
+
+def _spec_root_candidates(config):
+    """specs.root_dirs から、最初の `*`（`**` を含む）より前の部分を重複なしで集める。"""
+    candidates = []
+    for root_dir in config.get("specs", {}).get("root_dirs", []):
+        parts = []
+        for part in _key_parts(root_dir):
+            if "*" in part:
+                break
+            parts.append(part)
+        if not parts:
+            continue
+        candidate = "/".join(parts) + "/"
+        if candidate not in candidates:
+            candidates.append(candidate)
+    return candidates
+
+
+def resolve_spec_root(config, alias, project_root):
+    """短縮名・相対パス・絶対パスのいずれかを、実在するディレクトリへ解決する。
+
+    1. `alias` がそのまま存在するディレクトリ（絶対パス、またはプロジェクトルート
+       からの相対パス）なら、それを返す（source='as-is'）
+    2. `specs.root_dirs` の spec ルート候補ごとに `<候補>/<alias>/` が存在すれば、
+       それを返す（source='spec-root'）
+    3. どれにも該当しなければ resolved=None（エラーではない）
+
+    Returns:
+        dict: status='ok', alias, resolved（ディレクトリ or None）, source
+    """
+    unresolved = {"status": "ok", "alias": alias, "resolved": None, "source": None}
+    if not alias.strip():
+        return unresolved
+
+    target = normalize_path(alias)
+    if os.path.isdir(
+        target if os.path.isabs(target) else os.path.join(project_root, target)
+    ):
+        return {"status": "ok", "alias": alias, "resolved": target, "source": "as-is"}
+
+    # 短縮名は spec ルートの下の相対パスである。`./` を畳み、ルートの外へ出る形は探さない
+    stripped = target.strip("/")
+    name = posixpath.normpath(stripped) if stripped else ""
+    if name in ("", ".", "..") or name.startswith("../"):
+        return unresolved
+    for candidate in _spec_root_candidates(config):
+        if os.path.isdir(os.path.join(project_root, candidate, name)):
+            return {
+                "status": "ok",
+                "alias": alias,
+                "resolved": candidate + name + "/",
+                "source": "spec-root",
+            }
+    return unresolved
 
 
 # ---------------------------------------------------------------------------
@@ -1272,6 +1364,16 @@ def parse_args():
             "パスを 1 つ受け取り、doc_types_map の宣言から種別を返す"
             "（絶対パス、またはプロジェクトルートからの相対パス。exclude は適用しない）"
         ),
+    )
+    group.add_argument(
+        "--search-dirs",
+        action="store_true",
+        help="文書検索の対象ディレクトリ（root_dirs / exclude）を出力する（--category で選ぶ）",
+    )
+    group.add_argument(
+        "--spec-root",
+        metavar="ALIAS",
+        help="短縮名・相対パス・絶対パスを、実在する spec ディレクトリへ解決する",
     )
     parser.add_argument(
         "--feature",
@@ -1377,6 +1479,13 @@ def main():
             result = resolve_doc_type_dir(
                 config, args.category, args.dir_of, args.feature
             )
+            if result.get("status") == "ok" and args.feature is None:
+                # feature なしの問い合わせは、その種別の既存ファイルの有無（完全新規かどうか）も答える
+                result["has_existing"] = bool(
+                    resolve_files_by_doc_type(
+                        config, args.category, args.dir_of, project_root
+                    )
+                )
         elif args.feature_of:
             result = feature_of_path(
                 config, args.category, args.feature_of, project_root
@@ -1394,6 +1503,10 @@ def main():
             result = find_doc(
                 config, args.category, args.find_in, args.name, project_root
             )
+        elif args.search_dirs:
+            result = search_dirs(config, args.category)
+        elif args.spec_root is not None:
+            result = resolve_spec_root(config, args.spec_root, project_root)
         elif args.match_path is not None:
             rel_path, doc_type = match_path(
                 config, args.category, args.match_path, project_root

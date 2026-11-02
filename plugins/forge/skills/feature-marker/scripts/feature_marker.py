@@ -4,8 +4,8 @@
 
 文書先頭の YAML frontmatter（`---` で囲まれたブロック）から `feature_type` の値を取り出し、
 `temporary-feature` を持つ文書を「並行状態にある」と判定する。判定の契約は DES-074
-「feature_marker.py の並行状態判定の契約」が定める。複数の SKILL
-（start-implement / start-design）が再利用する汎用ロジックのため、共有低レベル script に置く。
+「feature_marker.py の並行状態判定の契約」が定める。窓口は feature-marker SKILL であり、
+他の SKILL・agent はそれを `Skill` ツールで呼ぶ（本 script を直接実行しない）。
 
 標準ライブラリのみで実装する（PyYAML 禁止）。
 

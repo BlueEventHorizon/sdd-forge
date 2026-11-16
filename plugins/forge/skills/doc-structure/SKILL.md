@@ -14,7 +14,9 @@ allowed-tools: Bash, Skill, AskUserQuestion
 
 プロジェクトが `.doc_structure.yaml` で宣言した置き場（出力先・feature・種別・検索対象）を、呼び出し側に代わって解決する。宣言は置き場の案内であり、宣言したディレクトリやファイルが実在することを保証しない。
 
-forge 内の他スキル・agent からの呼び出し専用（`user-invocable: false`）。呼び出し側は、本スキルを `Skill` ツールで呼び、結果だけを使う。本スキルのスクリプト・本スキルの文書・`.doc_structure.yaml` を、呼び出し側が直接読んだり実行したりしない。
+forge 内の他スキル・agent からの呼び出し専用（`user-invocable: false`）。呼び出し側のスキル・agent は、本スキルを `Skill` ツールで呼び、結果だけを使う。本スキルの文書と `.doc_structure.yaml` を、呼び出し側が自分で読んで解釈しない（解釈は本スキルの責務である）。
+
+下記の `resolve_doc_structure.py` は、プラグイン共通の `scripts/` に置かれた共通 script である。複数のスキルの script が同じ置き場の解決を使うために共通にしてあり、script からの実行・import は直接してよい。ただし、宣言が無い・doc_type のエントリが無いときの利用者への確認（下記の共通ハンドオフ）は、本スキルだけが担う。共通 script を直接使う呼び出し側は、その場合をエラーとして報告し、既定のパスで補わない。
 
 ## 呼び出しの契約
 

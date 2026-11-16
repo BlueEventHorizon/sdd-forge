@@ -5,7 +5,7 @@
 metadata:
   name: Document Search Index (rules)
   key: rules
-  generated_at: 2026-10-27T08:06:26Z
+  generated_at: 2026-11-16T15:53:48Z
   file_count: 9
 
 docs:
@@ -183,31 +183,37 @@ docs:
       - completion notification
   docs/rules/plugin_implementation_guidelines.md:
     title: Plugin Implementation Guidelines
-    purpose: "Defines plugin-independent implementation rules for Claude Code plugin scripts and SKILL.md: language and dependencies, testing, file placement, temp files, distribution references, and fallback policy."
+    purpose: Defines plugin-independent rules for implementing plugin scripts and SKILL.md, covering language choice, testing, script placement, inter-skill dependencies, temp files, fallbacks, and version files.
     content_details:
-      - "Script language table: Python for structured data processing, Bash for external commands and file operations"
-      - Python scripts use the standard library only, and any external library needs user approval
-      - Distributed .py files require tests named test_{module}.py, while AI judgment tests stay outside the CI gate
-      - SKILL.md must not contain inline processing logic; it calls independent scripts via CLAUDE_SKILL_DIR
-      - "Placement: skills/{skill}/scripts and docs for single-skill assets, plugin root for shared assets, and no direct reference into other skills directories"
-      - Temp files are written with the Write tool to .temp/plugin/skill with session ID in the filename, never via mktemp or heredoc
-      - Distributed files must not reference development-only documents by path or spec ID, while script comments are excluded
-      - Other components are reached only through SKILL public arguments and outputs, and AI must not parse user input with script parsers
+      - Python for data processing and Bash for external commands, with standard library only
+      - Tests required for distributed Python scripts using test_module.py naming, with AI-judgment tests kept out of CI
+      - No logic written inline in SKILL.md; SKILL.md calls independent scripts via CLAUDE_SKILL_DIR
+      - "Script and doc placement: single-skill assets under skills/skill, shared assets at plugin root"
+      - Other skills reached only via SKILL.md contract; shared plugin-root scripts may be called directly; agents may call their launching skill scripts
+      - Temp files written with Write tool under .temp/plugin/skill with session ID in name; no shell heredoc, mktemp, or trap cleanup
+      - Distributed SKILL.md, agents, and docs must not reference development-only documents; script comments exempt
+      - No script parsers for AI-interpreted input such as command arguments; scripts limited to YAML and JSON
+      - Fallbacks only when recovery is explainable; otherwise report errors and fix the design
+      - Version files edited only at release procedure, never in ordinary feature or fix work
     applicable_tasks:
-      - Implementing new Python or Bash scripts in a Claude Code plugin
-      - Writing or revising SKILL.md processing flow and script invocation
-      - Adding tests for distributed Python scripts
-      - Reviewing plugin file placement and cross-skill references
-      - Reviewing temp file handling and fallback design in plugin implementation
+      - Implementation of Python or Bash scripts in a plugin
+      - Creation or modification of SKILL.md and agent definitions
+      - Test creation for distributed Python scripts
+      - Placement review of scripts and docs across plugin skills
+      - Review of inter-skill dependencies in plugin code
+      - Design of temporary file handling in SKILL.md procedures
+      - Fallback handling review in plugin scripts and specifications
+      - Version file handling during feature work or release preparation
     keywords:
+      - standard library only
+      - test_module.py
       - CLAUDE_SKILL_DIR
       - CLAUDE_PLUGIN_ROOT
-      - standard library only
-      - test_{module}.py
-      - inline script in SKILL.md
-      - mktemp
-      - .temp/plugin/skill
-      - reflexive fallback
+      - .temp
+      - shared script
+      - inline script
+      - fallback
+      - version files
   docs/rules/plugin_script_error_output_rules.md:
     title: Script Error Output Rules
     purpose: Defines exit code and error output contract for Claude Code plugin Python scripts, aimed at AI readers of machine-readable output. Applies to newly placed scripts, with hook-harness scripts exempt.

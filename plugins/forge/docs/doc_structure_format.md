@@ -293,4 +293,4 @@ specs_files = resolve_files(config, "specs", project_root)
 
 外部 doc-advisor（`index-docs` / `query-docs`）は `.doc_structure.yaml` を **読まない**。
 forge の `/forge:update-db-rules` / `/forge:update-db-specs` が `resolve_doc_structure.py` で本ファイルから
-対象パスを解決し、`--paths-json` として doc-advisor の `index-docs` に渡す。
+対象ディレクトリを解決し、`--dirs-json` / `--exclude-json` として doc-advisor の `index-docs` に渡す。

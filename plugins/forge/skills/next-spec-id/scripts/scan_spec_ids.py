@@ -5,7 +5,9 @@
 次の連番 ID を JSON で返す。
 
 .doc_structure.yaml から specs の root_dirs を取得してスキャン対象パスを
-動的に決定する。.doc_structure.yaml が存在しない場合は specs/ をフォールバックとして使用。
+動的に決定する。.doc_structure.yaml が無い・読めない・root_dirs が宣言されていない
+ときは、既定のパスで補わず、エラーを返す（宣言と無関係なディレクトリを黙って
+スキャンすると、採番が誤る）。
 
 使用例:
     python3 scan_spec_ids.py SCR
@@ -31,8 +33,6 @@ from resolve_doc_structure import (
     load_doc_structure,
 )
 
-FALLBACK_SPECS_DIRS = ["specs/"]
-
 
 def _run_git(*args, cwd=None):
     """git コマンドを実行して stdout を返す。失敗時は空文字列。"""
@@ -50,16 +50,26 @@ def _run_git(*args, cwd=None):
 
 
 def get_specs_root_dirs(project_root, doc_structure_path=None):
-    """specs の root_dirs を取得する。glob パターンのまま返す。"""
-    try:
-        config, _ = load_doc_structure(project_root, doc_structure_path)
-        specs = config.get("specs", {})
-        root_dirs = specs.get("root_dirs", [])
-        if root_dirs:
-            return [d.rstrip("/") + "/" for d in root_dirs]
-    except (FileNotFoundError, Exception):
-        pass
-    return FALLBACK_SPECS_DIRS
+    """specs の root_dirs を取得する。glob パターンのまま返す。
+
+    .doc_structure.yaml が無い・読めない場合は、`load_doc_structure` の例外をそのまま伝える。
+    root_dirs が宣言されていない、またはスキャン範囲に変換できる要素が無い場合は ValueError。
+    既定値では補わない。
+    """
+    config, _ = load_doc_structure(project_root, doc_structure_path)
+    root_dirs = config.get("specs", {}).get("root_dirs", [])
+    if not root_dirs:
+        raise ValueError(
+            ".doc_structure.yaml に specs の root_dirs が宣言されていません"
+        )
+    dirs = [d.rstrip("/") + "/" for d in root_dirs]
+    if not any(_normalize_glob_to_prefix(d) for d in dirs):
+        raise ValueError(
+            "specs の root_dirs から、スキャンするディレクトリを決められません: {}".format(
+                root_dirs
+            )
+        )
+    return dirs
 
 
 def _normalize_glob_to_prefix(pattern):
@@ -148,8 +158,6 @@ def scan_ids_in_branch(branch, prefix, scan_dirs, cwd=None):
 
     unique_prefixes = sorted(set(_normalize_glob_to_prefix(d) for d in scan_dirs))
     unique_prefixes = [p for p in unique_prefixes if p]
-    if not unique_prefixes:
-        unique_prefixes = ["specs/"]
 
     for dir_prefix in unique_prefixes:
         output = _run_git(
@@ -189,7 +197,8 @@ def scan_ids_in_worktree(prefix, scan_dirs, cwd=None):
     unique_prefixes = sorted(set(_normalize_glob_to_prefix(d) for d in scan_dirs))
     unique_prefixes = [p for p in unique_prefixes if p]
     if not unique_prefixes:
-        unique_prefixes = ["specs/"]
+        # パスの指定が空だと ls-files がリポジトリ全体を返してしまうため、走査しない
+        return []
 
     output = _run_git(
         "ls-files",

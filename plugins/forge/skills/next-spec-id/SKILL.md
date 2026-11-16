@@ -6,6 +6,7 @@ description: |
   要件定義書・設計書・ADR（アーキテクチャ決定記録）の作成時に ID の重複を防ぐために呼び出される。
   TASK ID（計画書内の連番）は対象外（計画書 1 件の中だけで閉じるため、`start-plan` が自ら採番する）。
 argument-hint: "<プレフィックス> [共有するプレフィックスのカンマ区切り]"
+allowed-tools: Bash, Skill
 ---
 
 # next-spec-id スキル
@@ -45,16 +46,17 @@ ADR と DES は同一ディレクトリで通し番号を共有するため、AD
 ## 手順
 
 1. 入力の第 1 引数・第 2 引数を読み取る。第 1 引数が無ければ、不足として返し、ID を発行しない
-2. 次を実行する（第 2 引数があるときだけ `--share-prefixes` を付ける）
+2. `Skill` ツールで `doc-structure` を、`args` を `search-dirs category=specs` として呼び、返された `dirs`（specs の置き場。展開されていない）を求める。置き場の宣言を自分で読まない。宣言が無い・エントリが無い場合の扱いは `doc-structure` が担う。`dirs` が得られなければ、`doc-structure` の返した理由を呼び出し側へ返し、ID を発行しない（置き場を推測して補わない）
+3. 次を実行する。`<dirs の JSON>` は、手順 2 の `dirs` を JSON 配列のまま、単引用符で囲んで渡す（第 2 引数があるときだけ `--share-prefixes` を付ける）
 
    ```bash
    SCRIPT="${CLAUDE_SKILL_DIR}/scripts/scan_spec_ids.py"
 
-   python3 "$SCRIPT" <プレフィックス>
-   python3 "$SCRIPT" <プレフィックス> --share-prefixes <共有するプレフィックス>
+   python3 "$SCRIPT" <プレフィックス> --dirs-json '<dirs の JSON>'
+   python3 "$SCRIPT" <プレフィックス> --dirs-json '<dirs の JSON>' --share-prefixes <共有するプレフィックス>
    ```
 
-3. stdout の JSON の `status` を確認する
+4. stdout の JSON の `status` を確認する
    - `ok` → `next_id` と `duplicates` を呼び出し側へ返す
    - `error` → `message` をそのまま返す
 
@@ -81,7 +83,7 @@ ADR と DES は同一ディレクトリで通し番号を共有するため、AD
 
 ## 動作概要
 
-1. 文書の置き場（specs の `root_dirs`）を取得する
+1. 文書の置き場（specs の検索対象のディレクトリ）を、`doc-structure` スキルで求める
 2. `git fetch --quiet` でリモートを最新化する
 3. ベースブランチ（develop or main）を特定する
 4. ベースブランチから派生した全ブランチをスキャンする（ローカル + リモート）

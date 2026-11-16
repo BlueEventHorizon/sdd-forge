@@ -4,13 +4,14 @@
 全ブランチ（ローカル + リモート）から指定プレフィックスの仕様書 ID をスキャンし、
 次の連番 ID を JSON で返す。
 
-.doc_structure.yaml から specs の root_dirs を取得してスキャン対象パスを
-動的に決定する。.doc_structure.yaml が存在しない場合は specs/ をフォールバックとして使用。
+スキャン対象のディレクトリ（specs の置き場）は、呼び出し側が `--dirs-json` で渡す。
+本 script は文書の置き場の宣言を読まない（解決は doc-structure スキルの責務）。
+対象が渡されない・空・使える形でないときは、既定値で補わずエラーにする。
 
 使用例:
-    python3 scan_spec_ids.py SCR
-    python3 scan_spec_ids.py DES
-    python3 scan_spec_ids.py --project-root /path/to/project REQ
+    python3 scan_spec_ids.py SCR --dirs-json '["docs/specs/**/design/"]'
+    python3 scan_spec_ids.py DES --dirs-json '["specs/"]'
+    python3 scan_spec_ids.py --project-root /path/to/project REQ --dirs-json '["specs/"]'
 """
 
 import argparse
@@ -19,19 +20,6 @@ import os
 import re
 import subprocess
 import sys
-from pathlib import Path
-
-# resolve_doc_structure.py を import
-_SCRIPT_DIR = Path(__file__).resolve().parent
-_DOC_STRUCTURE_SCRIPTS = _SCRIPT_DIR.parents[2] / "scripts" / "doc_structure"
-sys.path.insert(0, str(_DOC_STRUCTURE_SCRIPTS))
-
-from resolve_doc_structure import (
-    find_project_root,
-    load_doc_structure,
-)
-
-FALLBACK_SPECS_DIRS = ["specs/"]
 
 
 def _run_git(*args, cwd=None):
@@ -49,17 +37,33 @@ def _run_git(*args, cwd=None):
         return ""
 
 
-def get_specs_root_dirs(project_root, doc_structure_path=None):
-    """specs の root_dirs を取得する。glob パターンのまま返す。"""
+def parse_scan_dirs(raw):
+    """呼び出し側が渡したスキャン対象（JSON 配列の文字列）を検証して返す。glob パターンのまま返す。
+
+    渡されない・JSON として読めない・文字列の空でない配列でない・git の
+    スキャン範囲に変換できる要素が 1 つも無いときは ValueError。既定値では補わない
+    （補うと、宣言と無関係なディレクトリを黙ってスキャンする）。
+    """
+    if raw is None:
+        raise ValueError("--dirs-json が必要です（specs の置き場を渡してください）")
     try:
-        config, _ = load_doc_structure(project_root, doc_structure_path)
-        specs = config.get("specs", {})
-        root_dirs = specs.get("root_dirs", [])
-        if root_dirs:
-            return [d.rstrip("/") + "/" for d in root_dirs]
-    except (FileNotFoundError, Exception):
-        pass
-    return FALLBACK_SPECS_DIRS
+        dirs = json.loads(raw)
+    except json.JSONDecodeError as e:
+        raise ValueError("--dirs-json を JSON として読めません: {}".format(e))
+    if (
+        not isinstance(dirs, list)
+        or not dirs
+        or not all(isinstance(d, str) and d.strip() for d in dirs)
+    ):
+        raise ValueError("--dirs-json は、空でない文字列の配列で指定してください")
+    normalized = [d.rstrip("/") + "/" for d in dirs]
+    if not any(_normalize_glob_to_prefix(d) for d in normalized):
+        raise ValueError(
+            "--dirs-json の要素から、スキャンするディレクトリを決められません: {}".format(
+                dirs
+            )
+        )
+    return normalized
 
 
 def _normalize_glob_to_prefix(pattern):
@@ -148,8 +152,6 @@ def scan_ids_in_branch(branch, prefix, scan_dirs, cwd=None):
 
     unique_prefixes = sorted(set(_normalize_glob_to_prefix(d) for d in scan_dirs))
     unique_prefixes = [p for p in unique_prefixes if p]
-    if not unique_prefixes:
-        unique_prefixes = ["specs/"]
 
     for dir_prefix in unique_prefixes:
         output = _run_git(
@@ -189,7 +191,8 @@ def scan_ids_in_worktree(prefix, scan_dirs, cwd=None):
     unique_prefixes = sorted(set(_normalize_glob_to_prefix(d) for d in scan_dirs))
     unique_prefixes = [p for p in unique_prefixes if p]
     if not unique_prefixes:
-        unique_prefixes = ["specs/"]
+        # パスの指定が空だと ls-files がリポジトリ全体を返してしまうため、走査しない
+        return []
 
     output = _run_git(
         "ls-files",
@@ -264,12 +267,12 @@ def find_duplicates(id_entries, shared_numbering=False):
     return duplicates
 
 
-def scan_spec_ids(
-    prefix, project_root, doc_structure_path=None, cwd=None, share_prefixes=None
-):
+def scan_spec_ids(prefix, project_root, scan_dirs, cwd=None, share_prefixes=None):
     """メインロジック: 全ブランチスキャンで次の ID を返す。
 
     Args:
+        scan_dirs: スキャン対象のディレクトリ（specs の置き場。glob パターンのまま）。
+            呼び出し側が doc-structure スキルで求めて渡す。空は不可。
         share_prefixes: 通し番号を共有する prefix のリスト（`prefix` 自身を含めても含めなくてもよい）。
             指定された場合、これらすべての prefix のファイルを横断スキャンして最大番号を計算し、
             `prefix` の次番号として返す（例: ADR と DES が同一ディレクトリで番号を共有する運用）。
@@ -277,7 +280,8 @@ def scan_spec_ids(
     if cwd is None:
         cwd = project_root
 
-    scan_dirs = get_specs_root_dirs(project_root, doc_structure_path)
+    if not scan_dirs:
+        raise ValueError("scan_dirs が空です（specs の置き場が必要です）")
 
     # リモートをフェッチ（--prune: 削除済み remote branch の stale ref を除去。
     # 全ブランチ無条件スキャン方式では、stale ref が残ると存在しないブランチの
@@ -348,9 +352,10 @@ def parse_args():
         help="プロジェクトルートのパス（省略時: cwd）",
     )
     parser.add_argument(
-        "--doc-structure",
+        "--dirs-json",
         default=None,
-        help=".doc_structure.yaml のパス（省略時: project_root/.doc_structure.yaml）",
+        help="スキャン対象のディレクトリ（specs の置き場）の JSON 配列"
+        "（例: '[\"docs/specs/**/design/\"]'）。doc-structure スキルの search-dirs が返す dirs をそのまま渡す。必須",
     )
     parser.add_argument(
         "--share-prefixes",
@@ -364,15 +369,8 @@ def parse_args():
 def main():
     args = parse_args()
 
-    project_root = args.project_root
-    if project_root:
-        project_root = os.path.abspath(project_root)
-    else:
-        project_root = find_project_root()
-
-    doc_structure_path = args.doc_structure
-    if doc_structure_path:
-        doc_structure_path = os.path.abspath(doc_structure_path)
+    # Claude Code の Bash は cwd をプロジェクトルートにするため、省略時は cwd
+    project_root = os.path.abspath(args.project_root or os.getcwd())
 
     share_prefixes = None
     if args.share_prefixes:
@@ -381,10 +379,11 @@ def main():
         ]
 
     try:
+        scan_dirs = parse_scan_dirs(args.dirs_json)
         result = scan_spec_ids(
             args.prefix,
             project_root,
-            doc_structure_path,
+            scan_dirs,
             share_prefixes=share_prefixes,
         )
     except Exception as e:

@@ -10,7 +10,6 @@ git 操作を mock して、ブランチスキャン・ID 抽出・重複検出�
 """
 
 import json
-import os
 import shutil
 import subprocess
 import sys
@@ -31,7 +30,7 @@ from scan_spec_ids import (
     detect_base_branch,
     find_duplicates,
     get_scan_branches,
-    get_specs_root_dirs,
+    parse_scan_dirs,
     scan_ids_in_branch,
     scan_ids_in_worktree,
     scan_spec_ids,
@@ -165,29 +164,40 @@ class TestFindDuplicates(unittest.TestCase):
         self.assertEqual(find_duplicates([]), [])
 
 
-class TestGetSpecsRootDirs(unittest.TestCase):
-    """get_specs_root_dirs のテスト"""
+class TestParseScanDirs(unittest.TestCase):
+    """parse_scan_dirs のテスト。渡されたスキャン対象だけを使い、既定値で補わない。"""
 
-    def test_fallback_when_no_doc_structure(self):
-        with tempfile.TemporaryDirectory() as tmpdir:
-            result = get_specs_root_dirs(tmpdir)
-            self.assertEqual(result, ["specs/"])
+    def test_returns_glob_patterns_as_given_with_trailing_slash(self):
+        result = parse_scan_dirs(
+            '["docs/specs/**/design/", "docs/specs/**/requirements"]'
+        )
+        self.assertEqual(
+            result,
+            ["docs/specs/**/design/", "docs/specs/**/requirements/"],
+        )
 
-    def test_reads_from_doc_structure(self):
-        with tempfile.TemporaryDirectory() as tmpdir:
-            doc_structure = os.path.join(tmpdir, ".doc_structure.yaml")
-            with open(doc_structure, "w") as f:
-                f.write(
-                    "# doc_structure_version: 4.0\n"
-                    "specs:\n"
-                    "  root_dirs:\n"
-                    '    - "docs/specs/**/design/"\n'
-                    '    - "docs/specs/**/requirements/"\n'
-                )
-            result = get_specs_root_dirs(tmpdir)
-            self.assertEqual(len(result), 2)
-            self.assertIn("docs/specs/**/design/", result)
-            self.assertIn("docs/specs/**/requirements/", result)
+    def test_missing_is_error_not_fallback(self):
+        with self.assertRaises(ValueError):
+            parse_scan_dirs(None)
+
+    def test_invalid_json_is_error(self):
+        with self.assertRaises(ValueError):
+            parse_scan_dirs("docs/specs/")
+
+    def test_empty_array_is_error_not_fallback(self):
+        with self.assertRaises(ValueError):
+            parse_scan_dirs("[]")
+
+    def test_non_string_or_blank_elements_are_error(self):
+        for raw in ("[1]", '[""]', '["  "]', '{"dirs": ["specs/"]}'):
+            with self.subTest(raw=raw):
+                with self.assertRaises(ValueError):
+                    parse_scan_dirs(raw)
+
+    def test_no_scannable_prefix_is_error(self):
+        """先頭が glob の要素だけでは、スキャンするディレクトリを決められない"""
+        with self.assertRaises(ValueError):
+            parse_scan_dirs('["**/design/"]')
 
 
 class TestDetectBaseBranch(unittest.TestCase):
@@ -363,9 +373,7 @@ class TestScanSpecIds(unittest.TestCase):
     @patch("scan_spec_ids.get_scan_branches")
     @patch("scan_spec_ids.detect_base_branch")
     @patch("scan_spec_ids._run_git")
-    @patch("scan_spec_ids.get_specs_root_dirs")
-    def test_basic_flow(self, mock_dirs, mock_git, mock_base, mock_branches):
-        mock_dirs.return_value = ["specs/"]
+    def test_basic_flow(self, mock_git, mock_base, mock_branches):
         mock_base.return_value = "main"
         mock_branches.return_value = ["main", "feature/foo"]
 
@@ -382,7 +390,7 @@ class TestScanSpecIds(unittest.TestCase):
 
         mock_git.side_effect = git_side_effect
 
-        result = scan_spec_ids("SCR", "/tmp/project", cwd="/tmp/project")
+        result = scan_spec_ids("SCR", "/tmp/project", ["specs/"], cwd="/tmp/project")
 
         self.assertEqual(result["status"], "ok")
         self.assertEqual(result["next_id"], "SCR-005")
@@ -395,17 +403,15 @@ class TestScanSpecIds(unittest.TestCase):
     @patch("scan_spec_ids.get_scan_branches")
     @patch("scan_spec_ids.detect_base_branch")
     @patch("scan_spec_ids._run_git")
-    @patch("scan_spec_ids.get_specs_root_dirs")
-    def test_fetch_uses_prune(self, mock_dirs, mock_git, mock_base, mock_branches):
+    def test_fetch_uses_prune(self, mock_git, mock_base, mock_branches):
         """レビュー指摘: 全ブランチ無条件スキャン方式では、削除済み
         remote branch の stale ref が残ると存在しないブランチの高番 ID が
         永久に next_id を押し上げてしまうため、fetch は --prune 必須"""
-        mock_dirs.return_value = ["specs/"]
         mock_base.return_value = "main"
         mock_branches.return_value = ["main"]
         mock_git.return_value = ""
 
-        scan_spec_ids("SCR", "/tmp/project", cwd="/tmp/project")
+        scan_spec_ids("SCR", "/tmp/project", ["specs/"], cwd="/tmp/project")
 
         fetch_calls = [
             call
@@ -418,9 +424,7 @@ class TestScanSpecIds(unittest.TestCase):
     @patch("scan_spec_ids.get_scan_branches")
     @patch("scan_spec_ids.detect_base_branch")
     @patch("scan_spec_ids._run_git")
-    @patch("scan_spec_ids.get_specs_root_dirs")
-    def test_detects_duplicates(self, mock_dirs, mock_git, mock_base, mock_branches):
-        mock_dirs.return_value = ["specs/"]
+    def test_detects_duplicates(self, mock_git, mock_base, mock_branches):
         mock_base.return_value = "develop"
         mock_branches.return_value = ["develop", "feature/a", "feature/b"]
 
@@ -439,7 +443,7 @@ class TestScanSpecIds(unittest.TestCase):
 
         mock_git.side_effect = git_side_effect
 
-        result = scan_spec_ids("SCR", "/tmp/project", cwd="/tmp/project")
+        result = scan_spec_ids("SCR", "/tmp/project", ["specs/"], cwd="/tmp/project")
 
         self.assertEqual(result["next_id"], "SCR-004")
         self.assertEqual(len(result["duplicates"]), 1)
@@ -450,14 +454,12 @@ class TestScanSpecIds(unittest.TestCase):
     @patch("scan_spec_ids.get_scan_branches")
     @patch("scan_spec_ids.detect_base_branch")
     @patch("scan_spec_ids._run_git")
-    @patch("scan_spec_ids.get_specs_root_dirs")
-    def test_no_existing_ids(self, mock_dirs, mock_git, mock_base, mock_branches):
-        mock_dirs.return_value = ["specs/"]
+    def test_no_existing_ids(self, mock_git, mock_base, mock_branches):
         mock_base.return_value = "main"
         mock_branches.return_value = ["main"]
         mock_git.return_value = ""
 
-        result = scan_spec_ids("SCR", "/tmp/project", cwd="/tmp/project")
+        result = scan_spec_ids("SCR", "/tmp/project", ["specs/"], cwd="/tmp/project")
 
         self.assertEqual(result["next_id"], "SCR-001")
         self.assertEqual(result["max_number"], 0)
@@ -466,9 +468,7 @@ class TestScanSpecIds(unittest.TestCase):
     @patch("scan_spec_ids.get_scan_branches")
     @patch("scan_spec_ids.detect_base_branch")
     @patch("scan_spec_ids._run_git")
-    @patch("scan_spec_ids.get_specs_root_dirs")
-    def test_custom_prefix(self, mock_dirs, mock_git, mock_base, mock_branches):
-        mock_dirs.return_value = ["specs/"]
+    def test_custom_prefix(self, mock_git, mock_base, mock_branches):
         mock_base.return_value = "main"
         mock_branches.return_value = ["main"]
 
@@ -481,7 +481,7 @@ class TestScanSpecIds(unittest.TestCase):
 
         mock_git.side_effect = git_side_effect
 
-        result = scan_spec_ids("CUSTOM", "/tmp/project", cwd="/tmp/project")
+        result = scan_spec_ids("CUSTOM", "/tmp/project", ["specs/"], cwd="/tmp/project")
 
         self.assertEqual(result["next_id"], "CUSTOM-003")
         self.assertEqual(result["prefix"], "CUSTOM")
@@ -491,10 +491,8 @@ class TestScanSpecIds(unittest.TestCase):
     @patch("scan_spec_ids.get_scan_branches")
     @patch("scan_spec_ids.detect_base_branch")
     @patch("scan_spec_ids._run_git")
-    @patch("scan_spec_ids.get_specs_root_dirs")
-    def test_high_numbers(self, mock_dirs, mock_git, mock_base, mock_branches):
+    def test_high_numbers(self, mock_git, mock_base, mock_branches):
         """3桁以上の番号も正しく処理する"""
-        mock_dirs.return_value = ["specs/"]
         mock_base.return_value = "main"
         mock_branches.return_value = ["main"]
 
@@ -505,7 +503,7 @@ class TestScanSpecIds(unittest.TestCase):
 
         mock_git.side_effect = git_side_effect
 
-        result = scan_spec_ids("SCR", "/tmp/project", cwd="/tmp/project")
+        result = scan_spec_ids("SCR", "/tmp/project", ["specs/"], cwd="/tmp/project")
 
         self.assertEqual(result["next_id"], "SCR-101")
         self.assertEqual(result["max_number"], 100)
@@ -517,12 +515,10 @@ class TestSharePrefixes(unittest.TestCase):
     @patch("scan_spec_ids.get_scan_branches")
     @patch("scan_spec_ids.detect_base_branch")
     @patch("scan_spec_ids._run_git")
-    @patch("scan_spec_ids.get_specs_root_dirs")
     def test_share_prefixes_uses_cross_prefix_max(
-        self, mock_dirs, mock_git, mock_base, mock_branches
+        self, mock_git, mock_base, mock_branches
     ):
         """ADR-032 と DES-031 併存時、share_prefixes=['ADR','DES'] で DES の次番が 033 になる"""
-        mock_dirs.return_value = ["specs/design/"]
         mock_base.return_value = "develop"
         mock_branches.return_value = ["develop"]
 
@@ -536,6 +532,7 @@ class TestSharePrefixes(unittest.TestCase):
         result = scan_spec_ids(
             "DES",
             "/tmp/project",
+            ["specs/design/"],
             cwd="/tmp/project",
             share_prefixes=["ADR", "DES"],
         )
@@ -547,12 +544,8 @@ class TestSharePrefixes(unittest.TestCase):
     @patch("scan_spec_ids.get_scan_branches")
     @patch("scan_spec_ids.detect_base_branch")
     @patch("scan_spec_ids._run_git")
-    @patch("scan_spec_ids.get_specs_root_dirs")
-    def test_share_prefixes_for_adr_side(
-        self, mock_dirs, mock_git, mock_base, mock_branches
-    ):
+    def test_share_prefixes_for_adr_side(self, mock_git, mock_base, mock_branches):
         """ADR 側も同じ横断最大値を参照して次番を算出する"""
-        mock_dirs.return_value = ["specs/design/"]
         mock_base.return_value = "develop"
         mock_branches.return_value = ["develop"]
 
@@ -566,6 +559,7 @@ class TestSharePrefixes(unittest.TestCase):
         result = scan_spec_ids(
             "ADR",
             "/tmp/project",
+            ["specs/design/"],
             cwd="/tmp/project",
             share_prefixes=["ADR", "DES"],
         )
@@ -577,13 +571,11 @@ class TestSharePrefixes(unittest.TestCase):
     @patch("scan_spec_ids.get_scan_branches")
     @patch("scan_spec_ids.detect_base_branch")
     @patch("scan_spec_ids._run_git")
-    @patch("scan_spec_ids.get_specs_root_dirs")
     def test_share_prefixes_detects_shared_number_collision(
-        self, mock_dirs, mock_git, mock_base, mock_branches
+        self, mock_git, mock_base, mock_branches
     ):
         """受け入れ基準: ADR-032_foo.md と DES-032_bar.md がある場合、
         --share-prefixes ADR,DES で共有番号衝突が検出される"""
-        mock_dirs.return_value = ["specs/design/"]
         mock_base.return_value = "develop"
         mock_branches.return_value = ["develop"]
 
@@ -597,6 +589,7 @@ class TestSharePrefixes(unittest.TestCase):
         result = scan_spec_ids(
             "DES",
             "/tmp/project",
+            ["specs/design/"],
             cwd="/tmp/project",
             share_prefixes=["ADR", "DES"],
         )
@@ -607,13 +600,11 @@ class TestSharePrefixes(unittest.TestCase):
     @patch("scan_spec_ids.get_scan_branches")
     @patch("scan_spec_ids.detect_base_branch")
     @patch("scan_spec_ids._run_git")
-    @patch("scan_spec_ids.get_specs_root_dirs")
     def test_share_prefixes_same_history_ids_not_reported(
-        self, mock_dirs, mock_git, mock_base, mock_branches
+        self, mock_git, mock_base, mock_branches
     ):
         """受け入れ基準: develop と current branch に同一ファイル由来で
         存在する既存 ID は duplicate 警告にならない"""
-        mock_dirs.return_value = ["specs/design/"]
         mock_base.return_value = "develop"
         mock_branches.return_value = ["develop", "feature/work", "origin/develop"]
 
@@ -628,6 +619,7 @@ class TestSharePrefixes(unittest.TestCase):
         result = scan_spec_ids(
             "DES",
             "/tmp/project",
+            ["specs/design/"],
             cwd="/tmp/project",
             share_prefixes=["ADR", "DES"],
         )
@@ -638,12 +630,10 @@ class TestSharePrefixes(unittest.TestCase):
     @patch("scan_spec_ids.get_scan_branches")
     @patch("scan_spec_ids.detect_base_branch")
     @patch("scan_spec_ids._run_git")
-    @patch("scan_spec_ids.get_specs_root_dirs")
     def test_without_share_prefixes_is_independent(
-        self, mock_dirs, mock_git, mock_base, mock_branches
+        self, mock_git, mock_base, mock_branches
     ):
         """share_prefixes 未指定時は従来通り prefix 単位で独立採番される（後方互換）"""
-        mock_dirs.return_value = ["specs/design/"]
         mock_base.return_value = "develop"
         mock_branches.return_value = ["develop"]
 
@@ -654,7 +644,9 @@ class TestSharePrefixes(unittest.TestCase):
 
         mock_git.side_effect = git_side_effect
 
-        result = scan_spec_ids("DES", "/tmp/project", cwd="/tmp/project")
+        result = scan_spec_ids(
+            "DES", "/tmp/project", ["specs/design/"], cwd="/tmp/project"
+        )
 
         self.assertEqual(result["next_id"], "DES-032")
         self.assertNotIn("shared_with", result)
@@ -662,12 +654,10 @@ class TestSharePrefixes(unittest.TestCase):
     @patch("scan_spec_ids.get_scan_branches")
     @patch("scan_spec_ids.detect_base_branch")
     @patch("scan_spec_ids._run_git")
-    @patch("scan_spec_ids.get_specs_root_dirs")
     def test_share_prefixes_containing_only_self_is_noop(
-        self, mock_dirs, mock_git, mock_base, mock_branches
+        self, mock_git, mock_base, mock_branches
     ):
         """share_prefixes に自分自身の prefix のみを渡しても独立採番と同じ結果になる"""
-        mock_dirs.return_value = ["specs/design/"]
         mock_base.return_value = "develop"
         mock_branches.return_value = ["develop"]
 
@@ -681,6 +671,7 @@ class TestSharePrefixes(unittest.TestCase):
         result = scan_spec_ids(
             "DES",
             "/tmp/project",
+            ["specs/design/"],
             cwd="/tmp/project",
             share_prefixes=["DES"],
         )
@@ -752,6 +743,8 @@ class TestCLISharePrefixes(unittest.TestCase):
                 "DES",
                 "--project-root",
                 str(self.tmpdir),
+                "--dirs-json",
+                '["specs/"]',
                 "--share-prefixes",
                 "ADR,DES",
             ],
@@ -777,7 +770,15 @@ class TestCLISharePrefixes(unittest.TestCase):
             / "scan_spec_ids.py"
         )
         result = subprocess.run(
-            [sys.executable, script, "DES", "--project-root", str(self.tmpdir)],
+            [
+                sys.executable,
+                script,
+                "DES",
+                "--project-root",
+                str(self.tmpdir),
+                "--dirs-json",
+                '["specs/"]',
+            ],
             cwd=self.tmpdir,
             capture_output=True,
             text=True,
@@ -787,6 +788,63 @@ class TestCLISharePrefixes(unittest.TestCase):
         data = json.loads(result.stdout)
         self.assertEqual(data["next_id"], "DES-032")
         self.assertNotIn("shared_with", data)
+
+    def test_cli_without_dirs_json_is_error_and_does_not_guess_specs_dir(self):
+        """--dirs-json が無いとき、specs/ を既定値として補わず、エラーで止める"""
+        script = str(
+            REPO_ROOT
+            / "plugins"
+            / "forge"
+            / "skills"
+            / "next-spec-id"
+            / "scripts"
+            / "scan_spec_ids.py"
+        )
+        result = subprocess.run(
+            [sys.executable, script, "DES", "--project-root", str(self.tmpdir)],
+            cwd=self.tmpdir,
+            capture_output=True,
+            text=True,
+            timeout=30,
+        )
+        self.assertEqual(result.returncode, 1)
+        data = json.loads(result.stdout)
+        self.assertEqual(data["status"], "error")
+        self.assertIn("--dirs-json", data["message"])
+        self.assertNotIn("next_id", data)
+
+    def test_cli_does_not_read_doc_structure_file(self):
+        """置き場の宣言が cwd にあっても、script は読まない（置き場は --dirs-json だけで決まる）"""
+        (self.tmpdir / ".doc_structure.yaml").write_text(
+            '# doc_structure_version: 3.0\nspecs:\n  root_dirs:\n    - "elsewhere/"\n',
+            encoding="utf-8",
+        )
+        script = str(
+            REPO_ROOT
+            / "plugins"
+            / "forge"
+            / "skills"
+            / "next-spec-id"
+            / "scripts"
+            / "scan_spec_ids.py"
+        )
+        result = subprocess.run(
+            [
+                sys.executable,
+                script,
+                "DES",
+                "--project-root",
+                str(self.tmpdir),
+                "--dirs-json",
+                '["specs/"]',
+            ],
+            cwd=self.tmpdir,
+            capture_output=True,
+            text=True,
+            timeout=30,
+        )
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertEqual(json.loads(result.stdout)["next_id"], "DES-032")
 
     def test_cli_includes_untracked_spec_in_next_id(self):
         (self.tmpdir / "specs" / "DES-033_untracked.md").write_text(
@@ -810,6 +868,8 @@ class TestCLISharePrefixes(unittest.TestCase):
                 "DES",
                 "--project-root",
                 str(self.tmpdir),
+                "--dirs-json",
+                '["specs/"]',
                 "--share-prefixes",
                 "ADR,DES",
             ],

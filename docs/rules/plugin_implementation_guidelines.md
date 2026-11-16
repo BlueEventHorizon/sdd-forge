@@ -132,6 +132,10 @@ ${CLAUDE_PROJECT_DIR}/.temp/<plugin>/<skill>/<name>_${CLAUDE_SESSION_ID}.md
 - スキルごとに同じ処理を持つと、二重実装になり、食い違う。複数のスキルから必要だと分かった処理は、共通 script へ移す（「スクリプトと文書の配置」）
 - 共通 script の引数・出力・公開する関数は、使う側との契約である。変えるときは、使う側を同じ変更で直す
 
+### agent は、自分を起動したスキルの script を直接呼んでよい
+
+`agents/*.md` の agent は、特定のスキルが起動する worker である（単独起動しない）。起動元のスキルの script は、その agent にとって他のスキルの内部ではないので、直接呼んでよい（例: executor が start-implement の `resolve_task_context.py` を呼ぶ）。起動元ではない他のスキルの script は、直接呼ばない。
+
 ---
 
 ## 使わないコードは削除する [IMPORTANT]

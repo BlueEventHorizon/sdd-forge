@@ -37,8 +37,9 @@ class TestADRScanBehavior(unittest.TestCase):
     @patch("scan_spec_ids.get_scan_branches")
     @patch("scan_spec_ids.detect_base_branch")
     @patch("scan_spec_ids._run_git")
+    @patch("scan_spec_ids.get_specs_root_dirs")
     def test_adr_numbering_reproduces_issue_123(
-        self, mock_git, mock_base, mock_branches
+        self, mock_dirs, mock_git, mock_base, mock_branches
     ):
         """ADR-001〜004 使用済みのとき次は ADR-005 を返す。
 
@@ -46,6 +47,7 @@ class TestADRScanBehavior(unittest.TestCase):
         feature が複数あっても git スキャンが ADR ファイルを検出することを確認する。
         """
         # scan 対象は design ディレクトリと、feature ごとの adr ディレクトリ
+        mock_dirs.return_value = ["specs/**/design/", "specs/**/adr/"]
         mock_base.return_value = "develop"
         mock_branches.return_value = ["develop"]
 
@@ -63,12 +65,7 @@ class TestADRScanBehavior(unittest.TestCase):
 
         mock_git.side_effect = git_side_effect
 
-        result = scan_spec_ids(
-            "ADR",
-            "/tmp/project",
-            ["specs/**/design/", "specs/**/adr/"],
-            cwd="/tmp/project",
-        )
+        result = scan_spec_ids("ADR", "/tmp/project", cwd="/tmp/project")
 
         self.assertEqual(result["next_id"], "ADR-005")
         self.assertEqual(result["prefix"], "ADR")
@@ -78,14 +75,16 @@ class TestADRScanBehavior(unittest.TestCase):
     @patch("scan_spec_ids.get_scan_branches")
     @patch("scan_spec_ids.detect_base_branch")
     @patch("scan_spec_ids._run_git")
+    @patch("scan_spec_ids.get_specs_root_dirs")
     def test_adr_detects_cross_branch_duplicates(
-        self, mock_git, mock_base, mock_branches
+        self, mock_dirs, mock_git, mock_base, mock_branches
     ):
         """並行ブランチで同一 ADR 番号が別内容で存在する場合に duplicates として検出する。
 
         これは実際に起きた衝突 (ブランチ A と B が双方 ADR-003 を作成) を
         採番時に警告できることを保証する。
         """
+        mock_dirs.return_value = ["specs/**/adr/"]
         mock_base.return_value = "develop"
         mock_branches.return_value = ["feature/a", "feature/b"]
 
@@ -100,9 +99,7 @@ class TestADRScanBehavior(unittest.TestCase):
 
         mock_git.side_effect = git_side_effect
 
-        result = scan_spec_ids(
-            "ADR", "/tmp/project", ["specs/**/adr/"], cwd="/tmp/project"
-        )
+        result = scan_spec_ids("ADR", "/tmp/project", cwd="/tmp/project")
 
         duplicate_ids = {
             id_value

@@ -21,14 +21,9 @@ import tempfile
 import unittest
 import warnings
 from pathlib import Path
+from tests import REPO_ROOT
 
-_SCRIPT_PATH = (
-    Path(__file__).resolve().parents[3]
-    / "plugins"
-    / "forge"
-    / "scripts"
-    / "forge_settings.py"
-)
+_SCRIPT_PATH = REPO_ROOT / "plugins" / "forge" / "scripts" / "forge_settings.py"
 
 _spec = importlib.util.spec_from_file_location("forge_settings", _SCRIPT_PATH)
 forge_settings = importlib.util.module_from_spec(_spec)

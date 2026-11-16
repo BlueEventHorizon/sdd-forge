@@ -18,17 +18,11 @@ import tempfile
 import unittest
 from pathlib import Path
 from unittest.mock import MagicMock, patch, call
+from tests import REPO_ROOT
 
 sys.path.insert(
     0,
-    str(
-        Path(__file__).resolve().parents[3]
-        / "plugins"
-        / "forge"
-        / "skills"
-        / "next-spec-id"
-        / "scripts"
-    ),
+    str(REPO_ROOT / "plugins" / "forge" / "skills" / "next-spec-id" / "scripts"),
 )
 
 from scan_spec_ids import (
@@ -174,10 +168,38 @@ class TestFindDuplicates(unittest.TestCase):
 class TestGetSpecsRootDirs(unittest.TestCase):
     """get_specs_root_dirs のテスト"""
 
-    def test_fallback_when_no_doc_structure(self):
+    def test_missing_doc_structure_is_error_not_fallback(self):
+        """.doc_structure.yaml が無いとき、specs/ を既定値として補わず、エラーにする"""
         with tempfile.TemporaryDirectory() as tmpdir:
-            result = get_specs_root_dirs(tmpdir)
-            self.assertEqual(result, ["specs/"])
+            with self.assertRaises(FileNotFoundError):
+                get_specs_root_dirs(tmpdir)
+
+    def test_undeclared_root_dirs_is_error_not_fallback(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            doc_structure = os.path.join(tmpdir, ".doc_structure.yaml")
+            with open(doc_structure, "w") as f:
+                f.write(
+                    "# doc_structure_version: 4.0\n"
+                    "rules:\n"
+                    "  root_dirs:\n"
+                    '    - "docs/rules/"\n'
+                )
+            with self.assertRaises(ValueError):
+                get_specs_root_dirs(tmpdir)
+
+    def test_no_scannable_prefix_is_error(self):
+        """先頭が glob の要素だけでは、スキャンするディレクトリを決められない"""
+        with tempfile.TemporaryDirectory() as tmpdir:
+            doc_structure = os.path.join(tmpdir, ".doc_structure.yaml")
+            with open(doc_structure, "w") as f:
+                f.write(
+                    "# doc_structure_version: 4.0\n"
+                    "specs:\n"
+                    "  root_dirs:\n"
+                    '    - "**/design/"\n'
+                )
+            with self.assertRaises(ValueError):
+                get_specs_root_dirs(tmpdir)
 
     def test_reads_from_doc_structure(self):
         with tempfile.TemporaryDirectory() as tmpdir:
@@ -724,6 +746,15 @@ class TestCLISharePrefixes(unittest.TestCase):
             check=True,
             capture_output=True,
         )
+        (self.tmpdir / ".doc_structure.yaml").write_text(
+            "# doc_structure_version: 3.0\n"
+            "specs:\n"
+            "  root_dirs:\n"
+            '    - "specs/"\n'
+            "  doc_types_map:\n"
+            '    "specs/": design\n',
+            encoding="utf-8",
+        )
         specs_dir = self.tmpdir / "specs"
         specs_dir.mkdir()
         (specs_dir / "ADR-032_foo.md").write_text("# ADR-032\n", encoding="utf-8")
@@ -743,7 +774,7 @@ class TestCLISharePrefixes(unittest.TestCase):
 
     def test_cli_share_prefixes(self):
         script = str(
-            Path(__file__).resolve().parents[3]
+            REPO_ROOT
             / "plugins"
             / "forge"
             / "skills"
@@ -774,7 +805,7 @@ class TestCLISharePrefixes(unittest.TestCase):
     def test_cli_without_share_prefixes(self):
         """--share-prefixes 未指定時は従来通りの CLI 出力（後方互換）"""
         script = str(
-            Path(__file__).resolve().parents[3]
+            REPO_ROOT
             / "plugins"
             / "forge"
             / "skills"
@@ -794,13 +825,37 @@ class TestCLISharePrefixes(unittest.TestCase):
         self.assertEqual(data["next_id"], "DES-032")
         self.assertNotIn("shared_with", data)
 
+    def test_cli_without_doc_structure_is_error_and_does_not_guess_specs_dir(self):
+        """.doc_structure.yaml が無いとき、specs/ を既定値として補わず、エラーで止める"""
+        (self.tmpdir / ".doc_structure.yaml").unlink()
+        script = str(
+            REPO_ROOT
+            / "plugins"
+            / "forge"
+            / "skills"
+            / "next-spec-id"
+            / "scripts"
+            / "scan_spec_ids.py"
+        )
+        result = subprocess.run(
+            [sys.executable, script, "DES", "--project-root", str(self.tmpdir)],
+            cwd=self.tmpdir,
+            capture_output=True,
+            text=True,
+            timeout=30,
+        )
+        self.assertEqual(result.returncode, 1)
+        data = json.loads(result.stdout)
+        self.assertEqual(data["status"], "error")
+        self.assertNotIn("next_id", data)
+
     def test_cli_includes_untracked_spec_in_next_id(self):
         (self.tmpdir / "specs" / "DES-033_untracked.md").write_text(
             "# DES-033\n",
             encoding="utf-8",
         )
         script = str(
-            Path(__file__).resolve().parents[3]
+            REPO_ROOT
             / "plugins"
             / "forge"
             / "skills"

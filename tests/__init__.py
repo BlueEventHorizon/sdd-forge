@@ -5,7 +5,10 @@ from pathlib import Path
 # sandbox 環境は TMPDIR をプロジェクトルート内に書き換えることも、
 # /tmp 直下への書き込みを禁止することもある。
 # プロジェクト外かつ実際に書き込めるディレクトリを選んで固定する。
-_REPO_ROOT = Path(__file__).resolve().parent.parent
+#
+# REPO_ROOT は、各テストがリポジトリのルートを得る唯一の定義である。
+# テストは `from tests import REPO_ROOT` で参照し、`parents[N]` で自力では求めない。
+REPO_ROOT = Path(__file__).resolve().parent.parent
 
 
 def _writable_tmpdir():
@@ -13,7 +16,7 @@ def _writable_tmpdir():
         if not cand:
             continue
         path = Path(cand).resolve()
-        if path == _REPO_ROOT or _REPO_ROOT in path.parents:
+        if path == REPO_ROOT or REPO_ROOT in path.parents:
             continue  # プロジェクト内に一時ファイルを作らない
         try:
             probe = tempfile.mkdtemp(dir=str(path))

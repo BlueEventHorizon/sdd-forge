@@ -64,7 +64,7 @@ python3 "${CLAUDE_PLUGIN_ROOT}/scripts/review/evaluator_finish.py" "${CLAUDE_PRO
 python3 "${CLAUDE_PLUGIN_ROOT}/scripts/doc_structure/resolve_doc_structure.py" --project-root "${CLAUDE_PROJECT_DIR}" --match-path {path}
 ```
 
-標準出力は JSON で、`doc_type` に `plan` / `requirement` / `design` / `adr` のいずれか、または `null` が入る。
+標準出力は JSON で、`doc_type` に宣言された doc_type（`plan` / `requirement` / `design` / `adr` のほか、`glossary` 等）、または `null` が入る。
 
 script の標準出力は JSON であり、失敗すると `errors`（自然文の配列）を持つ。引数の誤りが原因なら、`errors` に従って直して呼び直す。直せないときは `evaluator_finish` を呼ばずに終える。
 
@@ -182,7 +182,7 @@ reviewer は対象を網羅して読むが、あなたは所見を読んでか�
 **重大度カタログの特定手順 [MANDATORY]**: 規定は `${CLAUDE_PLUGIN_ROOT}/docs/review_priorities_spec.md` §2.2 が持つ。
 
 1. 種別ごとの観点文書の「SSOT参照」から、その所見が実際に違反している規範文書（principles / format）を特定する
-2. その文書の「重大度カタログ」節を Read し、該当する違反区分の重大度を転記する。規範文書自身にカタログが無く、同 §2.2 が別の置き場を指している場合（文書参照の違反は同 §2.3）は、そこを Read する
+2. その文書の「重大度カタログ」節を Read し、該当する違反区分の重大度を転記する。規範文書自身にカタログが無く、同 §2.2 が別の置き場を指している場合（文書参照の違反は同 §2.3、用語の違反は同 §2.4）は、そこを Read する
 3. 該当する重大度カタログを特定できないときは、`reason` に「重大度カタログを特定できず未検証」と明記する。`severity` は必須なので、カタログの最も近い違反区分の値を付ける
 
 ## 新規に指摘する

@@ -13,7 +13,8 @@ import re
 import unittest
 from pathlib import Path
 
-REPO_ROOT = Path(__file__).resolve().parents[3]
+from tests import REPO_ROOT
+
 PLUGIN = REPO_ROOT / "plugins" / "forge"
 WRITE_ADR = PLUGIN / "skills" / "write-adr" / "SKILL.md"
 ADR_WRITER = PLUGIN / "agents" / "adr-writer.md"

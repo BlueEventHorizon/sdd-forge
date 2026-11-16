@@ -30,7 +30,7 @@ import re
 import unittest
 from pathlib import Path
 
-REPO_ROOT = Path(__file__).resolve().parents[2]
+from tests import REPO_ROOT
 
 # fork 型 SKILL（context: fork 必須）の対象。
 # doc-advisor の fork 型 query skill は外部リポジトリへ分離されたため、本リポジトリには

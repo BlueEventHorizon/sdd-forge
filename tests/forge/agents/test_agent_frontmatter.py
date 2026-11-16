@@ -32,7 +32,8 @@ import re
 import unittest
 from pathlib import Path
 
-REPO_ROOT = Path(__file__).resolve().parents[3]
+from tests import REPO_ROOT
+
 AGENTS_DIR = REPO_ROOT / "plugins" / "forge" / "agents"
 
 # 既知 Agent の tools allowlist (frozenset で順序非依存に比較)。値は各 Agent の

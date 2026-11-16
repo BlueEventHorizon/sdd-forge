@@ -48,18 +48,17 @@ Phase 完了後は立ち止まらず次の Phase に自動で進む。不明点�
 
 - `${CLAUDE_PLUGIN_ROOT}/docs/additive_development_spec.md` §0 — フィーチャーの概念定義
 
-`${CLAUDE_PLUGIN_ROOT}/skills/doc-structure/SKILL.md` の「feature の決定」手順に従い、doc_type `plan` で決める。
-引数で feature が渡されていれば `--feature` に渡す（変更せずそのまま使用。AI による置き換え禁止）。
-`decision` の扱いは同手順が定める（決められなければ AskUserQuestion で対象 Feature を確認する）。
+`Skill` ツールで `doc-structure` を、`args` を `decide-feature doc_type=plan` として呼んで決める。
+引数で feature が渡されていれば `feature={feature}` も渡す（変更せずそのまま使用。AI による置き換え禁止）。
+`decision` の扱いは `doc-structure` の `decide-feature` の契約に従う（決められなければ `ask` が返るので、AskUserQuestion で対象 Feature を確認する）。
 
 ### 出力先の解決
 
 計画書の出力先を特定する。入力文書（設計書）は Phase 1 で agent が特定する。
 
-`${CLAUDE_PLUGIN_ROOT}/skills/doc-structure/SKILL.md` の「出力先ディレクトリの解決」手順に従い、
-doc_type `plan`、feature `{feature}` で出力先ディレクトリを求める。
+`Skill` ツールで `doc-structure` を、`args` を `dir-of doc_type=plan feature={feature}` として呼び、出力先ディレクトリを求める。
 
-エントリが無い場合の扱いは同手順が定める（本スキルは既定パスを持たず、出力先を独自に尋ねない）。
+宣言が無い・エントリが無い場合の扱いは `doc-structure` が担う（本スキルは既定パスを持たず、出力先を独自に尋ねない）。
 
 ### モード判定
 
@@ -81,7 +80,7 @@ doc_type `plan`、feature `{feature}` で出力先ディレクトリを求める
 
 - **`${CLAUDE_PLUGIN_ROOT}/docs/plan_principles_spec.md`** — 計画書作成原則・タスク設計ガイドライン（計画書ファイルの形式そのものは script が保証するため、AI が読む必要はない）
 - **`${CLAUDE_PLUGIN_ROOT}/docs/strategy_principles_spec.md`** — 実装戦略書の定義と原則（計画書との線引き・差分開発の扱いを含む）
-- **`${CLAUDE_PLUGIN_ROOT}/docs/document_style_guide.md`** — 文書スタイル指針（タグ・見出し・参照記法）
+- **`${CLAUDE_PLUGIN_ROOT}/docs/document_style_guide.md`** — 文書スタイル指針（タグ・見出し・参照記法・用語）
 
 ---
 
@@ -242,6 +241,8 @@ python3 "$SCRIPT" check --output-dir "{output_dir}" --feature "{feature}"
 
 **実装戦略書の必読化**: すべてのタスクの `required_reading` に `{output_dir}/{feature}_strategy.md` を含める。executor が単一タスクだけを実装する場合でも、全体戦略・フェーズ意図・リスク対策を理解したうえで実装判断できるようにするため。
 
+**用語集の必読化**: 入力の設計書・要件定義書の冒頭にある用語集の ID（`用語集: {ID}`）ごとに、`Skill` ツールで `doc-structure` を、`args` を `find-in doc_type=glossary name={ID}` として呼んでパスを求め、すべてのタスクの `required_reading` に含める。executor が `[用語]` を日常の意味で読まないようにするため。冒頭に用語集の ID が無い文書からは、何も加えない。
+
 **タスクの粒度・グループ化**: タスク・グループとも「1つの Agent 実行で完結する」単位であることを基準とする。詳細な判定基準は `plan_principles_spec.md`「タスクの粒度」「タスクグループ」節に従う（事前準備で読み込み済み）。
 
 ### 4.3 計画書の作成・更新
@@ -282,6 +283,7 @@ python3 "$SCRIPT" check --output-dir "{output_dir}" --feature "{feature}"
 計画書のスキーマ検査（3 キー構成・`tasks[]` 必須フィールド・enum 値）は 4.3 の script が行うため、AI は以下の**計画品質検査**（意味的な妥当性）のみを確認する:
 
 - [ ] すべての `tasks[].required_reading` に `{output_dir}/{feature}_strategy.md` が含まれている
+- [ ] 入力の設計書・要件定義書の冒頭に用語集の ID がある場合、すべての `tasks[].required_reading` にその用語集のパスが含まれている
 - [ ] 実装戦略のフェーズ分割がタスクの優先度に反映されているか
 - [ ] 要件トレーサビリティマトリクスが全要件を網羅しているか
 - [ ] 設計トレーサビリティマトリクスが全設計書をカバーしているか

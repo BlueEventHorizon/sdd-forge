@@ -15,9 +15,10 @@ import tempfile
 import unittest
 from contextlib import redirect_stdout
 from pathlib import Path
+from tests import REPO_ROOT
 
 SCRIPT_DIR = (
-    Path(__file__).resolve().parents[3]
+    REPO_ROOT
     / "plugins"
     / "forge"
     / "skills"

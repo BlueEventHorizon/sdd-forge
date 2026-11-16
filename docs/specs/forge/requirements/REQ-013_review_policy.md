@@ -1,37 +1,37 @@
 ---
 type: doc-advisor
 title: REQ-013 Review Policy Requirements
-purpose: Defines the review policy framework for forge AI reviews, prioritizing rule compliance P1, conflict detection P2 and unnecessary complexity P3, with confidence marking, backend, scope and evaluator requirements.
+purpose: "Defines the forge AI review policy: P1 rule compliance, P2 conflict detection, P3 unnecessary complexity, confidence-based auto-fix, review axes, backend resolution, and verification requirements."
 content_details:
-  - Priority system P1 rule compliance, P2 conflict and inconsistency detection, P3 unnecessary complexity detection
-  - Confidence marking where the check mark emoji is for the fix responsibility, the check box emoji is for finding correctness, and unmarked means uncertain
-  - Target axis flags --diff --branch --files --dirs with granularity preserved when passed to the reviewer
-  - Interaction axis flags --interactive as default and --auto which fixes only confident findings
-  - Focus axis --focus natural language priority concerns added on top of built-in criteria
-  - Scope axis --scope completion criteria and handling of out-of-scope findings
-  - Backend axis --backend resolution order, availability check, and retains_context declaration with fail closed behavior
-  - Self-verification Chain-of-Verification for all findings and independent evaluator separate from the reviewer
-  - Design-time information principle that all review criteria must be visible in principles documents
-  - Reference document axis and Issue creation conditions for rules missing from the project
+  - P1 rule compliance, P2 contradiction detection and P3 unnecessary complexity as the only review priority system
+  - "Confidence marks: check mark for fix confidence, check box for finding correctness, unmarked when uncertain"
+  - "--interactive as default and --auto that applies fixes only to findings marked with the fix-confidence check mark"
+  - Target axis flags --diff --branch --files --dirs as mutually exclusive, with granularity preserved when passed to the reviewer
+  - "--focus, --scope, --project-rules and --project-specs axes added on top of built-in criteria"
+  - "--backend resolution order with fail closed behavior and retains_context declaration"
+  - Chain-of-Verification self-verification for all findings and a separate evaluator for independent finding evaluation
+  - Out-of-scope findings must not be discarded solely for being out of scope
+  - Issue creation only when three conditions hold for a rule missing from the project
+  - Severity and gray-zone catalogs placed in principles documents so that no review criterion holds judgment
 applicable_tasks:
   - Review policy implementation
   - Review criteria design
   - AI review backend integration
-  - Review workflow specification for review skill
+  - Review workflow specification for the review skill
   - Review guideline development for principles documents
   - Policy compliance validation of review skill and criteria
 keywords:
-  - review
-  - priority
-  - confidence
-  - backend
-  - scope
-  - interaction
-  - focus
-  - criteria
-  - verification
+  - review policy
+  - confidence marking
+  - retains_context
   - evaluator
-body_hash: sha256:45764b5a526605eb651044c2229f4a5bd68b8831e2f0a1bf156bf18e7b7889c7
+  - Chain-of-Verification
+  - "--backend"
+  - "--auto"
+  - "--focus"
+  - "--scope"
+  - reviewer
+body_hash: sha256:77196bcef191adc9ffb6eb7400aaa5b32e5518098fb1eba92b7c43a582adb93d
 ---
 
 # REQ-013 レビューポリシー要件
@@ -174,7 +174,7 @@ criteria に判断が残っている状態 = 設計時点で執筆者から判�
 | 記号   | 何についての確信か                            | `--auto` での扱い      |
 | ------ | --------------------------------------------- | ---------------------- |
 | ✅     | **対策** — その修正を責任を持って実行できる   | 確認なしに修正する     |
-| ☑️      | **所見** — レビュアの指摘は正しい（修正は別） | **提示して採否を得る** |
+| ☑️     | **所見** — レビュアの指摘は正しい（修正は別） | **提示して採否を得る** |
 | (無印) | 指摘そのものの妥当性に確信が無い              | **提示して採否を得る** |
 
 順序があるため 1 つの尺度で足りる。`✅` は `☑️` を含み、**指摘が正しいと確信できていないものを直すことはできない**。

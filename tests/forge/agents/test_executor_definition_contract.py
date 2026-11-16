@@ -16,7 +16,8 @@ import tempfile
 import unittest
 from pathlib import Path
 
-REPO_ROOT = Path(__file__).resolve().parents[3]
+from tests import REPO_ROOT
+
 PLUGIN_ROOT = REPO_ROOT / "plugins" / "forge"
 SCRIPT_DIR = PLUGIN_ROOT / "skills" / "start-implement" / "scripts"
 EXECUTOR_PATH = PLUGIN_ROOT / "agents" / "executor.md"

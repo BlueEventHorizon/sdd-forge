@@ -59,7 +59,7 @@ python3 "${CLAUDE_PLUGIN_ROOT}/scripts/review/reviewer_abort.py" "${CLAUDE_PROJE
 python3 "${CLAUDE_PLUGIN_ROOT}/scripts/doc_structure/resolve_doc_structure.py" --project-root "${CLAUDE_PROJECT_DIR}" --match-path {path}
 ```
 
-標準出力は JSON で、`doc_type` に `plan` / `requirement` / `design` / `adr` のいずれか、または `null` が入る。
+標準出力は JSON で、`doc_type` に宣言された doc_type（`plan` / `requirement` / `design` / `adr` のほか、`glossary` 等）、または `null` が入る。
 
 script の標準出力は JSON であり、失敗すると `errors`（自然文の配列）を持つ。引数の誤りが原因なら、`errors` に従って直して呼び直す。直せないときは `reviewer_finish` を呼ばずに終える。
 

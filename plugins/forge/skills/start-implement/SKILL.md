@@ -78,13 +78,15 @@ python3 "${CLAUDE_SKILL_DIR}/scripts/update_plan_status.py" \
 
 対象 Feature を確定する。引数があればそれを使い、無ければ AskUserQuestion で確認する。
 
-`${CLAUDE_PLUGIN_ROOT}/skills/doc-structure/SKILL.md` の「出力先ディレクトリの解決」手順に従い、doc_type `plan`、feature `{feature}` でディレクトリを求める。その配下の `{feature}_plan.json` を計画書パス（`{計画書パス}`）とする。エントリが無い場合の扱いは同手順が定める（本スキルは既定パスを持たない）。
+`Skill` ツールで `doc-structure` を、`args` を `dir-of doc_type=plan feature={feature}` として呼び、計画書の置き場（`dir`）を求める。宣言が無い・エントリが無い場合の扱いは `doc-structure` が担う（本スキルは既定パスを持たない）。計画書のパスは、次の起動確認が `dir` と feature から組み立てる。
 
 ### 1.2 起動確認
 
 ```bash
-python3 "${CLAUDE_SKILL_DIR}/scripts/check_startup.py" --plan-path "{計画書パス}"
+python3 "${CLAUDE_SKILL_DIR}/scripts/check_startup.py" --plan-dir "{dir}" --feature "{feature}"
 ```
+
+標準出力の `plan_path` を、計画書パス（以降の `{計画書パス}`）とする。
 
 - 終了コード 0: 標準出力の `state` で分岐する
 - 終了コード 1: 計画書を読めない・壊れている。`errors` を利用者へ報告して終了する。状態を推測して続行しない

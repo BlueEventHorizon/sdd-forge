@@ -5,7 +5,7 @@
 metadata:
   name: Document Search Index (specs)
   key: specs
-  generated_at: 2026-10-27T02:59:20Z
+  generated_at: 2026-10-30T12:08:17Z
   file_count: 43
 
 docs:
@@ -361,36 +361,37 @@ docs:
       - agenda overview
       - remaining count
   docs/specs/consult/design/DES-078_consult_dialogue_flow_design.md:
-    title: DES-078 consult Dialogue Flow Design
-    purpose: "Defines consult dialogue flow for REQ-017: progress table redisplayed per step, consult brief presented after research and recorded by script, review-specific handling split from the SKILL."
+    title: DES-078 Consult Dialogue Flow Design
+    purpose: "Designs consult dialogue flow for REQ-017: progress list, brief presentation order, script-based brief recording, and separating review-specific handling from the SKILL"
     content_details:
-      - Progress table columns (topic number, topic name, importance, status, result, open issues) and status values such as not started, in progress, settled, on hold, out of scope, withdrawn, report only
-      - Consult brief with two fields, summary and recommendation, kept within about 10 lines with confidence marks on conclusions
-      - "Order rule: research completes before any output to the user; the first output is a failure notice or the consult brief"
-      - record_review_brief.py invocation taking evaluation JSON path, review_id, round_number, finding_ids, and summary and recommendation files
-      - consult_brief_N.json record structure with review_id, round_number, sequence, finding_ids, summary, recommendation
-      - Sequence number is max existing plus one, published by hardlink from a temp file so records are never overwritten
-      - Body files are deleted only on success; failure leaves them for retry and the next topic may overwrite them
-      - Record failure is reported to the user without default values, and brief presentation continues
-      - "review_handling.md procedure: report-only items, wrap-up offer for passing items, result return with adoption and reasons"
-      - "Test points for the record script: exit codes 0, 1, 2, atomic write, no partial records"
+      - Progress list columns (number, topic, importance, status, result, open issues) and status values
+      - Rule to investigate fully and create each consult brief before any output to the user
+      - consult brief structure with summary and recommendation in about 10 lines, plus confidence marks
+      - record_review_brief.py invocation, arguments, exit codes and stdout JSON
+      - consult_brief_N.json record structure with review_id, round_number, sequence, finding_ids, summary and recommendation
+      - Sequence number as max existing record number plus one, with temp-file write and hardlink publish that never overwrites
+      - Hand-off body files under .temp/forge/consult deleted only after successful recording
+      - "Failure handling: report errors without filling defaults, then continue presenting the brief"
+      - Review-specific handling document review_handling.md kept separate from the consult SKILL
+      - Module contracts M-01 to M-07 and traceability to requirements
     applicable_tasks:
-      - Implementation of the consult dialogue flow when delegated from review
-      - Modification of consult SKILL progress or brief presentation order
-      - Implementation or unit testing of the record_review_brief.py recording script
-      - Review of the consult brief format and recording contract
-      - Creation or revision of the review_handling procedure document for consult
+      - consult dialogue flow implementation
+      - consult brief creation and presentation modification
+      - consult brief recording script implementation
+      - review_handling document modification for review delegation
+      - consult SKILL structure design review
+      - record_review_brief.py unit test creation
+      - progress list format modification
     keywords:
-      - consult dialogue flow
-      - consult brief
       - record_review_brief.py
-      - consult_brief_N.json
       - review_handling.md
-      - progress table
+      - consult topic
+      - consult brief
+      - progress list
       - finding_ids
-      - review_id
-      - round_number
       - hardlink publish
+      - sequence number
+      - DES-078
   docs/specs/consult/requirements/REQ-017_consult_skill.md:
     title: REQ-017 consult Dialogue Progression Skill Requirements
     purpose: Defines requirements for the consult dialogue skill covering consult topic intake, two-part consult briefs with recommendations, progress tracking, decision capture, and no execution before user decision.
@@ -847,17 +848,17 @@ docs:
       - prefer
   docs/specs/forge/design/DES-066_review_body_design.md:
     title: DES-066 forge:review Body Design (Backend-Independent Part)
-    purpose: "Defines the backend-independent design of the /forge:review body: backend resolution, request handling, fix safety, location segregation, single-exit termination, and staged presentation."
+    purpose: Defines the backend-independent design of the /forge:review body covering backend resolution, fix safety, location segregation, single-exit termination, and staged presentation via the consult SKILL
     content_details:
       - Backend resolution order with explicit specification failing closed and the default candidate list defined in DEFAULT_ORDER
-      - retains_context declared per backend and held for the review, with backend_undeclared rejection
+      - retains_context declared per backend and held for the review with backend_undeclared rejection
       - Target granularity preservation where range options stay unexpanded in the request and the allowlist is kept separate
       - Two scope axes focus and scope added to the request without mixing their severity effects
       - Fix safety by a per-finding apply verify decide loop plus independent verification at round end
       - Location-based split into located and unlocated groups where the script makes no judgment
-      - "Two distinct confidence levels: confidence for finding correctness and fix_confident for fix capability"
+      - Two distinct confidence levels, confidence for finding correctness and fix_confident for fix capability
       - Single exit point for approved, halted_with_open_findings, failure and interrupted termination paths
-      - Staged presentation delegated to the consult SKILL in the same context, where an interruption is not an interrupted termination
+      - Staged presentation delegated to the consult SKILL in the same context where an interruption is not an interrupted termination
       - Request kept unchanged across rounds and findings mapped to evaluations by finding_ids
     applicable_tasks:
       - Design review of the /forge:review command architecture and backend integration
@@ -964,36 +965,36 @@ docs:
       - error guard placement
   docs/specs/forge/requirements/REQ-013_review_policy.md:
     title: REQ-013 Review Policy Requirements
-    purpose: Defines the review policy framework for forge AI reviews, prioritizing rule compliance P1, conflict detection P2 and unnecessary complexity P3, with confidence marking, backend, scope and evaluator requirements.
+    purpose: "Defines the forge AI review policy: P1 rule compliance, P2 conflict detection, P3 unnecessary complexity, confidence-based auto-fix, review axes, backend resolution, and verification requirements."
     content_details:
-      - Priority system P1 rule compliance, P2 conflict and inconsistency detection, P3 unnecessary complexity detection
-      - Confidence marking where the check mark emoji is for the fix responsibility, the check box emoji is for finding correctness, and unmarked means uncertain
-      - Target axis flags --diff --branch --files --dirs with granularity preserved when passed to the reviewer
-      - Interaction axis flags --interactive as default and --auto which fixes only confident findings
-      - Focus axis --focus natural language priority concerns added on top of built-in criteria
-      - Scope axis --scope completion criteria and handling of out-of-scope findings
-      - Backend axis --backend resolution order, availability check, and retains_context declaration with fail closed behavior
-      - Self-verification Chain-of-Verification for all findings and independent evaluator separate from the reviewer
-      - Design-time information principle that all review criteria must be visible in principles documents
-      - Reference document axis and Issue creation conditions for rules missing from the project
+      - P1 rule compliance, P2 contradiction detection and P3 unnecessary complexity as the only review priority system
+      - "Confidence marks: check mark for fix confidence, check box for finding correctness, unmarked when uncertain"
+      - "--interactive as default and --auto that applies fixes only to findings marked with the fix-confidence check mark"
+      - Target axis flags --diff --branch --files --dirs as mutually exclusive, with granularity preserved when passed to the reviewer
+      - "--focus, --scope, --project-rules and --project-specs axes added on top of built-in criteria"
+      - "--backend resolution order with fail closed behavior and retains_context declaration"
+      - Chain-of-Verification self-verification for all findings and a separate evaluator for independent finding evaluation
+      - Out-of-scope findings must not be discarded solely for being out of scope
+      - Issue creation only when three conditions hold for a rule missing from the project
+      - Severity and gray-zone catalogs placed in principles documents so that no review criterion holds judgment
     applicable_tasks:
       - Review policy implementation
       - Review criteria design
       - AI review backend integration
-      - Review workflow specification for review skill
+      - Review workflow specification for the review skill
       - Review guideline development for principles documents
       - Policy compliance validation of review skill and criteria
     keywords:
-      - review
-      - priority
-      - confidence
-      - backend
-      - scope
-      - interaction
-      - focus
-      - criteria
-      - verification
+      - review policy
+      - confidence marking
+      - retains_context
       - evaluator
+      - Chain-of-Verification
+      - "--backend"
+      - "--auto"
+      - "--focus"
+      - "--scope"
+      - reviewer
   docs/specs/forge/requirements/REQ-024_implementation_plan_spec.md:
     title: REQ-024 Implementation Plan Specification Requirements
     purpose: "Defines the information an implementation plan must hold: task identifiers, priority, dependencies, traceability to requirements and designs, task granularity, task groups, and plan lifecycle rules."

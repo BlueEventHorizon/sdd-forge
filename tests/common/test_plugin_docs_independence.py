@@ -16,8 +16,9 @@
 import re
 import unittest
 from pathlib import Path
+from tests import REPO_ROOT
 
-RULES_DIR = Path(__file__).resolve().parents[2] / "docs" / "rules"
+RULES_DIR = REPO_ROOT / "docs" / "rules"
 PREFIXES = ("plugin_", "forge_")
 
 INLINE_LINK = re.compile(r"\]\(([^)\s]+)\)")

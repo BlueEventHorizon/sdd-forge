@@ -287,7 +287,7 @@ The reviewer and the evaluator read the type-specific criteria file themselves. 
 | Mark   | Meaning                                                             | Under `--auto`       |
 | ------ | ------------------------------------------------------------------- | -------------------- |
 | ✅     | The point is correct **and** the fix can be carried out responsibly | Fixed without asking |
-| ☑️      | The point is correct, but the fix itself is uncertain               | Presented to you     |
+| ☑️     | The point is correct, but the fix itself is uncertain               | Presented to you     |
 | (none) | The point's own validity is uncertain                               | Presented to you     |
 
 `✅` implies `☑️`: a point that is not established as correct can never be fixed without asking.

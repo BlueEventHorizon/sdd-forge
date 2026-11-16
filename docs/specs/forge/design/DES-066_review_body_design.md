@@ -1,17 +1,17 @@
 ---
 type: doc-advisor
 title: DES-066 forge:review Body Design (Backend-Independent Part)
-purpose: "Defines the backend-independent design of the /forge:review body: backend resolution, request handling, fix safety, location segregation, single-exit termination, and staged presentation."
+purpose: Defines the backend-independent design of the /forge:review body covering backend resolution, fix safety, location segregation, single-exit termination, and staged presentation via the consult SKILL
 content_details:
   - Backend resolution order with explicit specification failing closed and the default candidate list defined in DEFAULT_ORDER
-  - retains_context declared per backend and held for the review, with backend_undeclared rejection
+  - retains_context declared per backend and held for the review with backend_undeclared rejection
   - Target granularity preservation where range options stay unexpanded in the request and the allowlist is kept separate
   - Two scope axes focus and scope added to the request without mixing their severity effects
   - Fix safety by a per-finding apply verify decide loop plus independent verification at round end
   - Location-based split into located and unlocated groups where the script makes no judgment
-  - "Two distinct confidence levels: confidence for finding correctness and fix_confident for fix capability"
+  - Two distinct confidence levels, confidence for finding correctness and fix_confident for fix capability
   - Single exit point for approved, halted_with_open_findings, failure and interrupted termination paths
-  - Staged presentation delegated to the consult SKILL in the same context, where an interruption is not an interrupted termination
+  - Staged presentation delegated to the consult SKILL in the same context where an interruption is not an interrupted termination
   - Request kept unchanged across rounds and findings mapped to evaluations by finding_ids
 applicable_tasks:
   - Design review of the /forge:review command architecture and backend integration
@@ -30,7 +30,7 @@ keywords:
   - halted_with_open_findings
   - staged presentation
   - backend_undeclared
-body_hash: sha256:775f0d541416f13a58332fc519fd6707622bb85dbd3e25a316cbc8d1130b4878
+body_hash: sha256:296e3bb5cfa8307a331ce88cd4f6f59a4bb7856caaf053e1430cec885e5996bc
 ---
 
 # DES-066 `/forge:review` 本体（バックエンド非依存部）設計書
@@ -260,7 +260,7 @@ finding 単位で「適用 → 検証 → 判断 → 次へ」を逐次繰り返
 | 決めること                         | 決める主体                                                                                                     |
 | ---------------------------------- | -------------------------------------------------------------------------------------------------------------- |
 | 所見に位置情報があるか             | `split_by_location.py`（データの欠損検査）                                                                     |
-| レビュアの指摘が正しいか           | evaluator が `confidence` として述べる（確信度 ☑️）。本体が吟味して、自分で確信を持つ                           |
+| レビュアの指摘が正しいか           | evaluator が `confidence` として述べる（確信度 ☑️）。本体が吟味して、自分で確信を持つ                          |
 | その修正を責任を持って実行できるか | evaluator が `fix_confident` として述べる（`✅` の材料）。本体が吟味して、自分で `✅` かを決め、修正を実施する |
 
 `split_by_location.py` の出力は 2 群である。
@@ -283,7 +283,7 @@ finding 単位で「適用 → 検証 → 判断 → 次へ」を逐次繰り返
 | 記号   | 問い                               | 材料となる評価の項目 |
 | ------ | ---------------------------------- | -------------------- |
 | `✅`   | その修正を責任を持って実行できるか | `fix_confident`      |
-| `☑️`    | レビュアの指摘は正しいか           | `confidence`         |
+| `☑️`   | レビュアの指摘は正しいか           | `confidence`         |
 | (無印) | 指摘そのものの妥当性に確信が無い   | —                    |
 
 順序があるため 1 つの尺度で足りる。`✅` は `☑️` を含み、**指摘が正しいと確信できていないものを直すことはできない**。

@@ -23,14 +23,10 @@ import sys
 import tempfile
 import unittest
 from pathlib import Path
+from tests import REPO_ROOT
 
 _MODULE_PATH = (
-    Path(__file__).resolve().parents[3]
-    / "plugins"
-    / "forge"
-    / "scripts"
-    / "agenda"
-    / "agenda_wrapper.py"
+    REPO_ROOT / "plugins" / "forge" / "scripts" / "agenda" / "agenda_wrapper.py"
 )
 _SPEC = importlib.util.spec_from_file_location("agenda_wrapper", _MODULE_PATH)
 agenda_wrapper = importlib.util.module_from_spec(_SPEC)

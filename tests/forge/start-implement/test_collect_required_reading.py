@@ -10,7 +10,8 @@ import unittest
 from pathlib import Path
 
 
-REPO_ROOT = Path(__file__).resolve().parents[3]
+from tests import REPO_ROOT
+
 SCRIPT = (
     REPO_ROOT
     / "plugins"
@@ -169,6 +170,34 @@ class CollectFunctionTest(_ProjectCase):
             [("REQ-001", "found"), ("REQ-002", "found")],
         )
         self.assertEqual(result["problems"], [])
+
+    def test_docs_named_with_hyphen_after_id_are_found(self):
+        """ID の後ろが `_` でない命名（`DES-008-content-rules.md`）でも見つかる"""
+        design = self.write("docs/specs/design/DES-008-content-rules.md")
+        req = self.write("docs/specs/requirements/REQ-002-document-id.md")
+        result, errors = self.collect(
+            _task(design_id="DES-008"),
+            design_traceability=[_trace("DES-008", ["REQ-002"])],
+        )
+        self.assertEqual(errors, [])
+        self.assertEqual(result["paths"], [design, req])
+        self.assertEqual(result["design_lookup"]["status"], "found")
+        self.assertEqual(result["requirement_lookup"][0]["status"], "found")
+        self.assertEqual(result["problems"], [])
+
+    def test_a_longer_id_is_not_adopted_in_place_of_a_missing_id(self):
+        """DES-1 / REQ-1 が無く DES-10 / REQ-10 だけがあるとき、別 ID の文書で補わず、見つからないと報告する"""
+        self.write("docs/specs/design/DES-10_other.md")
+        self.write("docs/specs/requirements/REQ-10_other.md")
+        result, errors = self.collect(
+            _task(design_id="DES-1"),
+            design_traceability=[_trace("DES-1", ["REQ-1"])],
+        )
+        self.assertEqual(errors, [])
+        self.assertEqual(result["paths"], [])
+        self.assertEqual(result["design_lookup"]["status"], "not_found")
+        self.assertEqual(result["requirement_lookup"][0]["status"], "not_found")
+        self.assertEqual(len(result["problems"]), 2)
 
     def test_only_the_requirements_of_this_design_are_added(self):
         design = self.write("docs/specs/f/design/DES-001_x.md")

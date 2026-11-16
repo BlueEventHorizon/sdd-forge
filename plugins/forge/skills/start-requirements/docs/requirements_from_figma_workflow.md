@@ -17,7 +17,7 @@ applicable_when:
 - **`${CLAUDE_PLUGIN_ROOT}/docs/requirement_format.md`** — 要件定義書テンプレート
 - **`${CLAUDE_PLUGIN_ROOT}/docs/spec_design_boundary_spec.md`** — 要件・設計の境界ガイド（What/How の判断基準）
 - **`${CLAUDE_PLUGIN_ROOT}/docs/spec_priorities_spec.md`** — 要件・設計で優先する価値観（構造品質の定量化禁止など）
-- **`${CLAUDE_PLUGIN_ROOT}/docs/document_style_guide.md`** — 文書スタイル指針（タグ・見出し・参照記法）
+- **`${CLAUDE_PLUGIN_ROOT}/docs/document_style_guide.md`** — 文書スタイル指針（タグ・見出し・参照記法・用語）
 
 ## 目的
 
@@ -119,17 +119,9 @@ graph TD
 
 要件定義書のファイルを書く前に、`start-requirements/SKILL.md` の「要件定義書を書く直前の決定」の手順 3〜5（feature・出力先・ファイル名）に従って決める。このワークフローは、差分開発かどうかの判定（手順 2）を行わない。
 
-続けて、使用するプレフィックスごとに次の連番を取得する。手動での番号決定は禁止:
+続けて、使用するプレフィックスごとに、`Skill` ツールで `next-spec-id` を呼び、次の連番を取得する。手動での番号決定は禁止。`args` の第 1 引数に、発行するプレフィックスを渡す（画面要件は `SCR`、UI コンポーネントは `CMP`、機能要件は `FNC`）。
 
-```bash
-SCAN_SCRIPT="${CLAUDE_PLUGIN_ROOT}/skills/next-spec-id/scripts/scan_spec_ids.py"
-python3 "$SCAN_SCRIPT" SCR   # 画面要件
-python3 "$SCAN_SCRIPT" CMP   # UIコンポーネント
-python3 "$SCAN_SCRIPT" FNC   # 機能要件
-# 使用するプレフィックスごとに実行する
-```
-
-JSON 出力の `next_id` をファイル名・要件 ID として使用する。`duplicates` が空でない場合は警告を表示する。
+返された `next_id` をファイル名・要件 ID として使用する。`duplicates` が空でない場合は警告を表示する。
 
 ### 3.1 画面要件（SCR-xxx）の抽出
 
@@ -177,7 +169,7 @@ Figma デザインには表現されない以下の要件を補完:
 
 ### 3.5 グロッサリー作成
 
-要件で使用する用語を定義・整理する。
+要件で使用する用語を定義・整理する。用語集のファイルは、SKILL.md の「用語集を書く」節に従って作る。
 
 ---
 

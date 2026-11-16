@@ -8,13 +8,19 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Claude Code プラグインのマーケットプレイスリポジトリ。forge を格納・配布する。
 
-- **forge** (v0.1.1) — ドキュメントライフサイクルツール。要件定義・設計・計画書の作成、コード・文書レビュー、自動修正に対応。レビューは交換可能なバックエンドで実行し、現在の唯一の候補は外部依存を持たない `agent-review`（`review` / `agent-review`）
+- **forge** (v0.1.2) — ドキュメントライフサイクルツール。要件定義・設計・計画書の作成、コード・文書レビュー、自動修正に対応。レビューは交換可能なバックエンドで実行し、現在の唯一の候補は外部依存を持たない `agent-review`（`review` / `agent-review`）
 
 > 上記の版数は `.version-config.yaml` が CLAUDE.md を同期対象として宣言している箇所であり、`/forge:update-version` が機械的に書き換える。手で消したり書式を変えたりしない（`tests/common/test_version_sync_drift.py` が検証する）。
 
 全体像・スキル一覧・ワークフロー図は [README.md](README.md) を参照。
 
 forge の文書検索は doc-advisor / doc-db の 2 backend 構成で、**どちらも本リポジトリの外にある**。doc-advisor の原本は別リポジトリ [BlueEventHorizon/DocAdvisor](https://github.com/BlueEventHorizon/DocAdvisor)、doc-db はローカル稼働の文書検索サーバである。backend 側の不具合を本リポジトリで回避してはならない（下記 SoT 項）。
+
+## プロジェクト哲学
+
+**目的は、刹那的に動かすことではない**
+
+- このプロジェクトを正しいものに完遂し、このプロジェクトの成果でによって恩恵を受ける他のすべてのプロジェクトを正しく導くこと。
 
 ## Claude Code プラグインとは何か
 
@@ -83,7 +89,7 @@ forge の文書検索は doc-advisor / doc-db の 2 backend 構成で、**どち
 
 全文は [plugin_implementation_guidelines.md](docs/rules/plugin_implementation_guidelines.md)。
 
-- **他コンポーネントへの窓口は SKILL だけ**: 依拠してよいのは SKILL.md が公開する引数・出力の契約だけ。他コンポーネントの script を直接呼ばない。内部設計 ID・内部文書をインターフェースにしない。設計書を読んで同じ動作を自分で実装しない
+- **他のスキルへの窓口は SKILL だけ。共通 script は直接使う**: 依拠してよいのは SKILL.md が公開する引数・出力の契約だけ。他のスキルの script（`skills/{他スキル}/scripts/`）を直接呼ばない。プラグイン直下 `scripts/` の共通 script は、複数のスキルが同じ処理を使うためにあり、直接呼んでよい。内部設計 ID・内部文書をインターフェースにしない。設計書を読んで同じ動作を自分で実装しない
 - **フォールバックを反射的に書かない**: 正しいリカバリとして具体的に説明できるものだけ書く。説明できなければ、隠さずエラーとして報告し、構造的に起こらないよう設計を直す
 - **SKILL.md に処理ロジックをインラインで書かない**: ロジックは独立した script にし、SKILL.md からは呼び出すだけにする
 - **一時ファイルは `.temp/<plugin>/<skill>/` に `Write` ツールで書く。`mktemp` は使わない**: ファイル名にセッション ID を含め、固定名にしない。成功したら削除し、失敗したら残して再試行で使う
@@ -91,7 +97,7 @@ forge の文書検索は doc-advisor / doc-db の 2 backend 構成で、**どち
 
 ### プロジェクト文書
 
-- **設計文書は `docs/specs/**/{requirements,design,adr}/` に置き、`REQ-` / `DES-` / `ADR-` で命名する**（plan モードの成果も同じ）
+- **設計文書の置き場は `/forge:doc-structure` で解決し、`REQ-` / `DES-` / `ADR-` で命名する**（plan モードの成果も同じ）
 
 ### 作業の進め方
 
@@ -116,23 +122,6 @@ forge の文書検索は doc-advisor / doc-db の 2 backend 構成で、**どち
 - **判断・提案には確信度を添える**: 過去の説明を「前述の通り」で済ませず、要点を再掲する
 - **「叩き台を作って」「議論しよう」は議論の起点であり、決定フローの依頼ではない**: 叩き台を書いたらそこで止まり、列挙した論点を連続質問で次々問わない
 
-## 哲学
-
-あなた（AI）のあるべき姿。
-
-- **正しいと思うことは、実行するために努力する**: 努力には、承認を得るための説得が含まれる。承認なく実行してはならない。だが正しいと判断したなら、選択肢に畳んで判断を投げ返すのではなく、根拠と代償を示して承認を得るところまでが仕事である。「ユーザが選ぶなら仕方ない」という形の提示は、判断の放棄を選択肢の尊重に見せかけたものである
-- **責任の範囲は、このプロジェクトのすべてが正しく動くこと**: 「自分の変更とは無関係」「担当外」は放置の理由にならない
-- **目的は、刹那的に動かすことではない**: プロジェクトを正しいものに完遂し、他のすべてのプロジェクトを正しく導くこと。キャッシュや下流での回避で済ませず原本を直すのは、そのためである
-- **黙って進めたものは、報告漏れではなく隠蔽である**
-
-## meta/ ディレクトリ（現在不在）
-
-`meta/` は研究・評価・ゴールデンセット用の作業領域であり、**いつでも削除される**。現時点ではこのワークツリーにもメインワークツリーにも存在しない。
-
-- `plugins/` / `tests/` / `docs/` 配下のコード・文書は `meta/` 内のファイルに依存してはならない（`meta/` から `plugins/` のモジュールを呼ぶ逆方向は許容）
-- SKILL として配布しない（ユーザー環境に `meta/` は存在しない）
-- 検索品質（精度・再現率）の評価スクリプトとゴールデンセットの置き場。ユニットテストはバグの不在を保証するが、検索品質はここで測る
-
 ## Development
 
 ビルド・パッケージ管理のシステムは無い。**外部依存は、`plugins/` 配下と `tests/` 配下のどちらでも、標準ライブラリのみを基本とする**。別ライブラリの使用はユーザに許諾を取ること。
@@ -140,7 +129,7 @@ forge の文書検索は doc-advisor / doc-db の 2 backend 構成で、**どち
 `makefile` は MCP サーバーの接続・切断用であり、プラグインのインストールには使わない。
 
 - **Python 3.14 以上をサポート対象とする**。Python 3.13 以下は対象外
-- **CI（`.github/workflows/ci.yml`）のゲートは 2 つ**: `python3 -m unittest discover -s tests -p 'test_*.py'` と `dprint check`。Python / TOML / Markdown / YAML を編集したら [dprint](https://dprint.dev/) で `dprint fmt` を通す（設定は `dprint.json`）。通さないと CI が落ちる
+- **CI（`.github/workflows/ci.yml`）のゲートは 2 つ**: `python3 -m unittest discover -s tests -p 'test_*.py'` と `dprint check`。Python / TOML / Markdown / YAML を編集したら [dprint](https://dprint.dev/) で `dprint fmt` を通す（設定は `dprint.jsonc`）。通さないと CI が落ちる
 - ローカル読み込み: `claude --plugin-dir ./plugins/forge`。詳細は [DEVELOPMENT.md](DEVELOPMENT.md)
 - `AGENTS.md` は `CLAUDE.md` へのシンボリックリンク（Codex 向け）。どちらを編集しても同一実体が変わる
 
@@ -175,6 +164,14 @@ git -C <実体パス> show main:<契約を定める SKILL.md やスクリプト>
 `plugins/` 配下の Python スクリプトにはテストが必須。
 
 **テストを実行・追加・変更する前に、[DEVELOPMENT.md](DEVELOPMENT.md) の「4. テスト」を Read する。** 実行コマンド、`tests/`（単体テスト）と `ai_tests/`（AI の判断を試すテスト）の使い分け、配置の規則は、そこにだけ書いてある。読まずにコマンドや置き場を推測しない。
+
+## Session Resumption
+
+圧縮要約や再開時は、ユーザー発言を解釈する前に branch / 直近コミット / 要約セクション / TaskList の in_progress を確認する。
+
+- 表面的なキーワード一致（Issue 番号 / Phase 名 / ブランチ名）だけで作業対象を決めない
+- 解釈と作業状態が矛盾したら勝手に判断せず確認
+- 事実報告（reopen した / PR 出した 等）を新規依頼と取り違えない
 
 <!-- FORGE_ONBOARDING_START hash=6a3a278b2d31 -->
 

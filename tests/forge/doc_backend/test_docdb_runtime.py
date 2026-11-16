@@ -21,14 +21,10 @@ import tempfile
 import unittest
 from pathlib import Path
 from unittest import mock
+from tests import REPO_ROOT
 
 _SCRIPT_PATH = (
-    Path(__file__).resolve().parents[3]
-    / "plugins"
-    / "forge"
-    / "scripts"
-    / "doc_backend"
-    / "docdb_runtime.py"
+    REPO_ROOT / "plugins" / "forge" / "scripts" / "doc_backend" / "docdb_runtime.py"
 )
 
 _spec = importlib.util.spec_from_file_location(

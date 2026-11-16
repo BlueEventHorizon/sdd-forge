@@ -45,10 +45,12 @@ Phase 完了後は立ち止まらず次の Phase に自動で進む。立ち止�
 
 入力の要件定義書は、会話の文脈から特定する。検索はしない。意味検索は、他の feature の仕様や設計書のように入力でない文書を混ぜ、設計の出発点を汚すためである。置き場の文書を全件並べて選ばせることもしない（件数が多いと成り立たない）。feature は入力の要件定義書を決めない（既存のディレクトリに新たに追加した要件定義書など）ため、入力はファイルで特定する。
 
-1. **文脈から分かる場合**（`--requirement` で渡された、直前に作成した、利用者が名指しした 等）: それを入力にする。パス・ID・ファイル名のいずれで示されていても、`${CLAUDE_PLUGIN_ROOT}/skills/doc-structure/SKILL.md` の「ID・ファイル名から文書を探す」手順（doc_type `requirement`）で、実在する文書を求める。複数見つかった場合は、どれかを AskUserQuestion で尋ねる
+1. **文脈から分かる場合**（`--requirement` で渡された、直前に作成した、利用者が名指しした 等）: それを入力にする。パス・ID・ファイル名のいずれで示されていても、`Skill` ツールで `doc-structure` を、`args` を `find-in doc_type=requirement name={指定された値}` として呼び、実在する文書を求める。`count` が 2 以上（複数見つかった場合）は、どれかを AskUserQuestion で尋ねる
 2. **文脈から分からない場合**: 列挙せず、AskUserQuestion でどの要件定義書かを尋ねる（パス・ID・ファイル名のいずれでもよい）
 3. **置き場に要件定義書が 1 件も無い場合**: 「要件定義書がありません。`/forge:start-requirements` で作成してください」と案内して終了する。要件定義書なしでは設計しない
 4. 特定した要件定義書のタイトル行（先頭の見出し）を Read で確認し、パスを次の「Feature の確定」に渡す
+
+**入力の用語集**: 特定した要件定義書の冒頭に用語集の ID（`用語集: {ID}`）があれば、`Skill` ツールで `doc-structure` を、`args` を `find-in doc_type=glossary name={用語集の ID}` として呼び、用語集のパスを求め、Phase 2 の入力として読む。`count` が 0 なら見つからない。2 以上なら、AskUserQuestion でどれかを尋ねる。冒頭に用語集の ID が無ければ、入力の用語集は無い
 
 ### Feature の確定
 
@@ -58,15 +60,14 @@ Phase 完了後は立ち止まらず次の Phase に自動で進む。立ち止�
 
 - `${CLAUDE_PLUGIN_ROOT}/docs/additive_development_spec.md` §0 — フィーチャーの概念定義
 
-`${CLAUDE_PLUGIN_ROOT}/skills/doc-structure/SKILL.md` の「feature の決定」手順に従い、doc_type `design` で決める。
-`--source-path` に、「要件定義書の特定」で特定した要件定義書のパスを渡す。引数で feature が渡されていれば `--feature` にも渡す。
-`decision` の扱いは同手順が定める（引数の feature は置き換えない。パスと食い違う、または決められなければ AskUserQuestion で確認する）。
+`Skill` ツールで `doc-structure` を、`args` を `decide-feature doc_type=design source-path={要件定義書のパス}` として呼ぶ（「要件定義書の特定」で特定した要件定義書のパスを渡す。引数で feature が渡されていれば `feature={feature}` も渡す）。
+`decision` の扱いは `doc-structure` の `decide-feature` の契約に従う（引数の feature は置き換えない。パスと食い違う、または決められなければ `ask` が返るので、AskUserQuestion で確認する）。
 
 ### 出力先の解決
 
 設計書の出力先は、「Feature の確定」の結果の `dir` である。
 
-エントリが無い場合の扱いは `doc-structure` の手順が定める（本スキルは既定パスを持たず、出力先を独自に尋ねない）。
+宣言が無い・エントリが無い場合の扱いは `doc-structure` が担う（本スキルは既定パスを持たず、出力先を独自に尋ねない）。
 
 ### 差分開発かどうかの確認
 
@@ -88,7 +89,7 @@ python3 "${CLAUDE_PLUGIN_ROOT}/scripts/doc_structure/feature_marker.py" --paths 
 
 ### 設計の完全新規の判定
 
-`${CLAUDE_PLUGIN_ROOT}/skills/doc-structure/SKILL.md` の「出力先ディレクトリの解決」手順に従い、doc_type `design` で、feature を指定せずに、プロジェクトの既存の設計書の有無を求める。既存の設計書が 1 件も無ければ、設計の完全新規である（`additive_development_spec.md` §0）。結果は「状態の表」と Phase 3 で使う。
+`Skill` ツールで `doc-structure` を、`args` を `dir-of doc_type=design` として呼び（feature を指定しない）、プロジェクトの既存の設計書の有無を、返された `has_existing` で求める。既存の設計書が 1 件も無ければ、設計の完全新規である（`additive_development_spec.md` §0）。結果は「状態の表」と Phase 3 で使う。
 
 ### モード判定
 
@@ -133,7 +134,7 @@ python3 "${CLAUDE_PLUGIN_ROOT}/scripts/doc_structure/feature_marker.py" --paths 
 - **`${CLAUDE_PLUGIN_ROOT}/docs/strategy_principles_spec.md`** — 実装戦略書の原則。既存の実装の扱いは設計ではなく実装戦略書の責務であることを把握する
 - **`${CLAUDE_PLUGIN_ROOT}/docs/spec_design_boundary_spec.md`** — 要件・設計の境界ガイド
 - **`${CLAUDE_PLUGIN_ROOT}/docs/spec_priorities_spec.md`** — 要件・設計で優先する価値観（構造品質の定量化禁止など）
-- **`${CLAUDE_PLUGIN_ROOT}/docs/document_style_guide.md`** — 文書スタイル指針（タグ・見出し・参照記法）
+- **`${CLAUDE_PLUGIN_ROOT}/docs/document_style_guide.md`** — 文書スタイル指針（タグ・見出し・参照記法・用語）
 
 ---
 
@@ -183,14 +184,9 @@ prompt:
 
 Step 1 の承認後、設計書ファイルを作り、以降の成果物はこのファイルに書く。
 
-設計 ID はプロジェクトのルールに従う（ルールがない場合は `DES-XXX` 形式を推奨）。必ず以下のスクリプトで次の連番を取得する。手動での番号決定は禁止:
+設計 ID はプロジェクトのルールに従う（ルールがない場合は `DES-XXX` 形式を推奨）。必ず `Skill` ツールで `next-spec-id` を、`args` を `DES ADR,DES` として呼び、次の連番を取得する（第 1 引数が発行するプレフィックス、第 2 引数が通し番号を共有するプレフィックス）。手動での番号決定は禁止。
 
-```bash
-SCAN_SCRIPT="${CLAUDE_PLUGIN_ROOT}/skills/next-spec-id/scripts/scan_spec_ids.py"
-python3 "$SCAN_SCRIPT" DES --share-prefixes ADR,DES
-```
-
-JSON 出力の `next_id` をファイル名・設計 ID として使用する。`duplicates` が空でない場合は警告を表示する（`duplicates` には「異なるファイルが同じ ID / 共有番号を主張している」実際の衝突のみが報告される。同一履歴由来の複数ブランチ出現はノイズとして除外済みのため、空でなければ必ずユーザーに提示する）。
+返された `next_id` をファイル名・設計 ID として使用する。`duplicates` が空でない場合は警告を表示する（`duplicates` には「異なるファイルが同じ ID / 共有番号を主張している」実際の衝突のみが報告される。同一履歴由来の複数ブランチ出現はノイズとして除外済みのため、空でなければ必ずユーザーに提示する）。
 
 - **作成場所**: 事前準備「出力先の解決」で確定した出力先ディレクトリ
 - **フォーマット**: Markdown (.md) ファイル
@@ -198,6 +194,14 @@ JSON 出力の `next_id` をファイル名・設計 ID として使用する。
 - **差分開発の場合（事前準備「差分開発かどうかの確認」で要件定義書が一時マーカーを持つ、または Phase 3 で設計が差分開発と分かった）**: `${CLAUDE_PLUGIN_ROOT}/docs/frontmatter_format.md` §1.2 が定義する `feature_type: temporary-feature` frontmatter を文書先頭（`# {設計ID} ...` 見出しより前）に付与する。feature_note は本設計書が対象範囲における現在の設計であることを述べ、対応する要件定義書（REQ-xxx。差分 feature のものがあればそれ）と食い違う場合は要件定義書に従うと添える。どちらにも当たらない場合は付与しない。
 
 **禁止事項・よくある失敗パターン**: `design_principles_spec.md`「記載してはいけない内容」「よくある失敗パターン」節に従う（事前準備で読み込み済み）。
+
+### 2.3 設計側の用語集
+
+設計で新しく名付けた、特有の意味を持つ概念があるときだけ作る（無ければ作らない）。命名と表記は `document_style_guide.md` §9 に、構造は `${CLAUDE_PLUGIN_ROOT}/docs/glossary_format.md` に従う。要件の用語は再定義しない。
+
+- **出力先**: `Skill` ツールで `doc-structure` を、`args` を `dir-of doc_type=glossary feature={feature}` として呼んで求める
+- **ID とファイル名**: `glossary_format.md`「配置と ID」に従う。採番は設計 ID と同じ手順（2.2。`next-spec-id` スキルを呼ぶ）で行う
+- **設計書との対応**: 設計書は、冒頭に用語集の行を書き（同「文書冒頭の用語集の行」）、本文では用語を `[用語]` と書く（`document_style_guide.md` §9.3）
 
 ---
 

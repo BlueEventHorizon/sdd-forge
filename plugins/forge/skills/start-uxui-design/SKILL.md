@@ -62,10 +62,9 @@ Phase 完了後は立ち止まらず次の Phase に自動で進む。不明点�
 
 ### Step 3: 出力先ディレクトリの解決
 
-`${CLAUDE_PLUGIN_ROOT}/skills/doc-structure/SKILL.md` の「出力先ディレクトリの解決」手順に従い、
-doc_type `requirement`、feature `{feature}` で出力先ディレクトリを求める。
+`Skill` ツールで `doc-structure` を、`args` を `dir-of doc_type=requirement feature={feature}` として呼び、出力先ディレクトリを求める。
 
-エントリが無い場合の扱いは同手順が定める（本スキルは既定パスを持たない）。
+宣言が無い・エントリが無い場合の扱いは `doc-structure` が担う（本スキルは既定パスを持たない）。
 
 ---
 
@@ -74,7 +73,7 @@ doc_type `requirement`、feature `{feature}` で出力先ディレクトリを�
 **常駐知識**として以下を **必ず** Read する。この文書は全 Phase を通じてコンテキスト内に保持する:
 
 - `${CLAUDE_PLUGIN_ROOT}/skills/start-uxui-design/docs/design_philosophy.md` — デザイン哲学の統合フレームワーク（3 層モデル）。全てのデザイン判断の基盤
-- `${CLAUDE_PLUGIN_ROOT}/docs/document_style_guide.md` — 文書スタイル指針（タグ・見出し・参照記法）
+- `${CLAUDE_PLUGIN_ROOT}/docs/document_style_guide.md` — 文書スタイル指針（タグ・見出し・参照記法・用語）
 
 その他の知識ベース（`apple_design_principles.md`、プラットフォームガイド、テンプレート）はワークフロー内で Phase 別に JIT 読み込みする。一括読み込みしない。
 

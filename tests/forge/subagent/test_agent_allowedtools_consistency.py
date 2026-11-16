@@ -11,7 +11,8 @@ import re
 import unittest
 from pathlib import Path
 
-REPO_ROOT = Path(__file__).resolve().parents[3]
+from tests import REPO_ROOT
+
 SKILLS_DIR = REPO_ROOT / "plugins" / "forge" / "skills"
 
 # Agent ツール / 汎用 Agent / カスタム Agent の起動を表す正規表現パターン。

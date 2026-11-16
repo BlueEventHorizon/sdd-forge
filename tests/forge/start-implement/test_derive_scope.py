@@ -11,7 +11,8 @@ import unittest
 from pathlib import Path
 
 
-REPO_ROOT = Path(__file__).resolve().parents[3]
+from tests import REPO_ROOT
+
 SCRIPT = (
     REPO_ROOT
     / "plugins"

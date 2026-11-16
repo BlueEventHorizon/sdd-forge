@@ -106,7 +106,7 @@ ADR は追記型ではない。**節の中身は更新してよい**。書き損
 - ADR は、feature ごとの ADR ディレクトリに置く。その場所は、文書種別 `adr` として `.doc_structure.yaml` が宣言する（例: `specs/<feature>/adr/`。実際のパスはプロジェクトの宣言に従う）。宣言が無いプロジェクトでは、置き場を他の文書種別のキーから導出せず、宣言を促す
 - **同じ feature の ADR は、すべて 1 つの ADR ファイル（`ADR-{NNN}_{feature}.md`）に書く**。決定ごとにファイルを分けない
 - 新しい ADR ファイルを作るのは、その feature に ADR ファイルがまだ無いときだけである。ある場合は、そのファイルへ書く
-- ファイルの番号（`ADR-NNN`）は、ファイルを最初に作るときに、`next-spec-id` スキルで 1 回だけ採番する（`python3 scan_spec_ids.py ADR --share-prefixes ADR,DES`）。ADR と DES は仕様書（`.doc_structure.yaml` の specs）全体で通し番号を共有するため `--share-prefixes ADR,DES` を必ず付与する。手動採番は並行ブランチで同一番号が別内容で衝突する原因になる。以後、番号は変えない
+- ファイルの番号（`ADR-NNN`）は、ファイルを最初に作るときに、`next-spec-id` スキルで 1 回だけ採番する（プレフィックス `ADR`、通し番号を共有するプレフィックス `ADR,DES` を渡す）。ADR と DES は仕様書全体で通し番号を共有するため、共有するプレフィックスに `ADR,DES` を必ず渡す。手動採番は並行ブランチで同一番号が別内容で衝突する原因になる。以後、番号は変えない
 - 複数のコンポーネントに跨る決定は、feature に `common` を指定して書く
 - ADR を作る・更新するのは、`/forge:write-adr` である
 

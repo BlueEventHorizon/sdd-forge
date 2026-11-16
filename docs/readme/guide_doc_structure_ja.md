@@ -52,7 +52,7 @@ specs/
 - プロジェクトをスキャンして `.doc_structure.yaml` を対話的に生成・更新する
 - 既存 Feature ディレクトリを自動検出し glob パターンで設定する
 - 推奨構成（specs / rules / reference）を提示し、不足ディレクトリを `.gitkeep` 付きで作成する
-- forge が文書の置き場を解決する `requirement` / `design` / `plan` / `adr` は、ディレクトリが無くても必ず宣言する。計画書は実装完了後に破棄しうる一時文書のため、plan は `patterns.exclude` で検索索引から除外する
+- forge が文書の置き場を解決する `requirement` / `design` / `plan` / `adr` / `glossary` は、ディレクトリが無くても既定で宣言を書く。計画書は実装完了後に破棄しうる一時文書のため、plan は `patterns.exclude` で検索索引から除外する
 - 書き込む前に、`.doc_structure.yaml` の全文とエントリごとの分類の根拠を提示して承認を得る。分類を変えるときは、取りうる値を選択肢として示す
 - 既存の `.doc_structure.yaml` があればレビューモードになり、上記の宣言・除外に反する箇所と修正案を示す
 

@@ -3,7 +3,7 @@
 プロジェクト固有のルールがない場合に参照する汎用原則。
 プロジェクト固有のルールがある場合はそちらを優先すること。
 
-文書記述スタイル（タグ・見出し・参照記法）は [document_style_guide.md](document_style_guide.md) を参照。設計の手順と成果物は [design_method.md](design_method.md) に従う。本文書は設計書固有の判断基準を扱う。
+文書記述スタイル（タグ・見出し・参照記法・用語）は [document_style_guide.md](document_style_guide.md) を参照。設計の手順と成果物は [design_method.md](design_method.md) に従う。本文書は設計書固有の判断基準を扱う。
 
 ---
 

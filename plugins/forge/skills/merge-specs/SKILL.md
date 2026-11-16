@@ -115,11 +115,11 @@ allowed-tools: Bash, Read, Edit, Write, Glob, Grep, AskUserQuestion, Skill
 ```
 
 `specs/` をハードコードしてはいけない。プロジェクトごとに仕様格納場所は異なるため、引数は
-**短縮名 / 相対パス / 絶対パス** いずれも受け付け、`${CLAUDE_PLUGIN_ROOT}/skills/doc-structure/SKILL.md`
-の「spec ルート・短縮名の解決」手順に従って `base`・`additional` それぞれを実ディレクトリへ解決する。
+**短縮名 / 相対パス / 絶対パス** いずれも受け付け、`Skill` ツールで `doc-structure` を、`args` を `spec-root alias={引数の値}` として呼び、
+`base`・`additional` それぞれを実ディレクトリへ解決する。
 
-- 解決できた → そのパスを採用
-- 解決できない（`.doc_structure.yaml` が無い、候補ディレクトリが存在しない 等）→ AskUserQuestion で
+- `resolved` が返った → そのパスを採用
+- `resolved` が `null`（候補ディレクトリが存在しない 等）→ AskUserQuestion で
   正しいパスを聞く
 
 呼び出し例（このプロジェクトでは `.doc_structure.yaml` の `specs.root_dirs` が `specs/*/...` のため spec ルート = `specs/`）:

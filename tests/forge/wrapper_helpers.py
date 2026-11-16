@@ -7,7 +7,8 @@ from pathlib import Path
 from unittest import mock
 
 
-REPO_ROOT = Path(__file__).resolve().parents[2]
+from tests import REPO_ROOT
+
 SESSION_MANAGER = REPO_ROOT / "plugins" / "forge" / "scripts" / "session_manager.py"
 RESOLVE_DOC_STRUCTURE = (
     REPO_ROOT

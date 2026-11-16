@@ -19,20 +19,16 @@ import unittest
 from contextlib import redirect_stdout
 from pathlib import Path
 
+from tests import REPO_ROOT
+
 # テスト共通ヘルパー
-sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+sys.path.insert(0, str(REPO_ROOT / "tests"))
 from forge.helpers import _FsTestCase
 
 # テスト対象モジュールへのパスを追加
 sys.path.insert(
     0,
-    str(
-        Path(__file__).resolve().parents[3]
-        / "plugins"
-        / "forge"
-        / "scripts"
-        / "doc_structure"
-    ),
+    str(REPO_ROOT / "plugins" / "forge" / "scripts" / "doc_structure"),
 )
 
 from classify_dirs import (

@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file.
 
+## [forge 0.1.2] - 2026-11-17
+
+### forge
+
+- **feat**: 用語の命名原則・`[用語]` 表記・用語集（glossary）を加えた
+- **fix**: `find_doc` が空の名前で全件に当たる退行を直し、ID の後ろの区切りに依存せず、番号の終端まで照合して文書を探すようにした
+- **fix**: `next-spec-id` が specs の置き場を `doc-structure` スキルで求めるようにした。置き場の宣言が無い・不正なときは、`specs/` を推測せずエラーで報告する
+- **fix**: forge 同梱 ToC の checksums を、doc-advisor の出力のコピーにした
+- **refactor**: 他のスキルへの窓口を SKILL だけにした（`doc-structure`・`next-spec-id`・`uxui_analysis_workflow` の置き場の解決）。テストがリポジトリのルートを `tests` の `REPO_ROOT` から得るようにし、文言を固定するテストを削除した
+- **docs**: 共通 script は直接使ってよく、禁止されるのは他のスキルの script の直接呼び出しだけであると規約に明記した。agent は自分を起動したスキルの script を直接呼んでよい旨も加えた
+- **docs**: 設計文書の置き場の解決手段を `/forge:doc-structure` とし、`doc_structure` の宣言を必須とする記述を取り除いた。glossary を `setup-doc-structure` の既定に含め、`doc_structure_format` の引数の記述を実装に合わせた
+- **docs**: dprint 設定ファイル名の記述を `dprint.jsonc` に揃え、CI の dprint を 0.64.3 へ上げた。文書スタイル指針や実装ガイドラインの語・タグを整えた
+- **chore**: dprint 設定を `dprint.jsonc` へ移行し、CLAUDE.md を更新し、検索インデックスを再生成した
+
+## [marketplace 0.1.2] - 2026-11-17
+
+### marketplace
+
+- **chore**: forge 0.1.2 のリリースに伴い marketplace バージョンをバンプ
+
 ## [forge 0.1.1] - 2026-10-27
 
 ### forge

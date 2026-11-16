@@ -14,15 +14,9 @@ import tempfile
 import unittest
 from pathlib import Path
 from unittest import mock
+from tests import REPO_ROOT
 
-_MODULE_PATH = (
-    Path(__file__).resolve().parents[3]
-    / "plugins"
-    / "forge"
-    / "scripts"
-    / "plan"
-    / "plan_contract.py"
-)
+_MODULE_PATH = REPO_ROOT / "plugins" / "forge" / "scripts" / "plan" / "plan_contract.py"
 _SPEC = importlib.util.spec_from_file_location("plan_contract", _MODULE_PATH)
 plan_contract = importlib.util.module_from_spec(_SPEC)
 sys.modules["plan_contract"] = plan_contract

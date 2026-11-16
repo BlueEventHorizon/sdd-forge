@@ -37,9 +37,9 @@ import sys
 import tempfile
 import unittest
 from pathlib import Path
+from tests import REPO_ROOT
 
-_REPO_ROOT = Path(__file__).resolve().parents[3]
-_AGENDA_DIR = _REPO_ROOT / "plugins" / "forge" / "scripts" / "agenda"
+_AGENDA_DIR = REPO_ROOT / "plugins" / "forge" / "scripts" / "agenda"
 
 
 def _load_module(name, path):

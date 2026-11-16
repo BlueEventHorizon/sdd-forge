@@ -78,7 +78,7 @@ Phase 2.0 で取得した Design Intent の内容により、以下の Phase は
 要件定義書が主要入力である。以下の手順で取得する:
 
 1. **Feature 名から要件定義書を探す**:
-   - `.doc_structure.yaml` のパス解決結果を使い、Feature ディレクトリ内の要件定義書を Glob で探索
+   - `Skill` ツールで `doc-structure` を、`args` を `dir-of doc_type=requirement feature={feature}` として呼び、返った `dir` の配下の要件定義書を Glob で探索
    - `SCR-xxx`（画面仕様）、`CMP-xxx`（コンポーネント）、`FNC-xxx`（機能要件）、`THEME-xxx`（既存トークン）を収集
 
 2. **要件定義書が見つからない場合**:

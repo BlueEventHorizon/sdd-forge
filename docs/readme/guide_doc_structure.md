@@ -29,7 +29,7 @@ specs/
 
 A file that declares where documents live and what types they are. The following tools share it:
 
-- **forge** — Resolve review targets, detect Feature directories, locate document output paths, and resolve the search-index target paths (passed to the selected document-search backend, doc-advisor or doc-db)
+- **forge** — Resolve review targets, detect Feature directories, locate document output paths, and resolve the search-index target paths (passed to the selected document-search backend)
 
 Place it at the project root (same level as `.git/`).
 

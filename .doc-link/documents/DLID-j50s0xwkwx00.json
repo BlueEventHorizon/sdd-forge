@@ -1,0 +1,38 @@
+{
+  "content_hash": "ea13d2a14653b596c22969ecd48b30224402f3459a0006de90d0883c9af38c79",
+  "doc_link_id": "DLID-j50s0xwkwx00",
+  "keywords": [
+    "reviewer",
+    "review_request",
+    "review_result",
+    "finding_id",
+    "retains_context",
+    "target type",
+    "wrapper script",
+    "seal_result",
+    "exit value"
+  ],
+  "path": "docs/specs/review/design/DES-084_reviewer_design.md",
+  "purpose": "Design for the review start through the reviewer section: exchange mechanism, finding_id numbering, JSON storage, exit values, scripts and the reviewer agent definition.",
+  "summary": [
+    "Sequence from backend selection to reviewer output (S1-S9)",
+    "Class diagram of main body, reviewer, shared scripts and JSON",
+    "Main body duties until reviewer launch, retains_context handling",
+    "Reviewer reads targets by key and determines target type via resolve_doc_structure",
+    "Storage layout, request JSON, result JSON, exit values and success judgment",
+    "finding_id numbering done by script as next of maximum across rounds",
+    "Common script conventions and per-script responsibilities, inputs, outputs, errors",
+    "Reviewer wrappers fixing --kind so only findings can be written",
+    "Modifications to resolve_review_backend.py and resolve_doc_structure.py",
+    "Unit, contract and integration test design"
+  ],
+  "tasks": [
+    "Implementing reviewer.md agent",
+    "Implementing publish_request, append_result, seal_result, resolve_review_path",
+    "Editing review SKILL.md up to reviewer launch",
+    "Modifying resolve_doc_structure.py or resolve_review_backend.py",
+    "Writing tests for reviewer exchange scripts",
+    "Reviewing review request and result JSON design"
+  ],
+  "title": "DES-084 reviewer と受け渡し機構 設計書"
+}

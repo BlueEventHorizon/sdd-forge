@@ -76,8 +76,6 @@ doc_status: not_implemented
 
 ---
 
-## 3. doc-advisor 予約キーとの衝突回避
+## 3. 他のツールのキーとの衝突回避
 
-キー名を `feature_type` / `feature_note` とするのは、`type` / `notes` が doc-advisor のフロントマター規約（`type` は識別マーカーの集合、`notes` は未定義）と衝突するためである。
-
-doc-advisor の frontmatter 予約キー一覧: `type`, `title`, `purpose`, `content_details`, `applicable_tasks`, `keywords`, `body_hash`。`doc_status`（値: `draft` / `not_implemented`）はこの一覧に含まれず、衝突しない。
+frontmatter は、forge 以外のツール（文書検索など）も自分のキーを書き込む。キー名を `feature_type` / `feature_note` とするのは、`type` / `notes` のような汎用の名前が、他のツールのキーと衝突するためである。

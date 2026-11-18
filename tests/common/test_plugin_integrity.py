@@ -540,14 +540,14 @@ class TestReadmeConsistency(unittest.TestCase):
 class TestNoSlashCommandRefsInScripts(unittest.TestCase):
     """Python スクリプトのエラーメッセージにスラッシュコマンド形式が残っていないことを検証。
 
-    BR-001: /forge:, /doc-advisor:, /anvil: 等のスラッシュコマンド形式は
+    BR-001: /forge:, /doc-link:, /anvil: 等のスラッシュコマンド形式は
     プラグインモード専用であり、スタンドアロンモードでは解決できない。
     Python スクリプトの文字列リテラルでは環境非依存な表記を使う。
     自プラグイン参照・クロスプラグイン参照の両方を検出対象とする。
     docstring・コメント・生成物ヘッダは除外。
     """
 
-    PLUGIN_NAMES = ("forge", "doc-advisor", "anvil")
+    PLUGIN_NAMES = ("forge", "doc-link", "anvil")
     SLASH_CMD_PATTERN = re.compile(
         r"/(" + "|".join(re.escape(p) for p in PLUGIN_NAMES) + r"):[a-z]"
     )

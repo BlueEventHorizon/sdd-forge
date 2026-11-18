@@ -1,0 +1,38 @@
+{
+  "content_hash": "857319588069dde0ef381982a7c58e8fadb20040984d20a50886f75077f4e2cf",
+  "doc_link_id": "DLID-dqkf6wa1z2cp",
+  "keywords": [
+    "migration",
+    "versioning",
+    "backward compatibility",
+    "migration registry",
+    "stepwise migration",
+    "current_version",
+    "detected_version",
+    "doc_structure",
+    "idempotent",
+    "pure function"
+  ],
+  "path": "docs/specs/common/requirements/COMMON-REQ-001_versioned_migration.md",
+  "purpose": "Defines requirements for a staged, step-by-step version migration framework that keeps versioned data formats backward compatible by converting old-version data to the current version.",
+  "summary": [
+    "Overview of the staged migration framework for backward compatibility",
+    "Scope: data formats with major version numbers and structural changes between versions",
+    "FR-01 version detection, treating missing identifier as oldest version v1",
+    "FR-02 stepwise migration via a registry keyed by target version, chained execution",
+    "FR-03 migration function conventions: idempotent, side-effect free",
+    "FR-04 error handling: propagate exceptions, no silent fallback, skip unknown future versions",
+    "FR-05 extensibility: add one function and update the current version constant (Open-Closed)",
+    "Non-functional requirements: in-memory only, standard library only",
+    "Design pattern code sample and procedure for adding a new version",
+    "Glossary of terms such as current_version and detected_version"
+  ],
+  "tasks": [
+    "Designing or implementing versioned data format migration",
+    "Adding a new version to .doc_structure.yaml migration",
+    "Writing or reviewing migration functions",
+    "Writing tests for migration chains",
+    "Reviewing error handling in migration code"
+  ],
+  "title": "COMMON-REQ-001: 段階的バージョンマイグレーション要件定義書"
+}

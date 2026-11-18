@@ -1,0 +1,38 @@
+{
+  "content_hash": "39e323917f90f8d500672bc8f314e6c20e8ada39a7622a59317c2cde6c924d15",
+  "doc_link_id": "DLID-1t0vpykg6nq6",
+  "keywords": [
+    "document access",
+    "direct reference",
+    "query-db-rules",
+    "query-db-specs",
+    "wrapper",
+    "backend isolation",
+    "built-in docs",
+    "anti-pattern",
+    "CLAUDE_PLUGIN_ROOT",
+    "forge development rule"
+  ],
+  "path": "docs/rules/forge_doc_access_principle.md",
+  "purpose": "Development rule defining how forge internals (SKILL, agents, scripts) may reach documents: only direct reference to built-in docs or query wrappers for project docs, and backend names confined to wrappers.",
+  "summary": [
+    "Two allowed access routes: direct path reference to forge built-in docs, and query skills for project specs and rules",
+    "Route A scope: a skill may reference only its own docs directory; cross-skill docs references are forbidden",
+    "Docs shared by several skills must be promoted to plugin-shared docs",
+    "Rationale: built-in docs update with releases, while project docs change often so paths rot",
+    "Anti-patterns: querying built-in docs, referencing project docs from distributables, procedures written as docs, session_dir file handoff",
+    "Only wrapper skills and doc_backend scripts may reference the document search backend",
+    "Backend names, skill names, argument names and storage paths must not appear outside wrappers",
+    "Table of the single place per layer where a backend may be explained",
+    "External users read built-in docs via query-forge-rules, outside this principle"
+  ],
+  "tasks": [
+    "Writing or modifying forge SKILL.md files that read documents",
+    "Designing agents or scripts that need to access docs",
+    "Deciding how to reference built-in docs versus project specs and rules",
+    "Reviewing changes for cross-skill docs references",
+    "Writing documents that mention the document search backend",
+    "Moving shared docs into plugin-shared docs"
+  ],
+  "title": "forge ドキュメントアクセス原則"
+}

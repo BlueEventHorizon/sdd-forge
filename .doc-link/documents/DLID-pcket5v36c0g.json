@@ -1,0 +1,40 @@
+{
+  "content_hash": "ca43f71f986fec538e2f3f5ad4e92097a3a8a31456300cceaf3eda5282587759",
+  "doc_link_id": "DLID-pcket5v36c0g",
+  "keywords": [
+    "ADR writer",
+    "write-adr",
+    "adr-writer agent",
+    "adr_exchange.py",
+    "ADR file per feature",
+    "verdict",
+    "request_id",
+    "baseline_sha256",
+    "approval record",
+    "custom agent isolation"
+  ],
+  "path": "docs/specs/adr-writer/design/DES-085_adr_writer_design.md",
+  "purpose": "Design document defining how the ADR writer is built: a write-adr entry skill, an isolated adr-writer custom agent, and an adr_exchange.py script that records requests and verdicts for one ADR file per feature.",
+  "summary": [
+    "Three-part architecture: inheriting write-adr SKILL, adr-writer custom Agent, adr_exchange.py script",
+    "Design decisions: why an Agent, why a SKILL entry, one ADR file per feature, Agent writes the body directly, only a verdict is returned",
+    "adr_exchange.py subcommands open, request-path, finish, check, with request fields and file-based input",
+    "Target ADR file resolution rules depending on the number of existing ADR files in adr_dir",
+    "Verdict values created, rejected, insufficient, and the consistency check between verdict and ADR file state",
+    "Exit codes 0, 1, 2 and JSON output contract with errors array",
+    "adr-writer Agent definition: tools allowlist, write boundary, mandatory reading, handling per kind",
+    "write-adr SKILL flow: output dir resolution, numbering, request publishing, branching, finish processing",
+    "Normative documents to change and use cases with sequence diagram",
+    "Test design: unit tests, agent frontmatter allowlist, contract tests, manual evaluation tests"
+  ],
+  "tasks": [
+    "Implementing the write-adr skill",
+    "Implementing the adr-writer agent",
+    "Implementing or modifying adr_exchange.py",
+    "Writing tests for the ADR writer",
+    "Reviewing the ADR writer design",
+    "Integrating ADR creation into start-design",
+    "Updating ADR principles and format documents"
+  ],
+  "title": "DES-085 ADR ライター 設計書"
+}

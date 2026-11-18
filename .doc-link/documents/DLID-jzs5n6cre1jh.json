@@ -1,0 +1,43 @@
+{
+  "content_hash": "231d1a8223057f87637795d1ab1e95dcc3b4e910c12f6a15de6ce06a3c0573ea",
+  "doc_link_id": "DLID-jzs5n6cre1jh",
+  "keywords": [
+    "plugin implementation",
+    "SKILL.md",
+    "inline script",
+    "standard library",
+    "temp files",
+    "fallback",
+    "cross-skill dependency",
+    "shared scripts",
+    "version files",
+    "distributed artifacts"
+  ],
+  "path": "docs/rules/plugin_implementation_guidelines.md",
+  "purpose": "Plugin-independent implementation rules for Claude Code plugin scripts (Python/Bash) and SKILL.md: language choice, tests, placement, temp files, cross-skill dependencies, fallbacks, and version-file handling.",
+  "summary": [
+    "Script language and dependency choice: Python for data, Bash for commands, standard library only",
+    "Tests required for distributed Python scripts; test naming and directory conventions",
+    "Prohibition of inline logic in SKILL.md; call independent scripts instead",
+    "Placement of scripts and docs: skill-specific versus plugin-wide, no cross-skill references",
+    "Temp files written with the Write tool under .temp/<plugin>/<skill>/ including session ID",
+    "Distributed artifacts must not reference development-only documents",
+    "Cross-skill interface is the SKILL only; shared scripts may be called directly",
+    "Delete unused code; do not use script parsers for AI-interpreted input",
+    "Do not write reflexive fallbacks; report errors explicitly",
+    "Version files and changelog are not edited in ordinary work; release procedure owns them"
+  ],
+  "tasks": [
+    "Implementing plugin Python or Bash scripts",
+    "Writing or editing SKILL.md files",
+    "Adding tests for distributed scripts",
+    "Deciding where to place scripts and docs",
+    "Writing temporary files in skill procedures",
+    "Writing distributed docs, agents, or templates that reference other documents",
+    "Calling another skill or shared script from a skill or agent",
+    "Designing error handling and fallbacks",
+    "Reviewing plugin changes for version file edits",
+    "Removing deprecated code"
+  ],
+  "title": "プラグイン実装ガイドライン"
+}

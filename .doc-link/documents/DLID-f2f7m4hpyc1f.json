@@ -1,0 +1,35 @@
+{
+  "content_hash": "17c76921bb3f54addfcb519fdb661f0359d704467b5967130c1e0ba19dc2efc4",
+  "doc_link_id": "DLID-f2f7m4hpyc1f",
+  "keywords": [
+    "uv",
+    "PEP 723",
+    "pyproject.toml",
+    "lock file",
+    "exclude-newer",
+    "dependencies",
+    "requires-python",
+    "uv run --locked"
+  ],
+  "path": "docs/rules/plugin_uv_usage_rules.md",
+  "purpose": "Rules for running Python scripts and managing dependencies with uv so version numbers are chosen and written by uv rather than by humans or AI.",
+  "summary": [
+    "Applicability depends on project instructions; distributed scripts require uv on user machines",
+    "Dependency declaration: PEP 723 inline metadata versus project pyproject.toml",
+    "Run Python scripts with uv run, not system python3",
+    "Add and remove dependencies via uv add/remove --script; never write versions by hand",
+    "Lock files via uv lock --script, committed with scripts, verified with uv run --locked",
+    "Update dependencies with uv tree --outdated and uv lock --upgrade, reviewing lock diffs",
+    "Exclude releases newer than 3 days via exclude-newer to reduce supply-chain risk",
+    "requires-python lower bound follows the latest stable Python release"
+  ],
+  "tasks": [
+    "Writing or running Python scripts with uv",
+    "Adding or removing script dependencies",
+    "Updating lock files",
+    "Setting up PEP 723 metadata",
+    "Choosing requires-python version",
+    "Reviewing dependency supply-chain safety"
+  ],
+  "title": "uv 利用ルール"
+}

@@ -1,42 +1,16 @@
 ---
-title: agent-review Backend Design
-purpose: Defines the agent-review backend, which only checks availability of the read-only reviewer custom Agent definition and the scripts and documents it calls, and declares retains_context as false
-content_details:
-  - "Responsibility split: the backend SKILL checks availability while the review body launches the reviewer directly"
-  - "Reviewer Agent definition constraints: no edit tools, Bash limited to reviewer scripts and read-only git, plan permission mode"
-  - Prohibition of the injected advisor tool in the reviewer role definition
-  - Five availability conditions verified without launching an Agent, including script and document existence
-  - Availability result with available, missing entries of axis, detail, and remedy, and retains_context
-  - retains_context is always false and matches the declaration in resolve_review_backend.py
-  - Statelessness table prohibiting sessions, transcripts, history, DB records, and resident processes
-applicable_tasks:
-  - Implementation of the agent-review availability check
-  - Modification of the reviewer Agent definition and its prohibition clauses
-  - Contract testing of agent-review availability
-  - Review of availability check condition changes
-keywords:
-  - agent-review
-  - reviewer
-  - custom Agent
-  - read-only
-  - stateless
-  - advisor
-  - availability check
-  - retains_context
-  - resolve_review_backend
-type: doc-advisor
-body_hash: sha256:632bf298f889f8277eed8ee0f6e52069f5b7c88c7d930bcdcf23a6666dd1562b
+doc_link_id: DLID-rzp2zxe38068
 ---
 
-# DES-072 agent-review バックエンド設計
+# DES-072 agent-review バックエンド設計 DLID-rzvsae6xtwn4
 
-## 1. 概要
+## 1. 概要 DLID-wma6qrxsg898
 
 `agent-review` は、read-only カスタム Agent `reviewer` を実行主体とするレビューバックエンド SKILL である。SKILL が担うのは**可用性検査だけ**であり、reviewer の起動と所見の受け渡しは `/forge:review` 本体が直接行う（[DES-084](../../review/design/DES-084_reviewer_design.md)・[REQ-029](../../review/requirements/REQ-029_review_exchange.md)）。
 
 バックエンドは Agent セッション、レビュー履歴、DB レコード、解放すべき資源を保持しない。
 
-## 2. アーキテクチャ
+## 2. アーキテクチャ DLID-t6ybwc54kjbd
 
 ```mermaid
 flowchart LR
@@ -51,7 +25,7 @@ flowchart LR
     Body -->|"review_id / round_number（ラウンドごとに新規起動）"| Agent
 ```
 
-### 2.1 コンポーネント
+### 2.1 コンポーネント DLID-x7dezwckz2wf
 
 | コンポーネント       | 責務                                                                                                   |
 | -------------------- | ------------------------------------------------------------------------------------------------------ |
@@ -61,7 +35,7 @@ flowchart LR
 
 本体は reviewer を `forge:reviewer` として起動する。reviewer の定義が成立しているか、reviewer が呼ぶ script と読む文書が揃っているかの確認は、`agent-review` が可用性検査として持つ。
 
-### 2.2 Agent 定義
+### 2.2 Agent 定義 DLID-82ad5ghtp1b3
 
 `reviewer` はプラグインのカスタム Agent として同梱し、次の制約を Agent 定義の構築点 1 箇所へ置く。
 
@@ -79,7 +53,7 @@ read-only git 照会は、`status`、`diff`、`show`、`log`、`merge-base`、`r
 
 上記の役割定義とツール制約は違反を防ぐ手段であり、read-only の担保ではない。許可の単位が汎用である以上「読み取りだけ」を宣言する手段が無く、能力の限定では担保できない。
 
-## 3. 可用性検査
+## 3. 可用性検査 DLID-4cx7ghbfm5vh
 
 可用性検査は Agent を起動せず、`reviewer.md` を読んで条件 1〜4 を、script と文書の存在を確かめて条件 5 を、個別に確認する。
 
@@ -97,7 +71,7 @@ read-only git 照会は、`status`、`diff`、`show`、`log`、`merge-base`、`r
 
 別のバックエンドへ切り替えない。
 
-## 4. 状態と資源
+## 4. 状態と資源 DLID-2pnw1jwfgczr
 
 | 対象                | 保持     |
 | ------------------- | -------- |
@@ -110,7 +84,7 @@ read-only git 照会は、`status`、`diff`、`show`、`log`、`merge-base`、`r
 
 reviewer が書く依頼・所見・評価は、本体が管理する保持物であり（DES-084 §5）、バックエンドの状態ではない。バックエンドは、レビューの途中状態を持たない。
 
-## 5. テスト設計
+## 5. テスト設計 DLID-jpyr5zkgvxzj
 
 | 対象           | 検証                                                                                      |
 | -------------- | ----------------------------------------------------------------------------------------- |
@@ -119,6 +93,6 @@ reviewer が書く依頼・所見・評価は、本体が管理する保持物�
 | read-only 制約 | 編集・外部書き込みツールが無く、変更 git 操作を許可していない                             |
 | 非永続性       | 検査の後に DB、履歴ファイル、常駐プロセス、再利用可能な Agent 参照が残らない              |
 
-## 6. 未確定事項
+## 6. 未確定事項 DLID-0bwzvms367gn
 
 なし。

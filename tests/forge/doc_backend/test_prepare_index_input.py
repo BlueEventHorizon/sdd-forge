@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""prepare_advisor_index.py のユニットテスト。
+"""prepare_index_input.py のユニットテスト。
 
 検証項目は dprint 失敗伝播、dirs / exclude 出力、設定エラー。
 
@@ -9,7 +9,7 @@
 import 委譲で使う。本リポジトリの設定・実 dprint には依存しない。
 
 実行:
-  python3 -m unittest tests.forge.doc_backend.test_prepare_advisor_index -v
+  python3 -m unittest tests.forge.doc_backend.test_prepare_index_input -v
 """
 
 import ast
@@ -29,14 +29,14 @@ _SCRIPT_PATH = (
     / "forge"
     / "scripts"
     / "doc_backend"
-    / "prepare_advisor_index.py"
+    / "prepare_index_input.py"
 )
 
 _spec = importlib.util.spec_from_file_location(
-    "doc_backend_prepare_advisor_index", _SCRIPT_PATH
+    "doc_backend_prepare_index_input", _SCRIPT_PATH
 )
-prepare_advisor_index = importlib.util.module_from_spec(_spec)
-_spec.loader.exec_module(prepare_advisor_index)
+prepare_index_input = importlib.util.module_from_spec(_spec)
+_spec.loader.exec_module(prepare_index_input)
 
 
 # --- fixture ------------------------------------------------------------------
@@ -132,10 +132,10 @@ class DprintFailurePropagationTest(_TempProject):
     def test_nonzero_exit_raises_with_dprint_reason_code(self):
         self.write_config()
         runner = _RecordingRunner(result=(1, "", DPRINT_FAILURE_STDERR))
-        with self.assertRaises(prepare_advisor_index.PrepareAdvisorIndexError) as ctx:
-            prepare_advisor_index.prepare("rules", self.root, runner=runner)
+        with self.assertRaises(prepare_index_input.PrepareIndexInputError) as ctx:
+            prepare_index_input.prepare("rules", self.root, runner=runner)
         self.assertEqual(
-            ctx.exception.reason_code, prepare_advisor_index.REASON_DPRINT_FAILED
+            ctx.exception.reason_code, prepare_index_input.REASON_DPRINT_FAILED
         )
         self.assertIn("Formatting failed", str(ctx.exception))
 
@@ -143,42 +143,42 @@ class DprintFailurePropagationTest(_TempProject):
         self.write_config()
         runner = _RecordingRunner(
             result=(
-                prepare_advisor_index.COMMAND_UNAVAILABLE_RETURNCODE,
+                prepare_index_input.COMMAND_UNAVAILABLE_RETURNCODE,
                 "",
                 "コマンドを実行できません: bash 不在",
             )
         )
-        with self.assertRaises(prepare_advisor_index.PrepareAdvisorIndexError) as ctx:
-            prepare_advisor_index.prepare("rules", self.root, runner=runner)
+        with self.assertRaises(prepare_index_input.PrepareIndexInputError) as ctx:
+            prepare_index_input.prepare("rules", self.root, runner=runner)
         self.assertEqual(
-            ctx.exception.reason_code, prepare_advisor_index.REASON_DPRINT_FAILED
+            ctx.exception.reason_code, prepare_index_input.REASON_DPRINT_FAILED
         )
 
     def test_dprint_failure_precedes_config_resolution(self):
         """dprint → 設定解決の順序（dprint 失敗時は設定不備でも dprint_failed）。"""
         # 設定ファイルを置かない = 設定解決まで進めば doc_structure_invalid になる状況
         runner = _RecordingRunner(result=(1, "", DPRINT_FAILURE_STDERR))
-        with self.assertRaises(prepare_advisor_index.PrepareAdvisorIndexError) as ctx:
-            prepare_advisor_index.prepare("rules", self.root, runner=runner)
+        with self.assertRaises(prepare_index_input.PrepareIndexInputError) as ctx:
+            prepare_index_input.prepare("rules", self.root, runner=runner)
         self.assertEqual(
-            ctx.exception.reason_code, prepare_advisor_index.REASON_DPRINT_FAILED
+            ctx.exception.reason_code, prepare_index_input.REASON_DPRINT_FAILED
         )
 
     def test_runner_invocation_shape(self):
         """既存 dprint runner を bash で project root を cwd として呼ぶこと。"""
         self.write_config()
         runner = _RecordingRunner(result=_DPRINT_OK)
-        prepare_advisor_index.prepare("rules", self.root, runner=runner)
+        prepare_index_input.prepare("rules", self.root, runner=runner)
         self.assertEqual(len(runner.calls), 1)
         call = runner.calls[0]
         self.assertEqual(call["args"][0], "bash")
         self.assertTrue(call["args"][1].endswith("run_dprint_fmt.sh"), call["args"][1])
         self.assertEqual(call["cwd"], self.root)
-        self.assertEqual(call["timeout"], prepare_advisor_index.DPRINT_TIMEOUT_SECONDS)
+        self.assertEqual(call["timeout"], prepare_index_input.DPRINT_TIMEOUT_SECONDS)
 
     def test_dprint_script_path_points_at_shared_runner(self):
-        self.assertTrue(prepare_advisor_index.DPRINT_SCRIPT.is_file())
-        self.assertEqual(prepare_advisor_index.DPRINT_SCRIPT.name, "run_dprint_fmt.sh")
+        self.assertTrue(prepare_index_input.DPRINT_SCRIPT.is_file())
+        self.assertEqual(prepare_index_input.DPRINT_SCRIPT.name, "run_dprint_fmt.sh")
 
     def test_no_format_skips_dprint_but_still_resolves(self):
         """`format_first=False` は dprint を実行せず、設定解決だけを行う。
@@ -188,12 +188,12 @@ class DprintFailurePropagationTest(_TempProject):
         """
         self.write_config()
         runner = _RecordingRunner(result=_DPRINT_OK)
-        payload = prepare_advisor_index.prepare(
+        payload = prepare_index_input.prepare(
             "rules", self.root, runner=runner, format_first=False
         )
         self.assertEqual(runner.calls, [])
         self.assertEqual(payload["root_dirs"], ["docs/rules/"])
-        self.assertEqual(payload["status"], prepare_advisor_index.STATUS_SUCCESS)
+        self.assertEqual(payload["status"], prepare_index_input.STATUS_SUCCESS)
 
 
 # --- dirs / exclude 出力 ---------------------------------------------------------
@@ -203,7 +203,7 @@ class IndexInputsOutputTest(_TempProject):
     """root_dirs / exclude が設定記載順で JSON payload に載ること。"""
 
     def _prepare(self, category):
-        return prepare_advisor_index.prepare(
+        return prepare_index_input.prepare(
             category, self.root, runner=_RecordingRunner(result=_DPRINT_OK)
         )
 
@@ -233,7 +233,7 @@ class IndexInputsOutputTest(_TempProject):
         self.write_config()
         payload = self._prepare("rules")
         self.assertEqual(payload["status"], "success")
-        self.assertEqual(payload["backend"], "doc-advisor")
+        self.assertEqual(payload["backend"], "doc-link")
         self.assertEqual(payload["operation"], "prepare_index")
         self.assertEqual(payload["startup"], "not_attempted")
         self.assertIsNone(payload["reason_code"])
@@ -241,7 +241,7 @@ class IndexInputsOutputTest(_TempProject):
         self.assertEqual(payload["project_root"], str(self.root))
 
     def test_no_file_expansion_is_performed(self):
-        """展開は doc-advisor 側の責務であり、payload は展開前の dirs のままであること。"""
+        """展開は doc-link 側の責務であり、payload は展開前の dirs のままであること。"""
         self.write_config()
         docs = self.root / "docs" / "rules"
         docs.mkdir(parents=True)
@@ -258,8 +258,8 @@ class ConfigErrorTest(_TempProject):
     """設定不備・入力不正が exit 20 相当の例外になること。"""
 
     def _assert_error(self, category, reason_code):
-        with self.assertRaises(prepare_advisor_index.PrepareAdvisorIndexError) as ctx:
-            prepare_advisor_index.prepare(
+        with self.assertRaises(prepare_index_input.PrepareIndexInputError) as ctx:
+            prepare_index_input.prepare(
                 category, self.root, runner=_RecordingRunner(result=_DPRINT_OK)
             )
         self.assertEqual(ctx.exception.reason_code, reason_code)
@@ -267,14 +267,14 @@ class ConfigErrorTest(_TempProject):
 
     def test_missing_config_file(self):
         exc = self._assert_error(
-            "rules", prepare_advisor_index.REASON_DOC_STRUCTURE_INVALID
+            "rules", prepare_index_input.REASON_DOC_STRUCTURE_INVALID
         )
         self.assertIn(".doc_structure.yaml", str(exc))
 
     def test_invalid_config_without_root_dirs(self):
         self.write_config(DOC_STRUCTURE_YAML_INVALID)
         exc = self._assert_error(
-            "rules", prepare_advisor_index.REASON_DOC_STRUCTURE_INVALID
+            "rules", prepare_index_input.REASON_DOC_STRUCTURE_INVALID
         )
         self.assertIn("root_dirs", str(exc))
         self.assertIn("setup-doc-structure", str(exc))
@@ -283,20 +283,20 @@ class ConfigErrorTest(_TempProject):
         """全体は valid でも当該 category が無ければ設定エラーであること。"""
         self.write_config(DOC_STRUCTURE_YAML_RULES_ONLY)
         exc = self._assert_error(
-            "specs", prepare_advisor_index.REASON_DOC_STRUCTURE_INVALID
+            "specs", prepare_index_input.REASON_DOC_STRUCTURE_INVALID
         )
         self.assertIn("specs", str(exc))
 
     def test_unknown_category_is_invalid_input(self):
         self.write_config()
-        exc = self._assert_error("readme", prepare_advisor_index.REASON_INVALID_INPUT)
+        exc = self._assert_error("readme", prepare_index_input.REASON_INVALID_INPUT)
         self.assertIn("readme", str(exc))
 
     def test_unknown_category_is_rejected_before_running_dprint(self):
         self.write_config()
         runner = _RecordingRunner(result=_DPRINT_OK)
-        with self.assertRaises(prepare_advisor_index.PrepareAdvisorIndexError):
-            prepare_advisor_index.prepare("readme", self.root, runner=runner)
+        with self.assertRaises(prepare_index_input.PrepareIndexInputError):
+            prepare_index_input.prepare("readme", self.root, runner=runner)
         self.assertEqual(runner.calls, [])
 
     def test_unreadable_config_is_doc_structure_invalid(self):
@@ -307,23 +307,23 @@ class ConfigErrorTest(_TempProject):
         os.chmod(config_path, 0o000)
         try:
             self._assert_error(
-                "rules", prepare_advisor_index.REASON_DOC_STRUCTURE_INVALID
+                "rules", prepare_index_input.REASON_DOC_STRUCTURE_INVALID
             )
         finally:
             os.chmod(config_path, 0o600)
 
     def test_non_utf8_config_is_doc_structure_invalid(self):
         (self.root / ".doc_structure.yaml").write_bytes(b"\xff\xfe\x00rules:\n")
-        self._assert_error("rules", prepare_advisor_index.REASON_DOC_STRUCTURE_INVALID)
+        self._assert_error("rules", prepare_index_input.REASON_DOC_STRUCTURE_INVALID)
 
     def test_nonexistent_project_root_is_invalid_input(self):
         missing = self.root / "no-such-dir"
-        with self.assertRaises(prepare_advisor_index.PrepareAdvisorIndexError) as ctx:
-            prepare_advisor_index.prepare(
+        with self.assertRaises(prepare_index_input.PrepareIndexInputError) as ctx:
+            prepare_index_input.prepare(
                 "rules", missing, runner=_RecordingRunner(result=_DPRINT_OK)
             )
         self.assertEqual(
-            ctx.exception.reason_code, prepare_advisor_index.REASON_INVALID_INPUT
+            ctx.exception.reason_code, prepare_index_input.REASON_INVALID_INPUT
         )
 
 
@@ -349,7 +349,7 @@ class CliContractTest(_TempProject):
     def test_success_exits_zero_with_status_success(self):
         self.write_config()
         result = self._run_cli("rules", "--project-root", str(self.root))
-        self.assertEqual(result.returncode, prepare_advisor_index.EXIT_SUCCESS)
+        self.assertEqual(result.returncode, prepare_index_input.EXIT_SUCCESS)
         payload = json.loads(result.stdout)
         self.assertEqual(payload["status"], "success")
         self.assertEqual(payload["root_dirs"], ["docs/rules/"])
@@ -358,21 +358,21 @@ class CliContractTest(_TempProject):
     def test_config_error_exits_20_with_operation_error(self):
         # 設定ファイルなし
         result = self._run_cli("rules", "--project-root", str(self.root))
-        self.assertEqual(result.returncode, prepare_advisor_index.EXIT_OPERATION_ERROR)
+        self.assertEqual(result.returncode, prepare_index_input.EXIT_OPERATION_ERROR)
         payload = json.loads(result.stdout)
         self.assertEqual(payload["status"], "operation_error")
         self.assertEqual(
-            payload["reason_code"], prepare_advisor_index.REASON_DOC_STRUCTURE_INVALID
+            payload["reason_code"], prepare_index_input.REASON_DOC_STRUCTURE_INVALID
         )
 
     def test_invalid_category_exits_20_not_argparse_2(self):
         self.write_config()
         result = self._run_cli("readme", "--project-root", str(self.root))
-        self.assertEqual(result.returncode, prepare_advisor_index.EXIT_OPERATION_ERROR)
+        self.assertEqual(result.returncode, prepare_index_input.EXIT_OPERATION_ERROR)
         payload = json.loads(result.stdout)
         self.assertEqual(payload["status"], "operation_error")
         self.assertEqual(
-            payload["reason_code"], prepare_advisor_index.REASON_INVALID_INPUT
+            payload["reason_code"], prepare_index_input.REASON_INVALID_INPUT
         )
 
     def test_unreadable_config_exits_20_with_json(self):
@@ -385,27 +385,27 @@ class CliContractTest(_TempProject):
             result = self._run_cli("rules", "--project-root", str(self.root))
         finally:
             os.chmod(config_path, 0o600)
-        self.assertEqual(result.returncode, prepare_advisor_index.EXIT_OPERATION_ERROR)
+        self.assertEqual(result.returncode, prepare_index_input.EXIT_OPERATION_ERROR)
         payload = json.loads(result.stdout)
         self.assertEqual(payload["status"], "operation_error")
         self.assertEqual(
-            payload["reason_code"], prepare_advisor_index.REASON_DOC_STRUCTURE_INVALID
+            payload["reason_code"], prepare_index_input.REASON_DOC_STRUCTURE_INVALID
         )
 
     def test_non_utf8_config_exits_20_with_json(self):
         (self.root / ".doc_structure.yaml").write_bytes(b"\xff\xfe\x00rules:\n")
         result = self._run_cli("rules", "--project-root", str(self.root))
-        self.assertEqual(result.returncode, prepare_advisor_index.EXIT_OPERATION_ERROR)
+        self.assertEqual(result.returncode, prepare_index_input.EXIT_OPERATION_ERROR)
         payload = json.loads(result.stdout)
         self.assertEqual(payload["status"], "operation_error")
         self.assertEqual(
-            payload["reason_code"], prepare_advisor_index.REASON_DOC_STRUCTURE_INVALID
+            payload["reason_code"], prepare_index_input.REASON_DOC_STRUCTURE_INVALID
         )
 
     def test_error_payload_keeps_common_contract_fields(self):
         result = self._run_cli("rules", "--project-root", str(self.root))
         payload = json.loads(result.stdout)
-        self.assertEqual(payload["backend"], "doc-advisor")
+        self.assertEqual(payload["backend"], "doc-link")
         self.assertEqual(payload["operation"], "prepare_index")
         self.assertEqual(payload["startup"], "not_attempted")
         self.assertIn("message", payload)
@@ -444,9 +444,9 @@ class NoYamlReimplementationTest(unittest.TestCase):
             )
 
     def test_resolver_script_path_points_at_doc_structure_resolver(self):
-        self.assertTrue(prepare_advisor_index.RESOLVER_SCRIPT.is_file())
+        self.assertTrue(prepare_index_input.RESOLVER_SCRIPT.is_file())
         self.assertEqual(
-            prepare_advisor_index.RESOLVER_SCRIPT.name, "resolve_doc_structure.py"
+            prepare_index_input.RESOLVER_SCRIPT.name, "resolve_doc_structure.py"
         )
 
 

@@ -1,0 +1,34 @@
+{
+  "content_hash": "9d94d7a579c15eb6248a585d7012d205a958a38bb8f003e8c599ea62a312f46b",
+  "doc_link_id": "DLID-1vfqj6r96sr4",
+  "keywords": [
+    "context gathering",
+    "return value",
+    "parallel agent",
+    "fail-open",
+    "spec survey",
+    "rule survey",
+    "code survey",
+    "prompt template"
+  ],
+  "path": "docs/specs/forge/design/DES-013_context_gathering_design.md",
+  "purpose": "Specification of the context gathering tasks used by forge create skills, including task types, search means, output format and prompt instructions for parallel agents.",
+  "summary": [
+    "Overview: parallel general agents return markdown lists held in the main context",
+    "Search is delegated to query-db-specs and query-db-rules skills",
+    "No session directory or intermediate files; failed agents are skipped (fail-open)",
+    "Three tasks: spec survey, implementation rule survey, existing code survey",
+    "Bullet line format of path and relevance reason",
+    "Per-skill matrix is owned by DES-010",
+    "start-implement does not launch gathering agents and is out of scope",
+    "Prompt template has three elements: purpose, means, output contract",
+    "Agents are self-contained and receive no session or external spec paths"
+  ],
+  "tasks": [
+    "Writing prompts for context gathering agents",
+    "Modifying create skills gathering step",
+    "Adding a new gathering task type",
+    "Reviewing fail-open handling of gathering"
+  ],
+  "title": "DES-013 コンテキスト収集タスク仕様"
+}

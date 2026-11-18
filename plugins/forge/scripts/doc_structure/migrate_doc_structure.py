@@ -57,7 +57,7 @@ def migrate_v1_to_v2(content):
             - docs/rules/
           doc_types_map:
             docs/rules/: rule
-          ...（doc-advisor フィールド含む）
+          ...（文書検索 backend の内部フィールド含む）
     """
     # v1 の構造をテキストから解析
     categories = {}  # {category: {doc_type: [paths]}}
@@ -161,7 +161,7 @@ def migrate_v1_to_v2(content):
 
 
 def migrate_v2_to_v3(content):
-    """v2 → v3: Doc Advisor 内部フィールドを除去。
+    """v2 → v3: 文書検索 backend の内部フィールドを除去。
 
     除去対象: toc_file, checksums_file, work_dir, output セクション, common セクション
     保持対象: root_dirs, doc_types_map, patterns
@@ -234,7 +234,7 @@ MIGRATIONS = {
 
 MIGRATION_DESCRIPTIONS = {
     2: "Convert v1 doc_type-centric format to v2 config.yaml compatible format",
-    3: "Remove doc-advisor internal fields (toc_file, checksums_file, work_dir, output, common)",
+    3: "Remove document-search backend internal fields (toc_file, checksums_file, work_dir, output, common)",
 }
 
 

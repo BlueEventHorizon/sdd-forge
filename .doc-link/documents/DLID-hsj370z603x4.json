@@ -1,0 +1,36 @@
+{
+  "content_hash": "622f5a5eb40fdb3ec6afecf679bf326a43dc70037574f4864243a073f7bb9e8f",
+  "doc_link_id": "DLID-hsj370z603x4",
+  "keywords": [
+    "agenda display",
+    "presentation",
+    "HTML",
+    "overview",
+    "change visibility",
+    "generated output",
+    "agenda record",
+    "item identifier"
+  ],
+  "path": "docs/specs/consult/agenda/requirements/REQ-021_agenda_display.md",
+  "purpose": "Requirements for the agenda display layer that generates a human-readable presentation from the agenda record, giving an overview, change visibility and consistency with the record.",
+  "summary": [
+    "Overview: display is separated from storage so presentation is generated from the record",
+    "Scope: presentation generated from records, overview, change highlighting, consistency with the record",
+    "Out of scope: storage and state management, presentation timing, presentation manners, content correctness",
+    "FNC-001: whole items, states and remaining count visible at a glance; withdrawn items remain shown",
+    "FNC-002: changes from the latest update are distinguishable in the presentation",
+    "FNC-003: presentation is generated from the record and AI never writes it directly",
+    "FNC-004: AI does not need to read the human-facing presentation to learn state",
+    "FNC-005: a specified item identifier can be reached directly",
+    "NFR-001: the presentation is recognizable as generated output",
+    "TBD-001 resolved: HTML is adopted as the format"
+  ],
+  "tasks": [
+    "Designing the agenda display layer",
+    "Implementing agenda HTML rendering",
+    "Reviewing agenda display requirements",
+    "Integrating the display with the agenda record",
+    "Designing change highlighting in presentations"
+  ],
+  "title": "REQ-021 agenda 表示層 要件定義書"
+}

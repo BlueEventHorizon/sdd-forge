@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """
-update-db-rules/scripts/prepare_advisor_index.py のテスト
+update-db-rules/scripts/prepare_index_input.py のテスト
 
-低レベル CLI prepare_advisor_index.py を category=rules 固定で透過呼び出しする
+低レベル CLI prepare_index_input.py を category=rules 固定で透過呼び出しする
 ラッパーを検証する（DES-057 §9.2: category 固定値・引数透過・
 stdout/stderr/exit code 透過・利用者入力を要求しないこと）。
 
 実行:
-  python3 -m unittest discover -s tests -p 'test_prepare_advisor_index.py' -v
+  python3 -m unittest discover -s tests -p 'test_prepare_index_input.py' -v
 """
 
 import importlib.util
@@ -38,31 +38,31 @@ EXPECTED_LOW_LEVEL = (
     / "forge"
     / "scripts"
     / "doc_backend"
-    / "prepare_advisor_index.py"
+    / "prepare_index_input.py"
 )
 
 
-class TestPrepareAdvisorIndexWrapper(unittest.TestCase):
-    """prepare_advisor_index.py が同名の低レベル CLI を category=rules で透過的に呼ぶ"""
+class TestPrepareIndexInputWrapper(unittest.TestCase):
+    """prepare_index_input.py が同名の低レベル CLI を category=rules で透過的に呼ぶ"""
 
     def setUp(self):
         self.wrapper = helpers.load_wrapper(
-            helpers.wrapper_path(SKILL, "prepare_advisor_index.py"),
-            "_prepare_advisor_index_update_db_rules",
+            helpers.wrapper_path(SKILL, "prepare_index_input.py"),
+            "_prepare_index_input_update_db_rules",
         )
 
     def test_category_hardcoded(self):
         """CATEGORY 定数が rules にハードコードされている"""
         self.assertEqual(self.wrapper.CATEGORY, EXPECTED_CATEGORY)
 
-    def test_low_level_path_points_prepare_advisor_index(self):
-        """LOW_LEVEL パスが scripts/doc_backend/prepare_advisor_index.py を指す"""
+    def test_low_level_path_points_prepare_index_input(self):
+        """LOW_LEVEL パスが scripts/doc_backend/prepare_index_input.py を指す"""
         helpers.assert_low_level(self, self.wrapper, EXPECTED_LOW_LEVEL)
 
     def test_no_user_input_required(self):
         """update wrapper は利用者入力（追加の位置引数）を要求しない"""
         rc, mock_run = helpers.invoke_with_mocked_run(
-            self.wrapper, argv=["prepare_advisor_index.py"]
+            self.wrapper, argv=["prepare_index_input.py"]
         )
         self.assertEqual(rc, 0)
         cmd = helpers.command_from_mock(mock_run)
@@ -75,7 +75,7 @@ class TestPrepareAdvisorIndexWrapper(unittest.TestCase):
         """SKILL が使わない低レベル引数を公開しない"""
         rc, mock_run = helpers.invoke_with_mocked_run(
             self.wrapper,
-            argv=["prepare_advisor_index.py", "--project-root", "/tmp/project"],
+            argv=["prepare_index_input.py", "--project-root", "/tmp/project"],
         )
         self.assertEqual(rc, 20)
         mock_run.assert_not_called()
@@ -83,7 +83,7 @@ class TestPrepareAdvisorIndexWrapper(unittest.TestCase):
     def test_exit_code_transparent(self):
         """低レベル CLI の exit code をそのまま返す"""
         helpers.assert_exit_code_transparent(
-            self, self.wrapper, lambda: ["prepare_advisor_index.py"]
+            self, self.wrapper, lambda: ["prepare_index_input.py"]
         )
 
 

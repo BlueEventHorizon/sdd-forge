@@ -442,9 +442,9 @@ git ls-files "$base_dir/design/DES-*.md" \
 
 現時点では本節で行う処理は無い。次の節へ進む。
 
-### 7.3 ToC との突合
+### 7.3 検索の索引
 
-プロジェクトに ToC（`.claude/doc-advisor/` 等）が存在する場合は、その再生成案内を Phase 9 で行う。本 skill では再生成しない。
+仕様の検索の索引は、Phase 9 で更新を案内する。本 skill では更新しない。
 
 ### 7.4 ビルド・テスト（任意）
 
@@ -528,7 +528,7 @@ git status --short
   参照切れ: {Phase 8.5 の結果。置換 N 件 / 残 N 件（残があれば位置を列挙）}
 
 次のステップ:
-  - ToC 再生成: /forge:update-db-specs （該当プロジェクトのみ）
+  - 検索の索引の更新: /forge:update-db-specs （該当プロジェクトのみ）
   - ビルド確認: プロジェクト固有のビルドコマンド （該当プロジェクトのみ）
   - commit: 各 Phase で小コミット済みなら、最後の差分のみ commit
 ```

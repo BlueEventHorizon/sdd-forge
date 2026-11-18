@@ -1,0 +1,37 @@
+{
+  "content_hash": "c96cfffeda211b6c573d7a9057d010aa7bd8fc1549be9f97cb01352b458bb0c4",
+  "doc_link_id": "DLID-ct64b13ee182",
+  "keywords": [
+    "orchestrator",
+    "God-Skill",
+    "delegation",
+    "return value",
+    "parallel agents",
+    "self-contained reference",
+    "completion flow",
+    "document format",
+    "user input interpretation"
+  ],
+  "path": "docs/specs/forge/requirements/REQ-001_orchestrator_pattern.md",
+  "purpose": "Requirements for the orchestrator pattern in forge skills: delegating detailed work to agents, collecting results by return value, and the shared completion flow.",
+  "summary": [
+    "Background: the God-Skill problem of context consumption, degraded instruction following, no parallelism and lost intermediate results",
+    "FNC-001: user-invocable skills are orchestrators that manage progress, branching and dialogue and delegate detailed work",
+    "FNC-003: reference documents given to agents must be self-contained and placed in the plugin docs directory",
+    "FNC-004: independent steps run in parallel, results return as return values, and prompts carry only paths and structured arguments",
+    "FNC-005: document format selection, JSON for machine-parsed plans and Markdown for requirements and designs",
+    "FNC-006: common completion flow of review, ToC update and commit for document generating skills",
+    "FNC-007: user input is interpreted by the AI and not by argument-parsing scripts",
+    "Applicability table of data hand-off methods per skill"
+  ],
+  "tasks": [
+    "Designing or revising a forge orchestrator skill",
+    "Deciding what to delegate to agents versus keep in SKILL.md",
+    "Designing parallel agent execution and result collection",
+    "Writing reference documents consumed by agents",
+    "Choosing JSON or Markdown for a generated document",
+    "Implementing the completion flow of start-requirements, start-design or start-plan",
+    "Reviewing skills for orchestrator pattern compliance"
+  ],
+  "title": "REQ-001 オーケストレータパターン要件"
+}

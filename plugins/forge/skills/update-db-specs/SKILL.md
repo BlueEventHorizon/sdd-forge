@@ -9,7 +9,7 @@ argument-hint: ""
 allowed-tools: Read, Bash, Skill
 ---
 
-仕様文書（category `specs`）の検索インデックスを、利用可能な文書検索 backend（doc-db / doc-advisor）で
+仕様文書（category `specs`）の検索インデックスを、利用可能な文書検索 backend（doc-link / doc-db）で
 最新化する wrapper。設定から backend の順序リストを解決し、先位から可用性を判定して利用する。
 
 この SKILL は仕様検索インデックスの更新のみを行う。親が依頼している他の作業を引き継いではならない。
@@ -20,8 +20,8 @@ allowed-tools: Read, Bash, Skill
 
 ### Step 1: 対象 backend を確定する
 
-`$ARGUMENTS` に `--backend doc-db` または `--backend doc-advisor` がある場合、その backend を対象として
-Step 2 を飛ばし、対応する手順（`doc-db` → Step 3 / `doc-advisor` → Step 4）へ直行する。指定された
+`$ARGUMENTS` に `--backend doc-link` または `--backend doc-db` がある場合、その backend を対象として
+Step 2 を飛ばし、対応する手順（`doc-db` → Step 3 / `doc-link` → Step 4）へ直行する。指定された
 backend が利用不能なら、他方へ切り替えず明示エラーとして終了する。
 
 指定は `query-db-*` が未整備の索引を整備させるときに渡す。呼び出し元が既に backend を確定させているため、
@@ -37,7 +37,7 @@ exit code だけで分岐する:
 
 | exit code | 動作                                                                                                                      |
 | --------- | ------------------------------------------------------------------------------------------------------------------------- |
-| 0         | JSON の `order`（例 `["doc-advisor", "doc-db"]`）を順序リストとして Step 2 へ進む                                         |
+| 0         | JSON の `order`（例 `["doc-link", "doc-db"]`）を順序リストとして Step 2 へ進む                                            |
 | 20        | 設定不正（`settings_invalid`）。**既定値へ落ちず**、JSON の `message` を添えて明示エラーとして終了する。Step 2 へ進まない |
 
 ### Step 2: 順序リストの先位から backend を試す（指定が無い場合のみ）
@@ -45,13 +45,13 @@ exit code だけで分岐する:
 順序リストの先頭から、backend ごとの手順を実行する:
 
 - `doc-db` の番 → Step 3
-- `doc-advisor` の番 → Step 4
+- `doc-link` の番 → Step 4
 
 後位へ進む事由は **選択前の可用性判定の失敗（利用不能）だけ** である。利用不能だった backend と
 その理由は控えておき、Step 5 の通知に含める。順序リストの全 backend が利用不能な場合は、
 両者の利用不能理由を並べて明示エラーとして終了する。
 
-backend 選択後の操作失敗（sync の失敗・index-docs の失敗）は障害であり、他方の backend へ
+backend 選択後の操作失敗（同期の失敗・DLID の付与の失敗・索引の構築の失敗）は障害であり、他方の backend へ
 切り替えず明示エラーとする。切替で隠すと backend 側の問題に利用者が気づけなくなる。
 
 ### Step 3: doc-db 経路（desired-state 同期）
@@ -89,50 +89,71 @@ sleep 2 && python3 "${CLAUDE_SKILL_DIR}/scripts/sync_documents.py" --status <job
   （doc-db 側の job は継続しており、本 SKILL の再実行で冪等に収束する旨を通知に含める）
 - `done` かつ `job.failed` が 0 かつ `job.errors` が空 → 同期完了。Step 5 へ進む
 - `failed`、または `done` でも `job.failed` が 1 以上か `job.errors` が非空 → 一部文書の失敗を含む update 失敗。
-  明示エラーとして終了する（doc-advisor へ切り替えない）
+  明示エラーとして終了する（他方の backend へ切り替えない）
 
 ポーリング中に exit 10 / 20 が返った場合は、backend 選択が投入時点で確定済みのため後位へ切り替えず、
 明示エラーとして終了する。
 
-### Step 4: doc-advisor 経路（ToC 再構築）
+### Step 4: doc-link 経路（DLID の付与と索引の構築）
 
 #### Step 4.1: 可用性を判定する
 
-システムリマインダの available-skills に `doc-advisor:index-docs` が存在するかで判定する。
-update 経路が要求するのはこの 1 SKILL のみである。
+次の 2 つをどちらも満たすとき、doc-link を利用可能とする。
 
-存在しない場合、doc-advisor は未導入（利用不能）である。**`--backend` の指定を受けている場合は
+- available-skills に `doc-link:query-docs`・`doc-link:index-docs`・`doc-link:embed-dlid` が揃っている
+- `uv` を実行できる（doc-link の script は `uv` で動く）
+
+```bash
+command -v uv
+```
+
+満たさない場合、doc-link は利用不能である。**`--backend` の指定を受けている場合は
 切り替えず明示エラーとして終了する。** 指定が無い場合は、後位が残っていれば理由を控えて
 Step 2 の次の backend へ、残っていなければ明示エラーとして終了する。
 
 #### Step 4.2: 索引入力を準備する
 
 ```bash
-python3 "${CLAUDE_SKILL_DIR}/scripts/prepare_advisor_index.py"
+python3 "${CLAUDE_SKILL_DIR}/scripts/prepare_index_input.py"
 ```
 
 dprint 適用（索引作成前フォーマット）と、`.doc_structure.yaml` からの `root_dirs` / `exclude` の解決を行う。
 exit code だけで分岐する:
 
-| exit code | 動作                                                                  |
-| --------- | --------------------------------------------------------------------- |
-| 0         | JSON の `root_dirs` / `exclude` を Step 4.3 へ渡す                    |
-| 20        | 準備失敗。`doc-advisor:index-docs` を呼ばず、明示エラーとして終了する |
+| exit code | 動作                                                           |
+| --------- | -------------------------------------------------------------- |
+| 0         | JSON の `root_dirs` / `exclude` を Step 4.3・Step 4.4 へ渡す   |
+| 20        | 準備失敗。doc-link の SKILL を呼ばず、明示エラーとして終了する |
 
 dprint によりファイル内容が変わった場合、変更は作業ツリーに残る（後続の commit がそのまま対象に含める）。
 
-#### Step 4.3: index-docs へ転送する
+#### Step 4.3: DLID を付与する
 
-`Skill` ツールで `doc-advisor:index-docs` を **1 回だけ** 呼ぶ（常に dirs モード）:
+doc-link は、DLID（文書 ID とセクション ID）の無い文書を索引に入れない。索引の構築の前に、
+`Skill` ツールで `doc-link:embed-dlid` を **1 回だけ** 呼ぶ:
 
 ```
-/doc-advisor:index-docs --key specs --dirs-json '<root_dirs の JSON 配列>' --exclude-json '<exclude の JSON 配列>'
+/doc-link:embed-dlid --key specs --dirs-json '<root_dirs の JSON 配列>' --exclude-json '<exclude の JSON 配列>'
 ```
 
-`exclude` が空の場合は `--exclude-json '[]'` を渡す（省略も可）。`exclude` の裸名（`/` なし、例 `plan`）は
-doc-advisor 側でもパスの任意の階層にある同名ディレクトリへの完全一致として扱われるため、変換なしでそのまま渡せる。
+`exclude` が空の場合は `--exclude-json '[]'` を渡す。
 
-`doc-advisor:index-docs` の完了レポート（added / updated / deleted / toc_path 等）は構造変換せず親へ返す。
+- **対象文書の frontmatter と見出しの行末に DLID が書き込まれる。** 書き込みの前に承認を求めない
+  （DLID の無い箇所が無ければ、何も書き込まれない）。変更は作業ツリーに残る
+- 同じ DLID が複数の箇所にあるときだけ、doc-link が原本を利用者に確認する。その確認には手を加えない
+- 書き込めなかった文書がある、または doc-link が失敗を返した場合は、Step 4.4 へ進まず、
+  doc-link が返した内容を添えて明示エラーとして終了する
+
+#### Step 4.4: 索引を構築する
+
+`Skill` ツールで `doc-link:index-docs` を **1 回だけ** 呼ぶ（Step 4.3 と同じ対象指定）:
+
+```
+/doc-link:index-docs --key specs --dirs-json '<root_dirs の JSON 配列>' --exclude-json '<exclude の JSON 配列>'
+```
+
+`doc-link:index-docs` の完了報告（確定した版・生成した文書・除外した文書・参照検査の結果等）は
+構造変換せず親へ返す。構築が失敗した場合は、他方の backend へ切り替えず明示エラーとして終了する。
 
 ### Step 5: 結果と経路の通知
 
@@ -142,6 +163,7 @@ doc-advisor 側でもパスの任意の階層にある同名ディレクトリ�
 - 先位の backend を利用できず後位を利用した場合: その理由と利用した backend。
   設定で優先 backend を指定していた場合は、指定が満たされなかったこととその理由も通知する
 - doc-db の起動を試行した場合（JSON の `startup` が未試行以外）: その結果
+- doc-link 経路で DLID を書き込んだ場合: 書き込んだ文書と件数（`doc-link:embed-dlid` が返した値）
 - 処理を完了できない場合: 利用不能だった backend と失敗理由
 
 `--backend` の指定を受けた実行では、切替は起こらない。指定された backend で完了したか、
@@ -150,10 +172,12 @@ doc-advisor 側でもパスの任意の階層にある同名ディレクトリ�
 ## Notes
 
 - **desired-state**: 対象一覧は `.doc_structure.yaml` の specs 設定が正である。doc-db 経路では
-  一覧全体が当該 series の、doc-advisor 経路では `--dirs-json` / `--exclude-json` が key `specs` の
+  一覧全体が当該 series の、doc-link 経路では `--dirs-json` / `--exclude-json` が索引の識別キー `specs` の
   完全な desired state となり、含まれない文書は索引から切り離される。
 - doc-db の key は `{project_name}-specs`、series は現在の git branch。検索（query）と同一の series を更新する。
-- dprint の適用は doc-advisor 経路の準備 CLI（Step 4.2）に含まれる。doc-db 経路は対象文書の現在内容を
+- dprint の適用は doc-link 経路の準備 CLI（Step 4.2）に含まれる。doc-db 経路は対象文書の現在内容を
   そのまま desired state として同期するため、sync 前の dprint 適用手順を持たない（hash 一致文書の
   再計算要否は doc-db に委ねる）。
-- doc-advisor 経路の索引の出力先は `.claude/doc-advisor/toc/specs-<hash>/toc.yaml`（doc-advisor が管理）。
+- doc-link 経路の索引と管理状態は、プロジェクトルートの `.doc-link/` に置かれる（doc-link が管理）。
+  **`.doc-link/` と DLID の入った文書は git で追跡し、文書の変更と同じコミットに入れる。** 追跡しないと、
+  clone した側には DLID だけがあって索引が無い状態になる。

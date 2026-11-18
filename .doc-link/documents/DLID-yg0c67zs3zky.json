@@ -1,0 +1,39 @@
+{
+  "content_hash": "fb1da44989edc621538fa3b77ab53c2dd4d3a3e49c38657e93e67e96b800a74a",
+  "doc_link_id": "DLID-yg0c67zs3zky",
+  "keywords": [
+    "review policy",
+    "review priorities P1 P2 P3",
+    "review criteria",
+    "interactive auto intervention",
+    "confidence-based auto fix",
+    "target granularity preservation",
+    "review backend",
+    "focus and scope",
+    "self-verification evaluator",
+    "issue creation for missing rules"
+  ],
+  "path": "docs/specs/forge/requirements/REQ-013_review_policy.md",
+  "purpose": "Requirements for the forge review policy: document-driven review limited to rule conformance, contradiction and needless complexity, with targeting, intervention, backend and verification axes.",
+  "summary": [
+    "Background: over-proposal and double detection in AI review; shift to document-centric review with review results treated as observations, not instructions",
+    "Three review priorities P1 rule conformance, P2 contradiction, P3 needless complexity; criteria hold no perspective or judgment and use a fixed three-section structure",
+    "Target axes --diff, --branch, --files, --dirs are mutually exclusive, and the target granularity the user specified is preserved when passed to the reviewer",
+    "Intervention axes --interactive and --auto, where automatic fixing depends on the main agent confidence (fix confidence versus finding confidence), not severity",
+    "Optional axes: focus (points of attention), scope (completion baseline), and carrying in project rules and specs",
+    "Backend axis: resolution order, fail-closed behavior, availability check, retains_context declaration, finding locations, and failure and cleanup handling",
+    "Quality assurance: chain-of-verification self-check of findings and independent evaluator assessment with mechanical linkage of all findings",
+    "Permanent document-reference review viewpoint, built-in anti-pattern fallback rules, and issue creation under three conditions when rules are missing",
+    "CLI structure designed to avoid AI misjudgment, principles expansion with severity catalog, affected targets, and open TBD items"
+  ],
+  "tasks": [
+    "Writing or revising the review skill and its SKILL.md",
+    "Designing review backends, reviewer and evaluator definitions",
+    "Authoring review_criteria files and review priorities specs",
+    "Reviewing requirement, design and plan documents",
+    "Implementing review request building and target resolution scripts",
+    "Deciding auto-fix versus interactive handling of review findings",
+    "Handling missing-rule discoveries and issue creation from review"
+  ],
+  "title": "REQ-013 レビューポリシー要件"
+}

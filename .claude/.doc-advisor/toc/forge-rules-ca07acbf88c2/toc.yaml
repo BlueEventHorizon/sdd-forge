@@ -5,7 +5,7 @@
 metadata:
   name: Document Search Index (forge-rules)
   key: forge-rules
-  generated_at: 2026-11-16T12:27:34Z
+  generated_at: 2026-11-17T16:01:24Z
   file_count: 43
 
 docs:
@@ -418,33 +418,34 @@ docs:
       - validation boundary
   plugins/forge/docs/doc_structure_format.md:
     title: .doc_structure.yaml Format Specification
-    purpose: Specifies the .doc_structure.yaml project config format that declares document directories and doc_types for forge, including root_dirs, doc_types_map, patterns exclude, target_glob, and version rules.
+    purpose: Defines the schema of .doc_structure.yaml, the project config that maps document directories and doc_types and sets exclusions for forge location resolution and index targets
     content_details:
-      - Placement of .doc_structure.yaml at the project root beside .git with rules and specs top-level sections
-      - Required root_dirs and doc_types_map fields and optional patterns target_glob and exclude per category
-      - root_dirs glob syntax with single star per level and double star for any depth
-      - doc_types_map mapping from directory paths to doc_type names with glob support
-      - Recommended specs doc_types requirement design plan adr glossary api reference
-      - Recommended rules doc_types rule workflow guide
-      - Doc types forge resolves for requirement design plan adr and glossary placement
-      - patterns exclude matching directory names at any depth and slash patterns as path substrings
-      - Exclusion of plan documents from the search index because they are temporary
-      - doc_structure_version comment in X.Y format where a major change is breaking
+      - Placement of .doc_structure.yaml at project root next to .git
+      - rules and specs category schema with root_dirs doc_types_map and patterns fields
+      - root_dirs glob syntax with single-level star and recursive double-star
+      - doc_types_map recommended names for specs (requirement design plan adr glossary api reference)
+      - rules category doc types (rule workflow guide)
+      - doc types forge uses to resolve placement for requirement design plan adr glossary and the one-entry-per-type constraint
+      - patterns.exclude matching by directory name at any depth and plan exclusion from indexing
+      - doc_structure_version comment with major and minor compatibility rules
+      - Feature-based and nested double-star examples with automatic feature detection
+      - consumer usage via resolve_doc_structure.py and index path handover
     applicable_tasks:
-      - Creating or editing the .doc_structure.yaml configuration for a project
-      - Modifying root_dirs or doc_types_map to add or move document locations
-      - Reviewing doc_type declarations and exclude settings in .doc_structure.yaml
-      - Implementing path resolution that consumes .doc_structure.yaml
-      - Understanding how forge resolves document directories for doc-advisor indexing
+      - Creation or modification of .doc_structure.yaml for a project
+      - Setting up document directories and doc_type mappings for forge
+      - Review of doc_structure configuration correctness
+      - Adding exclude rules to keep plan or archived documents out of the index
+      - Implementing path resolution via resolve_doc_structure
     keywords:
       - .doc_structure.yaml
       - root_dirs
       - doc_types_map
       - patterns.exclude
-      - target_glob
       - doc_structure_version
       - resolve_doc_structure.py
+      - target_glob
       - plan exclusion
+      - Feature-Based Structure
       - doc_type
   plugins/forge/docs/document_style_guide.md:
     title: Document Style Guide
@@ -532,35 +533,36 @@ docs:
       - P1 rule matching
       - create-issue
   plugins/forge/docs/frontmatter_format.md:
-    title: Additive Feature Frontmatter Definition
-    purpose: Single source of truth for frontmatter keys applied to requirements and design documents in differential feature operations, defining feature_type and doc_status markers and their application rules.
+    title: Additional Feature Frontmatter Definition
+    purpose: Defines the frontmatter keys feature_type and doc_status for requirement and design documents, the single source of truth for temporary feature markers and lifecycle status
     content_details:
-      - feature_type key with temporary-feature value for differential feature documents
-      - Application rules for requirements documents, design documents, and exclusion of plan documents
-      - feature_note field containing operational guidance for documents with feature_type marker
-      - doc_status lifecycle state marker for document completion status
-      - "doc_status values: draft (incomplete review status) and not_implemented (dependency not yet implemented)"
-      - Removal conditions for doc_status key on review completion or dependency implementation
-      - Collision avoidance with doc-advisor reserved keys
+      - feature_type temporary-feature marker for requirement documents with a feature_note list
+      - feature_type marker for design documents with a feature_note that defers to the matching requirement document
+      - rule that old spec files stay unchanged until feature implementation completes and new files are split out
+      - merge rule that integrates meaning without physically joining documents
+      - plan documents carry no frontmatter and are traced via requirements_traceability and design_traceability
+      - doc_status key with draft and not_implemented values where omission means complete
+      - removal conditions for draft and not_implemented doc_status keys
+      - feature_type and doc_status may co-exist in one frontmatter block with free key order
+      - feature_note handling of scope-matching content moved to the old spec or kept separate
+      - key naming chosen to avoid collision with generic keys used by other tools
     applicable_tasks:
-      - Frontmatter key definition for differential features
-      - Feature type marker application to specifications
-      - Document status tracking during implementation
-      - Document lifecycle state management
-      - Specification completion status monitoring
-      - Frontmatter block composition
-      - Reserved key conflict identification
+      - Adding temporary-feature markers to requirement or design documents for a differential feature
+      - Setting doc_status draft or not_implemented on requirement or design documents
+      - Removing feature_type or doc_status keys after review or implementation completes
+      - Determining whether a plan document belongs to a differential feature
+      - Review of frontmatter keys in requirement and design documents
     keywords:
-      - frontmatter
       - feature_type
       - temporary-feature
-      - doc_status
       - feature_note
-      - draft
+      - doc_status
       - not_implemented
-      - lifecycle-state
-      - doc-advisor
-      - specification-marker
+      - additive feature
+      - merge
+      - frontmatter
+      - requirements_traceability
+      - design_traceability
   plugins/forge/docs/glossary_format.md:
     title: Glossary Default Format
     purpose: Defines the structure, ID assignment, file naming, header line placement and table format of glossary documents used together with requirement and design documents.

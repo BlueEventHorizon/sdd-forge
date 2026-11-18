@@ -1,0 +1,40 @@
+{
+  "content_hash": "a56e91a93d49f1fe1499db5a29204df6f633f5710e8139f1b76a723f3ae1a497",
+  "doc_link_id": "DLID-433459yse70c",
+  "keywords": [
+    "consult",
+    "consult topic",
+    "consult brief",
+    "progress table",
+    "confidence marks",
+    "user decision",
+    "review delegation",
+    "presentation state",
+    "requirements",
+    "dialogue facilitation"
+  ],
+  "path": "docs/specs/consult/requirements/REQ-017_consult_skill.md",
+  "purpose": "Requirements for the consult skill, which runs dialogue with users: presenting topics as a progress table and concise briefs (summary plus recommendation), obtaining user decisions, and recording briefs, without executing undecided actions.",
+  "summary": [
+    "Overview: consult responsibilities of overall progress table, per-topic brief, driving progress, decision capture, recording",
+    "Three usages: review delegation, dialogue-based revision, and new creation, each with different input and display means",
+    "Glossary and scope: evaluation, consult topic, consult brief, presentation state; in-scope and out-of-scope items",
+    "FNC-001/002: topic intake with verification before presenting; progress table with statuses, classification of unresolved items, skill-led ordering",
+    "FNC-003/006: brief of two fields (summary, recommendation) kept concise (about 10 lines), only correct options shown, source location attached",
+    "FNC-004/005: three-level confidence marks (checked, checked-unsure, unmarked) and restating context instead of referring back",
+    "FNC-007 to 010: Q&A without demanding decisions, withdrawal, adopt/reject/hold decisions, interruption, user owns resolution",
+    "FNC-012 to 014 and BL-001/002: main Claude writes briefs before speaking, briefs recorded via script as JSON, no execution of undecided matters, fidelity",
+    "NFR-001/002/004/005: one presentation-state store per usage, usage-specific logic separated from SKILL, secrets not shown, failures made visible",
+    "Open items TBD-002 to TBD-010: namespace, batch threshold, decision categories, brevity standard, recording location, resume, console-only criteria"
+  ],
+  "tasks": [
+    "Writing or revising the consult skill SKILL.md and per-usage procedure documents",
+    "Implementing consult scripts such as HTML generation and brief recording",
+    "Designing the delegation interface from review to consult",
+    "Reviewing consult requirements and design documents for consistency",
+    "Designing how to present findings or topics to users and obtain decisions",
+    "Defining progress table display format and status vocabulary",
+    "Handling confidential information in presentations and records"
+  ],
+  "title": "REQ-017 consult 対話進行スキル要件定義書"
+}

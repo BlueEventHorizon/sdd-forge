@@ -1,0 +1,36 @@
+{
+  "content_hash": "573198765c9d013ec9958d357cea95fbdf2dfe5de5a2beac8e9d1ccd593c4edb",
+  "doc_link_id": "DLID-vzcznbpypja0",
+  "keywords": [
+    "start-requirements",
+    "requirements workflow",
+    "interactive mode",
+    "reverse-engineering",
+    "from-figma",
+    "temporary-feature",
+    "dispatcher",
+    "glossary"
+  ],
+  "path": "docs/specs/forge/design/DES-017_create_requirements_workflow_design.md",
+  "purpose": "Design of the /forge:start-requirements orchestrator skill that creates requirements documents in interactive, reverse-engineering, and from-figma modes via self-contained workflow files.",
+  "summary": [
+    "Dispatcher SKILL.md responsibilities: mode selection, concept check, delegation to workflows",
+    "File layout of the skill and its three workflow documents",
+    "Flowchart of the three modes and their phases",
+    "Common rule for decisions just before writing: new-project check, additive vs differential type, feature, output directory, file name",
+    "Interactive mode: draft-driven, on-demand context gathering, doc_status draft, type re-judgment",
+    "Reverse-engineering mode: source analysis with parallel agent context collection",
+    "From-figma mode: Figma MCP, two-layer design tokens, SCR/CMP/FNC, static assets",
+    "Design principles: focus on What, per-mode context gathering, workflow self-containment",
+    "Completion steps: review, ToC update, commit confirmation"
+  ],
+  "tasks": [
+    "Modifying the start-requirements skill or its workflows",
+    "Creating requirements documents",
+    "Deciding feature, output path, and file name for requirements",
+    "Judging additive versus differential development type",
+    "Reviewing requirements workflow design",
+    "Adding a new requirements creation mode"
+  ],
+  "title": "DES-017 forge 要件定義書作成ワークフロー 設計書"
+}

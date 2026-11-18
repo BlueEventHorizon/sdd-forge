@@ -1,0 +1,37 @@
+{
+  "content_hash": "a7e0df95f12cdad8ce2115f6f5e436c770c827491214fa1cf8c7d2de806eb262",
+  "doc_link_id": "DLID-hme4nqx9d5gs",
+  "keywords": [
+    "version management",
+    ".version-config.yaml",
+    "update-version",
+    "sync_files",
+    "CHANGELOG",
+    "semver",
+    "version drift",
+    "git tag",
+    "filter"
+  ],
+  "path": "docs/specs/forge/design/DES-023_version_management_workflow_design.md",
+  "purpose": "Design document for the version management workflow that updates versions across plugin.json, marketplace.json, README, and CHANGELOG from a central .version-config.yaml.",
+  "summary": [
+    "Skills setup-version-config and update-version and their design principles",
+    ".version-config.yaml schema: targets, sync_files, changelog, git settings",
+    "Tag search rules using four candidate forms and tag_format semantics",
+    "scan_version_targets.py design and version_ref_files detection algorithm",
+    "calculate_version.py bump computation with v prefix tolerance",
+    "update_version_files.py replacement modes: filter, changelog_header, path, simple",
+    "Drift versus not-applicable error distinction and I/O adapter wrappers",
+    "get_version_status.py base branch comparison to prevent double bumps",
+    "Step-by-step update-version workflow, CHANGELOG insertion, error handling, and tests"
+  ],
+  "tasks": [
+    "Modifying update-version or setup-version-config skills",
+    "Editing .version-config.yaml",
+    "Changing version update scripts",
+    "Releasing a new version",
+    "Generating CHANGELOG entries",
+    "Writing tests for version scripts"
+  ],
+  "title": "DES-023 バージョン管理ワークフロー設計書"
+}

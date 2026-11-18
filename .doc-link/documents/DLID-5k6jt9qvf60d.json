@@ -1,0 +1,39 @@
+{
+  "content_hash": "8cfb48e883567af10afabac7a18d281816f98f86e3d56bdeb16f84f3816260db",
+  "doc_link_id": "DLID-5k6jt9qvf60d",
+  "keywords": [
+    "doc-db",
+    "doc-link",
+    "backend selection",
+    "doc_backend.prefer",
+    "query-db",
+    "update-db",
+    "series",
+    "index_missing",
+    "Streamable HTTP",
+    "availability check"
+  ],
+  "path": "docs/specs/doc-db/design/DES-057_doc_db_backend_selection_design.md",
+  "purpose": "Design for ordered backend selection (doc-link or doc-db, configurable preference) across the four document search wrappers, covering doc-db HTTP access, availability checks, index preparation, delegation, errors and tests.",
+  "summary": [
+    "Backend order resolved from .claude/.forge.yaml doc_backend.prefer, defaulting to doc-link first, with strict settings validation",
+    "Responsibility split: each backend owns its availability check and operations; only the SKILL selector owns the order",
+    "doc-db access through a stdlib Streamable HTTP client with JSON-RPC and SSE parsing, on-demand startup and probe constants",
+    "Outcome classification: unavailable falls through to the next backend, operation failure is explicit, missing index triggers approval then sync",
+    "doc-db query and update design: project key, branch series, path existence check, desired-state sync with start and status polling",
+    "doc-link design: query-docs, freshness checked by doc-link, embed-dlid and index-docs for update, population differences notice",
+    "Query-to-update delegation with an explicitly specified backend, plus exit codes 0, 10, 20 and 30",
+    "doc-db MCP tool contract snapshot and KEY and series state behavior",
+    "Error handling, user notifications, sequence diagrams and unit, wrapper, integration and contract test design"
+  ],
+  "tasks": [
+    "Implementing or modifying query-db and update-db wrapper SKILLs",
+    "Changing backend selection order or doc_backend settings",
+    "Modifying doc_backend scripts such as query_docdb, sync_docdb and resolve_backend_order",
+    "Integrating doc-link or doc-db behavior",
+    "Designing index preparation approval and delegation flows",
+    "Writing tests for backend selection and doc-db client",
+    "Reviewing backend selection design consistency with requirements"
+  ],
+  "title": "DES-057 doc-db バックエンド選択 設計書"
+}

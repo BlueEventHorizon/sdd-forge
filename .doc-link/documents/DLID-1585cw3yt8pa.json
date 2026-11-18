@@ -1,0 +1,36 @@
+{
+  "content_hash": "f0840eb81f5e3404ddd877fc81f0db64235278c7ce12e87cb7a4103adbceb4db",
+  "doc_link_id": "DLID-1585cw3yt8pa",
+  "keywords": [
+    "start-plan",
+    "plan-strategist",
+    "implementation strategy",
+    "plan document",
+    "strategy_exchange",
+    "orchestrator",
+    "task extraction",
+    "traceability matrix",
+    "additive development"
+  ],
+  "path": "docs/specs/forge/design/DES-019_create_plan_workflow_design.md",
+  "purpose": "Design document for the /forge:start-plan orchestrator workflow that derives an implementation strategy from design docs, extracts tasks, and produces a plan document.",
+  "summary": [
+    "Overview of the start-plan orchestrator flow from context gathering to human approval",
+    "Delegation to agents: general-purpose collectors, forge:plan-strategist, and /forge:review",
+    "Agent data exchange via identifier values, request JSON, strategy file, and result value",
+    "strategy_exchange.py subcommands: open, request-path, finish, check",
+    "Flowchart and phase details: prerequisites, context collection, document reading, strategy, plan creation, AI review",
+    "Plan creation rules: task granularity, required_reading, completeness check, traceability matrix",
+    "Handling of additive (temporary-feature) development in strategy documents",
+    "Update mode checks of existing plans and completion steps (update-db-specs, commit)"
+  ],
+  "tasks": [
+    "Modifying the start-plan skill",
+    "Changing the plan-strategist agent",
+    "Editing strategy_exchange.py",
+    "Designing plan document creation workflow",
+    "Reviewing plan task granularity and traceability",
+    "Handling additive development in planning"
+  ],
+  "title": "DES-019 forge 計画書作成ワークフロー 設計書"
+}

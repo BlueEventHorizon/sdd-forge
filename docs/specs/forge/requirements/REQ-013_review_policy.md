@@ -1,42 +1,10 @@
 ---
-type: doc-advisor
-title: REQ-013 Review Policy Requirements
-purpose: "Defines the forge AI review policy: P1 rule compliance, P2 conflict detection, P3 unnecessary complexity, confidence-based auto-fix, review axes, backend resolution, and verification requirements."
-content_details:
-  - P1 rule compliance, P2 contradiction detection and P3 unnecessary complexity as the only review priority system
-  - "Confidence marks: check mark for fix confidence, check box for finding correctness, unmarked when uncertain"
-  - "--interactive as default and --auto that applies fixes only to findings marked with the fix-confidence check mark"
-  - Target axis flags --diff --branch --files --dirs as mutually exclusive, with granularity preserved when passed to the reviewer
-  - "--focus, --scope, --project-rules and --project-specs axes added on top of built-in criteria"
-  - "--backend resolution order with fail closed behavior and retains_context declaration"
-  - Chain-of-Verification self-verification for all findings and a separate evaluator for independent finding evaluation
-  - Out-of-scope findings must not be discarded solely for being out of scope
-  - Issue creation only when three conditions hold for a rule missing from the project
-  - Severity and gray-zone catalogs placed in principles documents so that no review criterion holds judgment
-applicable_tasks:
-  - Review policy implementation
-  - Review criteria design
-  - AI review backend integration
-  - Review workflow specification for the review skill
-  - Review guideline development for principles documents
-  - Policy compliance validation of review skill and criteria
-keywords:
-  - review policy
-  - confidence marking
-  - retains_context
-  - evaluator
-  - Chain-of-Verification
-  - "--backend"
-  - "--auto"
-  - "--focus"
-  - "--scope"
-  - reviewer
-body_hash: sha256:77196bcef191adc9ffb6eb7400aaa5b32e5518098fb1eba92b7c43a582adb93d
+doc_link_id: DLID-yg0c67zs3zky
 ---
 
-# REQ-013 レビューポリシー要件
+# REQ-013 レビューポリシー要件 DLID-g9zybdhxpjnd
 
-## 1. 背景
+## 1. 背景 DLID-9f72b9c2xprr
 
 forge の AI レビューは、検出対象の網羅性を優先するあまり、本質的でない指摘・改善提案を大量に生成しがちであった。
 
@@ -45,7 +13,7 @@ forge の AI レビューは、検出対象の網羅性を優先するあまり�
 3. **緊急度の欠如**: 即時修正すべき項目と、将来的に検討すれば良い項目が同列に並ぶ
 4. **二重検出**: ルールで担保されるべき品質特性（保守性・堅牢性・アーキテクチャ整合性等）を、レビューの独自観点として別途検出し、ルール違反を二重に指摘している
 
-### 1.1 思想転換 — ドキュメント主義への純化
+### 1.1 思想転換 — ドキュメント主義への純化 DLID-xzacd9rakfpz
 
 forge は SDD ベースのツール群であり、設計・実装・レビュー・テストすべてがドキュメント（要件定義書・設計書・ルール文書）を単一の真実源として駆動される。
 
@@ -60,7 +28,7 @@ forge は SDD ベースのツール群であり、設計・実装・レビュー
 
 各 criteria が固有に持っていた perspective（logic / resilience / maintainability / architecture / completeness 等）は廃止し、対応するルールへ委譲する。
 
-### 1.2 設計時点での情報完全性 [CRITICAL]
+### 1.2 設計時点での情報完全性 [CRITICAL] DLID-ah9s3fxqrs21
 
 レビュー時に適用する判断は、すべて執筆者が **設計時点で参照可能なドキュメント（principles / format / rules）** に明示されていなければならない。
 
@@ -71,11 +39,11 @@ forge は SDD ベースのツール群であり、設計・実装・レビュー
 
 criteria に判断が残っている状態 = 設計時点で執筆者から判断基準が隠されている状態。これを防ぐため principles の拡充を併せて要求する（FNC-1311）。
 
-### 1.3 前提 — レビュー入力は呼び出し元が整える
+### 1.3 前提 — レビュー入力は呼び出し元が整える DLID-5npderh0vzee
 
 レビューはフロー固有の文脈（新規機能 / 追加機能 / 設計監査 / 計画策定 / 実装直後 等）を持ち、入力（対象ファイル / 参照文書 / 委譲先ルール）の集め方はフローによって異なる。本要件はこの入力準備に立ち入らない。`/forge:start-design` 等の呼び出し元が対象を解決して `/forge:review` を起動する。
 
-### 1.4 レビューの位置づけ [CRITICAL]
+### 1.4 レビューの位置づけ [CRITICAL] DLID-k7qh170y65d3
 
 **レビュー結果は気づきであり、指示ではない。** レビュアが返す所見は「見つけたこと」の報告であって、実施すべき変更の決定ではない。採るか捨てるかを決めるのは本体である。妥当でない所見は理由を記録して捨てる。全件が妥当でなければ全件捨てる。
 
@@ -89,9 +57,9 @@ criteria に判断が残っている状態 = 設計時点で執筆者から判�
 
 ---
 
-## 2. 要件
+## 2. 要件 DLID-6watdvxznggt
 
-### FNC-1301: レビュー観点の優先度体系
+### FNC-1301: レビュー観点の優先度体系 DLID-m5czk07a4bs5
 
 レビューが検出する観点は以下の 3 つに限定する。各 criteria は固有 perspective を持たない（FNC-1302）。
 
@@ -104,7 +72,7 @@ criteria に判断が残っている状態 = 設計時点で執筆者から判�
 - P1 の対象ルール: プロジェクト固有ルール / forge 内蔵ルール / 関連仕様書。アーキテクチャ・コーディング規約・命名規則・設計原則・セキュリティ規約等、本来「品質を担保するためのルール」はすべて P1 で照合する
 - P3 は「シンプルさ」「読みやすさ」等の主観評価に拡張しない（Goodhart の罠回避）
 
-### FNC-1302: criteria は固有 perspective と判断を持たない
+### FNC-1302: criteria は固有 perspective と判断を持たない DLID-zqzjjznzrcm6
 
 `review_criteria_*.md` は固有 perspective を持たず、**一切の判断（severity 判定 / グレーゾーン判定）を持たない**。判断はすべて principles 側に集約する（FNC-1311）。
 
@@ -119,7 +87,7 @@ criteria に判断が残っている状態 = 設計時点で執筆者から判�
 
 委譲先ルールが未整備の場合は FNC-1305（フォールバック）および FNC-1306（Issue 化）が動作する。
 
-### FNC-1303: 対象指定（対象軸）
+### FNC-1303: 対象指定（対象軸） DLID-vqtmmp15h1py
 
 レビュー対象は対象軸フラグで決定する。デフォルト（フラグ未指定）は `--diff` と等価。
 
@@ -135,7 +103,7 @@ criteria に判断が残っている状態 = 設計時点で執筆者から判�
 - 位置引数を持たない。Feature 名・ディレクトリ・自由入力を位置引数で受け付ける構文は持たない（FNC-1310 整合）。自由入力で呼ばれた場合は SKILL が対象を推測し AskUserQuestion で確認してから `--files` 相当へ展開する。**ディレクトリは対象軸フラグ `--dirs` で受ける**
 - 対象の種別（適用する criteria）は指定しない。reviewer が対象ごとに判定する（[REQ-029](../../review/requirements/REQ-029_review_exchange.md) FNC-317）。1 つの依頼が指す対象には、ソースコードと各種の文書が混在しうるためである
 
-### FNC-1312: 対象指定の粒度保存 [MANDATORY]
+### FNC-1312: 対象指定の粒度保存 [MANDATORY] DLID-gnajrnjxg8a2
 
 レビュアへ渡す対象指定は、**利用者が指定した粒度のまま**渡す。範囲で指定されたもの（`--diff` / `--branch` / `--dirs`）を、forge 側でファイル一覧へ展開して渡してはならない。ファイル一覧を渡してよいのは、利用者がファイル単位で指定した `--files` の場合に限る。
 
@@ -152,7 +120,7 @@ criteria に判断が残っている状態 = 設計時点で執筆者から判�
 
 **allowlist は本要件の対象外**: 修正フェーズの安全検証（編集がレビュー対象外へ波及していないかの検出）に使うファイル集合は、レビュアへ渡すものではないため本要件の制約を受けない。ファイル一覧として保持してよい。`--dirs` ではディレクトリ配下を展開して allowlist を作るが、依頼へはディレクトリのまま渡す。この非対称（allowlist は展開してよい / 依頼は展開してはならない）が本要件の適用境界である。
 
-### FNC-1304: 介入軸（interaction）
+### FNC-1304: 介入軸（interaction） DLID-kxa86gd4s3hd
 
 検出後に**どこまで人間へ確認するか**を介入軸フラグで決定する。デフォルトは `--interactive`。
 
@@ -165,7 +133,7 @@ criteria に判断が残っている状態 = 設計時点で執筆者から判�
 - 介入フィルタは介入軸でのみ機能する。検出段階では全 severity・全件を出力する
 - **件数指定（`--auto N`）は採用しない** — 件数ベースの軸は AI が誤生成しやすい
 
-#### 確信が自動修正の可否を決める [MANDATORY]
+#### 確信が自動修正の可否を決める [MANDATORY] DLID-xetkzas7c28z
 
 **確認なしに直してよいかを決めるのは、本体が持つ確信である。重大度ではない。**
 
@@ -195,7 +163,7 @@ criteria に判断が残っている状態 = 設計時点で執筆者から判�
 - 位置を特定できない所見は、確信によらず修正の対象外とする（修正対象を確定できないため）
 - **重大度も確信も、実施する修正を確定しない**。修正は本体の評価を経て確定する（§1.4）
 
-### FNC-1313: 重点観点（focus）
+### FNC-1313: 重点観点（focus） DLID-xfyh1r4gprc1
 
 依頼ごとに「今回特に注意を払う対象」を自然文で渡せる任意の軸を持つ（`--focus "<自然文>"`）。既定は指定なし。
 
@@ -213,7 +181,7 @@ criteria に判断が残っている状態 = 設計時点で執筆者から判�
 
 **口頭指示からの解釈**: 利用者がフラグを明示せず「特に〜を中心にレビューして」と述べた場合も、AI が意図を汲んで重点観点として解釈する（AI が解釈すべき入力にスクリプトパーサーを使わない方針に従う）。解釈結果は公開前の引数解釈結果表に、実際に渡す本文として出力する。
 
-### FNC-1318: レビューバックエンド軸（backend）
+### FNC-1318: レビューバックエンド軸（backend） DLID-rg6pyvdzt9z1
 
 レビューの実行主体を切り替えられる軸を持つ（`--backend <name>`）。明示指定が無い場合は候補を順に可用性検査して決める（下記「バックエンドの解決順」）。
 
@@ -221,7 +189,7 @@ criteria に判断が残っている状態 = 設計時点で執筆者から判�
 - 未知の backend 名を指定した場合は依頼を送信せずエラー終了する（fail closed。既定バックエンドへ暗黙にフォールバックしない）
 - `--codex` / `--claude` は backend 名として解釈せず、警告のうえ無視して続行する（既存の呼び出し元が壊れないようにするため。バックエンドの指定は `--backend` のみで行う）
 
-#### バックエンドの解決順 [MANDATORY]
+#### バックエンドの解決順 [MANDATORY] DLID-48jhzzh2p007
 
 | 指定                              | 対象が利用不可のとき                   |
 | --------------------------------- | -------------------------------------- |
@@ -239,7 +207,7 @@ criteria に判断が残っている状態 = 設計時点で執筆者から判�
 
 外部依存を持たずプラグイン単体で利用できる実行主体を第一候補とする。現時点で候補はこれだけである。DB・端末多重化ツール・常駐セッションを必要とする実行主体が加わった場合、その性質を利用者が明示的に選ぶ場合、または先位候補を利用できない場合に選ばれる。
 
-#### 入出力契約 [CRITICAL]
+#### 入出力契約 [CRITICAL] DLID-qh457m7rp5gt
 
 | 要求       | 本体 → バックエンド | バックエンド → 本体                                                   |
 | ---------- | ------------------- | --------------------------------------------------------------------- |
@@ -270,7 +238,7 @@ criteria に判断が残っている状態 = 設計時点で執筆者から判�
 
 **採用理由**: 利用できるレビュー実行主体はプロジェクトごとに異なる。単一の実行主体に固定すると、その前提を満たせないプロジェクトでレビューフロー全体が使えなくなる。一方で、依頼の組み立て（対象解決・観点の名指し・粒度保存）と所見の処理（評価・振り分け・修正・安全検証）は実行主体に依存しないため、この境界で分割できる。
 
-### FNC-1319: 到達目標（scope）
+### FNC-1319: 到達目標（scope） DLID-ae2bp46ra1hh
 
 依頼ごとに「今回の変更が到達すべき範囲」と「意図的に含めなかった項目」を渡せる任意の軸を持つ（`--scope "<自然文>"`）。既定は指定なし。
 
@@ -286,7 +254,7 @@ criteria に判断が残っている状態 = 設計時点で執筆者から判�
 
 **範囲外所見の扱い**: 到達目標の範囲外を指摘した所見を、範囲外であることのみを理由に無条件で破棄してはならない。範囲外項目を「実装漏れ」として報告している所見は対応不要として理由付きで記録し、範囲外であることを前提に**文書と現状の乖離**を指摘している所見は妥当な指摘として扱う（修正対象が実装ではなく文書側になりうる）。前者と後者を区別せず捨てると、段階分割の宣言が文書の陳腐化を隠す手段になる。
 
-### FNC-1320: 規範の持ち込み
+### FNC-1320: 規範の持ち込み DLID-brb6j4xfwzr3
 
 呼び出し元が既に収集済みのルール・仕様のパス一覧を渡せる任意の軸を持つ（`--project-rules` / `--project-specs`）。既定は指定なしで、その場合は本体が自ら検索する。
 
@@ -297,7 +265,7 @@ criteria に判断が残っている状態 = 設計時点で執筆者から判�
 
 **採用理由**: 検索は決定論的ではなく費用も小さくないため、同一タスク内での重複実行は待ち時間と結果のぶれの両方を生む。呼び出し元が既に持っている情報を捨てて引き直す理由が無い。
 
-### FNC-1321: 全所見の自己検証
+### FNC-1321: 全所見の自己検証 DLID-5b0xje4t2263
 
 レビュアは各所見を返信する前に、Chain-of-Verification 型の自己検証を行う。
 
@@ -309,7 +277,7 @@ criteria に判断が残っている状態 = 設計時点で執筆者から判�
 
 **採用理由**: major 所見も `--auto` では自動修正の対象となり、minor 所見も誤っていれば人間の確認コストとレビューへの信頼低下を生む。severity は修正緊急度であって真偽の確度ではないため、検証対象を critical に限定する根拠にならない。
 
-### FNC-1322: 所見評価の独立検証と、全所見が評価に紐づくことの機械的な保証
+### FNC-1322: 所見評価の独立検証と、全所見が評価に紐づくことの機械的な保証 DLID-hawzjn9swphd
 
 各所見は、書き出し前の自己検証（FNC-1321）に加えて、所見を書いた主体とは別の主体（evaluator）による独立評価（disposition・severity・confidence の確認）を経ること。
 
@@ -320,7 +288,7 @@ criteria に判断が残っている状態 = 設計時点で執筆者から判�
 
 **採用理由**: 所見自体の自己検証（FNC-1321）は所見を書く主体自身が行うため、その主体固有の見落とし・思い込みは検出できない。独立した第二の評価によって、単一の視点に依存しない確からしさを担保する。対応付けを記憶に頼ると、件数の不一致・欠落・重複を検証しないまま扱ってしまう危険があり、この危険は記憶力ではなく機械的な保証で防ぐべきものである。
 
-### FNC-1314: 文書参照の恒久観点化
+### FNC-1314: 文書参照の恒久観点化 DLID-m83167k8pae9
 
 文書内の他文書への参照（記法と実在性）を、依頼ごとの指定に依存しない恒久的なレビュー観点として扱う。
 
@@ -330,7 +298,7 @@ criteria に判断が残っている状態 = 設計時点で執筆者から判�
 
 **採用理由**: 参照先へ到達できない参照は、AI が文書を辿れなくなるという意味で致命的であり、口頭で依頼されたときだけ検査される観点にしておくのは本末転倒である。
 
-### FNC-1305: forge 内蔵ルールのフォールバック
+### FNC-1305: forge 内蔵ルールのフォールバック DLID-bdafadn70vtb
 
 プロジェクト固有ルールが未整備または不十分な場合、forge 内蔵ルールが基本ルール群として常に有効化される。
 
@@ -338,11 +306,11 @@ criteria に判断が残っている状態 = 設計時点で執筆者から判�
 - **AI による自動追記は行わない**。レビュー実行中に発見した場合は Issue 化（FNC-1306）し、ファイル本体の追記は通常の PR フローで行う。配布対象ファイルがレビュー実行中に変わるとリリース管理が破綻するため
 - プロジェクト固有ルールと内蔵ルールが衝突するときはプロジェクト固有を優先する
 
-### FNC-1306: ルール抜け落ち発見時の Issue 化
+### FNC-1306: ルール抜け落ち発見時の Issue 化 DLID-yt8pafsnntw9
 
 「明文ルールでカバーできないが指摘すべき問題」を発見した場合、ルール追加を促す Issue を起票する。検出内容と追加すべきルールの草案を Issue 本文に含め、`/anvil:create-issue` に連携する。
 
-#### 判定 3 条件 [CRITICAL]
+#### 判定 3 条件 [CRITICAL] DLID-kx3d3k1qzxcr
 
 以下の **3 条件をすべて満たす場合のみ** Issue 化に分類する。
 
@@ -354,7 +322,7 @@ criteria に判断が残っている状態 = 設計時点で執筆者から判�
 
 いずれかが不成立の場合は skip とし、理由を記載する。
 
-### FNC-1307: デフォルト挙動の明示
+### FNC-1307: デフォルト挙動の明示 DLID-fktvvgbgsrcx
 
 `/forge:review`（フラグなし）は `--diff --interactive` と等価。明示形と省略形は常に等価とし、両方をサポートする。AI・利用者が「デフォルト時の挙動」を取り違えないため、デフォルト相当のフラグを明示形としても提供する。
 
@@ -363,7 +331,7 @@ criteria に判断が残っている状態 = 設計時点で執筆者から判�
 - **scope 軸（diff / file / crossref）**: `--diff` / `--branch` / `--files` / `--dirs` で表現する
 - **depth 軸**: 観点は P1〜P3 で固定。固有 perspective を持たないため段階的に観点を増減させる必要が無い
 
-### FNC-1309: criteria の固定 3 セクション構造
+### FNC-1309: criteria の固定 3 セクション構造 DLID-gr748jvn5yc7
 
 `review_criteria_*.md` は以下の 3 セクション固定構造を持つ。3 セクション以外を追加してはならない。
 
@@ -375,7 +343,7 @@ criteria に判断が残っている状態 = 設計時点で執筆者から判�
 
 単一の真実源として `review_priorities_spec.md` を配布物に置き、各 criteria はこれを MANDATORY 参照する。
 
-### FNC-1310: AI が誤判定しにくい CLI 構造
+### FNC-1310: AI が誤判定しにくい CLI 構造 DLID-j9rnhfn8fnkz
 
 ```
 /forge:review [--diff | --branch | --files a.md,b.md,... | --dirs d1/,d2/,...] [--interactive | --auto] [--focus "<重点観点>"] [--scope "<到達目標>"] [--project-rules a.md,...] [--project-specs c.md,...] [--backend <name>]
@@ -387,7 +355,7 @@ criteria に判断が残っている状態 = 設計時点で執筆者から判�
 - 不正な組み合わせ（対象軸の二重指定・介入軸の二重指定）は early validation で拒否する
 - プリセット（例: `--audit`）は導入しない
 
-### FNC-1311: principles 拡充（重大度カタログ化 + グレーゾーン許容範囲明示化）
+### FNC-1311: principles 拡充（重大度カタログ化 + グレーゾーン許容範囲明示化） DLID-rzhfmwn43h2m
 
 criteria から判断を除去するための前提として、principles 側を拡充する。
 
@@ -397,7 +365,7 @@ criteria から判断を除去するための前提として、principles 側を
 
 ---
 
-## 3. 適用対象
+## 3. 適用対象 DLID-wg15jjn9pgcq
 
 | 対象                                 | 影響                                                                                                                                                                                                                                                                                                                                        |
 | ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -417,7 +385,7 @@ criteria から判断を除去するための前提として、principles 側を
 
 ---
 
-## 4. 未確定事項
+## 4. 未確定事項 DLID-v7j94vn4p00z
 
 | ID       | 内容                                                                                                                                 |
 | -------- | ------------------------------------------------------------------------------------------------------------------------------------ |

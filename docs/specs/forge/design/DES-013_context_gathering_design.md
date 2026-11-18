@@ -1,6 +1,10 @@
-# DES-013 コンテキスト収集タスク仕様
+---
+doc_link_id: DLID-1vfqj6r96sr4
+---
 
-## 1. 概要
+# DES-013 コンテキスト収集タスク仕様 DLID-mq8v1rvrpd30
+
+## 1. 概要 DLID-d17p2rv2vwvs
 
 forge の create-\* スキルが使用するコンテキスト収集タスクの仕様を定義する。
 
@@ -12,7 +16,7 @@ forge の create-\* スキルが使用するコンテキスト収集タスクの
 
 ---
 
-## 2. タスク一覧
+## 2. タスク一覧 DLID-jh3wrycz00ap
 
 コンテキスト収集 agent が実行するタスクは以下の 3 種類:
 
@@ -26,13 +30,13 @@ bullet list の各行は `` `path` — 関連理由を 1 行 `` の形式とす�
 
 ---
 
-## 3. スキル別タスク適用マトリクス
+## 3. スキル別タスク適用マトリクス DLID-r3707pgmaj3v
 
 start-design / start-plan / start-requirements の適用マトリクス・agent 構成は [DES-010](DES-010_create_skills_orchestrator_design.md) §3〜§4 を正本とする。`start-implement` はコンテキスト収集 agent を起動せず、本文書の対象外である（[DES-088](../../start-implement/design/DES-088_start_implement_design.md)）。
 
 ---
 
-## 4. agent への指示
+## 4. agent への指示 DLID-rq3pqqvfszw5
 
 各 agent への指示は「検索目的・検索手段・出力契約」の3要素で構成する prompt テンプレートで渡す。テンプレートの形式は [DES-010](DES-010_create_skills_orchestrator_design.md) §3.3 を正本とする。
 

@@ -1,0 +1,39 @@
+{
+  "content_hash": "cffa2caba2fbe3adad852590fcedbcf3b22d1e5e0cb5b17f1b8f73e109ea1e73",
+  "doc_link_id": "DLID-7zh3q09p2acs",
+  "keywords": [
+    "agent data exchange",
+    "identifier",
+    "request and result",
+    "exit value",
+    "transient data",
+    "custom agent",
+    "script writes",
+    "absolute path",
+    "no overwrite",
+    "cleanup"
+  ],
+  "path": "docs/rules/forge_agent_data_exchange_rules.md",
+  "purpose": "Defines the norms for exchanging transient, per-process data (requests and results) between a SKILL caller and a custom Agent so the exchange does not break regardless of data size.",
+  "summary": [
+    "Scope: transient data handled by this document versus permanent documents handled by the doc access principle",
+    "Why prompts and return values should not carry full payloads: size limits, AI relay distortion, undefined shape",
+    "Pass only identifiers; scripts generate them and resolve storage locations",
+    "Scripts write the data; the AI never assembles JSON and values are stored unmodified",
+    "Readers obtain an absolute path from a script and read the file directly",
+    "Values arrive untransformed, including newlines, quotes, and non-ASCII",
+    "Definitions (SKILL.md or agent definition) own field meanings and script usage",
+    "Write only after decisions are final, with no overwrite operation",
+    "Success is expressed by an exit value string \"0\"; no format validation; absolute paths allowed",
+    "Delete everything held for the process afterwards; each feature decides identifiers, locations, fields, error values"
+  ],
+  "tasks": [
+    "Designing SKILL to custom Agent data exchange",
+    "Creating or editing a custom Agent definition",
+    "Writing a script that writes request or result files",
+    "Writing or reviewing SKILL.md that launches an Agent",
+    "Defining exit values and error value sets for a feature",
+    "Reviewing requirements or design documents for agent handoff"
+  ],
+  "title": "agent とのデータ受け渡し"
+}

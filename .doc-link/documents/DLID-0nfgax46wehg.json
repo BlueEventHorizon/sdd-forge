@@ -1,0 +1,41 @@
+{
+  "content_hash": "beea4eaacafc7806ad269f5f0a81a27a105017b77cdffff316e1957fcc276982",
+  "doc_link_id": "DLID-0nfgax46wehg",
+  "keywords": [
+    "doc-db",
+    "doc-link",
+    "backend selection",
+    "query-db",
+    "update-db",
+    "fallback",
+    "index freshness",
+    "DLID",
+    "series",
+    "unprepared index"
+  ],
+  "path": "docs/specs/doc-db/requirements/REQ-014_doc_db_backend_selection_spec.md",
+  "purpose": "Requirements for automatic selection of a document search backend (doc-link or doc-db) by the query-db and update-db wrappers, including ordering, fallback, index preparation, freshness and failure handling.",
+  "summary": [
+    "Overview: wrappers auto-select an available backend so users need not know which is usable; index maintenance belongs to update-db wrappers",
+    "Scope and out-of-scope items, including doc-db install and KEY/series management exclusions",
+    "Preconditions defining what counts as an available doc-link and an available doc-db",
+    "Glossary of wrapper, doc-db, doc-link, ToC, DLID, KEY and series",
+    "Usage flow with ordered backend list, availability checks and fallback",
+    "Functional requirements FNC-001 to FNC-004: backend selection, query, update with DLID writing and backend designation, execution path notification",
+    "Business rules BL-001 to BL-007: selection order, index freshness, success vs failure, unprepared vs fault, series and result paths, backend designation, index population ownership",
+    "Non-functional requirements: observability, backward compatibility, responsiveness, availability, information protection",
+    "Error case table mapping conditions to behaviors",
+    "No open items remain"
+  ],
+  "tasks": [
+    "Designing or implementing query-db-rules and query-db-specs wrappers",
+    "Designing or implementing update-db-rules and update-db-specs wrappers",
+    "Implementing backend availability checks and fallback logic",
+    "Handling unprepared index approval and index building",
+    "Writing DLID to documents during index updates",
+    "Reviewing backend selection design or implementation against requirements",
+    "Writing tests for error cases and notifications",
+    "Configuring preferred backend per project"
+  ],
+  "title": "REQ-014 doc-db バックエンド選択 要件定義書"
+}

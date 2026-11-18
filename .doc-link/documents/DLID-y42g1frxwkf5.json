@@ -1,0 +1,36 @@
+{
+  "content_hash": "babb6118297886a8ccc7f3f4a1a2d1c2531cf225ed644261467f5e4cb9234a0c",
+  "doc_link_id": "DLID-y42g1frxwkf5",
+  "keywords": [
+    "reviewer",
+    "target kind",
+    "review criteria",
+    "finding",
+    "target_unreadable",
+    "doc_structure",
+    "targets",
+    "review mechanism",
+    "criteria documents"
+  ],
+  "path": "docs/specs/review/requirements/REQ-027_reviewer.md",
+  "purpose": "Requirements for the reviewer agent in the review mechanism: how it reads targets, judges target kinds, selects criteria documents per kind, and reports findings and its single error value.",
+  "summary": [
+    "Overview: reviewer reads targets with suitable norms and reports errors without missing them; secret scanning is out of scope",
+    "Scope: only reviewer-specific behavior; exchange and data contracts are delegated to the common review contract",
+    "FNC-301: contents of the reviewer definition such as script usage, request item handling, and reading method",
+    "FNC-306: how targets are read for paths, base_branch and diff forms, including deletions and renames",
+    "FNC-307: target kind (code/requirement/design/plan/uxui) is judged from doc_structure settings via script, then file contents",
+    "FNC-308: per-kind tables of criteria documents, built-in norms, project-specific documents and cross-check targets",
+    "FNC-309: findings are returned only when present; zero findings with normal exit means no issues",
+    "FNC-315: the only error value is target_unreadable; unreadable documents and undeterminable kinds are not errors"
+  ],
+  "tasks": [
+    "Writing or modifying the reviewer agent definition",
+    "Reviewing reviewer behavior against requirements",
+    "Changing criteria documents or norms mapped to target kinds",
+    "Designing target kind resolution in doc structure script",
+    "Designing reviewer error handling",
+    "Reviewing review mechanism documents"
+  ],
+  "title": "REQ-027 reviewer の入力・作業・出力の契約 要件定義書"
+}

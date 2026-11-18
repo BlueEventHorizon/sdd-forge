@@ -1,47 +1,16 @@
 ---
-type: doc-advisor
-title: DES-066 forge:review Body Design (Backend-Independent Part)
-purpose: Defines the backend-independent design of the /forge:review body covering backend resolution, fix safety, location segregation, single-exit termination, and staged presentation via the consult SKILL
-content_details:
-  - Backend resolution order with explicit specification failing closed and the default candidate list defined in DEFAULT_ORDER
-  - retains_context declared per backend and held for the review with backend_undeclared rejection
-  - Target granularity preservation where range options stay unexpanded in the request and the allowlist is kept separate
-  - Two scope axes focus and scope added to the request without mixing their severity effects
-  - Fix safety by a per-finding apply verify decide loop plus independent verification at round end
-  - Location-based split into located and unlocated groups where the script makes no judgment
-  - Two distinct confidence levels, confidence for finding correctness and fix_confident for fix capability
-  - Single exit point for approved, halted_with_open_findings, failure and interrupted termination paths
-  - Staged presentation delegated to the consult SKILL in the same context where an interruption is not an interrupted termination
-  - Request kept unchanged across rounds and findings mapped to evaluations by finding_ids
-applicable_tasks:
-  - Design review of the /forge:review command architecture and backend integration
-  - Implementation of backend resolution and retains_context handling in resolve_review_backend.py
-  - Implementation of fix safety verification and location segregation for review findings
-  - Test creation for review body contracts covering termination paths and split_by_location
-  - Implementation of the staged presentation flow using the consult SKILL
-keywords:
-  - DEFAULT_ORDER
-  - resolve_review_backend
-  - retains_context
-  - fix_confident
-  - confidence
-  - split_by_location
-  - verify_fix_safety
-  - halted_with_open_findings
-  - staged presentation
-  - backend_undeclared
-body_hash: sha256:296e3bb5cfa8307a331ce88cd4f6f59a4bb7856caaf053e1430cec885e5996bc
+doc_link_id: DLID-2becz9x7x407
 ---
 
-# DES-066 `/forge:review` 本体（バックエンド非依存部）設計書
+# DES-066 `/forge:review` 本体（バックエンド非依存部）設計書 DLID-6ptq8wszkzc1
 
-## 1. 概要
+## 1. 概要 DLID-9pjrcgdmq9az
 
 `/forge:review` 本体は、依頼を組み立てて公開し、reviewer と evaluator を直接起動して、script が書いた所見と評価を直接読んで吟味・修正・終端判断を行う層である。レビュアが誰であるかに依存する処理は、バックエンドの可用性検査と `retains_context` の宣言に閉じており、本体は持たない。
 
 受け渡し・採番・書き出しと終了の値、および本体の仕事の流れ（依頼の公開から終端まで）の詳細は、[DES-084](../../review/design/DES-084_reviewer_design.md)（開始から reviewer の区間）と [DES-083](../../review/design/DES-083_evaluator_perspective_design.md)（evaluator の区間と、所見・評価を扱う本体の仕事）が定める。本設計は、それ以外の本体の設計を定める。バックエンドの解決、対象と allowlist、修正の安全検証、位置による振り分け、段階的提示である。
 
-## 2. アーキテクチャ概要
+## 2. アーキテクチャ概要 DLID-4315gh92dj84
 
 ```mermaid
 flowchart TB
@@ -81,13 +50,13 @@ flowchart TB
 
 本体とバックエンド SKILL はいずれも継承型 SKILL であり、本体が `Skill` ツールで起動する。reviewer と evaluator は本体が `Agent` ツールで直接起動し、依頼・所見・評価は script が JSON として書く。本体は script が返したパスの JSON を直接読む（受け渡しの型は DES-084・DES-083 が定める）。
 
-### 2.1 バックエンドの解決 [MANDATORY]
+### 2.1 バックエンドの解決 [MANDATORY] DLID-64cgctfg1xh5
 
 backend 名 `<name>` は同名の SKILL `forge:<name>` へ解決する。名前と SKILL を 1 対 1 に対応させることで、対応表を本体に持たせない（新しいバックエンドを足すたびに本体を編集する構造にしない）。
 
 明示指定（`--backend` または `.forge.yaml` の `backend`）の解決先が存在しない場合は、依頼を公開せずエラー終了する（fail closed。REQ-013 FNC-1318）。候補順で解決するときは、存在しない候補を利用不可として次の候補へ進む（下記「解決の手順」）。`--codex` / `--claude` は警告のうえ無視し、**backend 名としては解釈しない**。既存の呼び出し元がこれらを付けて起動しているため、backend 名として再解釈すると推測で実行主体を選ぶことになる。
 
-#### 解決の手順
+#### 解決の手順 DLID-xmqbtc1xsfa0
 
 | 順 | 条件                         | 動作                                                           |
 | -- | ---------------------------- | -------------------------------------------------------------- |
@@ -102,7 +71,7 @@ backend 名 `<name>` は同名の SKILL `forge:<name>` へ解決する。名前�
 
 **`retains_context` を同じ解決で得る**。解決の応答は、候補ごとの `retains_context`（reviewer が往復の文脈を保持するか）を含む。値はバックエンドごとに固定で、`resolve_review_backend.py` が宣言を持つ。宣言の無い名前が候補に含まれるときは、値を補わず `backend_undeclared` で拒む（DES-084 §6.7）。本体は採用した候補の値を、可用性検査の通過後に、そのレビューの間保持する。名前や起動のされ方から推測しない。現在の候補（`agent-review`）は `false` であり、`true` の場合の流れは本設計の範囲外である（REQ-029 FNC-316、Issue #67）。
 
-#### 既定の候補順 [CRITICAL]
+#### 既定の候補順 [CRITICAL] DLID-h3q1r0yjyyj6
 
 明示指定（`--backend` / `.forge.yaml` の `backend`）が無いときに本体が使う順序を、ここで具体的に定める。**この順序は設定から差し替えられない**（§2.2「候補順を設定へ出さない」）。
 
@@ -118,7 +87,7 @@ backend 名 `<name>` は同名の SKILL `forge:<name>` へ解決する。名前�
 
 バックエンドを新設するときは、**その設計文書で本節への追加位置を決めて本節を更新する**。候補として配布する時点では同名 SKILL と可用性検査を必ず同時に提供し、名前だけの候補を実装に残さない。順序の意図は「最小の前提で成立する実行主体から先に試す」である。外部依存を持つ実行主体は、その固有機能を明示的に必要とする場合に `backend` で選べる。
 
-### 2.2 `.claude/.forge.yaml` の `review` セクション
+### 2.2 `.claude/.forge.yaml` の `review` セクション DLID-m2mj5nbts8d5
 
 DES-061 が定めた入れ物の `review` セクションを本設計が所有する（同 §2.2 が、セクションを新設する設計は自文書にスキーマと**設定が無い場合の既定**を定義することを求める）。
 
@@ -133,7 +102,7 @@ review:
 
 未知の backend 名であれば fail closed とする。
 
-#### 候補順を設定へ出さない [CRITICAL]
+#### 候補順を設定へ出さない [CRITICAL] DLID-v0aba3qs407x
 
 **本セクションのキーは `backend` だけである。候補順を設定から差し替えるキーを置かない。**
 
@@ -147,9 +116,9 @@ review:
 
 順序を変える必要が生じた場合は、設定を増やさず §2.1 の候補順そのものを改訂する（順序は設計判断であり、その理由とともに 1 箇所で保守する）。
 
-## 3. モジュール設計
+## 3. モジュール設計 DLID-bfqf7jvptv5x
 
-### 3.1 モジュール一覧
+### 3.1 モジュール一覧 DLID-54tvd1k8rpcv
 
 | モジュール                          | 責務                                                                                                                                                                                                                                     |
 | ----------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -165,7 +134,7 @@ review:
 | `verify_fix_safety.py`              | allowlist 逸脱・構文破壊の検出（ロールバックはしない）                                                                                                                                                                                   |
 | `collect_modified_files.py`         | ラウンド終了時の変更集合の独立取得                                                                                                                                                                                                       |
 
-#### 3.1.1 base ブランチの受け渡し [CRITICAL]
+#### 3.1.1 base ブランチの受け渡し [CRITICAL] DLID-scgn267vyecg
 
 `--branch` の base は `analyze_branch_point.py` の候補を利用者に確認して確定する（REQ-013）。確定した base は `resolve_targets.py --base-branch` へ渡し、allowlist もその base を起点に列挙する。
 
@@ -175,7 +144,7 @@ review:
 
 本体はラウンドごとにレビュアの変更を検出しない。変更集合の比較は、すでに集合へ入っているファイルを書き換えても集合が変わらず、最も起きやすい経路だけが漏れるため、検出の手段にならない。
 
-### 3.2 終端処理の単一出口 [MANDATORY]
+### 3.2 終端処理の単一出口 [MANDATORY] DLID-jg72kdyjkt0w
 
 レビューが終わる経路は 4 つある。
 
@@ -196,7 +165,7 @@ review:
 
 **終端なら経路を問わず削除する**。削除前に、報告に載せる内容を読み終えて書き出しておく（削除すると JSON は読めなくなる）。
 
-### 3.3 reviewer と evaluator の結果の扱い
+### 3.3 reviewer と evaluator の結果の扱い DLID-zg5qf3snjzjn
 
 | 結果                           | 本体の扱い                                                                                                                               |
 | ------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------- |
@@ -206,11 +175,11 @@ review:
 
 読み出してよい状態か（正常に書き終えたか）は script が判定する。本体は読んだ内容から成否を判断しない（REQ-029 FNC-311）。`failure` を、所見なしの完了や指摘ありとして扱わない。別バックエンドへ暗黙にフォールバックしない（REQ-013 FNC-1318 の fail closed）。
 
-### 3.4 対象指定の粒度保存 [CRITICAL]
+### 3.4 対象指定の粒度保存 [CRITICAL] DLID-gqsp73zkpe1s
 
 範囲指定（`--diff` / `--branch` / `--dirs`）をファイル一覧へ展開して依頼へ載せない（REQ-013 FNC-1312）。`--dirs` ではディレクトリ配下を展開して allowlist を作るが、依頼へはディレクトリのまま渡す。allowlist は reviewer へ渡すものではないため粒度保存の制約を受けない一方、依頼は受けるという非対称がここにある。
 
-### 3.5 依頼固有の情報を載せる 2 軸
+### 3.5 依頼固有の情報を載せる 2 軸 DLID-3xy9rwpkdrkp
 
 対象（何を見るか）とは別に、依頼ごとに変わる情報を 2 つ載せる。いずれも本体が Write ツールで受け渡しファイルに書き、依頼を公開する script が値を加工せずに依頼の項目へ置く。本体は文言を持たない。
 
@@ -223,7 +192,7 @@ review:
 
 到達目標は本体の吟味まで保持する。範囲外を指摘した所見のうち、**文書と現状の乖離**を述べているものは妥当な指摘として扱い、範囲外項目を実装漏れとして報告しているものだけを対応不要とする（FNC-1319）。この区別をせずに一括で捨てると、段階分割の宣言が文書の陳腐化を隠す手段になる。
 
-### 3.6 規範の持ち込み（FNC-1320）
+### 3.6 規範の持ち込み（FNC-1320） DLID-qfxtd2h1zdd5
 
 `--project-rules` / `--project-specs` が渡された軸については、本体は検索（`query-db-rules` / `query-db-specs`）を行わず渡された値をそのまま使う。上流スキルが同一タスクに対して既に実行した検索を二重に走らせないためである。片方のみ渡された場合は、渡されなかった軸だけを検索する。検索結果とそのまま使う値は、依頼の `references` として公開する。
 
@@ -231,19 +200,19 @@ review:
 
 不足が黙殺されるわけではない。forge 内蔵の観点文書は reviewer の定義が静的に名指ししているため、プロジェクト固有ルールが空でもレビューが規範なしになるのは**内蔵の規範が薄い種別**（`code` / `uxui`）に限られる。その 2 種別を読む reviewer は、「該当する規約が見当たらない場合はその事実を所見として報告する」（`reviewer.md`）。他の種別は内蔵の principles / format が常に適用されるため、この指示を要さない。
 
-### 3.7 修正の安全検証
+### 3.7 修正の安全検証 DLID-rzf87y840crn
 
 finding 単位で「適用 → 検証 → 判断 → 次へ」を逐次繰り返す。検証スクリプトは検出のみを行い、ロールバックの判断は Claude が担う（allowlist 逸脱が正当な波及修正である場合があり、機械的に戻すと正しい修正を消す）。
 
 ラウンド終了時には、finding ごとの自己申告に依存しない独立検証を行う（申告漏れが起きたファイルは allowlist・構文検証のいずれも通過しないまま見過ごされるため）。
 
-### 3.8 中断したレビューを再開しない
+### 3.8 中断したレビューを再開しない DLID-yct4xhx63c30
 
 依頼・所見・評価はレビューの終端で削除されるため（§3.2）、中断したレビューを同一の `review_id` で再開する経路は持たない。利用者は同じ対象で新しいレビューを起動する。直前の Agent 出力や本体の会話コンテキストを、永続した履歴の代用として暗黙に注入しない。
 
 前回のレビューの残りを破棄する確認も要らない。段階的提示の状態は consult が会話コンテキストにだけ持ち（§3.11）、永続化しないためである。
 
-### 3.9 依頼はレビューの間変えない [MANDATORY]
+### 3.9 依頼はレビューの間変えない [MANDATORY] DLID-9hehr7v5gymc
 
 依頼は公開後に書き換えず、reviewer と evaluator は毎ラウンド同じ依頼を読む（REQ-029 FNC-305）。前ラウンドで何をしたかを依頼に載せない。
 
@@ -251,7 +220,7 @@ finding 単位で「適用 → 検証 → 判断 → 次へ」を逐次繰り返
 
 `true` のバックエンドの流れは本設計の範囲外である（§2.1）。
 
-### 3.10 位置による振り分けと 2 つの確信
+### 3.10 位置による振り分けと 2 つの確信 DLID-zhwtd2gd01sm
 
 介入軸そのもの（2 値・既定・相互排他・確信が可否を決めること）は REQ-013 FNC-1304 が定める。本節が定めるのは、その要件を満たすための実装の形である。
 
@@ -276,7 +245,7 @@ finding 単位で「適用 → 検証 → 判断 → 次へ」を逐次繰り返
 
 **位置が確定していない所見を `unlocated` とする理由**: 修正は修正対象が確定していて初めて成立する。位置の無い所見を修正対象に含めると、どこを直すかを推測で決めることになり、修正後の allowlist 検証も「意図した変更か」を判定できない。人間が「修正する」と判断してもこの点は変わらない。位置の特定自体を人間に依頼することはできるが、それは採否の判断ではなく調査の依頼であり、振り分けの外にある。
 
-#### 確信は 2 つに分かれる [CRITICAL]
+#### 確信は 2 つに分かれる [CRITICAL] DLID-jx92t6xpe44h
 
 **対象が違う。** 一方は指摘そのもの、もう一方は対策である。
 
@@ -292,7 +261,7 @@ finding 単位で「適用 → 検証 → 判断 → 次へ」を逐次繰り返
 
 `--auto` は `✅` の所見だけを確認なしに直し、それ以外は段階的提示（§3.11）へ回す。**`--auto` でも人間の応答を待つことがある**——確信の無い箇所で止まることが `--auto` を信頼できるものにする。
 
-### 3.10a 所見と評価の対応付け（REQ-013 FNC-1322）
+### 3.10a 所見と評価の対応付け（REQ-013 FNC-1322） DLID-n54qfp6qq1te
 
 所見（reviewer が書く）と評価（evaluator が書く）は、別々の JSON として届く。評価は、引く所見の `finding_id` を `finding_ids` として持つ。この対応付けを AI が自分のコンテキストの中で記憶に頼って行うと、件数の不一致・欠落・重複を検証しないまま扱う危険がある。
 
@@ -300,7 +269,7 @@ finding 単位で「適用 → 検証 → 判断 → 次へ」を逐次繰り返
 
 本体は、評価の `finding_ids` を入口にして、所見の結果から所見を引く（DES-083 §4.2）。所見と評価を 1 つに結合した配列を作らない。写しを作れば、原本と同じ内容が 2 箇所に置かれる。
 
-### 3.11 段階的提示
+### 3.11 段階的提示 DLID-p668xr30n7my
 
 **本節は段階的提示が発生する場合の規定である。** 提示へ回る評価が 1 件も無いとき（ドロップのみ・`auto` で全件 `✅`）は consult への委譲を行わない——提示しないものに提示は要らない。その場合のドロップした評価は、対応表と要約報告に載る（§3.2）。
 
@@ -317,7 +286,7 @@ finding 単位で「適用 → 検証 → 判断 → 次へ」を逐次繰り返
 
 **中断は `confirmed_fix` の件数によらず終端である**。それまでに採用が決まった評価の修正は実施するが、そのあと次ラウンドへは進まない。利用者が止めたのに新しいラウンドが走るのは、中断の指示に反する。§3.2 が「件数で定義しない」根拠とするのは本規定である。
 
-## 4. ユースケース設計
+## 4. ユースケース設計 DLID-a03tm0nee535
 
 | ID    | ユースケース                                                | 主体                          |
 | ----- | ----------------------------------------------------------- | ----------------------------- |
@@ -367,12 +336,12 @@ sequenceDiagram
 
 図が示すのは本体から見た流れである。S 番号を付けた詳細な流れは DES-084 §2・DES-083 §2 が持つ。
 
-## 5. 使用する既存コンポーネント
+## 5. 使用する既存コンポーネント DLID-1b971y195s0m
 
 - **受け渡し script 群**（`plugins/forge/scripts/review/`）: 依頼の公開・パスの解決・採番・封緘・件数・ラウンドの進行・保持物の削除。DES-084・DES-083 が定める
 - **レビュー観点文書**（`plugins/forge/docs/criteria/` ほか）: reviewer と evaluator が、対象の種別ごとに `criteria/review_target_types.md` の対応に従って読む。本体は組み立てない
 
-## 6. テスト設計
+## 6. テスト設計 DLID-6cwf3ek56baa
 
 | 対象                        | 検証内容                                                                                                                                                                         |
 | --------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -393,7 +362,7 @@ sequenceDiagram
 
 セッション断・本体の異常終了による中断では本体の処理自体が走らないため、保持物（`.temp/forge/review/<review_id>/`）の削除は行われず残る。残った保持物は、次のレビューには引き継がれない（`review_id` が異なる）。
 
-## 7. 未確定事項
+## 7. 未確定事項 DLID-yp2ztckzznyz
 
 | ID      | 内容                                                                   | 解決方法                                                                                                                                                                                                                                                                                                |
 | ------- | ---------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

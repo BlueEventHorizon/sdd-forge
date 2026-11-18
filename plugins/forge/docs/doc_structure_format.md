@@ -5,8 +5,7 @@
 ## 概要
 
 `.doc_structure.yaml` はプロジェクトレベルの設定ファイルで、ドキュメントの配置場所と種別を宣言する。
-forge が参照する。検索インデックス（外部 doc-advisor）の対象パスは、forge が本ファイルから解決して渡す
-（doc-advisor 自体は本ファイルを読まない）:
+forge が参照する。文書検索の索引の対象パスも、forge が本ファイルから解決する:
 
 - **forge スキル** — ドキュメント作成先の特定、レビュー対象の解決、Feature 検出、検索対象パスの解決
 - **resolve_doc_structure.py** — プログラムからのパス解決（JSON 出力）
@@ -289,8 +288,8 @@ rules_files = resolve_files(config, "rules", project_root)
 specs_files = resolve_files(config, "specs", project_root)
 ```
 
-### 外部 doc-advisor へのパス受け渡し
+### 文書検索の索引へのパス受け渡し
 
-外部 doc-advisor（`index-docs` / `query-docs`）は `.doc_structure.yaml` を **読まない**。
+文書検索の実装は `.doc_structure.yaml` を **読まない**。
 forge の `/forge:update-db-rules` / `/forge:update-db-specs` が `resolve_doc_structure.py` で本ファイルから
-対象ディレクトリを解決し、`--dirs-json` / `--exclude-json` として doc-advisor の `index-docs` に渡す。
+対象ディレクトリと除外を解決し、索引の更新に渡す。

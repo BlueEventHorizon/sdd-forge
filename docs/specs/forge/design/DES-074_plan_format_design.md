@@ -1,4 +1,8 @@
-# 計画書 デフォルトフォーマット
+---
+doc_link_id: DLID-42wh7646hjhq
+---
+
+# 計画書 デフォルトフォーマット DLID-89nwcbbnh6wz
 
 プロジェクト固有の `plan_format.md` が見つからない場合に使用する汎用フォーマット。
 
@@ -8,7 +12,7 @@
 
 要件: [REQ-024 実装計画書 要件定義書](../requirements/REQ-024_implementation_plan_spec.md)
 
-## フォーマット選定理由
+## フォーマット選定理由 DLID-24jey4ez4zdd
 
 計画書は JSON を使用する。理由:
 
@@ -21,7 +25,7 @@
 
 ---
 
-## 追加 feature の計画書（frontmatter を付与しない）
+## 追加 feature の計画書（frontmatter を付与しない） DLID-bj51jfdsfh51
 
 計画書には frontmatter を付与しない。追加 feature に属する計画書かどうかは、`requirements_traceability` が参照する要件定義書の `feature_type: temporary-feature` frontmatter で辿って判定する。計画書自体に重複してマーカーを持たせる必要はない。
 
@@ -32,7 +36,7 @@ frontmatter 定義: [frontmatter_format.md](../../../../plugins/forge/docs/front
 
 ---
 
-## JSON スキーマ
+## JSON スキーマ DLID-wpnav2v7qbqd
 
 ファイル名: `{feature}_plan.json`
 
@@ -74,9 +78,9 @@ frontmatter 定義: [frontmatter_format.md](../../../../plugins/forge/docs/front
 
 ---
 
-## フィールド定義
+## フィールド定義 DLID-azv7wrdbxj39
 
-### requirements_traceability
+### requirements_traceability DLID-c0a320cz03de
 
 | フィールド     | 型     | 必須 | 説明                    |
 | -------------- | ------ | ---- | ----------------------- |
@@ -85,7 +89,7 @@ frontmatter 定義: [frontmatter_format.md](../../../../plugins/forge/docs/front
 | design_id      | string | Yes  | 対応する設計ID          |
 | status         | enum   | Yes  | `pending` / `completed` |
 
-### design_traceability
+### design_traceability DLID-zfmpsg19gvba
 
 | フィールド      | 型       | 必須 | 説明                    |
 | --------------- | -------- | ---- | ----------------------- |
@@ -94,7 +98,7 @@ frontmatter 定義: [frontmatter_format.md](../../../../plugins/forge/docs/front
 | requirement_ids | string[] | Yes  | 対応する要件ID の配列   |
 | task_ids        | string[] | Yes  | 対応するタスクID の配列 |
 
-### tasks
+### tasks DLID-90ptpxe2910n
 
 | フィールド          | 型          | 必須 | 説明                                                                                                                |
 | ------------------- | ----------- | ---- | ------------------------------------------------------------------------------------------------------------------- |
@@ -112,13 +116,13 @@ frontmatter 定義: [frontmatter_format.md](../../../../plugins/forge/docs/front
 
 ---
 
-## status の遷移
+## status の遷移 DLID-42csqzcr792e
 
 `status` の値は、上の表のとおりである。各値の意味は [REQ-024](../requirements/REQ-024_implementation_plan_spec.md) FNC-002 が、許される遷移と失敗の波及は [DES-088](../../start-implement/design/DES-088_start_implement_design.md) 6.3 が定める。
 
 ---
 
-## 優先度の目安
+## 優先度の目安 DLID-h1xnfsnj4tvj
 
 | 範囲  | 意味                                               |
 | ----- | -------------------------------------------------- |
@@ -128,11 +132,11 @@ frontmatter 定義: [frontmatter_format.md](../../../../plugins/forge/docs/front
 
 ---
 
-## `feature_marker.py` の並行状態判定の契約
+## `feature_marker.py` の並行状態判定の契約 DLID-59s7z6h118sr
 
 要件: [REQ-025 差分開発の仕組み 要件定義書](../requirements/REQ-025_additive_development_spec.md) FNC-003（仕様の適用者への伝達）・FNC-005（識別できない場合の扱い）
 
-### frontmatter の解析
+### frontmatter の解析 DLID-5yq8gcm2pq9m
 
 文書先頭の YAML frontmatter（`---` で囲まれたブロック）から `feature_type` の値を取り出す。標準ライブラリのみで実装する（PyYAML 禁止）。この解析は複数の SKILL が再利用する汎用処理のため、共有低レベル script（`plugins/forge/scripts/doc_structure/feature_marker.py`）に置く。`/forge:start-implement` は、必読文書とレビューの規範のうち並行状態にある文書を求めるために、`/forge:start-design` は、入力の要件定義書の一時マーカーの有無を判定するために、同じ script を使う。
 

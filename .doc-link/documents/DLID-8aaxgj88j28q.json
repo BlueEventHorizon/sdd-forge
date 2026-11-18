@@ -1,0 +1,39 @@
+{
+  "content_hash": "88d4494f3e39811cc62c3ded70ad57650ceab59bbfd61d347e59166475deb654",
+  "doc_link_id": "DLID-8aaxgj88j28q",
+  "keywords": [
+    "additive development",
+    "parallel state",
+    "old spec",
+    "spec applier",
+    "temporary-feature",
+    "identifier",
+    "notification",
+    "implementer",
+    "review",
+    "merge"
+  ],
+  "path": "docs/specs/forge/requirements/REQ-025_additive_development_spec.md",
+  "purpose": "Defines how documents in a parallel state during additive development are mechanically identified and communicated to spec appliers, and how old-spec content is treated.",
+  "summary": [
+    "Old spec documents are not rewritten until implementation completes, creating parallel old and new specs",
+    "Rationale: appliers cannot tell missing notice from absence of parallel documents",
+    "Glossary: parallel state, old spec, spec applier, implementer",
+    "Table of appliers and whether notification is realized: implementation, review, upstream generation, merge",
+    "FNC-001 machine-readable identifier present only during parallel state; plans carry none",
+    "FNC-002 identification result carries state only, not actions",
+    "FNC-003 appliers are informed before judgment, including when none exist",
+    "FNC-004 old-spec text is not the current spec in the covered scope",
+    "FNC-005 identification failure is not treated as not-parallel"
+  ],
+  "tasks": [
+    "Designing additive development mechanism",
+    "Implementing parallel-state identification",
+    "Writing requirements or designs as additive features",
+    "Reviewing against requirements and designs",
+    "Generating upstream documents from existing specs",
+    "Merging parallel documents into old specs",
+    "Implementing tasks with temporary-feature documents"
+  ],
+  "title": "REQ-025 差分開発の仕組み 要件定義書"
+}

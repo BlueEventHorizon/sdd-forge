@@ -1,6 +1,10 @@
-# REQ-026 evaluator の独立評価とメタ観点 要件定義書
+---
+doc_link_id: DLID-p1v5z5mme4tw
+---
 
-## 概要
+# REQ-026 evaluator の独立評価とメタ観点 要件定義書 DLID-a6y12p85xfsn
+
+## 概要 DLID-h7z4zvbt8y7e
 
 evaluator は、所見を独立に検証し、誤った指摘を退け、本当の原因を示す。利用者は、誤った指摘に振り回されず、根本から効率よく直せる。
 
@@ -12,11 +16,11 @@ evaluator は、所見を独立に検証し、誤った指摘を退け、本当�
 
 対象は本体が起動する evaluator（[evaluator.md](../../../../plugins/forge/agents/evaluator.md)）である。agenda・consult の表示・記録**機構そのものの再設計**は本書のスコープ外であり、別の差分 feature（agenda 全面刷新）で扱う。再設計が済むまで、consult は agenda へ記録しない。記録を続けると、書き換え途上の agenda に依存して提示が成り立たなくなるためである。
 
-## 対象システムの性質
+## 対象システムの性質 DLID-gshdfxp6b0fm
 
 開発者が自分の端末で使う review 機構の一部であり、外部公開・本番運用・個人情報の保持を伴わない（[spec_priorities_spec.md](../../../../plugins/forge/docs/spec_priorities_spec.md) §10.1 の「上記いずれにも該当しない」に該当する）。性能・可用性・運用性の定量目標は持たない。
 
-## 用語
+## 用語 DLID-edczn12sms00
 
 evaluator だけが使う用語を定める。finding・finding_id・evaluation・disposition・結果など、本体も認識する用語は [REQ-029](REQ-029_review_exchange.md) が定める。
 
@@ -26,13 +30,13 @@ evaluator だけが使う用語を定める。finding・finding_id・evaluation�
 
 **`disposition` の値の集合と、各値が何を意味するかは共通契約が定める**（[REQ-029](REQ-029_review_exchange.md) DM-201）。本書が定めるのは、evaluator が**どうやってその値を選ぶか**である（FNC-201）。
 
-## 要件一覧
+## 要件一覧 DLID-f2pg54enw9nt
 
 evaluator の仕事は、所見を起点に読んで当否を判定し、評価を返すことである。入力の得方と評価の渡し方は共通契約が定めるため、本書は**何を手がかりに判定し、何を述べるか**を定める。
 
-### 0. evaluator の定義が持つもの
+### 0. evaluator の定義が持つもの DLID-dtpfs3mwd46p
 
-#### FNC-208: evaluator の定義が持つ中身
+#### FNC-208: evaluator の定義が持つ中身 DLID-047nk4rzb4gn
 
 agent の定義が何を持つかという形は共通契約が定める（[REQ-029](REQ-029_review_exchange.md) FNC-314）。本節は、そのうち evaluator に固有の中身を定める。
 
@@ -49,9 +53,9 @@ agent の定義が何を持つかという形は共通契約が定める（[REQ-
 
 **target 種別の判定と、種別ごとに読む文書は reviewer と同じものを用いる。** evaluator は所見が指す箇所の種別を判定し、その種別に対応する観点文書を読む。判定の基準と文書の対応は [REQ-027](REQ-027_reviewer.md) FNC-307・FNC-308 が定める。
 
-### 1. 作業
+### 1. 作業 DLID-400vabqahndv
 
-#### FNC-201: evaluator は指摘の奥にある本質・対象情報を疑う
+#### FNC-201: evaluator は指摘の奥にある本質・対象情報を疑う DLID-yx9mk48pma60
 
 evaluator は `disposition` を判定する際、次の 5 つを**メタ観点**として考える。網羅を課すものではなく、態度として持つ。
 
@@ -67,7 +71,7 @@ evaluator は `disposition` を判定する際、次の 5 つを**メタ観点**
 
 evaluator は自身の判断を見た目だけ整えるために、成立しないと分かっている根拠を作り出してはならない。
 
-#### FNC-206: evaluator は reviewer の見落としを新規に指摘できる
+#### FNC-206: evaluator は reviewer の見落としを新規に指摘できる DLID-ydyn01vdpd85
 
 evaluator は、reviewer が返した finding のどれとも対応しない問題を発見した場合、その問題に finding_id を採番して、それを参照する evaluation として新規に指摘してよい。
 
@@ -75,9 +79,9 @@ evaluator は、reviewer が返した finding のどれとも対応しない問�
 - 参照先の finding が存在しないため、`location` を自ら明示する（同 DM-201）
 - 新規指摘の `disposition` は `valid` とする。evaluator が自ら成立すると判断して挙げた指摘であり、退ける判定（`invalid` 等）は当たらない
 
-### 2. 出力
+### 2. 出力 DLID-jbp0nefgh62m
 
-#### FNC-209: evaluator が評価として返すもの
+#### FNC-209: evaluator が評価として返すもの DLID-4cwy5kqnhnv0
 
 evaluator は判定した評価を渡す。渡し方・書き出す時機・終了の値は共通契約が定める（[REQ-029](REQ-029_review_exchange.md) FNC-302・FNC-310・FNC-311）。本節は evaluator が何を返すかを定める。
 
@@ -87,7 +91,7 @@ evaluator は判定した評価を渡す。渡し方・書き出す時機・終�
 - 所見も新規に指摘するものも無ければ、評価は 0 件とする。この場合も終了の値を渡す
 - 評価が 0 件で終了の値が `"0"` であることが「評価すべき所見も、新規に指摘するものも無かった」を表す
 
-#### FNC-319: evaluator はエラー値を持たない
+#### FNC-319: evaluator はエラー値を持たない DLID-rsk8xcyqgs2d
 
 終了の値で成否を表す仕組みは共通契約が定める（[REQ-029](REQ-029_review_exchange.md) FNC-311）。**evaluator が挙げうるエラー値は 1 つも無い。** 正常終了の `"0"` だけを渡す。
 
@@ -101,9 +105,9 @@ evaluator が出会うエラーは、いずれも、エラー値を与える条�
 
 **失敗しないという意味ではない。** 書けない異常終了（落ちた・黙って終えた・起動に失敗した）は起こりうる。それは終了の値が取れないことで表され、値を定義して申告するものではない（[REQ-029](REQ-029_review_exchange.md) FNC-311）。
 
-### データモデル
+### データモデル DLID-p4cd48fr9qby
 
-#### DM-202: evaluator の入力
+#### DM-202: evaluator の入力 DLID-bgse98q4gaj3
 
 evaluator は依頼と、reviewer が返した所見を読む。専用の入力ファイルを持たない。
 
@@ -116,7 +120,7 @@ evaluator は依頼と、reviewer が返した所見を読む。専用の入力�
 
 **レビューが正常に終わっていなければ、所見へ到達できない。** そこで止まり、評価に入れない（同 FNC-311）。
 
-## 未確定事項
+## 未確定事項 DLID-wm4hb98xb73k
 
 | ID      | 内容                                                                                                 | 期限   |
 | ------- | ---------------------------------------------------------------------------------------------------- | ------ |

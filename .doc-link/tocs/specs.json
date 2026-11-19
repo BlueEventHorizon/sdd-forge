@@ -33,6 +33,10 @@
       "doc_link_id": "DLID-ypd7r1j5ga4n"
     },
     {
+      "applied_hash": "558b4841ba760851f5d70e7f82ca09983c0eddcbacefc14c95adddd13e49bade",
+      "doc_link_id": "DLID-pcket5v36c0g"
+    },
+    {
       "applied_hash": "573198765c9d013ec9958d357cea95fbdf2dfe5de5a2beac8e9d1ccd593c4edb",
       "doc_link_id": "DLID-vzcznbpypja0"
     },
@@ -117,10 +121,6 @@
       "doc_link_id": "DLID-ct64b13ee182"
     },
     {
-      "applied_hash": "ca43f71f986fec538e2f3f5ad4e92097a3a8a31456300cceaf3eda5282587759",
-      "doc_link_id": "DLID-pcket5v36c0g"
-    },
-    {
       "applied_hash": "ccbd22ce27763754af3b43072ef027102e95adb0ccedf165c71eb181996f88ca",
       "doc_link_id": "DLID-0868m80sm7hy"
     },
@@ -175,217 +175,217 @@
   ],
   "last_checks": [
     {
-      "checked_at": "2026-11-19T06:54:46+00:00",
+      "checked_at": "2026-11-19T12:33:00+00:00",
       "doc_link_id": "DLID-0868m80sm7hy",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-19T06:54:46+00:00",
+      "checked_at": "2026-11-19T12:33:00+00:00",
       "doc_link_id": "DLID-0nfgax46wehg",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-19T06:54:46+00:00",
+      "checked_at": "2026-11-19T12:33:00+00:00",
       "doc_link_id": "DLID-1585cw3yt8pa",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-19T06:54:46+00:00",
+      "checked_at": "2026-11-19T12:33:00+00:00",
       "doc_link_id": "DLID-1vfqj6r96sr4",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-19T06:54:46+00:00",
+      "checked_at": "2026-11-19T12:33:00+00:00",
       "doc_link_id": "DLID-2becz9x7x407",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-19T06:54:46+00:00",
+      "checked_at": "2026-11-19T12:33:00+00:00",
       "doc_link_id": "DLID-3bmft1apetsm",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-19T06:54:46+00:00",
+      "checked_at": "2026-11-19T12:33:00+00:00",
       "doc_link_id": "DLID-3c038need73s",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-19T06:54:46+00:00",
+      "checked_at": "2026-11-19T12:33:00+00:00",
       "doc_link_id": "DLID-42wh7646hjhq",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-19T06:54:46+00:00",
+      "checked_at": "2026-11-19T12:33:00+00:00",
       "doc_link_id": "DLID-433459yse70c",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-19T06:54:46+00:00",
+      "checked_at": "2026-11-19T12:33:00+00:00",
       "doc_link_id": "DLID-4wn8sb8y1f80",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-19T06:54:46+00:00",
+      "checked_at": "2026-11-19T12:33:00+00:00",
       "doc_link_id": "DLID-5h7wqxcknyha",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-19T06:54:46+00:00",
+      "checked_at": "2026-11-19T12:33:00+00:00",
       "doc_link_id": "DLID-5k6jt9qvf60d",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-19T06:54:46+00:00",
+      "checked_at": "2026-11-19T12:33:00+00:00",
       "doc_link_id": "DLID-5vrs9fnet7de",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-19T06:54:46+00:00",
+      "checked_at": "2026-11-19T12:33:00+00:00",
       "doc_link_id": "DLID-6m16v4qqxjf4",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-19T06:54:46+00:00",
+      "checked_at": "2026-11-19T12:33:00+00:00",
       "doc_link_id": "DLID-7gyjj06rtab7",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-19T06:54:46+00:00",
+      "checked_at": "2026-11-19T12:33:00+00:00",
       "doc_link_id": "DLID-8aaxgj88j28q",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-19T06:54:46+00:00",
+      "checked_at": "2026-11-19T12:33:00+00:00",
       "doc_link_id": "DLID-8s8p9ah1hyry",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-19T06:54:46+00:00",
+      "checked_at": "2026-11-19T12:33:00+00:00",
       "doc_link_id": "DLID-bgxgcq0pvkm7",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-19T06:54:46+00:00",
+      "checked_at": "2026-11-19T12:33:00+00:00",
       "doc_link_id": "DLID-ckbysbfdrsv5",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-19T06:54:46+00:00",
+      "checked_at": "2026-11-19T12:33:00+00:00",
       "doc_link_id": "DLID-ct64b13ee182",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-19T06:54:46+00:00",
+      "checked_at": "2026-11-19T12:33:00+00:00",
       "doc_link_id": "DLID-d9fpywv4txra",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-19T06:54:46+00:00",
+      "checked_at": "2026-11-19T12:33:00+00:00",
       "doc_link_id": "DLID-dqkf6wa1z2cp",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-19T06:54:46+00:00",
+      "checked_at": "2026-11-19T12:33:00+00:00",
       "doc_link_id": "DLID-f8gem0wa3ac4",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-19T06:54:46+00:00",
+      "checked_at": "2026-11-19T12:33:00+00:00",
       "doc_link_id": "DLID-fpfqhpad552k",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-19T06:54:46+00:00",
+      "checked_at": "2026-11-19T12:33:00+00:00",
       "doc_link_id": "DLID-fs55bq3pe0nd",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-19T06:54:46+00:00",
+      "checked_at": "2026-11-19T12:33:00+00:00",
       "doc_link_id": "DLID-hme4nqx9d5gs",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-19T06:54:46+00:00",
+      "checked_at": "2026-11-19T12:33:00+00:00",
       "doc_link_id": "DLID-hsj370z603x4",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-19T06:54:46+00:00",
+      "checked_at": "2026-11-19T12:33:00+00:00",
       "doc_link_id": "DLID-j50s0xwkwx00",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-19T06:54:46+00:00",
+      "checked_at": "2026-11-19T12:33:00+00:00",
       "doc_link_id": "DLID-mzeyx39mfryw",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-19T06:54:46+00:00",
+      "checked_at": "2026-11-19T12:33:00+00:00",
       "doc_link_id": "DLID-n11844q5g8qn",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-19T06:54:46+00:00",
+      "checked_at": "2026-11-19T12:33:00+00:00",
       "doc_link_id": "DLID-p1v5z5mme4tw",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-19T06:54:46+00:00",
+      "checked_at": "2026-11-19T12:33:00+00:00",
       "doc_link_id": "DLID-pcket5v36c0g",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-19T06:54:46+00:00",
+      "checked_at": "2026-11-19T12:33:00+00:00",
       "doc_link_id": "DLID-rzp2zxe38068",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-19T06:54:46+00:00",
+      "checked_at": "2026-11-19T12:33:00+00:00",
       "doc_link_id": "DLID-s1ds8dcyfn7p",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-19T06:54:46+00:00",
+      "checked_at": "2026-11-19T12:33:00+00:00",
       "doc_link_id": "DLID-s3cjh3q3c0vc",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-19T06:54:46+00:00",
+      "checked_at": "2026-11-19T12:33:00+00:00",
       "doc_link_id": "DLID-vfdedgq63evv",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-19T06:54:46+00:00",
+      "checked_at": "2026-11-19T12:33:00+00:00",
       "doc_link_id": "DLID-vyz6fzhdfk3a",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-19T06:54:46+00:00",
+      "checked_at": "2026-11-19T12:33:00+00:00",
       "doc_link_id": "DLID-vzcznbpypja0",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-19T06:54:46+00:00",
+      "checked_at": "2026-11-19T12:33:00+00:00",
       "doc_link_id": "DLID-y42g1frxwkf5",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-19T06:54:46+00:00",
+      "checked_at": "2026-11-19T12:33:00+00:00",
       "doc_link_id": "DLID-yg0c67zs3zky",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-19T06:54:46+00:00",
+      "checked_at": "2026-11-19T12:33:00+00:00",
       "doc_link_id": "DLID-ypd7r1j5ga4n",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-19T06:54:46+00:00",
+      "checked_at": "2026-11-19T12:33:00+00:00",
       "doc_link_id": "DLID-zehb6ge71vgb",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-19T06:54:46+00:00",
+      "checked_at": "2026-11-19T12:33:00+00:00",
       "doc_link_id": "DLID-zfh5q9h29c8y",
       "result": "success"
     }
@@ -574,13 +574,6 @@
       "heading": "FNC-301: reviewer の定義が持つ中身",
       "position": 6,
       "section_id": "DLID-2qvrx06zm1vg"
-    },
-    {
-      "content_hash": "09db4419f0d7910c211409f990a743daeed1f8d1f4b138b54e12402cf965f055",
-      "doc_link_id": "DLID-pcket5v36c0g",
-      "heading": "3.3 `adr-writer` Agent",
-      "position": 20,
-      "section_id": "DLID-20trhab84r93"
     },
     {
       "content_hash": "0a1d5544aabf570386d522c4cbbdcfd315e514bd3099e3bc22ce4b90a8479b3d",
@@ -966,13 +959,6 @@
       "heading": "FNC-004: 並列実行可能な構造とデータの受け渡し",
       "position": 6,
       "section_id": "DLID-1t4eyat3jpvp"
-    },
-    {
-      "content_hash": "1ae1d0d5ae736003ed6eba74c1ab03681246c6903aad3b6d5198bdc455e34788",
-      "doc_link_id": "DLID-pcket5v36c0g",
-      "heading": "DES-085 ADR ライター 設計書",
-      "position": 0,
-      "section_id": "DLID-6v2tm05rfrxk"
     },
     {
       "content_hash": "1ae71e92ab2187d121ca260352bad28ab0757209ea444f1d807eb096f98ac1e9",
@@ -1752,11 +1738,25 @@
       "section_id": "DLID-4569ng0csypw"
     },
     {
+      "content_hash": "37d5fbd14b684be96d3998fd684aee338dc62ca4989aaefccb6b2ea7b0e4cff1",
+      "doc_link_id": "DLID-pcket5v36c0g",
+      "heading": "3. モジュール設計",
+      "position": 10,
+      "section_id": "DLID-gmfmpyeh6gcc"
+    },
+    {
       "content_hash": "3854c99a82e5a7b3047ddc362823e9d3bc90faa450d23f2b4742cca0fb8be66e",
       "doc_link_id": "DLID-hme4nqx9d5gs",
       "heading": "2.3 changelog",
       "position": 9,
       "section_id": "DLID-t4ea2wg38cp2"
+    },
+    {
+      "content_hash": "387784bf7ce9200b73f24936e53e8f62695751f7baaecf9956d3fcd468f0af8f",
+      "doc_link_id": "DLID-pcket5v36c0g",
+      "heading": "DES-085 ADR ライター 設計書",
+      "position": 0,
+      "section_id": "DLID-6v2tm05rfrxk"
     },
     {
       "content_hash": "39a6ad187adddb008edfe850240fbc1ea350837f10e967d45c1b0123974dd560",
@@ -2212,6 +2212,13 @@
       "heading": "3.1a 重大度は絵文字ではなく「パステル配色 + テキストラベル」で表す",
       "position": 7,
       "section_id": "DLID-h3hyw6q2h0k3"
+    },
+    {
+      "content_hash": "49f922e59dc6b112f540019459414a78400363aeaeb3f2c18b101022063734ff",
+      "doc_link_id": "DLID-pcket5v36c0g",
+      "heading": "3.3 `adr-writer` Agent",
+      "position": 20,
+      "section_id": "DLID-20trhab84r93"
     },
     {
       "content_hash": "4a6064a860817219b8465e360ecb69517a6834a4add92dc68cc239bf3975f57f",
@@ -3486,13 +3493,6 @@
       "heading": "最終確認（オーケストレータ）",
       "position": 46,
       "section_id": "DLID-5qtgc7rv7qxw"
-    },
-    {
-      "content_hash": "8350f08eee0dcb5c2343d4b1c1798036c8d0fc7ccdb5eea26fc8f83ac5f38ca6",
-      "doc_link_id": "DLID-pcket5v36c0g",
-      "heading": "3. モジュール設計",
-      "position": 10,
-      "section_id": "DLID-gmfmpyeh6gcc"
     },
     {
       "content_hash": "8390de77844893990900ba96d5eb3071075d2d1e7e5be7b63a87e895f3ae8a4b",
@@ -6703,5 +6703,5 @@
     "paths": []
   },
   "toc_key": "specs",
-  "version": 4
+  "version": 5
 }

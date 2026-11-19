@@ -1,12 +1,16 @@
-# バージョンマイグレーション実装仕様
+---
+doc_link_id: DLID-40n3c780ae20
+---
+
+# バージョンマイグレーション実装仕様 DLID-8r9zbf3bdtc3
 
 バージョン付きデータ形式の段階的マイグレーションを実装するための仕様書。
 
 ---
 
-## 基本原則
+## 基本原則 DLID-ttpgw3tfxbpw
 
-### パイプライン原則
+### パイプライン原則 DLID-dr4naegzybrd
 
 各マイグレーション関数は「前ステップの出力」を入力として受け取る。
 
@@ -20,7 +24,7 @@ v3データ
 
 バージョンを飛ばした場合（v1 → v3）も、中間ステップ（v2）を経由する。
 
-### マイグレーション関数の規約
+### マイグレーション関数の規約 DLID-qwhjxfedqz47
 
 | 規約           | 説明                                                                                   |
 | -------------- | -------------------------------------------------------------------------------------- |
@@ -29,7 +33,7 @@ v3データ
 | 副作用なし     | ファイル I/O、ネットワーク通信等を行わない。データ変換のみ                             |
 | 元データ非破壊 | 入力を直接変更しない（コピーして操作）                                                 |
 
-### エラーハンドリング
+### エラーハンドリング DLID-zgkbhw6v0ty8
 
 | 状況                            | 対応                                             |
 | ------------------------------- | ------------------------------------------------ |
@@ -39,9 +43,9 @@ v3データ
 
 ---
 
-## 実装パターン
+## 実装パターン DLID-qxjgb9e7vers
 
-### 定数とレジストリ
+### 定数とレジストリ DLID-rvxmz6pegzmz
 
 ```python
 CURRENT_VERSION = 3  # 現行バージョン（定数で管理）
@@ -56,7 +60,7 @@ MIGRATIONS = {
 - 値: 変換関数
 - 適用範囲: `detected_version < v <= CURRENT_VERSION` を昇順に実行
 
-### コアロジック
+### コアロジック DLID-xkcz09xccnkd
 
 ```python
 def apply_migrations(data, detected_version):
@@ -78,7 +82,7 @@ def apply_migrations(data, detected_version):
     return data
 ```
 
-### マイグレーション関数の例
+### マイグレーション関数の例 DLID-s1efhzpq4281
 
 ```python
 def migrate_v1_to_v2(data):
@@ -97,7 +101,7 @@ def migrate_v2_to_v3(data):
     return result
 ```
 
-### テキスト操作の場合
+### テキスト操作の場合 DLID-jvneyw6as2ak
 
 YAML / JSON のコメント行を保持する必要がある場合、`fn(str) -> str` で実装する。
 
@@ -117,7 +121,7 @@ def migrate_v2_to_v3(content):
 
 ---
 
-## バージョン検出
+## バージョン検出 DLID-5nv98cmd3dss
 
 データ自体にバージョン番号を埋め込む（セルフ記述型）。
 
@@ -147,7 +151,7 @@ def detect_version(content):
 
 ---
 
-## 新バージョン追加手順
+## 新バージョン追加手順 DLID-0e0p9n8f3qn5
 
 1. `migrate_vN_to_vN1()` 関数を実装する
 2. `MIGRATIONS[N+1] = migrate_vN_to_vN1` を登録する
@@ -156,7 +160,7 @@ def detect_version(content):
 
 ---
 
-## テスト要件
+## テスト要件 DLID-efsbsbj6rwx1
 
 | テスト                   | 内容                                              |
 | ------------------------ | ------------------------------------------------- |
@@ -169,7 +173,7 @@ def detect_version(content):
 
 ---
 
-## 実装例
+## 実装例 DLID-gsbag2863hg6
 
 forge プラグインの `.doc_structure.yaml` マイグレーション:
 

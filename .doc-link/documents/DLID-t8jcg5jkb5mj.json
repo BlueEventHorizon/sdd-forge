@@ -1,0 +1,41 @@
+{
+  "content_hash": "eb8b9c7287a9800f79f8479dc441d4a8323845e62d2db8215bea428ea7a32229",
+  "doc_link_id": "DLID-t8jcg5jkb5mj",
+  "keywords": [
+    "plan document",
+    "plan.json",
+    "task granularity",
+    "task group",
+    "build_check",
+    "depends_on",
+    "required_reading",
+    "acceptance criteria",
+    "traceability",
+    "severity catalog"
+  ],
+  "path": "plugins/forge/docs/plan_principles_spec.md",
+  "purpose": "General principles for authoring plan documents (plan JSON): structure, task granularity, dependencies, acceptance criteria, testing, traceability, and a severity catalog of violations, used when no project-specific rules exist.",
+  "summary": [
+    "Plan definition: responsibility, temporary lifetime, and JSON format {feature}_plan.json",
+    "Task ID prefixes and priority ranges, where higher numbers mean higher priority",
+    "Plan structure limited to requirements_traceability, design_traceability and tasks, with mandatory requirement_ids",
+    "Task granularity rules and the principle of not copying implementation details from design documents",
+    "required_reading field specification: relative paths, strategy document, glossaries, empty array when none",
+    "Task groups with build_check values, grouping criteria, no compatibility code, and early verification validity",
+    "Dependency management with depends_on, parallelizable tasks, and implicit dependency patterns",
+    "Acceptance criteria norms forbidding subjective wording, and testing norms requiring unit tests in the same task",
+    "Traceability norms where no requirement may be left without a task",
+    "Severity catalog mapping each violation pattern to critical, major, or minor, plus additive feature plan detection"
+  ],
+  "tasks": [
+    "Creating a plan document",
+    "Reviewing a plan document",
+    "Splitting work into tasks and groups",
+    "Defining task dependencies",
+    "Writing acceptance criteria for tasks",
+    "Setting required_reading for tasks",
+    "Checking requirement traceability in a plan",
+    "Judging severity of plan review findings"
+  ],
+  "title": "計画書 作成原則"
+}

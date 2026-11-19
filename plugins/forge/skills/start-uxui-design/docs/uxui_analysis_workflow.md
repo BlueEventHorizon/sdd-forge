@@ -5,11 +5,12 @@ applicable_when:
   - 要件定義書からビジュアルデザインを創造したい
   - デザイントークンを設計したい
   - UI コンポーネントの視覚仕様を定義したい
+doc_link_id: DLID-rx0jy7wbtg59
 ---
 
-# UX/UI デザイン創造ワークフロー
+# UX/UI デザイン創造ワークフロー DLID-am88frpvnh5j
 
-## 本スキルの位置づけ
+## 本スキルの位置づけ DLID-wrfa3wqcmz0n
 
 ```
 start-requirements → start-uxui-design → start-design → start-plan → start-implement
@@ -23,16 +24,16 @@ start-requirements → start-uxui-design → start-design → start-plan → sta
 > `/forge:start-requirements {feature} --mode from-figma` で要件抽出に進む。
 > Figma デザインの UX 品質を検証したい場合は `/forge:review --files {THEME/CMP 文書のパス}` を使用する。
 
-## コンテキスト管理
+## コンテキスト管理 DLID-bzjch8rw131d
 
 知識ベースは **`/forge:query-forge-rules`** 経由で Phase 別に取得する。全ファイルを一括読み込みしない。
 汎用 Agent / カスタム Agent / fork 型 SKILL は使用しない（Phase 2 で選択した哲学的立場を全 Phase で参照するため、context 隔離が必要な経路を避ける）。
 
-### 常駐（SKILL.md で読み込み済み — 全 Phase で参照）
+### 常駐（SKILL.md で読み込み済み — 全 Phase で参照） DLID-ysyetw9k29ny
 
 - **`design_philosophy.md`** — 統合フレームワーク（3 層モデル）。全てのデザイン判断の基盤。**常にコンテキスト内に保持する**
 
-### Phase 別の知識取得（query-forge-rules 経由）
+### Phase 別の知識取得（query-forge-rules 経由） DLID-and90t5gyj7d
 
 各 Phase の冒頭で `/forge:query-forge-rules` を呼び出し、タスクに関連する知識ベースを取得して Read する。
 
@@ -45,7 +46,7 @@ start-requirements → start-uxui-design → start-design → start-plan → sta
 
 **`/forge:query-forge-rules` が利用不可の場合のフォールバック**: `${CLAUDE_PLUGIN_ROOT}/skills/start-uxui-design/docs/` 配下を Glob で探索し、Phase に必要なファイルを直接 Read する。
 
-## 実行フロー概要
+## 実行フロー概要 DLID-q58rxytsssrp
 
 ```mermaid
 graph TD
@@ -57,7 +58,7 @@ graph TD
     E --> F[Phase 6: 文書生成・品質確認]
 ```
 
-### Design Intent 駆動の分岐
+### Design Intent 駆動の分岐 DLID-3eh7eyabpzqy
 
 Phase 2.0 で取得した Design Intent の内容により、以下の Phase は発動 or SKIP される:
 
@@ -71,9 +72,9 @@ Phase 2.0 で取得した Design Intent の内容により、以下の Phase は
 
 ---
 
-## Phase 1: 要件の読み込み
+## Phase 1: 要件の読み込み DLID-r41ek9c27snr
 
-### 1.1 要件定義書の取得
+### 1.1 要件定義書の取得 DLID-shx9ntm77tvc
 
 要件定義書が主要入力である。以下の手順で取得する:
 
@@ -90,7 +91,7 @@ Phase 2.0 で取得した Design Intent の内容により、以下の Phase は
 
 3. **要件定義書を全文読み込む**
 
-### 1.2 要件からの情報整理
+### 1.2 要件からの情報整理 DLID-hd4jgxex9cnq
 
 読み込んだ要件定義書から以下を整理する:
 
@@ -102,7 +103,7 @@ Phase 2.0 で取得した Design Intent の内容により、以下の Phase は
 | 特定済みコンポーネント          | CMP-xxx の一覧             |
 | 機能要件                        | FNC-xxx の一覧             |
 
-### 1.3 参考デザインの収集（任意）
+### 1.3 参考デザインの収集（任意） DLID-t1sz06mz7kmd
 
 2 つの入力源を確認する:
 
@@ -124,7 +125,7 @@ Phase 2.0 で取得した Design Intent の内容により、以下の Phase は
 
 参考デザインは「Design Intent の手がかり」として使用する。逆解析やトークン抽出の対象ではない。
 
-### 1.4 ルール文書の取得
+### 1.4 ルール文書の取得 DLID-3xpk52fkcphn
 
 1. **`/forge:query-db-rules`** でルール文書を特定
    - タスク内容: UX/UI デザイン創造・デザイントークン設計
@@ -135,11 +136,11 @@ Phase 2.0 で取得した Design Intent の内容により、以下の Phase は
 
 ---
 
-## Phase 2.0: Design Intent の取得
+## Phase 2.0: Design Intent の取得 DLID-b90ngwvshbgk
 
 Phase 2 以降の挙動を決める基盤情報として **Design Intent** を確定する。モード抽象（stable/bold 等）は持たず、ここで取得した構造化情報から Phase 2.2 以降・Phase 3.5 / 4.5 / 5.4 の発動を自然に分岐する。
 
-### 2.0.1 取得優先順
+### 2.0.1 取得優先順 DLID-eggc7g6db33h
 
 以下の順で探索し、最初に有効な情報が得られた段階で採用する:
 
@@ -153,7 +154,7 @@ Phase 2 以降の挙動を決める基盤情報として **Design Intent** を�
    - 1-2 で情報が得られなければ、アプリ概要・対象ユーザー・ドメインから推定
 4. いずれのケースでも、**確定前に AskUserQuestion で確認・修正を取る**
 
-### 2.0.2 取得する構造
+### 2.0.2 取得する構造 DLID-00d0zzv6v8nm
 
 ```yaml
 design_intent:
@@ -170,7 +171,7 @@ design_intent:
   signature_required: "必要 / 任意 / 不要"
 ```
 
-### 2.0.3 ユーザー確認
+### 2.0.3 ユーザー確認 DLID-tke8fb0xzez4
 
 AI が推定または読み取りした Design Intent を構造化して提示し、AskUserQuestion で確認:
 
@@ -188,7 +189,7 @@ AI が推定または読み取りした Design Intent を構造化して提示�
   この内容で進めますか？修正が必要ですか？
 ```
 
-### 2.0.4 確定結果の保持
+### 2.0.4 確定結果の保持 DLID-6kjadrnext23
 
 確定した Design Intent は以下に保持する:
 
@@ -196,18 +197,18 @@ AI が推定または読み取りした Design Intent を構造化して提示�
 - 要件定義書への任意追記: ユーザーが望む場合のみ、要件定義書末尾に `## Design Intent` 節として追記（AskUserQuestion で確認）
 - **プロジェクトルートに config ファイルは作らない**（モード概念撤回のため）
 
-### 2.0.5 参照画像ディレクトリの扱い（任意）
+### 2.0.5 参照画像ディレクトリの扱い（任意） DLID-nqpfb5n785v3
 
 - `{specs_root}/{feature}/requirements/uxui_references/` が存在する場合、`competitors/` と `inspirations/` のサブディレクトリを検出して Phase 5.4 の拡張指標で画像比較に使用
 - 存在しない場合でも Phase 2.0 は通過する。新規作成は **行わない**（参照画像の配置はユーザー判断）
 
 ---
 
-## Phase 2: デザイン方向性の決定
+## Phase 2: デザイン方向性の決定 DLID-hywyja6mxbdc
 
 Phase 2.0 で取得した Design Intent を具体化する。`distinctiveness.importance` と `signature_required` により Phase 2.2-2.5 の発動条件が変わる。
 
-### 2.1 アプリの性格分析
+### 2.1 アプリの性格分析 DLID-7jef1f27j4qr
 
 要件定義書のアプリ概要・対象ユーザーから、アプリの「性格」を導き出す:
 
@@ -218,7 +219,7 @@ Phase 2.0 で取得した Design Intent を具体化する。`distinctiveness.im
 | 精密・プロフェッショナル | 金融、生産性、ビジネス     | 直線的、寒色系、タイトなスペーシング                         |
 | 大胆・エネルギッシュ     | ゲーム、フィットネス、音楽 | 高コントラスト、大胆なアクセント色、ダイナミックなレイアウト |
 
-### 2.2 ブランドの緊張軸を定義
+### 2.2 ブランドの緊張軸を定義 DLID-n04katf247gn
 
 **発動条件**: Design Intent の `distinctiveness.importance` が `中` or `高`、または `tension_axis` が未指定。`低` かつ `tension_axis` 指定済みなら SKIP。
 
@@ -245,7 +246,7 @@ Design Intent の `tension_axis` が既に記入されていればそれをそ�
 
 この緊張軸は以降の Phase で判断基準として常に参照する。
 
-### 2.3 参照文化の収集
+### 2.3 参照文化の収集 DLID-2xt4ecc4kv26
 
 **発動条件**: Design Intent の `distinctiveness.importance` が `高`、または `signature_required: 必要`。それ以外は SKIP（`references` 指定済みならそれをそのまま採用）。
 
@@ -267,7 +268,7 @@ Design Intent の `references.cultural` と `references.specific_works` が既�
 
 **ステレオタイプ検出**: 具体作品の記入がない、または通称レベル（「日本建築」「北欧モダン」等）の記述しかない場合、AI は参照として弱いと判定し、AskUserQuestion で具体化を促す。
 
-### 2.4 デザイン provocation の生成
+### 2.4 デザイン provocation の生成 DLID-mg9c7gt44q1v
 
 **発動条件**: Design Intent の `distinctiveness.importance` が `高`、または `signature_required: 必要`。`中` なら簡略化（2 案で可）、`低` かつ `signature_required: 不要` なら SKIP。
 
@@ -299,7 +300,7 @@ Provocation A: {名前}
 - {ブランド緊張を壊す表現}
 ```
 
-### 2.5 デザイン方向性の提案
+### 2.5 デザイン方向性の提案 DLID-azt7m8cfmazq
 
 **発動条件**: Phase 2.4 を実行した場合のみ。SKIP 時は Phase 2.1 の性格分析結果をそのまま確定方向性とする。
 
@@ -319,7 +320,7 @@ Phase 2.4 の複数案から、**推奨案 1 つ + 保留案 1 つ**を選ぶ。
 
 AskUserQuestion では「どれが好みか」ではなく、**どの緊張感がこのプロダクトらしいか** を選んでもらう。参考デザインが提供されている場合でも、参照文化と Design Intent の `anti_goals` を上書きしない。
 
-### 2.6 方向性の確定
+### 2.6 方向性の確定 DLID-mcvey4gr67sj
 
 決定したデザイン方向性のサマリーを提示し、ユーザーの承認を得る。カラーの方向性（60-30-10 ルール: `design_philosophy.md` セクション 4.1）もここで合意する — 独立した「カラー方向性提案」節は設けず、Phase 2.4 provocation の視覚ルールと統合する。
 
@@ -340,13 +341,13 @@ AskUserQuestion では「どれが好みか」ではなく、**どの緊張感�
 
 ---
 
-## Phase 3: デザイントークン創造
+## Phase 3: デザイントークン創造 DLID-5dyepk3gj9zh
 
 Phase 2 の方向性に基づき、具体的なデザイントークンの値を設計する。「分析・抽出」ではなく「創造・設計」である点を意識する。
 
-### 3.1 カラーパレットの設計
+### 3.1 カラーパレットの設計 DLID-a3x0ectvfbwz
 
-#### Base Colors
+#### Base Colors DLID-mbfk1avzg8dx
 
 60-30-10 ルールと Phase 2.6 で確定したカラー方向性に基づき、具体的な HEX 値を決定する。**Design Intent の `signature_required: 必要` が指定されている場合、Phase 2.4 で選んだ署名要素を弱める無難な配色へ戻してはならない。**
 
@@ -357,20 +358,20 @@ Phase 2 の方向性に基づき、具体的なデザイントークンの値を
 ❌ 悪い例: primary: #007AFF — 青色
 ```
 
-#### Semantic Colors
+#### Semantic Colors DLID-vrqargp5xyy9
 
 - **Status 色**: success / warning / error / info
 - **Button 色**: primary / secondary / tertiary / destructive
 - **Text 色**: primary / secondary / tertiary / disabled
 - **Surface 色**: background / card / overlay / grouped
 
-#### Light / Dark Mode
+#### Light / Dark Mode DLID-57sqyjndqcn5
 
 - 両モードの値を設計する（片方だけの設計は不可）
 - Dark Mode は単に色を反転させるのではなく、コントラストと可読性を個別に調整する
 - Dark Mode の背景は純黒（#000000）を避け、ダークグレー（#1C1C1E）系を使用（HIG 準拠）
 
-### 3.2 タイポグラフィの設計
+### 3.2 タイポグラフィの設計 DLID-6cqc2nwvsedd
 
 プラットフォームガイドのフォント体系に基づき、タイポグラフィスケールを設計する:
 
@@ -381,7 +382,7 @@ Phase 2 の方向性に基づき、具体的なデザイントークンの値を
 
 **視覚階層**（`design_philosophy.md` セクション 4.2）を意識する: サイズとウェイトの差で情報の優先順位を明確にする。
 
-### 3.3 スペーシングの設計
+### 3.3 スペーシングの設計 DLID-6qdarc86t2g1
 
 8pt グリッド準拠のスペーシングスケールを設計する:
 
@@ -396,11 +397,11 @@ xxl: 48pt — 主要セクション区切り
 
 **余白の設計**（`design_philosophy.md` セクション 4.3）: 余白はアクティブなデザイン要素。窮屈なレイアウトを避ける。
 
-### 3.4 角丸・シャドウの設計
+### 3.4 角丸・シャドウの設計 DLID-b6wbf37cy9rw
 
 Phase 2 で決定したアプリの性格に合わせて角丸値を設計する（`design_philosophy.md` セクション 4.4 参照）。
 
-### 3.5 署名ルールのトークン化
+### 3.5 署名ルールのトークン化 DLID-qw1wbsw9ehsc
 
 **発動条件**: Design Intent の `signature_required` が `必要` or `任意`。`不要` なら SKIP。
 
@@ -419,7 +420,7 @@ Phase 2 で決定したアプリの性格に合わせて角丸値を設計する
 | アニメーション | ローディングは単色パルスではなく、ブランドカラーで描く波形を使う  |
 | イラスト       | 写真は使わず、単色シルエットだけでビジュアル要素を構成            |
 
-### 3.6 トークン品質検証
+### 3.6 トークン品質検証 DLID-23dhc8nd7rmd
 
 `design_philosophy.md` セクション 6 のチェックリストに加え、以下を検証する:
 
@@ -433,7 +434,7 @@ Phase 2 で決定したアプリの性格に合わせて角丸値を設計する
 - [ ] （`signature_required` が `必要` の場合）署名要素がトークンまたは規則として再利用可能な形に落ちているか
 - [ ] Design Intent の `anti_goals` に抵触する無難な値へ後退していないか
 
-### 3.7 ユーザー確認
+### 3.7 ユーザー確認 DLID-wg0wtagpm463
 
 作成したデザイントークンの一覧を視覚的に提示し、AskUserQuestion で確認する:
 
@@ -450,11 +451,11 @@ Phase 2 で決定したアプリの性格に合わせて角丸値を設計する
 
 ---
 
-## Phase 4: コンポーネント視覚設計
+## Phase 4: コンポーネント視覚設計 DLID-s4qgbzr91494
 
 要件定義書の ASCII アートを「かっこいいデザイン」に変換する。Phase 3 のトークンを適用し、HIG 標準に準拠した視覚仕様を定義する。
 
-### 4.1 ASCII アートからの変換
+### 4.1 ASCII アートからの変換 DLID-683sa8jzmthw
 
 要件定義書（SCR-xxx）の ASCII アートレイアウトを読み、各要素に対して:
 
@@ -463,7 +464,7 @@ Phase 2 で決定したアプリの性格に合わせて角丸値を設計する
 3. **視覚仕様の具体化**: サイズ、色、フォント、スペーシングを具体値で定義
 4. **署名要素の埋め込み**: 画面内のどこでブランド固有の視覚ルールを見せるか決める
 
-#### 変換例
+#### 変換例 DLID-er4hevpz2v0t
 
 ```
 要件定義書の ASCII アート:
@@ -506,18 +507,18 @@ Phase 2 で決定したアプリの性格に合わせて角丸値を設計する
     マージン水平: spacing.md (16pt)
 ```
 
-### 4.2 コンポーネントの命名
+### 4.2 コンポーネントの命名 DLID-qygqa9rc3asf
 
 - **HIG 標準コンポーネント**: HIG の名前を使用（例: NavigationBar, TabBar）
 - **カスタムコンポーネント**: 画面固有の具体的な名前を使用
   - ❌ 一般的: 「Card」「List」「Header」
   - ✅ 具体的: 「ProductDetailCard」「OrderHistoryList」「CafeMenuHeader」
 
-### 4.3 状態・プロパティの定義
+### 4.3 状態・プロパティの定義 DLID-rxgy09kt0se6
 
 各コンポーネントについて、プラットフォーム固有の状態を定義する。
 
-#### iOS 固有の状態
+#### iOS 固有の状態 DLID-5vd18j1r81c8
 
 | 状態     | 説明       |
 | -------- | ---------- |
@@ -527,7 +528,7 @@ Phase 2 で決定したアプリの性格に合わせて角丸値を設計する
 | Loading  | 読み込み中 |
 | Selected | 選択中     |
 
-#### macOS 固有の状態
+#### macOS 固有の状態 DLID-wpncw3kepsba
 
 | 状態     | 説明                 |
 | -------- | -------------------- |
@@ -538,7 +539,7 @@ Phase 2 で決定したアプリの性格に合わせて角丸値を設計する
 | Focused  | キーボードフォーカス |
 | Selected | 選択中               |
 
-### 4.4 UX ノートの付与
+### 4.4 UX ノートの付与 DLID-zpr041e7ez66
 
 各コンポーネントに知識ベースに基づく UX コメントを付与する:
 
@@ -553,7 +554,7 @@ Phase 2 で決定したアプリの性格に合わせて角丸値を設計する
 ❌ 悪い例: UX Note: ボタンは使いやすいサイズです。
 ```
 
-### 4.5 署名要素の配置確認
+### 4.5 署名要素の配置確認 DLID-wpz0292grfzd
 
 **発動条件**: Design Intent の `signature_required` が `必要`。`任意 / 不要` なら SKIP。
 
@@ -564,7 +565,7 @@ Phase 2 で決定したアプリの性格に合わせて角丸値を設計する
 - 競合アプリの一般的 UI と見分けがつくか
 - 単なる装飾ではなく、Design Intent の `tension_axis` を表現しているか
 
-### 4.6 ユーザー確認
+### 4.6 ユーザー確認 DLID-1jkcxqrf0rjs
 
 設計したコンポーネント一覧を提示し、AskUserQuestion で確認する:
 
@@ -578,11 +579,11 @@ Phase 2 で決定したアプリの性格に合わせて角丸値を設計する
 
 ---
 
-## Phase 5: UX 自己評価
+## Phase 5: UX 自己評価 DLID-ckx7m1jqnmhk
 
 作成したデザインシステム全体を、知識ベースに基づき多角的に評価する。
 
-### 5.1 Don Norman 3 層チェック
+### 5.1 Don Norman 3 層チェック DLID-pwqcf9secd1s
 
 `design_philosophy.md` セクション 2 に基づく:
 
@@ -592,7 +593,7 @@ Phase 2 で決定したアプリの性格に合わせて角丸値を設計する
 | Behavioral | トークンが操作性を支えているか           | ○ / △ / × |
 | Reflective | アプリの目的・ユーザー像と一致しているか | ○ / △ / × |
 
-### 5.2 Dieter Rams チェック
+### 5.2 Dieter Rams チェック DLID-z0n35rm2mv86
 
 `design_philosophy.md` セクション 3 に基づき、特に重要な 4 原則を確認:
 
@@ -601,17 +602,17 @@ Phase 2 で決定したアプリの性格に合わせて角丸値を設計する
 - [ ] **細部まで徹底する**: アライメントとスペーシングが一貫しているか
 - [ ] **最小限にする**: 不要な要素はないか
 
-### 5.3 HIG / Nielsen / Gestalt チェック
+### 5.3 HIG / Nielsen / Gestalt チェック DLID-19gyw1bbzast
 
 `apple_design_principles.md` に基づく評価。Phase 2 のワークフロー（旧版）と同様の評価を、**創造したデザインに対して** 実施する。
 
-### 5.4 Distinctiveness / Memorability チェック
+### 5.4 Distinctiveness / Memorability チェック DLID-6t6q0anqzhfx
 
 **発動条件**: Design Intent の `distinctiveness.importance` が `中` or `高`、または `signature_required: 必要`。それ以外は SKIP（もしくは 🟢 提案レベルで軽く触れるのみ）。
 
 AI が自動判定可能な指標で評価する。「5 秒ルック」「競合 5 つと並べて」は人間テスト前提のため使わない。
 
-#### 基本指標（Design Intent を参照して判定）
+#### 基本指標（Design Intent を参照して判定） DLID-d1e0kc46h6ey
 
 | 観点              | AI 検証可能な判定基準                                                                                                                                       | 判定      |
 | ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- |
@@ -620,7 +621,7 @@ AI が自動判定可能な指標で評価する。「5 秒ルック」「競合
 | Tension Integrity | Design Intent の `tension_axis` の両軸が画面で両立しているか（片側のみに倒れていないか）                                                                    | ○ / △ / × |
 | Anti-Goal Safety  | Design Intent の `anti_goals` に反する視覚設計が残っていないか                                                                                              | ○ / △ / × |
 
-#### 拡張指標（参照画像ディレクトリが存在する時のみ）
+#### 拡張指標（参照画像ディレクトリが存在する時のみ） DLID-s5frmq45jv2j
 
 `{specs_root}/{feature}/requirements/uxui_references/` に画像がある場合のみ適用:
 
@@ -631,7 +632,7 @@ AI が自動判定可能な指標で評価する。「5 秒ルック」「競合
 
 `×` が 1 つでもある場合は、「整っているが凡庸」の可能性が高い。Phase 2.4 または 4.5 に戻って調整する。
 
-### 5.5 評価サマリーの提示
+### 5.5 評価サマリーの提示 DLID-2786ymxnszj1
 
 Distinctiveness / Memorability / Tension Integrity は Phase 5.4 が SKIP されている場合は `n/a` で表示する。
 
@@ -662,9 +663,9 @@ AskUserQuestion で確認: 「評価結果を踏まえて、デザインの調�
 
 ---
 
-## Phase 6: 文書生成・品質確認
+## Phase 6: 文書生成・品質確認 DLID-rxkkx2rtxyxs
 
-### 6.1 文書ファイルの生成
+### 6.1 文書ファイルの生成 DLID-y8hd8ej6717k
 
 テンプレートに従い、以下のファイルを生成する:
 
@@ -681,7 +682,7 @@ AskUserQuestion で確認: 「評価結果を踏まえて、デザインの調�
 
 **出力先**: 事前準備で確定した出力先ディレクトリ
 
-### 6.2 AI レビュー実施
+### 6.2 AI レビュー実施 DLID-ndckerr4v995
 
 Skill ツールで `/forge:review` を起動する:
 
@@ -691,21 +692,21 @@ Skill ツールで `/forge:review` を起動する:
 
 対象はこのワークフローで作成・変更したファイル（差分）のみ。
 
-### 6.3 参照の実在性検査
+### 6.3 参照の実在性検査 DLID-1jj39emhmvsq
 
 <!-- 未実装: 参照の実在性検査 -->
 
 現時点では本節で行う処理は無い。次の節へ進む。
 
-### 6.4 specs ToC 更新
+### 6.4 specs ToC 更新 DLID-eashsr7j455k
 
 `/forge:update-db-specs` が利用可能であれば実行する。
 
-### 6.5 commit/push 確認
+### 6.5 commit/push 確認 DLID-2qs967p4jnxr
 
 `/anvil:commit` を実行して commit/push を確認する。
 
-### 6.6 完了案内
+### 6.6 完了案内 DLID-3h4rd9h8p2j6
 
 作成したファイルパスとともに、ユーザーが次に実行するコマンド例を案内する:
 
@@ -721,18 +722,18 @@ UX/UI デザインの作成が完了しました:
 
 ---
 
-## 対話の基本原則
+## 対話の基本原則 DLID-1p0vnbmtygdj
 
 **対話の進め方は consult の新規作成に従う。** 論点の提示（要旨を先に・推奨案を 1 つ・選択肢は AI が絞れないときだけ）、
 確信度、決着を求めない進め方は、Skill ツールで `/forge:consult` を起動し、その新規作成の手順で行う。デザインの方向性の
 ように、選び分けが利用者の価値判断に属するときは、consult の「選択肢を出すとき」に従って複数案を示す。本書は、
 デザインに固有の原則だけを持つ。
 
-### 1. 視覚的な提示
+### 1. 視覚的な提示 DLID-7r01eb6tgqf2
 
 カラーパレット・レイアウト・コンポーネントはテーブル・ASCII 図で視覚的に提示する。
 
-### 2. 設計根拠の明示
+### 2. 設計根拠の明示 DLID-8qz6xzhfpj49
 
 全てのデザイン判断に知識ベースからの根拠を添える:
 
@@ -742,11 +743,11 @@ UX/UI デザインの作成が完了しました:
 ❌ 悪い例: 「角丸 12pt にしました」
 ```
 
-### 3. 段階的な提示
+### 3. 段階的な提示 DLID-vjy8yh8rahn3
 
 一度に 1 案へ収束しない。必ず **発散 → 選択 → 具体化** の順で進める。
 
-### 4. 凡庸な既定値への後退禁止
+### 4. 凡庸な既定値への後退禁止 DLID-npevcbwgchsh
 
 **適用条件**: Design Intent の `distinctiveness.importance` が `中` or `高`、または `signature_required` が `必要`。`低` かつ `不要` の場合は本原則を緩める（無難であることが要件として許容される）。
 
@@ -761,7 +762,7 @@ UX/UI デザインの作成が完了しました:
 
 ---
 
-## アンチパターン
+## アンチパターン DLID-tnw91zfwsn8k
 
 | パターン                 | 問題                           | 対策                               |
 | ------------------------ | ------------------------------ | ---------------------------------- |

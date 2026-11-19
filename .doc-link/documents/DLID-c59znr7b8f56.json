@@ -1,0 +1,37 @@
+{
+  "content_hash": "de41f00c06618c0ab8b28935c02e19e69373ec204ab5a50fdb776202025cc69d",
+  "doc_link_id": "DLID-c59znr7b8f56",
+  "keywords": [
+    "document style guide",
+    "MANDATORY tag",
+    "heading level",
+    "reference notation",
+    "reference-style link",
+    "glossary term",
+    "GFM alert",
+    "long vowel rule",
+    "no history section"
+  ],
+  "path": "plugins/forge/docs/document_style_guide.md",
+  "purpose": "General writing style guide for documents the plugin generates, updates, or reviews: tags, headings, notation, references, terminology, and what not to include.",
+  "summary": [
+    "Tag usage: MANDATORY, CRITICAL, IMPORTANT placement and signal value criteria",
+    "Heading levels limited to four",
+    "Emphasis and notation: English phrases, long vowel rule, bold, code, GFM alerts",
+    "Structured elements: code blocks, lists, tables",
+    "Document reference notation for three systems, path forms, reference-style links",
+    "Abstract example naming with placeholders",
+    "No historical records in documents",
+    "No related-documents sections, with exceptions",
+    "Terminology: definition of a term, naming principles, bracket notation, glossary"
+  ],
+  "tasks": [
+    "Writing requirements, design, or plan documents",
+    "Reviewing document style",
+    "Adding tags to headings",
+    "Writing cross-document references",
+    "Defining and using glossary terms",
+    "Writing SKILL.md or rule documents"
+  ],
+  "title": "文書スタイル指針"
+}

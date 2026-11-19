@@ -1,0 +1,37 @@
+{
+  "content_hash": "30f4aa0bb66e183cc7871506cb7769139550287f785b0d0c59c974cbfb195dd4",
+  "doc_link_id": "DLID-5c0nw4er6es2",
+  "keywords": [
+    "interactive requirements",
+    "draft first",
+    "TBD",
+    "differential development",
+    "temporary-feature",
+    "doc_status draft",
+    "glossary",
+    "next-spec-id",
+    "start-requirements",
+    "dialogue principles"
+  ],
+  "path": "plugins/forge/skills/start-requirements/docs/requirements_interactive_workflow.md",
+  "purpose": "Interactive requirements workflow that writes a draft first and refines it through dialogue with the user when no Figma or screen design exists, for new apps or added features.",
+  "summary": [
+    "Lists required reading and a six-phase flow with a loop back when the type changes",
+    "Phase 0 confirms what the prior discussion established and judges whether the project is entirely new",
+    "Phase 1 fetches rules and existing assets, the latter only when not entirely new",
+    "Phase 2 confirms vision, value, scope, and constraints",
+    "Phase 3 judges pure-additive versus differential type, decides placement, assigns IDs, and writes the draft",
+    "Phase 4 refines via discussion: scenarios, glossary, bottom-up exploration order, requirements, and temporary marker",
+    "Phase 5 covers quality checks, TBD cleanup, AI review, specs update, commit, and completion guidance",
+    "Defines dialogue principles, anti-patterns, special rules for ambiguity and TBD, and question templates"
+  ],
+  "tasks": [
+    "Creating requirements through interactive dialogue",
+    "Starting a new application from scratch",
+    "Adding a feature to an existing application",
+    "Judging pure-additive versus differential development type",
+    "Reviewing requirements with TBD and ambiguity rules",
+    "Drafting a requirements document before discussion"
+  ],
+  "title": "対話型要件定義ワークフロー"
+}

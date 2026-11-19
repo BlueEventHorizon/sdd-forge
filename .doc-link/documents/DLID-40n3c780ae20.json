@@ -1,0 +1,39 @@
+{
+  "content_hash": "5207edeee42ee4bc2ef5263d4703448ab26cec5e0f3b6d1d9474aa8f29b516d4",
+  "doc_link_id": "DLID-40n3c780ae20",
+  "keywords": [
+    "migration",
+    "version migration",
+    "pipeline",
+    "rollback",
+    "idempotence",
+    "version detection",
+    "MIGRATIONS registry",
+    "CURRENT_VERSION",
+    "Open-Closed principle",
+    "doc_structure"
+  ],
+  "path": "plugins/forge/docs/version_migration_spec.md",
+  "purpose": "Specification for implementing stepwise migration of versioned data formats, defining the pipeline principle, function conventions, error handling, version detection, extension steps, and test requirements.",
+  "summary": [
+    "Pipeline principle: each migration takes the previous step output, even when skipping versions",
+    "Migration function conventions: one input one output, idempotent, no side effects, non-destructive",
+    "Error handling: roll back to original on failure, skip future versions, treat undetected version as v1",
+    "Implementation pattern: CURRENT_VERSION constant and MIGRATIONS registry keyed by target version",
+    "Core apply_migrations logic with ascending application and rollback in Python",
+    "Migration function examples for dict data and text-based string transformation",
+    "Self-describing version detection via YAML comment, YAML field, or JSON field",
+    "Procedure for adding a new version following the Open-Closed principle",
+    "Test requirements table covering conversion, multi-step, idempotence, rollback, future version, detection failure",
+    "Implementation example: forge doc_structure migration script"
+  ],
+  "tasks": [
+    "Implementing a versioned data format migration",
+    "Adding a new version migration function",
+    "Writing tests for migration logic",
+    "Implementing version detection for YAML or JSON data",
+    "Reviewing migration code for rollback and idempotence",
+    "Modifying doc_structure migration script"
+  ],
+  "title": "バージョンマイグレーション実装仕様"
+}

@@ -1,0 +1,36 @@
+{
+  "content_hash": "be634f5152a6857cbedf3d345cf3ac28bc9cc9fdddd8ac9164c6eb8a6399b2f8",
+  "doc_link_id": "DLID-s1dhhaprgf1r",
+  "keywords": [
+    "proportionality",
+    "over-engineering",
+    "defensive implementation",
+    "three-point check",
+    "catastrophic failure",
+    "speculative",
+    "skip",
+    "safety net",
+    "scope"
+  ],
+  "path": "plugins/forge/docs/scope_proportionality_spec.md",
+  "purpose": "General principle against over-engineering: a gate limiting when speculative or catastrophic-failure defenses, or unfounded improvements, may be adopted, using a three-point check.",
+  "summary": [
+    "Purpose: unbounded defensive measures bloat systems and hide real errors",
+    "Gate applies only to three types of findings, not to fix decisions in general",
+    "Three types: catastrophic external causes, speculative rare defenses, unfounded quality improvements",
+    "Findings exempt from the check: requirement or rule violations, concrete runtime risks, data loss and security",
+    "Being found in review is not grounds to skip",
+    "Out of scope: OS-level failures, filesystem corruption, disk exhaustion, hardware failure",
+    "Three-point check: other premises already broken, independent safety nets, cost versus prevented harm",
+    "When unclear whether a type applies, treat as normal fix target",
+    "When check items are unclear, skip or create_issue with rationale"
+  ],
+  "tasks": [
+    "Evaluating review findings for fix versus skip",
+    "Judging defensive implementation proposals",
+    "Deciding scope of error handling",
+    "Reviewing code for over-engineering",
+    "Writing review criteria judgment rules"
+  ],
+  "title": "比例性の原則（過剰設計の抑止）"
+}

@@ -1,0 +1,36 @@
+{
+  "content_hash": "50265bb6a0233856b27e455dd28f4e63d0de3024f72ead3e11867fdfed0505fe",
+  "doc_link_id": "DLID-m9xnmkwxvjpf",
+  "keywords": [
+    "consult",
+    "new creation",
+    "brainstorming",
+    "draft",
+    "discussed status",
+    "settled",
+    "presentation state",
+    "consult brief",
+    "requirements"
+  ],
+  "path": "plugins/forge/skills/consult/docs/creation_handling.md",
+  "purpose": "Defines how the consult skill is used for new creation dialogues (brainstorming, drafting, new requirements), including handling of decisions, display, recording, and the final document result.",
+  "summary": [
+    "Input is the conversation context and the deliverable is a document",
+    "Decisions are not reflected per topic; the document is written only on user instruction",
+    "No resolution is demanded; each topic states what to decide, gist, and AI view",
+    "Topic status \"discussed\" versus \"settled\" (settled only when the user explicitly says so)",
+    "Display follows the dialogue revision rules with an added \"discussed\" status",
+    "Single-topic case shows no list",
+    "Presentation state is held in conversation context",
+    "consult brief is not recorded for new creation",
+    "On finish, show which topics go into the document and which are excluded before writing"
+  ],
+  "tasks": [
+    "Running consult for brainstorming or discussion",
+    "Drafting a first-pass document through dialogue",
+    "Creating a new requirements document via dialogue",
+    "Deciding how to present discussion topics and status",
+    "Writing a document from discussion results"
+  ],
+  "title": "新規作成の手順"
+}

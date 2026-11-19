@@ -1,0 +1,34 @@
+{
+  "content_hash": "f97f5e879df904c9b65b2c2cbe61ae9fb1eda284cb175ac5427c3b12d9a5a7e3",
+  "doc_link_id": "DLID-25mzdyrk3jdx",
+  "keywords": [
+    "iOS",
+    "Apple HIG",
+    "touch target",
+    "tab bar",
+    "navigation bar",
+    "safe area",
+    "haptic feedback",
+    "reachability",
+    "gestures",
+    "platform guide"
+  ],
+  "path": "plugins/forge/skills/start-uxui-design/docs/ios_platform_guide.md",
+  "purpose": "iOS-specific UX/UI design guide that consolidates Apple HIG guidance for iOS: touch input, navigation, layout, standard components, UX patterns and an evaluation checklist.",
+  "summary": [
+    "Touch input model: target sizes, gestures, reachability",
+    "Navigation patterns: tab bar, navigation bar, modal, transitions",
+    "Layout: safe area, device screen sizes, spacing standards",
+    "Standard iOS components: controls, content display, navigation",
+    "iOS UX patterns: pull to refresh, swipe actions, context menu, haptics",
+    "Evaluation checklist for touch, navigation, layout and accessibility"
+  ],
+  "tasks": [
+    "Designing or analyzing iOS app UI",
+    "Mapping a design to HIG standard components",
+    "Reviewing touch targets and navigation of an iOS design",
+    "Evaluating iOS accessibility such as Dynamic Type and VoiceOver",
+    "Creating design tokens for an iOS app"
+  ],
+  "title": "iOS プラットフォームガイド"
+}

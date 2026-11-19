@@ -1,0 +1,39 @@
+{
+  "content_hash": "e09ba827f8bc37d2dfa6f0cc1a2af331b4f71824fe3913c36e71be89948c78be",
+  "doc_link_id": "DLID-f9ny9e932trv",
+  "keywords": [
+    "responsibility split",
+    "dependency direction",
+    "Goodhart law",
+    "quantification ban",
+    "fabricated values",
+    "TBD",
+    "severity catalog",
+    "review perspectives",
+    "non-functional requirements"
+  ],
+  "path": "plugins/forge/docs/spec_priorities_spec.md",
+  "purpose": "Defines the values to prioritize and the things never to make a primary goal when writing or reviewing requirements and design documents, such as structural principles and bans on quantifying quality.",
+  "summary": [
+    "Structural design principles to prioritize: responsibility split, boundaries, dependency direction",
+    "Dependency direction among generated documents: requirements, design, plan",
+    "Quality characteristics as outcomes, not direct numeric targets (Goodhart law)",
+    "Prohibited primary goals: quantifying structural quality, KPIs, fabricated unconfirmed values",
+    "Typical perverse patterns to avoid",
+    "Self-check criteria for design and review decisions",
+    "Pointer to the boundary spec for placing quantitative targets",
+    "Routing guide for review perspectives P1/P2/P3",
+    "Severity catalog and gray-zone allowances",
+    "Non-functional requirement category coverage with severity scoping"
+  ],
+  "tasks": [
+    "Writing requirements documents",
+    "Writing design documents",
+    "Reviewing requirements documents",
+    "Reviewing design documents",
+    "Setting or judging quantitative goals",
+    "Determining review finding severity",
+    "Checking non-functional requirement coverage"
+  ],
+  "title": "要件定義書・設計書で優先すること"
+}

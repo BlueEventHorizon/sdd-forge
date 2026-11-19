@@ -1,0 +1,39 @@
+{
+  "content_hash": "b472c518076dc1eca00cac24379d0e56b9f4640f14598efeb6c0dff38eb0865e",
+  "doc_link_id": "DLID-061pwjejh6yc",
+  "keywords": [
+    "design document",
+    "design principles",
+    "severity catalog",
+    "quantitative targets",
+    "dependency direction",
+    "cohesion",
+    "SPOF",
+    "YAGNI",
+    "Mermaid",
+    "temporary-feature"
+  ],
+  "path": "plugins/forge/docs/design_principles_spec.md",
+  "purpose": "General principles for writing design documents when no project rules exist: definition, prohibited content, quantitative targets, judgment criteria, structure, maintenance, norms and a severity catalog.",
+  "summary": [
+    "Design document definition: responsibility is How, what it excludes, permanence and revision via additive development",
+    "Prohibited content: large source code, unjustified technology choices, features absent from requirements, guaranteed quantitative targets",
+    "Quantitative targets: describe structure and policy only, never guarantees or AI-guessed values",
+    "Judgment criterion: can an implementer implement from this; hierarchical splitting guidance",
+    "Optional sections, Mermaid diagram guidelines, and no history sections",
+    "Maintenance: report implementation-design divergence to the user and record design intent",
+    "Common failure patterns with countermeasures",
+    "Norms for architecture dependency direction, responsibility separation and cohesion, availability and SPOF, with gray-zone tolerances",
+    "Severity catalog covering prohibited content, deliverables, failure patterns, architecture and additive-feature frontmatter"
+  ],
+  "tasks": [
+    "Writing a design document",
+    "Reviewing a design document",
+    "Judging whether content belongs in design or requirements",
+    "Assigning severity to design review findings",
+    "Checking architecture dependency direction and responsibility split",
+    "Updating a design document after implementation changes",
+    "Splitting a large design document hierarchically"
+  ],
+  "title": "設計書 作成原則"
+}

@@ -1,0 +1,40 @@
+{
+  "content_hash": "157820b1afb7f147bb5bcd06705a68ff853fff6c16f4cace53e875b0020f9813",
+  "doc_link_id": "DLID-pdvdjb49qpr4",
+  "keywords": [
+    "design method",
+    "responsibility-driven design",
+    "sequence diagram",
+    "class diagram",
+    "module table",
+    "shared data definition",
+    "contract",
+    "EARS",
+    "traceability table",
+    "detailed design"
+  ],
+  "path": "plugins/forge/docs/design_method.md",
+  "purpose": "Defines the design method that turns requirements into design: viewpoints, inputs and deliverables, and Steps 0 to 6 from scenario reading through contracts and detailed design to consistency checks.",
+  "summary": [
+    "Rationale: requirements decompose into information, actions and scenarios, rewritten as responsibility, behavior, contract and maturity viewpoints",
+    "Reasons for responsibility-named classes, class and sequence diagrams, actor selection, self-messages and contracts",
+    "Inputs (requirements, glossary, non-functional requirements, project rules) are not modified; issues return as questions",
+    "Deliverables table: scenario table, class definitions, class diagram, glossary, sequence diagrams, shared data, module table, detailed design, traceability table",
+    "Step 0-1: read inputs and read requirements as scenarios using EARS types",
+    "Step 2-3: find responsibilities as classes and act out scenarios in sequence diagrams",
+    "Step 4: write contracts via shared data definitions and module tables with preconditions, postconditions and failure behavior",
+    "Step 5: detailed design covering means, structures, libraries, algorithms and operating principles",
+    "Step 6: traceability table and consistency checklist before approval",
+    "Scope ends at design; implementation planning is out of scope"
+  ],
+  "tasks": [
+    "Creating a design document from requirements",
+    "Reviewing a design document",
+    "Writing sequence diagrams and class diagrams",
+    "Writing a module table or shared data definition",
+    "Building a requirements traceability table",
+    "Deciding actors and self-messages in diagrams",
+    "Preparing input for implementation planning"
+  ],
+  "title": "設計手法"
+}

@@ -1,0 +1,36 @@
+{
+  "content_hash": "73db292198c73ade203a6a5247418ddd28f2e11c35dd757203a1308638f02dc2",
+  "doc_link_id": "DLID-vjef3sn14bg0",
+  "keywords": [
+    "reverse engineering",
+    "requirements definition",
+    "existing application",
+    "source code analysis",
+    "legacy app",
+    "requirement extraction",
+    "SCR FNC APP IDs",
+    "start-requirements",
+    "design renewal",
+    "quality checklist"
+  ],
+  "path": "plugins/forge/skills/start-requirements/docs/requirements_reverse_engineering_workflow.md",
+  "purpose": "Workflow guide for writing requirements documents by reverse-engineering an existing application's source code, extracting features while keeping function and renewing design.",
+  "summary": [
+    "Required reading list of requirement principles, format, boundary, priorities, and style guide documents",
+    "Purpose: extract requirements from existing source code, preserving features while renewing design",
+    "Phase 1: user confirmation, rules and specs retrieval, parallel rules/code context-collection agents",
+    "Phase 2: source code analysis of project structure, screens, navigation, and design element handling",
+    "Phase 3: requirement extraction priority order and practical steps for actions, branches, persistence, errors",
+    "Feature extraction checklist per screen or function",
+    "Phase 4: placement decision, ID numbering via next-spec-id, creation order, What-only principle, glossary",
+    "Phase 5: quality checks, AI review, specs ToC update, commit confirmation, completion guidance"
+  ],
+  "tasks": [
+    "Creating requirements documents from an existing application source code",
+    "Rebuilding a legacy app on a new architecture",
+    "Back-calculating requirements from existing code",
+    "Extracting screen, function, business logic, and data requirements",
+    "Reviewing the reverse-engineering requirements workflow"
+  ],
+  "title": "要件定義書作成ワークフロー（既存アプリ解析版）"
+}

@@ -1,11 +1,15 @@
-# uxui レビュー基準
+---
+doc_link_id: DLID-e9tn4760zpw5
+---
+
+# uxui レビュー基準 DLID-j336y8qdsy3k
 
 > SoT: [review_priorities_spec.md](../review_priorities_spec.md)
 > 重大度判定 / グレーゾーン許容範囲は委譲先 principles 側を参照すること。本ファイルは判断を持たない。
 > severity は委譲先 principles の重大度カタログから取得する ([review_priorities_spec.md](../review_priorities_spec.md) §2.2)。
 > uxui 種別の主要 SoT (HIG / プロジェクト固有デザインシステム規約) は当面未整備のため、暫定的に [document_style_guide.md](../document_style_guide.md) + プロジェクト固有 rules で代替する（内蔵ルールへのフォールバック）。
 
-## 1. SSOT参照
+## 1. SSOT参照 DLID-h91yy7cte039
 
 P1 で照合すべき委譲先文書一覧。各文書は「規範本体 + 重大度カタログ (拡充済み or 拡充予定)」を保持する SoT である。複数文書間の優先順位は「プロジェクト固有 > 内蔵」とする (review_priorities_spec.md)。
 
@@ -19,7 +23,7 @@ P1 で照合すべき委譲先文書一覧。各文書は「規範本体 + 重�
 
 委譲先ルールが未整備の場合は forge 内蔵ルールへフォールバックする。
 
-## 2. チェック順
+## 2. チェック順 DLID-vymdmf5grfz6
 
 種別ごとに「どの委譲先文書から先に読むか」の順序。規範本体は再掲しない:
 
@@ -27,7 +31,7 @@ P1 で照合すべき委譲先文書一覧。各文書は「規範本体 + 重�
 2. **P2 矛盾・齟齬**: target ファイル内部および関連要件・設計書との間で、同一対象への相反記述 (デザイントークン定義 / コンポーネント仕様 / 画面要件 / インタラクション規定等) を突き合わせる (不足・欠落は P2 対象外)
 3. **P3 不要な複雑化**: [spec_priorities_spec.md](../spec_priorities_spec.md) を参照し、より少ない要素 (トークン / コンポーネント / 階層 / バリエーション) で同じ目的を達成できる代替案の有無を Yes/No で判定する
 
-## 3. 判定ルール
+## 3. 判定ルール DLID-9vhfq2kspkkw
 
 | recommendation | 採用条件                                                                                                          |
 | -------------- | ----------------------------------------------------------------------------------------------------------------- |
@@ -35,7 +39,7 @@ P1 で照合すべき委譲先文書一覧。各文書は「規範本体 + 重�
 | `create_issue` | ルール未整備で発見した場合 ([review_priorities_spec.md](../review_priorities_spec.md) §4 の 3 条件をすべて満たす) |
 | `skip`         | false positive / グレーゾーン許容範囲内 (principles の許容範囲に該当)                                             |
 
-### `recommendation: create_issue` の 3 条件
+### `recommendation: create_issue` の 3 条件 DLID-g55zarnetzfj
 
 | # | 条件               | 内容                                                                                                                    |
 | - | ------------------ | ----------------------------------------------------------------------------------------------------------------------- |

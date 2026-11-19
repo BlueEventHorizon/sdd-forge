@@ -1,0 +1,37 @@
+{
+  "content_hash": "eebfb17cd1c2dcc47f839faf898f930ba27f2d32e424e48d3768194e68a372c0",
+  "doc_link_id": "DLID-3x673x4r3h83",
+  "keywords": [
+    "design tokens",
+    "template",
+    "color palette",
+    "typography",
+    "spacing",
+    "border radius",
+    "shadow",
+    "contrast ratio",
+    "UX notes",
+    "Design Intent"
+  ],
+  "path": "plugins/forge/skills/start-uxui-design/docs/design_token_template.md",
+  "purpose": "Output template for generating a design token document with UX notes, covering colors, typography, spacing, radius, shadows and an overall UX evaluation.",
+  "summary": [
+    "Design direction table with provocation and brand tension",
+    "Creative direction section transcribed from Design Intent (concept, anti-goals)",
+    "Color palette in two layers: base colors, status colors, semantic colors",
+    "Contrast ratio verification table against the 4.5:1 standard",
+    "Typography font families and text style tokens",
+    "Spacing scale and layout spacing tokens on an 8pt grid",
+    "Border radius tokens",
+    "Shadow tokens",
+    "UX evaluation notes table and improvement suggestions"
+  ],
+  "tasks": [
+    "Generating a design token document in UX/UI design work",
+    "Extracting design tokens from an image or design file",
+    "Transcribing Design Intent into a theme document",
+    "Reviewing the structure of a design token document",
+    "Evaluating HIG compliance and accessibility of tokens"
+  ],
+  "title": "デザイントークンテンプレート"
+}

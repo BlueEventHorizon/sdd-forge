@@ -1,10 +1,14 @@
-# plan レビュー基準
+---
+doc_link_id: DLID-31c3mp46a5p2
+---
+
+# plan レビュー基準 DLID-yk277h9z9t3b
 
 > SoT: [review_priorities_spec.md](../review_priorities_spec.md)
 > 重大度判定 / グレーゾーン許容範囲は委譲先 principles 側を参照すること。本ファイルは判断を持たない。
 > severity は委譲先 principles の重大度カタログから取得する ([review_priorities_spec.md](../review_priorities_spec.md) §2.2)。
 
-## 1. SSOT参照
+## 1. SSOT参照 DLID-n3jvsdm4v0j1
 
 P1 で照合すべき委譲先文書一覧。各文書は「規範本体 + 重大度カタログ (拡充済み)」を保持する SoT である。複数文書間の優先順位は「プロジェクト固有 > 内蔵」とする (review_priorities_spec.md)。
 
@@ -19,7 +23,7 @@ P1 で照合すべき委譲先文書一覧。各文書は「規範本体 + 重�
 
 委譲先ルールが未整備の場合は forge 内蔵ルールへフォールバックする。
 
-## 2. チェック順
+## 2. チェック順 DLID-a05t66c2p4ec
 
 種別ごとに「どの委譲先文書から先に読むか」の順序。規範本体は再掲しない:
 
@@ -29,7 +33,7 @@ P1 で照合すべき委譲先文書一覧。各文書は「規範本体 + 重�
    - **追加 feature 除外規定**: target が追加 feature の計画書 (`requirements_traceability` 先の要件定義書、または `design_traceability` 先の設計書の、いずれかが `feature_type: temporary-feature` を持つ) の場合、旧仕様 (既存の計画書・設計書・要件定義書・コード) との相反記述は **差分宣言として意図的なもの** であり P2 矛盾扱いしない ([additive_development_spec.md](../additive_development_spec.md) §2「差分開発の要件定義書・設計書はその対象範囲における現在の仕様であり、旧仕様の記述は置き換わっている」)。P2 対象は target 内部のタスク矛盾・依存順序矛盾、または対応する追加 feature の要件定義書・設計書との矛盾に限定する
 3. **P3 不要な複雑化**: [spec_priorities_spec.md](../spec_priorities_spec.md) §3.4 / §4 を参照し、より少ない要素 (タスク・依存・フェーズ) で同じ目的を達成できる代替案の有無、および倒錯パターン (タスク粒度の過剰分割等) の有無を Yes/No で判定する
 
-## 3. 判定ルール
+## 3. 判定ルール DLID-8yw9833k97tn
 
 | recommendation | 採用条件                                                                                                          |
 | -------------- | ----------------------------------------------------------------------------------------------------------------- |
@@ -37,7 +41,7 @@ P1 で照合すべき委譲先文書一覧。各文書は「規範本体 + 重�
 | `create_issue` | ルール未整備で発見した場合 ([review_priorities_spec.md](../review_priorities_spec.md) §4 の 3 条件をすべて満たす) |
 | `skip`         | false positive / グレーゾーン許容範囲内 (principles の許容範囲に該当)                                             |
 
-### `recommendation: create_issue` の 3 条件
+### `recommendation: create_issue` の 3 条件 DLID-8ey9p7zpj0m8
 
 | # | 条件               | 内容                                                                                                                    |
 | - | ------------------ | ----------------------------------------------------------------------------------------------------------------------- |

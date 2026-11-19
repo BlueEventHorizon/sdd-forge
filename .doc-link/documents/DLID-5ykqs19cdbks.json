@@ -1,0 +1,37 @@
+{
+  "content_hash": "93a1b507fa94288c1e5a2eefed17cb2555700f4b4d531c3302cb428df5f52266",
+  "doc_link_id": "DLID-5ykqs19cdbks",
+  "keywords": [
+    "error",
+    "error classification",
+    "recoverable",
+    "fatal",
+    "cause",
+    "bug",
+    "exit code",
+    "severity catalog",
+    "recovery"
+  ],
+  "path": "plugins/forge/docs/error_classification_spec.md",
+  "purpose": "Defines what an error is, how to classify errors by recoverability, how to treat causes, and the criteria for adding new error-distinguishing values.",
+  "summary": [
+    "Purpose: criteria for adding values that distinguish errors in any mechanism (exit codes, agent results, error cases, API codes)",
+    "Definition of an error as an event that stops processing from following the intended flow, independent of expectation",
+    "Non-errors: things that can be judged, such as a nonexistent file referenced by a finding",
+    "Classification into recoverable and unrecoverable (fatal) errors; classification can shift when recovery options run out",
+    "Recovery is not always retry; alternative routes, waiting, or asking the user are other means",
+    "Causes (bug, failure, user input or environment) are separate from the error event",
+    "Bugs must not occur at runtime and get no dedicated values or recovery routes; failure defenses are out of scope unless requested",
+    "Questions to ask before adding a new error value",
+    "Severity catalog of violation patterns (critical, major, minor)"
+  ],
+  "tasks": [
+    "Designing exit codes or return values that distinguish errors",
+    "Writing error cases in requirements documents",
+    "Designing error handling in scripts and agents",
+    "Deciding whether to add a new error value or category",
+    "Reviewing code or documents for error handling violations",
+    "Deciding whether to attempt recovery or stop and report"
+  ],
+  "title": "エラーの定義・分類・原因"
+}

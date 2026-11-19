@@ -1,0 +1,36 @@
+{
+  "content_hash": "ae2d9e07a72bcccf8864ad6ff4bee4e8acea56c7725e2c37dece7179f61799d9",
+  "doc_link_id": "DLID-y2bsrqc7agea",
+  "keywords": [
+    "Figma",
+    "design tokens",
+    "requirements workflow",
+    "SCR",
+    "CMP",
+    "FNC",
+    "design system",
+    "static assets",
+    "start-requirements",
+    "Figma MCP"
+  ],
+  "path": "plugins/forge/skills/start-requirements/docs/requirements_from_figma_workflow.md",
+  "purpose": "Workflow for extracting requirements from Figma design files to produce design tokens and requirements documents, from preparation through quality check and completion.",
+  "summary": [
+    "Lists required reading documents and the five-phase execution flow",
+    "Phase 1 checks Figma MCP availability, confirms with the user, and fetches rules and existing specs",
+    "Phase 2 builds a two-layer design system of tokens and semantic themes and identifies reusable components",
+    "Phase 3 decides placement, assigns IDs via next-spec-id, and extracts SCR, CMP, and FNC requirements",
+    "Screen requirements use screen-specific part names and ASCII layout diagrams",
+    "Supplements requirements not in the design such as errors, loading, empty states, accessibility",
+    "Phase 4 inventories image assets and records asset management policy",
+    "Phase 5 verifies tokens and documents, runs AI review, updates specs ToC, and guides commit and next steps"
+  ],
+  "tasks": [
+    "Creating requirements from a Figma design file",
+    "Extracting design tokens from Figma",
+    "Requirements for an app redesign with Figma",
+    "Design-first development requirements",
+    "Defining screen and UI component requirements"
+  ],
+  "title": "Figma 要件定義書作成ワークフロー"
+}

@@ -1,0 +1,38 @@
+{
+  "content_hash": "16dc6eaead04c94d9d7468e5bf059f2c9b3117bacf0dd0019ef6674a5d4d8eb6",
+  "doc_link_id": "DLID-spgw9f5y6thy",
+  "keywords": [
+    "code review",
+    "review criteria",
+    "SSOT reference",
+    "priority P1 P2 P3",
+    "recommendation",
+    "create_issue",
+    "fix skip",
+    "query-db-rules",
+    "anti-patterns",
+    "severity catalog"
+  ],
+  "path": "plugins/forge/docs/criteria/review_criteria_code.md",
+  "purpose": "Review criteria for code targets: lists the delegated SSOT documents, the order to check them, and the rules for choosing fix, create_issue or skip. It holds no severity judgments itself.",
+  "summary": [
+    "SoT is the review priorities spec; severity comes from delegated principles catalogs",
+    "SSOT reference table with P1 to P3 priorities",
+    "P1 sources: project-specific coding rules via query-db-rules, related design docs, deterministic generation spec",
+    "P2 checks contradictions between design docs and target code",
+    "P3 checks unnecessary complexity via anti-patterns document",
+    "Check order for P1 rule conformance, P2 contradictions, P3 complexity",
+    "Decision rules for fix, create_issue and skip recommendations",
+    "Three conditions for create_issue: no existing rule, recurrence or objectivity, codifiable granularity",
+    "Fallback to built-in rules when project rules are absent"
+  ],
+  "tasks": [
+    "Reviewing source code against project rules and design documents",
+    "Building a review packet for a code review",
+    "Deciding the recommendation for a code review finding",
+    "Judging whether to raise create_issue for an unruled finding",
+    "Checking contradictions between design documents and implementation",
+    "Editing or extending the code review criteria"
+  ],
+  "title": "code レビュー基準"
+}

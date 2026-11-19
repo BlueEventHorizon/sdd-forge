@@ -1,0 +1,36 @@
+{
+  "content_hash": "df733e1fd4b303a4a0f107eefa577cef8c989072d1ad484c80fc756de19d2ee7",
+  "doc_link_id": "DLID-4wshmhbcgynm",
+  "keywords": [
+    "review target type",
+    "target classification",
+    "doc_type",
+    "resolve_doc_structure",
+    "reviewer",
+    "review criteria",
+    "uxui",
+    "ADR as design",
+    "common documents",
+    "cross-check targets"
+  ],
+  "path": "plugins/forge/docs/criteria/review_target_types.md",
+  "purpose": "Lets a reviewer decide the target type (code, requirement, design, plan, uxui) of each review target and select which criteria and normative documents to read for that type.",
+  "summary": [
+    "Defines five target types: code, requirement, design, plan, uxui; ADR is treated as design",
+    "Procedure to resolve doc_type by passing a path to resolve_doc_structure.py, without reading the config file directly",
+    "Table mapping doc_type values (plan, requirement, design, adr, null, others) to the next action and target type",
+    "Rules for detecting UI-related documents and source code by reading the file, not by name alone",
+    "Handling of undetermined targets: use only common documents, no guessing, not a finding or an error",
+    "List of common documents applied to every target: generic criteria, review priorities, scope proportionality, error classification",
+    "Per-type tables of review criteria, built-in normative documents, project-specific items, and cross-check targets",
+    "Stops the review without deciding a type when the config lookup status is not ok"
+  ],
+  "tasks": [
+    "Reviewing code, requirement, design, plan, or UI/UX documents with a reviewer",
+    "Determining the target type of a review target",
+    "Selecting which criteria and normative documents to load for a review",
+    "Reviewing ADRs as design documents",
+    "Editing or auditing the review criteria document structure"
+  ],
+  "title": "レビュー対象の種別と読む文書"
+}

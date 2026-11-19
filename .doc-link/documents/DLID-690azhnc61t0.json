@@ -1,0 +1,36 @@
+{
+  "content_hash": "3254eefb2b30cf4361700213432a2da9b32ff0d04bff507a0c175e148d1aaea3",
+  "doc_link_id": "DLID-690azhnc61t0",
+  "keywords": [
+    "component catalog",
+    "UI component template",
+    "UX notes",
+    "Design Intent",
+    "signature element",
+    "design tokens",
+    "component states",
+    "navigation structure",
+    "CMP-001"
+  ],
+  "path": "plugins/forge/skills/start-uxui-design/docs/component_catalog_template.md",
+  "purpose": "Output template for generating a UI component catalog document with UX notes, defining the required sections and tables to fill in per feature.",
+  "summary": [
+    "Design direction table with signature element",
+    "Section 0 design principles transcribed from Design Intent",
+    "Component summary tables for standard HIG and custom components",
+    "Navigation structure with Mermaid screen flow and pattern table",
+    "Per-component definition: basic info, elements, states, tokens, layout",
+    "iOS and macOS state tables with token references",
+    "Per-component UX note table covering HIG, heuristics, Gestalt, accessibility",
+    "Component dependency diagram and common patterns",
+    "Overall UX evaluation and prioritized improvement proposals"
+  ],
+  "tasks": [
+    "Generating a UI component catalog document",
+    "Documenting UI components for a feature",
+    "Writing UX notes per component",
+    "Transcribing Design Intent into component docs",
+    "Defining component states for iOS and macOS"
+  ],
+  "title": "UI コンポーネント一覧テンプレート"
+}

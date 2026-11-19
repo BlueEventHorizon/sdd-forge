@@ -1,0 +1,40 @@
+{
+  "content_hash": "2aca46c44b8e1cccc516a42030de648c67b15115f000ec7c37df99bee08aeb9e",
+  "doc_link_id": "DLID-rx0jy7wbtg59",
+  "keywords": [
+    "UX/UI design",
+    "design tokens",
+    "Design Intent",
+    "component visual spec",
+    "tension axis",
+    "signature element",
+    "UX evaluation",
+    "HIG",
+    "start-uxui-design",
+    "THEME CMP UXEVAL"
+  ],
+  "path": "plugins/forge/skills/start-uxui-design/docs/uxui_analysis_workflow.md",
+  "purpose": "Defines the six-phase workflow for creating visual design (design tokens, component visual specs, UX evaluation) from a requirements document, driven by a confirmed Design Intent.",
+  "summary": [
+    "Positioning in the pipeline: input is a requirements document, output is THEME, CMP and UXEVAL documents",
+    "Context management: per-phase knowledge retrieval via query-forge-rules, with design_philosophy always resident",
+    "Phase 1: load requirements, collect reference designs, fetch rule documents",
+    "Phase 2.0: acquire and confirm Design Intent (tension axis, distinctiveness importance, references, anti-goals, signature requirement)",
+    "Phase 2: design direction (personality, tension axis, reference cultures, provocations, recommendation, confirmation) with conditional activation",
+    "Phase 3: design tokens (colors, light/dark, typography, spacing, radius/shadow, signature tokenization, quality checklist)",
+    "Phase 4: convert ASCII screen layouts to component visual specs, naming, states, UX notes, signature placement",
+    "Phase 5: UX self-evaluation (Norman, Rams, HIG/Nielsen/Gestalt, distinctiveness/memorability metrics)",
+    "Phase 6: generate documents, AI review, specs ToC update, commit confirmation, completion guidance",
+    "Dialogue principles and anti-patterns such as ungrounded design and platform confusion"
+  ],
+  "tasks": [
+    "Creating visual design from a requirements document",
+    "Designing design tokens (colors, typography, spacing, radius)",
+    "Defining UI component visual specifications",
+    "Running the start-uxui-design skill",
+    "Defining or confirming a Design Intent",
+    "Evaluating UX quality and distinctiveness of a design",
+    "Editing the start-uxui-design workflow document"
+  ],
+  "title": "UX/UI デザイン創造ワークフロー"
+}

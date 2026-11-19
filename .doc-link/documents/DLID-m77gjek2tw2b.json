@@ -1,0 +1,34 @@
+{
+  "content_hash": "8a006e0c77dec94d58e35b46a1d652311ac0f969478ed978b34c973a71451335",
+  "doc_link_id": "DLID-m77gjek2tw2b",
+  "keywords": [
+    "ADR",
+    "architecture decision record",
+    "rejection reason",
+    "non-binding",
+    "premise check",
+    "ADR citation",
+    "section number",
+    "severity catalog",
+    "reader obligation"
+  ],
+  "path": "plugins/forge/docs/adr_usage_spec.md",
+  "purpose": "Defines the obligations of those who rely on ADRs when deciding, so that rejection reasons used to decline proposals or findings are checked against current premises and traceably cited.",
+  "summary": [
+    "ADRs are non-binding observations, not instructions",
+    "A proposal may be made if the rejection reason is judged wrong in the current context",
+    "Readers must verify the premises of a rejection reason still hold before relying on an ADR",
+    "When declining based on an ADR, cite its file number and section number (ADR-NNN §N)",
+    "No mechanism is added to raise ADR reach, such as preloading all ADRs",
+    "Loss from an unread ADR is limited to one duplicate proposal",
+    "Severity catalog: omitting the ADR number when declining is minor"
+  ],
+  "tasks": [
+    "Declining a proposal on the basis of an ADR",
+    "Declining a review finding on the basis of an ADR",
+    "Reviewing whether ADR citations are traceable",
+    "Implementing work that touches past architectural decisions",
+    "Judging whether a past rejection reason is still valid"
+  ],
+  "title": "ADR 利用規範"
+}

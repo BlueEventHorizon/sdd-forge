@@ -1,0 +1,41 @@
+{
+  "content_hash": "6dfcd878df37a1104a55cb4832f177604361f9556397048677769b8796b5c4c2",
+  "doc_link_id": "DLID-7gyjj06rtab7",
+  "keywords": [
+    "ADR writer",
+    "architecture decision record",
+    "approval record",
+    "judgment record",
+    "verdict",
+    "rejection criteria",
+    "ADR file numbering",
+    "decision update",
+    "context isolation",
+    "start-design"
+  ],
+  "path": "docs/specs/adr-writer/requirements/REQ-030_adr_writer.md",
+  "purpose": "Requirements for the ADR writer, an isolated agent that judges, repairs and records ADRs apart from the design flow, returning a create, reject or insufficient verdict.",
+  "summary": [
+    "Overview: ADR writer separates ADR judgment and writing from the design context",
+    "Terms: ADR file, decision section, request, type (approval record, judgment record, update), verdict",
+    "FNC-001 and FNC-002: request intake with types, and rejection criteria for judgment records",
+    "FNC-003 and FNC-004: fixing malformed content before writing; returning what is missing instead of inventing facts",
+    "FNC-005: approval records are never rejected, only checked for completeness of required quote and reason",
+    "FNC-006: updating a rejected decision by rewriting the same section, moving the old idea into alternatives",
+    "FNC-007: verdict return values (create, reject, insufficient) and failure visibility",
+    "FNC-008 and FNC-009: one ADR file per feature under adr/ with numbered naming, write scope limited to ADR files",
+    "FNC-010 to FNC-012: single entry point, start-design not holding ADR norms, single source for ADR norms",
+    "NFR: isolated context and failure visibility"
+  ],
+  "tasks": [
+    "Designing or revising the ADR writer agent or skill",
+    "Writing or updating an ADR file",
+    "Requesting an approval record when a design departs from requirements",
+    "Deciding whether a decision deserves an ADR",
+    "Updating or retracting an existing ADR decision",
+    "Modifying start-design to delegate ADR work",
+    "Reviewing ADR writer behavior against requirements",
+    "Choosing ADR output location and file naming"
+  ],
+  "title": "REQ-030 ADR ライター 要件定義書"
+}

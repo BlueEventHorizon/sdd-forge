@@ -1,0 +1,34 @@
+{
+  "content_hash": "31e53fa6502107892540d2b0126df4838d29dce807bcb1e6bdaf1409b6163b4a",
+  "doc_link_id": "DLID-5h7wqxcknyha",
+  "keywords": [
+    "parallel agent",
+    "output contract",
+    "return value",
+    "race condition",
+    "orchestrator",
+    "shared resource",
+    "intermediate file",
+    "anti-pattern"
+  ],
+  "path": "docs/specs/forge/design/DES-022_parallel_agent_output_contract_design.md",
+  "purpose": "Design document defining an output contract for parallel agents so shared-resource write races cannot occur, by returning results as return values to the orchestrator.",
+  "summary": [
+    "Problem of concurrent writes to shared files by parallel agents in Claude Code",
+    "Scope: contract covers result handoff to the orchestrator, not editing by writer agents",
+    "Basic principle: agents return results as return values, not via shared resources",
+    "No intermediate files or session directories for result handoff",
+    "Responsibilities of agents and orchestrator, including partial failure handling",
+    "Application example: context gathering with specs, rules, and code agents",
+    "Anti-patterns: shared file writes, read-modify-write, file locks, intermediate files",
+    "Checklist for designing new parallel agents"
+  ],
+  "tasks": [
+    "Designing parallel agents",
+    "Reviewing agent result handoff",
+    "Implementing context gathering agents",
+    "Choosing between return values and files",
+    "Avoiding race conditions in agent workflows"
+  ],
+  "title": "DES-022 並列 agent 出力契約パターン 設計書"
+}

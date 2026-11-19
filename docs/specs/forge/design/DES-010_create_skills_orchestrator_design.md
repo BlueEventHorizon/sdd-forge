@@ -1,14 +1,18 @@
-# DES-010 create-* スキル オーケストレータ化設計書
+---
+doc_link_id: DLID-s1ds8dcyfn7p
+---
 
-## 1. 概要
+# DES-010 create-* スキル オーケストレータ化設計書 DLID-dr1pscmyyp6b
+
+## 1. 概要 DLID-rv94hqqtj274
 
 start-design / start-plan / start-requirements の 3 スキルは、review スキルと同じオーケストレータパターンで構成する。共通のコンテキスト収集フレームワークを抽出し、各スキルの SKILL.md をオーケストレータとして配置する。
 
 ---
 
-## 2. アーキテクチャ概要
+## 2. アーキテクチャ概要 DLID-bt8tcf4e4pbr
 
-### 2.1 オーケストレータ構造
+### 2.1 オーケストレータ構造 DLID-09t4dw1r0e2y
 
 ```
 ┌──────────────────────────────────────┐
@@ -23,7 +27,7 @@ start-design / start-plan / start-requirements の 3 スキルは、review ス�
 └──────────────────────────────────────┘
 ```
 
-### 2.2 責務分担
+### 2.2 責務分担 DLID-vw9r909jdsj7
 
 | 役割                   | 実行場所                                             | 責務                                                                                        |
 | ---------------------- | ---------------------------------------------------- | ------------------------------------------------------------------------------------------- |
@@ -37,16 +41,16 @@ start-design / start-plan / start-requirements の 3 スキルは、review ス�
 
 ---
 
-## 3. 共通コンテキスト収集フレームワーク
+## 3. 共通コンテキスト収集フレームワーク DLID-594p7wtejzgg
 
-### 3.1 概要
+### 3.1 概要 DLID-8k06jb24sm0m
 
 3 スキルに共通する「参考文書の収集」処理を標準化する。
 review スキルの Phase 2 (Step 3~7) を汎用化し、create-* スキルでも同じパターンを使用する。
 
 起動する agent の組み合わせはスキルごとに異なる（§4）。start-design は、要件定義書を置き場から決定論的に特定するため、agent で集めるのはプロジェクトのルールだけである。
 
-### 3.2 収集結果の受け渡し（return value 契約）
+### 3.2 収集結果の受け渡し（return value 契約） DLID-x938ggdm1j1v
 
 create-* スキルは**セッションディレクトリを使用しない**。各収集 agent は結果を **return value**（markdown bullet list）で返し、オーケストレータが main AI コンテキストに直接保持する（DES-022 並列 agent 出力契約）。
 
@@ -57,9 +61,9 @@ return value の形式（例）:
 - `specs/login/requirements/login_spec.md` — ログイン機能の要件定義書
 ```
 
-### 3.3 コンテキスト収集 agent の指示方式
+### 3.3 コンテキスト収集 agent の指示方式 DLID-xjfj833rxmmz
 
-#### インライン prompt による自己完結性の確保（FNC-003 準拠）
+#### インライン prompt による自己完結性の確保（FNC-003 準拠） DLID-8hqa0500qbvd
 
 各 agent への指示は、SKILL.md にインラインで記述した prompt テンプレートで渡す。テンプレートには以下を含め、agent は prompt だけで自己完結して動作する:
 
@@ -67,7 +71,7 @@ return value の形式（例）:
 2. **検索手段**: `/forge:query-db-specs` / `/forge:query-db-rules` の呼び出し、または `Grep` / `Glob` の探索手順
 3. **出力契約**: return value の markdown 形式（見出し + bullet list、件数上限）
 
-### 3.4 並列実行と統合
+### 3.4 並列実行と統合 DLID-qttrvs40e53e
 
 ```mermaid
 sequenceDiagram
@@ -94,7 +98,7 @@ sequenceDiagram
     O->>O: 文書作成フェーズへ
 ```
 
-### 3.5 並列収集の失敗時の扱いと表示
+### 3.5 並列収集の失敗時の扱いと表示 DLID-ecx9m53ymvs3
 
 各 agent は独立して動作するため、1つの agent が失敗しても他の agent には影響しない。失敗時の扱い:
 
@@ -120,15 +124,15 @@ sequenceDiagram
 
 ---
 
-## 4. スキル別設計
+## 4. スキル別設計 DLID-jsc1res7bbed
 
 各スキルのフェーズ構成と、コンテキスト収集 agent の適用マトリクスを定義する。
 
-### 4.1 start-design
+### 4.1 start-design DLID-5t4zehyzcgv3
 
 フェーズ構成は [DES-018](DES-018_create_design_workflow_design.md) を正本とする。入力の収集は次のとおり。
 
-#### 入力の収集
+#### 入力の収集 DLID-8q9m48m16szv
 
 | 入力                 | 必須 | 取得方法                                                                                                        |
 | -------------------- | ---- | --------------------------------------------------------------------------------------------------------------- |
@@ -139,9 +143,9 @@ sequenceDiagram
 
 ---
 
-### 4.2 start-plan
+### 4.2 start-plan DLID-7r2d232cbg8r
 
-#### フェーズ構成
+#### フェーズ構成 DLID-0n5y4yb2nym8
 
 ```
 事前準備 [MANDATORY]
@@ -175,7 +179,7 @@ Phase 5: AIレビュー [MANDATORY]（FNC-006 準拠: --auto モード）
 └── 完了案内
 ```
 
-#### コンテキスト収集の適用マトリクス
+#### コンテキスト収集の適用マトリクス DLID-cmphr8kzpzj3
 
 | agent | 必須                                  | 収集内容                            |
 | ----- | ------------------------------------- | ----------------------------------- |
@@ -185,11 +189,11 @@ Phase 5: AIレビュー [MANDATORY]（FNC-006 準拠: --auto モード）
 
 ---
 
-### 4.3 start-requirements
+### 4.3 start-requirements DLID-nrgfa8zy309t
 
 フェーズ構成は [DES-017](DES-017_create_requirements_workflow_design.md) を正本とする。コンテキスト収集は次のとおり。
 
-#### コンテキスト収集 agent の適用マトリクス
+#### コンテキスト収集 agent の適用マトリクス DLID-a7qcmtpn4jjb
 
 | agent | interactive | reverse-engineering | from-figma | 収集内容                             |
 | ----- | ----------- | ------------------- | ---------- | ------------------------------------ |
@@ -201,7 +205,7 @@ agent を使わないモードと、reverse-engineering の agent 以外の収�
 > **設計判断**: start-requirements の interactive モードではコンテキスト収集 agent を使わない。
 > 要件定義は「何を実現するか」を定義する工程であり、既存実装への過度な依存は避ける（REQ-001 オーケストレータパターン要件の設計原則「What に集中」に準拠）。既存コードの確認は、関連する既存機能と影響範囲の特定に必要な範囲にとどめる。
 
-#### reverse-engineering のコンテキスト収集シーケンス
+#### reverse-engineering のコンテキスト収集シーケンス DLID-57hsvrr9bw30
 
 ```mermaid
 sequenceDiagram
@@ -221,7 +225,7 @@ sequenceDiagram
 
 ---
 
-## 5. 使用する既存コンポーネント
+## 5. 使用する既存コンポーネント DLID-q5rc0qam082w
 
 | コンポーネント                         | ファイルパス                                                  | 用途                                   |
 | -------------------------------------- | ------------------------------------------------------------- | -------------------------------------- |
@@ -231,7 +235,7 @@ sequenceDiagram
 
 ---
 
-## 6. セッション不使用の設計判断
+## 6. セッション不使用の設計判断 DLID-jr9egq4jdkb5
 
 create-* スキルは**セッションディレクトリを使用しない**。理由:
 

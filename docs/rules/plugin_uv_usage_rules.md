@@ -1,10 +1,14 @@
-# uv 利用ルール
+---
+doc_link_id: DLID-f2f7m4hpyc1f
+---
+
+# uv 利用ルール DLID-e1dj13qmbyww
 
 Python script の実行と依存の管理を uv で行うときのルール。版番号の選定と記入を uv に任せ、人と AI が版番号を手で書かずに済むようにする。
 
 ---
 
-## 適用範囲
+## 適用範囲 DLID-ta3tydds361a
 
 - 本文書は、プロジェクトの指示（CLAUDE.md・利用者の指示等）が uv の利用を定めているときに適用する。指示が無いプロジェクトに適用を強いない
 - 指示が無いプロジェクトでも、script が標準ライブラリ以外に依存するときは、本文書の採否を検討する。依存を足すこと自体は、[plugin_implementation_guidelines.md](plugin_implementation_guidelines.md) のとおり利用者の許諾を要する
@@ -13,7 +17,7 @@ Python script の実行と依存の管理を uv で行うときのルール。�
 
 ---
 
-## 依存の宣言の置き場
+## 依存の宣言の置き場 DLID-c2z6r5b3c13j
 
 | 対象                                                 | 宣言の置き場                               |
 | ---------------------------------------------------- | ------------------------------------------ |
@@ -32,7 +36,7 @@ Python script の実行と依存の管理を uv で行うときのルール。�
 
 ---
 
-## 実行 [MANDATORY]
+## 実行 [MANDATORY] DLID-dc3wt7ekxjnf
 
 - Python script は `uv run` で実行する。システムの `python3` で直接実行しない
 - 依存と Python の版は、script ごとに PEP 723 のインラインメタデータで宣言する。`uv run` は宣言を満たす Python と依存を用意してから実行する
@@ -50,7 +54,7 @@ Python script の実行と依存の管理を uv で行うときのルール。�
 
 ---
 
-## 依存の追加と削除 [MANDATORY]
+## 依存の追加と削除 [MANDATORY] DLID-0e2cbd842rmw
 
 - 依存を加える前に、利用者の許諾を得る（[plugin_implementation_guidelines.md](plugin_implementation_guidelines.md)）
 - 依存は `uv add --script <script> --bounds lower <package>` で加える。uv が解決した版を下限として宣言に書き込む
@@ -60,7 +64,7 @@ Python script の実行と依存の管理を uv で行うときのルール。�
 
 ---
 
-## ロック
+## ロック DLID-6ajbcke3avay
 
 - `uv lock --script <script>` で、解決した版をロックファイルに固定する。`uv add --script` はロックを作らないため、追加のあとに実行する
 - ロックファイルは script と一緒に commit する。ロックファイルは版だけでなく、配布ファイルのハッシュも固定する
@@ -69,7 +73,7 @@ Python script の実行と依存の管理を uv で行うときのルール。�
 
 ---
 
-## 更新
+## 更新 DLID-k5haywd1wpqg
 
 - 古くなった依存は `uv tree --script <script> --outdated` で確かめる
 - 更新は `uv lock --script <script> --upgrade`（全部）または `--upgrade-package <package>`（個別）で行う
@@ -77,7 +81,7 @@ Python script の実行と依存の管理を uv で行うときのルール。�
 
 ---
 
-## 公開直後の版を取り込まない
+## 公開直後の版を取り込まない DLID-sebgtekbjzkq
 
 乗っ取られたパッケージの新しい版に不正なコードを仕込む攻撃では、公開から発覚・取り下げまでの間に取り込んだ利用者が被害を受ける。
 
@@ -88,7 +92,7 @@ Python script の実行と依存の管理を uv で行うときのルール。�
 
 ---
 
-## Python の版
+## Python の版 DLID-nhy26h85a9vj
 
 - `requires-python` の下限は、最新の安定版に合わせる。古い版は修正の提供が終わり、セキュリティ上の懸念が残るため、新しい版を強制する。手元に無ければ uv がダウンロードする
 - 利用できる版は `uv python list` で確かめる。一覧の先頭は alpha・beta・rc の版のことがあるため、これらを除いた最新を選ぶ

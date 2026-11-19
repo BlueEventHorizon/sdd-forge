@@ -1,0 +1,38 @@
+{
+  "content_hash": "330d928d2ba490d74091dd4d998dd9231537ad4cc0f0d112eb2f9ce48a255156",
+  "doc_link_id": "DLID-33rp07ycsdym",
+  "keywords": [
+    "authoring policy",
+    "SKILL",
+    "custom agent",
+    "context fork",
+    "AskUserQuestion",
+    "inherited SKILL",
+    "official spec verification",
+    "forge",
+    "MANDATORY",
+    "Claude Code"
+  ],
+  "path": "docs/rules/forge_claude_code_authoring_policy.md",
+  "purpose": "Records the policy forge adopts for authoring Claude Code SKILLs and agents beyond the generic authoring guide, including how to verify official specs.",
+  "summary": [
+    "How to verify official Claude Code specifications using meta references and the claude-code-guide Agent",
+    "All SKILLs are written as inherited type; context: fork and agent are not used",
+    "Isolated-context processing is implemented as a custom Agent launched via the Agent tool",
+    "Inherited SKILLs must state that they do only their own task and not take over parent work",
+    "New custom Agents require design rationale recorded and Role constraint tests",
+    "Questions and confirmations use AskUserQuestion, not plain text",
+    "Exception for discussion-driven SKILLs, with the boundary declared in the body",
+    "Do not block AskUserQuestion via disallowed-tools",
+    "SKILL.md descriptions are written in Japanese"
+  ],
+  "tasks": [
+    "Creating a new SKILL",
+    "Editing an existing SKILL.md",
+    "Creating a custom Agent",
+    "Designing user confirmation flows in a SKILL",
+    "Verifying official Claude Code behavior before writing",
+    "Reviewing SKILLs for authoring policy compliance"
+  ],
+  "title": "Claude Code 作成方針（forge）"
+}

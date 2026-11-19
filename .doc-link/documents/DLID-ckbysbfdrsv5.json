@@ -1,0 +1,39 @@
+{
+  "content_hash": "d8aa531bdbafb0faed72355aabdffbf2ecf4fea35c6de9d003649b40eec749c6",
+  "doc_link_id": "DLID-ckbysbfdrsv5",
+  "keywords": [
+    "wrapper",
+    "SKILL.md",
+    "low-level script",
+    "fixed-context adapter",
+    "dependency direction",
+    "script placement",
+    "naming convention",
+    "public contract",
+    "sys.argv passthrough",
+    "REQ-003"
+  ],
+  "path": "docs/specs/forge/design/DES-024_skill_script_layout_design.md",
+  "purpose": "Design defining the placement and contracts of SKILL.md, SKILL-local entry scripts and shared low-level scripts, with one-way dependency, wrapper criteria and naming rules.",
+  "summary": [
+    "Overview: one-way dependency SKILL.md to local entry to shared low-level script to external files",
+    "Wrapper types: fixed-context, operation-contract, I/O and composite adapters",
+    "Criteria for when to create or not create a wrapper",
+    "Intentional duplication of wrappers and its design rationale",
+    "Script placement: shared scripts vs SKILL-local scripts, no shared wrapper layer",
+    "Stable public contracts for local entry points",
+    "Naming rules using verb-based operation names",
+    "SKILL.md description rules and layer/dependency structure",
+    "Implementation templates and test principles with conformance review triggers",
+    "Rejected alternatives with reasons"
+  ],
+  "tasks": [
+    "Adding or modifying a SKILL-local script",
+    "Deciding whether to create a wrapper script",
+    "Editing SKILL.md calls to scripts",
+    "Changing shared low-level CLI arguments",
+    "Writing wrapper tests",
+    "Reviewing conformance to script layout design"
+  ],
+  "title": "DES-024 SKILL.md と script の配置・契約設計"
+}

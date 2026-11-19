@@ -37,7 +37,7 @@ SettingsError = forge_settings.SettingsError
 #: 複数セクションの併記（DES-061 §2.1 の記述例に相当）
 MULTI_SECTION = """\
 doc_backend:
-  prefer: doc-advisor
+  prefer: doc-link
 
 foo_feature:
   bar: value
@@ -64,7 +64,7 @@ alpha:
     flag: true
     off: false
   name: "hash # inside"
-  plain: doc-advisor
+  plain: doc-link
 """
 
 #: 解析不能: mapping の行として読めない行を含む（4 行目）
@@ -210,6 +210,14 @@ class TestUnreadableFile(ForgeSettingsTestBase):
             forge_settings.load(self.project_root)
         self.assertNotIn(str(self.project_root), str(ctx.exception))
 
+    def test_non_utf8_file_raises_settings_error(self):
+        path = self._settings_path()
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_bytes(b"doc_backend:\n  prefer: \xff\xfe\n")
+        with self.assertRaises(SettingsError) as ctx:
+            forge_settings.load(self.project_root)
+        self.assertNotIn(str(self.project_root), str(ctx.exception))
+
     def test_path_is_directory_raises_settings_error(self):
         self._settings_path().mkdir(parents=True)
         with self.assertRaises(SettingsError) as ctx:
@@ -228,7 +236,7 @@ class TestSections(ForgeSettingsTestBase):
         doc_backend = forge_settings.section(self.project_root, "doc_backend")
         foo_feature = forge_settings.section(self.project_root, "foo_feature")
 
-        self.assertEqual(doc_backend, {"prefer": "doc-advisor"})
+        self.assertEqual(doc_backend, {"prefer": "doc-link"})
         self.assertEqual(foo_feature, {"bar": "value", "items": ["one", "two"]})
         # 混入しないこと
         self.assertNotIn("bar", doc_backend)
@@ -241,7 +249,7 @@ class TestSections(ForgeSettingsTestBase):
         # foo_feature を「未知セクション」とみなし doc_backend だけを読む
         self.assertEqual(
             forge_settings.section(self.project_root, "doc_backend"),
-            {"prefer": "doc-advisor"},
+            {"prefer": "doc-link"},
         )
 
     def test_missing_section_returns_empty_dict(self):
@@ -267,7 +275,7 @@ class TestSections(ForgeSettingsTestBase):
         self.assertEqual(
             forge_settings.load(self.project_root),
             {
-                "doc_backend": {"prefer": "doc-advisor"},
+                "doc_backend": {"prefer": "doc-link"},
                 "foo_feature": {"bar": "value", "items": ["one", "two"]},
             },
         )
@@ -297,7 +305,7 @@ class TestSupportedSyntax(ForgeSettingsTestBase):
                 "alpha": {
                     "nested": {"deep": 3, "flag": True, "off": False},
                     "name": "hash # inside",
-                    "plain": "doc-advisor",
+                    "plain": "doc-link",
                 }
             },
         )

@@ -6,7 +6,7 @@
 
 **マーケットプレイスバージョン: 0.1.2**
 
-マーケットプレイスは **forge** プラグインを配布する。forge の検索系スキルは、順序リストに基づいて文書検索 backend（**doc-advisor** / **doc-db**）を選択する。既定は doc-advisor 先位で、`.claude/.forge.yaml` の `doc_backend.prefer` で変更できる。doc-advisor は別リポジトリ [BlueEventHorizon/DocAdvisor](https://github.com/BlueEventHorizon/DocAdvisor) が提供する（`index-docs` / `query-docs`）。
+マーケットプレイスは **forge** プラグインを配布する。forge の検索系スキルは、外部の文書検索 backend を使う。backend の種類・導入・切り替えは [forge backend の導入と切り替え](docs/readme/switch-forge-backend_ja.md) を参照。
 
 [English README (README_en.md)](README_en.md)
 
@@ -16,21 +16,16 @@
 
 → 哲学と追加開発ワークフローの詳細は [仕様駆動開発ガイド](docs/readme/guide_sdd_ja.md) を参照。
 
-## 文書検索 backend（doc-advisor / doc-db）の役割
+## 文書検索 backend の役割
 
 プロジェクトが大きくなると、ルール・規約・設計文書が蓄積される。AI がそれらを見つけられなければ活用できない。文書検索 backend はこれらの文書をインデックス化し、forge の重要な場面で自動的に提供する:
 
 - **実装時** — コードを書く前にプロジェクト固有の実装ルールと関連仕様を収集する。
 - **レビュー時** — 適用すべきルールをレビュー観点として追加し、汎用的なベストプラクティスではなくプロジェクトの実際の基準で検査する。
 
-forge の `/forge:query-db-rules` / `/forge:query-db-specs` / `/forge:update-db-rules` / `/forge:update-db-specs` は、順序リストに基づいて backend を選択して検索・索引更新を実行する。backend は 2 つある:
+forge の `/forge:query-db-rules` / `/forge:query-db-specs` / `/forge:update-db-rules` / `/forge:update-db-specs` は、順序リストに基づいて backend を選択して検索・索引更新を実行する。先位の backend を利用できない場合は理由を通知して後位の backend を利用する。これによりコンテキストの欠損がなくなる — AI がシニアメンバーと同じ知識で実装・レビューできるようになる。
 
-- **doc-advisor**（外部プラグイン。[BlueEventHorizon/DocAdvisor](https://github.com/BlueEventHorizon/DocAdvisor)）— 文書を ToC（キーワード／メタデータ）でインデックス化する
-- **doc-db** — ローカルで稼働する文書検索サーバ
-
-既定の選択順序は doc-advisor 先位で、`.claude/.forge.yaml` の `doc_backend.prefer` で変更できる。先位の backend を利用できない場合は理由を通知して後位の backend を利用する。これによりコンテキストの欠損がなくなる — AI がシニアメンバーと同じ知識で実装・レビューできるようになる。
-
-切り替えの詳細 — `.claude/.forge.yaml` の書き方、索引更新スキル（`/forge:update-db-rules` / `update-db-specs`）だけが持つ `--backend` 強制指定、および別軸であるレビュー実行主体（`agent-review`）の指定 — は [switch-forge-backend_ja.md](docs/readme/switch-forge-backend_ja.md) を参照。
+backend の種類と導入方法、切り替えの詳細 — `.claude/.forge.yaml` の書き方、索引更新スキル（`/forge:update-db-rules` / `update-db-specs`）だけが持つ `--backend` 強制指定、および別軸であるレビュー実行主体（`agent-review`）の指定 — は [switch-forge-backend_ja.md](docs/readme/switch-forge-backend_ja.md) を参照。
 
 ## ワークフロー
 
@@ -40,7 +35,7 @@ flowchart LR
         R(["要件定義"]) --> D(["設計"]) --> P(["計画"]) --> I(["実装"]) --> RF(["レビュー / 修正"])
     end
     RF --> DL(["成果物"])
-    DA["文書検索 backend（doc-advisor / doc-db）"] -. "コンテキスト収集" .-> forge
+    DA["文書検索 backend"] -. "コンテキスト収集" .-> forge
 ```
 
 ## プラグイン一覧
@@ -49,7 +44,7 @@ flowchart LR
 | ---------- | ---------- | ----------------------------------------------------------------------------------------------------------------------- |
 | **forge**  | 0.1.2      | AI によるドキュメントライフサイクルツール。要件定義・設計・計画書の作成、コード・文書レビュー、自動修正、品質確定に対応 |
 
-> **文書検索 backend（doc-advisor / doc-db）は外部依存**: doc-advisor は別リポジトリ [BlueEventHorizon/DocAdvisor](https://github.com/BlueEventHorizon/DocAdvisor) として配布される。インストールは `/plugin marketplace add BlueEventHorizon/DocAdvisor` → `/plugin install doc-advisor@DocAdvisor`。doc-db はローカルで稼働する文書検索サーバで、`doc-db` コマンドとして導入されていれば利用可能な候補として扱われ、順序リストに従って選択されたときに forge が自動的に起動・利用する。いずれの backend もバージョンを条件にせず、必要な機能が利用できるかで判定する。
+> **文書検索 backend は外部依存**: forge には含まれない。種類と導入方法は [forge backend の導入と切り替え](docs/readme/switch-forge-backend_ja.md) を参照。
 
 ## スキル一覧
 
@@ -123,9 +118,9 @@ flowchart LR
 
 > **太字** = ユーザー起動可能、_斜体_ = AI 専用（他スキルから内部的に呼び出される）
 
-### 文書検索 backend（doc-advisor / doc-db、外部）
+### 文書検索 backend（外部）
 
-文書検索は 2 つの backend が提供する。doc-advisor は別リポジトリ [BlueEventHorizon/DocAdvisor](https://github.com/BlueEventHorizon/DocAdvisor) のプラグイン（`index-docs` / `query-docs`。詳細は同リポジトリの README を参照）、doc-db はローカルで稼働する文書検索サーバ。forge の `/forge:query-db-rules` 等が順序リストに基づいて選択して呼び出す（既定は doc-advisor 先位。`.claude/.forge.yaml` の `doc_backend.prefer` で変更可）。
+文書検索は、外部の backend が提供する。forge の `/forge:query-db-rules` 等が順序リストに基づいて選択して呼び出す。種類と導入方法は [forge backend の導入と切り替え](docs/readme/switch-forge-backend_ja.md) を参照。
 
 ## インストール
 
@@ -136,13 +131,9 @@ Claude Code セッション内で:
 ```
 /plugin marketplace add BlueEventHorizon/sdd-forge
 /plugin install forge@sdd-forge
-
-# 文書検索 backend の doc-advisor は別マーケットプレイス
-/plugin marketplace add BlueEventHorizon/DocAdvisor
-/plugin install doc-advisor@DocAdvisor
 ```
 
-もう 1 つの文書検索 backend である doc-db を使う場合は、`doc-db` コマンドを PATH に導入する。導入すると利用可能な候補として扱われ、順序リストに従って選択されたときに forge が自動的に起動・利用する（既定は doc-advisor 先位のため、doc-db を先に使うには `.claude/.forge.yaml` で `doc_backend.prefer: doc-db` を指定する。doc-advisor が利用不能な場合にも選択される）。
+文書検索 backend は、forge とは別に導入する。手順は [forge backend の導入と切り替え](docs/readme/switch-forge-backend_ja.md) を参照。
 
 `/plugin install` を実行するとインストールスコープの選択を求められます（`--scope` で直接指定することも可能）:
 
@@ -206,7 +197,7 @@ GitHub リポジトリの情報（既定のベースブランチ等）をキャ�
 
 - [Claude Code](https://claude.ai/code) CLI
 - Python 3.14 以上（Python スクリプト実行用。Python 3.13 以下はサポート対象外）
-- 文書検索を使う場合はいずれかの backend: 外部 [doc-advisor](https://github.com/BlueEventHorizon/DocAdvisor)（Python 標準ライブラリのみ・追加 API キー不要）、または doc-db（ローカル文書検索サーバ）
+- 文書検索を使う場合は、文書検索 backend のいずれか（[forge backend の導入と切り替え](docs/readme/switch-forge-backend_ja.md)）
 
 ## ライセンス
 

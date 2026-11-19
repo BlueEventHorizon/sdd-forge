@@ -1,0 +1,34 @@
+{
+  "content_hash": "52103a673f00b38b16154eb0783d75f727e9679c97d6152014f12396a051736b",
+  "doc_link_id": "DLID-42wh7646hjhq",
+  "keywords": [
+    "plan format",
+    "plan.json",
+    "tasks",
+    "requirements_traceability",
+    "design_traceability",
+    "feature_marker",
+    "temporary-feature",
+    "parallel state",
+    "frontmatter parsing"
+  ],
+  "path": "docs/specs/forge/design/DES-074_plan_format_design.md",
+  "purpose": "Defines the default JSON plan format and schema, plus the feature_marker.py contract for judging parallel temporary-feature state shared by skills.",
+  "summary": [
+    "Rationale for choosing JSON for plan documents",
+    "Plan files carry no frontmatter; additive-feature status is traced via the requirements document",
+    "JSON schema with requirements_traceability, design_traceability and tasks top-level keys",
+    "Field definitions for each section, including task status enum and build_check values",
+    "Priority guideline ranges 1-99",
+    "feature_marker.py frontmatter parsing using only the standard library",
+    "Three-way judgment: parallel, not parallel, parse failure",
+    "Parse failure kept distinct from not-parallel; key order must not affect results"
+  ],
+  "tasks": [
+    "Creating or reviewing implementation plan JSON files",
+    "Implementing or modifying start-implement plan consumption",
+    "Implementing or testing feature_marker.py",
+    "Judging temporary-feature state in start-design"
+  ],
+  "title": "計画書 デフォルトフォーマット"
+}

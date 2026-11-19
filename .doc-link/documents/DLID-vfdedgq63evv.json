@@ -1,0 +1,39 @@
+{
+  "content_hash": "7fee56af55cace53ff087705d22cb6fed541589b470b0d523c57e635208b3435",
+  "doc_link_id": "DLID-vfdedgq63evv",
+  "keywords": [
+    "doc_structure",
+    "migration",
+    "versioning",
+    "CURRENT_VERSION",
+    "MIGRATIONS",
+    "migrate_doc_structure",
+    "dry-run",
+    "setup-doc-structure",
+    "resolve_doc_structure",
+    "COMMON-REQ-001"
+  ],
+  "path": "docs/specs/forge/design/DES-016_doc_structure_version_management_design.md",
+  "purpose": "Defines the versioning and stepwise migration design for .doc_structure.yaml, including version detection, migration scripts, CLI behavior and the setup-doc-structure call flow.",
+  "summary": [
+    "Version identifier stored as a YAML comment doc_structure_version X.Y with major/minor semantics",
+    "Migration flow, CURRENT_VERSION constant and MIGRATIONS registry with chained idempotent pure functions",
+    "Error handling rules: bugs propagate, newer versions skipped, detection failure treated as v1",
+    "Procedure for adding a new migration step",
+    "Design decision to use text (str) operations because no standard-library YAML parser exists",
+    "Reuse of get_version/get_major_version from resolve_doc_structure.py",
+    "Conversion specs for v1 to v2 and v2 to v3 migrations",
+    "migrate_doc_structure.py CLI modes (default, --dry-run, --check), output spec and exit codes",
+    "Responsibility split: script prints to stdout, caller writes files; check_doc_structure.py branching in setup-doc-structure",
+    "User settings preservation rules and version detection API"
+  ],
+  "tasks": [
+    "Modifying .doc_structure.yaml format or bumping its version",
+    "Adding a new migration function to the MIGRATIONS registry",
+    "Implementing or changing migrate_doc_structure.py",
+    "Changing setup-doc-structure SKILL flow for existing files",
+    "Changing check_doc_structure.py or resolve_doc_structure.py version detection",
+    "Writing tests for doc structure migration"
+  ],
+  "title": "DES-016 .doc_structure.yaml バージョン管理設計"
+}

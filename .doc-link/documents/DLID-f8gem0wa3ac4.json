@@ -1,0 +1,40 @@
+{
+  "content_hash": "402bc80b6d5ad8cdfa0302b9f257a75adf09a770c507d8dfe866f795b5fc39d1",
+  "doc_link_id": "DLID-f8gem0wa3ac4",
+  "keywords": [
+    "start-implement",
+    "executor agent",
+    "orchestrator",
+    "task execution unit",
+    "task group",
+    "plan state transition",
+    "task context",
+    "result inspection",
+    "review request",
+    "DES-088"
+  ],
+  "path": "docs/specs/start-implement/design/DES-088_start_implement_design.md",
+  "purpose": "Design document for the /forge:start-implement skill: responsibilities, behaviors, contracts and algorithms that realize REQ-034 for executing plan tasks, reviewing, and managing state.",
+  "summary": [
+    "Scope and premises: realizes REQ-034 requirements, introduces the task execution unit, and excludes plan creation",
+    "Scenario table SC-01 to SC-27 mapping requirements to triggers and responses",
+    "Responsibility classes and class diagram: orchestrator, startup check, task selection, state transition, plan check, context creation, executor agent, result check, review request",
+    "Sequence diagrams for startup, preparation and implementation, task completion, task group completion, error and rerun, and post-completion flow",
+    "Contracts: shared data definitions, per-module tables with preconditions and postconditions, and AI output promises",
+    "Detailed design: means and placement, JSON data structures (task context, selection result, startup state), state transition rules, selection algorithm",
+    "Algorithms for required reading collection, scope derivation, result inspection, review invocation, final verification, and parallel independence check",
+    "Operating principles: plan file as single source of truth, atomic replacement writes, dependent implemented tasks reverted on failure",
+    "Executor agent edit scope rationale, testing policy, and a traceability table from REQ-034 to design elements"
+  ],
+  "tasks": [
+    "Implementing the start-implement skill and its scripts",
+    "Writing or modifying the executor agent definition",
+    "Implementing task selection and plan state transitions",
+    "Designing or reviewing the context creation and result inspection scripts",
+    "Writing tests for start-implement scripts",
+    "Reviewing design consistency against REQ-034",
+    "Creating an implementation strategy document for start-implement",
+    "Integrating plan validation with start-plan"
+  ],
+  "title": "DES-088 start-implement 設計書"
+}

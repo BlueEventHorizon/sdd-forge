@@ -1,0 +1,38 @@
+{
+  "content_hash": "6b85cf75b26b1b9a85ad8c06e9afdfdbe59e35fc354b382f88adcae5af01cfc1",
+  "doc_link_id": "DLID-bgxgcq0pvkm7",
+  "keywords": [
+    "SKILL.md",
+    "script separation",
+    "clean state",
+    "wrapper",
+    "fixed values",
+    "call contract",
+    "misuse defense",
+    "cognitive load",
+    "shared low-level script"
+  ],
+  "path": "docs/specs/forge/requirements/REQ-003_skill_script_separation.md",
+  "purpose": "Requirements separating SKILL.md responsibilities from script responsibilities, so SKILL.md keeps judgment and dialogue while scripts apply fixed values and deterministic processing.",
+  "summary": [
+    "Background: script-specific detail in SKILL.md burdens AI judgment, yet orchestration must stay in the skill",
+    "Purpose: fix operations and values in advance and leave no free semantic choice to the AI at runtime",
+    "FNC-001: clean state of SKILL.md, what may remain and what must not be written",
+    "FNC-002: classification of script inputs by origin and responsibility",
+    "FNC-003: one scene, one fully determined call contract",
+    "FNC-004: placement of misuse defenses, script guards first and no prohibition warnings in SKILL.md",
+    "FNC-005: measurement-based refactoring judged by review and grep",
+    "FNC-006: skill-local wrapper boundary binding fixed values over shared low-level scripts",
+    "Non-goals including minimizing wrappers and quantitative targets"
+  ],
+  "tasks": [
+    "Writing or refactoring a SKILL.md",
+    "Designing a skill-local wrapper script",
+    "Deciding what logic belongs in a script versus SKILL.md",
+    "Designing script arguments and input responsibilities",
+    "Placing misuse prevention for scripts",
+    "Reviewing SKILL.md for noise such as exposed flags and prohibition warnings",
+    "Invoking inherited skills via the Skill tool"
+  ],
+  "title": "REQ-003 SKILL.md と script の責務分離要件"
+}

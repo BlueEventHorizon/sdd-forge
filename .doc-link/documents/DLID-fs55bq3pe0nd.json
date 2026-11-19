@@ -1,0 +1,40 @@
+{
+  "content_hash": "7536a7e3b826d041b1d8f9d6d040463feb79ad8b8d82becc4bc9c46a25ea8167",
+  "doc_link_id": "DLID-fs55bq3pe0nd",
+  "keywords": [
+    "responsibility declaration",
+    "inherited SKILL",
+    "fork SKILL",
+    "context isolation",
+    "uv exclude-newer",
+    "PEP 723 metadata",
+    "uv run --locked",
+    "exclude-newer-package",
+    "lockfile",
+    "ADR-089"
+  ],
+  "path": "docs/specs/common/adr/ADR-089_common.md",
+  "purpose": "Records decisions to keep the inherited-SKILL responsibility declaration norm and to declare uv exclude-newer in metadata rather than command options, with context, rationale and rejected alternatives.",
+  "summary": [
+    "ADR collecting decisions for the common area",
+    "Decision 1: keep the responsibility declaration norm at the top of inherited-type SKILLs even though no problem currently occurs",
+    "Rationale: inherited SKILLs lack fork-boundary isolation, so the declaration is the substitute defense against taking over the parent conversation's other work",
+    "Scope of the declaration norm covers all inherited SKILLs, not only those invoked from other SKILLs",
+    "Rejected for decision 1: deleting the norm because no problem occurs; limiting scope to SKILLs invoked by other SKILLs",
+    "Decision 2: declare uv exclude-newer in PEP 723 script metadata or pyproject.toml [tool.uv], not as command options",
+    "Rationale: metadata declaration keeps lock and uv run --locked consistent without flags; exclude-newer-package also works",
+    "Rejected for decision 2: passing --exclude-newer to uv add/lock, which makes uv run --locked fail with lockfile needs to be updated",
+    "Experimental findings are verified only on uv 0.13.5 on macOS",
+    "Each decision has context, decision, alternatives considered and impact sections"
+  ],
+  "tasks": [
+    "Writing or reviewing SKILL.md for inherited-type skills",
+    "Deciding whether to delete or relax the responsibility declaration norm",
+    "Proposing to fork-type SKILL adoption or isolation changes",
+    "Configuring uv exclude-newer for scripts or pyproject.toml",
+    "Writing PEP 723 script metadata with tool.uv settings",
+    "Updating uv lockfiles or running uv run --locked",
+    "Reviewing proposals that cite ADR-089 as rejection basis"
+  ],
+  "title": "ADR-089 common の決定記録"
+}

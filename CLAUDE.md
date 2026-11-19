@@ -14,7 +14,7 @@ Claude Code プラグインのマーケットプレイスリポジトリ。forge
 
 全体像・スキル一覧・ワークフロー図は [README.md](README.md) を参照。
 
-forge の文書検索は doc-advisor / doc-db の 2 backend 構成で、**どちらも本リポジトリの外にある**。doc-advisor の原本は別リポジトリ [BlueEventHorizon/DocAdvisor](https://github.com/BlueEventHorizon/DocAdvisor)、doc-db はローカル稼働の文書検索サーバである。backend 側の不具合を本リポジトリで回避してはならない（下記 SoT 項）。
+forge の文書検索は doc-link / doc-db の 2 backend 構成で、**どちらも本リポジトリの外にある**。doc-link の原本は別リポジトリ [BlueEventHorizon/doc-link](https://github.com/BlueEventHorizon/doc-link)、doc-db はローカル稼働の文書検索サーバである。backend 側の不具合を本リポジトリで回避してはならない（下記 SoT 項）。
 
 ## プロジェクト哲学
 
@@ -80,7 +80,7 @@ forge の文書検索は doc-advisor / doc-db の 2 backend 構成で、**どち
 
 ### 配布物
 
-- **配布物に、配布物に含まれない具体パスと本リポジトリ固有の事情を書かない**: 固有の事情とは、内部文書の ID・仕様名（`DES-085_adr_writer_design` 等）、`meta/`、worktree 配置、原本 SoT である立場等。**配布物の公開名（`sdd-forge` / `forge`）と、forge が連携する外部プラグインの公開名（`anvil` / `doc-advisor`）は固有の事情ではない**（利用者が install 時に指定し、現に目にする名前）
+- **配布物に、配布物に含まれない具体パスと本リポジトリ固有の事情を書かない**: 固有の事情とは、内部文書の ID・仕様名（`DES-085_adr_writer_design` 等）、`meta/`、worktree 配置、原本 SoT である立場等。**配布物の公開名（`sdd-forge` / `forge`）と、forge が連携する外部プラグインの公開名（`anvil`）は固有の事情ではない**（利用者が install 時に指定し、現に目にする名前）。文書検索 backend の名前は別で、書いてよいのは wrapper だけである（[forge_doc_access_principle.md](docs/rules/forge_doc_access_principle.md)）
 - **配布物のうち利用者環境で読まれるもの（SKILL.md / agents / commands / 内蔵 docs）からプロジェクト文書を参照しない**: パスも spec ID も禁止。規範は配布物側に本文で持たせる。script のコメント・docstring は対象外（前項の内部文書の ID も含む）
 - **下流での回避で済ませず、本リポジトリの原本（`plugins/forge/`）を直す**: `~/.claude/plugins/cache/` を書き換えても次の install で消える。memory に回避策を残すのは修正ではない
 - **agent / SKILL のプロンプト指示は、出力を組み立てる 1 箇所にだけ置く**: 近接箇所への同一指示は重複
@@ -112,7 +112,7 @@ forge の文書検索は doc-advisor / doc-db の 2 backend 構成で、**どち
 ### 文書スタイル
 
 - **文書の書き方は forge の[文書スタイル指針](plugins/forge/docs/document_style_guide.md)に従う**。以下はその要点
-- **タグ（`[MANDATORY]` / `[CRITICAL]` / `[IMPORTANT]`）は見出し行の末尾に付ける**: `[MANDATORY]` は 1 文書 0〜3 箇所に抑え、迷ったら CRITICAL → IMPORTANT → タグなしの順に格下げする
+- **タグ（`[MANDATORY]` / `[CRITICAL]` / `[IMPORTANT]`）は見出し行の末尾に付ける**（行末に DLID がある場合はその直前）: `[MANDATORY]` は 1 文書 0〜3 箇所に抑え、迷ったら CRITICAL → IMPORTANT → タグなしの順に格下げする
 - **見出しは 4 階層（`####`）まで**
 - **語尾の長音は JIS Z 8301 に従い省略する**（例: ディレクトリ、カテゴリ）
 
@@ -139,19 +139,19 @@ forge の文書検索は doc-advisor / doc-db の 2 backend 構成で、**どち
 
 ### 外部プラグインの実体確認 [MANDATORY]
 
-外部プラグイン（doc-advisor 等）のスクリプトを調査・テストする前に、**実際に動いている実体パスを必ず特定してから読む**。
+外部プラグインのスクリプトを調査・テストする前に、**実際に動いている実体パスを必ず特定してから読む**。
 
 ```bash
 # 起動引数から --plugin-dir を確認
 ps -axo args | grep 'plugin-dir'
 
 # PATH から bin の所在を確認（実体ディレクトリが判明する）
-echo $PATH | tr ':' '\n' | grep -iE 'advisor|plugin'
+echo $PATH | tr ':' '\n' | grep -i 'plugin'
 ```
 
 キャッシュ版（`~/.claude/plugins/cache/`）とローカル開発版（`--plugin-dir` 指定）は**同じバージョン番号でも実装が異なる**場合がある。キャッシュ版を実測した結果をローカル版に適用すると誤った結論になる。
 
-**実体パスを特定したら、次に「どのブランチか」を確認する。** ローカル開発版は作業中の feature ブランチがチェックアウトされていることがあり、そこでは**リリース済みの契約が既に書き換えられている**。ここを確認せずに読むと、未リリースの変更を「現在の仕様」と誤認し、正しい自プロジェクトの記述を不具合として報告してしまう（実際に、doc-advisor の `index-docs` 引数契約で発生した）。契約の正本は当該リポジトリの `main` である。
+**実体パスを特定したら、次に「どのブランチか」を確認する。** ローカル開発版は作業中の feature ブランチがチェックアウトされていることがあり、そこでは**リリース済みの契約が既に書き換えられている**。ここを確認せずに読むと、未リリースの変更を「現在の仕様」と誤認し、正しい自プロジェクトの記述を不具合として報告してしまう（実際に、外部プラグインの引数契約で発生した）。契約の正本は当該リポジトリの `main` である。
 
 ```bash
 # 実体ディレクトリのブランチと、契約の正本（main）との差を確認する
@@ -173,7 +173,7 @@ git -C <実体パス> show main:<契約を定める SKILL.md やスクリプト>
 - 解釈と作業状態が矛盾したら勝手に判断せず確認
 - 事実報告（reopen した / PR 出した 等）を新規依頼と取り違えない
 
-<!-- FORGE_ONBOARDING_START hash=6a3a278b2d31 -->
+<!-- FORGE_ONBOARDING_START hash=df4d45544345 -->
 
 > このブロックは forge の onboarding スキルが生成する。手で編集しない（次回実行で上書きされる）。
 > `${CLAUDE_PLUGIN_ROOT}` は forge プラグインの配置先を指すプレースホルダであり、この文脈では実パスに解決されない。実体を読むには onboarding スキルを起動する。
@@ -226,10 +226,9 @@ git -C <実体パス> show main:<契約を定める SKILL.md やスクリプト>
 - **実装・文書改編に着手する前に `/forge:query-forge-rules`・`/forge:query-db-rules` で関連する原則・ルールを特定して読む**（スキル経由の作業は各スキルの調査 Phase がこれを担う。会話直の作業でも省略しない）
 - **ルールはルール文書管理**: コンテキスト肥大化防止のため、CLAUDE.md にルールを詰め込まないことを推奨する
 - **一般の作業で CHANGELOG.md・version 関連ファイルを編集しない**。リリースコミットでまとめて更新（`/forge:update-version` を使う）
-- **`.toc_work/` 等の消えるべき一時物は `.gitignore` に入れない**。残存が `git status` に untracked として出ることで異常を検知できる
+- **作業ディレクトリ等の消えるべき一時物は `.gitignore` に入れない**。残存が `git status` に untracked として出ることで異常を検知できる
 - セマンティック検索とは、字句の一致ではなく意味に基づいて文書を選ぶ検索であり、実現手段（ベクトル類似度か LLM による読解か）は問わない
 - query-db-xxx SKILL はセマンティック検索であり、ワード一致検索（grep）ではない。**取りこぼしを出さないこと（false negative 厳禁）を規約として検索する**ため、意味的に近い文書を広く拾って返す。最終的に何を読むかは、何を求めて検索したかを知っている検索の実行主体が判断する
-- doc-advisor のフロントマターを持つ文書を編集したら、`/doc-advisor:write-frontmatter --paths <編集した文書>` で再生成する。`Edit` / `Write` で直接書き換えてはならない（`body_hash` の打刻・値域検証・マージ規則は script の責務であり、手書きでは信頼されないフロントマターになる）。**編集した本人がその場で書いておく**。信頼できるフロントマターが原本にあれば、後日 `update-db-rules` / `update-db-specs` が走るときに AI 抽出が省かれ、索引が高速に作られる（信頼できなければ AI 抽出へフォールバックする）
 - **forge plugin の script は、対応する SKILL.md が明示的に「直接呼び出す」と指示しているもの以外は直接実行しない**
 
 <!-- FORGE_ONBOARDING_END -->

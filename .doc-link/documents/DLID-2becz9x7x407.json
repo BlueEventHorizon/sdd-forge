@@ -1,0 +1,40 @@
+{
+  "content_hash": "f50ab18709a307f06063acf21a5fa562ccc43d977d3339fabdcbfe0397f3a9fa",
+  "doc_link_id": "DLID-2becz9x7x407",
+  "keywords": [
+    "forge:review",
+    "reviewer",
+    "evaluator",
+    "agent-review",
+    "fail closed",
+    "retains_context",
+    "termination",
+    "allowlist",
+    "split_by_location",
+    "staged presentation"
+  ],
+  "path": "docs/specs/forge/design/DES-066_review_body_design.md",
+  "purpose": "Design of the backend-independent core of /forge:review: backend resolution, targets and allowlist, fix safety verification, location-based splitting, termination and staged presentation.",
+  "summary": [
+    "Overview and architecture of the review body orchestrating reviewer and evaluator agents",
+    "Backend resolution with fail-closed rules, default candidate order and retains_context",
+    ".forge.yaml review section with only a backend key, no configurable order",
+    "Module list and base branch handoff to resolve_targets",
+    "Single exit for four termination paths with deletion of retained files",
+    "Handling of reviewer and evaluator results and failures",
+    "Request granularity preservation, focus and scope axes, rules injection",
+    "Fix safety verification, location split and two confidence marks",
+    "Staged presentation delegated to consult in same context",
+    "Use cases, test design and open items"
+  ],
+  "tasks": [
+    "Modifying the /forge:review SKILL",
+    "Adding a new review backend",
+    "Changing termination or round progression handling",
+    "Editing review scripts such as resolve_targets or split_by_location",
+    "Designing fix safety verification",
+    "Working on staged presentation via consult",
+    "Writing review body tests"
+  ],
+  "title": "DES-066 `/forge:review` 本体（バックエンド非依存部）設計書"
+}

@@ -1,27 +1,21 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""doc-advisor 契約テスト（DES-057 §9.4 doc-advisor 契約テスト・SKILL.md の静的検証）。
+"""doc-link 契約テスト（DES-057 §9.4 doc-link 契約テスト・SKILL.md の静的検証）。
 
-doc-advisor は外部 SKILL であり、`Skill` ツール起動を伴う経路はユニットテストで
-実行できないため、SKILL.md の記述を静的に検証して doc-advisor I/F への依拠を機械検証する。
+doc-link は外部 SKILL であり、`Skill` ツール起動を伴う経路はユニットテストで
+実行できないため、SKILL.md の記述を静的に検証して doc-link I/F への依拠を機械検証する。
 
 検証項目:
 
-- query が `query-docs` だけを呼び、索引を書き換えないこと（REQ-014 FNC-002）
+- query が `query-docs` だけを呼び、索引の整備の手順を持たないこと（REQ-014 FNC-002）
 - 未整備時は承認 → `update-db-*` への委譲 → 再検索の順であること（DES-057 §5.3）
-- doc-advisor 経路の query で検索母集団の相違を通知すること
-- 可用性判定に必要な SKILL が `index-docs` / `query-docs` の 2 つであること
+- 可用性判定に必要な SKILL が `query-docs` / `index-docs` / `embed-dlid` の 3 つであること
 
-**復活を防ぐ検証** — 次はいずれも「索引の正しさを別の指標で代用する」または
-「読み取り操作の内側で索引を書き換える」誤りであり、再導入されていないことを機械検査する
-（REQ-014 BL-002 / DES-057 §2.4・§5.1）:
-
-- 経過時間による鮮度判定（閾値・`--max-age` 相当の引数）を持たないこと
-- 検索のたびに索引を更新する経路（「検索前に必ず」「更新の要否を判定しない」）を持たないこと
-- バージョン番号による判定を持たないこと
+**復活を防ぐ検証** — バージョン番号による可用性の判定が再導入されていないことを機械検査する
+（DES-057 §2.4）。
 
 実行:
-  python3 -m unittest tests.forge.doc_backend.test_advisor_contract -v
+  python3 -m unittest tests.forge.doc_backend.test_link_contract -v
 """
 
 import unittest
@@ -31,7 +25,7 @@ from tests import REPO_ROOT
 
 _SKILLS_DIR = REPO_ROOT / "plugins" / "forge" / "skills"
 
-# query 系 SKILL: category → SKILL.md（category は index-docs / query-docs の --key 値）
+# query 系 SKILL: category → SKILL.md（category は doc-link の索引の識別キー）
 QUERY_SKILLS = {
     "rules": _SKILLS_DIR / "query-db-rules" / "SKILL.md",
     "specs": _SKILLS_DIR / "query-db-specs" / "SKILL.md",
@@ -74,27 +68,27 @@ class _ContractBase(unittest.TestCase):
 
 
 class TestQueryDoesNotWriteTheIndex(_ContractBase):
-    """query は索引を書き換えない（REQ-014 FNC-002）。
+    """query は索引の整備の手順を持たない（REQ-014 FNC-002）。
 
-    検索が読み取り操作の内側で索引を書き換えると、古かった事実が消え、利用者は索引の
-    更新漏れに気づけない。整備の入口も `update-db-*` と二重化する。
+    整備の手順を query 側にも持つと、整備の入口が `update-db-*` と二重化する。
     """
 
-    def test_query_docs_is_the_only_advisor_invocation(self):
+    def test_query_docs_is_the_only_link_invocation(self):
         for _category, path, body in self.each_query_skill():
-            idx = body.find("/doc-advisor:query-docs")
+            idx = body.find("/doc-link:query-docs")
             self.assertNotEqual(
                 idx, -1, f"{path.parent.name}: query-docs の起動記述がない"
             )
-            self.assertNotIn(
-                "/doc-advisor:index-docs",
-                body,
-                f"{path.parent.name}: index-docs を直接起動している（DES-057 §5.1）",
-            )
+            for skill in ("/doc-link:index-docs", "/doc-link:embed-dlid"):
+                self.assertNotIn(
+                    skill,
+                    body,
+                    f"{path.parent.name}: {skill} を直接起動している（DES-057 §5.1）",
+                )
 
     def test_no_maintenance_wrapper_invocation(self):
         for _category, path, body in self.each_query_skill():
-            for wrapper in ("prepare_advisor_index.py", "sync_documents.py"):
+            for wrapper in ("prepare_index_input.py", "sync_documents.py"):
                 self.assertNotIn(
                     wrapper,
                     body,
@@ -108,12 +102,12 @@ class TestUnpreparedIndexDelegation(_ContractBase):
     def test_order_is_approval_then_delegation(self):
         """整備の承認が委譲より先にあること。
 
-        探索は整備を扱う Step の見出し以降に限る。SKILL.md 冒頭側にはセッション内変更を確認する
+        探索は整備を扱う Step の見出し以降に限る。それより前にはセッション内変更を確認する
         `AskUserQuestion` が先に現れるため、本文全体を対象にすると整備の承認が消えても
         そちらにマッチして通ってしまう。
         """
         for category, path, body in self.each_query_skill():
-            section = body.find("### Step 5")
+            section = body.find("### Step 4")
             self.assertNotEqual(
                 section,
                 -1,
@@ -154,7 +148,7 @@ class TestUnpreparedIndexDelegation(_ContractBase):
         改行と字下げをまたぐ文のため、空白を正規化してから照合する。
         """
         for _category, path, body in self.each_query_skill():
-            section = body.find("### Step 5")
+            section = body.find("### Step 4")
             self.assertNotEqual(
                 section,
                 -1,
@@ -182,25 +176,21 @@ class TestIndexMaintenanceOutOfScope(_ContractBase):
             )
 
 
-class TestAvailabilityRequiresTwoSkills(_ContractBase):
-    """可用性判定に必要な doc-advisor SKILL は index-docs / query-docs の 2 つ。
+class TestAvailabilityRequiresLinkSkills(_ContractBase):
+    """可用性判定に必要な doc-link SKILL は query-docs / index-docs / embed-dlid の 3 つ。
 
     query 自身が呼ぶのは `query-docs` だけだが、未整備時に委譲する `update-db-*` が
-    `index-docs` を要するため、query 経路の可用性は両者が揃うことを条件とする。
+    `embed-dlid` と `index-docs` を要するため、query 経路の可用性は 3 つが揃うことを条件とする。
     """
 
-    def test_query_path_requires_index_and_query(self):
+    def test_query_path_requires_query_index_and_embed(self):
         for _category, path, body in self.each_query_skill():
-            self.assertIn(
-                "`doc-advisor:index-docs`",
-                body,
-                f"{path.parent.name}: index-docs の可用性条件の記述がない",
-            )
-            self.assertIn(
-                "`doc-advisor:query-docs`",
-                body,
-                f"{path.parent.name}: query-docs の可用性条件の記述がない",
-            )
+            for skill in ("query-docs", "index-docs", "embed-dlid"):
+                self.assertIn(
+                    f"`doc-link:{skill}`",
+                    body,
+                    f"{path.parent.name}: {skill} の可用性条件の記述がない",
+                )
 
 
 class TestPinnedBackendContract(unittest.TestCase):
@@ -249,23 +239,6 @@ class TestNoVersionInference(unittest.TestCase):
             design,
             "DES-057 からバージョン推測禁止の規範が消えている",
         )
-
-
-class TestPopulationDifferenceNotice(_ContractBase):
-    """doc-advisor 経路の query では検索母集団の相違を通知し、doc-db 経路では通知しないこと。"""
-
-    def test_notice_present_for_advisor_path_and_absent_for_docdb_path(self):
-        for _category, path, body in self.each_query_skill():
-            self.assertIn(
-                "検索母集団",
-                body,
-                f"{path.parent.name}: 検索母集団の相違に関する通知の記述がない",
-            )
-            self.assertIn(
-                "doc-db 経路で完了した検索では出さない",
-                body,
-                f"{path.parent.name}: doc-db 経路では通知しない旨の記述がない",
-            )
 
 
 if __name__ == "__main__":

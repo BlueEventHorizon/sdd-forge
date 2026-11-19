@@ -1,0 +1,39 @@
+{
+  "content_hash": "bf523e081c5e5ee6434fc297a269e30e48a2c7c880c3f957176ecb1fe3d172dc",
+  "doc_link_id": "DLID-5vrs9fnet7de",
+  "keywords": [
+    "review mechanism",
+    "common contract",
+    "review_id",
+    "round_number",
+    "finding_id",
+    "disposition",
+    "exit value",
+    "retains_context",
+    "request",
+    "severity"
+  ],
+  "path": "docs/specs/review/requirements/REQ-029_review_exchange.md",
+  "purpose": "Common contract requirements of the review mechanism: round flow, handoff by review_id and round_number, finding_id numbering, write timing and exit values, body duties, and data structures.",
+  "summary": [
+    "Overview and review flow: sequence of rounds between body, reviewer and evaluator, with termination conditions",
+    "FNC-314: each definition holds script usage and meaning of JSON items; no structure is carried in the request",
+    "FNC-302 to FNC-305, FNC-317: handoff only by review_id and round_number, scripts build inputs, values unchanged, request immutable and kind-free",
+    "FNC-313: finding_id is numbered by script as one sequence per review shared by reviewer and evaluator",
+    "FNC-310, FNC-311, FNC-203: write after judgments are finalized; exit value as string defines success; every finding must be referenced by an evaluation",
+    "FNC-312, FNC-316, FNC-318, FNC-204: body duties, retains_context branching, termination rules, flawed_premise excluded from auto-fix",
+    "DM-301: request structure with targets, focus, scope and references",
+    "DM-305, DM-302, DM-201: result, finding and evaluation structures with disposition, severity and confidence values",
+    "DM-304: absolute paths and location notation, with unknown location marked explicitly"
+  ],
+  "tasks": [
+    "Implementing review body script and agent handoff",
+    "Designing request, finding and evaluation JSON schemas",
+    "Implementing finding_id numbering",
+    "Designing exit value and error handling for agents",
+    "Implementing termination logic of review rounds",
+    "Writing reviewer or evaluator requirements",
+    "Reviewing review mechanism documents"
+  ],
+  "title": "REQ-029 review 機構の共通契約 要件定義書"
+}

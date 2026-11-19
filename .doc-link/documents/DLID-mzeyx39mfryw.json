@@ -1,0 +1,37 @@
+{
+  "content_hash": "4c2a8391ca98d894326f5e408561b9fe95b84c40a8f7b93dea44d2aa74375fe3",
+  "doc_link_id": "DLID-mzeyx39mfryw",
+  "keywords": [
+    "evaluator",
+    "evaluation",
+    "meta-perspective",
+    "disposition",
+    "finding_id",
+    "flawed_premise",
+    "round",
+    "review",
+    "seal_result"
+  ],
+  "path": "docs/specs/review/design/DES-083_evaluator_perspective_design.md",
+  "purpose": "Design for the evaluator that independently judges reviewer findings, applies meta-perspectives, and for the main body handling findings and evaluations through rounds to termination.",
+  "summary": [
+    "Evaluator works from findings, redefining problems as evaluations that may bundle or split findings",
+    "Sequence S10-S20 covering evaluator, main body scrutiny, round advance and deletion",
+    "Class diagram of main body, evaluator, scripts and JSON files",
+    "Five meta-perspectives expressed through evaluation shape and disposition values",
+    "Evaluation JSON structure, finding_id numbering for new findings, severity and confidence rules",
+    "Evaluator wrappers and scripts: append_result, seal_result, resolve_review_path, count_actionable, advance_round, delete_review",
+    "Main body duties: scrutinize rather than blindly follow disposition, flawed_premise always presented, termination judgment",
+    "Provisional consult handling without agenda, state kept in conversation context",
+    "Test design and open item TBD-001 on meta-perspective verification"
+  ],
+  "tasks": [
+    "Implementing evaluator.md agent",
+    "Implementing evaluation-related review scripts",
+    "Editing review SKILL.md body steps S10-S20",
+    "Reviewing evaluation and finding relationships",
+    "Writing tests for evaluator and evaluation scripts",
+    "Modifying consult presentation behavior"
+  ],
+  "title": "DES-083 evaluator の独立評価とメタ観点 設計書"
+}

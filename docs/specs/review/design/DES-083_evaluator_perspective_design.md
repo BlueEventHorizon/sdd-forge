@@ -1,6 +1,10 @@
-# DES-083 evaluator の独立評価とメタ観点 設計書
+---
+doc_link_id: DLID-mzeyx39mfryw
+---
 
-## 1. 概要
+# DES-083 evaluator の独立評価とメタ観点 設計書 DLID-rt77bkre5p2e
+
+## 1. 概要 DLID-wrd992367ze4
 
 [REQ-026](../requirements/REQ-026_evaluator_perspective.md) と、評価の扱いに関わる [REQ-029](../requirements/REQ-029_review_exchange.md) の要件（FNC-203・FNC-311・FNC-312・FNC-313・FNC-318・FNC-319）を実現する設計を定める。evaluator が評価を書くまでと、本体が所見・評価を読んで吟味し、ラウンドを進めて終えるまで（S10〜S20）を持つ。レビューの開始から reviewer の区間までは [DES-084](DES-084_reviewer_design.md) が持つ。
 
@@ -22,7 +26,7 @@
 | JSON                 | 評価の結果、`finding_id` の採番（evaluator の新規指摘）                                  | §5 |
 | script               | 評価に関わる script、evaluator と本体のラッパー                                          | §6 |
 
-## 2. シーケンス
+## 2. シーケンス DLID-k8330d17mc44
 
 evaluator の区間と、本体が所見・評価を扱う区間（S10〜S18）、ラウンドの進行と保持物の削除（S19・S20）である。図の S 番号は DES-084 §2 と同じである。S5〜S19 はラウンドごとに繰り返し、S5〜S9 は reviewer の区間（DES-084 §2）である。S10・S17・S18 は script を呼ばない（AI の判断、または起動である）。「書く」は script が JSON を書く処理、「直接読む」は AI が JSON を読む処理で、どちらも自分の処理である。
 
@@ -68,7 +72,7 @@ sequenceDiagram
 
 **エラーフロー:** 所見が正常に封緘されていなければ、S11 が失敗し、evaluator は評価に入れない。評価を書き出さずに終えた場合は、`exit` が無いまま残り、書けない異常終了になる（REQ-029 FNC-311）。どちらの場合も、S15 で本体が止まり、失敗を利用者へ伝える。reviewer が失敗していれば、所見側の `errors` にエラー値が入るので、reviewer の失敗として伝える。その結果は使わない（REQ-029 FNC-311）。evaluator が失敗していれば、そのラウンドの所見は評価を経ていないので、severity を持たない未評価の所見として報告に載せる（REQ-029 FNC-318、§4.3）。本体がレビューを止めたときも、利用者へ伝え終えてから S20 で保持物を削除する。
 
-## 3. クラス図
+## 3. クラス図 DLID-ybezw5b732bv
 
 本体・evaluator と、その間を取り持つ JSON・script の関係である。§2 のシーケンスの登場人物に合わせ、本体は S10〜S20 で evaluator を起こし、所見と評価を扱い、ラウンドを進めて終える処理を描く。reviewer 側の処理は [DES-084](DES-084_reviewer_design.md) が持つので、ここには描かない。点線は script が JSON を読む処理、太線は AI が JSON を直接読む処理、実線は script が JSON を書く処理を表す。
 
@@ -124,13 +128,13 @@ flowchart LR
 
 - **共有の枠は、[DES-084](DES-084_reviewer_design.md) §3 にも同じものを描く。** reviewer と evaluator の双方が使う script であり、図ごとに主体との関係を示すために両方の図へ描く。共有の枠の構成（どの script を含むか）を変えるときは、両方の図を同時に直す。
 
-## 4. スキル・エージェント
+## 4. スキル・エージェント DLID-fpecg9brak42
 
-### 4.1 evaluator
+### 4.1 evaluator DLID-rt8ccytg75p2
 
 `plugins/forge/agents/evaluator.md` が持つ（REQ-026 FNC-208）。evaluator は依頼と所見を直接読むが、JSON を生成しない。出力値は script に渡すだけである。
 
-#### reviewer と同じ部分
+#### reviewer と同じ部分 DLID-xsc3vryxmzhv
 
 次は [DES-084](DES-084_reviewer_design.md) が定めるものをそのまま適用する。
 
@@ -147,7 +151,7 @@ flowchart LR
 
 **2 つの主体を別の仕組みで動かさない。** 分ければ、同じ問題への答えが 2 つになり、片方だけが直される。
 
-#### 定義が持つもの
+#### 定義が持つもの DLID-2xace76s1zd9
 
 | 持つもの                                    | 内容                                                                         |
 | ------------------------------------------- | ---------------------------------------------------------------------------- |
@@ -158,7 +162,7 @@ flowchart LR
 | メタ観点                                    | FNC-201 の 5 つ（下記）                                                      |
 | 評価として何を述べるか                      | `disposition` の判定、`reason` の書き方、`severity` と確信度の付け方（下記） |
 
-#### 入力
+#### 入力 DLID-30nn9x13zbcg
 
 evaluator は、依頼と reviewer が返した所見を読む（REQ-026 DM-202）。専用の入力ファイルを持たない。
 
@@ -173,7 +177,7 @@ evaluator は、依頼と reviewer が返した所見を読む（REQ-026 DM-202�
 
 evaluator はラウンドごとに 1 回起動される。読み書きするのは、受け取った `review_id` と `round_number` が指すラウンドだけである。次のラウンドでは新しい evaluator が、新しい `round_number` を受け取る。
 
-#### 作業
+#### 作業 DLID-h6n4xeth6xyk
 
 reviewer と同じ種類の材料（対象・target 種別・観点文書）を読むが、読む順も、読む範囲も、使い道も異なる。
 
@@ -281,11 +285,11 @@ reviewer が返した所見のどれとも対応しない問題を見つけた�
 
 evaluator が挙げうるエラー値は無い（REQ-026 FNC-319）。`evaluator_abort` は持たない。
 
-### 4.2 本体（所見と評価を扱う仕事）
+### 4.2 本体（所見と評価を扱う仕事） DLID-dd5jby3vryxp
 
 `plugins/forge/skills/review/SKILL.md` が持つ（REQ-029 FNC-314）。本体は最終決定者である（REQ-029 FNC-312）。所見も評価も判断の材料であり、決定ではない。本節は、evaluator を起こして以降の本体の仕事（S10・S15〜S20）を定める。レビューの開始から reviewer を起こすまでは [DES-084](DES-084_reviewer_design.md) §4.1 が持つ。
 
-#### 定義が持つもの
+#### 定義が持つもの DLID-6emfnrknq5j0
 
 | 持つもの                 | 内容                                                                                                                                                                                                                          |
 | ------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -293,7 +297,7 @@ evaluator が挙げうるエラー値は無い（REQ-026 FNC-319）。`evaluator
 | 読む JSON の各項目の扱い | 所見（DM-302）と評価（DM-201）の各フィールドが何を意味するか。`disposition`・`confidence`・`fix_confident` の各値を含む。値が無いときは低い側として扱う（`confidence` は `unverified`、`fix_confident` は偽。REQ-029 DM-201） |
 | 本体の判断               | 下記                                                                                                                                                                                                                          |
 
-#### 本体の仕事
+#### 本体の仕事 DLID-m5q4tvtex5ks
 
 | S  | 仕事                               | 呼ぶ script                                         | 要件                 |
 | -- | ---------------------------------- | --------------------------------------------------- | -------------------- |
@@ -305,7 +309,7 @@ evaluator が挙げうるエラー値は無い（REQ-026 FNC-319）。`evaluator
 | 19 | 次のラウンドへ進む                 | `advance_round.py`                                  | REQ-029 FNC-302      |
 | 20 | 保持物を削除する                   | `delete_review.py`                                  | REQ-029 FNC-302・318 |
 
-#### 判断の内容
+#### 判断の内容 DLID-3cf79dd0r25n
 
 - **読み出しと失敗（S15）:** 所見と評価は、`body_resolve_findings` と `body_resolve_evaluations` が返したパスの JSON を、本体が直接読む（REQ-029 FNC-302）。読み出しが失敗したら、レビューを止めて `errors` を利用者へ伝える。読んだ内容から成否を判断しない（REQ-029 FNC-311・318）。reviewer が失敗していれば、所見側の `errors` にエラー値が入るので、reviewer の失敗として伝える。evaluator が失敗していれば、そのラウンドの所見は評価を経ていないので、severity を持たない未評価の所見として報告に載せる。
 - **吟味（S17）:** 所見と評価を受け取った時点で、それが本当に正しいかを自分で理解し、調査し、考える。対象と規範に照らして吟味し、誤りがあれば、その誤りを理解したうえで、正しい対応を行う。`disposition`・`confidence`・`fix_confident` などの値にそのまま従って、修正・ドロップ・終端を決めない。script は行き先を決めず、`count_actionable.py` が件数を数えるだけである。`flawed_premise` は、`confidence` / `fix_confident` の値に関わらず自動修正の対象にせず、常に提示する（REQ-029 FNC-204）。この規則は本体の定義（`SKILL.md`）に書く。
@@ -314,11 +318,11 @@ evaluator が挙げうるエラー値は無い（REQ-026 FNC-319）。`evaluator
 - **次のラウンド（S19）:** 終端に達していないとき、`advance_round.py` で次のラウンドの置き場を作り、新しい `round_number` を得て S5 へ戻る（REQ-029 FNC-302）。次のラウンド番号が 5 以上になるときは `advance_round.py` を呼ばず、いったん止まる（4 ラウンドを超えても所見が解消しないのは、最初の対応の方向が誤っている兆候であるため）。本質・責務・範囲を見直し、対象の設計書・要件定義書側の誤りを疑うときは、その場で書き換えず修正案を添えて利用者へ確認する。続けるか終えるかは利用者の回答に従う。
 - **削除（S20）:** 終端に達したとき、エラーで止めたとき、利用者が中止したときのいずれも、報告を済ませてから削除する。報告は結果を読むためである。
 
-### 4.3 consult（暫定措置）
+### 4.3 consult（暫定措置） DLID-g58822ngf943
 
 **本節は暫定措置であり、本 feature の要件と設計が実装し終わった後に見直す。** それまでの間、consult を壊さずに動かすための最小限の措置だけを定め、恒久的な設計は定めない（[REQ-026](../requirements/REQ-026_evaluator_perspective.md) の「概要」）。review 本体の手順の読み替え（下記）も、記録を前提にしないという方針だけを示し、それ以上は詰めない。見直しは、実装の完了後に agenda 全面刷新の feature と合わせて行う。
 
-#### agenda を使わない
+#### agenda を使わない DLID-67etbx0gtyts
 
 **本 feature の実装期間中、consult は agenda への記録を行わない。** 提示に必要な状態（所見の一覧・残件・採否）を agenda を介さず自ら保持する。所見の提示（1 件ずつの採否確認）は継続する。
 
@@ -328,7 +332,7 @@ evaluator が挙げうるエラー値は無い（REQ-026 FNC-319）。`evaluator
 
 agenda への永続化（ファイルに残す・後で見返す・表示の改訂）は、agenda 全面刷新の feature が扱う。
 
-#### 状態はコンテキストに持つ
+#### 状態はコンテキストに持つ DLID-h7wytm06em9a
 
 consult は agenda を呼ばない。提示に必要な状態（所見の一覧・残件・採否）は会話コンテキストに保持する。
 
@@ -336,7 +340,7 @@ consult は継承型 SKILL であり、review 本体を実行しているのと�
 
 固有の状態ファイル・作業ディレクトリ・DB は持たない。提示状態は永続化されず、会話が終われば失われる。
 
-#### 未対応所見の出所
+#### 未対応所見の出所 DLID-7a6z3swnsr5g
 
 review 本体の要約報告は、未対応所見の一覧と理由を**会話コンテキストから得る**。対象は次のすべてである。
 
@@ -351,9 +355,9 @@ review 本体の要約報告は、未対応所見の一覧と理由を**会話�
 
 記録から生成された表示物への参照を報告に含めない。永続化された表示物を持たないためである。
 
-## 5. JSON
+## 5. JSON DLID-j96wrjmt5338
 
-### 5.1 評価の結果（`evaluate_result.json`）
+### 5.1 評価の結果（`evaluate_result.json`） DLID-t7m65wsdcyk3
 
 構造は REQ-029 DM-305（evaluator の結果）と DM-201（evaluation）が定める。evaluator がラウンドごとに 1 つ書く。置き場は、DES-084 §5.1 のラウンドの置き場に並べる（`<review_id>/<round_number>/evaluate_result.json`）。終了の値は `"0"` だけである（エラー値は無い。REQ-026 FNC-319）。`resolve_review_path.py` の成否の判定は、DES-084 §5.4 の表と同じである。
 
@@ -411,7 +415,7 @@ reviewer の所見（DES-084 §5.3）との違いは 2 つである。
 
 本体は、関係を検査しない。正常に書き終えた評価には、未参照の所見も、存在しない番号も、位置の無い新規指摘も無い。
 
-### 5.2 `finding_id`
+### 5.2 `finding_id` DLID-0nzwadmve3yg
 
 `finding_id` の基本の採り方は DES-084 §5.5 が定める。本節は、evaluator の新規指摘が加わる部分を定める（REQ-029 FNC-313）。
 
@@ -419,11 +423,11 @@ reviewer の所見（DES-084 §5.3）との違いは 2 つである。
 - **同じ番号を 2 つの script が同時に採らない:** evaluator は所見が正常に封緘されていなければ始まらず（S11）、`advance_round.py` は所見と評価がともに正常に封緘されていなければ次のラウンドを作らない（S19）。
 - **出自:** 当該ラウンドの所見に無い番号で、当該ラウンドの評価に現れるものが、evaluator が新規に指摘したものである。件数では判定しない（第 2 ラウンド以降は番号が `1` から始まらない）。
 
-## 6. script
+## 6. script DLID-kt9rd7s3hd19
 
 基本の script の共通の約束と、所見に関わる動作は [DES-084](DES-084_reviewer_design.md) §6 が持つ。本節は、評価に関わる動作と、evaluator・本体のラッパーを定める。
 
-### 6.1 evaluator のラッパー
+### 6.1 evaluator のラッパー DLID-433ysk0pt19v
 
 evaluator は、次のラッパーを通して基本の script を呼ぶ。`--kind evaluations` を固定するので、evaluator の定義には所見を書く口が現れない。
 
@@ -437,7 +441,7 @@ evaluator は、次のラッパーを通して基本の script を呼ぶ。`--ki
 - S13: 評価を 1 件追記する。`--new` のとき新規指摘の番号を採る。書く時点の保証は §6.2 のエラーが持つ。
 - S14: 評価を封緘する。全所見が引かれていることを保証する（§6.3）。
 
-### 6.2 `append_result.py --kind evaluations`
+### 6.2 `append_result.py --kind evaluations` DLID-q2aynsbvajgz
 
 **責務:** 評価を 1 件追記する。`finding_id` を採る（`--new` のとき）。所見との関係を、書く時点で保証する（REQ-029 FNC-310・313・203、DM-201）。共通の動作は DES-084 §6.3 と同じである（置き場の実在の確認、封緘済みなら失敗、ファイルが無ければ空の配列から始める）。
 
@@ -476,7 +480,7 @@ evaluator は、次のラッパーを通して基本の script を呼ぶ。`--ki
 | `--fix-confident true` なのに `--confidence` が `confirmed` でない                                                                | DM-201                  |
 | 根拠（標準入力）が空                                                                                                              | DM-201（`reason` 必須） |
 
-### 6.3 `seal_result.py --kind evaluations`
+### 6.3 `seal_result.py --kind evaluations` DLID-k2tbafyrt5gs
 
 **責務:** 評価の結果を封緘する。全所見が引かれていることを保証する（REQ-029 FNC-311・203、REQ-026 FNC-319）。
 
@@ -493,7 +497,7 @@ evaluator は、次のラッパーを通して基本の script を呼ぶ。`--ki
 
 **エラー（終了コード 1）:** 既に封緘済み。所見の結果が正常に封緘されていない。引かれていない所見が残っている（その `finding_id` をすべて `errors` に入れ、何も書かない）。
 
-### 6.4 `resolve_review_path.py --kind inputs|evaluations`
+### 6.4 `resolve_review_path.py --kind inputs|evaluations` DLID-xyfegq9hetkz
 
 **責務:** 読み出せる状態かを判定し、絶対パスを返す。JSON 本文は返さない（REQ-029 FNC-302・311）。`--kind request|findings` と共通の約束は DES-084 §6.5 が持つ。
 
@@ -506,7 +510,7 @@ evaluator は、次のラッパーを通して基本の script を呼ぶ。`--ki
 | `evaluations` | `evaluate_result.json` の状態を DES-084 §5.4 の表で判定する                                       |
 | `inputs`      | `request` と `findings` の両方を判定する。片方でも失敗すれば失敗し、`errors` に両方の理由を入れる |
 
-### 6.5 `count_actionable.py`
+### 6.5 `count_actionable.py` DLID-qepxgn1maj4a
 
 **責務:** 対応を要する評価の件数を数える。何も書かず、返すのは件数だけで、所見と評価の JSON 本文は返さない（REQ-029 FNC-318）。
 
@@ -518,7 +522,7 @@ evaluator は、次のラッパーを通して基本の script を呼ぶ。`--ki
 
 **エラー（終了コード 1）:** 評価の結果が無い、または正常に封緘されていない。
 
-### 6.6 `advance_round.py`
+### 6.6 `advance_round.py` DLID-qns12fv2jh9n
 
 **責務:** 次のラウンドの置き場を作る。依頼も、採番のための状態も作らない（REQ-029 FNC-302・313）。
 
@@ -530,7 +534,7 @@ evaluator は、次のラッパーを通して基本の script を呼ぶ。`--ki
 
 **エラー（終了コード 1）:** 所見または評価の結果が、正常に封緘されていない。次のラウンドの置き場が既に存在する。
 
-### 6.7 `delete_review.py`
+### 6.7 `delete_review.py` DLID-4569ng0csypw
 
 **責務:** そのレビューの保持物を、依頼・所見・評価ともにすべて削除する（REQ-029 FNC-302・318）。
 
@@ -544,7 +548,7 @@ evaluator は、次のラッパーを通して基本の script を呼ぶ。`--ki
 
 **エラー（終了コード 1）:** `review_id` が検査を通らない（何も削除しない）。`<review_id>/` がシンボリックリンクである（何も削除しない）。削除できない。
 
-### 6.8 本体のラッパー
+### 6.8 本体のラッパー DLID-1h4vmt5g3v6b
 
 ラッパーの考え方は DES-084 §6.6 と同じである。本体は、所見と評価を読むために、次のラッパーを通して `resolve_review_path.py` を呼ぶ。決定論的なオプションを持たない基本の script（`count_actionable.py`・`advance_round.py`・`delete_review.py`）は直接呼ぶ。
 
@@ -553,7 +557,7 @@ evaluator は、次のラッパーを通して基本の script を呼ぶ。`--ki
 | `body_resolve_findings.py`    | `resolve_review_path.py --kind findings`    | 15 |
 | `body_resolve_evaluations.py` | `resolve_review_path.py --kind evaluations` | 15 |
 
-## 7. テスト設計
+## 7. テスト設計 DLID-hdjjeyq8ds5g
 
 所見に関わる script の単体テストは DES-084 §7 が持つ。本書は、評価に関わる script の単体テストと、evaluator と本体の定義の契約、評価を通した流れを確かめる。
 
@@ -584,7 +588,7 @@ evaluator は、次のラッパーを通して基本の script を呼ぶ。`--ki
 - reviewer が `target_unreadable` で終えたとき、本体が S15 で止まって、エラー値を利用者へ伝えること。reviewer が書き出さずに終えたときも、本体が S15 で止まること。
 - 終端に達していないとき、`advance_round.py` で次のラウンドへ進むこと。終端に達したとき、エラーで止めたとき、利用者が中止したときのいずれも、`delete_review.py` で保持物が削除されること。
 
-## 8. 未確定事項
+## 8. 未確定事項 DLID-hcwa97m6ggyb
 
 | ID      | 内容                                                                                                                                                                                                        | 期限   |
 | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ |

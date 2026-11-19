@@ -19,8 +19,8 @@ git 管理ファイル書き換え禁止と引数解釈ガードは、本テス�
 - その dispatcher が Agent ツールで起動する read-only worker (作成ガイド「カスタム Agent」):
   - plugins/forge/agents/rules-query-worker.md
 
-注: forge の query-db-rules / query-db-specs は doc-advisor:query-docs へ転送する薄いラッパー
-（Role 制約・fork を持たない）であり、隔離契約は転送先の doc-advisor が担保するため本検証の対象外。
+注: forge の query-db-rules / query-db-specs は文書検索 backend へ転送する薄いラッパー
+（Role 制約・fork を持たない）であり、隔離契約は転送先の backend が担保するため本検証の対象外。
 
 実行:
   python3 -m unittest tests.common.test_query_skill_isolation -v
@@ -33,8 +33,7 @@ from pathlib import Path
 from tests import REPO_ROOT
 
 # fork 型 SKILL（context: fork 必須）の対象。
-# doc-advisor の fork 型 query skill は外部リポジトリへ分離されたため、本リポジトリには
-# 配布される fork 型 query skill は存在しない（空リスト）。
+# 本リポジトリには、配布される fork 型 query skill は存在しない（空リスト）。
 FORK_TARGET_SKILLS: list[Path] = []
 
 # Role 制約・引数解釈ガード・出力契約を維持する全 query-* SKILL と、その worker Agent

@@ -1,6 +1,10 @@
-# DES-047 review 本体の修正安全ガードレール設計書
+---
+doc_link_id: DLID-fpfqhpad552k
+---
 
-## 1. 概要
+# DES-047 review 本体の修正安全ガードレール設計書 DLID-2p88hjdnrqmc
+
+## 1. 概要 DLID-2r1t18257dv0
 
 `/forge:review` 本体が `confirmed_fix` を適用するときの安全境界を定める。修正と安全検証は
 review 本体の責務であり、reviewer と evaluator は所見と評価を書き出した時点で、そのラウンドの作業を終える。
@@ -8,9 +12,9 @@ review 本体の責務であり、reviewer と evaluator は所見と評価を�
 安全境界は、所見単位の逐次適用、対象ファイル allowlist、無関係な変更の禁止、構文検証、
 ラウンド終了時の独立した変更ファイル確認で構成する。
 
-## 2. 修正フロー
+## 2. 修正フロー DLID-4frcfzcyfqs5
 
-### 2.1 baseline
+### 2.1 baseline DLID-0my9q6ezh23z
 
 `confirmed_fix` の適用前に、対象ファイルの構文・フォーマット違反を取得する。
 
@@ -21,7 +25,7 @@ python3 "${CLAUDE_SKILL_DIR}/scripts/capture_syntax_baseline.py" \
 
 baseline は既存違反と今回の修正による新規違反を区別するために使う。
 
-### 2.2 所見単位の逐次適用
+### 2.2 所見単位の逐次適用 DLID-awr5bswac1ry
 
 各 `confirmed_fix` を次の順で 1 件ずつ処理する。
 
@@ -35,7 +39,7 @@ baseline は既存違反と今回の修正による新規違反を区別する�
 複数所見をまとめて適用してから検証しない。修正は当該所見が指摘した内容に限定し、無関係な
 体裁変更やリファクタリングを同時に行わない。
 
-### 2.3 安全検証 CLI
+### 2.3 安全検証 CLI DLID-czw3qeb4y368
 
 ```bash
 python3 "${CLAUDE_SKILL_DIR}/scripts/verify_fix_safety.py" \
@@ -58,7 +62,7 @@ python3 "${CLAUDE_SKILL_DIR}/scripts/verify_fix_safety.py" \
 
 スクリプトは検出と報告だけを行い、ファイルを書き換えたり自動ロールバックしたりしない。
 
-### 2.4 ラウンド終了時の独立検証
+### 2.4 ラウンド終了時の独立検証 DLID-9ndks7wn78t8
 
 所見ごとの自己申告に依存しない変更ファイル集合を取得する。
 
@@ -70,7 +74,7 @@ python3 "${CLAUDE_SKILL_DIR}/scripts/collect_modified_files.py"
 `verify_fix_safety.py` で再検証する。パス抽出は NUL 区切りの git porcelain 出力をスクリプトが
 処理し、AI が行や rename 表現を手作業でパースしない。
 
-## 3. 出力と判断
+## 3. 出力と判断 DLID-c4tn6e2qda52
 
 `verify_fix_safety.py` は次の構造を返す。
 
@@ -91,7 +95,7 @@ python3 "${CLAUDE_SKILL_DIR}/scripts/collect_modified_files.py"
 review 本体は、事故的な逸脱なら当該所見の編集を戻し、正当な波及修正なら理由を記録して維持する。
 `syntax_unverified` に載ったファイルは、変更を維持したうえで、修正報告にファイルと理由を「構文未検証」として明記する。検査していないことを「対応した」に畳まない。
 
-## 4. 責務境界
+## 4. 責務境界 DLID-w11w017gh44e
 
 | 責務                                    | 所在           |
 | --------------------------------------- | -------------- |
@@ -102,7 +106,7 @@ review 本体は、事故的な逸脱なら当該所見の編集を戻し、正�
 | baseline、allowlist、構文の決定論的検査 | review scripts |
 | 次ラウンドと終端の判定                  | review 本体    |
 
-## 5. テスト設計
+## 5. テスト設計 DLID-m5damxpsgbmg
 
 - `test_capture_syntax_baseline.py`
   - dprint の成功、対象外、違反、利用不能を区別する
@@ -116,6 +120,6 @@ review 本体は、事故的な逸脱なら当該所見の編集を戻し、正�
   - modified、added、deleted、renamed、untracked を抽出する
   - 空白、非 ASCII、改行、`->` を含むパスを正しく扱う
 
-## 6. 未確定事項
+## 6. 未確定事項 DLID-5s3d3ywckrjz
 
 なし。

@@ -4,8 +4,8 @@
 
 検証項目（設計の単体テスト表の該当行）:
 
-- 未指定・ファイル不在で既定値の順序（doc-advisor 先位）
-- `prefer: doc-db` / `prefer: doc-advisor` の反映
+- 未指定・ファイル不在で既定値の順序（doc-link 先位）
+- `prefer: doc-db` / `prefer: doc-link` の反映
 - 不正（非 mapping / 未知キー / 値域外 / 解析不能 / 読取失敗）の
   exit 20 `settings_invalid`（既定値へ落ちない）
 - CLI 契約（exit code・JSON のみの出力）
@@ -71,34 +71,34 @@ class _Base(unittest.TestCase):
 
 class ResolveOrderTest(_Base):
     def test_no_settings_file_yields_default_order(self):
-        """ファイル不在は既定値の順序（doc-advisor 先位）。"""
+        """ファイル不在は既定値の順序（doc-link 先位）。"""
         exit_code, payload = resolve_backend_order.run(self.root)
         self.assertEqual(exit_code, resolve_backend_order.EXIT_SUCCESS)
         self.assertEqual(payload["status"], "success")
         self.assertIsNone(payload["reason_code"])
-        self.assertEqual(payload["order"], ["doc-advisor", "doc-db"])
+        self.assertEqual(payload["order"], ["doc-link", "doc-db"])
         self.assertEqual(payload["source"], "default")
 
     def test_no_doc_backend_section_yields_default_order(self):
         self.write_settings("other_feature:\n  bar: value\n")
         exit_code, payload = resolve_backend_order.run(self.root)
         self.assertEqual(exit_code, resolve_backend_order.EXIT_SUCCESS)
-        self.assertEqual(payload["order"], ["doc-advisor", "doc-db"])
+        self.assertEqual(payload["order"], ["doc-link", "doc-db"])
         self.assertEqual(payload["source"], "default")
 
     def test_prefer_doc_db_puts_doc_db_first(self):
         self.write_settings("doc_backend:\n  prefer: doc-db\n")
         exit_code, payload = resolve_backend_order.run(self.root)
         self.assertEqual(exit_code, resolve_backend_order.EXIT_SUCCESS)
-        self.assertEqual(payload["order"], ["doc-db", "doc-advisor"])
+        self.assertEqual(payload["order"], ["doc-db", "doc-link"])
         self.assertEqual(payload["source"], "setting")
 
-    def test_prefer_doc_advisor_is_explicit_default(self):
-        """`prefer: doc-advisor` は既定値の明示に過ぎない（source は setting）。"""
-        self.write_settings("doc_backend:\n  prefer: doc-advisor\n")
+    def test_prefer_doc_link_is_explicit_default(self):
+        """`prefer: doc-link` は既定値の明示に過ぎない（source は setting）。"""
+        self.write_settings("doc_backend:\n  prefer: doc-link\n")
         exit_code, payload = resolve_backend_order.run(self.root)
         self.assertEqual(exit_code, resolve_backend_order.EXIT_SUCCESS)
-        self.assertEqual(payload["order"], ["doc-advisor", "doc-db"])
+        self.assertEqual(payload["order"], ["doc-link", "doc-db"])
         self.assertEqual(payload["source"], "setting")
 
     def test_payload_contract_fields(self):
@@ -114,18 +114,18 @@ class ResolveOrderTest(_Base):
 
 class SettingsInvalidTest(_Base):
     def test_non_mapping_section_is_settings_invalid(self):
-        self.write_settings("doc_backend: doc-advisor\n")
+        self.write_settings("doc_backend: doc-link\n")
         exit_code, payload = resolve_backend_order.run(self.root)
         self.assert_settings_invalid(exit_code, payload)
 
     def test_list_section_is_settings_invalid(self):
-        self.write_settings("doc_backend:\n  - doc-advisor\n")
+        self.write_settings("doc_backend:\n  - doc-link\n")
         exit_code, payload = resolve_backend_order.run(self.root)
         self.assert_settings_invalid(exit_code, payload)
 
     def test_unknown_key_is_settings_invalid(self):
         """綴り誤り（preffer）を黙って無視しない。キー名は診断に載せる。"""
-        self.write_settings("doc_backend:\n  preffer: doc-advisor\n")
+        self.write_settings("doc_backend:\n  preffer: doc-link\n")
         exit_code, payload = resolve_backend_order.run(self.root)
         self.assert_settings_invalid(exit_code, payload)
         self.assertIn("preffer", payload["message"])
@@ -145,7 +145,7 @@ class SettingsInvalidTest(_Base):
 
     def test_unparseable_file_is_settings_invalid(self):
         """解析不能（flow style は対象外構文）も exit 20（既定値へ落ちない）。"""
-        self.write_settings("doc_backend: {prefer: doc-advisor}\n")
+        self.write_settings("doc_backend: {prefer: doc-link}\n")
         exit_code, payload = resolve_backend_order.run(self.root)
         self.assert_settings_invalid(exit_code, payload)
 
@@ -174,7 +174,7 @@ class CliContractTest(_Base):
         self.assertEqual(result.returncode, resolve_backend_order.EXIT_SUCCESS)
         payload = json.loads(result.stdout)  # stdout は JSON のみ
         self.assertEqual(payload["status"], "success")
-        self.assertEqual(payload["order"], ["doc-advisor", "doc-db"])
+        self.assertEqual(payload["order"], ["doc-link", "doc-db"])
         self.assertEqual(payload["source"], "default")
 
     def test_prefer_doc_db_exits_0(self):
@@ -182,7 +182,7 @@ class CliContractTest(_Base):
         result = self._run_cli("--project-root", str(self.root))
         self.assertEqual(result.returncode, resolve_backend_order.EXIT_SUCCESS)
         payload = json.loads(result.stdout)
-        self.assertEqual(payload["order"], ["doc-db", "doc-advisor"])
+        self.assertEqual(payload["order"], ["doc-db", "doc-link"])
 
     def test_invalid_settings_exits_20(self):
         self.write_settings("doc_backend:\n  preffer: doc-db\n")
@@ -198,9 +198,9 @@ class CliContractTest(_Base):
 
 
 class ContractConstantsTest(unittest.TestCase):
-    def test_default_order_is_doc_advisor_first(self):
-        """既定値（doc-advisor 先位）の定義点は DEFAULT_ORDER の 1 箇所。"""
-        self.assertEqual(resolve_backend_order.DEFAULT_ORDER, ("doc-advisor", "doc-db"))
+    def test_default_order_is_doc_link_first(self):
+        """既定値（doc-link 先位）の定義点は DEFAULT_ORDER の 1 箇所。"""
+        self.assertEqual(resolve_backend_order.DEFAULT_ORDER, ("doc-link", "doc-db"))
 
     def test_exit_codes_and_status_values(self):
         self.assertEqual(resolve_backend_order.EXIT_SUCCESS, 0)

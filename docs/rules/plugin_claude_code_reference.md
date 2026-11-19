@@ -1,15 +1,19 @@
-# Claude Code リファレンス（SKILL / プラグイン / Agent）
+---
+doc_link_id: DLID-d384sm5xwctj
+---
+
+# Claude Code リファレンス（SKILL / プラグイン / Agent） DLID-bjrxbqt6xzmf
 
 SKILL と Agent を組み合わせてプラグインを組むときに依拠する、Claude Code の仕組みの事実と、この文書群が定める語彙を集める。特定のプロジェクトに依らない。個別の SKILL の作り方（frontmatter・description・引数・ファイル構成・命名、`allowed-tools` / `disallowed-tools` の効く範囲、Agent の起動方式の判定と完了の待ち方）は、meta プラグインの `author-skill` に従う。規約は [Claude Code 作成ガイド][authoring-guide] が持つ。
 
-## 出典の記し方
+## 出典の記し方 DLID-rsc5h6d2mcdy
 
 - Claude Code の挙動には `出典:` 行を付ける（調査日 / 版 / 出典）。この文書群が定める語彙には付けない
 - 出典は「公式」（URL と原文の引用。claude-code-guide Agent の WebFetch 経由で、逐語一致は保証されない）、「観測」、「公式 Issue」のいずれか
 - 記録の無い調査日は「不明（初出 commit の日付）」、確かめられない事項は「確認できず」と書く
 - 事実が変わったら書き換え、旧い記述を残さない
 
-## 1. 起動経路 5 種と短縮名称
+## 1. 起動経路 5 種と短縮名称 DLID-xze5hwxba0p2
 
 分類と短縮名称は、この文書群が定める語彙。各経路の挙動は Claude Code の挙動。
 
@@ -24,7 +28,7 @@ SKILL と Agent を組み合わせてプラグインを組むときに依拠す�
 - 出典（fork 型）: 2026-09-26 / 2.1.283 / 公式 [Skills](https://code.claude.com/docs/en/skills)「Subagent doesn't see conversation history. Runs in background by default」
 - 出典（それ以外）: 不明（初出 commit の日付: 2026-07-27） / 不明 / 確認できず
 
-### `context: fork` の不具合
+### `context: fork` の不具合 DLID-5vtwm17q4g2d
 
 fork 型 SKILL を採用しない（または避ける）根拠。Anthropic の対応は issue の扱い（修正済み / 直さない / 未対応）。
 
@@ -42,7 +46,7 @@ fork 型 SKILL を採用しない（または避ける）根拠。Anthropic の�
 
 - 出典: 2026-10-25 / 不明 / 公式 Issue anthropics/claude-code（`gh issue view` で状態を取得）。修正された版は meta の `author-skill` の記録（検証日 2026-09-28）による
 
-## 2. `subagent_type` の値域
+## 2. `subagent_type` の値域 DLID-2vdcxyfc7mcx
 
 - 指定できるのは組み込み Agent 名（`general-purpose` / `Explore` / `Plan` / `claude` / `statusline-setup` / `claude-code-guide`）と、定義済みのカスタム Agent 名だけ
 - プラグインの Agent は `<plugin>:<name>` の名前空間を持つ
@@ -50,7 +54,7 @@ fork 型 SKILL を採用しない（または避ける）根拠。Anthropic の�
 
 - 出典: 2026-09-26 / 2.1.283 / 公式 [Subagents](https://code.claude.com/docs/en/sub-agents)「four built-in subagents … Other Helper Agents: `claude`, `statusline-setup`, `claude-code-guide`」、[Plugins reference](https://code.claude.com/docs/en/plugins-reference)「an agent `reviewer` in plugin `deploy-tools` appears as `deploy-tools:reviewer`」
 
-## 3. Agent の起動に関する観測
+## 3. Agent の起動に関する観測 DLID-9hyrcz7mhmxf
 
 起動方式（foreground / background）の判定は、meta の `author-skill`（`frontmatter_spec.md`）が持つ。ここには、そこに無い観測だけを置く。
 

@@ -1,0 +1,41 @@
+{
+  "content_hash": "53a48d0662f600f66219fe8eb818075d498dd51caa58764d4743a8120b613368",
+  "doc_link_id": "DLID-ypd7r1j5ga4n",
+  "keywords": [
+    "start-implement",
+    "task selection",
+    "task group",
+    "executor agent",
+    "orchestrator",
+    "TaskContext",
+    "TaskResult",
+    "final confirmation",
+    "implementation plan",
+    "resume and failure handling"
+  ],
+  "path": "docs/specs/start-implement/requirements/REQ-034_start_implement_spec.md",
+  "purpose": "Requirements for /forge:start-implement: selecting plan tasks, implementing, reviewing and updating the plan with resumable state, error handling, final confirmation and executor agent contracts.",
+  "summary": [
+    "Task selection and presentation by priority, with task group handling",
+    "Progress state persistence in the plan, resume after interruption, orchestrator as sole writer",
+    "Error handling: failed state, re-execution rules, reverting dependent implemented tasks",
+    "Orchestrator must understand the task before delegating to the executor agent",
+    "Completion only after final confirmation against acceptance criteria and design/requirement docs",
+    "Task groups: build-passing units, one review per group, completed together",
+    "Review request and result handling, parallel execution, executor agent constraints",
+    "Plan file format, TaskContext and TaskResult JSON data formats",
+    "Prohibition on changing design/requirement docs during implementation; post-completion commit flow",
+    "Non-functional requirement: contract-violating results never treated as success"
+  ],
+  "tasks": [
+    "Implementing /forge:start-implement",
+    "Modifying task selection logic",
+    "Designing executor agent behavior",
+    "Changing plan JSON update and state transitions",
+    "Designing TaskContext and TaskResult schemas",
+    "Reviewing start-implement design or implementation",
+    "Implementing task group review flow",
+    "Writing tests for start-implement"
+  ],
+  "title": "REQ-034 start-implement 要件定義書"
+}

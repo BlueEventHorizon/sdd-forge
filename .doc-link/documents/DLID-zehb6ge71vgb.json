@@ -1,0 +1,39 @@
+{
+  "content_hash": "979a3f18cae0fbf9ab01d775e8aa4bf893b775b93dc0b59de95104fdf0230476",
+  "doc_link_id": "DLID-zehb6ge71vgb",
+  "keywords": [
+    "implementation plan",
+    "task",
+    "dependency",
+    "priority",
+    "task group",
+    "traceability",
+    "task state",
+    "executor agent",
+    "start-plan",
+    "start-implement"
+  ],
+  "path": "docs/specs/forge/requirements/REQ-024_implementation_plan_spec.md",
+  "purpose": "Defines the information an implementation plan must hold: tasks, ordering, dependencies, state, traceability, and task groups, so the next executable task is determined uniquely.",
+  "summary": [
+    "Plan is a JSON work artifact created by start-plan and consumed by start-implement",
+    "Tasks have unique IDs, priority, and dependency IDs",
+    "Task states: not started, running, implemented, completed, failed",
+    "Executable task is uniquely determined by state, dependencies, and priority",
+    "Traceability from requirements to designs to tasks with gap detection",
+    "Task granularity executable by a single executor agent",
+    "Each task lists documents required for implementation",
+    "Plan is temporary and holds no additive-feature identifier",
+    "Task groups are units of selection, build check, and review"
+  ],
+  "tasks": [
+    "Creating an implementation plan",
+    "Implementing tasks from a plan",
+    "Designing plan JSON schema or validation",
+    "Reviewing plan documents",
+    "Defining task dependencies and ordering",
+    "Checking requirement-to-task traceability",
+    "Grouping tasks for build and review"
+  ],
+  "title": "REQ-024 実装計画書 要件定義書"
+}

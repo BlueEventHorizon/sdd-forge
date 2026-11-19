@@ -1,0 +1,38 @@
+{
+  "content_hash": "f1c5b6752ce76e530473ed1ef1d201c5091cf8fe0f8d3899aec579d7d1aaacce",
+  "doc_link_id": "DLID-fz66nns8q521",
+  "keywords": [
+    "exit code",
+    "error output",
+    "errors array",
+    "argparse",
+    "stdout JSON",
+    "stderr",
+    "module docstring",
+    "plugin script"
+  ],
+  "path": "docs/rules/plugin_script_error_output_rules.md",
+  "purpose": "Rules for how Claude Code plugin Python scripts return exit codes and error output so AI callers can branch on failures, covering stdout JSON, stderr, and exit code declarations.",
+  "summary": [
+    "Exit codes 0, 1, 2 have common meaning; 3 and above are defined per script",
+    "Completion judgment excludes result content; zero findings still exit 0",
+    "Scripts returning 3 or above must declare a full exit code table in the module docstring",
+    "Wrapper scripts must declare passthrough ranges or collapse to 0, 1, 2",
+    "Callers branch on a value only when the producer declares it",
+    "Stdout carries result JSON on 0 and error JSON with an errors array otherwise",
+    "Exception for argparse exit 2, which writes usage to stderr only",
+    "Stderr diagnostics allowed but error content must also appear in stdout JSON",
+    "Existing scripts are not violations; rules apply to newly placed scripts",
+    "Harness-defined contracts such as hooks are exempt"
+  ],
+  "tasks": [
+    "Writing new plugin Python scripts",
+    "Defining script exit codes",
+    "Writing module docstrings declaring exit codes",
+    "Writing SKILL.md steps that react to script exit codes",
+    "Designing error JSON output",
+    "Reviewing script error handling",
+    "Writing wrapper scripts around other scripts"
+  ],
+  "title": "script のエラー出力"
+}

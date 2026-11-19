@@ -1,0 +1,34 @@
+{
+  "content_hash": "1b4400f836cd80e1d2a282b37cd91be2ca2a4cae9d89c5b83a30f754ad5a3f4b",
+  "doc_link_id": "DLID-pvwk8en5c2rq",
+  "keywords": [
+    "custom Agent",
+    "inherited SKILL",
+    "fork SKILL",
+    "subagent_type",
+    "defense in depth",
+    "allowlist",
+    "ScheduleWakeup",
+    "Skill tool"
+  ],
+  "path": "docs/rules/plugin_claude_code_authoring_guide.md",
+  "purpose": "Project-independent conventions for building plugins that combine SKILLs and custom Agents: naming, invocation paths, defense layers, skill invocation, and waiting for Agent completion.",
+  "summary": [
+    "Naming rules: use short invocation path names, avoid bare subagent",
+    "Custom Agent preferred over fork-type SKILL for isolated context",
+    "Decision order for choosing an invocation path",
+    "Inherited SKILL rules: keep arguments minimal, no parent context pasted",
+    "Custom Agent requirements: frontmatter, prohibitions, write boundaries",
+    "Multi-layer defense table: Agent boundary, role constraint, allowlist, deny",
+    "Invoke other skills via Skill tool; never self-invoke",
+    "Do not wait for Agent completion with ScheduleWakeup"
+  ],
+  "tasks": [
+    "Designing a plugin with SKILLs and custom Agents",
+    "Writing a custom Agent definition",
+    "Choosing between Bash subprocess, generic Agent, custom Agent, and inherited SKILL",
+    "Writing prompts passed to Agents",
+    "Reviewing SKILL or Agent documents for convention compliance"
+  ],
+  "title": "Claude Code 作成ガイド（SKILL / カスタム Agent）"
+}

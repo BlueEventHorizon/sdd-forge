@@ -82,6 +82,7 @@ sys.path.insert(0, str(_SCRIPT_DIR.parent))
 import docdb_client  # noqa: E402
 import docdb_runtime  # noqa: E402
 import project_documents  # noqa: E402
+import required_documents  # noqa: E402
 
 # --- 定数 ---------------------------------------------------------------------
 
@@ -119,9 +120,6 @@ REASON_INVALID_RESPONSE = "docdb_invalid_response"
 #: doc-db の error 識別子（公開契約。`error.data.code` が判別の正本）
 IDENTIFIER_KEY_NOT_FOUND = "KEY_NOT_FOUND"
 IDENTIFIER_KEY_TRASHED = "KEY_TRASHED"
-
-#: 既存契約の検索結果ヘッダ
-REQUIRED_DOCUMENTS_HEADER = "Required documents:"
 
 
 # --- 内部例外 -------------------------------------------------------------------
@@ -183,39 +181,6 @@ def extract_paths(response: dict) -> list:
             )
         paths.append(entry["path"])
     return paths
-
-
-def build_required_documents(paths) -> str:
-    """既存契約の `Required documents:` 文字列を決定論的に構築する。
-
-    各項目には path だけを出力する。0 件（全件除外を含む）は空のヘッダのみ。
-    """
-    paths = list(paths)
-    if not paths:
-        return REQUIRED_DOCUMENTS_HEADER + "\n"
-    lines = "\n".join(f"- {path}" for path in paths)
-    return f"{REQUIRED_DOCUMENTS_HEADER}\n\n{lines}\n"
-
-
-def _exists_within_root(path_text, project_root) -> bool:
-    """path が現在の worktree 内に実在するか判定する（BL-005）。
-
-    索引はバックエンド側の状態であり、応答の path は信頼境界の外にある。
-    絶対パス・`../` を経由するパス・symlink 解決で root の外へ出るパスは、
-    実在していても「現在の worktree に存在する文書」ではないため除外する。
-    """
-    candidate = Path(str(path_text))
-    if candidate.is_absolute():
-        return False
-    root = Path(project_root).resolve()
-    try:
-        resolved = (root / candidate).resolve()
-    except OSError:
-        return False
-    if root not in resolved.parents:
-        # root 自身（`.`）も文書ではないため除外する
-        return False
-    return resolved.exists()
 
 
 def _extract_warnings(response: dict) -> list:
@@ -297,7 +262,7 @@ def run(
     if docs.is_empty:
         return EXIT_SUCCESS, payload(
             STATUS_SUCCESS,
-            result=build_required_documents([]),
+            result=required_documents.build_required_documents([]),
             document_count=0,
             paths=[],
             excluded_count=0,
@@ -408,15 +373,16 @@ def run(
     # パス（絶対パス・`../` 経由・symlink 脱出）も除外する（BL-005: 返すのは現在の
     # worktree に存在する文書だけ）。全件除外でも operation は成功とする。
     # 順位は除外後も元の順序を保つ。
-    existing = [path for path in paths if _exists_within_root(path, docs.project_root)]
-    excluded_count = len(paths) - len(existing)
+    existing, excluded_count = required_documents.filter_existing(
+        paths, docs.project_root
+    )
     notices = []
     if excluded_count:
         notices.append(f"実在しないパス {excluded_count} 件を検索結果から除外しました")
 
     return EXIT_SUCCESS, payload(
         STATUS_SUCCESS,
-        result=build_required_documents(existing),
+        result=required_documents.build_required_documents(existing),
         document_count=docs.count,
         paths=existing,
         excluded_count=excluded_count,

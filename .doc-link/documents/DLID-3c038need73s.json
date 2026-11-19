@@ -1,0 +1,33 @@
+{
+  "content_hash": "0ad8efdb16e71cbd59c4d073ae06aaf3c262b5c89daf4d968ca1acc44ce89d33",
+  "doc_link_id": "DLID-3c038need73s",
+  "keywords": [
+    "document system",
+    "document ID",
+    "prefix",
+    "numbering",
+    "next-spec-id",
+    "doc_structure",
+    "cross-cutting spec",
+    "ID collision"
+  ],
+  "path": "docs/specs/forge/requirements/REQ-028_document_system.md",
+  "purpose": "Defines the document system of the project: document identifiers, cross-cutting spec placement, and ID numbering, to prevent duplicated content, ID collisions, and unstable placement.",
+  "summary": [
+    "Defines which document kinds exist, how they are identified, placed, and referenced",
+    "Placement is declared by .doc_structure.yaml",
+    "IDs are assigned by the next-spec-id skill",
+    "FNC-001 identifier is PREFIX-NNN with global numbers and per-prefix series",
+    "FNC-002 cross-cutting specs are identified and placed outside any single component",
+    "FNC-003 new IDs are never chosen manually, only via the skill",
+    "Rationale: duplicate numbers cause ambiguous references and merge-time collisions"
+  ],
+  "tasks": [
+    "Creating new requirement or design documents",
+    "Assigning document IDs",
+    "Placing documents in the directory structure",
+    "Writing cross-component specs",
+    "Reviewing document naming and placement"
+  ],
+  "title": "REQ-028 文書体系 要件定義書"
+}

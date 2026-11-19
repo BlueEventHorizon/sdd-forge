@@ -4,7 +4,7 @@ Claude Code plugins for **Spec-Driven Development** — write specs first, then 
 
 **Marketplace version: 0.1.2**
 
-The marketplace ships the **forge** plugin. forge's search skills select a document-search backend (**doc-advisor** / **doc-db**) from an ordered list. The default puts doc-advisor first; you can change the order with `doc_backend.prefer` in `.claude/.forge.yaml`. doc-advisor is provided by a separate repository, [BlueEventHorizon/DocAdvisor](https://github.com/BlueEventHorizon/DocAdvisor) (`index-docs` / `query-docs`).
+The marketplace ships the **forge** plugin. forge's search skills use an external document-search backend. For the available backends, how to install them, and how to switch, see [Installing and switching forge backends](docs/readme/switch-forge-backend.md).
 
 [Japanese README (README.md)](README.md)
 
@@ -12,21 +12,16 @@ The marketplace ships the **forge** plugin. forge's search skills select a docum
 
 Spec-Driven Development is a workflow where every code change traces back to a written specification. **forge** guides you through five stages — requirements, design, plan, implement, and review — so that AI always works from explicit, reviewable intent rather than ad-hoc instructions. Each stage produces a document; each document feeds the next stage. The result is traceable, auditable delivery: you can always answer _why_ a piece of code exists.
 
-## The Role of the Document-Search Backends (doc-advisor / doc-db)
+## The Role of the Document-Search Backends
 
 Large projects accumulate rules, standards, and design documents that AI cannot use if it cannot find them. The document-search backends index these documents and automatically supply the relevant ones to forge at the moments that matter:
 
 - **During implementation** — project-specific coding rules and related specs are collected before a single line is written.
 - **During review** — applicable rules are added as review perspectives, so reviews check against your actual standards, not generic best practices.
 
-forge's `/forge:query-db-rules` / `query-db-specs` / `update-db-rules` / `update-db-specs` select a backend from an ordered list and run search / index updates against it. There are two backends:
+forge's `/forge:query-db-rules` / `query-db-specs` / `update-db-rules` / `update-db-specs` select a backend from an ordered list and run search / index updates against it. If the preferred backend is unavailable, forge notifies you and uses the other one. This eliminates context gaps: AI implements and reviews with the same knowledge a senior team member would have.
 
-- **doc-advisor** (external plugin, [BlueEventHorizon/DocAdvisor](https://github.com/BlueEventHorizon/DocAdvisor)) — indexes documents as a ToC (keyword / metadata)
-- **doc-db** — a locally running document-search server
-
-The default order puts doc-advisor first; change it with `doc_backend.prefer` in `.claude/.forge.yaml`. If the preferred backend is unavailable, forge notifies you and uses the other one. This eliminates context gaps: AI implements and reviews with the same knowledge a senior team member would have.
-
-For the details of switching — the `.claude/.forge.yaml` syntax, the `--backend` forcing argument that only the index-update skills (`/forge:update-db-rules` / `update-db-specs`) accept, and the separate review-executor axis (`agent-review`) — see [switch-forge-backend.md](docs/readme/switch-forge-backend.md).
+For the available backends, how to install them, and the details of switching — the `.claude/.forge.yaml` syntax, the `--backend` forcing argument that only the index-update skills (`/forge:update-db-rules` / `update-db-specs`) accept, and the separate review-executor axis (`agent-review`) — see [switch-forge-backend.md](docs/readme/switch-forge-backend.md).
 
 ## Workflow
 
@@ -36,7 +31,7 @@ flowchart LR
         R([Requirements]) --> D([Design]) --> P([Plan]) --> I([Implement]) --> RF([Review / Fix])
     end
     RF --> DL([Delivery])
-    DA["doc backends (doc-advisor / doc-db)"] -. find context .-> forge
+    DA["doc backends"] -. find context .-> forge
 ```
 
 ## Plugins
@@ -45,7 +40,7 @@ flowchart LR
 | --------- | ------- | -------------------------------------------------------------------------------------------------------- |
 | **forge** | 0.1.2   | AI-powered document lifecycle tool. Create, review, and auto-fix requirements/design/plan docs and code. |
 
-> **The document-search backends (doc-advisor / doc-db) are external dependencies**: doc-advisor ships from a separate repository, [BlueEventHorizon/DocAdvisor](https://github.com/BlueEventHorizon/DocAdvisor). Install with `/plugin marketplace add BlueEventHorizon/DocAdvisor` → `/plugin install doc-advisor@DocAdvisor`. doc-db is a locally running document-search server; when the `doc-db` command is installed, it becomes an available candidate, and forge starts and uses it automatically when the ordered list selects it. Neither backend is gated on a version: availability is judged by whether the required features can be used.
+> **The document-search backends are external dependencies**: they are not part of forge. For the available backends and how to install them, see [Installing and switching forge backends](docs/readme/switch-forge-backend.md).
 
 ## Skills
 
@@ -118,9 +113,9 @@ flowchart LR
 
 > **Bold** = user-invocable, _Italic_ = AI-only (called internally by other skills)
 
-### Document-search backends (doc-advisor / doc-db, external)
+### Document-search backends (external)
 
-Document search is provided by two backends: doc-advisor, the external [BlueEventHorizon/DocAdvisor](https://github.com/BlueEventHorizon/DocAdvisor) plugin (`index-docs` / `query-docs`; see that repository's README for details), and doc-db, a locally running document-search server. forge's `/forge:query-db-rules` etc. select one from an ordered list (doc-advisor first by default; change with `doc_backend.prefer` in `.claude/.forge.yaml`).
+Document search is provided by external backends. forge's `/forge:query-db-rules` etc. select one from an ordered list. For the available backends and how to install them, see [Installing and switching forge backends](docs/readme/switch-forge-backend.md).
 
 ## Installation
 
@@ -131,13 +126,9 @@ Inside a Claude Code session:
 ```
 /plugin marketplace add BlueEventHorizon/sdd-forge
 /plugin install forge@sdd-forge
-
-# The doc-advisor document-search backend ships from a separate marketplace
-/plugin marketplace add BlueEventHorizon/DocAdvisor
-/plugin install doc-advisor@DocAdvisor
 ```
 
-To use the other document-search backend, doc-db, install the `doc-db` command on your PATH. This makes it an available candidate; forge starts and uses it automatically when the ordered list selects it (doc-advisor comes first by default, so set `doc_backend.prefer: doc-db` in `.claude/.forge.yaml` to try doc-db first; it is also selected when doc-advisor is unavailable).
+Install a document-search backend separately from forge. For the steps, see [Installing and switching forge backends](docs/readme/switch-forge-backend.md).
 
 To re-enable a disabled plugin, from your terminal:
 
@@ -177,7 +168,7 @@ Caches GitHub repository information (such as the default base branch). forge's 
 
 - [Claude Code](https://claude.ai/code) CLI
 - Python 3.14 or later (for running the Python scripts; Python 3.13 and earlier are not supported)
-- For document search, either backend: the external [doc-advisor](https://github.com/BlueEventHorizon/DocAdvisor) (Python standard library only; no API key required), or doc-db (a locally running document-search server)
+- For document search, one of the document-search backends ([Installing and switching forge backends](docs/readme/switch-forge-backend.md))
 
 ## License
 

@@ -1,0 +1,38 @@
+{
+  "content_hash": "dacd3465164333d24b4a89b31a106bc2264610f83c64bfe5c08a2f859422b406",
+  "doc_link_id": "DLID-fpfqhpad552k",
+  "keywords": [
+    "DES-047",
+    "confirmed_fix",
+    "allowlist",
+    "syntax baseline",
+    "verify_fix_safety",
+    "dprint",
+    "collect_modified_files",
+    "review guardrails",
+    "syntax_unverified",
+    "sequential fix"
+  ],
+  "path": "docs/specs/forge/design/DES-047_fix_safety_guardrails_design.md",
+  "purpose": "Defines the safety boundary the review body applies when executing confirmed_fix items: sequential per-finding application, file allowlist, syntax verification and independent end-of-round change check.",
+  "summary": [
+    "Review body owns fixing and safety verification; reviewer and evaluator only write findings",
+    "Baseline capture of syntax and format violations before applying fixes",
+    "Sequential per-finding application with allowlist and syntax verification each time",
+    "verify_fix_safety CLI checks: allowlist, dprint, ast.parse, bash -n",
+    "Handling of preexisting violations, unverified files, deleted and unsupported files",
+    "Independent end-of-round verification via collect_modified_files",
+    "JSON output structure and how status violations are decided",
+    "Responsibility boundary table among reviewer, evaluator, review body, scripts",
+    "Test design for baseline, verify and collect scripts",
+    "No open issues"
+  ],
+  "tasks": [
+    "Modifying review fix application flow",
+    "Changing verify_fix_safety.py or capture_syntax_baseline.py",
+    "Changing collect_modified_files.py",
+    "Reviewing fix safety guardrails",
+    "Writing tests for review safety scripts"
+  ],
+  "title": "DES-047 review 本体の修正安全ガードレール設計書"
+}

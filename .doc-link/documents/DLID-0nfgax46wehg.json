@@ -1,0 +1,41 @@
+{
+  "content_hash": "ec01a2c5e759b7ef872117eccdb5132ca56df6a53fa03c3fbf2080e6bdd75aaf",
+  "doc_link_id": "DLID-0nfgax46wehg",
+  "keywords": [
+    "doc-link",
+    "doc-db",
+    "backend selection",
+    "query-db",
+    "update-db",
+    "DLID",
+    "index freshness",
+    "fallback",
+    "series",
+    "unprepared index"
+  ],
+  "path": "docs/specs/doc-db/requirements/REQ-014_doc_db_backend_selection_spec.md",
+  "purpose": "Requirements for automatic selection between doc-link and doc-db search backends in forge query-db-* and update-db-* wrappers, covering ordering, fallback, index readiness, freshness, and notification.",
+  "summary": [
+    "Overview: wrappers auto-select an available document search backend; index maintenance belongs to update-db-*",
+    "Scope and exclusions: four wrappers, ordered backend list, doc-db startup attempt, DLID writing; excludes installation, daemonization, KEY/series management, grep fallback",
+    "Preconditions and glossary: usable doc-link means search and index update both work; doc-db must return machine-readable state identifiers",
+    "FNC-001 to FNC-004: backend auto-selection, query execution, update execution with DLID assignment and git tracking, execution route notification",
+    "BL-001 default order doc-link then doc-db, configurable preference, invalid config is an explicit error",
+    "BL-002 index freshness: backend owns checks, no guessing, session-change confirmation for backends without freshness checks",
+    "BL-003 and BL-004: fallback is normal, failures after selection are faults, unprepared index needs user approval, trash state and zero documents handling",
+    "BL-005 to BL-007: current-branch series search, nonexistent paths excluded, explicit backend designation without switching, index population ownership",
+    "Non-functional requirements: observability, backward compatibility, responsiveness, availability, credential protection",
+    "Error case table mapping each condition to the required behavior"
+  ],
+  "tasks": [
+    "Designing or modifying query-db-rules and query-db-specs wrappers",
+    "Designing or modifying update-db-rules and update-db-specs wrappers",
+    "Implementing backend selection and fallback logic",
+    "Implementing DLID assignment and doc-link index updates",
+    "Handling unprepared index approval and trash state errors",
+    "Reviewing backend-selection design documents against requirements",
+    "Writing tests for wrapper backend behavior and error cases",
+    "Changing backend preference configuration or default order"
+  ],
+  "title": "REQ-014 doc-db バックエンド選択 要件定義書"
+}

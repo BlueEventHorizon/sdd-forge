@@ -1,0 +1,40 @@
+{
+  "content_hash": "8759d1760b4d6a5b8bf474110ad4fefda0c20d377db7229621f28e4cd73863eb",
+  "doc_link_id": "DLID-5k6jt9qvf60d",
+  "keywords": [
+    "doc-db",
+    "doc-link",
+    "backend selection",
+    "doc_backend.prefer",
+    "index_missing",
+    "series",
+    "DLID",
+    "sync_documents",
+    "query-db",
+    "update-db"
+  ],
+  "path": "docs/specs/doc-db/design/DES-057_doc_db_backend_selection_design.md",
+  "purpose": "Design for ordered backend selection between doc-db and doc-link in the four document search wrapper skills, covering availability checks, indexing, query and update flows, and error handling.",
+  "summary": [
+    "Overview: ordered backend list from .forge.yaml doc_backend.prefer, default doc-link first, with per-backend availability checks",
+    "Selection boundary: doc-db unavailable vs operation failure vs index-missing (exit 10/20/30), no fallback after a connection is established",
+    "doc-db client: standard-library Streamable HTTP, JSON/SSE parsing, on-demand startup, probe timeouts and constants",
+    "doc-link availability judged by query-docs, index-docs, embed-dlid skills and uv, never by version",
+    "Architecture: component diagram, module list, and one-way dependency from SKILL to wrapper to shared low-level script",
+    "Query design: series set to current branch, path existence check, session-change confirmation, approval-gated index preparation delegated to update-db-*",
+    "Update design: desired-state sync with start/status polling by the SKILL, doc-link flow of prepare, DLID embedding, index build",
+    "doc-db MCP tool contract snapshot, measured behavior, KEY_NOT_FOUND and KEY_TRASHED handling",
+    "Use cases, sequence diagrams, error handling and notification table",
+    "Test design (unit, wrapper, integration, doc-link contract) and requirement completeness checklist"
+  ],
+  "tasks": [
+    "Implementing or modifying query-db-rules, query-db-specs, update-db-rules, update-db-specs skills",
+    "Changing backend selection order or the doc_backend settings schema",
+    "Modifying doc_backend scripts such as query_docdb, sync_docdb, docdb_runtime, resolve_backend_order",
+    "Handling doc-db unavailable, index-missing, or trashed-key situations",
+    "Integrating doc-link query-docs, index-docs, embed-dlid into forge",
+    "Writing or reviewing tests for backend selection and doc-link contracts",
+    "Reviewing design consistency against REQ-014"
+  ],
+  "title": "DES-057 doc-db バックエンド選択 設計書"
+}

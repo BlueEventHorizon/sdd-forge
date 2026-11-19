@@ -1,0 +1,37 @@
+{
+  "content_hash": "bc0148886282b55cbf25c683bb2bbf0450d67f6e542144555c4c2b9e3339e8d7",
+  "doc_link_id": "DLID-s1ds8dcyfn7p",
+  "keywords": [
+    "orchestrator",
+    "context gathering",
+    "start-design",
+    "start-plan",
+    "start-requirements",
+    "return value",
+    "parallel agents",
+    "no session directory"
+  ],
+  "path": "docs/specs/forge/design/DES-010_create_skills_orchestrator_design.md",
+  "purpose": "Design for turning the start-design, start-plan and start-requirements skills into orchestrators with a shared context gathering framework using parallel agents and return values.",
+  "summary": [
+    "Orchestrator structure with preparation, input gathering, document creation, review and completion",
+    "Responsibility split between orchestrator, gathering agents, main-context authoring, AI review and post-processing",
+    "Design decision: authoring stays in main context because user dialogue is impossible in isolated agents",
+    "Return value contract: markdown bullet lists, no session directory",
+    "Inline prompt templates with search purpose, means and output contract for self-contained agents",
+    "Parallel gathering with failure handling that skips failed categories and displays progress",
+    "start-design inputs: requirements doc identified from context, rules via rules agent",
+    "start-plan phases and gather matrix for specs, rules and code agents",
+    "start-requirements agent matrix per mode and reverse-engineering sequence",
+    "Existing components used and the rationale for not using sessions"
+  ],
+  "tasks": [
+    "Modifying start-design, start-plan or start-requirements skills",
+    "Designing context gathering agents",
+    "Changing parallel agent output handling",
+    "Reviewing orchestrator pattern design",
+    "Updating the plan creation workflow",
+    "Adding a new create skill"
+  ],
+  "title": "DES-010 create-* スキル オーケストレータ化設計書"
+}

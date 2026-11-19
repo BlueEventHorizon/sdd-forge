@@ -1,0 +1,40 @@
+{
+  "content_hash": "ccbd22ce27763754af3b43072ef027102e95adb0ccedf165c71eb181996f88ca",
+  "doc_link_id": "DLID-0868m80sm7hy",
+  "keywords": [
+    "agenda",
+    "record",
+    "state transition",
+    "agenda item",
+    "consult",
+    "review findings",
+    "structured input",
+    "storage format",
+    "structural validity",
+    "failure visibility"
+  ],
+  "path": "docs/specs/consult/agenda/requirements/REQ-019_agenda_record.md",
+  "purpose": "Requirements for the agenda record layer, a single source of truth holding agenda items and their states so humans can grasp the whole and respond individually while minimizing AI effort on record upkeep.",
+  "summary": [
+    "Rationale: the mechanism exists only to reduce AI output and reading effort spent maintaining records",
+    "Terminology: agenda item, agenda, record, presentation, caller; the word triage is not used",
+    "Scope: record and state keeping, transition checks, caller input/output, location/count/lifetime, discarding old records",
+    "FNC-004 to FNC-006: AI generates only judgment content, input is one structured handoff of one value, next action is returned without counting",
+    "FNC-008: transition preconditions are machine-readable and unmet transitions are rejected with the shortfall identifiable",
+    "FNC-009: record count, identification, lifetime, severity key, and state vocabulary are received from the caller",
+    "FNC-012: the caller judges structural validity of the whole item set first; item transitions are rejected until recorded",
+    "FNC-013 and FNC-010: retain change information for the display layer; discard legacy review and consult records",
+    "NFR-001 to NFR-006: storage format owns value boundaries, derived location and lifetime, unit tests, no secret values, visible failures",
+    "Open items TBD-003, TBD-004, TBD-006 with resolutions"
+  ],
+  "tasks": [
+    "Designing the agenda record mechanism",
+    "Implementing agenda record storage and state transitions",
+    "Writing unit tests for the agenda mechanism",
+    "Integrating consult or review skills with the agenda",
+    "Reviewing agenda requirements or design documents",
+    "Choosing a storage format for work records",
+    "Handling secrets in recorded items"
+  ],
+  "title": "REQ-019 議事記録機構 要件定義書"
+}

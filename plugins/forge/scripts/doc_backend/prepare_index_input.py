@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""doc-advisor `index-docs` の入力（dirs / exclude）を準備する低レベル CLI。
+"""doc-link の索引更新へ渡す入力（dirs / exclude）を準備する低レベル CLI。
 
-query / update wrapper が doc-advisor 経路へ切り替えるとき、`index-docs` を呼ぶ前に
+update wrapper が doc-link 経路で索引を更新するとき、索引の構築を呼ぶ前に
 本 CLI を 1 回実行する。責務は次の 2 つだけである。
 
 1. 既存 dprint runner（`scripts/doc_structure/run_dprint_fmt.sh`）を実行し、
    索引対象の Markdown を索引作成前にフォーマットする。
 2. `.doc_structure.yaml` から当該 category の `root_dirs` / `patterns.exclude` を
-   解決し、`index-docs` へ渡す入力として JSON で返す。
+   解決し、索引の構築へ渡す入力として JSON で返す。
 
 ## `--no-format`: 責務 2 だけを使う呼び出し元のために整形を省く
 
@@ -17,15 +17,16 @@ query / update wrapper が doc-advisor 経路へ切り替えるとき、`index-d
 理由 1）、そのために本 CLI を呼ぶと責務 1 の整形が付いてくる。
 
 `--no-format` は責務 1 を省き、責務 2 だけを実行する。**整形は索引作成の前提であって、
-設定解決の前提ではない**——`index-docs` が整形後の本文で `body_hash` を打つために責務 1
-が要るのであり、設定を読むことは整形の有無に依存しない。
+設定解決の前提ではない**——索引は構築した時点の本文を記録するので、構築の後に整形で
+本文が変わると索引が古くなる。そのために責務 1 が要るのであり、設定を読むことは
+整形の有無に依存しない。
 
 想定する呼び出し元は、自分の変更の差分に整形を混ぜたくないものである。走査範囲全体が
 整形されると、その呼び出し元が意図した差分に無関係な変更が混ざる。整形自体は commit 時
 （`anvil:commit` の Phase 0）と索引更新時（`update-db-rules` / `update-db-specs` 経由の
 本 CLI 既定動作）に走るため、設定解決だけを行う側で重ねて行う必要がない。
 
-ファイル一覧への展開は行わない。展開は doc-advisor 側に委ね、doc-db sync 用の
+ファイル一覧への展開は行わない。展開は doc-link 側に委ね、doc-db sync 用の
 `project_documents.py` は使用しない。索引母集団の決定経路が backend ごとに異なる
 ことは設計上の許容事項である。
 
@@ -36,8 +37,8 @@ query / update wrapper が doc-advisor 経路へ切り替えるとき、`index-d
 | 0         | `success`         | dprint 適用と dirs / exclude 解決が完了した      |
 | 20        | `operation_error` | dprint、設定解決、入力検証のいずれかが失敗した   |
 
-SKILL は exit code だけで `index-docs` の実行可否を選択し、準備失敗時は
-`index-docs` を呼ばない。JSON は結果表示と診断情報の取得にだけ使用する。
+SKILL は exit code だけで索引の構築へ進むかを選択し、準備失敗時は
+索引の構築を呼ばない。JSON は結果表示と診断情報の取得にだけ使用する。
 
 ## 設定の解釈は既存 resolver を import して再利用する [MANDATORY]
 
@@ -82,7 +83,7 @@ CATEGORIES = ("rules", "specs")
 #: 成功
 EXIT_SUCCESS = 0
 
-#: dprint / 設定解決 / 入力検証の失敗（doc-advisor へ進んではならない）
+#: dprint / 設定解決 / 入力検証の失敗（索引の構築へ進んではならない）
 EXIT_OPERATION_ERROR = 20
 
 #: JSON contract の `status` 値
@@ -93,7 +94,7 @@ STATUS_OPERATION_ERROR = "operation_error"
 STARTUP_NOT_ATTEMPTED = "not_attempted"
 
 #: JSON contract の `backend` / `operation` 値
-BACKEND = "doc-advisor"
+BACKEND = "doc-link"
 OPERATION = "prepare_index"
 
 #: 失敗の reason code
@@ -126,7 +127,7 @@ _MAX_OUTPUT_EXCERPT = 400
 # --- 例外 ---------------------------------------------------------------------
 
 
-class PrepareAdvisorIndexError(Exception):
+class PrepareIndexInputError(Exception):
     """索引入力の準備を完了できなかった（exit 20 / `status=operation_error`）。"""
 
     def __init__(self, reason_code: str, message: str):
@@ -183,7 +184,7 @@ def run_dprint(
         ["bash", str(dprint_script)], Path(project_root), DPRINT_TIMEOUT_SECONDS
     )
     if returncode != 0:
-        raise PrepareAdvisorIndexError(
+        raise PrepareIndexInputError(
             REASON_DPRINT_FAILED,
             f"dprint の実行に失敗しました（exit={returncode}）: {_excerpt(stderr, stdout)}",
         )
@@ -198,7 +199,7 @@ def load_resolver_module(resolver_script: Path = RESOLVER_SCRIPT):
         "forge_doc_structure_resolver", str(resolver_script)
     )
     if spec is None or spec.loader is None:
-        raise PrepareAdvisorIndexError(
+        raise PrepareIndexInputError(
             REASON_DOC_STRUCTURE_INVALID,
             f"resolver をロードできません: {resolver_script}",
         )
@@ -218,18 +219,18 @@ def resolve_index_inputs(
         dict: `{"root_dirs": [...], "exclude": [...]}`（いずれも設定記載順）
 
     Raises:
-        PrepareAdvisorIndexError: 設定ファイル不在・構造不正・当該 category の
+        PrepareIndexInputError: 設定ファイル不在・構造不正・当該 category の
             `root_dirs` 欠落のいずれか（`reason_code=doc_structure_invalid`）
     """
     resolver = load_resolver_module(resolver_script)
     try:
         config, raw_content = resolver.load_doc_structure(str(project_root))
     except FileNotFoundError as exc:
-        raise PrepareAdvisorIndexError(REASON_DOC_STRUCTURE_INVALID, str(exc)) from exc
+        raise PrepareIndexInputError(REASON_DOC_STRUCTURE_INVALID, str(exc)) from exc
     except (OSError, UnicodeDecodeError) as exc:
         # 権限不備・非 UTF-8 等の読取失敗も設定解決の失敗として正規化する。
         # 未捕捉のまま漏らすと JSON + exit 20 の契約（§4.4）を破って traceback になる
-        raise PrepareAdvisorIndexError(
+        raise PrepareIndexInputError(
             REASON_DOC_STRUCTURE_INVALID,
             f".doc_structure.yaml を読み取れません（{type(exc).__name__}）",
         ) from exc
@@ -240,18 +241,18 @@ def resolve_index_inputs(
         suggestion = validation.get("suggestion")
         if suggestion:
             message = f"{message} / {suggestion}"
-        raise PrepareAdvisorIndexError(REASON_DOC_STRUCTURE_INVALID, message)
+        raise PrepareIndexInputError(REASON_DOC_STRUCTURE_INVALID, message)
 
     section = config.get(category)
     if not isinstance(section, dict):
-        raise PrepareAdvisorIndexError(
+        raise PrepareIndexInputError(
             REASON_DOC_STRUCTURE_INVALID,
             f".doc_structure.yaml に '{category}' セクションがありません",
         )
 
     root_dirs = section.get("root_dirs")
     if not isinstance(root_dirs, list) or not root_dirs:
-        raise PrepareAdvisorIndexError(
+        raise PrepareIndexInputError(
             REASON_DOC_STRUCTURE_INVALID,
             f".doc_structure.yaml の '{category}' に root_dirs が定義されていません",
         )
@@ -259,7 +260,7 @@ def resolve_index_inputs(
     patterns = section.get("patterns", {})
     exclude = patterns.get("exclude", []) if isinstance(patterns, dict) else []
     if not isinstance(exclude, list):
-        raise PrepareAdvisorIndexError(
+        raise PrepareIndexInputError(
             REASON_DOC_STRUCTURE_INVALID,
             f".doc_structure.yaml の '{category}' の patterns.exclude がリストではありません",
         )
@@ -284,7 +285,7 @@ def prepare(
     """dprint 適用と dirs / exclude 解決をこの順で行い、成功 payload を返す。
 
     順序は設計上の規定（dprint → 設定解決）に従う。失敗は
-    `PrepareAdvisorIndexError` として伝播し、呼び出し側（`main()`）が
+    `PrepareIndexInputError` として伝播し、呼び出し側（`main()`）が
     exit 20 / `status=operation_error` へ変換する。
 
     Args:
@@ -295,7 +296,7 @@ def prepare(
     _validate_category(category)
     project_root = Path(project_root).resolve()
     if not project_root.is_dir():
-        raise PrepareAdvisorIndexError(
+        raise PrepareIndexInputError(
             REASON_INVALID_INPUT,
             f"project root がディレクトリではありません: {project_root}",
         )
@@ -336,7 +337,7 @@ def _error_payload(reason_code: str, message: str) -> dict:
 def parse_args(argv=None):
     parser = argparse.ArgumentParser(
         description=(
-            "doc-advisor index-docs の入力（dprint 適用と root_dirs / exclude 解決）"
+            "doc-link の索引更新へ渡す入力（dprint 適用と root_dirs / exclude 解決）"
             "を準備して JSON で出力する"
         )
     )
@@ -365,7 +366,7 @@ def main(argv=None) -> int:
 
     try:
         payload = prepare(args.category, project_root, format_first=not args.no_format)
-    except PrepareAdvisorIndexError as exc:
+    except PrepareIndexInputError as exc:
         print(
             json.dumps(
                 _error_payload(exc.reason_code, str(exc)),
@@ -384,7 +385,7 @@ def main(argv=None) -> int:
 
 def _validate_category(category: str) -> None:
     if category not in CATEGORIES:
-        raise PrepareAdvisorIndexError(
+        raise PrepareIndexInputError(
             REASON_INVALID_INPUT,
             f"category は {' / '.join(CATEGORIES)} のいずれかです: {category!r}",
         )

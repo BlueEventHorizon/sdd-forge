@@ -1,6 +1,10 @@
-# DES-022 並列 agent 出力契約パターン 設計書
+---
+doc_link_id: DLID-5h7wqxcknyha
+---
 
-## 1. 概要
+# DES-022 並列 agent 出力契約パターン 設計書 DLID-wca6306e5f7v
+
+## 1. 概要 DLID-9dg78zsk76d6
 
 Claude Code の Agent ツールで複数の Agent を並列起動する場合、共有リソース（YAML/JSON ファイル等）への同時書き込みが競合する問題がある。Agent ツールは OS プロセスレベルの排他制御を提供しないため、並列 Agent が同一ファイルに Write すると後勝ちで上書きされ、先の Agent の結果が消失する。
 
@@ -8,9 +12,9 @@ Claude Code の Agent ツールで複数の Agent を並列起動する場合、
 
 ---
 
-## 2. 問題
+## 2. 問題 DLID-7srxm5s8qnbh
 
-### 2.1 並列書き込み競合
+### 2.1 並列書き込み競合 DLID-jxjwdg9a5ba8
 
 ```
 orchestrator
@@ -20,7 +24,7 @@ orchestrator
 
 Agent A と Agent B が同時に同一ファイルを更新すると、最後に Write した agent の内容のみが残る。Read-Modify-Write の間に他の agent が割り込む典型的な race condition である。
 
-### 2.2 Claude Code 環境での制約
+### 2.2 Claude Code 環境での制約 DLID-7cnp1afdy2g7
 
 - Agent ツールは独立したサブプロセスとして実行される
 - ファイルロック機構は提供されない
@@ -28,9 +32,9 @@ Agent A と Agent B が同時に同一ファイルを更新すると、最後に
 
 ---
 
-## 3. 出力契約 [MANDATORY]
+## 3. 出力契約 [MANDATORY] DLID-cxm356kf6bpe
 
-### 3.0 適用範囲
+### 3.0 適用範囲 DLID-gh3xbgge1agm
 
 本契約が規定するのは**並列 agent の結果を orchestrator へ受け渡す経路**である。
 
@@ -38,7 +42,7 @@ Agent A と Agent B が同時に同一ファイルを更新すると、最後に
 
 1 回の処理の間だけ存在するデータ（review の依頼・所見・評価、agent へ渡す入力）も、本契約の対象ではない。識別値だけを渡し、script が書いた JSON のパスを読む型は [forge_agent_data_exchange_rules.md](../../../rules/forge_agent_data_exchange_rules.md) が定める。書き手は script であり agent は共有リソースへ直接書かない。並列に起動する agent へ渡す入力も、識別値ごとに別の置き場が与えられ、agent は読むだけなので、§2.1 の競合は成立しない。
 
-### 3.1 基本原則
+### 3.1 基本原則 DLID-vqfns5n02w3z
 
 **agent は結果の受け渡しに共有リソースを使わない。結果は Agent ツールの return value として orchestrator へ返す。**
 
@@ -55,7 +59,7 @@ orchestrator
   orchestrator が return value を統合し、必要なら成果物を1回だけ書く
 ```
 
-### 3.2 結果受け渡しのための中間ファイルを作らない [MANDATORY]
+### 3.2 結果受け渡しのための中間ファイルを作らない [MANDATORY] DLID-cbgtsrsztgb8
 
 agent の結果を orchestrator へ渡すための**中間ファイル・セッションディレクトリを作らない**。
 
@@ -64,7 +68,7 @@ agent の結果を orchestrator へ渡すための**中間ファイル・セッ�
 - 受け渡し経路をファイルにすると、命名規則・収集・後片付け・部分失敗時のマージ戦略という付随的な仕組みが一式必要になる。return value ならいずれも不要である
 - 中間ファイルは処理が途中で終わったときに残骸として残る。作らなければ残骸も生じない
 
-### 3.3 agent の責務
+### 3.3 agent の責務 DLID-6hcgvv2gh3x1
 
 | 責務                       | 説明                                                 |
 | -------------------------- | ---------------------------------------------------- |
@@ -72,7 +76,7 @@ agent の結果を orchestrator へ渡すための**中間ファイル・セッ�
 | 自己完結した結果を返す     | orchestrator が後処理できる構造で返す                |
 | 読み取りは自由             | Read は競合しないため制限なし                        |
 
-### 3.4 orchestrator の責務
+### 3.4 orchestrator の責務 DLID-t76fgnjg74rc
 
 | 責務                  | 説明                                                                             |
 | --------------------- | -------------------------------------------------------------------------------- |
@@ -83,9 +87,9 @@ agent の結果を orchestrator へ渡すための**中間ファイル・セッ�
 
 ---
 
-## 4. 適用例
+## 4. 適用例 DLID-w2n511gwsg50
 
-### 4.1 コンテキスト収集（start-requirements / start-design / start-plan）
+### 4.1 コンテキスト収集（start-requirements / start-design / start-plan） DLID-fserqd5yahdj
 
 ```
 orchestrator
@@ -101,9 +105,9 @@ orchestrator
 
 ---
 
-## 5. アンチパターン
+## 5. アンチパターン DLID-c9cvqtnbfsrh
 
-### 5.1 共有ファイルへの直接書き込み [MANDATORY]
+### 5.1 共有ファイルへの直接書き込み [MANDATORY] DLID-2xjdh8ghyp3g
 
 ```
 # NG: 並列 agent が同一ファイルに書き込む
@@ -111,7 +115,7 @@ Agent A → 共有ファイル
 Agent B → 共有ファイル  ← Agent A の結果が消失
 ```
 
-### 5.2 agent 内での Read-Modify-Write
+### 5.2 agent 内での Read-Modify-Write DLID-2s5kacka2gyp
 
 ```
 # NG: agent が共有リソースを Read → 加工 → Write
@@ -121,17 +125,17 @@ Agent B: Read 共有ファイル → 加工 → Write  ← Agent A の変更が�
 
 Read は安全だが、Read した内容に基づく Write は race condition を引き起こす。
 
-### 5.3 ファイルロックによる排他制御
+### 5.3 ファイルロックによる排他制御 DLID-d61yw5m36gmx
 
 Claude Code の Agent 環境ではファイルロック（`flock` 等）の信頼性が保証されない。ロックに依存するのではなく、結果の受け渡しを return value へ集約する本契約を使用する。
 
-### 5.4 結果受け渡しのための中間ファイル
+### 5.4 結果受け渡しのための中間ファイル DLID-a03ccdh394em
 
 §3.2 のとおり作らない。「個別ファイルへ書かせて orchestrator が収集する」方式は、書き込み先を分離することで競合は避けられるが、§3.2 の付随的な仕組みを丸ごと抱えることになる。return value で足りる場面でこれを選ばない。
 
 ---
 
-## 6. 新しい並列 agent を設計する際のチェックリスト
+## 6. 新しい並列 agent を設計する際のチェックリスト DLID-5b466jpth8re
 
 | # | 確認項目                                                                             |
 | - | ------------------------------------------------------------------------------------ |

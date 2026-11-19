@@ -1,0 +1,36 @@
+{
+  "content_hash": "cf4fe291850bce60c2b7692b733fe604dc48d413f641e57a9447291ed7ea50c0",
+  "doc_link_id": "DLID-zfh5q9h29c8y",
+  "keywords": [
+    "start-design",
+    "design workflow",
+    "upstream design",
+    "design_method",
+    "traceability",
+    "temporary-feature",
+    "requirements",
+    "ADR approval record"
+  ],
+  "path": "docs/specs/forge/design/DES-018_create_design_workflow_design.md",
+  "purpose": "Design of the /forge:start-design orchestrator skill that builds design documents from requirements through upstream design, existing-pattern matching, detailed design, consistency check, and review.",
+  "summary": [
+    "Overview and flowchart of the design creation workflow",
+    "Preparation steps: identify requirements, feature, output dir, temporary marker, completeness, mode, state table, norm documents",
+    "Phase 1 rule collection and Phase 2 upstream design from requirements only with approvals",
+    "Phase 3 matching with existing implementations and design patterns, redesign, and type determination",
+    "Phase 4 detailed design reusing unmodified existing implementations",
+    "Phase 5 consistency check with traceability table and Phase 6 AI and user review",
+    "Handling of needs not covered by requirements: stop, report, ADR approval record",
+    "Completion steps: update-db-specs and commit confirmation",
+    "Design principles: build from requirements, reuse existing components, full requirement coverage, What/How boundary"
+  ],
+  "tasks": [
+    "Modifying the start-design skill or workflow",
+    "Creating design documents from requirements",
+    "Judging differential development for design documents",
+    "Reusing existing implementations in a design",
+    "Reviewing design workflow consistency",
+    "Handling requirement gaps found during design"
+  ],
+  "title": "DES-018 forge 設計書作成ワークフロー 設計書"
+}

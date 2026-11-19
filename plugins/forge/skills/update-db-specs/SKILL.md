@@ -107,7 +107,7 @@ sleep 2 && python3 "${CLAUDE_SKILL_DIR}/scripts/sync_documents.py" --status <job
 command -v uv
 ```
 
-満たさない場合、doc-link は利用不能である。**`--backend` の指定を受けている場合は
+満たさない場合、doc-link は利用不能である。理由には、揃っていない SKILL の名前、または `uv` を実行できないことを書き、doc-link の導入状態の確認を促す。**`--backend` の指定を受けている場合は
 切り替えず明示エラーとして終了する。** 指定が無い場合は、後位が残っていれば理由を控えて
 Step 2 の次の backend へ、残っていなければ明示エラーとして終了する。
 

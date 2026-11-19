@@ -35,7 +35,7 @@ script は doc-db の可用性と操作の結果だけを返し、他方の back
 
 当該 KEY が未生成、または当該 series が未同期の状態は、上記 3 分類のいずれにも該当しない。障害ではなく **未整備** であり、
 他方の backend への切替でも失敗でもない。**利用者の承認を得たうえで索引を整備し、query を継続する**（REQ-014 BL-004）。
-doc-link 経路が ToC 未構築時に整備してから検索する規定（§5.1）と対称である。
+doc-link 経路が索引の未構築時に整備してから検索する規定（§5.1）と対称である。
 script は未整備を専用の exit code で返し、承認の取得・索引整備・再検索の駆動は SKILL が行う（§4.2・§4.4）。
 索引の整備自体が失敗した場合は operation 失敗に分類する。
 
@@ -90,10 +90,13 @@ available-skills を正とする（doc-link は外部プラグインであり、
 query 自身が呼ぶのは `query-docs` だけだが、未整備時に委譲する `update-db-*` が `embed-dlid` と
 `index-docs` を要するため、query 経路でも 3 つが揃うことを条件とする。
 いずれかを満たさなければ doc-link を利用不能とし、順序リストの残る backend の可否確認へ進む。
+利用不能の理由には、満たさなかった条件（揃っていない SKILL の名前、または `uv` を実行できないこと）を書き、
+doc-link の導入状態の確認を促す（REQ-014 NFR-002）。未導入と一部の欠落は区別しない。どちらも、何が欠けているかを
+伝えれば利用者は対処できるためである。
 残る backend も利用不能な場合に、両 backend の利用不能理由を返して失敗する。
 grep 検索は実行しない。
 
-#### バージョンを判定に使わない [MANDATORY] DLID-nqkxnw9f5ywn
+#### バージョンを判定に使わない [CRITICAL] DLID-nqkxnw9f5ywn
 
 可用性は上の 2 条件だけで判定する。**doc-link のバージョンを条件にしない。バージョンを推測する
 代用品も持たない。**
@@ -104,7 +107,7 @@ grep 検索は実行しない。
 - 成果物の有無はバージョンではない。fork・部分インストール・提供側の改名で推測が誤り、誤りを検知できない
 - 得られるのは「未導入」と「古い版」の通知文の書き分けだけで、対価として跨リポジトリの結合を負う
 
-**forge が ToC の内部配置・生成日時を解釈する経路を持たない**（REQ-014 BL-002）。索引が現在の内容を
+**forge が doc-link の索引の内部配置・生成日時を解釈する経路を持たない**（REQ-014 BL-002）。索引が現在の内容を
 映しているかを forge は推測せず、doc-link が行う現物との照合に委ねる（§5.1）。
 
 ### 2.5 優先 backend の指定（REQ-014 BL-001） DLID-xed2t6xbxeh0
@@ -117,7 +120,7 @@ doc_backend:
   prefer: doc-db # doc-db | doc-link。省略時は既定値
 ```
 
-**責務分離 [MANDATORY]**: 可用性判定は各 backend が所有し、選択順序は選択者だけが持つデータである。
+**責務分離**: 可用性判定は各 backend が所有し、選択順序は選択者だけが持つデータである。
 
 - **選択者（SKILL のオーケストレーション）**: 順序リストを解決し、先頭から各 backend の
   可用性判定を呼び、最初に利用可能な backend を選ぶ。判定の中身を知らない
@@ -148,7 +151,7 @@ doc_backend:
 後位を試す（REQ-014 FNC-004）。いずれも不能なら明示エラーとする。
 
 不正値・解析不能の設定を黙って無視して既定値で動くことはしない。利用者が意図した backend と
-異なる側で静かに動き続けることになるためである（DES-061 §2.4 と同じ方針。構文エラーは
+異なる側で静かに動き続けることになるためである（[DES-061][des-061] §2.4 と同じ方針。構文エラーは
 `forge_settings.py` が、値域エラーは `resolve_backend_order.py` が検出する）。
 
 ## 3. アーキテクチャ DLID-wfpz0e25snfy
@@ -242,7 +245,7 @@ SKILL 固有 wrapper を挟まず SKILL から直接呼ぶ。
 
 共有モジュールは `plugins/forge/scripts/doc_backend/` に置く。
 4 SKILL が同じ処理を利用するため、いずれか 1 SKILL の配下には置かない。
-forge 内に ToC 探索や `generated_at` 比較の script は置かない。
+forge 内に、backend の索引を探索する script や、索引の生成日時を比較する script は置かない。
 
 ## 4. doc-db 処理設計 DLID-ab5jfxw0xweq
 
@@ -263,7 +266,7 @@ worktree ごとに key が分裂しないよう、project root の basename よ�
 
 doc-db は `query` の `series` を任意引数とし、**省略時は KEY 内の全 series を横断検索する**。
 これは doc-db 側の設計思想（recall 優先の二層アーキテクチャ。候補プールを広く返し、呼び出し元の
-AI agent が本文を読んで判定する）に基づく既定であり、doc-db の参考実装 SKILL もこの既定を採る。
+AI agent が本文を読んで判定する）に基づく、doc-db の `query` 自体の既定である。
 
 forge は現在の branch を series として明示指定する（REQ-014 BL-005）。
 索引は対象文書の現在の状態を映すもの（REQ-014 FNC-003）であり、他 branch で削除済み・改訂前の文書を
@@ -305,7 +308,7 @@ series を現在の branch に限定した結果、両 backend の検索対象�
 
 本設計はこの残差を解消しない。doc-link の series 不在は forge の設計選択では取り除けず、
 doc-db の key を worktree ごとに分割すれば同一プロジェクトの索引が分裂するためである。
-残差の存在を利用者向け通知（§7.1）で隠さないことを条件に許容する。
+残差の存在は、backend の切り替えの手引きに記載する。
 
 ### 4.2 query DLID-rn8jq1xwd7z7
 
@@ -333,9 +336,15 @@ SKILL が **当該セッションで自分が検索対象 category の文書を�
 （`query-db-rules` は rules、`query-db-specs` は specs）。
 
 この時点では doc-db が利用可能かをまだ確かめていないので、`update-db-*` には backend を指定しない。
-`update-db-*` は query と同じ順序リストと可用性判定で backend を選ぶ。
+`update-db-*` は query と同じ順序リストと可用性判定で backend を選ぶので、実際に検索で使われる backend の
+索引が更新される。
 
-**検出できる範囲の限界 [MANDATORY]**: この確認が拾うのは当該セッション内で自分が行った変更だけである。
+確認の後で doc-db が利用不能と分かった場合は、順序リストの残る backend の可否確認へ進む（§2.4）。
+残る backend が無ければ、両 backend の利用不能理由を返して失敗する（§7）。残る backend が doc-link で、
+利用者が更新を見送っていて、doc-link の索引も古ければ、doc-link が再構築の要否をもう一度尋ねる（§5.1）。可用性の判定は
+検索の script の中にあり（§2.1）、確認の前に判定だけを行う入口を持たないためである。
+
+**検出できる範囲の限界**: この確認が拾うのは当該セッション内で自分が行った変更だけである。
 他セッションでの変更、利用者による直接編集、ブランチ切替や pull による変更は検出できない。
 **確認が行われなかったことは索引が最新であることを意味しない。**
 
@@ -393,8 +402,9 @@ update 経路（§4.3）の 0 件防御は同じ状態を明示エラーとす�
 
 検索結果が 0 件の場合も doc-db operation 自体は成功とし、空の `Required documents:` を返す。
 
-tool error、レスポンス不正、および索引作成の失敗は **障害** であり、operation 失敗（exit code 20）として返し、
+tool error とレスポンス不正は **障害** であり、operation 失敗（exit code 20）として返し、
 他方の backend へは切り替えない（§2.1）。KEY / series の未整備それ自体は障害ではないため、この分類に含めない。
+索引の整備の失敗は、query の CLI ではなく、委譲先の `update-db-*` の失敗として現れる（§4.3）。SKILL は検索を続行しない。
 
 ### 4.3 update DLID-jr765a9zcd77
 
@@ -410,11 +420,11 @@ update は既存 `.doc_structure.yaml` の category 設定から対象 Markdown 
 
 この 2 操作は同一場面で競合する方針ではなく、同一同期ジョブの「投入→観測」という順序付き位相である。
 SKILL の各場面では呼び出し全体が一意に決まるため、1 つのローカル操作入口の明示モードとして維持する
-（DES-024 §2.2）。別 script へ分けても選択対象が mode からファイル名へ移るだけであり、AI の
+（[DES-024][des-024] §2.2）。別 script へ分けても選択対象が mode からファイル名へ移るだけであり、AI の
 判断領域は減らない。
 
 SKILL は `--start` で `job_id` を得たあと、`--status` を間隔を空けて繰り返し呼び、**そのたびに進捗を
-テキストで報告する**。ポーリングのループを script 内に持たない（理由は §4.2 と同じ）。
+テキストで報告する**。ポーリングのループを script 内に持たない（理由は §3.1 と §7）。
 poll 間隔は §2.2 の値を用い、`done` / `failed` または完了待ち上限で終える。
 
 `sync_documents` は一覧全体を desired state として扱うため、追加・変更・削除・リネームを同じ経路で収束させる。
@@ -519,11 +529,11 @@ doc-db 側の契約でもある（`null` は「当該 KEY に現在紐づく ser
 
 #### KEY 状態に関する doc-db の挙動 DLID-xzztdan34c8a
 
-| 条件                        | doc-db の挙動                                            | forge の扱い                                    |
-| --------------------------- | -------------------------------------------------------- | ----------------------------------------------- |
-| KEY が存在しない            | JSON-RPC error（識別子 `KEY_NOT_FOUND`）                 | 未整備。索引を作成して query を継続する（§4.2） |
-| KEY がゴミ箱状態            | JSON-RPC error（識別子 `KEY_TRASHED`）。復活操作を促す   | 未整備ではない。復活操作の案内を伴う明示エラー  |
-| 既存 KEY の series が未登録 | **error にならず 0 件で成功する**（doc-db 側の安定契約） | 未整備。`list_indexes` で事前に検出する（§4.2） |
+| 条件                        | doc-db の挙動                                            | forge の扱い                                       |
+| --------------------------- | -------------------------------------------------------- | -------------------------------------------------- |
+| KEY が存在しない            | JSON-RPC error（識別子 `KEY_NOT_FOUND`）                 | 未整備。承認を得て整備し、query を継続する（§4.2） |
+| KEY がゴミ箱状態            | JSON-RPC error（識別子 `KEY_TRASHED`）。復活操作を促す   | 未整備ではない。復活操作の案内を伴う明示エラー     |
+| 既存 KEY の series が未登録 | **error にならず 0 件で成功する**（doc-db 側の安定契約） | 未整備。`list_indexes` で事前に検出する（§4.2）    |
 
 **判別は識別子に依拠する。** doc-db 0.3.3 以降、KEY 不在とゴミ箱状態は
 `isError` を伴う tool result ではなく **JSON-RPC error** として届き、識別子が
@@ -605,7 +615,7 @@ doc-link の検索結果は、文書ごとに記録されたパスを持つ。SK
 - **wrapper が利用者に知らせずに索引を更新して鮮度を回復させる経路**: 古かった事実が消え、
   利用者は索引の更新漏れに気づけない
 
-ToC パスや内部ディレクトリ規約を forge に埋め込まない（REQ-014 BL-002）。
+doc-link の索引のパスや内部ディレクトリ規約を forge に埋め込まない（REQ-014 BL-002）。
 
 #### 索引母集団の差 DLID-kdwtnrw8p66x
 
@@ -618,7 +628,7 @@ doc-link の固定除外が適用されない対象を渡すことになり、de
 doc-link 固有の除外規則（DLID の無い文書・DLID が重複する文書の除外を含む）が併せて適用される。
 したがって**両 backend の索引母集団が一致する保証はない**。
 
-##### 母集団を所有しない側の件数を数えない [MANDATORY] DLID-6cfg3af4vt5r
+#### 母集団を所有しない側の件数を数えない [MANDATORY] DLID-6cfg3af4vt5r
 
 **forge は doc-link 経路の対象文書数を数えない**（REQ-014 BL-007）。長さだけを取り出す用途であっても、
 `project_documents.py` の `resolve_paths()` を doc-link 経路で使わない。
@@ -666,9 +676,9 @@ wrapper 経由の経路では自動的に保たれるが、**wrapper の外で�
 
 #### 索引の置き場と git DLID-795t8crzw96n
 
-doc-link の索引と管理状態は、project root の `.doc-link/` に置かれる。**`.doc-link/` と DLID の入った文書は
-git で追跡し、文書の変更と同じコミットに入れる。** DLID の入った文書だけを追跡すると、clone した側には
-DLID だけがあって索引が無い状態になり、索引の構築を最初からやり直すことになる。
+doc-link の索引と管理状態は、project root の `.doc-link/` に置かれる。`.doc-link/` と DLID の入った文書を
+git で追跡し、文書の変更と同じコミットに入れることは、REQ-014 FNC-003 が定める。update SKILL は、
+この運用を Notes に書いて利用者へ伝える。forge は commit を行わない。
 
 ### 5.3 query から update への委譲 DLID-kg9jfkc3ft0e
 
@@ -712,19 +722,19 @@ query は **自身が確定させた backend を指定して** `update-db-*` を
 | doc-db 索引整備後に query   | KEY / series 未整備を検出し、承認を得て同期し検索する                             |
 | doc-db 起動後に query       | 未起動 doc-db を on-demand 起動して検索する                                       |
 | doc-link で query           | doc-link を選択し検索する。鮮度の検査と、古いときの再構築の確認は doc-link が行う |
-| doc-link 索引整備後に query | ToC 未構築を検出し、承認を得て索引を構築し検索する                                |
+| doc-link 索引整備後に query | 索引の未構築を検出し、承認を得て索引を構築し検索する                              |
 | 索引整備の見送り            | 未整備の整備を利用者が見送り、検索せず事実を報告して終了する                      |
 | セッション内変更後の query  | doc-db の番で、自分が対象文書を変更しており、更新の要否を確認してから検索する     |
 | doc-db で update            | 現在 branch の文書集合を desired-state 同期する                                   |
-| doc-link で update          | doc-link を選択し、DLID を付与して ToC を構築する                                 |
+| doc-link で update          | doc-link を選択し、DLID を付与して索引を構築する                                  |
 | backend 不在                | 両 backend の利用不能理由を返して失敗する                                         |
 | backend operation 失敗      | 選択済み backend の処理失敗を隠さず返す                                           |
 
 ### 6.2 query シーケンス DLID-srej4vc1vh2h
 
 SKILL は最初に `resolve_backend_order.py` で順序リストを解決し（§2.5。不正は settings_invalid の
-明示エラー）、先位から可用性判定を行う。以下の図は **doc-db を先に試す順序**（`prefer: doc-db`、
-または doc-link が先位で利用不能だった後）の経路である。既定値（doc-link 先位）で
+明示エラー）、先位から可用性判定を行う。以下の図は **doc-db を先に試す順序**（`prefer: doc-db`）
+の経路である。既定値（doc-link 先位）で
 doc-link が利用可能な場合は、図中の doc-link 経路（`query-docs` 以降）だけを実行し、
 doc-db には触れない。
 
@@ -776,24 +786,29 @@ sequenceDiagram
             Skill-->>Caller: 通知 + Required documents
         else 再接続失敗
             Script-->>Skill: doc-db 利用不能 + 理由
-            Skill->>Link: query-docs
-            Note over Link,Caller: 索引が古いときは、doc-link が再構築の要否を<br/>利用者に確認する（§5.1）
-            alt 検索結果が返った
-                Link-->>Skill: 文書の一覧と鮮度
-                Skill->>Format: 記録されたパス
-                Format-->>Skill: Required documents + 除外件数
-                Skill-->>Caller: 切替通知 + 鮮度 + result
-            else 索引が未構築
-                Link-->>Skill: 初回の構築が必要
-                Skill->>Caller: 整備の承認を求める
-                Caller-->>Skill: 承認（見送りなら未整備を報告して終了）
-                Skill->>Update: backend=doc-link を指定して起動
-                Update-->>Skill: 整備完了（失敗なら明示エラー）
-                Skill->>Link: query-docs 再実行
-                Link-->>Skill: 文書の一覧と鮮度
-                Skill->>Format: 記録されたパス
-                Format-->>Skill: Required documents + 除外件数
-                Skill-->>Caller: 切替・整備通知 + result
+            Skill->>Skill: doc-link の可用性判定（§2.4）
+            alt doc-link 利用可能
+                Skill->>Link: query-docs
+                Note over Link,Caller: 索引が古いときは、doc-link が再構築の要否を<br/>利用者に確認する（§5.1）
+                alt 検索結果が返った
+                    Link-->>Skill: 文書の一覧と鮮度
+                    Skill->>Format: 記録されたパス
+                    Format-->>Skill: Required documents + 除外件数
+                    Skill-->>Caller: 切替通知 + 鮮度 + result
+                else 索引が未構築
+                    Link-->>Skill: 初回の構築が必要
+                    Skill->>Caller: 整備の承認を求める
+                    Caller-->>Skill: 承認（見送りなら未整備を報告して終了）
+                    Skill->>Update: backend=doc-link を指定して起動
+                    Update-->>Skill: 整備完了（失敗なら明示エラー）
+                    Skill->>Link: query-docs 再実行
+                    Link-->>Skill: 文書の一覧と鮮度
+                    Skill->>Format: 記録されたパス
+                    Format-->>Skill: Required documents + 除外件数
+                    Skill-->>Caller: 切替・整備通知 + result
+                end
+            else doc-link 利用不能
+                Skill-->>Caller: 明示エラー（両 backend の利用不能理由）
             end
         end
     end
@@ -828,22 +843,31 @@ sequenceDiagram
         Skill-->>Caller: backend + result
     else doc-db 利用不能
         Script-->>Skill: doc-db 利用不能 + 理由
-        Skill->>Prepare: dprint + dirs / exclude
-        alt 準備成功
-            Prepare-->>Skill: index args
-            Skill->>Link: embed-dlid
-            Link-->>Skill: 書き込んだ文書と件数（失敗なら明示エラー）
-            Skill->>Link: index-docs
-            Link-->>Skill: index result
-            Skill-->>Caller: 切替通知 + 書き込んだ件数 + result
-        else 準備失敗
-            Prepare-->>Skill: error
-            Skill-->>Caller: 明示エラー
+        Skill->>Skill: doc-link の可用性判定（§2.4）
+        alt doc-link 利用可能
+            Skill->>Prepare: dprint + dirs / exclude
+            alt 準備成功
+                Prepare-->>Skill: index args
+                Skill->>Link: embed-dlid
+                Link-->>Skill: 書き込んだ文書と件数（失敗なら明示エラー）
+                Skill->>Link: index-docs
+                Link-->>Skill: index result
+                Skill-->>Caller: 切替通知 + 書き込んだ件数 + result
+            else 準備失敗
+                Prepare-->>Skill: error
+                Skill-->>Caller: 明示エラー
+            end
+        else doc-link 利用不能
+            Skill-->>Caller: 明示エラー（両 backend の利用不能理由）
         end
     end
 ```
 
 ## 7. エラーハンドリングと通知 DLID-mb7484v7rrzx
+
+エラーの定義と分類（回復可能・回復不能）は、[error_classification_spec.md](../../../../plugins/forge/docs/error_classification_spec.md) に従う。
+下表は、本設計が回復の手段を持つ条件と、回復不能として停止する条件のうち分類を誤りやすいものを挙げる。
+表に無いエラーは回復不能として扱う（REQ-014 BL-003）。
 
 | 条件                                           | 動作                                                                    |
 | ---------------------------------------------- | ----------------------------------------------------------------------- |
@@ -853,7 +877,7 @@ sequenceDiagram
 | doc-db query / sync error                      | doc-db operation 失敗として終了する                                     |
 | doc-db sync 完了待ち上限                       | job 情報を返して失敗する。他方の backend へ切り替えない                 |
 | doc-link が利用不能（未導入・実行環境なし）    | 残る backend の可否確認へ進む。両方不能なら理由を返して失敗する         |
-| ToC 未構築かつ整備の失敗                       | query を呼ばず失敗する                                                  |
+| doc-link の索引が未構築で、整備に失敗した      | query を呼ばず失敗する                                                  |
 | doc-link の検索・DLID の付与・索引の構築の失敗 | doc-link の失敗をそのまま返す。切り替えない                             |
 | doc-db query 0 件                              | 成功。空の `Required documents:` を返す                                 |
 | 索引が未整備（doc-db / doc-link）              | 承認を得て整備し、完了後に query を継続する（§4.2・§5.1）               |
@@ -862,30 +886,13 @@ sequenceDiagram
 | 検索結果に実在しないパスが含まれた             | 該当パスを除外し件数を通知する。成功として扱う（§4.2・§5.1）            |
 | doc-link の索引が現物と合っていない            | doc-link が再構築の要否を利用者に確認する。SKILL は鮮度を伝える（§5.1） |
 
-利用者向け通知は、backend、起動試行結果、切替理由、索引の整備の有無、doc-link が返した索引の鮮度、
+利用者向け通知は、backend、起動試行結果、切替理由、doc-link を利用できなかった場合の導入状態の確認の案内（§2.4）、索引の整備の有無、doc-link が返した索引の鮮度、
 DLID を書き込んだ文書と件数、およびセッション内変更を契機とする索引更新の確認結果（更新した / しなかった）を含める。正常な初回接続時は冗長な警告を出さず、
 使用 backend の識別だけを結果に含める。
 
 完了までに時間を要する索引整備（doc-db の sync）では、SKILL が `--status` を呼ぶたびに
-その時点の進捗をテキストで報告する（§4.2・§4.3）。進捗を script の標準エラー出力に委ねない。
+その時点の進捗をテキストで報告する（§4.3）。進捗を script の標準エラー出力に委ねない。
 SKILL 経由の実行では script の標準エラー出力が利用者に届かないためである（REQ-014 NFR-001）。
-
-### 7.1 検索母集団が変わったことの通知 DLID-31aytejv9hex
-
-doc-link 経路で検索した query では、上記に加えて**検索母集団が doc-db 経路と異なる**ことを通知する。
-§4.1 と §5.1 は backend 間の残差を解消せず許容するが、その条件は利用者に隠さないことである。
-通知しなければ、利用者は同一の query が backend によって異なる結果を返した理由を知る手段を持たない
-（REQ-014 NFR-001）。
-
-series を現在の branch に限定したことで検索対象の範囲は両 backend で揃う（§4.1）。
-残るのは対象文書の解決規則の差であり、通知に含める内容はこの 1 点に限る。
-
-| 内容                                     | 根拠                             |
-| ---------------------------------------- | -------------------------------- |
-| 対象文書の解決規則が doc-db 経路と異なる | 索引母集団の決定経路の差（§5.1） |
-
-この通知は doc-link 経路で検索した事実だけで組み立てられる。索引更新の応答の補助 field や
-両 backend の母集団の差分計算を必要としない。doc-db 経路で完了した query では出さない。
 
 ## 8. 使用する既存コンポーネント DLID-xrg7vw3g4s2n
 
@@ -941,12 +948,9 @@ JSON 応答・SSE 応答・tool error・HTTP error はいずれも注入で決�
 - 初回接続成功から query 完了
 - 初回接続失敗、起動後接続成功から query 完了
 - 対象文書 0 件のとき索引に触れず終了すること（索引側の状態確認より前に判定すること）
-- KEY / series 未整備の応答から exit code 30 → 承認 → `update-db-*` を backend 指定で起動 → query 再実行の一連
-  （query 側は整備手順を持たず起動と再検索だけを行うこと。§5.3）
-- 未整備の整備を見送った場合に query を行わず、失敗として扱わないこと
+- KEY / series 未整備の応答で exit code 30 を返し、索引に触れないこと
 - 未整備・0 件のいずれでも series を外した横断検索へ切り替えないこと
 - 同期後の query が 0 件でも再同期せず「該当なし」として成功で返すこと
-- 索引の整備が失敗した場合に operation 失敗（exit code 20）となり他方の backend へ切り替えないこと
 - 実在しない path を含む応答での除外と件数通知
 - doc-db 利用不能を示す切替結果
 - sync job の accepted → running → done（`--start` が job_id を返し、`--status` が単発で進捗を返すこと）
@@ -963,8 +967,10 @@ doc-link は外部 SKILL のため、HTTP 境界への注入では検証でき�
 - 未整備時は、承認 → `update-db-*` を backend 指定で起動、の順になること
 - 整備を見送った場合を失敗として扱わないこと。整備が失敗した場合に検索を続行しないこと
 - 可用性判定の条件に `query-docs`・`index-docs`・`embed-dlid` の 3 つがあること
-- §7.1 の通知: doc-link 経路の query で検索母集団の相違を通知し、doc-db 経路では通知しないこと（SKILL.md の静的確認）
 - `update-db-*` が backend の指定を受理し、指定時は切り替えないこと
+
+未整備時の承認・委譲・見送り・整備の失敗は、SKILL が進める流れであり、script の境界への注入（§9.3）では通せない。
+この流れは doc-link と doc-db で共通の手順なので、上の検査が両方の経路を確かめる。
 
 forge のテストは doc-link の内部判断に依存させない。**索引の差分検出規則に結果が依存するテストを書かない。**
 検索品質そのもの、索引の内部の配置は doc-link 側で評価し、forge では重複評価しない。
@@ -981,14 +987,16 @@ forge のテストは doc-link の内部判断に依存させない。**索引�
 - 決着済み: query は索引を整備する手順を持たない。索引の維持は `update-db-*` が担う（§5.1・§5.3）。未整備時も query は自ら整備せず、確定させた backend を指定して `update-db-*` へ委譲する。doc-link が検索の前に利用者の選択を受けて行う再構築は、doc-link の処理であり、forge の整備の入口には数えない。
 - 決着済み: backend の指定（REQ-014 BL-006）は優先指定（§2.5）と別物である。優先指定は順序を変えるだけで利用不能なら切り替えるが、指定は切り替えない。指定された backend が利用できない場合は明示エラーとする。切り替わると query が確定させた backend とは別の索引を整備してしまうためである（§5.3）。
 - 決着済み: 鮮度を推測で判定しない。索引の正しさは対象文書が変わったかで決まり経過時間では決まらないため、時間による判定を持たない。用いるのは事実だけである。doc-link の番では doc-link が行う現物との照合に委ね、照合の手段を持たない doc-db の番では、当該セッションで自分が対象文書を変更した場合に限り、検索の前に索引更新の要否を確認する（§4.2・§5.1・REQ-014 BL-002）。後者の確認は他セッション・利用者の直接編集・ブランチ操作による変更を拾えないため、確認が行われないことは索引が最新であることを意味しない。
-- 決着済み: doc-db の KEY 未生成および当該 series の未同期は未整備として、利用者の承認を得て索引を整備してから検索を継続する（REQ-014 BL-004）。他方の backend への切替でも失敗でもない。§2.1・§4.2・§6.2・§7 に反映した。doc-link 経路の ToC 未構築時の扱い（§5.1）と対称である。承認を挟むのは整備が長時間に及びうるためであり、見送りは利用者の意思による中断として失敗に分類しない。
+- 決着済み: doc-db の KEY 未生成および当該 series の未同期は未整備として、利用者の承認を得て索引を整備してから検索を継続する（REQ-014 BL-004）。他方の backend への切替でも失敗でもない。§2.1・§4.2・§6.2・§7 に反映した。doc-link 経路の索引未構築時の扱い（§5.1）と対称である。承認を挟むのは整備が長時間に及びうるためであり、見送りは利用者の意思による中断として失敗に分類しない。
 - 決着済み: doc-link の索引の更新は、対象文書に DLID を書き込む。書き込みの前に承認を求めない。索引の更新は明示して起動する操作であり、文書を作るたびに承認を挟むと後続の流れが止まるためである。書き込んだ文書と件数は通知する（§5.2・REQ-014 FNC-003）。
 - 決着済み: query は現在の branch を series として指定する（REQ-014 BL-005）。読み書きで対象を変えず、他 series の削除済み・改訂前の文書を復活させない。未同期時は BL-004 に従って同期してから検索する。実在確認は同期後に削除された文書を除くための規定として §4.1・§4.2 に残した。
 - 外部依存: doc-db の MCP tool I/F の所有と規範は doc-db 側の公開文書にあり、§4.5 は forge が依拠する時点のスナップショットである。契約改訂時は §4.5 とテストを同じ変更で追従させる。
 - 外部依存: doc-db の既定（series 非指定の全 series 横断検索）を forge は採らず series を明示する。判断の根拠と同期コストへの影響を §4.1 に記録した。
 - 外部依存: KEY 不在とゴミ箱状態がいずれも致命的エラーとして届くため、両者とその他の障害の判別を §4.5・§4.2 に定めた。ゴミ箱状態は未整備として同期を試みない。
-- 非解消として明示: backend 間の残差（§4.1）——対象文書の解決規則の差——は解消せず存在を記述し、通知で隠さないことを条件に許容する。許容条件である通知は §7.1 に定めた。検索対象の範囲は series 指定で揃えたため残差に含まない。
+- 非解消として明示: backend 間の残差（§4.1）——対象文書の解決規則の差——は解消せず、存在を §4.1 と切り替えの手引きに記述する。検索対象の範囲は series 指定で揃えたため残差に含まない。
 - 外部依存: doc-db の参考実装 SKILL は検索の既定を series 指定とする（0.3.2 以降）。切り離された削除済み文書の混入という理由を §4.1 に、series 未登録検証と `sync-start` / `sync-status` の対応を §4.5 に反映した。
 - REQ-014 BL-004 / BL-005: 未整備（承認を得て整備し継続）と障害（切り替えず失敗）の区別、および検索結果のパス実在確認を §2.1・§4.1・§4.2・§6.2・§7・§9 に反映した。
 
 [authoring-guide]: ../../../rules/plugin_claude_code_authoring_guide.md
+[des-024]: ../../forge/design/DES-024_skill_script_layout_design.md
+[des-061]: ../../forge/design/DES-061_forge_settings_file_design.md

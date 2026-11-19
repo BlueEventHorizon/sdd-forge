@@ -51,7 +51,7 @@ exit 0 なら JSON の `order` を先頭から試す。exit 20 なら JSON の `
 #### Step 2.1: 可用性を判定する
 
 次の 2 つをどちらも満たすとき、doc-link を利用可能とする。満たさなければ利用不能として理由を控え、
-Step 1 の次の backend へ進む。
+Step 1 の次の backend へ進む。理由には、揃っていない SKILL の名前、または `uv` を実行できないことを書き、doc-link の導入状態の確認を促す。
 
 - available-skills に `doc-link:query-docs`・`doc-link:index-docs`・`doc-link:embed-dlid` が揃っている
 - `uv` を実行できる（doc-link の script は `uv` で動く）
@@ -162,4 +162,3 @@ Required documents:
 
 - doc-link の索引の識別キーは `specs` である。`/forge:update-db-specs` が同じキーで索引を構築する。
 - doc-db の key は `{project_name}-specs`、series は現在の git branch。`/forge:update-db-specs` と同一の series を検索する。
-- doc-link 経路の検索母集団は doc-db 経路と一致しない可能性がある。対象文書の解決規則が backend ごとに異なるため、doc-link 経路で検索した場合はその旨を通知する。doc-db 経路で完了した検索では出さない。

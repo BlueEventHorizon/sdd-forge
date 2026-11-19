@@ -44,6 +44,7 @@ review:
 
 - Puts the specified backend first in the ordered list (e.g. `doc-db` yields `["doc-db", "doc-link"]`). The default without this setting is doc-link first
 - If the first backend is unavailable, forge notifies you of the reason and uses the other one
+- Each backend has its own rules for which documents go into the index, so the same search can return different results on a different backend
 - The only accepted key is `prefer`. Unknown keys or values outside the two allowed ones raise an explicit error (forge never silently falls back to the default — this prevents a setting you believe is active from being quietly ignored)
 
 ### `review.backend` (review executor)
@@ -54,11 +55,10 @@ review:
 
 ## Forcing a Backend by Argument (overrides the setting)
 
-| Skill                                        | Argument                     | Behavior                                            |
-| -------------------------------------------- | ---------------------------- | --------------------------------------------------- |
-| `/forge:update-db-rules` / `update-db-specs` | `--backend doc-db\|doc-link` | Uses only that backend; fails closed if unavailable |
-| `/forge:review`                              | `--backend <name>`           | Same as above                                       |
-| `/forge:query-db-rules` / `query-db-specs`   | (no such flag)               | Always decided by the ordered list                  |
+| Skill                                                                              | Argument                  | Behavior                                            |
+| ---------------------------------------------------------------------------------- | ------------------------- | --------------------------------------------------- |
+| `/forge:review`                                                                    | `--backend <name>`        | Uses only that backend; fails closed if unavailable |
+| `/forge:query-db-rules` / `query-db-specs` / `update-db-rules` / `update-db-specs` | (no user-facing argument) | Always decided by the ordered list                  |
 
 Precedence: **argument > `.claude/.forge.yaml` > default order**.
 

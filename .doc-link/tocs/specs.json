@@ -9,10 +9,6 @@
       "doc_link_id": "DLID-8s8p9ah1hyry"
     },
     {
-      "applied_hash": "1eb3b7848f5a28f6101958d89d919da83a8800eac793eb81f4878c5fbd455b2c",
-      "doc_link_id": "DLID-d9fpywv4txra"
-    },
-    {
       "applied_hash": "31e53fa6502107892540d2b0126df4838d29dce807bcb1e6bdaf1409b6163b4a",
       "doc_link_id": "DLID-5h7wqxcknyha"
     },
@@ -73,16 +69,16 @@
       "doc_link_id": "DLID-dqkf6wa1z2cp"
     },
     {
+      "applied_hash": "8759d1760b4d6a5b8bf474110ad4fefda0c20d377db7229621f28e4cd73863eb",
+      "doc_link_id": "DLID-5k6jt9qvf60d"
+    },
+    {
       "applied_hash": "8773aa681946a80a0c98aa10eee37dba75cb840bc83751657c2cb14952c104dd",
       "doc_link_id": "DLID-p1v5z5mme4tw"
     },
     {
       "applied_hash": "88d4494f3e39811cc62c3ded70ad57650ceab59bbfd61d347e59166475deb654",
       "doc_link_id": "DLID-8aaxgj88j28q"
-    },
-    {
-      "applied_hash": "8cfb48e883567af10afabac7a18d281816f98f86e3d56bdeb16f84f3816260db",
-      "doc_link_id": "DLID-5k6jt9qvf60d"
     },
     {
       "applied_hash": "979a3f18cae0fbf9ab01d775e8aa4bf893b775b93dc0b59de95104fdf0230476",
@@ -111,10 +107,6 @@
     {
       "applied_hash": "bc0148886282b55cbf25c683bb2bbf0450d67f6e542144555c4c2b9e3339e8d7",
       "doc_link_id": "DLID-s1ds8dcyfn7p"
-    },
-    {
-      "applied_hash": "beea4eaacafc7806ad269f5f0a81a27a105017b77cdffff316e1957fcc276982",
-      "doc_link_id": "DLID-0nfgax46wehg"
     },
     {
       "applied_hash": "bf523e081c5e5ee6434fc297a269e30e48a2c7c880c3f957176ecb1fe3d172dc",
@@ -149,6 +141,10 @@
       "doc_link_id": "DLID-rzp2zxe38068"
     },
     {
+      "applied_hash": "de2d2a29ba9f0a0993518918ba5cee2fafb304ed284151f9403192cc09b630ba",
+      "doc_link_id": "DLID-d9fpywv4txra"
+    },
+    {
       "applied_hash": "e0ecc101ddc26eebdb4c502ae46aaca35b170a69cca710d585d5d8b4fd03e72d",
       "doc_link_id": "DLID-vyz6fzhdfk3a"
     },
@@ -159,6 +155,10 @@
     {
       "applied_hash": "ea2b75f531fdd7bec7003d12371666925f5f743089993e6bd0b800030ad1af7d",
       "doc_link_id": "DLID-3bmft1apetsm"
+    },
+    {
+      "applied_hash": "ec01a2c5e759b7ef872117eccdb5132ca56df6a53fa03c3fbf2080e6bdd75aaf",
+      "doc_link_id": "DLID-0nfgax46wehg"
     },
     {
       "applied_hash": "f0840eb81f5e3404ddd877fc81f0db64235278c7ce12e87cb7a4103adbceb4db",
@@ -175,217 +175,217 @@
   ],
   "last_checks": [
     {
-      "checked_at": "2026-11-18T09:41:11+00:00",
+      "checked_at": "2026-11-19T06:54:46+00:00",
       "doc_link_id": "DLID-0868m80sm7hy",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-18T09:41:11+00:00",
+      "checked_at": "2026-11-19T06:54:46+00:00",
       "doc_link_id": "DLID-0nfgax46wehg",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-18T09:41:11+00:00",
+      "checked_at": "2026-11-19T06:54:46+00:00",
       "doc_link_id": "DLID-1585cw3yt8pa",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-18T09:41:11+00:00",
+      "checked_at": "2026-11-19T06:54:46+00:00",
       "doc_link_id": "DLID-1vfqj6r96sr4",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-18T09:41:11+00:00",
+      "checked_at": "2026-11-19T06:54:46+00:00",
       "doc_link_id": "DLID-2becz9x7x407",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-18T09:41:11+00:00",
+      "checked_at": "2026-11-19T06:54:46+00:00",
       "doc_link_id": "DLID-3bmft1apetsm",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-18T09:41:11+00:00",
+      "checked_at": "2026-11-19T06:54:46+00:00",
       "doc_link_id": "DLID-3c038need73s",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-18T09:41:11+00:00",
+      "checked_at": "2026-11-19T06:54:46+00:00",
       "doc_link_id": "DLID-42wh7646hjhq",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-18T09:41:11+00:00",
+      "checked_at": "2026-11-19T06:54:46+00:00",
       "doc_link_id": "DLID-433459yse70c",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-18T09:41:11+00:00",
+      "checked_at": "2026-11-19T06:54:46+00:00",
       "doc_link_id": "DLID-4wn8sb8y1f80",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-18T09:41:11+00:00",
+      "checked_at": "2026-11-19T06:54:46+00:00",
       "doc_link_id": "DLID-5h7wqxcknyha",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-18T09:41:11+00:00",
+      "checked_at": "2026-11-19T06:54:46+00:00",
       "doc_link_id": "DLID-5k6jt9qvf60d",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-18T09:41:11+00:00",
+      "checked_at": "2026-11-19T06:54:46+00:00",
       "doc_link_id": "DLID-5vrs9fnet7de",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-18T09:41:11+00:00",
+      "checked_at": "2026-11-19T06:54:46+00:00",
       "doc_link_id": "DLID-6m16v4qqxjf4",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-18T09:41:11+00:00",
+      "checked_at": "2026-11-19T06:54:46+00:00",
       "doc_link_id": "DLID-7gyjj06rtab7",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-18T09:41:11+00:00",
+      "checked_at": "2026-11-19T06:54:46+00:00",
       "doc_link_id": "DLID-8aaxgj88j28q",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-18T09:41:11+00:00",
+      "checked_at": "2026-11-19T06:54:46+00:00",
       "doc_link_id": "DLID-8s8p9ah1hyry",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-18T09:41:11+00:00",
+      "checked_at": "2026-11-19T06:54:46+00:00",
       "doc_link_id": "DLID-bgxgcq0pvkm7",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-18T09:41:11+00:00",
+      "checked_at": "2026-11-19T06:54:46+00:00",
       "doc_link_id": "DLID-ckbysbfdrsv5",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-18T09:41:11+00:00",
+      "checked_at": "2026-11-19T06:54:46+00:00",
       "doc_link_id": "DLID-ct64b13ee182",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-18T09:41:11+00:00",
+      "checked_at": "2026-11-19T06:54:46+00:00",
       "doc_link_id": "DLID-d9fpywv4txra",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-18T09:41:11+00:00",
+      "checked_at": "2026-11-19T06:54:46+00:00",
       "doc_link_id": "DLID-dqkf6wa1z2cp",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-18T09:41:11+00:00",
+      "checked_at": "2026-11-19T06:54:46+00:00",
       "doc_link_id": "DLID-f8gem0wa3ac4",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-18T09:41:11+00:00",
+      "checked_at": "2026-11-19T06:54:46+00:00",
       "doc_link_id": "DLID-fpfqhpad552k",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-18T09:41:11+00:00",
+      "checked_at": "2026-11-19T06:54:46+00:00",
       "doc_link_id": "DLID-fs55bq3pe0nd",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-18T09:41:11+00:00",
+      "checked_at": "2026-11-19T06:54:46+00:00",
       "doc_link_id": "DLID-hme4nqx9d5gs",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-18T09:41:11+00:00",
+      "checked_at": "2026-11-19T06:54:46+00:00",
       "doc_link_id": "DLID-hsj370z603x4",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-18T09:41:11+00:00",
+      "checked_at": "2026-11-19T06:54:46+00:00",
       "doc_link_id": "DLID-j50s0xwkwx00",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-18T09:41:11+00:00",
+      "checked_at": "2026-11-19T06:54:46+00:00",
       "doc_link_id": "DLID-mzeyx39mfryw",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-18T09:41:11+00:00",
+      "checked_at": "2026-11-19T06:54:46+00:00",
       "doc_link_id": "DLID-n11844q5g8qn",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-18T09:41:11+00:00",
+      "checked_at": "2026-11-19T06:54:46+00:00",
       "doc_link_id": "DLID-p1v5z5mme4tw",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-18T09:41:11+00:00",
+      "checked_at": "2026-11-19T06:54:46+00:00",
       "doc_link_id": "DLID-pcket5v36c0g",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-18T09:41:11+00:00",
+      "checked_at": "2026-11-19T06:54:46+00:00",
       "doc_link_id": "DLID-rzp2zxe38068",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-18T09:41:11+00:00",
+      "checked_at": "2026-11-19T06:54:46+00:00",
       "doc_link_id": "DLID-s1ds8dcyfn7p",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-18T09:41:11+00:00",
+      "checked_at": "2026-11-19T06:54:46+00:00",
       "doc_link_id": "DLID-s3cjh3q3c0vc",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-18T09:41:11+00:00",
+      "checked_at": "2026-11-19T06:54:46+00:00",
       "doc_link_id": "DLID-vfdedgq63evv",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-18T09:41:11+00:00",
+      "checked_at": "2026-11-19T06:54:46+00:00",
       "doc_link_id": "DLID-vyz6fzhdfk3a",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-18T09:41:11+00:00",
+      "checked_at": "2026-11-19T06:54:46+00:00",
       "doc_link_id": "DLID-vzcznbpypja0",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-18T09:41:11+00:00",
+      "checked_at": "2026-11-19T06:54:46+00:00",
       "doc_link_id": "DLID-y42g1frxwkf5",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-18T09:41:11+00:00",
+      "checked_at": "2026-11-19T06:54:46+00:00",
       "doc_link_id": "DLID-yg0c67zs3zky",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-18T09:41:11+00:00",
+      "checked_at": "2026-11-19T06:54:46+00:00",
       "doc_link_id": "DLID-ypd7r1j5ga4n",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-18T09:41:11+00:00",
+      "checked_at": "2026-11-19T06:54:46+00:00",
       "doc_link_id": "DLID-zehb6ge71vgb",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-18T09:41:11+00:00",
+      "checked_at": "2026-11-19T06:54:46+00:00",
       "doc_link_id": "DLID-zfh5q9h29c8y",
       "result": "success"
     }
@@ -393,6 +393,13 @@
   "references": [],
   "reverse_references": [],
   "sections": [
+    {
+      "content_hash": "0031fb3793de612cbaf5aa039b0d34277888c6efb6b485e81ac105a8af838347",
+      "doc_link_id": "DLID-5k6jt9qvf60d",
+      "heading": "索引母集団の差",
+      "position": 32,
+      "section_id": "DLID-kdwtnrw8p66x"
+    },
     {
       "content_hash": "004cf5a08faba0ca7f6bf637efccf220f2e85ede4c95e0e48775a916347e27c6",
       "doc_link_id": "DLID-0868m80sm7hy",
@@ -450,25 +457,11 @@
       "section_id": "DLID-8apgjbg4ne1q"
     },
     {
-      "content_hash": "02f0c3b042d94af78df313ced1d04de13c79fff911424ee67f3cc951b80829b8",
-      "doc_link_id": "DLID-5k6jt9qvf60d",
-      "heading": "4.2 query",
-      "position": 16,
-      "section_id": "DLID-rn8jq1xwd7z7"
-    },
-    {
       "content_hash": "0307e2efd76c0870dbfee9e5fc19fb06ff0694edf25197f9aa45ae59d0e90479",
       "doc_link_id": "DLID-y42g1frxwkf5",
       "heading": "1. 作業",
       "position": 7,
       "section_id": "DLID-9r4c9bh8hx4d"
-    },
-    {
-      "content_hash": "0457b4448c4bb31d7011901503ec20304c9083febf373fff6fd859f699ee9c08",
-      "doc_link_id": "DLID-5k6jt9qvf60d",
-      "heading": "セッション内変更の確認",
-      "position": 17,
-      "section_id": "DLID-7f21j8n82y4j"
     },
     {
       "content_hash": "0463f240fc51d39261617447788d53c494fcdb816cabe80b9f26d37d6eb7f017",
@@ -490,13 +483,6 @@
       "heading": "reverse-engineering モード（ソース解析）",
       "position": 9,
       "section_id": "DLID-6dy52vz8qty2"
-    },
-    {
-      "content_hash": "04f1e826c997093524081045812e8eeb767e7473f3dc41fdbce2b661068198b1",
-      "doc_link_id": "DLID-0nfgax46wehg",
-      "heading": "機能要件",
-      "position": 8,
-      "section_id": "DLID-q6te0ab4d73a"
     },
     {
       "content_hash": "0514c4d14a5e766dccba6a37fa8c87f8bde9f8eb419d01a84e3b13277ac4f0bd",
@@ -541,11 +527,25 @@
       "section_id": "DLID-zz92w9m4ase9"
     },
     {
+      "content_hash": "0781a3ff260f571e31da6f87682dadca07efbada65bad88c94da5617e83e6b18",
+      "doc_link_id": "DLID-5k6jt9qvf60d",
+      "heading": "母集団を所有しない側の件数を数えない [MANDATORY]",
+      "position": 33,
+      "section_id": "DLID-6cfg3af4vt5r"
+    },
+    {
       "content_hash": "079428b07dbfec59981da39bb8b4490c813be1fd734d02b845555d708203069e",
       "doc_link_id": "DLID-0868m80sm7hy",
       "heading": "6. 未確定事項",
       "position": 23,
       "section_id": "DLID-vsxb41v6bd30"
+    },
+    {
+      "content_hash": "08096304bd396fbeb7a9f7546f5067ae5a3527ae58a2fa059a1a376b186efdd0",
+      "doc_link_id": "DLID-5k6jt9qvf60d",
+      "heading": "backend 間の残差",
+      "position": 15,
+      "section_id": "DLID-63vdfhdmqxyw"
     },
     {
       "content_hash": "0846ce2cb141b1be271da9bafbe7a19c77417e5fb399a9b1e5fa4ff59afd809d",
@@ -602,6 +602,13 @@
       "heading": "FR-03: エラー報告",
       "position": 8,
       "section_id": "DLID-bx8nv5ret6re"
+    },
+    {
+      "content_hash": "0a82e205b7a61c8ea9fa5436fce1350dfcc332e21583d40d477724e5dd9b12bc",
+      "doc_link_id": "DLID-5k6jt9qvf60d",
+      "heading": "4.2 query",
+      "position": 16,
+      "section_id": "DLID-rn8jq1xwd7z7"
     },
     {
       "content_hash": "0a9dffebcd280295e73442a6dff2aee61d839d01f1660667f8c680f866029e0e",
@@ -709,13 +716,6 @@
       "section_id": "DLID-82ad5ghtp1b3"
     },
     {
-      "content_hash": "1078d0ee254959d3c15947010d1584662bfcd89e338f9ea95012d216a0d0b4da",
-      "doc_link_id": "DLID-5k6jt9qvf60d",
-      "heading": "9.4 doc-link 契約テスト",
-      "position": 53,
-      "section_id": "DLID-8r40ev2ptje3"
-    },
-    {
       "content_hash": "10957d00b8bb16a3077cdc52cbf9e2425df5f965e35ba48fb5e9f9d5b7489fb2",
       "doc_link_id": "DLID-1585cw3yt8pa",
       "heading": "トレーサビリティの確保",
@@ -765,11 +765,11 @@
       "section_id": "DLID-wgc08vmgm7m3"
     },
     {
-      "content_hash": "1166a980ba12ec55ceea4c75665ddb5eea1cd14825875979dcda872f0db0e00e",
-      "doc_link_id": "DLID-5k6jt9qvf60d",
-      "heading": "6. ユースケース設計",
-      "position": 42,
-      "section_id": "DLID-8zaj94bcqck6"
+      "content_hash": "113c333b383ea8f3a98374f83dd10394b4bc1f7f01f8de3e9804c95b32d0ec1b",
+      "doc_link_id": "DLID-0nfgax46wehg",
+      "heading": "エラーケース",
+      "position": 27,
+      "section_id": "DLID-0x7ctvcz9c21"
     },
     {
       "content_hash": "118091235c9680b1290e18685a140b9484a074bbaead7e3dde169850d8fc8019",
@@ -821,13 +821,6 @@
       "section_id": "DLID-jswk0gs8ev2g"
     },
     {
-      "content_hash": "146b85b06d66ec44c0644f81eb28fc6ed5deff3a7aaf354409cb2d6bc26c996d",
-      "doc_link_id": "DLID-0nfgax46wehg",
-      "heading": "BL-002 索引の鮮度",
-      "position": 15,
-      "section_id": "DLID-701je9qbn2zx"
-    },
-    {
       "content_hash": "1474beb23963dd25ec73a9534da52e698bf533c5299fe531e0a7eb3dbfdfe0d8",
       "doc_link_id": "DLID-yg0c67zs3zky",
       "heading": "バックエンドの解決順 [MANDATORY]",
@@ -854,6 +847,13 @@
       "heading": "1.2 決定",
       "position": 3,
       "section_id": "DLID-47kp2a5bfhp8"
+    },
+    {
+      "content_hash": "14ef82017a5a698a7f36173b80c8794b3bbd756ae1d385ad5204e79c39779ee3",
+      "doc_link_id": "DLID-5k6jt9qvf60d",
+      "heading": "成功と障害の区別",
+      "position": 20,
+      "section_id": "DLID-eqgbad36373h"
     },
     {
       "content_hash": "1562caf5618b87f8ffecb556e3f1cc06addc62380fe7c2b3c2835d9b6372e238",
@@ -931,13 +931,6 @@
       "heading": "3. 機能要件",
       "position": 4,
       "section_id": "DLID-eb2r31mf04h3"
-    },
-    {
-      "content_hash": "1948169bca1b25a85bd40270b879b6c0d4477a0dbd06c61cec99e00d0947b6fc",
-      "doc_link_id": "DLID-5k6jt9qvf60d",
-      "heading": "索引母集団の差",
-      "position": 32,
-      "section_id": "DLID-kdwtnrw8p66x"
     },
     {
       "content_hash": "198c5f050c75f60e3735ae54a5208ea29e4fbfdcc002a897e0e4fd325789d569",
@@ -1129,11 +1122,25 @@
       "section_id": "DLID-pd72g3f1feaf"
     },
     {
+      "content_hash": "21ba022e482e7e31d03d08adf07eb8ea450c91635b0bbb890fd1bf1ea18e1c40",
+      "doc_link_id": "DLID-0nfgax46wehg",
+      "heading": "BL-002 索引の鮮度",
+      "position": 15,
+      "section_id": "DLID-701je9qbn2zx"
+    },
+    {
       "content_hash": "21ca342b881e1ee644b63ac654040ff4f20e0c3f166a44320b65d8d3bdab58f3",
       "doc_link_id": "DLID-5h7wqxcknyha",
       "heading": "5.3 ファイルロックによる排他制御",
       "position": 16,
       "section_id": "DLID-d61yw5m36gmx"
+    },
+    {
+      "content_hash": "222ff77de0a5de7cd0122345781ffd1407f29a86a392831dd442154c213cf7b9",
+      "doc_link_id": "DLID-5k6jt9qvf60d",
+      "heading": "3. アーキテクチャ",
+      "position": 9,
+      "section_id": "DLID-wfpz0e25snfy"
     },
     {
       "content_hash": "224d51188af9a280566db896965d422d19d594d1fc2a86428c72e42f4070fe97",
@@ -1148,13 +1155,6 @@
       "heading": "2. シナリオ表",
       "position": 2,
       "section_id": "DLID-37kff0mb98wh"
-    },
-    {
-      "content_hash": "22e0a94bfcd57f50aabc29a33eec1e18f21a2f6ee26f63cef7f5f5149a4c8249",
-      "doc_link_id": "DLID-0nfgax46wehg",
-      "heading": "REQ-014 doc-db バックエンド選択 要件定義書",
-      "position": 0,
-      "section_id": "DLID-z9yga6cpvgxa"
     },
     {
       "content_hash": "22ef7f98ef79d733ee13dc63b159c781382b04c1fc58289c32ec546afbfa303a",
@@ -1269,13 +1269,6 @@
       "section_id": "DLID-d17p2rv2vwvs"
     },
     {
-      "content_hash": "264fbccc02370d0cd6f9dfa082289338f549bcf3648d17914f4f1599428f46d5",
-      "doc_link_id": "DLID-5k6jt9qvf60d",
-      "heading": "4.5 doc-db MCP tool 契約（依拠スナップショット）",
-      "position": 23,
-      "section_id": "DLID-xrws9n10aar2"
-    },
-    {
       "content_hash": "26659493a0bd1260bdae14f68fa454a8696d526764789d323ea44520e27b65a3",
       "doc_link_id": "DLID-vfdedgq63evv",
       "heading": "ユーザー設定の保持ルール",
@@ -1372,13 +1365,6 @@
       "heading": "filter が必要なケース [MANDATORY]",
       "position": 18,
       "section_id": "DLID-n68xx6m686vp"
-    },
-    {
-      "content_hash": "2936d7c7ef1c33caa2987544978fa6ea2453f5b157b034fc6aa67ad703141eeb",
-      "doc_link_id": "DLID-5k6jt9qvf60d",
-      "heading": "9.3 統合テスト",
-      "position": 52,
-      "section_id": "DLID-re704gh7z4yy"
     },
     {
       "content_hash": "293768df8402e69e7c484235ce196d976d2f9561300af038d07648be43704c8c",
@@ -1479,13 +1465,6 @@
       "section_id": "DLID-97wpyk7t2vmk"
     },
     {
-      "content_hash": "2e104f859ce9f18929238088d672284eff11179677df6e02d8e0fe9cdda672f6",
-      "doc_link_id": "DLID-5k6jt9qvf60d",
-      "heading": "10. 完全性確認",
-      "position": 54,
-      "section_id": "DLID-nsaefbnnv0p5"
-    },
-    {
       "content_hash": "2e512a448df2a5eb01bc53bcf5e87055b837da29f8ea10151057a99530123b11",
       "doc_link_id": "DLID-4wn8sb8y1f80",
       "heading": "❌ 禁止パターン: 純粋関数のロールバック",
@@ -1575,13 +1554,6 @@
       "heading": "3.4 get_version_status.py",
       "position": 21,
       "section_id": "DLID-k05wvhrfeb0k"
-    },
-    {
-      "content_hash": "30ed582237842a9a755752167be0c70f149c13e6ec951388a25aa5f0ac780d8c",
-      "doc_link_id": "DLID-5k6jt9qvf60d",
-      "heading": "5.2 update",
-      "position": 34,
-      "section_id": "DLID-tjpg492kfnwd"
     },
     {
       "content_hash": "31612339fceba539c1e44a7324c6323f3961a5f035d270ea94a5bde77836e351",
@@ -1717,13 +1689,6 @@
       "section_id": "DLID-kvk757yk9gc9"
     },
     {
-      "content_hash": "365cd27781f2ee8b855a886decdf5e443daecd652c9f963e25a4fa26cc44babd",
-      "doc_link_id": "DLID-5k6jt9qvf60d",
-      "heading": "5. doc-link 処理設計",
-      "position": 26,
-      "section_id": "DLID-9f7yjc4dktjy"
-    },
-    {
       "content_hash": "366cbfe001b8eb1078aaa81caa3bc38b08747baad3b67711aaa04ff92e43f897",
       "doc_link_id": "DLID-bgxgcq0pvkm7",
       "heading": "4. 適用対象",
@@ -1794,13 +1759,6 @@
       "section_id": "DLID-t4ea2wg38cp2"
     },
     {
-      "content_hash": "390c44fbafbb68fd5519dfc385b39e208702fed974dad34257e490effcde5eb4",
-      "doc_link_id": "DLID-5k6jt9qvf60d",
-      "heading": "4.1 project key と series",
-      "position": 13,
-      "section_id": "DLID-c5sryery8qhz"
-    },
-    {
       "content_hash": "39a6ad187adddb008edfe850240fbc1ea350837f10e967d45c1b0123974dd560",
       "doc_link_id": "DLID-f8gem0wa3ac4",
       "heading": "計画書検査（種別: Script。呼び出し元: `/forge:start-plan`）",
@@ -1841,13 +1799,6 @@
       "heading": "4.5 エラーと再実行（SC-11・13・15・16・23）",
       "position": 11,
       "section_id": "DLID-r5hre426j119"
-    },
-    {
-      "content_hash": "3a719684371455536545ad10016eaab6bfdf3db27c8591a054b05599094ecb05",
-      "doc_link_id": "DLID-5k6jt9qvf60d",
-      "heading": "鮮度を推測で判定しない [MANDATORY]",
-      "position": 31,
-      "section_id": "DLID-seyb3155ss7n"
     },
     {
       "content_hash": "3a9fc8181c3360441e5c64cd984ed2628e2c51db01bc6a5053593b7651ad4f94",
@@ -1899,18 +1850,18 @@
       "section_id": "DLID-506m30wbwkpe"
     },
     {
+      "content_hash": "3be2f5b339b3a89f05480a8a942eeb7ebce5cb0718ee0a56fbdc34cdad6a5bad",
+      "doc_link_id": "DLID-5k6jt9qvf60d",
+      "heading": "5.1 query",
+      "position": 27,
+      "section_id": "DLID-0sn6xmd1v741"
+    },
+    {
       "content_hash": "3be9c2a561204f899b5c25b7fab84e47daca13cfac6a22091a41cb70e59abd9c",
       "doc_link_id": "DLID-ypd7r1j5ga4n",
       "heading": "2. 前提条件",
       "position": 3,
       "section_id": "DLID-jhgs66ypdkz2"
-    },
-    {
-      "content_hash": "3c54aefedc341baf9c595809883da087572024d92f91d5ca0d4ef67068f46249",
-      "doc_link_id": "DLID-5k6jt9qvf60d",
-      "heading": "6.2 query シーケンス",
-      "position": 44,
-      "section_id": "DLID-srej4vc1vh2h"
     },
     {
       "content_hash": "3d3b28d3ccc030dd4216abb34544ed629d71d95d14c6e629d305d8db1372ffd3",
@@ -1969,6 +1920,13 @@
       "section_id": "DLID-qd6wksz3ts4y"
     },
     {
+      "content_hash": "3f925d4acf32536afb9b56cfef99d1d798b3c8949d6b85c51f29a45e7f2781e0",
+      "doc_link_id": "DLID-5k6jt9qvf60d",
+      "heading": "2.5 優先 backend の指定（REQ-014 BL-001）",
+      "position": 8,
+      "section_id": "DLID-xed2t6xbxeh0"
+    },
+    {
       "content_hash": "40175f68230beb390116360ef20582ce0bc766bc57920eb35599044c30cf151a",
       "doc_link_id": "DLID-0868m80sm7hy",
       "heading": "FNC-005: 入力は 1 回の構造化された受け渡し",
@@ -2025,18 +1983,18 @@
       "section_id": "DLID-m62s7zaxsvmh"
     },
     {
+      "content_hash": "424e3982424a596f1d10449c89ac66c03cdb268759f66e88e4a4a5d8ec71eb8b",
+      "doc_link_id": "DLID-0nfgax46wehg",
+      "heading": "用語",
+      "position": 6,
+      "section_id": "DLID-dz5fayf2y37a"
+    },
+    {
       "content_hash": "4324e993ed6cb59bffb772f619c486f71d86b13d613e8071987f4e525f09049d",
       "doc_link_id": "DLID-f8gem0wa3ac4",
       "heading": "3. 責務",
       "position": 3,
       "section_id": "DLID-0ptcrsakz8r0"
-    },
-    {
-      "content_hash": "4353bedd2dab377f5f253da96d11c72004e44ccd5ffaaa9e9a9c4f078cbb96c0",
-      "doc_link_id": "DLID-5k6jt9qvf60d",
-      "heading": "series 指定と実在確認",
-      "position": 14,
-      "section_id": "DLID-b6ds9eqyf46d"
     },
     {
       "content_hash": "44031d32e03e51211a895fd0ed52b0a6bea9ff08d871be196aabc9f3c7b25586",
@@ -2051,13 +2009,6 @@
       "heading": "6. テスト設計",
       "position": 27,
       "section_id": "DLID-t44kffx8ndn2"
-    },
-    {
-      "content_hash": "448861719af6bf238230fb7cc97ed968ee4b0cc3255e04a4e7bfd62e94ec67ad",
-      "doc_link_id": "DLID-0nfgax46wehg",
-      "heading": "BL-003 成功と失敗",
-      "position": 16,
-      "section_id": "DLID-nes1qhz8fw42"
     },
     {
       "content_hash": "44b1d045ec746b9623c43e7d1e15152046e85ae9d861e6edd76ac7be115fb4ca",
@@ -2079,6 +2030,13 @@
       "heading": "1. 設計の範囲と前提",
       "position": 1,
       "section_id": "DLID-1zcdfh1xkhbh"
+    },
+    {
+      "content_hash": "450083093712c07bd03ced21c0912260482de96bf0af9e25ffc0448ebf6909b6",
+      "doc_link_id": "DLID-0nfgax46wehg",
+      "heading": "前提条件",
+      "position": 5,
+      "section_id": "DLID-s8mcp451h7nq"
     },
     {
       "content_hash": "45060e07d29f005824f609a2bde1c10153f17e25a4035bca1882bd2b23071575",
@@ -2109,6 +2067,13 @@
       "section_id": "DLID-jwh82yyg7928"
     },
     {
+      "content_hash": "45cd215dd07699444483b5464336f3a88e8cae532e8ea4ce0571c7fac121452d",
+      "doc_link_id": "DLID-5k6jt9qvf60d",
+      "heading": "9. テスト設計",
+      "position": 48,
+      "section_id": "DLID-hg1cnh0d3z05"
+    },
+    {
       "content_hash": "45d9cef1742ae9b6cc687a2c1a2377ff2362e184cb02d421988b1be07067a5ad",
       "doc_link_id": "DLID-1585cw3yt8pa",
       "heading": "前提確認フェーズ [MANDATORY]",
@@ -2130,11 +2095,11 @@
       "section_id": "DLID-x9kmdwcnrtk1"
     },
     {
-      "content_hash": "4624becc2d77269ccff888dc4542d8d0be6b46b257bb4dba142171b762fed958",
-      "doc_link_id": "DLID-d9fpywv4txra",
-      "heading": "DES-001 文書検索ラッパー（forge → 文書検索 backend）設計書",
-      "position": 0,
-      "section_id": "DLID-7gy2qvdh449y"
+      "content_hash": "4688d59dd95171eaa9adf4700e3738cd4e91830e2e7a66cc0af5ca9223d344bf",
+      "doc_link_id": "DLID-5k6jt9qvf60d",
+      "heading": "5.2 update",
+      "position": 34,
+      "section_id": "DLID-tjpg492kfnwd"
     },
     {
       "content_hash": "46920136cdc207aa84ac6057b2bd39d057b758a184c1abd5a7a2b3e09a6a98ed",
@@ -2184,13 +2149,6 @@
       "heading": "5.2 agent 内での Read-Modify-Write",
       "position": 15,
       "section_id": "DLID-2s5kacka2gyp"
-    },
-    {
-      "content_hash": "47c2437fd04839a2d2fa93bf21e1ad55481f1fc3c8e2b43f88c219a2c16210b0",
-      "doc_link_id": "DLID-5k6jt9qvf60d",
-      "heading": "7.1 検索母集団が変わったことの通知",
-      "position": 47,
-      "section_id": "DLID-31aytejv9hex"
     },
     {
       "content_hash": "47d927aa99575e689b447c531ec0c19610ae7a8350e3bae50f22ea3807b88e06",
@@ -2359,13 +2317,6 @@
       "heading": "1.1 なぜ機構が要るのか",
       "position": 2,
       "section_id": "DLID-8rs9a0e0fgdv"
-    },
-    {
-      "content_hash": "5055d88c69e47a0eca3b8436b437a4abc88f7c4ad2dded52a481dace8dd35986",
-      "doc_link_id": "DLID-5k6jt9qvf60d",
-      "heading": "成功と障害の区別",
-      "position": 20,
-      "section_id": "DLID-eqgbad36373h"
     },
     {
       "content_hash": "514d1dc54d4e006aa30416e0c662b49857bebe5f52ec0e85fb02aaf2f33365a1",
@@ -2606,6 +2557,13 @@
       "section_id": "DLID-64hzhrfc1ryn"
     },
     {
+      "content_hash": "5e0926d7800b251c179b9e8171d5ed5a906c6d29e51db06d8ef39fd1c60014fb",
+      "doc_link_id": "DLID-5k6jt9qvf60d",
+      "heading": "6.3 update シーケンス",
+      "position": 45,
+      "section_id": "DLID-70x1pdqnmsdw"
+    },
+    {
       "content_hash": "5e190a61aa4412128d690710b65825a311e6d4ba765b686b069f998ed3638609",
       "doc_link_id": "DLID-ckbysbfdrsv5",
       "heading": "3.1 script の配置",
@@ -2681,13 +2639,6 @@
       "heading": "2.4 エラーの扱い",
       "position": 7,
       "section_id": "DLID-720ywm155e0z"
-    },
-    {
-      "content_hash": "617b9a0de689380aafab0784399eccaa331eb4979420ff47761b1b58a03057b9",
-      "doc_link_id": "DLID-5k6jt9qvf60d",
-      "heading": "9. テスト設計",
-      "position": 49,
-      "section_id": "DLID-hg1cnh0d3z05"
     },
     {
       "content_hash": "61b6ca5e8ac37eab649bf7cfe2ad9b461c2ab28652793af8767756eb70f578bd",
@@ -2837,6 +2788,13 @@
       "section_id": "DLID-dp503jwc4awz"
     },
     {
+      "content_hash": "69e9f6c21d731adf8c3ac4c9fc2dbb3541f2b38931f778ae8d5aab2b374cceb2",
+      "doc_link_id": "DLID-5k6jt9qvf60d",
+      "heading": "4.3 update",
+      "position": 21,
+      "section_id": "DLID-jr765a9zcd77"
+    },
+    {
       "content_hash": "6a0be2c3f00ac913d90c7e6165bbc0f7b5af5bf6359d8e2af54fe14ef23fe260",
       "doc_link_id": "DLID-vzcznbpypja0",
       "heading": "設計方針",
@@ -2942,13 +2900,6 @@
       "section_id": "DLID-1zx8h56t1meb"
     },
     {
-      "content_hash": "6de104f1482b57d7af93fb2b576a4af8625c0ac73cff0af8d89326ffa7efebe8",
-      "doc_link_id": "DLID-d9fpywv4txra",
-      "heading": "出力契約",
-      "position": 6,
-      "section_id": "DLID-hd1qxqjh75zb"
-    },
-    {
       "content_hash": "6de605c8246e45599eda157238bf7aaa345f759864d473b768d6341e8c182515",
       "doc_link_id": "DLID-s3cjh3q3c0vc",
       "heading": "5.2 モジュール表",
@@ -3017,6 +2968,13 @@
       "heading": "NFR-1601 非永続性 [CRITICAL]",
       "position": 11,
       "section_id": "DLID-8drr6mxazr7n"
+    },
+    {
+      "content_hash": "6f56f458215832f973fba00a4542cacb5af9695b86394f80955c129018964fdf",
+      "doc_link_id": "DLID-0nfgax46wehg",
+      "heading": "REQ-014 doc-db バックエンド選択 要件定義書",
+      "position": 0,
+      "section_id": "DLID-z9yga6cpvgxa"
     },
     {
       "content_hash": "6f872cd3e8828f88979782b90dd2349b26fc58cab54dbd011a56440cc06dd4c2",
@@ -3215,6 +3173,13 @@
       "section_id": "DLID-5n1rqmnpb5gq"
     },
     {
+      "content_hash": "790bc13f352f22ec9d8a894554993411077bc486fc7c5cfd38f578b5a4d8eb98",
+      "doc_link_id": "DLID-d9fpywv4txra",
+      "heading": "出力契約",
+      "position": 6,
+      "section_id": "DLID-hd1qxqjh75zb"
+    },
+    {
       "content_hash": "792404c92a844dbacdec8c6f0533e55948a4130db99bc20bc5a99ade080b6261",
       "doc_link_id": "DLID-4wn8sb8y1f80",
       "heading": "用語定義",
@@ -3269,6 +3234,13 @@
       "heading": "1.3 検討した代替案",
       "position": 4,
       "section_id": "DLID-ma8b6egrge4f"
+    },
+    {
+      "content_hash": "7af1e4d02b3f5b92d6ffd9e2db6354d0be985f687f7551ac62b8053b6d277ffa",
+      "doc_link_id": "DLID-5k6jt9qvf60d",
+      "heading": "2.4 doc-link の可用性判定",
+      "position": 6,
+      "section_id": "DLID-smecymszrajs"
     },
     {
       "content_hash": "7b2ffb0e4b1d411296526cdbd8e32ff6d874cafa338f5414f1aae8e02c11fe94",
@@ -3467,6 +3439,13 @@
       "section_id": "DLID-pjt0tkpp21dn"
     },
     {
+      "content_hash": "81af7deda550040eedd06b124390e3676b3a20e65300db64a8a39332147532e6",
+      "doc_link_id": "DLID-0nfgax46wehg",
+      "heading": "業務ルール",
+      "position": 13,
+      "section_id": "DLID-4tw3rk84qhdj"
+    },
+    {
       "content_hash": "81ccdcd346c2d8ca20e9f9a6cccf5f16b236c05baa6bf68167a829bfac315d5b",
       "doc_link_id": "DLID-433459yse70c",
       "heading": "NFR-005: 失敗の可視性",
@@ -3579,25 +3558,11 @@
       "section_id": "DLID-h3q1r0yjyyj6"
     },
     {
-      "content_hash": "856e799ca5d6b0d74fe38e3f55f3b0fee79ca655530dd53a3c6fb6b3ee59281c",
-      "doc_link_id": "DLID-5k6jt9qvf60d",
-      "heading": "3. アーキテクチャ",
-      "position": 9,
-      "section_id": "DLID-wfpz0e25snfy"
-    },
-    {
       "content_hash": "8595a93053f7b287709c9aa94a303b589434d29876b01076f64bd6b93c83ad27",
       "doc_link_id": "DLID-ckbysbfdrsv5",
       "heading": "6.2 依存方向",
       "position": 17,
       "section_id": "DLID-a7fnn8q6pm8m"
-    },
-    {
-      "content_hash": "86b1cf81bdabed4de511003bb7ee48ad20b5fbc16c3164d910efb5a615239faa",
-      "doc_link_id": "DLID-5k6jt9qvf60d",
-      "heading": "母集団を所有しない側の件数を数えない [MANDATORY]",
-      "position": 33,
-      "section_id": "DLID-6cfg3af4vt5r"
     },
     {
       "content_hash": "86bbe63bccc408b80519bbd90840595f65b58be43595b4612536278a3d65d39a",
@@ -3698,13 +3663,6 @@
       "section_id": "DLID-vxswx6y5mg1k"
     },
     {
-      "content_hash": "88eaf5f158c748895864b7f198b0bb51b47719b3e70974cf24d77ef59afdd151",
-      "doc_link_id": "DLID-0nfgax46wehg",
-      "heading": "業務ルール",
-      "position": 13,
-      "section_id": "DLID-4tw3rk84qhdj"
-    },
-    {
       "content_hash": "891a9a7913dca398ea1776322dcc1a5d64b82e8fa1a69032a4fd1cf9f3275afa",
       "doc_link_id": "DLID-6m16v4qqxjf4",
       "heading": "1. 概要",
@@ -3717,6 +3675,13 @@
       "heading": "4.1 start-design",
       "position": 13,
       "section_id": "DLID-5t4zehyzcgv3"
+    },
+    {
+      "content_hash": "89b555f47088f28d6f762f0f21484d415eac3b93e30ad28fd6fb7890828f6af8",
+      "doc_link_id": "DLID-5k6jt9qvf60d",
+      "heading": "6.1 ユースケース一覧",
+      "position": 43,
+      "section_id": "DLID-khm7srq9nrjr"
     },
     {
       "content_hash": "89b9733f055d50885c9b4fe9bdd127d992ab5b989d0b01aa0ec0deca0cf83e36",
@@ -3778,8 +3743,15 @@
       "content_hash": "8c7c098be66485e86cf15018dee2bdea14ef7800676e7e2b781ef13adff2af06",
       "doc_link_id": "DLID-5k6jt9qvf60d",
       "heading": "9.2 wrapper テスト",
-      "position": 51,
+      "position": 50,
       "section_id": "DLID-ce4wsnmae3b9"
+    },
+    {
+      "content_hash": "8cc0726fe382a7dab1d6247562c43d9efb3825a03606a8bc3b56165927a14eb7",
+      "doc_link_id": "DLID-5k6jt9qvf60d",
+      "heading": "4.5 doc-db MCP tool 契約（依拠スナップショット）",
+      "position": 23,
+      "section_id": "DLID-xrws9n10aar2"
     },
     {
       "content_hash": "8d1812dcb2e0e3574d2c91241758677b4a4ed55e5f030bbbb2ae437455650e52",
@@ -3929,11 +3901,11 @@
       "section_id": "DLID-p8qvwsrsk5h2"
     },
     {
-      "content_hash": "936f850ce7c3630069549ef8b923812e3062f15cdc188c8983fd7b50bce9ffde",
-      "doc_link_id": "DLID-0nfgax46wehg",
-      "heading": "エラーケース",
-      "position": 27,
-      "section_id": "DLID-0x7ctvcz9c21"
+      "content_hash": "93b72a335a228c09bc1f797293d0eb8a7bdf761b48db5ee8e38e89c09f5021ba",
+      "doc_link_id": "DLID-d9fpywv4txra",
+      "heading": "3. query 系（query-db-rules / query-db-specs）",
+      "position": 3,
+      "section_id": "DLID-znnpebr7dff1"
     },
     {
       "content_hash": "940f70f1d68fc123adaa28a1045291b4f905a42c68a54a2905409d6b00220bf7",
@@ -3964,13 +3936,6 @@
       "section_id": "DLID-89nwcbbnh6wz"
     },
     {
-      "content_hash": "94d9e79019262a29152ab3739d63a2b4a81df6650da48bc60bfd1603cb36dcb3",
-      "doc_link_id": "DLID-5k6jt9qvf60d",
-      "heading": "7. エラーハンドリングと通知",
-      "position": 46,
-      "section_id": "DLID-mb7484v7rrzx"
-    },
-    {
       "content_hash": "94dbb09781e8589e4350aa9b93e1a4a466bb68cd966da46a261ad7e8ac64f12f",
       "doc_link_id": "DLID-0nfgax46wehg",
       "heading": "BL-007 索引母集団の所有",
@@ -3999,6 +3964,13 @@
       "section_id": "DLID-we16vtsgstg2"
     },
     {
+      "content_hash": "96808eb4346192fe5ea31ca9ee918e3a3f436a5cc512761ca298645831118258",
+      "doc_link_id": "DLID-0nfgax46wehg",
+      "heading": "FNC-002 query の実行",
+      "position": 10,
+      "section_id": "DLID-zcabn558tc9a"
+    },
+    {
       "content_hash": "9682a31d48e574f0caa26e8136a55091431c489d3a84ab93fbe29a1f6e081168",
       "doc_link_id": "DLID-dqkf6wa1z2cp",
       "heading": "FR-05: 拡張性",
@@ -4025,13 +3997,6 @@
       "heading": "2.2 決定",
       "position": 8,
       "section_id": "DLID-1945g45w79dz"
-    },
-    {
-      "content_hash": "98bb60fe72e73e13a70cc79eb530a8ad1f175095c1b3a4a5f5812af66eeb6af8",
-      "doc_link_id": "DLID-5k6jt9qvf60d",
-      "heading": "KEY 状態に関する doc-db の挙動",
-      "position": 25,
-      "section_id": "DLID-xzztdan34c8a"
     },
     {
       "content_hash": "98fb64ce28294102e950cc12c30bf82c139ac51d5408860401bb02eb43d69b1c",
@@ -4167,6 +4132,13 @@
       "section_id": "DLID-46kqxtqbs8g4"
     },
     {
+      "content_hash": "9d536afdd8c02ff12c45c9e5031b7ce704673bac3960aeeed237ca1b509ee2b1",
+      "doc_link_id": "DLID-0nfgax46wehg",
+      "heading": "BL-003 成功と失敗",
+      "position": 16,
+      "section_id": "DLID-nes1qhz8fw42"
+    },
+    {
       "content_hash": "9d8112e82c23cc1899b73c4abbbdbb39101a2fb49a24b5125bc3cb283cfdf809",
       "doc_link_id": "DLID-7gyjj06rtab7",
       "heading": "1. 概要",
@@ -4202,6 +4174,20 @@
       "section_id": "DLID-xjfj833rxmmz"
     },
     {
+      "content_hash": "9e53f909560565ccf559474192d136475754cf196a6c175d789a838443ffd849",
+      "doc_link_id": "DLID-0nfgax46wehg",
+      "heading": "FNC-003 update の実行",
+      "position": 11,
+      "section_id": "DLID-a2hynwrjbk54"
+    },
+    {
+      "content_hash": "9e6de14271c2a200c5015f747a0227e0b5f6b8763e6296932bbf0024a378923c",
+      "doc_link_id": "DLID-d9fpywv4txra",
+      "heading": "DES-001 文書検索ラッパー（forge → 文書検索 backend）設計書",
+      "position": 0,
+      "section_id": "DLID-7gy2qvdh449y"
+    },
+    {
       "content_hash": "9ef3c0443a447b0cb1e86005a174e9e9f18e606e76dc1e811c7fd63fe96afc6f",
       "doc_link_id": "DLID-1585cw3yt8pa",
       "heading": "4. 設計原則",
@@ -4228,6 +4214,13 @@
       "heading": "3. 機能要件",
       "position": 4,
       "section_id": "DLID-e576kkv3zcpq"
+    },
+    {
+      "content_hash": "9fa2cef1fa63f3e0aeac932794eff58001717040b3e637226513162acd1b9270",
+      "doc_link_id": "DLID-5k6jt9qvf60d",
+      "heading": "索引の置き場と git",
+      "position": 37,
+      "section_id": "DLID-795t8crzw96n"
     },
     {
       "content_hash": "9fb857e5959c91a78091a37753ea5f4111d7a865ad843cb8aa6ff0b229b3987d",
@@ -4265,13 +4258,6 @@
       "section_id": "DLID-wc1fhxcbc029"
     },
     {
-      "content_hash": "a0dcdc30d0b35f7942e3a59368e0f625c66e3b13375bc8d6491e98f45018e6a7",
-      "doc_link_id": "DLID-5k6jt9qvf60d",
-      "heading": "2.5 優先 backend の指定（REQ-014 BL-001）",
-      "position": 8,
-      "section_id": "DLID-xed2t6xbxeh0"
-    },
-    {
       "content_hash": "a277452e4d6143b8900dd94ca24ee8f48c393ca6be61a102bf69658c510fe7dc",
       "doc_link_id": "DLID-hsj370z603x4",
       "heading": "FNC-002: 変更箇所の可視化",
@@ -4305,6 +4291,20 @@
       "heading": "FNC-1602 1 ラウンド 1 Agent [CRITICAL]",
       "position": 7,
       "section_id": "DLID-mh9ffqf4s4fx"
+    },
+    {
+      "content_hash": "a3e2c66079f5019c60638e5c2d66127a14a9caa0ba7a56d8f3e91c63ffdccbdb",
+      "doc_link_id": "DLID-5k6jt9qvf60d",
+      "heading": "4.1 project key と series",
+      "position": 13,
+      "section_id": "DLID-c5sryery8qhz"
+    },
+    {
+      "content_hash": "a40787302ed0f807500d6fbf1c567fa51e2985e6a64c0c69e72f709709089c7e",
+      "doc_link_id": "DLID-5k6jt9qvf60d",
+      "heading": "セッション内変更の確認",
+      "position": 17,
+      "section_id": "DLID-7f21j8n82y4j"
     },
     {
       "content_hash": "a417d6565ecf89714516147173d7a186125d9d12fcda9ba50aa07fca66ceb6ae",
@@ -4447,6 +4447,13 @@
       "section_id": "DLID-gqsp73zkpe1s"
     },
     {
+      "content_hash": "a8a2d24f1ced1bf45e3fb91991f2670bf604090100d29acd2ea5faee12328116",
+      "doc_link_id": "DLID-5k6jt9qvf60d",
+      "heading": "7. エラーハンドリングと通知",
+      "position": 46,
+      "section_id": "DLID-mb7484v7rrzx"
+    },
+    {
       "content_hash": "a8beb00b1153648bd99849dd75779a72833537b5d8dc645d778f10c21ffc079c",
       "doc_link_id": "DLID-j50s0xwkwx00",
       "heading": "6.1 共通の約束",
@@ -4480,6 +4487,13 @@
       "heading": "FNC-001: 文書識別子",
       "position": 5,
       "section_id": "DLID-enjjhqzg4xdq"
+    },
+    {
+      "content_hash": "aa35f7b9dba4d6e023f796df7f1506bc67be7e2b5bbe94e9e0b9ea8158c99736",
+      "doc_link_id": "DLID-5k6jt9qvf60d",
+      "heading": "9.4 doc-link 契約テスト",
+      "position": 52,
+      "section_id": "DLID-8r40ev2ptje3"
     },
     {
       "content_hash": "aa88791ef46d7cbe132689ab99778189de6f48f9fff1be4bc3005f3e50c52370",
@@ -4657,11 +4671,11 @@
       "section_id": "DLID-7s1g5943d217"
     },
     {
-      "content_hash": "b0cd48b9ee9813e51ddf670d54f449c3ff62e94751be22eedfde11d952891814",
-      "doc_link_id": "DLID-0nfgax46wehg",
-      "heading": "用語",
-      "position": 6,
-      "section_id": "DLID-dz5fayf2y37a"
+      "content_hash": "b0b737e0ce81a002914cb44de7df81945ce07d9b343e5a7bae3f0edcc4787c4a",
+      "doc_link_id": "DLID-5k6jt9qvf60d",
+      "heading": "6. ユースケース設計",
+      "position": 42,
+      "section_id": "DLID-8zaj94bcqck6"
     },
     {
       "content_hash": "b0ea646d988c88e187c2e81d557dc9e7ba69860933c1e375f37fab707e1ac086",
@@ -4690,13 +4704,6 @@
       "heading": "結果検査",
       "position": 44,
       "section_id": "DLID-wtspgge2ev8d"
-    },
-    {
-      "content_hash": "b19333f2085a28efa46b5becb9e719cfa4114f1960f6c218796bccade2e132d8",
-      "doc_link_id": "DLID-0nfgax46wehg",
-      "heading": "前提条件",
-      "position": 5,
-      "section_id": "DLID-s8mcp451h7nq"
     },
     {
       "content_hash": "b1fd099bd543a0fe933874a586cbaef194e64cc925542e827aeb9bf9d0704aca",
@@ -4762,13 +4769,6 @@
       "section_id": "DLID-ktv8t16tyj0s"
     },
     {
-      "content_hash": "b477e2355da26c5dd7030084acad1d39eb7569be55008c389ca204abb91a580d",
-      "doc_link_id": "DLID-5k6jt9qvf60d",
-      "heading": "6.3 update シーケンス",
-      "position": 45,
-      "section_id": "DLID-70x1pdqnmsdw"
-    },
-    {
       "content_hash": "b4896851ba6bd6a599bdb66a1a8e152ea8459342230caf085bd50e689991dccf",
       "doc_link_id": "DLID-s3cjh3q3c0vc",
       "heading": "6.8 brief作成（AI）の出力",
@@ -4825,6 +4825,13 @@
       "section_id": "DLID-bat93ynk4m49"
     },
     {
+      "content_hash": "b6765c3158ebcf54956b7288f2f44f60baeddf65c8f4f2f76d0f34e27ab75202",
+      "doc_link_id": "DLID-5k6jt9qvf60d",
+      "heading": "2. 設計方針",
+      "position": 2,
+      "section_id": "DLID-7fxq3xpjcy9t"
+    },
+    {
       "content_hash": "b6e6be706f5a1dee3db27d2cfaf9667c2f1be14b84c0989ac9c1a297e4c6f0b4",
       "doc_link_id": "DLID-8aaxgj88j28q",
       "heading": "FNC-003: 仕様の適用者への伝達",
@@ -4839,32 +4846,11 @@
       "section_id": "DLID-en3j2psrybjm"
     },
     {
-      "content_hash": "b75df6973a3f88d2428e54a4505061f31b3100756e81f82232822e76199a3c8c",
-      "doc_link_id": "DLID-5k6jt9qvf60d",
-      "heading": "4.3 update",
-      "position": 21,
-      "section_id": "DLID-jr765a9zcd77"
-    },
-    {
-      "content_hash": "b760fcb37db90673c153d72586db6c01c5ea58aef092e2e60dca113a24259ebf",
-      "doc_link_id": "DLID-5k6jt9qvf60d",
-      "heading": "DES-057 doc-db バックエンド選択 設計書",
-      "position": 0,
-      "section_id": "DLID-vm42nep5js51"
-    },
-    {
       "content_hash": "b7c01bfded686c129781bd5040e2e9679744782d7bd8c0b8b8ad8d923b61b2cd",
       "doc_link_id": "DLID-0868m80sm7hy",
       "heading": "FNC-008: 状態遷移の必要条件は機械可読な定義として持つ",
       "position": 12,
       "section_id": "DLID-xa1ts5q4hkhq"
-    },
-    {
-      "content_hash": "b85284b1bc74dd32f068a52eec13994e8146b60e684d2dfff40940178ed76b9c",
-      "doc_link_id": "DLID-0nfgax46wehg",
-      "heading": "FNC-003 update の実行",
-      "position": 11,
-      "section_id": "DLID-a2hynwrjbk54"
     },
     {
       "content_hash": "b87a22247fc2c527a3515234cc36314f94fda0a1cc521a1f191c89958a8eabf8",
@@ -5073,7 +5059,7 @@
       "content_hash": "c290a29005460916a85f5d631cacf6050fb8528be0faca4c6e60d7e1234e0cc9",
       "doc_link_id": "DLID-5k6jt9qvf60d",
       "heading": "8. 使用する既存コンポーネント",
-      "position": 48,
+      "position": 47,
       "section_id": "DLID-xrg7vw3g4s2n"
     },
     {
@@ -5124,13 +5110,6 @@
       "heading": "6.8 テスト",
       "position": 52,
       "section_id": "DLID-mvnktxf6qvm0"
-    },
-    {
-      "content_hash": "c4130aef33b4a994dac66c6acbaebcea2bdb31a12bcd8327442d77820736f03c",
-      "doc_link_id": "DLID-5k6jt9qvf60d",
-      "heading": "バージョンを判定に使わない [MANDATORY]",
-      "position": 7,
-      "section_id": "DLID-nqkxnw9f5ywn"
     },
     {
       "content_hash": "c47f072f0e6c6a2190bc221612ceb43cb4ca38c21cb7245e44549b71e4e70f79",
@@ -5217,13 +5196,6 @@
       "section_id": "DLID-mz7np712088p"
     },
     {
-      "content_hash": "c6cf2b9f551626b07cfc9c371623e32ebca990657480b720e58f062ae7f1dcab",
-      "doc_link_id": "DLID-5k6jt9qvf60d",
-      "heading": "2. 設計方針",
-      "position": 2,
-      "section_id": "DLID-7fxq3xpjcy9t"
-    },
-    {
       "content_hash": "c6cf85227d861511dce6542d7647e9368b7d7e20c83a7ed393df7c231fd93bfb",
       "doc_link_id": "DLID-s1ds8dcyfn7p",
       "heading": "3.1 概要",
@@ -5243,13 +5215,6 @@
       "heading": "優先度の目安",
       "position": 9,
       "section_id": "DLID-h1xnfsnj4tvj"
-    },
-    {
-      "content_hash": "c7e2599dfe866167e4cf02c4a27bc7c6e1f4e3a4f65c46280576b1ae1980104e",
-      "doc_link_id": "DLID-5k6jt9qvf60d",
-      "heading": "6.1 ユースケース一覧",
-      "position": 43,
-      "section_id": "DLID-khm7srq9nrjr"
     },
     {
       "content_hash": "c806861a45e960154a77351cf0dfa01582b78c4f0f37a6e4ed524b03425d51d3",
@@ -5278,6 +5243,13 @@
       "heading": "5.3 所見の結果（`review_result.json`）",
       "position": 19,
       "section_id": "DLID-dxmkn50sg9df"
+    },
+    {
+      "content_hash": "c895ae8f0dfb8b813f97745926cf39d42a43713a22b7137683f02bf274914a32",
+      "doc_link_id": "DLID-5k6jt9qvf60d",
+      "heading": "9.3 統合テスト",
+      "position": 51,
+      "section_id": "DLID-re704gh7z4yy"
     },
     {
       "content_hash": "c8df267b88648676c85c2f60831490b590a327740482b506d90baf45ea2d5a4a",
@@ -5427,6 +5399,20 @@
       "section_id": "DLID-q2kg3vm2crbt"
     },
     {
+      "content_hash": "cd4283b7a30df09b1eff5932f13c0db6202d9fe521a2ad913982693e224226d7",
+      "doc_link_id": "DLID-5k6jt9qvf60d",
+      "heading": "series 指定と実在確認",
+      "position": 14,
+      "section_id": "DLID-b6ds9eqyf46d"
+    },
+    {
+      "content_hash": "cdb2721b2eea7149e8b645232c4f5c5a9629f90e038c31c512579ed99fd5899c",
+      "doc_link_id": "DLID-5k6jt9qvf60d",
+      "heading": "4. doc-db 処理設計",
+      "position": 12,
+      "section_id": "DLID-ab5jfxw0xweq"
+    },
+    {
       "content_hash": "cdcadffa95c7e795a6bdf6b6f3aeec0da758f007ada68b6952aa76f8e8b3df8e",
       "doc_link_id": "DLID-f8gem0wa3ac4",
       "heading": "必読収集（種別: Script と検索の併用）",
@@ -5476,13 +5462,6 @@
       "section_id": "DLID-5b0xje4t2263"
     },
     {
-      "content_hash": "cf75b4de826b04f765722d6072ed383121718e75d6334de17164e6fabe55f740",
-      "doc_link_id": "DLID-5k6jt9qvf60d",
-      "heading": "2.4 doc-link の可用性判定",
-      "position": 6,
-      "section_id": "DLID-smecymszrajs"
-    },
-    {
       "content_hash": "d07543e35756b53c7695958d28a29412b0fa0a7208ad35e5666f0b7ba6315312",
       "doc_link_id": "DLID-bgxgcq0pvkm7",
       "heading": "FNC-002: 入力の責務分類",
@@ -5509,13 +5488,6 @@
       "heading": "実装上の設計判断",
       "position": 10,
       "section_id": "DLID-y0787g0dwmfh"
-    },
-    {
-      "content_hash": "d18894a79c4179197a8970218763a1de9f835ac4a3badec5c3e41003a1c2e6ba",
-      "doc_link_id": "DLID-5k6jt9qvf60d",
-      "heading": "backend 間の残差",
-      "position": 15,
-      "section_id": "DLID-63vdfhdmqxyw"
     },
     {
       "content_hash": "d1b8cfe294b171fa26d31b1c40d86700d08bd328138af94aaf3b6d786c046890",
@@ -5623,6 +5595,13 @@
       "section_id": "DLID-6hcgvv2gh3x1"
     },
     {
+      "content_hash": "d61ba277101078245a9a147885a58f38bbc2678ab6d34ddce38795a63a8f0772",
+      "doc_link_id": "DLID-5k6jt9qvf60d",
+      "heading": "10. 完全性確認",
+      "position": 53,
+      "section_id": "DLID-nsaefbnnv0p5"
+    },
+    {
       "content_hash": "d62676b868eec9882d346f1aff7d788f80f98dd00eae5650c73696d7dd27902f",
       "doc_link_id": "DLID-s1ds8dcyfn7p",
       "heading": "2.2 責務分担",
@@ -5672,11 +5651,11 @@
       "section_id": "DLID-ar8p74szay64"
     },
     {
-      "content_hash": "d81f829f27d6c8aec6f88da33891e8ae79e74604d75903702cebfa9ae0fdf8d9",
+      "content_hash": "d823681e315111eb9596971c14e5a50f6a3150f1864c83cc0d810551a9a9abd7",
       "doc_link_id": "DLID-5k6jt9qvf60d",
-      "heading": "4. doc-db 処理設計",
-      "position": 12,
-      "section_id": "DLID-ab5jfxw0xweq"
+      "heading": "2.1 バックエンド選択境界",
+      "position": 3,
+      "section_id": "DLID-2aht0bdasyc3"
     },
     {
       "content_hash": "d8517f3fb4c86bf39e982bc4117d2344793347f036f6028391d5730c3baee24c",
@@ -5749,6 +5728,13 @@
       "section_id": "DLID-24jey4ez4zdd"
     },
     {
+      "content_hash": "d9c81d15b516a7b5730cbac634b4cf41cf445adec6c00d9c09f1d7767c81ae00",
+      "doc_link_id": "DLID-5k6jt9qvf60d",
+      "heading": "3.2 モジュール一覧",
+      "position": 11,
+      "section_id": "DLID-ned15mzyqgcb"
+    },
+    {
       "content_hash": "daafe003d20d6f0cc5ea7f407170766924c132ab491020730622f66f2e6faf64",
       "doc_link_id": "DLID-f8gem0wa3ac4",
       "heading": "タスク選択",
@@ -5775,6 +5761,13 @@
       "heading": "tasks",
       "position": 7,
       "section_id": "DLID-90ptpxe2910n"
+    },
+    {
+      "content_hash": "dc04d4f786b71bac1625f125a09a4210eb733027cbfc9a73c120fac80affbac6",
+      "doc_link_id": "DLID-5k6jt9qvf60d",
+      "heading": "6.2 query シーケンス",
+      "position": 44,
+      "section_id": "DLID-srej4vc1vh2h"
     },
     {
       "content_hash": "dc66fada0bbbb43a3be08ee7fd1e79c7e3956c4f1c9baf408a0114a0d0f2faa8",
@@ -5822,7 +5815,7 @@
       "content_hash": "df21def5946bc4e9a99e5d1b27f3fa22398c7a67b8ab21db0d2014f7a8e77774",
       "doc_link_id": "DLID-5k6jt9qvf60d",
       "heading": "9.1 単体テスト",
-      "position": 50,
+      "position": 49,
       "section_id": "DLID-g619cmf7h62d"
     },
     {
@@ -5973,6 +5966,13 @@
       "section_id": "DLID-92hnb6qb0wme"
     },
     {
+      "content_hash": "e3a2ee9ff15626fbf9f9e4bd0219c935276c04be7ecb592e851daabea4c300aa",
+      "doc_link_id": "DLID-5k6jt9qvf60d",
+      "heading": "5. doc-link 処理設計",
+      "position": 26,
+      "section_id": "DLID-9f7yjc4dktjy"
+    },
+    {
       "content_hash": "e3bab5f5e59272ec64af12bbe4a6179123e5753dd4c3495de5f8b2c863f37d0a",
       "doc_link_id": "DLID-ypd7r1j5ga4n",
       "heading": "4. 機能要件",
@@ -5992,13 +5992,6 @@
       "heading": "3. 出力契約 [MANDATORY]",
       "position": 5,
       "section_id": "DLID-cxm356kf6bpe"
-    },
-    {
-      "content_hash": "e492265081fb1f6fe7b9e85f74c67b08892711bffd4bf76f424a0d393bd85b45",
-      "doc_link_id": "DLID-d9fpywv4txra",
-      "heading": "3. query 系（query-db-rules / query-db-specs）",
-      "position": 3,
-      "section_id": "DLID-znnpebr7dff1"
     },
     {
       "content_hash": "e4a2766d25d3bdf55c10c5f521c0027abd3ab5afb38134e4198473d89f80d84d",
@@ -6099,13 +6092,6 @@
       "section_id": "DLID-dz00mz8vwn1x"
     },
     {
-      "content_hash": "e8d7ffdf649016ace7af8a81b2096b07818e3e1a263a4e0c7676c1e377f6f437",
-      "doc_link_id": "DLID-5k6jt9qvf60d",
-      "heading": "3.2 モジュール一覧",
-      "position": 11,
-      "section_id": "DLID-ned15mzyqgcb"
-    },
-    {
       "content_hash": "e8f4a9a20d902bda51a59404947d2b44ba9b6896f723a6e964a244ed579fe05f",
       "doc_link_id": "DLID-433459yse70c",
       "heading": "FNC-002: 複数 consult topic の進行管理 [MANDATORY]",
@@ -6183,18 +6169,18 @@
       "section_id": "DLID-kr6q98nabe64"
     },
     {
-      "content_hash": "ecb33aa97cf2ec46a157465cebca1a02b035092db6164abf3d43258e6cba5e47",
-      "doc_link_id": "DLID-5k6jt9qvf60d",
-      "heading": "索引の置き場と git",
-      "position": 37,
-      "section_id": "DLID-795t8crzw96n"
-    },
-    {
       "content_hash": "ecc5150d4b00a3d566392e8fdb22caaf71aaf21c00e4fe54e516104011ca2dce",
       "doc_link_id": "DLID-hme4nqx9d5gs",
       "heading": "Step 5: 変更内容の収集",
       "position": 26,
       "section_id": "DLID-w7rxt7pambsd"
+    },
+    {
+      "content_hash": "ece44fce0796a1a09eeb750a6e6a1af47b3250fd6c6debc1114076e76cf8b6be",
+      "doc_link_id": "DLID-5k6jt9qvf60d",
+      "heading": "DES-057 doc-db バックエンド選択 設計書",
+      "position": 0,
+      "section_id": "DLID-vm42nep5js51"
     },
     {
       "content_hash": "ecf797581f1f4f47adadd87774f7b4e2ce986e07a11fbbd715edb78e93fdd5e7",
@@ -6237,13 +6223,6 @@
       "heading": "適用例",
       "position": 3,
       "section_id": "DLID-tvjgnm415wg7"
-    },
-    {
-      "content_hash": "ee668e4009b89c761c7d92ff39173f58d01b567ff94c48c6374305c035e95053",
-      "doc_link_id": "DLID-5k6jt9qvf60d",
-      "heading": "5.1 query",
-      "position": 27,
-      "section_id": "DLID-0sn6xmd1v741"
     },
     {
       "content_hash": "ee67e06c9fdbec782ed82ad7939f6095b327a3f4c2aa12db3be572b07c2ae0d7",
@@ -6316,6 +6295,13 @@
       "section_id": "DLID-x7vaf58m3c5w"
     },
     {
+      "content_hash": "f0c3e010f662dff2f70eda38bbd56e641349848012a240d176c7f452bb543dcd",
+      "doc_link_id": "DLID-5k6jt9qvf60d",
+      "heading": "バージョンを判定に使わない [CRITICAL]",
+      "position": 7,
+      "section_id": "DLID-nqkxnw9f5ywn"
+    },
+    {
       "content_hash": "f0c5fe835f58ad8733499ae2f9d3ab05080e55ae6471c417a01a353d9e9c82ad",
       "doc_link_id": "DLID-hme4nqx9d5gs",
       "heading": "1. 概要",
@@ -6358,6 +6344,13 @@
       "section_id": "DLID-jbp0nefgh62m"
     },
     {
+      "content_hash": "f20b59b98ff6f9cbce3530309dc23121226087b5aa2afb8c1b060d12dff46f16",
+      "doc_link_id": "DLID-0nfgax46wehg",
+      "heading": "機能要件",
+      "position": 8,
+      "section_id": "DLID-q6te0ab4d73a"
+    },
+    {
       "content_hash": "f258697956a04b7607d14b43ec51cbe4f4a9b6c5b443d10ee4bfcce0498f136e",
       "doc_link_id": "DLID-4wn8sb8y1f80",
       "heading": "設計パターン",
@@ -6372,11 +6365,11 @@
       "section_id": "DLID-jpyr5zkgvxzj"
     },
     {
-      "content_hash": "f2cfcff324246750f4b9154a13e22301dc18ad748715ad12907492b95fc4a985",
-      "doc_link_id": "DLID-0nfgax46wehg",
-      "heading": "FNC-002 query の実行",
-      "position": 10,
-      "section_id": "DLID-zcabn558tc9a"
+      "content_hash": "f350272713aefd09a80849d38fa1b5fdb5f9e83a6e2930cd1569bd0e5ed0cb2e",
+      "doc_link_id": "DLID-5k6jt9qvf60d",
+      "heading": "KEY 状態に関する doc-db の挙動",
+      "position": 25,
+      "section_id": "DLID-xzztdan34c8a"
     },
     {
       "content_hash": "f35601e80dd19cf6649bcd5960f3964de23fbab2c4e7c935224e35399e010a5d",
@@ -6440,13 +6433,6 @@
       "heading": "実測結果（doc-db 0.3.2 / 2026-07-31）",
       "position": 24,
       "section_id": "DLID-9ttx4xcn16sr"
-    },
-    {
-      "content_hash": "f6211cc1a51358bc81e2b6eec1e584656dc3395e48867ddb1ac994edc73e0e24",
-      "doc_link_id": "DLID-5k6jt9qvf60d",
-      "heading": "2.1 バックエンド選択境界",
-      "position": 3,
-      "section_id": "DLID-2aht0bdasyc3"
     },
     {
       "content_hash": "f62b0969c974e29ab9a96da50f4784820e827d16f93e20fcba0ef01ea0cb5ae2",
@@ -6531,6 +6517,13 @@
       "heading": "status の遷移",
       "position": 8,
       "section_id": "DLID-42csqzcr792e"
+    },
+    {
+      "content_hash": "fb03e3fd5559f2631cd5180b1ec80ac82cb7cb2e9616c82d370105a9e8017416",
+      "doc_link_id": "DLID-5k6jt9qvf60d",
+      "heading": "鮮度を推測で判定しない [MANDATORY]",
+      "position": 31,
+      "section_id": "DLID-seyb3155ss7n"
     },
     {
       "content_hash": "fb261f8d5629c429e036061d6e12d95a62368c07da27a96d0a7c7d648b401f44",
@@ -6710,5 +6703,5 @@
     "paths": []
   },
   "toc_key": "specs",
-  "version": 3
+  "version": 4
 }

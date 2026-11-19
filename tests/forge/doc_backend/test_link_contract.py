@@ -9,7 +9,6 @@ doc-link は外部 SKILL であり、`Skill` ツール起動を伴う経路は�
 
 - query が `query-docs` だけを呼び、索引の整備の手順を持たないこと（REQ-014 FNC-002）
 - 未整備時は承認 → `update-db-*` への委譲 → 再検索の順であること（DES-057 §5.3）
-- doc-link 経路の query で検索母集団の相違を通知すること
 - 可用性判定に必要な SKILL が `query-docs` / `index-docs` / `embed-dlid` の 3 つであること
 
 **復活を防ぐ検証** — バージョン番号による可用性の判定が再導入されていないことを機械検査する
@@ -240,23 +239,6 @@ class TestNoVersionInference(unittest.TestCase):
             design,
             "DES-057 からバージョン推測禁止の規範が消えている",
         )
-
-
-class TestPopulationDifferenceNotice(_ContractBase):
-    """doc-link 経路の query では検索母集団の相違を通知し、doc-db 経路では通知しないこと。"""
-
-    def test_notice_present_for_link_path_and_absent_for_docdb_path(self):
-        for _category, path, body in self.each_query_skill():
-            self.assertIn(
-                "検索母集団",
-                body,
-                f"{path.parent.name}: 検索母集団の相違に関する通知の記述がない",
-            )
-            self.assertIn(
-                "doc-db 経路で完了した検索では出さない",
-                body,
-                f"{path.parent.name}: doc-db 経路では通知しない旨の記述がない",
-            )
 
 
 if __name__ == "__main__":

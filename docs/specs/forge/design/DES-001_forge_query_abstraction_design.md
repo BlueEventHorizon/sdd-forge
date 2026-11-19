@@ -60,7 +60,8 @@ create-requirements-from-plan-mode 等）から `Skill` ツール経由で呼ば
 
 ### 出力契約 DLID-hd1qxqjh75zb
 
-応答の先頭は `Required documents:` 形式のパスリスト（プロジェクトルート相対）。構造変換は行わない。
+応答の先頭は `Required documents:` 形式のパスリスト（プロジェクトルート相対）。この形式は script が構築し、
+SKILL は自分で組み立てない。
 この出力契約は backend によらず共通である（NFR-002 の互換性は REQ-014 が規定する）。
 
 ### SKILL 契約 [MANDATORY] DLID-t4aqg7pynjpc

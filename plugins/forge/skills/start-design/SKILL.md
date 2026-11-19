@@ -131,6 +131,7 @@ python3 "${CLAUDE_PLUGIN_ROOT}/scripts/doc_structure/feature_marker.py" --paths 
 
 - **`${CLAUDE_PLUGIN_ROOT}/docs/design_method.md`** — 設計の手順と成果物（Phase 2〜5 はこれに従う）
 - **`${CLAUDE_PLUGIN_ROOT}/docs/design_principles_spec.md`** — 設計書の判断基準・禁止事項・重大度
+- **`${CLAUDE_PLUGIN_ROOT}/docs/error_classification_spec.md`** — エラーの定義・分類（回復可能・回復不能）・原因の扱い
 - **`${CLAUDE_PLUGIN_ROOT}/docs/strategy_principles_spec.md`** — 実装戦略書の原則。既存の実装の扱いは設計ではなく実装戦略書の責務であることを把握する
 - **`${CLAUDE_PLUGIN_ROOT}/docs/spec_design_boundary_spec.md`** — 要件・設計の境界ガイド
 - **`${CLAUDE_PLUGIN_ROOT}/docs/spec_priorities_spec.md`** — 要件・設計で優先する価値観（構造品質の定量化禁止など）
@@ -283,7 +284,7 @@ ADR の作成は、Skill ツールで `/forge:write-adr approval-record {feature
 
 ### specs ToC 更新
 
-設計書の作成・更新後、`/forge:update-db-specs` が利用可能であれば Skill ツールで起動すること（利用不可の場合はスキップ）。
+設計書の作成・更新後、`/forge:update-db-specs` を Skill ツールで起動すること。
 
 ### commit/push 確認
 

@@ -177,10 +177,10 @@ flowchart TD
 
 ### 完了処理 DLID-xmhexjqw18ha
 
-| Step | 内容                                            |
-| ---- | ----------------------------------------------- |
-| 6.1  | `/forge:update-db-specs` 実行（利用可能な場合） |
-| 6.2  | `/anvil:commit` による commit/push 確認         |
+| Step | 内容                                    |
+| ---- | --------------------------------------- |
+| 6.1  | `/forge:update-db-specs` 実行           |
+| 6.2  | `/anvil:commit` による commit/push 確認 |
 
 ---
 

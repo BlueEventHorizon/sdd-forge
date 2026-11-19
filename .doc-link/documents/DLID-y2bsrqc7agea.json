@@ -1,36 +1,41 @@
 {
-  "content_hash": "ae2d9e07a72bcccf8864ad6ff4bee4e8acea56c7725e2c37dece7179f61799d9",
+  "content_hash": "be754bfbeb35a7b035d11ea726d9184fe560ad5d1f8b87a57a518714708ece23",
   "doc_link_id": "DLID-y2bsrqc7agea",
   "keywords": [
     "Figma",
+    "requirements definition",
     "design tokens",
-    "requirements workflow",
-    "SCR",
-    "CMP",
-    "FNC",
     "design system",
+    "screen requirements",
+    "UI components",
+    "theme",
     "static assets",
     "start-requirements",
-    "Figma MCP"
+    "workflow"
   ],
   "path": "plugins/forge/skills/start-requirements/docs/requirements_from_figma_workflow.md",
-  "purpose": "Workflow for extracting requirements from Figma design files to produce design tokens and requirements documents, from preparation through quality check and completion.",
+  "purpose": "Workflow for creating requirements documents and design tokens from a Figma design file, covering design system construction, screen/component/function requirements, assets, and quality review.",
   "summary": [
-    "Lists required reading documents and the five-phase execution flow",
-    "Phase 1 checks Figma MCP availability, confirms with the user, and fetches rules and existing specs",
-    "Phase 2 builds a two-layer design system of tokens and semantic themes and identifies reusable components",
-    "Phase 3 decides placement, assigns IDs via next-spec-id, and extracts SCR, CMP, and FNC requirements",
-    "Screen requirements use screen-specific part names and ASCII layout diagrams",
-    "Supplements requirements not in the design such as errors, loading, empty states, accessibility",
-    "Phase 4 inventories image assets and records asset management policy",
-    "Phase 5 verifies tokens and documents, runs AI review, updates specs ToC, and guides commit and next steps"
+    "Required reading list: requirement principles, format, error classification, boundary, priorities, style guide",
+    "Phase 1: check Figma MCP availability, confirm with the user, fetch rules and existing specs",
+    "Phase 2: two-layer design system (design tokens and semantic themes), reusable components, token extraction",
+    "Phase 3: ID numbering and placement, SCR screen requirements with ASCII layouts and screen-specific part names",
+    "Phase 3: CMP component and FNC function requirements, complementing requirements absent from the design",
+    "Phase 3: glossary creation",
+    "Phase 4: static asset inventory and asset management policy",
+    "Phase 5: design token and requirements verification checklists",
+    "Phase 5: AI review, reference existence check placeholder, specs index update, commit confirmation",
+    "Completion guidance with the next start-design command"
   ],
   "tasks": [
     "Creating requirements from a Figma design file",
     "Extracting design tokens from Figma",
-    "Requirements for an app redesign with Figma",
-    "Design-first development requirements",
-    "Defining screen and UI component requirements"
+    "Defining screen requirements (SCR) from Figma screens",
+    "Defining UI component requirements (CMP)",
+    "Redesign of an existing app with Figma",
+    "Design-first development",
+    "Reviewing Figma-derived requirements",
+    "Managing static assets in requirements"
   ],
   "title": "Figma 要件定義書作成ワークフロー"
 }

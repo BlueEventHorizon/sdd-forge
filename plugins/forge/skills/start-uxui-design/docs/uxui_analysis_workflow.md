@@ -44,8 +44,6 @@ start-requirements → start-uxui-design → start-design → start-plan → sta
 | Phase 4   | 「{iOS/macOS} コンポーネント設計、プラットフォーム固有 UI パターン」 |
 | Phase 6   | 「デザイントークン出力フォーマット、コンポーネント一覧テンプレート」 |
 
-**`/forge:query-forge-rules` が利用不可の場合のフォールバック**: `${CLAUDE_PLUGIN_ROOT}/skills/start-uxui-design/docs/` 配下を Glob で探索し、Phase に必要なファイルを直接 Read する。
-
 ## 実行フロー概要 DLID-q58rxytsssrp
 
 ```mermaid
@@ -700,7 +698,7 @@ Skill ツールで `/forge:review` を起動する:
 
 ### 6.4 specs ToC 更新 DLID-eashsr7j455k
 
-`/forge:update-db-specs` が利用可能であれば実行する。
+`/forge:update-db-specs` を実行する。
 
 ### 6.5 commit/push 確認 DLID-2qs967p4jnxr
 

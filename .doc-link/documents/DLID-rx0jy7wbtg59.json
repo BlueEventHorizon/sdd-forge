@@ -1,5 +1,5 @@
 {
-  "content_hash": "2aca46c44b8e1cccc516a42030de648c67b15115f000ec7c37df99bee08aeb9e",
+  "content_hash": "996752510a5f18418735be23db1272658c5a64115b1251331ebb8b8cc45bc3ef",
   "doc_link_id": "DLID-rx0jy7wbtg59",
   "keywords": [
     "UX/UI design",
@@ -9,32 +9,31 @@
     "tension axis",
     "signature element",
     "UX evaluation",
+    "Light/Dark mode",
     "HIG",
-    "start-uxui-design",
-    "THEME CMP UXEVAL"
+    "start-uxui-design"
   ],
   "path": "plugins/forge/skills/start-uxui-design/docs/uxui_analysis_workflow.md",
-  "purpose": "Defines the six-phase workflow for creating visual design (design tokens, component visual specs, UX evaluation) from a requirements document, driven by a confirmed Design Intent.",
+  "purpose": "Defines the six-phase workflow that turns a requirements document into UX/UI design outputs: design tokens, component visual specs and a UX evaluation, driven by a Design Intent.",
   "summary": [
-    "Positioning in the pipeline: input is a requirements document, output is THEME, CMP and UXEVAL documents",
-    "Context management: per-phase knowledge retrieval via query-forge-rules, with design_philosophy always resident",
-    "Phase 1: load requirements, collect reference designs, fetch rule documents",
-    "Phase 2.0: acquire and confirm Design Intent (tension axis, distinctiveness importance, references, anti-goals, signature requirement)",
-    "Phase 2: design direction (personality, tension axis, reference cultures, provocations, recommendation, confirmation) with conditional activation",
-    "Phase 3: design tokens (colors, light/dark, typography, spacing, radius/shadow, signature tokenization, quality checklist)",
-    "Phase 4: convert ASCII screen layouts to component visual specs, naming, states, UX notes, signature placement",
-    "Phase 5: UX self-evaluation (Norman, Rams, HIG/Nielsen/Gestalt, distinctiveness/memorability metrics)",
-    "Phase 6: generate documents, AI review, specs ToC update, commit confirmation, completion guidance",
-    "Dialogue principles and anti-patterns such as ungrounded design and platform confusion"
+    "Positioning of the skill between requirements and technical design, with inputs (requirements with ASCII screen specs) and outputs (THEME, CMP, UXEVAL documents)",
+    "Context management: per-phase knowledge retrieval via rules query, resident design philosophy, no agent isolation",
+    "Phase 1: loading requirements, organizing screens/components/functions, collecting reference designs, fetching rule documents",
+    "Phase 2.0: acquiring and confirming Design Intent (experience, tension axis, distinctiveness, references, anti-goals, signature) and branching of later phases",
+    "Phase 2: direction decision covering personality analysis, brand tension axis, cultural references, provocations, recommendation and confirmation",
+    "Phase 3: design token creation (colors with Light/Dark, typography, spacing, radius/shadow, signature tokenization, quality checklist)",
+    "Phase 4: converting ASCII layouts into component visual specs, naming, platform states (iOS/macOS), UX notes, signature placement check",
+    "Phase 5: UX self-evaluation using Norman three levels, Rams principles, HIG/Nielsen/Gestalt, distinctiveness and memorability metrics, summary format",
+    "Phase 6: generating THEME/CMP/UXEVAL files, AI review, specs index update, commit confirmation, completion guidance",
+    "Dialogue principles (visual presentation, rationale, diverge-select-concretize, no bland defaults) and anti-pattern table"
   ],
   "tasks": [
     "Creating visual design from a requirements document",
     "Designing design tokens (colors, typography, spacing, radius)",
     "Defining UI component visual specifications",
-    "Running the start-uxui-design skill",
-    "Defining or confirming a Design Intent",
-    "Evaluating UX quality and distinctiveness of a design",
-    "Editing the start-uxui-design workflow document"
+    "Determining Design Intent and design direction",
+    "Evaluating UX quality of a created design system",
+    "Editing or reviewing the start-uxui-design skill workflow"
   ],
   "title": "UX/UI デザイン創造ワークフロー"
 }

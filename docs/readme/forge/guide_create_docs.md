@@ -26,7 +26,7 @@ The agents launched differ by skill. start-design identifies the requirements do
 After document creation, the following steps execute sequentially:
 
 1. `/forge:review --files {created document} --auto` — AI review + auto-fix
-2. `/forge:update-db-specs` — search-index update (when available)
+2. `/forge:update-db-specs` — search-index update
 3. `/anvil:commit` — commit/push confirmation
 
 ---

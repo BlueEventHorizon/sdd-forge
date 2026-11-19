@@ -1,39 +1,39 @@
 {
-  "content_hash": "b472c518076dc1eca00cac24379d0e56b9f4640f14598efeb6c0dff38eb0865e",
+  "content_hash": "31cd6ebeb1b39ce7198cfa8dc2d51bbb6e768ec15ecbac5a193877bd8facdaff",
   "doc_link_id": "DLID-061pwjejh6yc",
   "keywords": [
     "design document",
     "design principles",
-    "severity catalog",
-    "quantitative targets",
-    "dependency direction",
-    "cohesion",
+    "architecture dependency direction",
+    "responsibility separation",
     "SPOF",
-    "YAGNI",
+    "severity catalog",
+    "quantitative goals",
     "Mermaid",
-    "temporary-feature"
+    "additive feature",
+    "YAGNI"
   ],
   "path": "plugins/forge/docs/design_principles_spec.md",
-  "purpose": "General principles for writing design documents when no project rules exist: definition, prohibited content, quantitative targets, judgment criteria, structure, maintenance, norms and a severity catalog.",
+  "purpose": "General principles for writing design documents (the How) when no project-specific rules exist: scope, prohibited content, judgment criteria, architecture norms, and a severity catalog.",
   "summary": [
-    "Design document definition: responsibility is How, what it excludes, permanence and revision via additive development",
-    "Prohibited content: large source code, unjustified technology choices, features absent from requirements, guaranteed quantitative targets",
-    "Quantitative targets: describe structure and policy only, never guarantees or AI-guessed values",
-    "Judgment criterion: can an implementer implement from this; hierarchical splitting guidance",
-    "Optional sections, Mermaid diagram guidelines, and no history sections",
-    "Maintenance: report implementation-design divergence to the user and record design intent",
-    "Common failure patterns with countermeasures",
-    "Norms for architecture dependency direction, responsibility separation and cohesion, availability and SPOF, with gray-zone tolerances",
-    "Severity catalog covering prohibited content, deliverables, failure patterns, architecture and additive-feature frontmatter"
+    "Definition of a design document: responsibility, what not to write, lifetime, and revision via additive development",
+    "Prohibited content such as bulk source code, unjustified technology choices, and out-of-requirement features",
+    "Handling of quantitative goals: no guarantee statements and no AI-guessed targets",
+    "Judgment criterion: can an implementer implement from this document",
+    "Hierarchical splitting guidance, optional sections, and Mermaid diagram guidelines",
+    "No history sections; maintenance rule to report design-implementation mismatches to the user",
+    "Common failure patterns and countermeasures",
+    "Norms for architecture dependency direction, responsibility separation and cohesion, and availability and SPOF, with gray-zone tolerances",
+    "Severity catalog mapping violations to critical, major, or minor, including deliverables and additive-feature frontmatter"
   ],
   "tasks": [
     "Writing a design document",
     "Reviewing a design document",
-    "Judging whether content belongs in design or requirements",
-    "Assigning severity to design review findings",
-    "Checking architecture dependency direction and responsibility split",
+    "Deciding whether content belongs in a design document or requirements",
+    "Splitting a large design into parent and child documents",
+    "Judging severity of design review findings",
     "Updating a design document after implementation changes",
-    "Splitting a large design document hierarchically"
+    "Defining error handling and SPOF design"
   ],
   "title": "設計書 作成原則"
 }

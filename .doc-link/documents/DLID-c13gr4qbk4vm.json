@@ -1,35 +1,31 @@
 {
-  "content_hash": "cfc5c018ca1d0b36bc38cba740b869f92a17fde899242fe935c50f9d4222e6aa",
+  "content_hash": "ce1132c700d0106d1dee1c37b90252939b0f5d71a04405438b92efe283b50ea3",
   "doc_link_id": "DLID-c13gr4qbk4vm",
   "keywords": [
     "requirements document",
-    "requirements format",
-    "requirement ID catalog",
+    "default format",
+    "requirement ID",
+    "error cases",
+    "additive feature",
     "temporary-feature",
     "frontmatter",
-    "additive feature",
-    "severity catalog",
-    "open items",
-    "template"
+    "severity catalog"
   ],
   "path": "plugins/forge/docs/requirement_format.md",
-  "purpose": "Default format for requirements documents when no project-specific format exists: additive feature frontmatter, requirement ID catalog, body template, and a severity catalog for violations.",
+  "purpose": "Default requirements document format used when no project-specific format exists: frontmatter for additive features, requirement ID catalog, body template, error case notation, and severity catalog.",
   "summary": [
-    "Additive feature frontmatter with feature_type temporary-feature, applied only when the change qualifies as an additive feature",
-    "Four points the feature_note must state, with the frontmatter SoT referenced",
-    "Requirement ID catalog of prefixes such as APP, SCR, FNC, BL, DM, API, NFR, SEC, ERR and GLS",
-    "Body template with title, glossary line, overview, prerequisites, requirement list and open items",
-    "Requirement list subsections for display requirements, operation requirements, and error cases",
-    "Open items table with TBD IDs and deadlines",
-    "Severity catalog serving as the SoT for review severity, which criteria must not judge",
-    "Missing frontmatter on an additive feature requirements document is major, with exclusions to prevent false positives"
+    "Frontmatter rule for additive-feature requirements documents (feature_type: temporary-feature) and when it applies",
+    "Requirement ID prefix catalog (APP, SCR, FNC, BL, DM, API, NFR, SEC, ERR and others) with usage",
+    "Body template: title, glossary, overview, preconditions, requirement list, error cases, open items",
+    "How to write error cases: classification as recoverable or unrecoverable, recovery means, and user reporting",
+    "Severity catalog for violations, as the source of truth for review severity"
   ],
   "tasks": [
     "Creating a requirements document",
     "Reviewing a requirements document",
     "Choosing requirement ID prefixes",
-    "Deciding whether to add additive feature frontmatter",
-    "Judging severity of requirements review findings"
+    "Writing error cases in requirements",
+    "Deciding on additive feature frontmatter"
   ],
   "title": "要件定義書 デフォルトフォーマット"
 }

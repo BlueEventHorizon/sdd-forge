@@ -16,6 +16,7 @@ doc_link_id: DLID-y2bsrqc7agea
 
 - **`${CLAUDE_PLUGIN_ROOT}/docs/requirement_principles_spec.md`** — 要件定義書の定義（責務・書かないもの・存在期間・改訂）
 - **`${CLAUDE_PLUGIN_ROOT}/docs/requirement_format.md`** — 要件定義書テンプレート
+- **`${CLAUDE_PLUGIN_ROOT}/docs/error_classification_spec.md`** — エラーの定義・分類（回復可能・回復不能）・原因の扱い
 - **`${CLAUDE_PLUGIN_ROOT}/docs/spec_design_boundary_spec.md`** — 要件・設計の境界ガイド（What/How の判断基準）
 - **`${CLAUDE_PLUGIN_ROOT}/docs/spec_priorities_spec.md`** — 要件・設計で優先する価値観（構造品質の定量化禁止など）
 - **`${CLAUDE_PLUGIN_ROOT}/docs/document_style_guide.md`** — 文書スタイル指針（タグ・見出し・参照記法・用語）
@@ -232,7 +233,7 @@ Skill ツールで `/forge:review` を起動する:
 
 ### 5.5 specs ToC 更新 DLID-5a2syaga91c1
 
-`/forge:update-db-specs` が利用可能であれば実行する。
+`/forge:update-db-specs` を実行する。
 
 ### 5.6 commit/push 確認 DLID-apk7wqb0zy6g
 

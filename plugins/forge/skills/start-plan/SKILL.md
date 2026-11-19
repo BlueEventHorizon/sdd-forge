@@ -310,7 +310,7 @@ Skill が失敗した場合は Phase 4.4 のチェック項目を手動で確認
 
 ### specs ToC 更新
 
-`/forge:update-db-specs` が利用可能であれば実行する（利用不可の場合はスキップ）。
+`/forge:update-db-specs` を実行する。
 
 ### commit/push 確認
 

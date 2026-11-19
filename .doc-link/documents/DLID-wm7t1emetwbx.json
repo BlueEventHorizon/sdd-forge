@@ -1,35 +1,36 @@
 {
-  "content_hash": "a418c905d283f2d013df77084b145aab5f7970ac8afb1ba58810489ad5fcd32f",
+  "content_hash": "3caf19bf1db8d995b204693034001f8b203c07a43e984397e5d814787a3bb149",
   "doc_link_id": "DLID-wm7t1emetwbx",
   "keywords": [
-    "generic review",
-    "document review",
     "review criteria",
+    "generic review",
+    "SSOT delegation",
+    "review priorities",
     "document style guide",
-    "SSOT reference",
+    "error classification",
+    "recommendation",
     "create_issue",
-    "query-db-rules",
-    "contradiction check"
+    "skip",
+    "review packet"
   ],
   "path": "plugins/forge/docs/criteria/review_criteria_generic.md",
-  "purpose": "Review criteria for generic documents: lists the delegated SSOT documents, the check order, and the rules for choosing fix, create_issue or skip. It holds no severity judgments itself.",
+  "purpose": "Generic review criteria for documents: lists the delegated SSOT documents to check, the check order, and the rules for choosing fix, create_issue or skip recommendations, without holding its own judgments.",
   "summary": [
-    "SoT is the review priorities spec; severity comes from delegated principles catalogs",
-    "SSOT table with the document style guide and project-specific document rules",
-    "P1 style conformance: tags, heading levels, notation consistency, references, terms",
-    "P1 project-specific document rules via query-db-rules",
-    "P2 checks contradictions such as term mismatch and duplicate descriptions",
-    "P3 checks unnecessary complexity via spec priorities spec",
-    "Decision rules for fix, create_issue and skip recommendations",
-    "Three conditions for create_issue",
-    "Built-in style guide alone suffices when project rules resolve to zero results"
+    "Delegation table of SSOT documents by priority P1 to P3 (document style guide, project-specific rules, error classification spec, consistency check, spec priorities)",
+    "Fallback to built-in rules when project-specific rules are not available",
+    "Check order: style conformance, project rules, error handling, contradictions, unnecessary complexity",
+    "Error handling check against the error classification spec (swallowed errors, detectable events, per-cause values)",
+    "P2 contradiction detection limited to conflicting statements, not omissions",
+    "P3 unnecessary complexity judged Yes/No against spec priorities perverse patterns",
+    "Judgment rules for recommendation values fix, create_issue and skip with adoption conditions",
+    "Three conditions for create_issue: no applicable rule, recurrence or objectivity, rule-writable granularity"
   ],
   "tasks": [
-    "Reviewing generic documents",
-    "Building a review packet for a document review",
-    "Checking document style conformance",
-    "Deciding the recommendation for a document review finding",
-    "Editing or extending the generic review criteria"
+    "Reviewing documents with generic criteria",
+    "Building a review packet for document review",
+    "Deciding recommendation values fix, create_issue or skip for review findings",
+    "Revising review criteria or delegation targets",
+    "Reviewing documents that define error handling"
   ],
   "title": "generic レビュー基準"
 }

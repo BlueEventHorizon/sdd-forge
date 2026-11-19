@@ -21,12 +21,12 @@
       "doc_link_id": "DLID-spgw9f5y6thy"
     },
     {
-      "applied_hash": "2aca46c44b8e1cccc516a42030de648c67b15115f000ec7c37df99bee08aeb9e",
-      "doc_link_id": "DLID-rx0jy7wbtg59"
+      "applied_hash": "1c233fa6833df6764ec21e23122b857ecdfaaf0709fcbd2bde6e26d22628841d",
+      "doc_link_id": "DLID-5c0nw4er6es2"
     },
     {
-      "applied_hash": "30f4aa0bb66e183cc7871506cb7769139550287f785b0d0c59c974cbfb195dd4",
-      "doc_link_id": "DLID-5c0nw4er6es2"
+      "applied_hash": "31cd6ebeb1b39ce7198cfa8dc2d51bbb6e768ec15ecbac5a193877bd8facdaff",
+      "doc_link_id": "DLID-061pwjejh6yc"
     },
     {
       "applied_hash": "3254eefb2b30cf4361700213432a2da9b32ff0d04bff507a0c175e148d1aaea3",
@@ -39,6 +39,10 @@
     {
       "applied_hash": "343c2ddd1b8f416d48d344aa50bb0e5b2cef05dfe60c75c2ac3baeb428bae185",
       "doc_link_id": "DLID-8y2jh2y06761"
+    },
+    {
+      "applied_hash": "3caf19bf1db8d995b204693034001f8b203c07a43e984397e5d814787a3bb149",
+      "doc_link_id": "DLID-wm7t1emetwbx"
     },
     {
       "applied_hash": "4939a77b72d91d5efb8ba4a3c01358e9158b479dac8f31ab47cc726f20416582",
@@ -57,10 +61,6 @@
       "doc_link_id": "DLID-yxmqmdjqhsjm"
     },
     {
-      "applied_hash": "73db292198c73ade203a6a5247418ddd28f2e11c35dd757203a1308638f02dc2",
-      "doc_link_id": "DLID-vjef3sn14bg0"
-    },
-    {
       "applied_hash": "75383cc8c6d823206f420e0966ac5a7a358d619349b855c87ce4dd54e3cea1d3",
       "doc_link_id": "DLID-tm2m7nv23dqd"
     },
@@ -71,6 +71,10 @@
     {
       "applied_hash": "7c226f3c93be416f43785057e1d70594da429ac3d2323872f776d4edc6731c55",
       "doc_link_id": "DLID-4vzgex2efq8k"
+    },
+    {
+      "applied_hash": "8521a5b36e841e9e9e426774f3cb21c5e1c736ca517cd753ee4c0c3f103c944f",
+      "doc_link_id": "DLID-vjef3sn14bg0"
     },
     {
       "applied_hash": "8a006e0c77dec94d58e35b46a1d652311ac0f969478ed978b34c973a71451335",
@@ -89,24 +93,20 @@
       "doc_link_id": "DLID-4zxqtf2m3x6t"
     },
     {
-      "applied_hash": "a418c905d283f2d013df77084b145aab5f7970ac8afb1ba58810489ad5fcd32f",
-      "doc_link_id": "DLID-wm7t1emetwbx"
+      "applied_hash": "996752510a5f18418735be23db1272658c5a64115b1251331ebb8b8cc45bc3ef",
+      "doc_link_id": "DLID-rx0jy7wbtg59"
     },
     {
       "applied_hash": "adc9f9aaf8716ada03ad87796d9b96345eb4401781b53d162e8a99267cac5bc0",
       "doc_link_id": "DLID-h9h90g9wcy8f"
     },
     {
-      "applied_hash": "ae2d9e07a72bcccf8864ad6ff4bee4e8acea56c7725e2c37dece7179f61799d9",
-      "doc_link_id": "DLID-y2bsrqc7agea"
-    },
-    {
-      "applied_hash": "b472c518076dc1eca00cac24379d0e56b9f4640f14598efeb6c0dff38eb0865e",
-      "doc_link_id": "DLID-061pwjejh6yc"
-    },
-    {
       "applied_hash": "be634f5152a6857cbedf3d345cf3ac28bc9cc9fdddd8ac9164c6eb8a6399b2f8",
       "doc_link_id": "DLID-s1dhhaprgf1r"
+    },
+    {
+      "applied_hash": "be754bfbeb35a7b035d11ea726d9184fe560ad5d1f8b87a57a518714708ece23",
+      "doc_link_id": "DLID-y2bsrqc7agea"
     },
     {
       "applied_hash": "c0af704de2b5ea23db869d9b8eb5ea5731a50b2a6f2d15d1e058fd660edeea20",
@@ -121,7 +121,7 @@
       "doc_link_id": "DLID-wbwkxysswr60"
     },
     {
-      "applied_hash": "cfc5c018ca1d0b36bc38cba740b869f92a17fde899242fe935c50f9d4222e6aa",
+      "applied_hash": "ce1132c700d0106d1dee1c37b90252939b0f5d71a04405438b92efe283b50ea3",
       "doc_link_id": "DLID-c13gr4qbk4vm"
     },
     {
@@ -175,217 +175,217 @@
   ],
   "last_checks": [
     {
-      "checked_at": "2026-11-19T16:08:15+00:00",
+      "checked_at": "2026-11-19T16:32:26+00:00",
       "doc_link_id": "DLID-061pwjejh6yc",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-19T16:08:15+00:00",
+      "checked_at": "2026-11-19T16:32:26+00:00",
       "doc_link_id": "DLID-0zyw4hj937y9",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-19T16:08:15+00:00",
+      "checked_at": "2026-11-19T16:32:26+00:00",
       "doc_link_id": "DLID-25mzdyrk3jdx",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-19T16:08:15+00:00",
+      "checked_at": "2026-11-19T16:32:26+00:00",
       "doc_link_id": "DLID-2ftdsh6ppjsj",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-19T16:08:15+00:00",
+      "checked_at": "2026-11-19T16:32:26+00:00",
       "doc_link_id": "DLID-31c3mp46a5p2",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-19T16:08:15+00:00",
+      "checked_at": "2026-11-19T16:32:26+00:00",
       "doc_link_id": "DLID-3x673x4r3h83",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-19T16:08:15+00:00",
+      "checked_at": "2026-11-19T16:32:26+00:00",
       "doc_link_id": "DLID-40n3c780ae20",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-19T16:08:15+00:00",
+      "checked_at": "2026-11-19T16:32:26+00:00",
       "doc_link_id": "DLID-45wzpggz1set",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-19T16:08:15+00:00",
+      "checked_at": "2026-11-19T16:32:26+00:00",
       "doc_link_id": "DLID-4vzgex2efq8k",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-19T16:08:15+00:00",
+      "checked_at": "2026-11-19T16:32:26+00:00",
       "doc_link_id": "DLID-4wshmhbcgynm",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-19T16:08:15+00:00",
+      "checked_at": "2026-11-19T16:32:26+00:00",
       "doc_link_id": "DLID-4zxqtf2m3x6t",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-19T16:08:15+00:00",
+      "checked_at": "2026-11-19T16:32:26+00:00",
       "doc_link_id": "DLID-540ak6kxrsxp",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-19T16:08:15+00:00",
+      "checked_at": "2026-11-19T16:32:26+00:00",
       "doc_link_id": "DLID-5c0nw4er6es2",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-19T16:08:15+00:00",
+      "checked_at": "2026-11-19T16:32:26+00:00",
       "doc_link_id": "DLID-5ykqs19cdbks",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-19T16:08:15+00:00",
+      "checked_at": "2026-11-19T16:32:26+00:00",
       "doc_link_id": "DLID-690azhnc61t0",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-19T16:08:15+00:00",
+      "checked_at": "2026-11-19T16:32:26+00:00",
       "doc_link_id": "DLID-8y2jh2y06761",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-19T16:08:15+00:00",
+      "checked_at": "2026-11-19T16:32:26+00:00",
       "doc_link_id": "DLID-c13gr4qbk4vm",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-19T16:08:15+00:00",
+      "checked_at": "2026-11-19T16:32:26+00:00",
       "doc_link_id": "DLID-c59znr7b8f56",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-19T16:08:15+00:00",
+      "checked_at": "2026-11-19T16:32:26+00:00",
       "doc_link_id": "DLID-cbr02jpbxfcs",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-19T16:08:15+00:00",
+      "checked_at": "2026-11-19T16:32:26+00:00",
       "doc_link_id": "DLID-cyrk9xr8vcap",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-19T16:08:15+00:00",
+      "checked_at": "2026-11-19T16:32:26+00:00",
       "doc_link_id": "DLID-dcec6pr177c9",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-19T16:08:15+00:00",
+      "checked_at": "2026-11-19T16:32:26+00:00",
       "doc_link_id": "DLID-e9tn4760zpw5",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-19T16:08:15+00:00",
+      "checked_at": "2026-11-19T16:32:26+00:00",
       "doc_link_id": "DLID-f9ny9e932trv",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-19T16:08:15+00:00",
+      "checked_at": "2026-11-19T16:32:26+00:00",
       "doc_link_id": "DLID-h9h90g9wcy8f",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-19T16:08:15+00:00",
+      "checked_at": "2026-11-19T16:32:26+00:00",
       "doc_link_id": "DLID-jtc4qnjwbdxf",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-19T16:08:15+00:00",
+      "checked_at": "2026-11-19T16:32:26+00:00",
       "doc_link_id": "DLID-m77gjek2tw2b",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-19T16:08:15+00:00",
+      "checked_at": "2026-11-19T16:32:26+00:00",
       "doc_link_id": "DLID-m9xnmkwxvjpf",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-19T16:08:15+00:00",
+      "checked_at": "2026-11-19T16:32:26+00:00",
       "doc_link_id": "DLID-ns59za8fens1",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-19T16:08:15+00:00",
+      "checked_at": "2026-11-19T16:32:26+00:00",
       "doc_link_id": "DLID-pdvdjb49qpr4",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-19T16:08:15+00:00",
+      "checked_at": "2026-11-19T16:32:26+00:00",
       "doc_link_id": "DLID-rx0jy7wbtg59",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-19T16:08:15+00:00",
+      "checked_at": "2026-11-19T16:32:26+00:00",
       "doc_link_id": "DLID-s1dhhaprgf1r",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-19T16:08:15+00:00",
+      "checked_at": "2026-11-19T16:32:26+00:00",
       "doc_link_id": "DLID-spgw9f5y6thy",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-19T16:08:15+00:00",
+      "checked_at": "2026-11-19T16:32:26+00:00",
       "doc_link_id": "DLID-t8jcg5jkb5mj",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-19T16:08:15+00:00",
+      "checked_at": "2026-11-19T16:32:26+00:00",
       "doc_link_id": "DLID-tm2m7nv23dqd",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-19T16:08:15+00:00",
+      "checked_at": "2026-11-19T16:32:26+00:00",
       "doc_link_id": "DLID-v5e2zg521ymv",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-19T16:08:15+00:00",
+      "checked_at": "2026-11-19T16:32:26+00:00",
       "doc_link_id": "DLID-vjef3sn14bg0",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-19T16:08:15+00:00",
+      "checked_at": "2026-11-19T16:32:26+00:00",
       "doc_link_id": "DLID-wbwkxysswr60",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-19T16:08:15+00:00",
+      "checked_at": "2026-11-19T16:32:26+00:00",
       "doc_link_id": "DLID-wkh7nt1wrds7",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-19T16:08:15+00:00",
+      "checked_at": "2026-11-19T16:32:26+00:00",
       "doc_link_id": "DLID-wm7t1emetwbx",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-19T16:08:15+00:00",
+      "checked_at": "2026-11-19T16:32:26+00:00",
       "doc_link_id": "DLID-y2bsrqc7agea",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-19T16:08:15+00:00",
+      "checked_at": "2026-11-19T16:32:26+00:00",
       "doc_link_id": "DLID-yw5v4138tvb8",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-19T16:08:15+00:00",
+      "checked_at": "2026-11-19T16:32:26+00:00",
       "doc_link_id": "DLID-yxmqmdjqhsjm",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-19T16:08:15+00:00",
+      "checked_at": "2026-11-19T16:32:26+00:00",
       "doc_link_id": "DLID-z571pg6rda7f",
       "result": "success"
     }
@@ -427,6 +427,13 @@
       "heading": "3.6 criteria はグレーゾーン判定を持たない",
       "position": 16,
       "section_id": "DLID-z25d1bsqf8qd"
+    },
+    {
+      "content_hash": "0114135f45ed7e10c219f98a4de6ec2896f977694f17aa1a288a51b082fd161b",
+      "doc_link_id": "DLID-5c0nw4er6es2",
+      "heading": "対話型要件定義ワークフロー",
+      "position": 0,
+      "section_id": "DLID-msjbaxge7bb9"
     },
     {
       "content_hash": "025bd39ba0f12d3baf67895fd97fa177b114d055e91877e02edfa98b5abb0362",
@@ -497,13 +504,6 @@
       "heading": "forge アンチパターン集",
       "position": 0,
       "section_id": "DLID-jwz7ktrdvkky"
-    },
-    {
-      "content_hash": "040c4a921cbfb63422d3538bd843e2697fb95099126ae6111ff74e5cf82dde2b",
-      "doc_link_id": "DLID-y2bsrqc7agea",
-      "heading": "必須文書",
-      "position": 1,
-      "section_id": "DLID-sa3k15bj8mh3"
     },
     {
       "content_hash": "0415f03d9fd54ee80f378d63b2fe3bd96ad09b9ac7273582c2fd5bc45cc30363",
@@ -772,13 +772,6 @@
       "section_id": "DLID-sg422vfhpt74"
     },
     {
-      "content_hash": "1256abc8cd53ab822560d6a6c6e66a353d12cba2d296f1c76c0f4ca00f70205c",
-      "doc_link_id": "DLID-y2bsrqc7agea",
-      "heading": "Phase 5: 品質確認・完了処理",
-      "position": 24,
-      "section_id": "DLID-73wdem49bsnv"
-    },
-    {
       "content_hash": "125bc35266c779a707be7ea309fd6d5b94cbf59b258b84f68ec5ce7653b8f8a1",
       "doc_link_id": "DLID-dcec6pr177c9",
       "heading": "3.7 委譲先 principles への全委譲",
@@ -861,6 +854,13 @@
       "heading": "エラーハンドリング",
       "position": 4,
       "section_id": "DLID-zgkbhw6v0ty8"
+    },
+    {
+      "content_hash": "16587f7c5e9e7b0d22271e4360fdec5fe1849444deaf8b0023a718592f7aab15",
+      "doc_link_id": "DLID-rx0jy7wbtg59",
+      "heading": "Phase 6: 文書生成・品質確認",
+      "position": 54,
+      "section_id": "DLID-rxkkx2rtxyxs"
     },
     {
       "content_hash": "1658eadbed1cf9f2f5d8971f11dd90aef92503b7ef3fd2df1f544c5312f7844f",
@@ -1164,6 +1164,13 @@
       "section_id": "DLID-hx44sczxqdw7"
     },
     {
+      "content_hash": "22c2795f5f3a367928cd9e5cbd62c65084346aee5003e8a182dd3422477e92d2",
+      "doc_link_id": "DLID-rx0jy7wbtg59",
+      "heading": "UX/UI デザイン創造ワークフロー",
+      "position": 0,
+      "section_id": "DLID-am88frpvnh5j"
+    },
+    {
       "content_hash": "2307b4ee41b2d1532d2402b6bcec59ecce5f7b2dfd1c2c9f9e6c8149fc5830e9",
       "doc_link_id": "DLID-m77gjek2tw2b",
       "heading": "ADR 利用規範",
@@ -1211,6 +1218,13 @@
       "heading": "3.1 要件抽出の優先順位",
       "position": 14,
       "section_id": "DLID-dz5wqqyqgwxr"
+    },
+    {
+      "content_hash": "23c55144417b9a5b3cbd9639fce2771ff505ec88397d8345b40c1ac4a988a880",
+      "doc_link_id": "DLID-rx0jy7wbtg59",
+      "heading": "6.4 specs ToC 更新",
+      "position": 58,
+      "section_id": "DLID-eashsr7j455k"
     },
     {
       "content_hash": "24ab3a1dfb81e0091e2678576fdbf46a01ce0c7c11eef0b4afa7e985502885ad",
@@ -1309,13 +1323,6 @@
       "heading": "2.3 参照文化の収集",
       "position": 21,
       "section_id": "DLID-2xt4ecc4kv26"
-    },
-    {
-      "content_hash": "2a5c4b33ffa6e3f70855187e51759399b9ac5cb33333c18d3c1bbac25e876355",
-      "doc_link_id": "DLID-061pwjejh6yc",
-      "heading": "規範",
-      "position": 19,
-      "section_id": "DLID-yvheref94rq8"
     },
     {
       "content_hash": "2ad2db7dd3d23920f35332676a780d368917a19a1c3c8a95ea5adb5f8177f7dd",
@@ -1423,13 +1430,6 @@
       "section_id": "DLID-ewaj5yp1rht4"
     },
     {
-      "content_hash": "311f1bae9c01567b16ca8b6ae21037e951fdfa81e696f0940da11995f79e3e51",
-      "doc_link_id": "DLID-wm7t1emetwbx",
-      "heading": "generic レビュー基準",
-      "position": 0,
-      "section_id": "DLID-1d22mabn3k7z"
-    },
-    {
       "content_hash": "3261f7fecc74c82d879c481d55b26d73836ef85ceb3816d552375da2e3b2bff5",
       "doc_link_id": "DLID-rx0jy7wbtg59",
       "heading": "Phase 3: デザイントークン創造",
@@ -1463,6 +1463,13 @@
       "heading": "用語の定義と共有（グロッサリー）",
       "position": 23,
       "section_id": "DLID-ack1n1njbert"
+    },
+    {
+      "content_hash": "332683a7f77004a51984b1a4c04ce6cd5d25c7290d8251302ffa8512139cf829",
+      "doc_link_id": "DLID-y2bsrqc7agea",
+      "heading": "Phase 5: 品質確認・完了処理",
+      "position": 24,
+      "section_id": "DLID-73wdem49bsnv"
     },
     {
       "content_hash": "3328f9a4805240c3c9f714a73cb91cce9af41880870c33de9a2010aba86b9b91",
@@ -1759,6 +1766,13 @@
       "section_id": "DLID-edpd3vqv9h50"
     },
     {
+      "content_hash": "40a03a8b8288b448c1d0da11ad624ecd06e71ccac01a7e60d6f9430f1ef16a26",
+      "doc_link_id": "DLID-061pwjejh6yc",
+      "heading": "アーキテクチャ・責務分割・可用性",
+      "position": 25,
+      "section_id": "DLID-ny8nvb0ykr5r"
+    },
+    {
       "content_hash": "40a08286844ca7d86354aab13b8790a8c3c03b9249fc5dc5930389ee905d0c78",
       "doc_link_id": "DLID-cyrk9xr8vcap",
       "heading": "3.1 この制約は実装を縛らない",
@@ -1815,13 +1829,6 @@
       "section_id": "DLID-01xd440jn190"
     },
     {
-      "content_hash": "424cfc32ce1bd3b71b5fb421fca25babd85d466d0f4efab4ca4ffb952ecbde38",
-      "doc_link_id": "DLID-rx0jy7wbtg59",
-      "heading": "6.4 specs ToC 更新",
-      "position": 58,
-      "section_id": "DLID-eashsr7j455k"
-    },
-    {
       "content_hash": "42b8926f1b3445be339a7b424e82626e142fb7dbd4dad21b1fc96b243c678fb9",
       "doc_link_id": "DLID-jtc4qnjwbdxf",
       "heading": "2.4 解除条件",
@@ -1862,13 +1869,6 @@
       "heading": "1.2 要件からの情報整理",
       "position": 9,
       "section_id": "DLID-hd4jgxex9cnq"
-    },
-    {
-      "content_hash": "4432d489d8448f38cd4a43fcf4cdbad6cc88e584c087f142be8c0e21e03f84a6",
-      "doc_link_id": "DLID-y2bsrqc7agea",
-      "heading": "5.5 specs ToC 更新",
-      "position": 29,
-      "section_id": "DLID-5a2syaga91c1"
     },
     {
       "content_hash": "448fcadcea598dc0b884595fb8a5e73a32de7cdef46c6a833ea1353fbaa894b3",
@@ -1932,13 +1932,6 @@
       "heading": "3. 判定ルール",
       "position": 3,
       "section_id": "DLID-xye42s3bmpb8"
-    },
-    {
-      "content_hash": "49388b6e8c35bf9ac5cda4908473082247c5090b30da1ca78e2cb20b94beff1e",
-      "doc_link_id": "DLID-061pwjejh6yc",
-      "heading": "可用性・SPOF 規範 (Appendix A.9 由来)",
-      "position": 18,
-      "section_id": "DLID-2tyg711r6bfc"
     },
     {
       "content_hash": "496be789b635297c61d041d180931948a803d6ff9744301e8f71be1ebfbc20e3",
@@ -2256,6 +2249,13 @@
       "section_id": "DLID-dbhf496wayc0"
     },
     {
+      "content_hash": "57a5fdd920f5546797b9f5b18331b1c35334d95286784fb24313b0ec897ded71",
+      "doc_link_id": "DLID-wm7t1emetwbx",
+      "heading": "1. SSOT参照",
+      "position": 1,
+      "section_id": "DLID-63wpw8s262ay"
+    },
+    {
       "content_hash": "58aa4eb7c0bb848105e37607c6916367562b1fb5cf4422745926fcc96c52c695",
       "doc_link_id": "DLID-wbwkxysswr60",
       "heading": "H9: エラーからの回復支援",
@@ -2289,6 +2289,13 @@
       "heading": "forge スキルから（推奨）",
       "position": 20,
       "section_id": "DLID-gkkecvdp3q2q"
+    },
+    {
+      "content_hash": "5b6e64293322f1f8ed3d56f79e2c0f55757043965ab5099df9d029709b8a1047",
+      "doc_link_id": "DLID-rx0jy7wbtg59",
+      "heading": "Phase 別の知識取得（query-forge-rules 経由）",
+      "position": 4,
+      "section_id": "DLID-and90t5gyj7d"
     },
     {
       "content_hash": "5bf16765e3cc2cdb4fd25dfa34399f21f3099adeebc10ee3c583feaacb7ffe2c",
@@ -2354,13 +2361,6 @@
       "section_id": "DLID-54wtgy4v71th"
     },
     {
-      "content_hash": "5ec7ea6244f6fb5e1a898a384e634f8c17a95a63504cc356a142ed4e739f18cc",
-      "doc_link_id": "DLID-rx0jy7wbtg59",
-      "heading": "UX/UI デザイン創造ワークフロー",
-      "position": 0,
-      "section_id": "DLID-am88frpvnh5j"
-    },
-    {
       "content_hash": "5f1575d57baf38a462aadf63d6512be6ee658e531ff2df85291d587a80249cc9",
       "doc_link_id": "DLID-25mzdyrk3jdx",
       "heading": "Navigation Bar（ナビゲーションバー）",
@@ -2394,13 +2394,6 @@
       "heading": "レイアウト",
       "position": 26,
       "section_id": "DLID-rpkcdfvrcgd6"
-    },
-    {
-      "content_hash": "60c13ee8ce0085800bac5f283524ee5300ea35988eddd87710a2423e45e32ca8",
-      "doc_link_id": "DLID-vjef3sn14bg0",
-      "heading": "必須文書",
-      "position": 1,
-      "section_id": "DLID-22paceet1m5n"
     },
     {
       "content_hash": "6279fb973d6b6dc9f61cbf3662322dc216de9a60332df93d4301e52d17c48ccb",
@@ -2522,13 +2515,6 @@
       "section_id": "DLID-y64hg9vcsf6p"
     },
     {
-      "content_hash": "68a49af99d4990eea19aef95e2e5b82c6f8594f5e94abfed4d113022549e0865",
-      "doc_link_id": "DLID-5c0nw4er6es2",
-      "heading": "対話型要件定義ワークフロー",
-      "position": 0,
-      "section_id": "DLID-msjbaxge7bb9"
-    },
-    {
       "content_hash": "68bf234d50ad47457a106888a7993b64b41814a12ab3f2d2dcd035583fd5053c",
       "doc_link_id": "DLID-cyrk9xr8vcap",
       "heading": "4. merge タイミングと手順",
@@ -2571,11 +2557,11 @@
       "section_id": "DLID-2t4fx42z65bw"
     },
     {
-      "content_hash": "6b1e2d3afea6f45bd334c89f54a6a33b50b3135a015d86a05ef243f85b2e3935",
-      "doc_link_id": "DLID-061pwjejh6yc",
-      "heading": "アーキテクチャ・責務分割・可用性",
-      "position": 25,
-      "section_id": "DLID-ny8nvb0ykr5r"
+      "content_hash": "6ac8de11033100164ad42c5f1b997164b941838c519f255abfa2e58a80b01595",
+      "doc_link_id": "DLID-y2bsrqc7agea",
+      "heading": "5.5 specs ToC 更新",
+      "position": 29,
+      "section_id": "DLID-5a2syaga91c1"
     },
     {
       "content_hash": "6b813b74ca72797a07dbe90867fffff2e0b45abc13036163b28b45cab4a4cd11",
@@ -2618,6 +2604,13 @@
       "heading": "メニューバー（必須）",
       "position": 8,
       "section_id": "DLID-rreaw2qzxa07"
+    },
+    {
+      "content_hash": "6cf67bd0bc5c3596f8a31ad1c7019a0c875c3d670035ce6ab35adcfa5e1f9c39",
+      "doc_link_id": "DLID-vjef3sn14bg0",
+      "heading": "Phase 5: 品質確認・完了処理",
+      "position": 26,
+      "section_id": "DLID-9jr0061khqwk"
     },
     {
       "content_hash": "6d46884999f9f4b54d39947ae638b8989868c1c28390227026329354246ac0c8",
@@ -2697,6 +2690,13 @@
       "section_id": "DLID-8j157nadhq0y"
     },
     {
+      "content_hash": "71b9c63055a06f4760c2adf249dfe22de2fb1505f0b417b3c152236e1b9157c8",
+      "doc_link_id": "DLID-y2bsrqc7agea",
+      "heading": "Figma 要件定義書作成ワークフロー",
+      "position": 0,
+      "section_id": "DLID-78kh6rsk7vwc"
+    },
+    {
       "content_hash": "71d0903717b35b11d64c22cdea0fbed0cf0b715f751795c5a95b75efef2150c8",
       "doc_link_id": "DLID-vjef3sn14bg0",
       "heading": "5.1 品質チェック",
@@ -2751,6 +2751,13 @@
       "heading": "8. 8pt グリッドシステム",
       "position": 36,
       "section_id": "DLID-k2ttsc5za2gd"
+    },
+    {
+      "content_hash": "74cf395d130ff3f8ddc4149d21f27d3c6b42323b9e25520414cf9313cde244f4",
+      "doc_link_id": "DLID-rx0jy7wbtg59",
+      "heading": "コンテキスト管理",
+      "position": 2,
+      "section_id": "DLID-bzjch8rw131d"
     },
     {
       "content_hash": "756bd0e98e4e3b2f4ec71bf09e6f30658fbaa9bb6ba9adddfdaa185b090fba33",
@@ -2814,13 +2821,6 @@
       "heading": "2. 見出しレベル",
       "position": 4,
       "section_id": "DLID-91nvkw8ns148"
-    },
-    {
-      "content_hash": "7876db94268a75901fafd943a2493baa47e2496c5aa7ccb669ea47ffc620950b",
-      "doc_link_id": "DLID-5c0nw4er6es2",
-      "heading": "必須文書",
-      "position": 1,
-      "section_id": "DLID-ma4kxhc0esn4"
     },
     {
       "content_hash": "7882d5dd33ca5e81dba85b3e2fefecc096ac78aa145903848c2774a11aa5e7ae",
@@ -2891,20 +2891,6 @@
       "heading": "1.3 決まらない対象",
       "position": 4,
       "section_id": "DLID-633angt31hds"
-    },
-    {
-      "content_hash": "7b723f2a6db1e2c94dd7fdfb3e1d792157b174922dd5acb50a45eee30368b868",
-      "doc_link_id": "DLID-rx0jy7wbtg59",
-      "heading": "Phase 6: 文書生成・品質確認",
-      "position": 54,
-      "section_id": "DLID-rxkkx2rtxyxs"
-    },
-    {
-      "content_hash": "7c7be1549373bf701078bea218a5353b07305457f7f1b7bef171b9230e24be2b",
-      "doc_link_id": "DLID-vjef3sn14bg0",
-      "heading": "要件定義書作成ワークフロー（既存アプリ解析版）",
-      "position": 0,
-      "section_id": "DLID-9ht6x2qngyt3"
     },
     {
       "content_hash": "7ccb4d0712cb47c3afd1ecac8550e10e478aa81c9b031b5d351e6eb9d04d011a",
@@ -3019,6 +3005,13 @@
       "section_id": "DLID-9dfa8447ntjx"
     },
     {
+      "content_hash": "81d2bde7e7ab0e25640789668f7399e5c30f01ff9dd926c55a64ef34920c9738",
+      "doc_link_id": "DLID-061pwjejh6yc",
+      "heading": "重大度カタログ",
+      "position": 21,
+      "section_id": "DLID-9khqhrkz2vrt"
+    },
+    {
       "content_hash": "82259377057f117db899615625031391fe0b9182dc3494baf34a5f70bd45ec88",
       "doc_link_id": "DLID-c59znr7b8f56",
       "heading": "3.2 長音ルール",
@@ -3082,11 +3075,11 @@
       "section_id": "DLID-d9je0cf64ma7"
     },
     {
-      "content_hash": "851b6841ccd392e4e533c36260e4810390a5f612e82fab1de1f07eeef2e474d8",
-      "doc_link_id": "DLID-5c0nw4er6es2",
-      "heading": "5.5 specs ToC 更新",
-      "position": 35,
-      "section_id": "DLID-vmk2sc54qevq"
+      "content_hash": "858288192b9365d10cb9320e601927d64fe92dac077792bec3ff5ec89939e228",
+      "doc_link_id": "DLID-vjef3sn14bg0",
+      "heading": "5.4 specs ToC 更新",
+      "position": 30,
+      "section_id": "DLID-8vg3s8zztdvy"
     },
     {
       "content_hash": "85bf3e7efcff8bd2b14a29c589e72dd20dc06386deb8aab546071ab57d6b992a",
@@ -3152,18 +3145,18 @@
       "section_id": "DLID-tt6w0a5dq10k"
     },
     {
-      "content_hash": "889884cb84c70ef6e37d40431b67b5bd554783b63ed30f027c5d6d70db10275f",
-      "doc_link_id": "DLID-5c0nw4er6es2",
-      "heading": "Phase 5: 統合・品質確認・完了処理",
-      "position": 30,
-      "section_id": "DLID-aywafe8zghjm"
-    },
-    {
       "content_hash": "895e376ddaecc58dda01f53828f289b851e502151077b6651236701e501f9ebf",
       "doc_link_id": "DLID-yw5v4138tvb8",
       "heading": "メニューバー",
       "position": 36,
       "section_id": "DLID-f5b179836na7"
+    },
+    {
+      "content_hash": "8981ebd2ce75e4e087fac6293c0eb9c3d453e133a575899142abca00b554d0ec",
+      "doc_link_id": "DLID-c13gr4qbk4vm",
+      "heading": "要件定義書 デフォルトフォーマット",
+      "position": 0,
+      "section_id": "DLID-xce107ay8m4n"
     },
     {
       "content_hash": "89c7647033cc6215aeb520d4f6db1c325d301b22ad325d9586a4c2c68cbe230a",
@@ -3502,13 +3495,6 @@
       "section_id": "DLID-64qm6d9a3mg5"
     },
     {
-      "content_hash": "99490b07e81eb71d75a74d1048dc9f0b3feb7b10bc3efa0ce2edd92e85aec106",
-      "doc_link_id": "DLID-wm7t1emetwbx",
-      "heading": "1. SSOT参照",
-      "position": 1,
-      "section_id": "DLID-63wpw8s262ay"
-    },
-    {
       "content_hash": "998713c9e26d49d3d26fe3f3b71a49635b21587fa16e33c49cc184811786b877",
       "doc_link_id": "DLID-vjef3sn14bg0",
       "heading": "目的",
@@ -3535,13 +3521,6 @@
       "heading": "7. 歴史的記録を置かない",
       "position": 18,
       "section_id": "DLID-xqbx08m9fhrn"
-    },
-    {
-      "content_hash": "9a43a52c5964e2b2478d2d04f03552e3841b8865b2e15272e6cb955d35f0c5a7",
-      "doc_link_id": "DLID-c13gr4qbk4vm",
-      "heading": "本体フォーマット",
-      "position": 3,
-      "section_id": "DLID-6qbgqbk1xcw9"
     },
     {
       "content_hash": "9b635521c8b5580f7175ff574067252838c8c08e7d99ade0e4af5baf99bbc264",
@@ -3831,6 +3810,13 @@
       "section_id": "DLID-wexxdtv7j43m"
     },
     {
+      "content_hash": "a926f73533ea3b6d5fe2dd941e5f9343b9c732404cd7dcb4ae0001f2d1aacc80",
+      "doc_link_id": "DLID-061pwjejh6yc",
+      "heading": "可用性・SPOF 規範 (Appendix A.9 由来)",
+      "position": 18,
+      "section_id": "DLID-2tyg711r6bfc"
+    },
+    {
       "content_hash": "a944d3f5f1865738f6fa25bf5a365d3385b4e444347ff3ca71891d34e7fd5a96",
       "doc_link_id": "DLID-vjef3sn14bg0",
       "heading": "5.2 AI レビュー実施",
@@ -3964,18 +3950,18 @@
       "section_id": "DLID-8sshsy7b619r"
     },
     {
-      "content_hash": "b13d4056cb99dacfa43e353ee546bc614e9c83f5d680d405dc93769e9b6ad772",
-      "doc_link_id": "DLID-y2bsrqc7agea",
-      "heading": "Figma 要件定義書作成ワークフロー",
-      "position": 0,
-      "section_id": "DLID-78kh6rsk7vwc"
-    },
-    {
       "content_hash": "b146626451ff71e795e33222d5ee61df8a0f4e3be781f0fdb0963473a38d4e8c",
       "doc_link_id": "DLID-f9ny9e932trv",
       "heading": "7. 観点別の利用ガイド (P1/P2/P3 ルーティング)",
       "position": 12,
       "section_id": "DLID-mp4gp2bhmw14"
+    },
+    {
+      "content_hash": "b15b304d01d5cf2f12288845a0c98e100d608875b51cc126aca84ef2b8c9ba1c",
+      "doc_link_id": "DLID-vjef3sn14bg0",
+      "heading": "要件定義書作成ワークフロー（既存アプリ解析版）",
+      "position": 0,
+      "section_id": "DLID-9ht6x2qngyt3"
     },
     {
       "content_hash": "b22ddb5599a1193cb805eeeebc852c7a2165ff4120b5694b50b0b57665fe2e70",
@@ -4041,17 +4027,17 @@
       "section_id": "DLID-fqtmavm010wj"
     },
     {
-      "content_hash": "b4ef8ac5f0dd6f11d9fe0ddbf2071a3a2fa77f086b5b6ee4ceac9281cf33f34f",
-      "doc_link_id": "DLID-vjef3sn14bg0",
-      "heading": "Phase 5: 品質確認・完了処理",
-      "position": 26,
-      "section_id": "DLID-9jr0061khqwk"
+      "content_hash": "b4a33b8e9d8c2db5931e839b19f469274fd15521a5e82d3a89a0800617e9e2dd",
+      "doc_link_id": "DLID-c13gr4qbk4vm",
+      "heading": "本体フォーマット",
+      "position": 3,
+      "section_id": "DLID-6qbgqbk1xcw9"
     },
     {
       "content_hash": "b54b2d6d2c6b6b4eabfe641b5bdfd04928e7428dd107eba878aa596f1b840f15",
       "doc_link_id": "DLID-c13gr4qbk4vm",
       "heading": "追加 feature 用 frontmatter",
-      "position": 5,
+      "position": 6,
       "section_id": "DLID-29nvbbd9e3rm"
     },
     {
@@ -4123,13 +4109,6 @@
       "heading": "6.5 commit/push 確認",
       "position": 59,
       "section_id": "DLID-2qs967p4jnxr"
-    },
-    {
-      "content_hash": "b7f482e4fe44f7e9f912720329e45626ce934a2bc9449840a08c8c1c409a181d",
-      "doc_link_id": "DLID-061pwjejh6yc",
-      "heading": "重大度カタログ",
-      "position": 21,
-      "section_id": "DLID-9khqhrkz2vrt"
     },
     {
       "content_hash": "b804608e72ba615b926f3688425700464c5ed8ddcbbb93138a05fb7eb2932941",
@@ -4338,7 +4317,7 @@
       "content_hash": "c0c5647faef5d5e193cdb9f2411de142cf3e568b738c314a0512268ae05b03f9",
       "doc_link_id": "DLID-c13gr4qbk4vm",
       "heading": "重大度カタログ",
-      "position": 4,
+      "position": 5,
       "section_id": "DLID-6ygh93jm4py6"
     },
     {
@@ -4361,13 +4340,6 @@
       "heading": "3.3 強調記法の使い分け",
       "position": 8,
       "section_id": "DLID-s634tp80a069"
-    },
-    {
-      "content_hash": "c27592ff4522e3d1adfde979f02d65f20084a88ff8a03f25f15f5f9fd8476e6f",
-      "doc_link_id": "DLID-c13gr4qbk4vm",
-      "heading": "要件定義書 デフォルトフォーマット",
-      "position": 0,
-      "section_id": "DLID-xce107ay8m4n"
     },
     {
       "content_hash": "c2881b31d74e69954f1020f19fa426f209cfc66f92e6f773b40a5dc2c3132820",
@@ -4431,6 +4403,13 @@
       "heading": "定数とレジストリ",
       "position": 6,
       "section_id": "DLID-rvxmz6pegzmz"
+    },
+    {
+      "content_hash": "c598fface60cf05b9b0e0788b81417ef6757cbe9e98668094c99c8c948336406",
+      "doc_link_id": "DLID-061pwjejh6yc",
+      "heading": "設計書 作成原則",
+      "position": 0,
+      "section_id": "DLID-mvjghckvewxj"
     },
     {
       "content_hash": "c5e8f59f025de14d2090a9200979f442f85a79e4f93b2fe017d5deb6e145c6be",
@@ -4550,13 +4529,6 @@
       "heading": "7. 終了と結果",
       "position": 7,
       "section_id": "DLID-yy10wbm1qhqk"
-    },
-    {
-      "content_hash": "cb46db8a3ff8604f67c04c7ab30d690b1be41f04c6cdc5acc57886acecfcb41e",
-      "doc_link_id": "DLID-wm7t1emetwbx",
-      "heading": "2. チェック順",
-      "position": 2,
-      "section_id": "DLID-wn2atcngzmcv"
     },
     {
       "content_hash": "cba03ab3754c72d92a7cc628bf5313a0b090adc8ae8983739361ccfd71809612",
@@ -4818,6 +4790,13 @@
       "section_id": "DLID-srfbd4pz856e"
     },
     {
+      "content_hash": "d6ea6b59ef4e73f804c8bdb95e8e46e2965f5bc2c13d938306954d030a6fb922",
+      "doc_link_id": "DLID-5c0nw4er6es2",
+      "heading": "必須文書",
+      "position": 1,
+      "section_id": "DLID-ma4kxhc0esn4"
+    },
+    {
       "content_hash": "d6f4cc2a3cce61b00353390ef0a3095f4d2d343f761ab6ce68e618eafe11e655",
       "doc_link_id": "DLID-cyrk9xr8vcap",
       "heading": "1. 適用条件（いつ差分開発として feature を使うか）",
@@ -4886,13 +4865,6 @@
       "heading": "9.2 命名の考え方",
       "position": 23,
       "section_id": "DLID-2m0mmw13d0t9"
-    },
-    {
-      "content_hash": "da9d51aaf180a5a72b128e20f2a97d391caaabc877794f09717c8e763606da5e",
-      "doc_link_id": "DLID-vjef3sn14bg0",
-      "heading": "5.4 specs ToC 更新",
-      "position": 30,
-      "section_id": "DLID-8vg3s8zztdvy"
     },
     {
       "content_hash": "dab93ebe87f0bd5e17cef708a513e518149f06e6088c3b99a1216fc674e3097a",
@@ -5112,6 +5084,13 @@
       "section_id": "DLID-zbs6pkr4ph7r"
     },
     {
+      "content_hash": "e36db11e95a8223c2e0f6494629102beea900d0b6d46156668dcbbaa36d74bff",
+      "doc_link_id": "DLID-vjef3sn14bg0",
+      "heading": "必須文書",
+      "position": 1,
+      "section_id": "DLID-22paceet1m5n"
+    },
+    {
       "content_hash": "e387be0c8ed41b40e3965c853cd2920c0a01b222d77edfea70d00b175767d1bc",
       "doc_link_id": "DLID-c59znr7b8f56",
       "heading": "5.2 例",
@@ -5152,6 +5131,13 @@
       "heading": "ナビゲーション/フロー構造の確認",
       "position": 21,
       "section_id": "DLID-j7514364qx9h"
+    },
+    {
+      "content_hash": "e434d8ab0135ca26f9b3413780dec65e6abb7ccf919a5914a78a080b8afebb57",
+      "doc_link_id": "DLID-c13gr4qbk4vm",
+      "heading": "エラーケースの書き方",
+      "position": 4,
+      "section_id": "DLID-pzsvndgxcyfb"
     },
     {
       "content_hash": "e4597c1cbf2f7fdfffb413ac5bf568767a8933dde0c63cb4706e951bcf53edea",
@@ -5210,6 +5196,13 @@
       "section_id": "DLID-62ay4x1bapwe"
     },
     {
+      "content_hash": "e62e481d10bdc5608c3b270ccaf43ca853799d80f00fe06e843ab90b6635ffd2",
+      "doc_link_id": "DLID-y2bsrqc7agea",
+      "heading": "必須文書",
+      "position": 1,
+      "section_id": "DLID-sa3k15bj8mh3"
+    },
+    {
       "content_hash": "e644187fe20244725b6f734940c7ba5617c49cf8872dafd5f7bf2f5091f7740d",
       "doc_link_id": "DLID-y2bsrqc7agea",
       "heading": "目的",
@@ -5236,6 +5229,20 @@
       "heading": "フィーチャー名が不要な場合",
       "position": 5,
       "section_id": "DLID-wmgtzjnwjb82"
+    },
+    {
+      "content_hash": "e7388ed926be73acbe1bbcf86f47d8b86e5990d30442dac646c05b89a1705e2b",
+      "doc_link_id": "DLID-5c0nw4er6es2",
+      "heading": "5.5 specs ToC 更新",
+      "position": 35,
+      "section_id": "DLID-vmk2sc54qevq"
+    },
+    {
+      "content_hash": "e73ef51b3dc85b17f3971b3913c6da86288f9830ca4b894ddf1077352f231579",
+      "doc_link_id": "DLID-5c0nw4er6es2",
+      "heading": "Phase 5: 統合・品質確認・完了処理",
+      "position": 30,
+      "section_id": "DLID-aywafe8zghjm"
     },
     {
       "content_hash": "e742c96eb57b65e62ada76b2be7a65f7b92ad72457c39cefdc3ed829399284ba",
@@ -5301,11 +5308,11 @@
       "section_id": "DLID-4czb12r136fb"
     },
     {
-      "content_hash": "ecec98c8c393137a2d82c04a9999a8ef7e12fe21e9aa23cc625b98740009079f",
-      "doc_link_id": "DLID-rx0jy7wbtg59",
-      "heading": "Phase 別の知識取得（query-forge-rules 経由）",
-      "position": 4,
-      "section_id": "DLID-and90t5gyj7d"
+      "content_hash": "ec74e32f922df626459c3ea015940c34edc1212eb28d79aabbde60622b739857",
+      "doc_link_id": "DLID-wm7t1emetwbx",
+      "heading": "2. チェック順",
+      "position": 2,
+      "section_id": "DLID-wn2atcngzmcv"
     },
     {
       "content_hash": "ecf96fbd2afad83a0b1c926b41bfa8cd98e738cf439103a768b604ff4f4243c2",
@@ -5350,18 +5357,18 @@
       "section_id": "DLID-9k2pe427f632"
     },
     {
+      "content_hash": "f04585aea57c18a7449a59eb01c60582d50e3846ff85e3970331353048433cd1",
+      "doc_link_id": "DLID-061pwjejh6yc",
+      "heading": "規範",
+      "position": 19,
+      "section_id": "DLID-yvheref94rq8"
+    },
+    {
       "content_hash": "f0cc17ab41d058b5d70c9abb7746a7ddb4957e8fa047ba2d1c4e1593675ec9e4",
       "doc_link_id": "DLID-cbr02jpbxfcs",
       "heading": "概要",
       "position": 1,
       "section_id": "DLID-r1d1j7a74adn"
-    },
-    {
-      "content_hash": "f107f09a830025f4a727340d63b11d40be460de0d40bef76764dd1a0d4411c95",
-      "doc_link_id": "DLID-rx0jy7wbtg59",
-      "heading": "コンテキスト管理",
-      "position": 2,
-      "section_id": "DLID-bzjch8rw131d"
     },
     {
       "content_hash": "f12c7bb3be5fee589d7fbf6cee949526f41d79fca6fc9321c0be7005ca17df30",
@@ -5397,13 +5404,6 @@
       "heading": "判断基準に掛けないもの",
       "position": 8,
       "section_id": "DLID-11m2q18577s7"
-    },
-    {
-      "content_hash": "f2c8c194c849840fcd369029184bde0b2db1541c364c551ebb8ac8bc3b9be31f",
-      "doc_link_id": "DLID-061pwjejh6yc",
-      "heading": "設計書 作成原則",
-      "position": 0,
-      "section_id": "DLID-mvjghckvewxj"
     },
     {
       "content_hash": "f31346571abb9da37fab86e8eadd9445d512d13661edb4af113ea77ac7bd6232",
@@ -5574,6 +5574,13 @@
       "section_id": "DLID-j1pxx7pwvpa0"
     },
     {
+      "content_hash": "fdf4350641bf88a30533e83df3e5e81460190b21c85c283e7776b91e88e7f16d",
+      "doc_link_id": "DLID-wm7t1emetwbx",
+      "heading": "generic レビュー基準",
+      "position": 0,
+      "section_id": "DLID-1d22mabn3k7z"
+    },
+    {
       "content_hash": "fe9addb066216f6ae82c49ecd409a2fd5caafbb60234d4e270a69efeb9d0ba9c",
       "doc_link_id": "DLID-pdvdjb49qpr4",
       "heading": "1.2 クラスに「保持データ」と「メソッド」を書く理由",
@@ -5599,5 +5606,5 @@
     "paths": []
   },
   "toc_key": "forge-rules",
-  "version": 1
+  "version": 2
 }

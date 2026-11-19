@@ -174,7 +174,7 @@ Phase 5: AIレビュー [MANDATORY]（FNC-006 準拠: --auto モード）
 └── /forge:review --files {差分ファイル} --auto
 
 完了処理
-├── /forge:update-db-specs（利用可能な場合）
+├── /forge:update-db-specs
 ├── /anvil:commit
 └── 完了案内
 ```

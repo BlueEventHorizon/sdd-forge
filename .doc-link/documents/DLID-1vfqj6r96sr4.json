@@ -1,35 +1,33 @@
 {
-  "content_hash": "70b7a9313c7b76dee45a03957c465f1db074cc3662ca5bd4b41d10b23a5923a2",
+  "content_hash": "8f258f0aff986b902da120f1ee3cf067df64429642070153e657673661dcc8a2",
   "doc_link_id": "DLID-1vfqj6r96sr4",
   "keywords": [
     "context gathering",
-    "collection tasks",
+    "document search",
+    "existing code survey",
+    "general agent",
+    "return value",
+    "prompt template",
     "query-db-specs",
     "query-db-rules",
-    "Grep Glob",
-    "general-purpose agent",
-    "prompt template",
-    "return value",
     "create skills"
   ],
   "path": "docs/specs/forge/design/DES-013_context_gathering_design.md",
-  "purpose": "Specification of the context-gathering tasks used by forge create skills: document search by the orchestrator and existing-code exploration by a general-purpose agent.",
+  "purpose": "Specification of the context-gathering tasks used by forge create-style skills: document search by the orchestrator, existing-code exploration by a general agent, and how instructions and failures are handled.",
   "summary": [
-    "Overview of two collection kinds and the rule that no agent sits between the orchestrator and document search",
-    "No session directories or intermediate files; results stay in main context",
-    "Failure handling: stop and report to the user when search fails or an agent errors",
-    "Task list: spec research, implementation rule research, existing code research with executors, outputs and search means",
-    "Agent bullet list line format with path and one-line reason",
-    "Per-skill application matrix is delegated to the orchestrator design document",
-    "start-implement launches no collection agent and is out of scope",
-    "Agent instruction via a three-element prompt template: purpose, means, output contract",
-    "Agents are self-contained and receive no session directory or external spec paths"
+    "Overview of two kinds of context gathering and their execution",
+    "No Agent intermediary for document search; no session directories or intermediate files",
+    "Stop and report to the user when search fails or an agent terminates with an error",
+    "Task list: spec survey, implementation-rule survey, existing-code survey with executor, output and method",
+    "Agent bullet-list line format of path and reason",
+    "Per-skill applicability matrix delegated to DES-010; start-implement is out of scope",
+    "Agent instruction template of purpose, method and output contract, self-contained"
   ],
   "tasks": [
-    "Designing or changing context-gathering tasks in create skills",
-    "Writing prompt templates for existing-code collection agents",
-    "Deciding the output format of collection agents",
-    "Checking which skills use collection agents"
+    "Implementing context gathering in create-style skills",
+    "Writing agent prompt templates for code exploration",
+    "Designing or reviewing start-design, start-plan or start-requirements collection phases",
+    "Handling failures in context collection"
   ],
   "title": "DES-013 コンテキスト収集タスク仕様"
 }

@@ -7,7 +7,7 @@ doc_link_id: DLID-t8jcg5jkb5mj
 プロジェクト固有のルールがない場合に参照する汎用原則。
 プロジェクト固有のルールがある場合はそちらを優先すること。
 
-文書記述スタイル（タグ・見出し・参照記法・用語）は [document_style_guide.md](document_style_guide.md) を参照。本文書は計画書固有の構成ルール・タスク設計指針を扱う。
+文書記述スタイル（タグ・見出し・参照記法・用語）は [document_style_guide.md][document-style-guide] を参照。本文書は計画書固有の構成ルール・タスク設計指針を扱う。
 
 ---
 
@@ -46,7 +46,7 @@ doc_link_id: DLID-t8jcg5jkb5mj
 2. `design_traceability` — 設計トレーサビリティマトリクス
 3. `tasks` — タスク一覧
 
-**上記以外のキーは追加しないこと。** タスク実行に不要な情報（依存関係図、概要説明等）は記載しない。必要な情報はすべてタスクの各フィールドに含める。計画書には追加 feature 用の frontmatter も付与しない（[frontmatter_format.md](frontmatter_format.md) §1.3）。
+**上記以外のキーは追加しないこと。** タスク実行に不要な情報（依存関係図、概要説明等）は記載しない。必要な情報はすべてタスクの各フィールドに含める。計画書には追加 feature 用の frontmatter も付与しない（[frontmatter_format.md][frontmatter-format] §1.3）。
 
 ### トレーサビリティの 2 つの配列 DLID-ses1djywd1s3
 
@@ -108,7 +108,7 @@ doc_link_id: DLID-t8jcg5jkb5mj
 
 **実装戦略書**: `/forge:start-plan` が `{feature}_strategy.md` を作成した場合、すべてのタスクの `required_reading` にその戦略書パスを含める。戦略書は executor が全体戦略・フェーズ意図・リスク対策を理解するための必読文書である。
 
-**用語集**: 入力の設計書・要件定義書が冒頭に書く用語集の ID（[document_style_guide.md](document_style_guide.md) §9.3）ごとに、その用語集のパスをすべてのタスクの `required_reading` に含める。用語集は、文書が `[用語]` と書く語の定義であり、executor が用語を日常の意味で読まないための必読文書である。入力の文書に用語集の ID が無ければ、加えるものは無い。
+**用語集**: 入力の設計書・要件定義書が冒頭に書く用語集の ID（[document_style_guide.md][document-style-guide] §9.3）ごとに、その用語集のパスをすべてのタスクの `required_reading` に含める。用語集は、文書が `[用語]` と書く語の定義であり、executor が用語を日常の意味で読まないための必読文書である。入力の文書に用語集の ID が無ければ、加えるものは無い。
 
 **誤った例**:
 
@@ -165,7 +165,7 @@ doc_link_id: DLID-t8jcg5jkb5mj
 
 **同時に壊れるものは同じグループに入れる。** 契約を変えるタスクと、その契約を使う側を直すタスクが分かれているなら、両方を 1 つのグループにして `build_check: skip` を置き、最終タスクでまとめて検証する。互換コードは、この構成を取らなかったことの穴埋めとして現れる。
 
-例外は [additive_development_spec.md](additive_development_spec.md) §3.1 が定める場合——**本 feature の外**が旧実装に依存しており同時に壊せないとき——に限る。feature の内側で辻褄を合わせるために書くものはこれに当たらない。
+例外は [additive_development_spec.md][additive-development-spec] §3.1 が定める場合——**本 feature の外**が旧実装に依存しており同時に壊せないとき——に限る。feature の内側で辻褄を合わせるために書くものはこれに当たらない。
 
 ### 早期検証の妥当性（判断の観点） DLID-rxnxt07saxea
 
@@ -354,4 +354,8 @@ doc_link_id: DLID-t8jcg5jkb5mj
 
 ### 追加 feature の計画書 DLID-ec9yzsk5466p
 
-計画書には frontmatter を付与しない。追加 feature の計画書かどうかは、`requirements_traceability` が参照する要件定義書、または `design_traceability` が参照する設計書の、**いずれか**が `feature_type: temporary-feature` を持つかで判定する（[frontmatter_format.md](frontmatter_format.md) §1.3）。
+計画書には frontmatter を付与しない。追加 feature の計画書かどうかは、`requirements_traceability` が参照する要件定義書、または `design_traceability` が参照する設計書の、**いずれか**が `feature_type: temporary-feature` を持つかで判定する（[frontmatter_format.md][frontmatter-format] §1.3）。
+
+[document-style-guide]: document_style_guide.md "69dee42932c2 DLID-c59znr7b8f56"
+[frontmatter-format]: frontmatter_format.md "19cf661699b0 DLID-jtc4qnjwbdxf"
+[additive-development-spec]: additive_development_spec.md "307dc53425f0 DLID-cyrk9xr8vcap"

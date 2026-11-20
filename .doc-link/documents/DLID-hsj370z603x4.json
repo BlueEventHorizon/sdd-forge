@@ -1,5 +1,5 @@
 {
-  "content_hash": "622f5a5eb40fdb3ec6afecf679bf326a43dc70037574f4864243a073f7bb9e8f",
+  "content_hash": "7cdb81e6c4a1b783c04bccd34677bf249f93a96936a2e47344904d94f23ee4ab",
   "doc_link_id": "DLID-hsj370z603x4",
   "keywords": [
     "agenda display",
@@ -7,30 +7,33 @@
     "HTML",
     "overview",
     "change visibility",
-    "generated output",
-    "agenda record",
-    "item identifier"
+    "generated artifact",
+    "record consistency",
+    "item identifier",
+    "requirements",
+    "display layer"
   ],
   "path": "docs/specs/consult/agenda/requirements/REQ-021_agenda_display.md",
-  "purpose": "Requirements for the agenda display layer that generates a human-readable presentation from the agenda record, giving an overview, change visibility and consistency with the record.",
+  "purpose": "Requirements for the agenda display layer, which generates a human-readable presentation from the agenda record so users get an overview, see changes, and never see presentation diverge from the record.",
   "summary": [
-    "Overview: display is separated from storage so presentation is generated from the record",
-    "Scope: presentation generated from records, overview, change highlighting, consistency with the record",
-    "Out of scope: storage and state management, presentation timing, presentation manners, content correctness",
-    "FNC-001: whole items, states and remaining count visible at a glance; withdrawn items remain shown",
+    "Overview: display is separated from storage so the presentation is generated from the record, avoiding boundary conflicts",
+    "Terminology follows the record layer requirements, with no new terms",
+    "Scope: presentation generated from records, overview, change visibility, and consistency; storage, timing, etiquette, and content correctness are out of scope",
+    "FNC-001: one agenda shows all items, states, and remaining count, keeping withdrawn and out-of-scope items visible",
     "FNC-002: changes from the latest update are distinguishable in the presentation",
-    "FNC-003: presentation is generated from the record and AI never writes it directly",
-    "FNC-004: AI does not need to read the human-facing presentation to learn state",
-    "FNC-005: a specified item identifier can be reached directly",
-    "NFR-001: the presentation is recognizable as generated output",
-    "TBD-001 resolved: HTML is adopted as the format"
+    "FNC-003: presentation is generated from the record and the AI has no path to write it directly",
+    "FNC-004: the AI does not need to read the human-facing presentation to learn state",
+    "FNC-005: a user-specified item number can be reached directly",
+    "NFR-001: the presentation shows that it is a generated artifact",
+    "TBD-001 resolved: HTML is adopted, with implementation pattern defined in the design document"
   ],
   "tasks": [
-    "Designing the agenda display layer",
-    "Implementing agenda HTML rendering",
-    "Reviewing agenda display requirements",
-    "Integrating the display with the agenda record",
-    "Designing change highlighting in presentations"
+    "Designing or implementing the agenda display generation",
+    "Implementing change highlighting in the presentation",
+    "Ensuring presentation and record consistency",
+    "Adding direct navigation to items by number",
+    "Reviewing agenda display requirements and designs",
+    "Integrating a caller such as consult with the agenda display"
   ],
   "title": "REQ-021 agenda 表示層 要件定義書"
 }

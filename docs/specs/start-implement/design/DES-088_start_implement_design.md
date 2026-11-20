@@ -6,7 +6,7 @@ doc_link_id: DLID-f8gem0wa3ac4
 
 ## 1. 設計の範囲と前提 DLID-1zcdfh1xkhbh
 
-本設計書は、[REQ-034](../requirements/REQ-034_start_implement_spec.md) の FNC-001〜FNC-013・NFR-001・5 節を実現する構造と振る舞いを定める。上流の設計（2〜5 節）は、REQ-034 だけから組み立てた。既存の実装は、その後に調べ、修正せずにそのまま使えるものだけを、6.1 の手段に挙げた。既存の実装をどう扱うか（修正・削除・統合・分割）は、実装戦略書が決める。
+本設計書は、[REQ-034][req-034] の FNC-001〜FNC-013・NFR-001・5 節を実現する構造と振る舞いを定める。上流の設計（2〜5 節）は、REQ-034 だけから組み立てた。既存の実装は、その後に調べ、修正せずにそのまま使えるものだけを、6.1 の手段に挙げた。既存の実装をどう扱うか（修正・削除・統合・分割）は、実装戦略書が決める。
 
 範囲外は次のとおり。
 
@@ -20,7 +20,7 @@ doc_link_id: DLID-f8gem0wa3ac4
 - 計画書の書き換えは決定論的な処理が行い、書き換えるのはオーケストレータだけである（REQ-034 FNC-008）
 - executor agent の結果は return value で受け取り、受け取る側が 1 か所で検査する（REQ-034 FNC-009）
 - 計画書とタスクコンテキストの構造・置き場・書き込みは決定論的な処理が担い、AI は内容だけを決める（REQ-034 FNC-009）
-- agent に渡すデータは、識別値だけを運ぶ。データは script が書き、読む側は script が返したパスを直接読む（[forge_agent_data_exchange_rules.md](../../../rules/forge_agent_data_exchange_rules.md)）
+- agent に渡すデータは、識別値だけを運ぶ。データは script が書き、読む側は script が返したパスを直接読む（[forge_agent_data_exchange_rules.md][forge-agent-data-exchange-rules]）
 
 ## 2. シナリオ表 DLID-37kff0mb98wh
 
@@ -521,27 +521,27 @@ sequenceDiagram
 | レビュー依頼     | `/forge:review` の呼び出し（SKILL.md に書く）                                                   | 同上                                      | なし                                                                                 |
 | 並行文書判定     | Script                                                                                          | `scripts/doc_structure/feature_marker.py` | **そのまま使う**                                                                     |
 
-- **executor agent をカスタム Agent にする理由**: 毎タスク、同じロールで起動する。親の context が肥大する（[plugin_claude_code_authoring_guide.md](../../../rules/plugin_claude_code_authoring_guide.md)）。手順は agent 定義が持つ
+- **executor agent をカスタム Agent にする理由**: 毎タスク、同じロールで起動する。親の context が肥大する（[plugin_claude_code_authoring_guide.md][plugin-claude-code-authoring-guide]）。手順は agent 定義が持つ
 - **状態遷移を 1 つの入口にする理由**: 5 つの遷移は、同じ計画書への順序付き位相であり、各場面の呼び出しが確定している（DES-024 §2.2）。モードは `--to in_progress|implemented|completed|failed|pending` とする
-- **新規 script の終了コード**: `0`（完了）・`1`（区別のないエラー）・`2`（引数）だけを返す。エラーの内容は、標準出力の `errors`（自然文の配列）に載せる（[plugin_script_error_output_rules.md](../../../rules/plugin_script_error_output_rules.md)）
+- **新規 script の終了コード**: `0`（完了）・`1`（区別のないエラー）・`2`（引数）だけを返す。エラーの内容は、標準出力の `errors`（自然文の配列）に載せる（[plugin_script_error_output_rules.md][plugin-script-error-output-rules]）
 
 ### 6.2 データの具体構造 DLID-k4h1tma5w48x
 
 #### 計画書 DLID-cta65efx5p4j
 
-`Plan` は、[DES-074](../../forge/design/DES-074_plan_format_design.md) のとおり。
+`Plan` は、[DES-074][des-074] のとおり。
 
 #### タスクコンテキスト DLID-8xh5hbmgewyg
 
 `TaskContext`（REQ-034 5.2）のとおり。次を定める。
 
 - **識別値**: `context_id`。`{task_id}-{8 桁の 16 進}` とし、`文脈作成` が生成する。AI は組み立てない
-- **置き場**: 計画書と同じディレクトリの `tasks/{context_id}.json`。パスは計画書パスと識別値から script が決める。script が書き、読む側が script の返したパスを読む型の置き場である（[forge_agent_data_exchange_rules.md](../../../rules/forge_agent_data_exchange_rules.md)）。計画書の隣に置くのは、計画書・実装戦略書と同じライフサイクルで扱うためである。全タスク完了時の存廃の確認（O-08）で 3 つを一緒に残すか消すので、消す場所が 1 か所になり、途中で止まった実行の残骸もそこで消える。識別値を渡す側（オーケストレータ・executor agent）は、計画書パスも識別値として渡す
+- **置き場**: 計画書と同じディレクトリの `tasks/{context_id}.json`。パスは計画書パスと識別値から script が決める。script が書き、読む側が script の返したパスを読む型の置き場である（[forge_agent_data_exchange_rules.md][forge-agent-data-exchange-rules]）。計画書の隣に置くのは、計画書・実装戦略書と同じライフサイクルで扱うためである。全タスク完了時の存廃の確認（O-08）で 3 つを一緒に残すか消すので、消す場所が 1 か所になり、途中で止まった実行の残骸もそこで消える。識別値を渡す側（オーケストレータ・executor agent）は、計画書パスも識別値として渡す
 - **`verification.build`**: 計画書の `build_check` から決める。`per_task` と `on_group_complete` は `required`（`build_reason` は `null`）、`skip` は `skipped`（`build_reason` は「計画書の build_check が skip である」）
 - **`verification.tests` と `tests_reason`**: 候補入力の値をそのまま置く。`required` のとき理由は `null`、それ以外は単一行の理由を要する
 - **`spec_authority`**: 並行状態にある文書のパスの配列。タスクコンテキストのトップレベルに置く（`implementation_instructions` への文字列連結にしない）。値は分類結果だけであり、行動の指示を含めない（REQ-025 FNC-002）。`scope_in` / `scope_out` は拡張しない（並行状態は、タスクの範囲とは別軸の情報である）
   - **対象**: `required_reading` のうち `requirement_docs` / `design_docs` / `additional` に挙がった文書を `classify_feature_marker` で判定し、並行状態にあるものだけを並べる。設計書を含めるのは、設計書も並行状態の識別子を持つためである（要件定義書だけを分類すると、旧設計書が現在の設計として読まれる経路が残る）。`additional` を含めるのは、文書種別ではなく受け皿であり、要件定義書・設計書が入りうるためである（除外すると、計画書経由で渡された並行状態の文書が、エラーなく空配列になる）。戦略書・ルール・コードは対象にしない（種別が固定で、識別子を持たない）
-  - **判定できない文書**: 読めない文書、解析できない文書が 1 つでもあれば、作成をエラーにし、対象のパスと理由を `errors` に載せる。「並行状態にない」と同一視しない（REQ-025 FNC-005）。判定の契約は [DES-074](../../forge/design/DES-074_plan_format_design.md) が定める
+  - **判定できない文書**: 読めない文書、解析できない文書が 1 つでもあれば、作成をエラーにし、対象のパスと理由を `errors` に載せる。「並行状態にない」と同一視しない（REQ-025 FNC-005）。判定の契約は [DES-074][des-074] が定める
   - **該当なし**: 空配列にする（`null` にしない。ほかの空値の表現と揃える）
   - **executor agent による受領**: `agents/executor.md` が、受領する項目に含め、挙がった文書を対象範囲の現在の仕様として扱い、旧仕様の記述を実装の根拠にしないと定める（REQ-025 FNC-004）
 
@@ -744,11 +744,11 @@ stateDiagram-v2
 
 ### 6.6 利用ライブラリ DLID-64hzhrfc1ryn
 
-Python の標準ライブラリだけを使う（`json`・`argparse`・`pathlib`・`subprocess`・`os`・`re`）。外部依存は原則持ち込まない（[plugin_implementation_guidelines.md](../../../rules/plugin_implementation_guidelines.md)）。YAML も、frontmatter の解析（`feature_marker.py` の正規表現）と `.doc_structure.yaml` の解決（`resolve_doc_structure.py`）が、既に担っている。
+Python の標準ライブラリだけを使う（`json`・`argparse`・`pathlib`・`subprocess`・`os`・`re`）。外部依存は原則持ち込まない（[plugin_implementation_guidelines.md][plugin-implementation-guidelines]）。YAML も、frontmatter の解析（`feature_marker.py` の正規表現）と `.doc_structure.yaml` の解決（`resolve_doc_structure.py`）が、既に担っている。
 
 ### 6.7 executor agent の編集範囲 DLID-tdx9smapjdqm
 
-規約（[plugin_claude_code_authoring_guide.md](../../../rules/plugin_claude_code_authoring_guide.md)）は、書き込む Agent に、編集可能ファイルの allowlist を課すことを推奨する。本設計は、executor agent に allowlist を課さない。
+規約（[plugin_claude_code_authoring_guide.md][plugin-claude-code-authoring-guide]）は、書き込む Agent に、編集可能ファイルの allowlist を課すことを推奨する。本設計は、executor agent に allowlist を課さない。
 
 - **理由**: 計画書のタスクは、変更するファイルの一覧を持たない。新規ファイルの作成も許す必要がある。一覧を AI が推測して作れば、実装できるものを妨げ、または範囲外を許すことになる
 - **代わりの拘束**: ① executor agent の Role で、1 タスクだけを実装し、範囲外・計画書・設計書・要件定義書を変更しないことを、否定形で定める ② レビューが、到達目標（範囲外の項目を含む）に照らして、範囲外の変更を所見として挙げる（RV-01・6.3 レビュー依頼）
@@ -780,3 +780,10 @@ REQ-034 の各要件を満たす設計要素を示す。設計要素が 1 つも
 | 5.1 計画書                | SC-25         | 4.7           | CH-01、ST-01〜05                             | 計画書、6.2                                                                      |
 | 5.2 タスクコンテキスト    | SC-08         | 4.2           | CX-01〜03                                    | タスクコンテキスト、6.2                                                          |
 | 5.3 executor agent の結果 | SC-09         | 4.2           | EX-01、RS-01                                 | executor agent の結果、6.2、6.3 結果検査                                         |
+
+[req-034]: ../requirements/REQ-034_start_implement_spec.md "addaea4651bb DLID-ypd7r1j5ga4n"
+[forge-agent-data-exchange-rules]: ../../../rules/forge_agent_data_exchange_rules.md "ad12d06f3966 DLID-7zh3q09p2acs"
+[plugin-claude-code-authoring-guide]: ../../../rules/plugin_claude_code_authoring_guide.md "1b4400f836cd DLID-pvwk8en5c2rq"
+[plugin-script-error-output-rules]: ../../../rules/plugin_script_error_output_rules.md "f1c5b6752ce7 DLID-fz66nns8q521"
+[des-074]: ../../forge/design/DES-074_plan_format_design.md "b6a1775c9364 DLID-42wh7646hjhq"
+[plugin-implementation-guidelines]: ../../../rules/plugin_implementation_guidelines.md "231d1a822305 DLID-jzs5n6cre1jh"

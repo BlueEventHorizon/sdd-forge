@@ -10,9 +10,9 @@ forge の create-\* スキルが使用するコンテキスト収集タスクの
 
 コンテキスト収集は 2 種類ある。文書検索は、オーケストレータが `/forge:query-db-specs` / `/forge:query-db-rules` を Skill ツールで直接呼ぶ。既存コードの探索は、各 SKILL.md（またはモード別ワークフロー文書）にインラインで定義した prompt で汎用 agent を Agent ツールで起動し、agent の **return value**（markdown bullet list）を main AI コンテキストに直接保持する（DES-022 並列 agent 出力契約）。
 
-- 文書検索に Agent を挟まない（理由は [DES-010](DES-010_create_skills_orchestrator_design.md) §3.1）
+- 文書検索に Agent を挟まない（理由は [DES-010][des-010] §3.1）
 - セッションディレクトリ・中間ファイルは使わない
-- 文書検索が失敗したとき、または agent がエラー終了したときは、後続工程へ進まず、利用者に報告して指示を待つ（[DES-010](DES-010_create_skills_orchestrator_design.md) §3.5）
+- 文書検索が失敗したとき、または agent がエラー終了したときは、後続工程へ進まず、利用者に報告して指示を待つ（[DES-010][des-010] §3.5）
 
 ---
 
@@ -32,12 +32,15 @@ agent の bullet list の各行は `` `path` — 関連理由を 1 行 `` の形
 
 ## 3. スキル別タスク適用マトリクス DLID-r3707pgmaj3v
 
-start-design / start-plan / start-requirements の適用マトリクス・agent 構成は [DES-010](DES-010_create_skills_orchestrator_design.md) §3〜§4 を正本とする。`start-implement` はコンテキスト収集 agent を起動せず、本文書の対象外である（[DES-088](../../start-implement/design/DES-088_start_implement_design.md)）。
+start-design / start-plan / start-requirements の適用マトリクス・agent 構成は [DES-010][des-010] §3〜§4 を正本とする。`start-implement` はコンテキスト収集 agent を起動せず、本文書の対象外である（[DES-088][des-088]）。
 
 ---
 
 ## 4. agent への指示 DLID-rq3pqqvfszw5
 
-既存コード収集 agent への指示は「検索目的・検索手段・出力契約」の3要素で構成する prompt テンプレートで渡す。テンプレートの形式は [DES-010](DES-010_create_skills_orchestrator_design.md) §3.3 を正本とする。
+既存コード収集 agent への指示は「検索目的・検索手段・出力契約」の3要素で構成する prompt テンプレートで渡す。テンプレートの形式は [DES-010][des-010] §3.3 を正本とする。
 
 セッションディレクトリや外部仕様書パスは渡さない。agent は prompt だけで自己完結して動作する（REQ-001 FNC-003）。
+
+[des-010]: DES-010_create_skills_orchestrator_design.md "c93dadeb6dc4 DLID-s1ds8dcyfn7p"
+[des-088]: ../../start-implement/design/DES-088_start_implement_design.md "5b20e32ba921 DLID-f8gem0wa3ac4"

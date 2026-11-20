@@ -182,7 +182,7 @@ doc-link は導入有無と、検索・索引更新の機能が利用できる�
 
 - backend の切替は正常な処理経路であり、利用者への通知を伴っても処理失敗ではない。
 - doc-link と doc-db のいずれも利用できない場合、query と update は失敗とする。
-- エラーの定義と分類（回復可能・回復不能）は、[error_classification_spec.md](../../../../plugins/forge/docs/error_classification_spec.md) に従う。
+- エラーの定義と分類（回復可能・回復不能）は、[error_classification_spec.md][error-classification-spec] に従う。
   wrapper が持つ回復の手段は、本書が定めるもの（残る backend への切替、承認を得た索引の整備、doc-db の起動）に限る。
   それ以外のエラーは回復不能であり、後続の処理を続行せず、停止して利用者へ報告する。
 
@@ -307,3 +307,5 @@ doc-link は導入有無と、検索・索引更新の機能が利用できる�
 ## 未確定事項 DLID-436sex9d3fvk
 
 現時点で未確定事項はない。
+
+[error-classification-spec]: ../../../../plugins/forge/docs/error_classification_spec.md "04397ae80f5c DLID-5ykqs19cdbks"

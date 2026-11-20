@@ -1,40 +1,39 @@
 {
-  "content_hash": "a56e91a93d49f1fe1499db5a29204df6f633f5710e8139f1b76a723f3ae1a497",
+  "content_hash": "8d2adba82a1b6754e2936e51aeab6f6d30c59621c1f8143330f0983d7e442be3",
   "doc_link_id": "DLID-433459yse70c",
   "keywords": [
     "consult",
     "consult topic",
     "consult brief",
     "progress table",
-    "confidence marks",
-    "user decision",
+    "confidence mark",
+    "dialogue facilitation",
     "review delegation",
+    "recommendation",
     "presentation state",
-    "requirements",
-    "dialogue facilitation"
+    "requirements"
   ],
   "path": "docs/specs/consult/requirements/REQ-017_consult_skill.md",
-  "purpose": "Requirements for the consult skill, which runs dialogue with users: presenting topics as a progress table and concise briefs (summary plus recommendation), obtaining user decisions, and recording briefs, without executing undecided actions.",
+  "purpose": "Requirements for the consult skill, which runs dialogue with users so they understand topics and give correct decisions, covering progress tables, briefs, confidence, and recording.",
   "summary": [
-    "Overview: consult responsibilities of overall progress table, per-topic brief, driving progress, decision capture, recording",
-    "Three usages: review delegation, dialogue-based revision, and new creation, each with different input and display means",
-    "Glossary and scope: evaluation, consult topic, consult brief, presentation state; in-scope and out-of-scope items",
-    "FNC-001/002: topic intake with verification before presenting; progress table with statuses, classification of unresolved items, skill-led ordering",
-    "FNC-003/006: brief of two fields (summary, recommendation) kept concise (about 10 lines), only correct options shown, source location attached",
-    "FNC-004/005: three-level confidence marks (checked, checked-unsure, unmarked) and restating context instead of referring back",
-    "FNC-007 to 010: Q&A without demanding decisions, withdrawal, adopt/reject/hold decisions, interruption, user owns resolution",
-    "FNC-012 to 014 and BL-001/002: main Claude writes briefs before speaking, briefs recorded via script as JSON, no execution of undecided matters, fidelity",
-    "NFR-001/002/004/005: one presentation-state store per usage, usage-specific logic separated from SKILL, secrets not shown, failures made visible",
-    "Open items TBD-002 to TBD-010: namespace, batch threshold, decision categories, brevity standard, recording location, resume, console-only criteria"
+    "Overview: consult is responsible for dialogue; three uses (review, dialogue-based fixing, new creation)",
+    "Terminology: evaluation, consult topic, consult brief, presentation state, dialogue use",
+    "Scope: in-scope presentation, Q&A, decision capture; out-of-scope generation and unrequested execution",
+    "Prerequisites: review JSON exchange of findings and evaluations; dialogue input from conversation context",
+    "FNC-001/002: topic intake and verification; progress table with status, results, issues, and skill-led progression",
+    "FNC-003 to 006: two-field consult brief (summary and recommendation), confidence marks, context restatement, brevity about 10 lines",
+    "FNC-007 to 010: Q&A, decision capture, interruption/hold/out-of-scope handling, user owns settlement",
+    "FNC-012 to 014: main Claude authors briefs before addressing user; briefs recorded by script as JSON",
+    "BL-001/002 and NFR: no execution of undecided items, faithful presentation, single state location, use-independence, secret non-disclosure, failure visibility",
+    "Open items TBD-002 to TBD-010 such as batch threshold, record location, resumption"
   ],
   "tasks": [
-    "Writing or revising the consult skill SKILL.md and per-usage procedure documents",
-    "Implementing consult scripts such as HTML generation and brief recording",
-    "Designing the delegation interface from review to consult",
-    "Reviewing consult requirements and design documents for consistency",
-    "Designing how to present findings or topics to users and obtain decisions",
-    "Defining progress table display format and status vocabulary",
-    "Handling confidential information in presentations and records"
+    "Implementing or modifying the consult skill",
+    "Designing consult presentation formats and progress tables",
+    "Integrating review delegation of findings to consult",
+    "Reviewing consult-related requirements and designs",
+    "Writing consult briefs and confidence marks per rules",
+    "Implementing the HTML generation script for dialogue use"
   ],
   "title": "REQ-017 consult 対話進行スキル要件定義書"
 }

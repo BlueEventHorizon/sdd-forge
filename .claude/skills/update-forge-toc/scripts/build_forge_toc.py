@@ -9,9 +9,9 @@
 同梱ファイルの形式は forge のものであり、文書検索 backend の形式ではない。配布物は
 backend を知らないまま、このファイルだけを読む。
 
-索引が現物の文書より古いとき（記録されたハッシュが現在の内容と異なる・索引に無い
-文書がある・索引にだけある文書がある）は、何も書かずにエラーで終える。古い文書情報を
-同梱ファイルへ写さないためである。
+索引の文書の集合が内蔵文書の集合と一致しないとき（索引に無い文書がある・索引にだけある
+文書がある）は、何も書かずにエラーで終える。索引の内容が現物の文書より古いかは、ここでは
+確かめない。それは索引を構築する側（文書検索）の検査が担う。
 
 使い方:
     build_forge_toc.py            同梱ファイルを書く
@@ -23,7 +23,6 @@ backend を知らないまま、このファイルだけを読む。
 
 import argparse
 import glob
-import hashlib
 import json
 import sys
 from pathlib import Path
@@ -69,29 +68,20 @@ def _read_json(path):
 
 
 def load_entries(repo_root=REPO_ROOT):
-    """索引の各文書の文書情報を、パスの順で返す。索引が古ければ BuildError。"""
+    """索引の各文書の文書情報を、パスの順で返す。文書の集合が一致しなければ BuildError。"""
     store = repo_root / ".doc-link"
     toc = _read_json(store / "tocs" / f"{TOC_KEY}.json")
     entries = {}
-    stale = []
     for item in toc.get("documents", []):
         doc = _read_json(store / "documents" / f"{item['doc_link_id']}.json")
-        path = doc["path"]
-        entries[path] = doc
-        source = repo_root / path
-        if not source.is_file():
-            continue  # 余剰として下で報告する
-        current = hashlib.sha256(source.read_bytes()).hexdigest()
-        if current != item.get("applied_hash"):
-            stale.append(path)
+        entries[doc["path"]] = doc
 
     sources = set(source_paths(repo_root))
     missing = sorted(sources - set(entries))
     surplus = sorted(set(entries) - sources)
-    if stale or missing or surplus:
+    if missing or surplus:
         raise BuildError(
-            "索引が現物の内蔵文書と一致しない。索引を再構築してから実行する。"
-            f" 内容が変わった文書: {sorted(stale)}"
+            "索引の文書の集合が内蔵文書と一致しない。索引を再構築してから実行する。"
             f" 索引に無い文書: {missing}"
             f" 索引にだけある文書: {surplus}"
         )

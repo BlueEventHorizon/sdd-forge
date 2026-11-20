@@ -53,13 +53,13 @@ agent に渡す参照文書（ガイド・フォーマット定義等）は自�
 - コード探索・タスク実行は互いに独立
 - 文書検索（仕様書・ルール）は並列実行の対象外である。オーケストレータが query スキルを順に呼ぶ（FNC-001）
 - 各 agent は結果を return value として返す。結果の受け渡しに共有リソース・中間ファイルを使わないことで、共有リソースへの競合書き込みを防ぐ（並列 agent 出力契約）
-- 書き込み系の agent が**担当範囲の成果物を編集すること自体は上記の対象外**。担当範囲の分離の方法は、当該スキルの要件が定める（`start-implement` は [REQ-034](../../start-implement/requirements/REQ-034_start_implement_spec.md) FNC-010・FNC-011）
+- 書き込み系の agent が**担当範囲の成果物を編集すること自体は上記の対象外**。担当範囲の分離の方法は、当該スキルの要件が定める（`start-implement` は [REQ-034][req-034] FNC-010・FNC-011）
 - オーケストレータが全 agent の結果を収集・統合して次の工程に渡す
 
 受け渡しの規定:
 
 - **agent の return value 収集で受け渡す**。フェーズ間の中間成果物を共有するための永続領域は設けない
-- **例外**: 1 回の処理の間だけ存在するデータは、識別値だけを渡し、script が書いた JSON のパスを読む型で受け渡す（[forge_agent_data_exchange_rules.md](../../../rules/forge_agent_data_exchange_rules.md)）。並列に起動する agent の結果の返却は、上記のとおり return value である
+- **例外**: 1 回の処理の間だけ存在するデータは、識別値だけを渡し、script が書いた JSON のパスを読む型で受け渡す（[forge_agent_data_exchange_rules.md][forge-agent-data-exchange-rules]）。並列に起動する agent の結果の返却は、上記のとおり return value である
 - **プロンプト経由のデータ受け渡しは最小限にする**。渡すのはパス・種別・フラグ等の構造化引数に限り、文書やコードの本文をプロンプトへ貼り付けない（agent は渡されたパスを自ら Read する）
 
 ### FNC-005: 文書フォーマットの選定基準 DLID-47mx8a943xcd
@@ -85,7 +85,7 @@ Markdown は表現力が高いが、AI によるパースが不確実（テー�
 2. `/forge:update-db-specs` — ToC 更新
 3. `/anvil:commit` — commit/push 確認
 
-> **注記**: start-implement の完了処理は、[REQ-034](../../start-implement/requirements/REQ-034_start_implement_spec.md) FNC-013 が定める。
+> **注記**: start-implement の完了処理は、[REQ-034][req-034] FNC-013 が定める。
 
 - 独立した finalize スキルは設けない。完了処理は各オーケストレーターが直接実行する
 - review は `--auto` モードで実行し、人間レビューは review ワークフロー内で処理される
@@ -108,3 +108,6 @@ Markdown は表現力が高いが、AI によるパースが不確実（テー�
 | review                                         | 済み               | reviewer・evaluator が script 経由で書いた所見と評価のパスを得て、本体が直接読み、吟味・修正する                                                                        |
 | start-design / start-plan / start-requirements | 済み               | 文書検索は query スキルの検索結果（パスの一覧）。agent を起動する工程は agent の return value（`start-plan` の実装戦略の策定は、識別値で渡し、script が成否を判定する） |
 | start-implement                                | 済み               | タスクコンテキストは識別値で渡し（script が書いた JSON を executor agent が読む）、結果は executor agent が return value の JSON で返す                                 |
+
+[req-034]: ../../start-implement/requirements/REQ-034_start_implement_spec.md "addaea4651bb DLID-ypd7r1j5ga4n"
+[forge-agent-data-exchange-rules]: ../../../rules/forge_agent_data_exchange_rules.md "ad12d06f3966 DLID-7zh3q09p2acs"

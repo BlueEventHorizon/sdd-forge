@@ -1,38 +1,40 @@
 {
-  "content_hash": "1966d5a8490e7e75e7f4d9e683d64ee1163fb2d567942a3224eaf8c14b666015",
+  "content_hash": "7052a1614b27cf086b665ebf68aa18074365b4713f52ac8fac829426acbe8420",
   "doc_link_id": "DLID-vzcznbpypja0",
   "keywords": [
     "start-requirements",
+    "requirements workflow",
     "interactive mode",
     "reverse-engineering",
     "from-figma",
     "dispatcher",
-    "requirements workflow",
     "draft-driven",
     "temporary-feature",
-    "glossary",
-    "context collection"
+    "orchestrator",
+    "glossary"
   ],
   "path": "docs/specs/forge/design/DES-017_create_requirements_workflow_design.md",
-  "purpose": "Design document for the start-requirements orchestrator skill, describing its three modes (interactive, reverse-engineering, from-figma), dispatcher role, shared decision rules and self-contained workflows.",
+  "purpose": "Design of the /forge:start-requirements dispatcher skill and its three mode workflows (interactive, reverse-engineering, from-figma) for creating requirements documents.",
   "summary": [
-    "Overview of the dispatcher skill that branches into mode-specific workflow files",
-    "Design policy: SKILL.md as dispatcher, self-contained workflows, draft-driven interactive mode",
-    "File layout of SKILL.md and three workflow documents",
-    "Flowchart of mode selection and the phases of each mode",
-    "Dispatcher responsibilities and the shared rule for decisions before writing the requirements file",
-    "Interactive mode phases: draft first, type judgment and approval, temporary marker, glossary",
-    "Reverse-engineering mode phases with bulk context collection and code agent",
-    "From-figma mode phases with design tokens and static assets",
+    "Overview of the dispatcher design: SKILL.md selects mode and delegates to self-contained workflow files",
+    "File layout of the start-requirements skill and its three workflow docs",
+    "Flowchart of mode selection and per-mode phases through review, ToC update and commit",
+    "Dispatcher responsibilities and the common rule for decisions made just before writing the requirements file",
+    "Decision order: completely-new check, additive vs differential type approval, feature, output directory, file name",
+    "Interactive mode: draft-driven, no up-front context collection, type judgment, temporary marker, glossary",
+    "Reverse-engineering mode: bulk context collection and source code analysis phases",
+    "From-figma mode: Figma MCP prerequisite, design tokens, SCR/CMP/FNC and static assets",
     "Design principles: focus on What, per-mode context collection, workflow self-containment, ID consistency",
-    "Related files list"
+    "Related files table for the skill, workflows and format docs"
   ],
   "tasks": [
-    "Modifying the start-requirements skill or its workflow documents",
-    "Adding or changing a requirements creation mode",
-    "Designing differential versus additive requirement handling",
-    "Reviewing requirements workflow design consistency",
-    "Deciding feature name, output directory and file naming for requirements"
+    "Modifying the start-requirements skill or its workflow files",
+    "Creating requirements documents in interactive mode",
+    "Deriving requirements from existing source code",
+    "Creating requirements from Figma designs",
+    "Deciding feature, output location and file name for a new requirements document",
+    "Judging additive versus differential development type",
+    "Reviewing requirements workflow design"
   ],
   "title": "DES-017 forge 要件定義書作成ワークフロー 設計書"
 }

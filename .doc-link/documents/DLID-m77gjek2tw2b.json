@@ -1,34 +1,31 @@
 {
-  "content_hash": "8a006e0c77dec94d58e35b46a1d652311ac0f969478ed978b34c973a71451335",
+  "content_hash": "253f59c3f26d0ffbb4cf773b2dcd7aace2f0af054faf72afd8694a17ba1745f6",
   "doc_link_id": "DLID-m77gjek2tw2b",
   "keywords": [
     "ADR",
     "architecture decision record",
     "rejection reason",
     "non-binding",
-    "premise check",
-    "ADR citation",
-    "section number",
+    "ADR number citation",
     "severity catalog",
-    "reader obligation"
+    "premise verification"
   ],
   "path": "plugins/forge/docs/adr_usage_spec.md",
-  "purpose": "Defines the obligations of those who rely on ADRs when deciding, so that rejection reasons used to decline proposals or findings are checked against current premises and traceably cited.",
+  "purpose": "Defines the obligations of readers who rely on ADRs when deciding to drop a proposal or review finding: ADRs are non-binding, rejection premises must be rechecked, and ADR numbers must be cited.",
   "summary": [
-    "ADRs are non-binding observations, not instructions",
-    "A proposal may be made if the rejection reason is judged wrong in the current context",
-    "Readers must verify the premises of a rejection reason still hold before relying on an ADR",
-    "When declining based on an ADR, cite its file number and section number (ADR-NNN §N)",
-    "No mechanism is added to raise ADR reach, such as preloading all ADRs",
-    "Loss from an unread ADR is limited to one duplicate proposal",
-    "Severity catalog: omitting the ADR number when declining is minor"
+    "ADRs are insights, not instructions; a proposal may still be made if the rejection reason is judged wrong",
+    "Reader obligation: verify the premises of the rejection reason still hold before relying on an ADR",
+    "Reader obligation: cite the ADR number and section (ADR-NNN §N) when dropping a proposal or finding",
+    "No mechanism is introduced to raise ADR reach, such as preloading all ADRs, because the loss is only a duplicate proposal",
+    "Severity catalog: omitting the ADR number when dropping a proposal is minor",
+    "Points to the ADR principles spec and ADR format for authors of ADRs"
   ],
   "tasks": [
-    "Declining a proposal on the basis of an ADR",
-    "Declining a review finding on the basis of an ADR",
-    "Reviewing whether ADR citations are traceable",
-    "Implementing work that touches past architectural decisions",
-    "Judging whether a past rejection reason is still valid"
+    "Making a proposal while checking past ADR decisions",
+    "Dropping a proposal based on an ADR rejection reason",
+    "Code or document review where a finding is dropped because of an ADR",
+    "Implementation work that consults ADRs",
+    "Assigning severity to ADR usage violations"
   ],
   "title": "ADR 利用規範"
 }

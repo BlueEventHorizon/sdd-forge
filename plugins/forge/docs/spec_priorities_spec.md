@@ -10,7 +10,7 @@ doc_link_id: DLID-f9ny9e932trv
 **本文書のスコープ**: 要件定義書および設計書の両方に共通する普遍原則（排除ルール）。
 §1 の「文書間の依存方向」のみ、forge が生成する文書群全体（要件定義書・設計書・計画書）に適用される。
 What/How のどちらに何を書くかの**振り分け判定**は本文書の対象外であり、
-[spec_design_boundary_spec.md](spec_design_boundary_spec.md) を参照すること。
+[spec_design_boundary_spec.md][spec-design-boundary-spec] を参照すること。
 
 ---
 
@@ -125,7 +125,7 @@ AI が未確定の定量値を推測して、要件・設計に書いてはな�
 定量目標（応答時間・スループット等、運用で検証可能なもの）を
 **要件定義書と設計書のどちらに書くか**という振り分け判定は本文書の範囲外である。
 
-→ 振り分け判定は [spec_design_boundary_spec.md](spec_design_boundary_spec.md) §3.1 を参照。
+→ 振り分け判定は [spec_design_boundary_spec.md][spec-design-boundary-spec] §3.1 を参照。
 
 ---
 
@@ -207,3 +207,5 @@ AI が未確定の定量値を推測して、要件・設計に書いてはな�
 ### 10.2 除外理由の明示 DLID-mq15p9q5d071
 
 critical 適用範囲であっても、当該カテゴリと無関係である理由が明文化されている場合は許容 (例: 「読み取り専用の社内ツールのため可用性 SLA 不要」を明記)。major 適用範囲では、除外理由の都度明記は不要 (前段のスコープ判定で吸収する)。
+
+[spec-design-boundary-spec]: spec_design_boundary_spec.md "4e2a4cd68a8a DLID-h9h90g9wcy8f"

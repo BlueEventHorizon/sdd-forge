@@ -6,7 +6,7 @@ doc_link_id: DLID-h9h90g9wcy8f
 
 **目的**: What（要件定義書）と How（設計書）の境界を明確化し、記載内容の判断を支援する
 
-各文書型の責務そのものは [requirement_principles_spec.md](requirement_principles_spec.md) / [design_principles_spec.md](design_principles_spec.md) が定める。本書は 2 者の振り分け判定だけを持つ。
+各文書型の責務そのものは [requirement_principles_spec.md][requirement-principles-spec] / [design_principles_spec.md][design-principles-spec] が定める。本書は 2 者の振り分け判定だけを持つ。
 
 ---
 
@@ -36,7 +36,7 @@ doc_link_id: DLID-h9h90g9wcy8f
 
 ADR には**設計そのものを転記しない**。決定を理解するのに要るポイントだけ触れる。
 
-**他に選択肢が無い設計・誰が考えてもそうなる設計に ADR は作らない。** 作る条件・書く対象は [adr_principles_spec.md](adr_principles_spec.md) が、拘束力は [adr_usage_spec.md](adr_usage_spec.md) が定める。
+**他に選択肢が無い設計・誰が考えてもそうなる設計に ADR は作らない。** 作る条件・書く対象は [adr_principles_spec.md][adr-principles-spec] が、拘束力は [adr_usage_spec.md][adr-usage-spec] が定める。
 
 ---
 
@@ -83,7 +83,7 @@ ADR には**設計そのものを転記しない**。決定を理解するのに
 
 定量目標の**達成可否は運用・測定段階で初めて検証される**（負荷試験・プロファイリング・本番計測）。設計書は「どう達成を狙うか」の構造・方針を示すまでが責務であり、「達成を保証する」体裁で定量値を書くのは越権である。
 
-構造品質（責務分割・境界・依存方向）の定量化は別論点であり、そもそも数値化すべきでない。→ [spec_priorities_spec.md](spec_priorities_spec.md) §3 参照。
+構造品質（責務分割・境界・依存方向）の定量化は別論点であり、そもそも数値化すべきでない。→ [spec_priorities_spec.md][spec-priorities-spec] §3 参照。
 
 許容する記述・許容しない記述の具体例は §5.3。
 
@@ -182,8 +182,15 @@ ADR には**設計そのものを転記しない**。決定を理解するのに
 | 設計書本文が参照する要件 ID が、要件定義書に実在する (孤立参照禁止)          | 🟡 major       |
 | 要件定義書に存在しない機能を、承認の記録を伴わずに設計書で新規追加していない | 🔴 critical    |
 
-**承認の記録**: 要件定義書に無い設計を採るときの手続き（設計を止め、ユーザーへ説明し、承認を得る）は `/forge:start-design` が定める。本書が持つのは判定条件だけであり、判定は**当該節から承認を記録した ADR へのリンクがあるか**で行う。ADR への記録は `/forge:write-adr` が行う。ADR を作る対象・書き方は [adr_principles_spec.md](adr_principles_spec.md) に従う。記録の無い承認は承認として扱わない。
+**承認の記録**: 要件定義書に無い設計を採るときの手続き（設計を止め、ユーザーへ説明し、承認を得る）は `/forge:start-design` が定める。本書が持つのは判定条件だけであり、判定は**当該節から承認を記録した ADR へのリンクがあるか**で行う。ADR への記録は `/forge:write-adr` が行う。ADR を作る対象・書き方は [adr_principles_spec.md][adr-principles-spec] に従う。記録の無い承認は承認として扱わない。
 
-**差分開発の場合**: 差分開発の設計書における「要件定義書」は、当該範囲の現在の仕様である**差分側の要件定義書**を指す（[additive_development_spec.md](additive_development_spec.md) §2）。設計だけが差分開発型で、差分側の要件定義書が無いときは、現在の要件定義書を指す。旧要件定義書に記載が無いことを根拠に、新規追加と判定しない。
+**差分開発の場合**: 差分開発の設計書における「要件定義書」は、当該範囲の現在の仕様である**差分側の要件定義書**を指す（[additive_development_spec.md][additive-development-spec] §2）。設計だけが差分開発型で、差分側の要件定義書が無いときは、現在の要件定義書を指す。旧要件定義書に記載が無いことを根拠に、新規追加と判定しない。
 
 詳細なトレーサビリティ規約 (要件 ID とタスクの対応等) は計画書側 (`plan_principles_spec.md`) で扱う。
+
+[requirement-principles-spec]: requirement_principles_spec.md "c1cb19da9ad5 DLID-8y2jh2y06761"
+[design-principles-spec]: design_principles_spec.md "169ae99c4eed DLID-061pwjejh6yc"
+[adr-principles-spec]: adr_principles_spec.md "3ae4e3bfdd65 DLID-45wzpggz1set"
+[adr-usage-spec]: adr_usage_spec.md "253f59c3f26d DLID-m77gjek2tw2b"
+[spec-priorities-spec]: spec_priorities_spec.md "f8233c87c564 DLID-f9ny9e932trv"
+[additive-development-spec]: additive_development_spec.md "307dc53425f0 DLID-cyrk9xr8vcap"

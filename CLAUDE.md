@@ -12,7 +12,7 @@ Claude Code プラグインのマーケットプレイスリポジトリ。forge
 
 > 上記の版数は `.version-config.yaml` が CLAUDE.md を同期対象として宣言している箇所であり、`/forge:update-version` が機械的に書き換える。手で消したり書式を変えたりしない（`tests/common/test_version_sync_drift.py` が検証する）。
 
-全体像・スキル一覧・ワークフロー図は [README.md](README.md) を参照。
+全体像・スキル一覧・ワークフロー図は [README.md][readme] を参照。
 
 forge の文書検索は doc-link / doc-db の 2 backend 構成で、**どちらも本リポジトリの外にある**。doc-link の原本は別リポジトリ [BlueEventHorizon/doc-link](https://github.com/BlueEventHorizon/doc-link)、doc-db はローカル稼働の文書検索サーバである。backend 側の不具合を本リポジトリで回避してはならない（下記 SoT 項）。
 
@@ -33,7 +33,7 @@ forge の文書検索は doc-link / doc-db の 2 backend 構成で、**どちら
 - Plugin marketplaces: `https://code.claude.com/docs/en/plugin-marketplaces`
 - Skills: `https://code.claude.com/docs/en/skills`
 
-公式仕様の根拠は、公式ページの本文と照合した meta の写し、写しに無いときは claude-code-guide Agent の返答とする。確かめ方の全文は [forge_claude_code_authoring_policy.md](docs/rules/forge_claude_code_authoring_policy.md)「公式仕様の確かめ方」を参照。
+公式仕様の根拠は、公式ページの本文と照合した meta の写し、写しに無いときは claude-code-guide Agent の返答とする。確かめ方の全文は [forge_claude_code_authoring_policy.md][forge-claude-code-authoring-policy]「公式仕様の確かめ方」を参照。
 
 公式ドキュメントで確かめきれない挙動は推測で補わず、確認できない事項として明示する。
 
@@ -80,14 +80,14 @@ forge の文書検索は doc-link / doc-db の 2 backend 構成で、**どちら
 
 ### 配布物
 
-- **配布物に、配布物に含まれない具体パスと本リポジトリ固有の事情を書かない**: 固有の事情とは、内部文書の ID・仕様名（`DES-085_adr_writer_design` 等）、`meta/`、worktree 配置、原本 SoT である立場等。**配布物の公開名（`sdd-forge` / `forge`）と、forge が連携する外部プラグインの公開名（`anvil`）は固有の事情ではない**（利用者が install 時に指定し、現に目にする名前）。文書検索 backend の名前は別で、書いてよいのは wrapper だけである（[forge_doc_access_principle.md](docs/rules/forge_doc_access_principle.md)）
+- **配布物に、配布物に含まれない具体パスと本リポジトリ固有の事情を書かない**: 固有の事情とは、内部文書の ID・仕様名（`DES-085_adr_writer_design` 等）、`meta/`、worktree 配置、原本 SoT である立場等。**配布物の公開名（`sdd-forge` / `forge`）と、forge が連携する外部プラグインの公開名（`anvil`）は固有の事情ではない**（利用者が install 時に指定し、現に目にする名前）。文書検索 backend の名前は別で、書いてよいのは wrapper だけである（[forge_doc_access_principle.md][forge-doc-access-principle]）
 - **配布物のうち利用者環境で読まれるもの（SKILL.md / agents / commands / 内蔵 docs）からプロジェクト文書を参照しない**: パスも spec ID も禁止。規範は配布物側に本文で持たせる。script のコメント・docstring は対象外（前項の内部文書の ID も含む）
 - **下流での回避で済ませず、本リポジトリの原本（`plugins/forge/`）を直す**: `~/.claude/plugins/cache/` を書き換えても次の install で消える。memory に回避策を残すのは修正ではない
 - **agent / SKILL のプロンプト指示は、出力を組み立てる 1 箇所にだけ置く**: 近接箇所への同一指示は重複
 
 ### 実装
 
-全文は [plugin_implementation_guidelines.md](docs/rules/plugin_implementation_guidelines.md)。
+全文は [plugin_implementation_guidelines.md][plugin-implementation-guidelines]。
 
 - **他のスキルへの窓口は SKILL だけ。共通 script は直接使う**: 依拠してよいのは SKILL.md が公開する引数・出力の契約だけ。他のスキルの script（`skills/{他スキル}/scripts/`）を直接呼ばない。プラグイン直下 `scripts/` の共通 script は、複数のスキルが同じ処理を使うためにあり、直接呼んでよい。内部設計 ID・内部文書をインターフェースにしない。設計書を読んで同じ動作を自分で実装しない
 - **フォールバックを反射的に書かない**: 正しいリカバリとして具体的に説明できるものだけ書く。説明できなければ、隠さずエラーとして報告し、構造的に起こらないよう設計を直す
@@ -111,7 +111,7 @@ forge の文書検索は doc-link / doc-db の 2 backend 構成で、**どちら
 
 ### 文書スタイル
 
-- **文書の書き方は forge の[文書スタイル指針](plugins/forge/docs/document_style_guide.md)に従う**。以下はその要点
+- **文書の書き方は forge の[文書スタイル指針][document-style-guide]に従う**。以下はその要点
 - **タグ（`[MANDATORY]` / `[CRITICAL]` / `[IMPORTANT]`）は見出し行の末尾に付ける**（行末に DLID がある場合はその直前）: `[MANDATORY]` は 1 文書 0〜3 箇所に抑え、迷ったら CRITICAL → IMPORTANT → タグなしの順に格下げする
 - **見出しは 4 階層（`####`）まで**
 - **語尾の長音は JIS Z 8301 に従い省略する**（例: ディレクトリ、カテゴリ）
@@ -130,7 +130,7 @@ forge の文書検索は doc-link / doc-db の 2 backend 構成で、**どちら
 
 - **Python 3.14 以上をサポート対象とする**。Python 3.13 以下は対象外
 - **CI（`.github/workflows/ci.yml`）のゲートは 2 つ**: `python3 -m unittest discover -s tests -p 'test_*.py'` と `dprint check`。Python / TOML / Markdown / YAML を編集したら [dprint](https://dprint.dev/) で `dprint fmt` を通す（設定は `dprint.jsonc`）。通さないと CI が落ちる
-- ローカル読み込み: `claude --plugin-dir ./plugins/forge`。詳細は [DEVELOPMENT.md](DEVELOPMENT.md)
+- ローカル読み込み: `claude --plugin-dir ./plugins/forge`。詳細は [DEVELOPMENT.md][development]
 - `AGENTS.md` は `CLAUDE.md` へのシンボリックリンク（Codex 向け）。どちらを編集しても同一実体が変わる
 
 ## Debugging
@@ -163,7 +163,7 @@ git -C <実体パス> show main:<契約を定める SKILL.md やスクリプト>
 
 `plugins/` 配下の Python スクリプトにはテストが必須。
 
-**テストを実行・追加・変更する前に、[DEVELOPMENT.md](DEVELOPMENT.md) の「4. テスト」を Read する。** 実行コマンド、`tests/`（単体テスト）と `ai_tests/`（AI の判断を試すテスト）の使い分け、配置の規則は、そこにだけ書いてある。読まずにコマンドや置き場を推測しない。
+**テストを実行・追加・変更する前に、[DEVELOPMENT.md][development] の「4. テスト」を Read する。** 実行コマンド、`tests/`（単体テスト）と `ai_tests/`（AI の判断を試すテスト）の使い分け、配置の規則は、そこにだけ書いてある。読まずにコマンドや置き場を推測しない。
 
 ## Session Resumption
 
@@ -173,7 +173,7 @@ git -C <実体パス> show main:<契約を定める SKILL.md やスクリプト>
 - 解釈と作業状態が矛盾したら勝手に判断せず確認
 - 事実報告（reopen した / PR 出した 等）を新規依頼と取り違えない
 
-<!-- FORGE_ONBOARDING_START hash=97c1bbda0248 -->
+<!-- FORGE_ONBOARDING_START hash=942c03cdacd5 -->
 
 > このブロックは forge の onboarding スキルが生成する。手で編集しない（次回実行で上書きされる）。
 > `${CLAUDE_PLUGIN_ROOT}` は forge プラグインの配置先を指すプレースホルダであり、この文脈では実パスに解決されない。実体を読むには onboarding スキルを起動する。
@@ -186,7 +186,7 @@ git -C <実体パス> show main:<契約を定める SKILL.md やスクリプト>
 ## forge 文書規範
 
 - 文書内に「改定履歴」「変更履歴」等の履歴セクションを置かない。履歴は CHANGELOG と git 履歴が持ち、設計判断の変更は ADR に記録する
-- 「関連文書」等のリンク集セクションを置かない。必要でない参照は書かない。書かなければ本文が理解・検証できない参照だけを `[表示名](相対パス)` 形式で書く
+- 「関連文書」等のリンク集セクションを置かない。必要でない参照は書かない。書かなければ本文が理解・検証できない参照だけを、リファレンスリンクで書く（本文に `[表示名][ラベル]`、文書末尾に定義 `[ラベル]: 相対パス`）。インラインリンク（`[表示名](相対パス)`）は使わない
 - 要件（What）と設計（How）の境界は「ユーザーマニュアルに書く内容か」で判定する。ただし決定済みの「設計」「実装」は要件として記載されることもある。
 - 設計中に要件定義書に無い必要が判明したら設計を止める。要件へ戻す場合も、戻せず設計書に書く場合も、ユーザーの承認を得る。後者は承認を ADR に記録し、設計書の当該節からリンクする
 - 未確定の定量値を推測して書かない（TBD とする）。責務分割・境界・依存方向などの構造品質を数値目標に翻訳しない
@@ -233,3 +233,10 @@ git -C <実体パス> show main:<契約を定める SKILL.md やスクリプト>
 - **forge plugin の script は、対応する SKILL.md が明示的に「直接呼び出す」と指示しているもの以外は直接実行しない**
 
 <!-- FORGE_ONBOARDING_END -->
+
+[readme]: README.md
+[forge-claude-code-authoring-policy]: docs/rules/forge_claude_code_authoring_policy.md
+[forge-doc-access-principle]: docs/rules/forge_doc_access_principle.md
+[plugin-implementation-guidelines]: docs/rules/plugin_implementation_guidelines.md
+[document-style-guide]: plugins/forge/docs/document_style_guide.md
+[development]: DEVELOPMENT.md

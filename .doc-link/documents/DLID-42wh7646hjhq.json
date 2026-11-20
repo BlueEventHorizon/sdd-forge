@@ -1,34 +1,37 @@
 {
-  "content_hash": "52103a673f00b38b16154eb0783d75f727e9679c97d6152014f12396a051736b",
+  "content_hash": "b6a1775c93644383dea1ed09837f1f5aee175cc2e0599581a6e612abee15191c",
   "doc_link_id": "DLID-42wh7646hjhq",
   "keywords": [
     "plan format",
-    "plan.json",
-    "tasks",
-    "requirements_traceability",
-    "design_traceability",
+    "plan JSON",
+    "task schema",
+    "traceability",
     "feature_marker",
     "temporary-feature",
-    "parallel state",
-    "frontmatter parsing"
+    "frontmatter parsing",
+    "task status",
+    "priority"
   ],
   "path": "docs/specs/forge/design/DES-074_plan_format_design.md",
-  "purpose": "Defines the default JSON plan format and schema, plus the feature_marker.py contract for judging parallel temporary-feature state shared by skills.",
+  "purpose": "Defines the default JSON plan format, field definitions and status values, and the feature_marker.py contract for judging parallel (temporary-feature) state of documents.",
   "summary": [
-    "Rationale for choosing JSON for plan documents",
-    "Plan files carry no frontmatter; additive-feature status is traced via the requirements document",
+    "Rationale for choosing JSON for plans so start-implement can parse and update them mechanically",
+    "Plans carry no frontmatter; additive feature status is derived from the linked requirements document",
     "JSON schema with requirements_traceability, design_traceability and tasks top-level keys",
-    "Field definitions for each section, including task status enum and build_check values",
-    "Priority guideline ranges 1-99",
+    "Field definitions for each section, including task status, build_check and required_reading",
+    "Status values and pointers to the documents that define transitions",
+    "Priority ranges guideline",
     "feature_marker.py frontmatter parsing using only the standard library",
-    "Three-way judgment: parallel, not parallel, parse failure",
-    "Parse failure kept distinct from not-parallel; key order must not affect results"
+    "Three-way judgment: in parallel state, not in parallel state, parse failure",
+    "Parse failure cases and the rule that key order must not change the result",
+    "Callers must stop and report path and reason when judgment is impossible"
   ],
   "tasks": [
-    "Creating or reviewing implementation plan JSON files",
-    "Implementing or modifying start-implement plan consumption",
-    "Implementing or testing feature_marker.py",
-    "Judging temporary-feature state in start-design"
+    "Creating or validating an implementation plan JSON",
+    "Modifying start-implement plan consumption",
+    "Modifying feature_marker.py",
+    "Judging whether a document is a temporary-feature",
+    "Reviewing plan documents against the format"
   ],
   "title": "計画書 デフォルトフォーマット"
 }

@@ -109,5 +109,8 @@ forge プラグインの全 SKILL.md と全 script (共有 / SKILL 固有とも)
 
 ## 6. 関連文書 DLID-hgg8p67k0ace
 
-- [DES-024 SKILL.md と script の配置・契約設計](../design/DES-024_skill_script_layout_design.md) — 本要件の How を定める
-- [REQ-001 オーケストレータパターン要件](REQ-001_orchestrator_pattern.md) — SKILL の機能分業 (相補関係)
+- [DES-024 SKILL.md と script の配置・契約設計][des-024] — 本要件の How を定める
+- [REQ-001 オーケストレータパターン要件][req-001] — SKILL の機能分業 (相補関係)
+
+[des-024]: ../design/DES-024_skill_script_layout_design.md "d8aa531bdbaf DLID-ckbysbfdrsv5"
+[req-001]: REQ-001_orchestrator_pattern.md "8954ef4d1f67 DLID-ct64b13ee182"

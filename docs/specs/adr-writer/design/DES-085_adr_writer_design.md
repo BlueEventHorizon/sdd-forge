@@ -12,7 +12,7 @@ doc_link_id: DLID-pcket5v36c0g
 
 ## 1. 概要 DLID-a4ca7y4rr10y
 
-[REQ-030](../requirements/REQ-030_adr_writer.md) の How を定める。
+[REQ-030][req-030] の How を定める。
 
 ADR ライターは、3 つの部品からなる。
 
@@ -20,7 +20,7 @@ ADR ライターは、3 つの部品からなる。
 - カスタム Agent `adr-writer`: 隔離した context で、依頼を吟味し、ADR ファイルへ記載する
 - 受け渡しの script `adr_exchange.py`: 識別値の生成、依頼の公開、判定の記録、後始末を行う
 
-構成は `start-plan`（SKILL）と `plan-strategist`（カスタム Agent）の先例（[DES-019](../../forge/design/DES-019_create_plan_workflow_design.md)）に倣う。呼び出し元と Agent の間で運ぶのは識別値だけで、依頼の中身は script が公開したファイルを Agent が読み、判定は script が記録する。
+構成は `start-plan`（SKILL）と `plan-strategist`（カスタム Agent）の先例（[DES-019][des-019]）に倣う。呼び出し元と Agent の間で運ぶのは識別値だけで、依頼の中身は script が公開したファイルを Agent が読み、判定は script が記録する。
 
 ADR は、feature ごとに 1 つの ADR ファイルへ、すべて書く。決定ごとにファイルを分けない。
 
@@ -91,7 +91,7 @@ Agent は単独で起動できず、SKILL 経由になる（`plan-strategist`・
 
 #### ADR の本文は Agent が直接書く DLID-vv2cn0yss8w4
 
-置き場・ファイル名・ID・判定の記録は、決定論的に作れるので script が担う。ADR の本文は、内容そのものの決定であり、AI が担う（[deterministic_generation_spec.md](../../../../plugins/forge/docs/deterministic_generation_spec.md) §6）。先例の `plan-strategist` も、戦略書を直接書く。
+置き場・ファイル名・ID・判定の記録は、決定論的に作れるので script が担う。ADR の本文は、内容そのものの決定であり、AI が担う（[deterministic_generation_spec.md][deterministic-generation-spec] §6）。先例の `plan-strategist` も、戦略書を直接書く。
 
 節構成の検査（決定の節の番号、4 つの小節、旧書式の混入など）は、script の実行時検査に持たせない。受け取る側の形式検査は、検査点を増やし、落ちた理由を分からなくする（同 §7）。節構成は、既存の `test_adr_reference_integrity.py` と、レビュー観点（`review_criteria_design.md` の「ADR 運用」）が担う。
 
@@ -99,7 +99,7 @@ Agent は単独で起動できず、SKILL 経由になる（`plan-strategist`・
 
 ADR ライターは独立した書き手であり、「作成」は、できたこと自体で足りる。記載先は、feature の ADR ファイルであり、呼び出し元が出力先から知っている。返す情報があるのは、呼び出し元が次の手を取るために理由を要する、棄却と不足だけである。理由は量が小さく、読み手が人と呼び出し元の AI なので、return value に自然文で書く。呼び出し元が分岐に使う判定は、閉じた 3 値として script が記録する。承認記録で判定を読み違えると、承認の記録が無いまま設計が進むためである。
 
-[DES-022](../../forge/design/DES-022_parallel_agent_output_contract_design.md) は、収集系・並列の Agent の結果の受け渡し契約であり、書き込み系の ADR ライターには、その §3.0 により適用されない。
+[DES-022][des-022] は、収集系・並列の Agent の結果の受け渡し契約であり、書き込み系の ADR ライターには、その §3.0 により適用されない。
 
 ## 3. モジュール設計 DLID-gmfmpyeh6gcc
 
@@ -197,7 +197,7 @@ ADR ライターは独立した書き手であり、「作成」は、できた�
 
 #### 終了コードと出力 DLID-tpejtgtgt8fd
 
-終了コードは `0`（完了）・`1`（区別のないエラー）・`2`（引数を受理できない）だけを返す。標準出力は、`0` のとき結果の JSON、非 0 のとき `errors`（自然文の配列）を持つ JSON とする（`2` は `argparse` が標準エラー出力へ書く）。例外のキャッチは外部要因（`OSError`、判定ファイルの `ValueError`）に限り、内部のバグは握りつぶさない（[COMMON-REQ-002](../../common/requirements/COMMON-REQ-002_error_handling_policy.md)）。
+終了コードは `0`（完了）・`1`（区別のないエラー）・`2`（引数を受理できない）だけを返す。標準出力は、`0` のとき結果の JSON、非 0 のとき `errors`（自然文の配列）を持つ JSON とする（`2` は `argparse` が標準エラー出力へ書く）。例外のキャッチは外部要因（`OSError`、判定ファイルの `ValueError`）に限り、内部のバグは握りつぶさない（[COMMON-REQ-002][common-req-002-error-handling-policy]）。
 
 判定の `rejected` と `insufficient` はエラーではなく、判定できる結果であり、終了コードは `0` である。
 
@@ -252,7 +252,7 @@ ADR ライターは独立した書き手であり、「作成」は、できた�
 
 8. **完了処理**（`--defer-finish` が無いとき）: `/forge:review --files {ADR ファイル} --auto`、`/forge:update-db-specs`、commit の確認（`anvil:commit`）の順に行う
 
-呼び出し元（`start-design`）は、`--defer-finish` を固定の値として、起動箇所にリテラルで書く（[REQ-003](../../forge/requirements/REQ-003_skill_script_separation.md) FNC-006）。
+呼び出し元（`start-design`）は、`--defer-finish` を固定の値として、起動箇所にリテラルで書く（[REQ-003][req-003] FNC-006）。
 
 ### 3.5 規範文書 DLID-83k0wa2c0p2y
 
@@ -353,5 +353,11 @@ sequenceDiagram
 
 該当なし。
 
-[reference]: ../../../rules/plugin_claude_code_reference.md
-[authoring-guide]: ../../../rules/plugin_claude_code_authoring_guide.md
+[reference]: ../../../rules/plugin_claude_code_reference.md "4925fe0a5d6e DLID-d384sm5xwctj"
+[authoring-guide]: ../../../rules/plugin_claude_code_authoring_guide.md "1b4400f836cd DLID-pvwk8en5c2rq"
+[req-030]: ../requirements/REQ-030_adr_writer.md "e5233def35da DLID-7gyjj06rtab7"
+[des-019]: ../../forge/design/DES-019_create_plan_workflow_design.md "7f8da9d31c1f DLID-1585cw3yt8pa"
+[deterministic-generation-spec]: ../../../../plugins/forge/docs/deterministic_generation_spec.md "75383cc8c6d8 DLID-tm2m7nv23dqd"
+[des-022]: ../../forge/design/DES-022_parallel_agent_output_contract_design.md "55060c313fdc DLID-5h7wqxcknyha"
+[common-req-002-error-handling-policy]: ../../common/requirements/COMMON-REQ-002_error_handling_policy.md "3810426fdc1b DLID-4wn8sb8y1f80"
+[req-003]: ../../forge/requirements/REQ-003_skill_script_separation.md "323aaf2b05f6 DLID-bgxgcq0pvkm7"

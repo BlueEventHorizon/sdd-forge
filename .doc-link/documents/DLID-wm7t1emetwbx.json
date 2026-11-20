@@ -1,36 +1,35 @@
 {
-  "content_hash": "3caf19bf1db8d995b204693034001f8b203c07a43e984397e5d814787a3bb149",
+  "content_hash": "cff328dfcaec10e442d67240ec0bac698908d34ab2016f11143ddf29119ca8d3",
   "doc_link_id": "DLID-wm7t1emetwbx",
   "keywords": [
-    "review criteria",
+    "document review",
     "generic review",
-    "SSOT delegation",
-    "review priorities",
-    "document style guide",
+    "review criteria",
+    "style guide",
     "error classification",
-    "recommendation",
+    "SSOT reference",
     "create_issue",
-    "skip",
-    "review packet"
+    "term consistency"
   ],
   "path": "plugins/forge/docs/criteria/review_criteria_generic.md",
-  "purpose": "Generic review criteria for documents: lists the delegated SSOT documents to check, the check order, and the rules for choosing fix, create_issue or skip recommendations, without holding its own judgments.",
+  "purpose": "Review criteria for generic documents: lists the delegated SSOT documents, check order, and rules for choosing fix, create_issue or skip.",
   "summary": [
-    "Delegation table of SSOT documents by priority P1 to P3 (document style guide, project-specific rules, error classification spec, consistency check, spec priorities)",
-    "Fallback to built-in rules when project-specific rules are not available",
-    "Check order: style conformance, project rules, error handling, contradictions, unnecessary complexity",
-    "Error handling check against the error classification spec (swallowed errors, detectable events, per-cause values)",
-    "P2 contradiction detection limited to conflicting statements, not omissions",
-    "P3 unnecessary complexity judged Yes/No against spec priorities perverse patterns",
-    "Judgment rules for recommendation values fix, create_issue and skip with adoption conditions",
-    "Three conditions for create_issue: no applicable rule, recurrence or objectivity, rule-writable granularity"
+    "Delegates severity and gray-zone judgment to principles documents; holds no judgment itself",
+    "P1 SSOT table: document style guide, project document rules, error classification spec",
+    "P2 contradiction check such as term mismatch and duplication",
+    "P3 unnecessary complexity check via spec priorities spec",
+    "Check order: style, project rules, error handling, contradiction, complexity",
+    "Error handling check: swallowed errors, judgeable events, per-cause values",
+    "Recommendation rules: fix, create_issue, skip",
+    "Three conditions for create_issue",
+    "Fallback to built-in style guide when project rules are missing"
   ],
   "tasks": [
-    "Reviewing documents with generic criteria",
+    "Reviewing general documents",
     "Building a review packet for document review",
-    "Deciding recommendation values fix, create_issue or skip for review findings",
-    "Revising review criteria or delegation targets",
-    "Reviewing documents that define error handling"
+    "Checking documents against the style guide",
+    "Checking error handling descriptions in documents",
+    "Authoring or updating review criteria"
   ],
   "title": "generic レビュー基準"
 }

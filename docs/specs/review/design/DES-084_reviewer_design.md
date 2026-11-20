@@ -6,7 +6,7 @@ doc_link_id: DLID-j50s0xwkwx00
 
 ## 1. 概要 DLID-vbe7n0w13fam
 
-[REQ-029](../requirements/REQ-029_review_exchange.md) のうち、レビューの開始から reviewer の区間までの受け渡し・採番・書き出しと終了の値・本体の仕事と、[REQ-027](../requirements/REQ-027_reviewer.md) を実現する設計を定める。
+[REQ-029][req-029] のうち、レビューの開始から reviewer の区間までの受け渡し・採番・書き出しと終了の値・本体の仕事と、[REQ-027][req-027] を実現する設計を定める。
 
 **主体はスキルとエージェント（本体・reviewer）である。その間を取り持つのが JSON と script であり、これらをクラスとして説明する。** シーケンスが全体の流れを示し、クラスごとに責務・入出力を定める。
 
@@ -108,7 +108,7 @@ flowchart LR
 
 - 依存の向きは、主体 → script → JSON の一方向である。script 同士は呼び合わない（ラッパーが基本の script を呼ぶ関係を除く）。
 - `append_result.py` は、採番のために、全ラウンドの結果の JSON を読む（点線は省略している）。
-- **共有の枠は、[DES-083](DES-083_evaluator_perspective_design.md) §3 にも同じものを描く。** 共有の枠の構成（どの script を含むか）を変えるときは、両方の図を同時に直す。
+- **共有の枠は、[DES-083][des-083] §3 にも同じものを描く。** 共有の枠の構成（どの script を含むか）を変えるときは、両方の図を同時に直す。
 
 ## 4. スキル・エージェント DLID-yek9bknzdtzy
 
@@ -205,8 +205,8 @@ flowchart TB
 判定の手順と、種別ごとに上乗せする観点文書の対応は、`plugins/forge/docs/criteria/review_target_types.md` に置く。`reviewer.md` がこの文書を読む（REQ-027 FNC-307・308）。同じ判定と対応を他の主体も使うので、置き場を 1 つにする。
 
 - **書くもの:** 判定の手順（`adr` を design として扱うことを含む）と「種別ごとに上乗せする観点文書」、すべての種別に当てる共通の文書。種別ごとの内蔵規範・プロジェクト固有の規約・突き合わせる対象は、各観点文書が持つので写さない。
-- **観点文書の置き場に置く理由:** 種別を判定する目的が、上乗せする観点文書を選ぶことだからである（[forge_document_type_roles.md](../../../rules/forge_document_type_roles.md)）。
-- **参照の記法:** 内蔵文書は `${CLAUDE_PLUGIN_ROOT}/docs/` 配下の固定パスで直接参照する。プロジェクト固有の文書は依頼の `references` が運ぶ（[forge_doc_access_principle.md](../../../rules/forge_doc_access_principle.md)）。
+- **観点文書の置き場に置く理由:** 種別を判定する目的が、上乗せする観点文書を選ぶことだからである（[forge_document_type_roles.md][forge-document-type-roles]）。
+- **参照の記法:** 内蔵文書は `${CLAUDE_PLUGIN_ROOT}/docs/` 配下の固定パスで直接参照する。プロジェクト固有の文書は依頼の `references` が運ぶ（[forge_doc_access_principle.md][forge-doc-access-principle]）。
 
 #### 所見を渡す DLID-6jbtz4bz8ax6
 
@@ -286,8 +286,8 @@ finding は `finding_id`（`append_result.py` が採番）、`location`（`--loc
 script は `plugins/forge/scripts/review/` に置く。基本の script が処理を持ち、ラッパーは呼ぶ主体から決定論的に決まるオプションを固定して基本の script を呼ぶだけである（§6.6）。AI が判断して決める値（`disposition`、位置、確信度など）は、ラッパーに畳まず引数として渡す。
 
 - **引数:** `<project_root> <review_id> <round_number>` の順に、位置引数で渡す。持たない script は右から省く（`publish_request.py` は `<project_root>` だけ）。プロジェクトルートは、定義のコマンド行に書いた `${CLAUDE_PROJECT_DIR}` が置換されたものを渡す（REQ-029 FNC-314）。script ファイルの中にプレースホルダは書かない（置換するのはスキル機構であり、script ファイルは機構を通らない）。
-- **標準出力:** 成功時は JSON object を 1 つ出力する。返す値が無ければ `{}`。失敗時は終了コード `1` と、自然文の日本語の配列 `errors` を持つ JSON object。引数の誤りは終了コード `2`（`argparse` が返す）。`3` 以上は使わない（[plugin_script_error_output_rules.md](../../../rules/plugin_script_error_output_rules.md)）。
-- **標準入力:** 自由記述は標準入力の全体を 1 つの値として、加工せずに受け取る。値の内容を理由に拒まない（REQ-029 FNC-304）。`focus` / `scope` だけは、2 つの自由記述を 1 回の操作で渡すため、本体が Write ツールで `<project_root>/.temp/forge/review/review_focus.txt`・`review_scope.txt` に書いたファイルで受け取り、`publish_request.py` が読んで削除する（[plugin_implementation_guidelines.md](../../../rules/plugin_implementation_guidelines.md) の一時ファイルの節）。
+- **標準出力:** 成功時は JSON object を 1 つ出力する。返す値が無ければ `{}`。失敗時は終了コード `1` と、自然文の日本語の配列 `errors` を持つ JSON object。引数の誤りは終了コード `2`（`argparse` が返す）。`3` 以上は使わない（[plugin_script_error_output_rules.md][plugin-script-error-output-rules]）。
+- **標準入力:** 自由記述は標準入力の全体を 1 つの値として、加工せずに受け取る。値の内容を理由に拒まない（REQ-029 FNC-304）。`focus` / `scope` だけは、2 つの自由記述を 1 回の操作で渡すため、本体が Write ツールで `<project_root>/.temp/forge/review/review_focus.txt`・`review_scope.txt` に書いたファイルで受け取り、`publish_request.py` が読んで削除する（[plugin_implementation_guidelines.md][plugin-implementation-guidelines] の一時ファイルの節）。
 - **書き込み:** JSON は、同じディレクトリの一時ファイルへ書いてから置き換える。読み手が途中の状態を読まない。文字コードは UTF-8 とする。
 - **絶対パス:** 依頼と結果が持つパスと位置は、すべて絶対パスである（REQ-029 DM-304）。
 - **共通の部品:** 上の約束を実現する部品（JSON の出力、失敗の返し方、一時ファイルを経由した公開、絶対パスの検査）は、`plugins/forge/scripts/review/review_common.py` に 1 つだけ置き、各 script が import する。script ごとに複製しない。後続の script が必要とする部品は、必要になったときにここへ足す。
@@ -431,3 +431,11 @@ script は `plugins/forge/scripts/review/` に置く。基本の script が処�
 - `targets` の 3 形（`paths` / `base_branch` / `diff`）すべてで、`review_id` の生成から、依頼の公開、パスによる JSON の直接読み出し、所見の書き出しと封緘までが成立すること。
 - reviewer が `target_unreadable` で終えたとき、`resolve_review_path.py` が失敗し、`errors` にエラー値が入ること。
 - reviewer が書き出さずに終えたとき、`resolve_review_path.py` が失敗すること。
+
+[req-029]: ../requirements/REQ-029_review_exchange.md "4e7fe6918eec DLID-5vrs9fnet7de"
+[req-027]: ../requirements/REQ-027_reviewer.md "d1f79607a42d DLID-y42g1frxwkf5"
+[des-083]: DES-083_evaluator_perspective_design.md "04c49729cad3 DLID-mzeyx39mfryw"
+[forge-document-type-roles]: ../../../rules/forge_document_type_roles.md "7b634212b043 DLID-mmxpd4dms815"
+[forge-doc-access-principle]: ../../../rules/forge_doc_access_principle.md "cb6aae1960a3 DLID-1t0vpykg6nq6"
+[plugin-script-error-output-rules]: ../../../rules/plugin_script_error_output_rules.md "f1c5b6752ce7 DLID-fz66nns8q521"
+[plugin-implementation-guidelines]: ../../../rules/plugin_implementation_guidelines.md "231d1a822305 DLID-jzs5n6cre1jh"

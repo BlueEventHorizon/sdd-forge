@@ -113,6 +113,6 @@ grep による代替検索は行わない）。書き込み・コミット・自
   doc-link 契約（`test_link_contract.py`）を検証する。
 - `tests/forge/{query,update}-db-{rules,specs}/` — SKILL 固有 wrapper の透過性を検証する。
 
-[authoring-guide]: ../../../rules/plugin_claude_code_authoring_guide.md
-[authoring-policy]: ../../../rules/forge_claude_code_authoring_policy.md
-[des-057]: ../../doc-db/design/DES-057_doc_db_backend_selection_design.md
+[authoring-guide]: ../../../rules/plugin_claude_code_authoring_guide.md "1b4400f836cd DLID-pvwk8en5c2rq"
+[authoring-policy]: ../../../rules/forge_claude_code_authoring_policy.md "41e67eb507c7 DLID-33rp07ycsdym"
+[des-057]: ../../doc-db/design/DES-057_doc_db_backend_selection_design.md "a70040e559ab DLID-5k6jt9qvf60d"

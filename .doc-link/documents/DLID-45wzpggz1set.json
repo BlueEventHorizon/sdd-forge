@@ -1,39 +1,39 @@
 {
-  "content_hash": "795179e854620cbceb6931c06d325468e327e7dabdbd96284620b89d14cdd3d5",
+  "content_hash": "3ae4e3bfdd65f2e76915ea719e8c2a1303e068d06a251d90480ffa15d4d6cb7a",
   "doc_link_id": "DLID-45wzpggz1set",
   "keywords": [
     "ADR",
     "architecture decision record",
-    "decision screening",
+    "operating principles",
+    "screening criteria",
     "rejected alternatives",
-    "mutable document",
-    "section numbers",
-    "ID numbering",
     "severity catalog",
-    "scope block",
-    "approval record"
+    "section renumbering",
+    "ID numbering",
+    "scope box",
+    "mutable document"
   ],
   "path": "plugins/forge/docs/adr_principles_spec.md",
-  "purpose": "Defines the normative principles for creating and revising ADRs: what to record, how to screen content, mutability, rejection handling, placement, ID numbering, tolerance, and severity catalog.",
+  "purpose": "Defines the operating principles for creating and revising ADRs: what to record, how to screen content, mutability, rejection handling, placement and numbering, tolerance zones, and a severity catalog.",
   "summary": [
-    "ADR definition: responsibility, what not to write, exception for approval records, lifespan",
-    "Primary beneficiary is the AI about to propose an alternative",
-    "Criteria for what to write: two conditions must hold at once; ADRs are not specs or rules",
-    "Conditions for writing the optional scope block",
-    "Screening criteria table: reject, accept after fixing, or flag as insufficient",
-    "ADRs are mutable: rewrite sections, keep section numbers, no history log",
-    "Rejection of a decision handled by rewriting the same section",
-    "Placement per feature, single file per feature, ID numbering via next-spec-id",
-    "Gray-zone tolerance table of allowed and disallowed practices",
+    "ADR definition: responsibility, what not to write, exception for approved designs, permanence and revision",
+    "Beneficiary is the AI about to propose alternatives, so rejection reasons must be thorough",
+    "Criteria for what to write: future plausible proposal and not answerable from code, rules or specs",
+    "Conditions for the optional scope box",
+    "Screening criteria table: reject, revise and record, or insufficient",
+    "ADR is mutable: rewrite sections, never renumber, no change-log section",
+    "Rejected decisions are folded into the same section, with old option moved to alternatives",
+    "Placement per feature, single file per feature, numbering via next-spec-id skill",
+    "Gray zone tolerance table of allowed and disallowed practices",
     "Severity catalog of violation patterns"
   ],
   "tasks": [
-    "Writing or updating an ADR",
-    "Deciding whether a decision deserves an ADR",
-    "Screening content submitted for an ADR",
-    "Reviewing ADRs for rule violations",
-    "Numbering and placing a new ADR file",
-    "Handling a reversed or corrected decision"
+    "Creating or updating an ADR",
+    "Deciding whether content deserves an ADR",
+    "Reviewing an ADR or judging review findings",
+    "Handling a revoked or corrected decision",
+    "Assigning an ADR number and placing the file",
+    "Proposing an alternative design and checking whether it was already considered"
   ],
   "title": "ADR（アーキテクチャ決定記録）運用原則"
 }

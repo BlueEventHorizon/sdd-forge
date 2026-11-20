@@ -6,7 +6,7 @@ doc_link_id: DLID-m77gjek2tw2b
 
 ADR（アーキテクチャ決定記録）を**根拠に判断する側**の義務を定める。提案・実装・レビューで、過去の決定の棄却理由を根拠に、提案や所見を見送るときに従う。
 
-ADR を書く・直す側の規範は [adr_principles_spec.md](adr_principles_spec.md)、書式は [adr_format.md](adr_format.md) が定める。本書は、ADR を書かない作業でも読む。
+ADR を書く・直す側の規範は [adr_principles_spec.md][adr-principles-spec]、書式は [adr_format.md][adr-format] が定める。本書は、ADR を書かない作業でも読む。
 
 ---
 
@@ -32,3 +32,6 @@ ADR に書いたことが提案時に必ず読まれる保証はない。到達�
 | 違反パターン                                                   | 違反時の重大度 | 理由                                                           |
 | -------------------------------------------------------------- | -------------- | -------------------------------------------------------------- |
 | ADR を根拠に提案・所見を見送ったのに、ADR の番号を添えていない | 🟢 minor       | 見送りの根拠が追跡できず、棄却理由が失効していた場合に遡れない |
+
+[adr-principles-spec]: adr_principles_spec.md "3ae4e3bfdd65 DLID-45wzpggz1set"
+[adr-format]: adr_format.md "0dc06fb958c8 DLID-ns59za8fens1"

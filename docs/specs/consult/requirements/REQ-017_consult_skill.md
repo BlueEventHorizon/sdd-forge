@@ -42,7 +42,7 @@ review と consult は対等なサブシステムだが、実行時には review
 ### 1.1 対象システムの性質 DLID-80pbxdczgwkm
 
 本スキルは開発者が自分の端末で使う対話ツールであり、外部公開・本番運用・個人情報の保持を伴わない
-（[spec_priorities_spec.md](../../../../plugins/forge/docs/spec_priorities_spec.md) §10.1 の
+（[spec_priorities_spec.md][spec-priorities-spec] §10.1 の
 「上記いずれにも該当しない」に該当する）。性能・可用性・運用性の定量目標は持たない。ただし提示対象に機密情報が含まれうるため、その扱いは
 NFR-004 で定める。
 
@@ -308,3 +308,4 @@ consult brief を作れないとき（原文へ到達できない）、および
 [three-talk]: https://wlv.openrepository.com/items/a439e902-fdde-4b52-adab-de3b3bbcc267
 [steyvers]: https://arxiv.org/abs/2401.13835
 [bansal]: https://arxiv.org/abs/2006.14779
+[spec-priorities-spec]: ../../../../plugins/forge/docs/spec_priorities_spec.md "f8233c87c564 DLID-f9ny9e932trv"

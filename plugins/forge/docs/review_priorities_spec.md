@@ -70,13 +70,11 @@ severity の単一の真実源 (SoT) は **委譲先 principles の重大度カ�
 - reviewer / evaluator は criteria の「SSOT参照」から委譲先文書を辿り、その重大度カタログから severity を finding に転記する
 - 執筆者は設計時点で principles の重大度カタログを参照できるため、「レビュアーだけが知っている判断基準」は存在しない（設計時点での情報完全性）
 
-> **注**: addendum merge は完了済み (forge-review feature の実装フェーズで実施)。
-
-文書参照（[document_style_guide.md](document_style_guide.md) §5 / §8）の重大度カタログは §2.3 に、用語（同 §9）の重大度カタログは §2.4 に、規範本体とは別に置く。文書スタイル指針は執筆者向けの文書であり、reviewer が finding へ転記する表を持たない。
+文書参照（[document_style_guide.md][document-style-guide] §5 / §8）の重大度カタログは §2.3 に、用語（同 §9）の重大度カタログは §2.4 に、規範本体とは別に置く。文書スタイル指針は執筆者向けの文書であり、reviewer が finding へ転記する表を持たない。
 
 ### 2.3 重大度カタログ（文書参照） DLID-dg3kght5a0w7
 
-[document_style_guide.md](document_style_guide.md) §5 / §8 の違反に対する severity。レビュアーはここから finding へ転記する。対象は**記法**の違反であり、参照先が実在するかは含まない。「系統」は同 §5 冒頭の表の系統番号であり、その系統の参照にのみ適用する。
+[document_style_guide.md][document-style-guide] §5 / §8 の違反に対する severity。レビュアーはここから finding へ転記する。対象は**記法**の違反であり、参照先が実在するかは含まない。「系統」は同 §5 冒頭の表の系統番号であり、その系統の参照にのみ適用する。
 
 | # | 違反                                                                                          | 系統        | severity    |
 | - | --------------------------------------------------------------------------------------------- | ----------- | ----------- |
@@ -85,18 +83,19 @@ severity の単一の真実源 (SoT) は **委譲先 principles の重大度カ�
 | 6 | 省略規定（同一段落内の 2 回目以降に限る・表セル内では省略しない）に反するファイル名のみの言及 | (2)         | 🟡 major    |
 | 7 | `docs/` 内部の参照に `${CLAUDE_PLUGIN_ROOT}` を使用                                           | (1)         | 🟡 major    |
 | 8 | §8 に反する関連文書セクションの設置                                                           | (1) (2) (3) | 🟢 minor    |
+| 9 | 文書への参照をインラインリンクで書く（リファレンスリンクでない）                              | (1) (3)     | 🟡 major    |
 
 3 を critical とするのは、**参照先へ到達できない**（AI が読みに行って失敗する）ためである。
-5〜7 は到達自体は可能で、解決の手間・曖昧さが残るに留まる。
+5〜7 は到達自体は可能で、解決の手間・曖昧さが残るに留まる。9 も到達は可能だが、文書検索の索引が参照を追えなくなる。
 
 **参照先の実在は本表の対象外である。** 実在性は決定論的に判定できるため、レビュー観点ではなく検査の
 機構が担う。番号を詰めずに欠番のままにしてあるのは、外した行を後から書き戻さないためである。
 
-#5 の系統 (3) では、ID を持つ文書への識別子としての ID 言及は違反に当たらない（同 §5.1 系統 (3)）。reference-style link のラベル定義行も違反に当たらない（同 §5.1 の注記）。
+#5 の系統 (3) では、ID を持つ文書への識別子としての ID 言及は違反に当たらない（同 §5.1 系統 (3)）。リファレンスリンクのラベル定義行も違反に当たらない（同 §5.1 の注記）。
 
 ### 2.4 重大度カタログ（用語） DLID-bqrt4frqaxj4
 
-[document_style_guide.md](document_style_guide.md) §9 の違反に対する severity。レビュアーはここから finding へ転記する。
+[document_style_guide.md][document-style-guide] §9 の違反に対する severity。レビュアーはここから finding へ転記する。
 
 | # | 違反                                                                              | severity    |
 | - | --------------------------------------------------------------------------------- | ----------- |
@@ -126,7 +125,7 @@ severity の単一の真実源 (SoT) は **委譲先 principles の重大度カ�
 
 ### 3.4 fix 判定の比例性確認 DLID-yk41pjxfgcd5
 
-指摘が [scope_proportionality_spec.md](scope_proportionality_spec.md) §2 の3類型（カタストロフィックな外部要因への防御 / 発生経路を具体化できない、または極めてまれで起きても通常の手順で収まる投機的な防御実装 / 設計・要件・ルールに根拠のない品質改善の即時修正化）のいずれかに該当する場合に限り、`fix` 採用条件の適用前に evaluator が同文書 §4 の3点チェックを確認する。いずれかを満たさない指摘は `fix` ではなく `skip` とする。
+指摘が [scope_proportionality_spec.md][scope-proportionality-spec] §2 の3類型（カタストロフィックな外部要因への防御 / 発生経路を具体化できない、または極めてまれで起きても通常の手順で収まる投機的な防御実装 / 設計・要件・ルールに根拠のない品質改善の即時修正化）のいずれかに該当する場合に限り、`fix` 採用条件の適用前に evaluator が同文書 §4 の3点チェックを確認する。いずれかを満たさない指摘は `fix` ではなく `skip` とする。
 
 **3類型に該当しない指摘（明示された要件・設計・ルール違反、具体的な実行時リスク、データ損失・セキュリティ・破壊的操作等）には本節を適用しない**。通常の `fix` 採用条件（各 criteria §3）のみで判定する。「レビューで発見されたこと」自体は3類型のいずれにも該当せず、`skip` の根拠にならない。
 
@@ -134,15 +133,15 @@ severity の単一の真実源 (SoT) は **委譲先 principles の重大度カ�
 
 各 `review_criteria_*.md` は **severity (🔴 / 🟡 / 🟢) を一切宣言しない**。
 
-- 旧 criteria が持っていた `### 🔴致命的` / `### 🟡品質問題` / `### 🟢改善提案` 等のセクション分けは廃止
-- severity デフォルト表 (perspective 単位での重大度割り当て表) も廃止
+- `### 🔴致命的` / `### 🟡品質問題` / `### 🟢改善提案` 等の、重大度によるセクション分けを持たない
+- severity デフォルト表 (perspective 単位での重大度割り当て表) を持たない
 - severity は委譲先 principles の重大度カタログから取得する (§2.2)
 
 ### 3.6 criteria はグレーゾーン判定を持たない DLID-z25d1bsqf8qd
 
 各 `review_criteria_*.md` は **グレーゾーンの許容範囲判定を持たない**。
 
-- 旧 criteria が持っていた `false positive に注意` 形式の警告ブロックは廃止
+- `false positive に注意` 形式の警告ブロックを持たない
 - 「どの解釈を許容し、どれを許容しないか」は委譲先 principles の「グレーゾーン許容範囲」節に断定形で明示する
 - evaluator の 5 観点精査 (観点 4: false positive) は criteria ではなく principles の許容範囲表を参照して判定する
 
@@ -167,7 +166,7 @@ ADR は「その案は検討済みで、こういう理由で採らなかった�
 ADR を根拠に所見を書く、または所見を落とすときは次に従う。
 
 - **棄却理由が依拠する前提が今も成立しているか**を確かめる。成立していなければ ADR を根拠にしない
-- ADR を根拠に finding を落とした場合は、**その ADR の番号（ファイルの番号と節番号。例: `ADR-NNN §N`）を記録する**（判断を後から追跡できるようにするため。読み手の義務は [adr_usage_spec.md](adr_usage_spec.md)）
+- ADR を根拠に finding を落とした場合は、**その ADR の番号（ファイルの番号と節番号。例: `ADR-NNN §N`）を記録する**（判断を後から追跡できるようにするため。読み手の義務は [adr_usage_spec.md][adr-usage-spec]）
 
 ---
 
@@ -205,14 +204,14 @@ evaluator は finding が以下の **3 条件をすべて満たす場合のみ**
 ```markdown
 # {種別} レビュー基準
 
-> SoT: ${CLAUDE_PLUGIN_ROOT}/docs/review_priorities_spec.md
+> SoT: [review_priorities_spec.md][review-priorities-spec]
 > 重大度判定 / グレーゾーン許容範囲は委譲先 principles 側を参照すること。本ファイルは判断を持たない
 
 ## 1. SSOT参照
 
 | 委譲先 (principles / format / rules / 仕様書) | 役割 (規範本体 + 重大度カタログ)   |
 | --------------------------------------------- | ---------------------------------- |
-| `${CLAUDE_PLUGIN_ROOT}/docs/...`              | (規範) + 重大度カタログ (拡充済み) |
+| [foo_spec.md][foo-spec]                       | (規範) + 重大度カタログ (拡充済み) |
 | ...                                           | ...                                |
 
 ## 2. チェック順
@@ -231,7 +230,12 @@ evaluator は finding が以下の **3 条件をすべて満たす場合のみ**
 | `create_issue` | ルール未整備で発見した場合 (本仕様 §4 の 3 条件をすべて満たす)                                                              |
 | `skip`         | false positive / グレーゾーン許容範囲内 (principles の許容範囲に該当)                                                       |
 | `needs_review` | 対象を読んでも判断が難しく人間判断が必要 (上記いずれにも該当しないとき。観点 2 設計意図整合または観点 3 副作用限定が不成立) |
+
+[review-priorities-spec]: ../review_priorities_spec.md
+[foo-spec]: ../foo_spec.md
 ```
+
+雛形の参照は、[document_style_guide.md][document-style-guide] §5.1 の系統 (1) に従う（相対パスのリファレンスリンク。定義は文書末尾に置く）。
 
 ### 5.3 複数 SoT 間の優先順位 DLID-g8682pfvd8mq
 
@@ -245,3 +249,7 @@ evaluator は finding が以下の **3 条件をすべて満たす場合のみ**
 - 重大度判定 (`### 🔴致命的` / `### 🟡品質問題` / `### 🟢改善提案` のセクション分け、severity デフォルト表)
 - グレーゾーン判定 (`false positive に注意` 形式の警告ブロック)
 - 「保守性」「堅牢性」「アーキテクチャ整合性」等の品質特性をレビュー独自観点として記述する箇所
+
+[document-style-guide]: document_style_guide.md "69dee42932c2 DLID-c59znr7b8f56"
+[scope-proportionality-spec]: scope_proportionality_spec.md "be634f5152a6 DLID-s1dhhaprgf1r"
+[adr-usage-spec]: adr_usage_spec.md "253f59c3f26d DLID-m77gjek2tw2b"

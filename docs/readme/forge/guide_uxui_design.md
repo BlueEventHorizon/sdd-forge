@@ -114,7 +114,7 @@ When `/forge:review` runs on a UI document without prior start-uxui-design outpu
 
 ## Usage Scenarios
 
-For detailed scenarios, see [uxui_scenario.md](../uxui_scenario.md).
+For detailed scenarios, see [uxui_scenario.md][uxui-scenario].
 
 | Scenario                    | Summary                                           |
 | --------------------------- | ------------------------------------------------- |
@@ -123,3 +123,5 @@ For detailed scenarios, see [uxui_scenario.md](../uxui_scenario.md).
 | macOS app                   | Generate tokens specialized for macOS HIG         |
 | Design review only          | Review existing design specs from UX perspectives |
 | Post-requirements update    | Update tokens after ASCII art changes             |
+
+[uxui-scenario]: ../uxui_scenario.md

@@ -93,7 +93,7 @@ doc_types_map:
 | `design`      | 技術設計書、アーキテクチャ仕様                                                        |
 | `plan`        | 実装計画、ロードマップ、タスク分割。索引からは除外する（[plan の除外](#plan-の除外)） |
 | `adr`         | アーキテクチャ決定記録。feature ごとに 1 つの ADR ファイル                            |
-| `glossary`    | 用語集。構造・ID・ファイル名は [glossary_format.md](glossary_format.md)               |
+| `glossary`    | 用語集。構造・ID・ファイル名は [glossary_format.md][glossary-format]                  |
 | `api`         | API 仕様、エンドポイント定義                                                          |
 | `reference`   | 参考資料、データ辞書                                                                  |
 
@@ -297,3 +297,5 @@ specs_files = resolve_files(config, "specs", project_root)
 文書検索の実装は `.doc_structure.yaml` を **読まない**。
 forge の `/forge:update-db-rules` / `/forge:update-db-specs` が `resolve_doc_structure.py` で本ファイルから
 対象ディレクトリと除外を解決し、索引の更新に渡す。
+
+[glossary-format]: glossary_format.md "dae8698216c5 DLID-z571pg6rda7f"

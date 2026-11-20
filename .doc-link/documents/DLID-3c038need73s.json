@@ -1,5 +1,5 @@
 {
-  "content_hash": "0ad8efdb16e71cbd59c4d073ae06aaf3c262b5c89daf4d968ca1acc44ce89d33",
+  "content_hash": "52bc13fba8373e34af6ebd61cbc1c898038a16554ee90dc584cfac411bf2e318",
   "doc_link_id": "DLID-3c038need73s",
   "keywords": [
     "document system",
@@ -8,26 +8,31 @@
     "numbering",
     "next-spec-id",
     "doc_structure",
-    "cross-cutting spec",
-    "ID collision"
+    "cross-component spec",
+    "ID collision",
+    "placement",
+    "requirements"
   ],
   "path": "docs/specs/forge/requirements/REQ-028_document_system.md",
-  "purpose": "Defines the document system of the project: document identifiers, cross-cutting spec placement, and ID numbering, to prevent duplicated content, ID collisions, and unstable placement.",
+  "purpose": "Defines the document system of the project: which document kinds exist, how they are identified, placed and referenced, to prevent duplicated content, ID collisions and unfindable documents.",
   "summary": [
-    "Defines which document kinds exist, how they are identified, placed, and referenced",
-    "Placement is declared by .doc_structure.yaml",
-    "IDs are assigned by the next-spec-id skill",
-    "FNC-001 identifier is PREFIX-NNN with global numbers and per-prefix series",
-    "FNC-002 cross-cutting specs are identified and placed outside any single component",
-    "FNC-003 new IDs are never chosen manually, only via the skill",
-    "Rationale: duplicate numbers cause ambiguous references and merge-time collisions"
+    "Overview: purpose of defining a document system and the problems it prevents",
+    "Target system nature: internal documentation operation of the forge plugin and project",
+    "Premise: document placement declared by .doc_structure.yaml",
+    "Premise: document IDs allocated by the next-spec-id skill",
+    "FNC-001: document identifier as PREFIX-NNN with global numbering",
+    "FNC-001: different prefixes use separate number sequences",
+    "FNC-002: cross-component specs identified and placed without belonging to one component",
+    "FNC-003: new document IDs are allocated via skill, never manually, to avoid branch collisions",
+    "Open items: none"
   ],
   "tasks": [
-    "Creating new requirement or design documents",
-    "Assigning document IDs",
-    "Placing documents in the directory structure",
-    "Writing cross-component specs",
-    "Reviewing document naming and placement"
+    "Creating a new requirements, design or ADR document",
+    "Allocating a new document ID",
+    "Deciding where to place a document",
+    "Writing specs shared across components",
+    "Editing .doc_structure.yaml",
+    "Reviewing document naming and ID rules"
   ],
   "title": "REQ-028 文書体系 要件定義書"
 }

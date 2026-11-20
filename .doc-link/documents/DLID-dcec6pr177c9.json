@@ -1,39 +1,41 @@
 {
-  "content_hash": "0d9109dd37371516997f02f2112da23f0ec5f7d642bd23847779d6b6b5383597",
+  "content_hash": "dc0c7761adf36084fcf0a199342dbb5e4f15a300a21695a4f4fba17a1f15846b",
   "doc_link_id": "DLID-dcec6pr177c9",
   "keywords": [
-    "review priorities",
+    "review priority",
     "P1 P2 P3",
     "severity",
     "severity catalog",
-    "review criteria",
+    "review_criteria",
     "create_issue",
     "gray zone",
-    "SSOT",
+    "SSOT reference",
     "ADR rejection reason",
-    "recommendation"
+    "forge review"
   ],
   "path": "plugins/forge/docs/review_priorities_spec.md",
-  "purpose": "Defines the review priority system (P1/P2/P3), the relation between priority and severity, where severity and gray-zone judgment live, and the fixed structure of review criteria files.",
+  "purpose": "Defines the review priority system (P1/P2/P3), the relation between priority and severity, where severity and gray-zone judgments live, and the fixed structure of review criteria files.",
   "summary": [
-    "Priority definitions: P1 rule conformance, P2 contradiction, P3 unnecessary complexity",
-    "Priority and severity are independent axes; severity only orders presentation",
-    "Severity SoT is the severity catalog of the delegated principles",
-    "Severity catalogs for document references and terminology",
-    "Exclusion rules: P2/P3 scope limits, no custom perspectives, proportionality check for fix decisions",
-    "Criteria declare no severity and no gray-zone judgment; all judgment is delegated to principles",
-    "Excluding findings based on expired ADR rejection reasons and recording the ADR number",
+    "Definitions of review priorities P1 rule conformance, P2 contradiction, P3 unnecessary complexity",
+    "Priority and severity as independent axes, with severity SoT delegated to principles",
+    "Severity catalog for document reference violations",
+    "Severity catalog for terminology (glossary) violations",
+    "Exclusion rules: P2/P3 scope limits, no custom perspectives, no severity or gray-zone judgment in criteria",
+    "Proportionality check before fix decisions",
+    "Handling of findings based on invalidated ADR rejection reasons",
     "Three conditions for recommendation create_issue",
-    "Fixed three-section structure of review_criteria files with template",
-    "Priority order among multiple SoTs: project-specific over built-in"
+    "Fixed three-section structure and template of review_criteria files",
+    "Priority order among multiple SoTs and deprecated sections"
   ],
   "tasks": [
-    "Writing or editing review_criteria files",
-    "Performing document or code review",
-    "Evaluating findings and choosing recommendation",
+    "Writing or revising review_criteria files",
+    "Running document or code review",
+    "Evaluating findings and deciding fix, create_issue, skip, or needs_review",
     "Assigning severity to findings",
-    "Deciding whether to file an issue for missing rules",
-    "Judging findings against ADR rejection reasons"
+    "Reviewing document reference notation",
+    "Reviewing glossary term usage",
+    "Deciding whether to open an issue for a missing rule",
+    "Dropping findings based on an ADR"
   ],
   "title": "レビュー優先度仕様"
 }

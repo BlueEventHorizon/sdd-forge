@@ -1,32 +1,33 @@
 {
-  "content_hash": "de52ff24464251d2fc73fabd3a181397d20cfcce4b1e9cfe41a6ddab70f91cac",
+  "content_hash": "e1b25ede799db0452c10a3c0150e27c39dd2e3f66e0acbb0cb8ab1d5ce254b21",
   "doc_link_id": "DLID-540ak6kxrsxp",
   "keywords": [
     "implementation strategy",
     "additive development",
     "phase order",
-    "plan-strategist",
-    "existing implementation",
     "plan document",
-    "old spec"
+    "existing implementation",
+    "plan-strategist",
+    "old spec",
+    "design dependency"
   ],
   "path": "plugins/forge/docs/strategy_principles_spec.md",
-  "purpose": "Defines the implementation strategy document and its general principles, used when no project-specific rules exist, covering responsibility, boundary with plans, and handling existing code in additive development.",
+  "purpose": "Defines what an implementation strategy document is and the principles for writing it, especially for additive development, as a generic fallback when no project rules exist.",
   "summary": [
-    "Definition of the strategy document: responsibility, design dependency, relation to next step",
-    "Things the strategy document does not write and its temporary lifetime",
-    "Boundary with plans: phase-order versus task-level executability",
-    "Why additive development is the hardest case",
-    "Three kinds of relation to existing code: conflicting, newly added, subtly changed",
-    "No procedure binding; avoid inertia of patching and follow the design",
-    "Target is existing implementation code, not old spec documents",
-    "Constraints received from the additive development spec"
+    "Definition of the implementation strategy document: responsibility, dependency on design, lifecycle",
+    "Relationship to the next stage: the plan document is built on the strategy",
+    "What the strategy document does not write: structural design and individual task units",
+    "Boundary with the plan document: phase-order units versus task executability units",
+    "Why additive development is the hardest case: conflicting, new, and subtly changed items",
+    "Do not bind decisions with procedures; avoid inertia toward patching; follow design",
+    "Target of strategy is existing implementation code, not old-spec documents",
+    "Constraints received from the additive development spec sections"
   ],
   "tasks": [
     "Writing an implementation strategy document",
     "Planning additive development",
-    "Reviewing strategy documents",
-    "Separating strategy from plan tasks",
+    "Reviewing an implementation strategy document",
+    "Splitting work into phases",
     "Deciding how to modify, delete, merge, or split existing code"
   ],
   "title": "実装戦略書 作成原則"

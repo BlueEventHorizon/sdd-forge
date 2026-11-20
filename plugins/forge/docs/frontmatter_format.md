@@ -4,13 +4,13 @@ doc_link_id: DLID-jtc4qnjwbdxf
 
 # 追加 feature frontmatter 定義 DLID-mtbb2d3xdgax
 
-本文書は、差分 feature 運用で要件定義書・設計書に付与する frontmatter キーの集約 SoT（単一の真実源）である。判定基準（いつ feature を使うか）・旧仕様の置き換え・merge 手順は [additive_development_spec.md](additive_development_spec.md) を参照。本文書は frontmatter のキー定義そのものに専念する。
+本文書は、差分 feature 運用で要件定義書・設計書に付与する frontmatter キーの集約 SoT（単一の真実源）である。判定基準（いつ feature を使うか）・旧仕様の置き換え・merge 手順は [additive_development_spec.md][additive-development-spec] を参照。本文書は frontmatter のキー定義そのものに専念する。
 
 ---
 
 ## 1. feature_type（差分 feature の一時マーカー） DLID-64qm6d9a3mg5
 
-**判定**: 「追加 feature か」の判定は [additive_development_spec.md](additive_development_spec.md) §1（適用条件 / 対象外）に従う。判定は変更の実質（分離管理価値・旧仕様との衝突リスク）で行い、既存仕様が存在しない初回立ち上げ、および分離して管理する価値のない軽微な追記・修正には付与しない（false positive 防止）。
+**判定**: 「追加 feature か」の判定は [additive_development_spec.md][additive-development-spec] §1（適用条件 / 対象外）に従う。判定は変更の実質（分離管理価値・旧仕様との衝突リスク）で行い、既存仕様が存在しない初回立ち上げ、および分離して管理する価値のない軽微な追記・修正には付与しない（false positive 防止）。
 
 ### 1.1 要件定義書（Markdown） DLID-k0zm5s43evq4
 
@@ -83,3 +83,5 @@ doc_status: not_implemented
 ## 3. 他のツールのキーとの衝突回避 DLID-bj3cgenw0m2f
 
 frontmatter は、forge 以外のツール（文書検索など）も自分のキーを書き込む。キー名を `feature_type` / `feature_note` とするのは、`type` / `notes` のような汎用の名前が、他のツールのキーと衝突するためである。
+
+[additive-development-spec]: additive_development_spec.md "307dc53425f0 DLID-cyrk9xr8vcap"

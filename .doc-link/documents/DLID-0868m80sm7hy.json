@@ -1,40 +1,40 @@
 {
-  "content_hash": "ccbd22ce27763754af3b43072ef027102e95adb0ccedf165c71eb181996f88ca",
+  "content_hash": "6730e8414d1c47fab8ab6295cf0e0c57ba0bc172741a0af974eb964ad06a3874",
   "doc_link_id": "DLID-0868m80sm7hy",
   "keywords": [
     "agenda",
     "record",
-    "state transition",
     "agenda item",
+    "state transition",
+    "structural validity judgment",
     "consult",
-    "review findings",
-    "structured input",
+    "review",
     "storage format",
-    "structural validity",
-    "failure visibility"
+    "requirements",
+    "single source of truth"
   ],
   "path": "docs/specs/consult/agenda/requirements/REQ-019_agenda_record.md",
-  "purpose": "Requirements for the agenda record layer, a single source of truth holding agenda items and their states so humans can grasp the whole and respond individually while minimizing AI effort on record upkeep.",
+  "purpose": "Requirements for the agenda record layer that stores agenda items (review findings, discussion points) and their states as a single source of truth, so humans keep an overview while the AI spends less effort maintaining records.",
   "summary": [
-    "Rationale: the mechanism exists only to reduce AI output and reading effort spent maintaining records",
+    "Overview: a conversation tool keeping all agenda items and their states visible, justified only if it reduces AI output and reading effort for record upkeep",
     "Terminology: agenda item, agenda, record, presentation, caller; the word triage is not used",
-    "Scope: record and state keeping, transition checks, caller input/output, location/count/lifetime, discarding old records",
-    "FNC-004 to FNC-006: AI generates only judgment content, input is one structured handoff of one value, next action is returned without counting",
-    "FNC-008: transition preconditions are machine-readable and unmet transitions are rejected with the shortfall identifiable",
-    "FNC-009: record count, identification, lifetime, severity key, and state vocabulary are received from the caller",
-    "FNC-012: the caller judges structural validity of the whole item set first; item transitions are rejected until recorded",
-    "FNC-013 and FNC-010: retain change information for the display layer; discard legacy review and consult records",
-    "NFR-001 to NFR-006: storage format owns value boundaries, derived location and lifetime, unit tests, no secret values, visible failures",
-    "Open items TBD-003, TBD-004, TBD-006 with resolutions"
+    "Scope: record storage, state transitions, input and output with callers, location, count, lifetime, and discarding old records; presentation is out of scope",
+    "FNC-004 to FNC-006: AI generates only judgment content, input is one structured handoff with one value, and next actions are obtained without counting",
+    "FNC-008: transition preconditions are a machine-readable definition and invalid transitions are rejected with a discernible reason",
+    "FNC-009: callers supply record count, identification, lifetime, severity key name, and state vocabulary instead of fixed values",
+    "FNC-010 and FNC-013: discard of existing review and consult records, and retention of change information for the display layer",
+    "FNC-012: before any item transition, a structural validity judgment over the whole set must be recorded, including a no-error judgment with rationale",
+    "NFR-001 to NFR-006: storage format with its own value boundaries, derived location and lifetime, unit tests, no secret values, and visible failures",
+    "Open items TBD-003, TBD-004, TBD-006 with resolutions referencing the design document"
   ],
   "tasks": [
-    "Designing the agenda record mechanism",
-    "Implementing agenda record storage and state transitions",
-    "Writing unit tests for the agenda mechanism",
-    "Integrating consult or review skills with the agenda",
-    "Reviewing agenda requirements or design documents",
+    "Designing or implementing the agenda mechanism data storage layer",
+    "Implementing state transition checks and rejection reasons for agenda items",
+    "Integrating a caller such as consult or review with the agenda record",
     "Choosing a storage format for work records",
-    "Handling secrets in recorded items"
+    "Reviewing agenda requirements and designs for consistency",
+    "Writing unit tests for the agenda record mechanism",
+    "Handling secrets in recorded review findings"
   ],
   "title": "REQ-019 議事記録機構 要件定義書"
 }

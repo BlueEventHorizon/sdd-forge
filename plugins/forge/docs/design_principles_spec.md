@@ -7,16 +7,16 @@ doc_link_id: DLID-061pwjejh6yc
 プロジェクト固有のルールがない場合に参照する汎用原則。
 プロジェクト固有のルールがある場合はそちらを優先すること。
 
-文書記述スタイル（タグ・見出し・参照記法・用語）は [document_style_guide.md](document_style_guide.md) を参照。設計の手順と成果物は [design_method.md](design_method.md) に従う。本文書は設計書固有の判断基準を扱う。
+文書記述スタイル（タグ・見出し・参照記法・用語）は [document_style_guide.md][document-style-guide] を参照。設計の手順と成果物は [design_method.md][design-method] に従う。本文書は設計書固有の判断基準を扱う。
 
 ---
 
 ## 設計書の定義 DLID-bcjhepy60vkb
 
-- **責務**: 要件を実現する構造・モジュール・処理フロー。「How（どう作るか）」を記述する（「What（何を作るか）」は要件定義書の責務。振り分け判定は [spec_design_boundary_spec.md](spec_design_boundary_spec.md)）
+- **責務**: 要件を実現する構造・モジュール・処理フロー。「How（どう作るか）」を記述する（「What（何を作るか）」は要件定義書の責務。振り分け判定は [spec_design_boundary_spec.md][spec-design-boundary-spec]）
 - **書かないもの**: 要件定義書に無い機能（承認を ADR に記録した場合を除く）／決定の理由の正式な記録（ADR の責務）／時間軸・順序（実装戦略書の責務）
 - **存在期間**: 恒久。ただし不変ではない
-- **改訂**: 差分開発によって修正されうる。差分開発の期間中、その範囲の現在の設計は差分側の設計書であり、旧設計書の記述は既に置き換わっている。旧側は実装期間中は書き換えず、実装完了後の merge で改訂する（[additive_development_spec.md](additive_development_spec.md) §2・§3・§4）
+- **改訂**: 差分開発によって修正されうる。差分開発の期間中、その範囲の現在の設計は差分側の設計書であり、旧設計書の記述は既に置き換わっている。旧側は実装期間中は書き換えず、実装完了後の merge で改訂する（[additive_development_spec.md][additive-development-spec] §2・§3・§4）
 
 ---
 
@@ -24,7 +24,7 @@ doc_link_id: DLID-061pwjejh6yc
 
 - ❌ ソースコード（説明用の小規模例・5〜10行程度は許容）
 - ❌ 技術選択の理由を記載しないままフレームワークを指定
-- ❌ 要件にない機能の追加（ユーザーの承認を得て ADR に記録した場合を除く。手続きは `/forge:start-design`、判定条件は [spec_design_boundary_spec.md](spec_design_boundary_spec.md) §6）
+- ❌ 要件にない機能の追加（ユーザーの承認を得て ADR に記録した場合を除く。手続きは `/forge:start-design`、判定条件は [spec_design_boundary_spec.md][spec-design-boundary-spec] §6）
 - ❌ 「本設計により X ms を切る」等、定量目標の達成を保証する記述
 - ❌ 実行後に人間が体感して決める値を、AI が数値例から推測した設計目標
 
@@ -44,8 +44,8 @@ doc_link_id: DLID-061pwjejh6yc
 
 定量目標の最終的な達成可否は、負荷試験・プロファイリング・本番計測・人間の受け入れ判断など、実行後の検証で確定する。
 
-構造品質（責務分割・境界・依存方向）の数値化禁止、および未確定定量値の捏造禁止は [spec_priorities_spec.md](spec_priorities_spec.md) に従う。
-要件定義書との振り分けは [spec_design_boundary_spec.md](spec_design_boundary_spec.md) §3.1 に従う。
+構造品質（責務分割・境界・依存方向）の数値化禁止、および未確定定量値の捏造禁止は [spec_priorities_spec.md][spec-priorities-spec] に従う。
+要件定義書との振り分けは [spec_design_boundary_spec.md][spec-design-boundary-spec] §3.1 に従う。
 
 ---
 
@@ -133,7 +133,7 @@ Mermaid 構文リファレンス:
 ### 更新時のルール DLID-wexxdtv7j43m
 
 - 設計意図（なぜそう変えたか）を記述する。コードの転記は不要
-- ADR の書式は [adr_format.md](adr_format.md)、運用（目的・書く対象・吟味の基準・可変性・否決の書き方・配置と ID 採番）は [adr_principles_spec.md](adr_principles_spec.md) に従う
+- ADR の書式は [adr_format.md][adr-format]、運用（目的・書く対象・吟味の基準・可変性・否決の書き方・配置と ID 採番）は [adr_principles_spec.md][adr-principles-spec] に従う
 
 ---
 
@@ -198,7 +198,7 @@ Mermaid 構文リファレンス:
 
 1. 単一障害点 (SPOF) を持つ構成では、冗長化または代替経路を設計書に明示する
 2. 外部 API 連携にはリトライ戦略 / タイムアウト / フォールバックを設計レベルで定義する
-3. 異常系のデータフローとエラー時の振る舞いを設計書に含める。エラーの分類と扱いは [error_classification_spec.md](error_classification_spec.md) に従う
+3. 異常系のデータフローとエラー時の振る舞いを設計書に含める。エラーの分類と扱いは [error_classification_spec.md][error-classification-spec] に従う
 
 ### グレーゾーン許容範囲 DLID-3x9h1e5jmt8b
 
@@ -225,7 +225,7 @@ Mermaid 構文リファレンス:
 
 ### 成果物 DLID-agb0ykss1erj
 
-成果物の定義は [design_method.md](design_method.md) に従う。各行は、設計書の中に根拠が現れている場合に限り適用する。
+成果物の定義は [design_method.md][design-method] に従う。各行は、設計書の中に根拠が現れている場合に限り適用する。
 
 | 違反パターン                                                                                                                           | 違反時の重大度 | 理由                                                                                                       |
 | -------------------------------------------------------------------------------------------------------------------------------------- | -------------- | ---------------------------------------------------------------------------------------------------------- |
@@ -269,8 +269,18 @@ Mermaid 構文リファレンス:
 
 ### 追加 feature 用 frontmatter DLID-tg0r1w833qbz
 
-判定（追加 feature か否か）は [`additive_development_spec.md`](additive_development_spec.md) §1（適用条件 / 対象外）に従う。判定は変更の実質（分離管理価値・旧仕様との衝突リスク）で行い、既存仕様が存在しない初回立ち上げ、および分離して管理する価値のない軽微な追記・修正は対象外（false positive 防止）。frontmatter の定義は [`frontmatter_format.md`](frontmatter_format.md) §1.2 を参照。
+判定（追加 feature か否か）は [`additive_development_spec.md`][additive-development-spec] §1（適用条件 / 対象外）に従う。判定は変更の実質（分離管理価値・旧仕様との衝突リスク）で行い、既存仕様が存在しない初回立ち上げ、および分離して管理する価値のない軽微な追記・修正は対象外（false positive 防止）。frontmatter の定義は [`frontmatter_format.md`][frontmatter-format] §1.2 を参照。
 
 | 違反パターン                                                             | 違反時の重大度 | 理由                                                                                    |
 | ------------------------------------------------------------------------ | -------------- | --------------------------------------------------------------------------------------- |
 | 追加 feature 設計書に `feature_type: temporary-feature` frontmatter 欠如 | 🟡 major       | 当該範囲の現在の設計であることと merge 予定が宣言されず、生成経路を問わず取りこぼされる |
+
+[document-style-guide]: document_style_guide.md "69dee42932c2 DLID-c59znr7b8f56"
+[design-method]: design_method.md "157820b1afb7 DLID-pdvdjb49qpr4"
+[spec-design-boundary-spec]: spec_design_boundary_spec.md "4e2a4cd68a8a DLID-h9h90g9wcy8f"
+[additive-development-spec]: additive_development_spec.md "307dc53425f0 DLID-cyrk9xr8vcap"
+[spec-priorities-spec]: spec_priorities_spec.md "f8233c87c564 DLID-f9ny9e932trv"
+[adr-format]: adr_format.md "0dc06fb958c8 DLID-ns59za8fens1"
+[adr-principles-spec]: adr_principles_spec.md "3ae4e3bfdd65 DLID-45wzpggz1set"
+[error-classification-spec]: error_classification_spec.md "04397ae80f5c DLID-5ykqs19cdbks"
+[frontmatter-format]: frontmatter_format.md "19cf661699b0 DLID-jtc4qnjwbdxf"

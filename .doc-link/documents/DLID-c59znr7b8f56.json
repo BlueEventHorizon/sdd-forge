@@ -1,37 +1,38 @@
 {
-  "content_hash": "de41f00c06618c0ab8b28935c02e19e69373ec204ab5a50fdb776202025cc69d",
+  "content_hash": "69dee42932c29e93c7a78ba905536f16f98d58f293d59a03c8a735c8ea2ab167",
   "doc_link_id": "DLID-c59znr7b8f56",
   "keywords": [
     "document style guide",
     "MANDATORY tag",
     "heading level",
-    "reference notation",
-    "reference-style link",
-    "glossary term",
+    "reference link",
+    "document reference notation",
     "GFM alert",
-    "long vowel rule",
-    "no history section"
+    "terminology",
+    "glossary",
+    "no revision history",
+    "long vowel omission"
   ],
   "path": "plugins/forge/docs/document_style_guide.md",
-  "purpose": "General writing style guide for documents the plugin generates, updates, or reviews: tags, headings, notation, references, terminology, and what not to include.",
+  "purpose": "Generic writing style guide for documents the plugin generates, updates, and reviews: tag usage, heading levels, emphasis, document reference notation, terminology, and bans on history and related-document sections.",
   "summary": [
-    "Tag usage: MANDATORY, CRITICAL, IMPORTANT placement and signal value criteria",
-    "Heading levels limited to four",
-    "Emphasis and notation: English phrases, long vowel rule, bold, code, GFM alerts",
-    "Structured elements: code blocks, lists, tables",
-    "Document reference notation for three systems, path forms, reference-style links",
-    "Abstract example naming with placeholders",
-    "No historical records in documents",
-    "No related-documents sections, with exceptions",
-    "Terminology: definition of a term, naming principles, bracket notation, glossary"
+    "Tag usage rules for MANDATORY, CRITICAL, and IMPORTANT, with placement and scarcity criteria",
+    "Heading levels limited to four tiers",
+    "Emphasis phrases, long-vowel omission rule (JIS Z 8301), and GFM alerts",
+    "Structured elements: code blocks with language, lists, and tables with limits",
+    "Document reference notation in three systems, using reference-style links with definitions at the end",
+    "Abstract example naming with placeholders instead of real names",
+    "No historical records or revision history sections in documents",
+    "No related-documents list sections, with exceptions for external URLs",
+    "Terminology rules: what a term is, naming principles, bracket notation, glossary files"
   ],
   "tasks": [
-    "Writing requirements, design, or plan documents",
-    "Reviewing document style",
-    "Adding tags to headings",
-    "Writing cross-document references",
-    "Defining and using glossary terms",
-    "Writing SKILL.md or rule documents"
+    "Writing requirements documents, design documents, or plans",
+    "Reviewing documents for style compliance",
+    "Editing documents that reference other documents",
+    "Adding or placing priority tags on headings",
+    "Defining terms and glossaries in documents",
+    "Writing rule or guideline documents with examples"
   ],
   "title": "文書スタイル指針"
 }

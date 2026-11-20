@@ -8,23 +8,23 @@ doc_link_id: DLID-y42g1frxwkf5
 
 reviewer は、対象に合った規範で読み、誤りを見落とさずに挙げる。利用者は、気づけなかった誤りを根拠とともに知ることができる。
 
-本書には、通常は設計書に属する具体的な記述（script のパス・文書名・エラー値等）を含む。これは、既に決定済みで選択の余地が無い事項を要件定義書に具体的に書く原則（[spec_design_boundary_spec.md](../../../../plugins/forge/docs/spec_design_boundary_spec.md) §2）に基づく。
+本書には、通常は設計書に属する具体的な記述（script のパス・文書名・エラー値等）を含む。これは、既に決定済みで選択の余地が無い事項を要件定義書に具体的に書く原則（[spec_design_boundary_spec.md][spec-design-boundary-spec] §2）に基づく。
 
 **本書は reviewer の振る舞いを定める。** 対象をどう読み、target 種別をどう判定し、種別ごとに何を読み、何を所見として挙げるかである。
 
 **機密情報の混入確認は本書の対象外である。** レビューとは別の検査工程として分離する。
 
-**受け渡し・採番・書き出しと終了の値・本体の仕事・データの構造は本書が定めない。** それらは review 機構の共通契約であり、[REQ-029](REQ-029_review_exchange.md) が定める。reviewer はその契約に従う。本書は共通契約を繰り返さず、reviewer に固有のことだけを書く。
+**受け渡し・採番・書き出しと終了の値・本体の仕事・データの構造は本書が定めない。** それらは review 機構の共通契約であり、[REQ-029][req-029] が定める。reviewer はその契約に従う。本書は共通契約を繰り返さず、reviewer に固有のことだけを書く。
 
-対象は本体が起動する reviewer（[reviewer.md](../../../../plugins/forge/agents/reviewer.md)）である。
+対象は本体が起動する reviewer（[reviewer.md][reviewer]）である。
 
 ## 対象システムの性質 DLID-zqty73pb6rzv
 
-開発者が自分の端末で使う review 機構の一部であり、外部公開・本番運用・個人情報の保持を伴わない（[spec_priorities_spec.md](../../../../plugins/forge/docs/spec_priorities_spec.md) §10.1 の「上記いずれにも該当しない」に該当する）。性能・可用性・運用性の定量目標は持たない。
+開発者が自分の端末で使う review 機構の一部であり、外部公開・本番運用・個人情報の保持を伴わない（[spec_priorities_spec.md][spec-priorities-spec] §10.1 の「上記いずれにも該当しない」に該当する）。性能・可用性・運用性の定量目標は持たない。
 
 ## 用語 DLID-zrv1z7gs5bbv
 
-reviewer だけが使う用語を定める。レビュー・ラウンド・依頼・finding・結果など、本体も認識する用語は [REQ-029](REQ-029_review_exchange.md) が定める。
+reviewer だけが使う用語を定める。レビュー・ラウンド・依頼・finding・結果など、本体も認識する用語は [REQ-029][req-029] が定める。
 
 | 用語         | 定義                                                                                                             |
 | ------------ | ---------------------------------------------------------------------------------------------------------------- |
@@ -40,7 +40,7 @@ reviewer の仕事は、依頼を得て対象を読み、レビュー観点を�
 
 #### FNC-301: reviewer の定義が持つ中身 DLID-2qvrx06zm1vg
 
-agent の定義が何を持つかという形は共通契約が定める（[REQ-029](REQ-029_review_exchange.md) FNC-314）。本節は、そのうち reviewer に固有の中身を定める。
+agent の定義が何を持つかという形は共通契約が定める（[REQ-029][req-029] FNC-314）。本節は、そのうち reviewer に固有の中身を定める。
 
 | 持つもの                                           | 中身                                                      |
 | -------------------------------------------------- | --------------------------------------------------------- |
@@ -56,7 +56,7 @@ agent の定義が何を持つかという形は共通契約が定める（[REQ-
 
 #### FNC-306: 対象を読む DLID-v2m03ahq2mbc
 
-対象の読み方は `targets` の形で決まる。形の定義は共通契約が持つ（[REQ-029](REQ-029_review_exchange.md) DM-301）。
+対象の読み方は `targets` の形で決まる。形の定義は共通契約が持つ（[REQ-029][req-029] DM-301）。
 
 | `targets` の形 | 読み方                                                                                                             |
 | -------------- | ------------------------------------------------------------------------------------------------------------------ |
@@ -68,7 +68,7 @@ agent の定義が何を持つかという形は共通契約が定める（[REQ-
 
 #### FNC-307: 対象ごとに target 種別を判定する DLID-e5f36xyzh6me
 
-reviewer は対象ごとに target 種別を判定する。依頼は種別を運ばない（[REQ-029](REQ-029_review_exchange.md) FNC-317）。
+reviewer は対象ごとに target 種別を判定する。依頼は種別を運ばない（[REQ-029][req-029] FNC-317）。
 
 判定する target 種別は **code / requirement / design / plan / uxui** の 5 つとする。ADR は design として扱う。
 
@@ -83,11 +83,11 @@ reviewer は対象ごとに target 種別を判定する。依頼は種別を運
 
 **どちらの材料でも決まらない対象は、FNC-308 の「全 target 種別に共通」の文書だけで見る。** 推測で 1 つに寄せない。target 種別は、共通の文書に上乗せする文書を選ぶためのものであり、決まらないことは所見にもエラーにもならない。
 
-`.doc_structure.yaml` を AI が読まない。設定ファイルの解釈は決定論であり script の仕事である（[deterministic_generation_spec.md](../../../../plugins/forge/docs/deterministic_generation_spec.md) §6）。
+`.doc_structure.yaml` を AI が読まない。設定ファイルの解釈は決定論であり script の仕事である（[deterministic_generation_spec.md][deterministic-generation-spec] §6）。
 
 #### FNC-308: target 種別ごとに扱う文書 DLID-61hb0xx1e7p1
 
-target 種別ごとに、reviewer が扱うものを次のとおり定める。内蔵文書は固定の位置にあり、reviewer が直接読む。プロジェクト固有の文書は依頼の `references` が運ぶ（[REQ-029](REQ-029_review_exchange.md) DM-301）。
+target 種別ごとに、reviewer が扱うものを次のとおり定める。内蔵文書は固定の位置にあり、reviewer が直接読む。プロジェクト固有の文書は依頼の `references` が運ぶ（[REQ-029][req-029] DM-301）。
 
 **「全 target 種別に共通」の文書はすべての対象に適用する。target 種別が決まった対象には、その種別の文書を上乗せする。**
 
@@ -153,14 +153,14 @@ target 種別ごとに、reviewer が扱うものを次のとおり定める。�
 
 #### FNC-309: reviewer が所見として返すもの DLID-15zpka7ar2n2
 
-reviewer は対象を読んで得た所見を渡す。渡し方・書き出す時機・終了の値は共通契約が定める（[REQ-029](REQ-029_review_exchange.md) FNC-302・FNC-310・FNC-311）。本節は reviewer が何を返すかを定める。
+reviewer は対象を読んで得た所見を渡す。渡し方・書き出す時機・終了の値は共通契約が定める（[REQ-029][req-029] FNC-302・FNC-310・FNC-311）。本節は reviewer が何を返すかを定める。
 
 - **所見が無い場合は 1 件も渡さない。** 「指摘なし」を表すのは、所見 0 件で正常に終えたことである
 - **reviewer は交換可能であり、どの reviewer であってもこの契約を分岐させない**
 
 #### FNC-315: reviewer が挙げるエラー値 DLID-38bnbha783nq
 
-終了の値で成否を表す仕組みは共通契約が定める（[REQ-029](REQ-029_review_exchange.md) FNC-311）。**reviewer が挙げうるエラー値は次の 1 つだけである。**
+終了の値で成否を表す仕組みは共通契約が定める（[REQ-029][req-029] FNC-311）。**reviewer が挙げうるエラー値は次の 1 つだけである。**
 
 | エラー値            | 意味                                         | 由来    |
 | ------------------- | -------------------------------------------- | ------- |
@@ -168,6 +168,13 @@ reviewer は対象を読んで得た所見を渡す。渡し方・書き出す�
 
 **これにエラー値を与えるのは、受け取る側の振る舞いが変わるからである。** レビュー対象は利用者が指定する（FNC-306）。存在しないパスや、分岐していないブランチを指定することは、原因が利用者の入力であり、受け取った側は指定の誤りとして利用者へ伝えられる。
 
-**文書が読めないことには、エラー値を与えない。** FNC-308 が定める文書は、内蔵規範なら配布物の固定の位置にあり、プロジェクト固有のものは本体が依頼を組み立てる時点で実在するパスを渡す。読めないのは、原因が配置の破損（バグ）か実行環境の障害であり、原因ごとの値や回復経路は作らない（[error_classification_spec.md](../../../../plugins/forge/docs/error_classification_spec.md) §4）。止まることに変わりはないが、値で区別しないエラーとして現れれば足りる。
+**文書が読めないことには、エラー値を与えない。** FNC-308 が定める文書は、内蔵規範なら配布物の固定の位置にあり、プロジェクト固有のものは本体が依頼を組み立てる時点で実在するパスを渡す。読めないのは、原因が配置の破損（バグ）か実行環境の障害であり、原因ごとの値や回復経路は作らない（[error_classification_spec.md][error-classification-spec] §4）。止まることに変わりはないが、値で区別しないエラーとして現れれば足りる。
 
 **target 種別が判定できないことはエラーに含めない。** その対象は FNC-308 の「全 target 種別に共通」の文書だけで見る（FNC-307）ため、正常終了の範囲である。
+
+[spec-design-boundary-spec]: ../../../../plugins/forge/docs/spec_design_boundary_spec.md "4e2a4cd68a8a DLID-h9h90g9wcy8f"
+[req-029]: REQ-029_review_exchange.md "4e7fe6918eec DLID-5vrs9fnet7de"
+[reviewer]: ../../../../plugins/forge/agents/reviewer.md
+[spec-priorities-spec]: ../../../../plugins/forge/docs/spec_priorities_spec.md "f8233c87c564 DLID-f9ny9e932trv"
+[deterministic-generation-spec]: ../../../../plugins/forge/docs/deterministic_generation_spec.md "75383cc8c6d8 DLID-tm2m7nv23dqd"
+[error-classification-spec]: ../../../../plugins/forge/docs/error_classification_spec.md "04397ae80f5c DLID-5ykqs19cdbks"

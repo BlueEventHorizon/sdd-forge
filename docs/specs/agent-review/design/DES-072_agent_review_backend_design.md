@@ -6,7 +6,7 @@ doc_link_id: DLID-rzp2zxe38068
 
 ## 1. 概要 DLID-wma6qrxsg898
 
-`agent-review` は、read-only カスタム Agent `reviewer` を実行主体とするレビューバックエンド SKILL である。SKILL が担うのは**可用性検査だけ**であり、reviewer の起動と所見の受け渡しは `/forge:review` 本体が直接行う（[DES-084](../../review/design/DES-084_reviewer_design.md)・[REQ-029](../../review/requirements/REQ-029_review_exchange.md)）。
+`agent-review` は、read-only カスタム Agent `reviewer` を実行主体とするレビューバックエンド SKILL である。SKILL が担うのは**可用性検査だけ**であり、reviewer の起動と所見の受け渡しは `/forge:review` 本体が直接行う（[DES-084][des-084]・[REQ-029][req-029]）。
 
 バックエンドは Agent セッション、レビュー履歴、DB レコード、解放すべき資源を保持しない。
 
@@ -96,3 +96,6 @@ reviewer が書く依頼・所見・評価は、本体が管理する保持物�
 ## 6. 未確定事項 DLID-0bwzvms367gn
 
 なし。
+
+[des-084]: ../../review/design/DES-084_reviewer_design.md "daa286494b24 DLID-j50s0xwkwx00"
+[req-029]: ../../review/requirements/REQ-029_review_exchange.md "4e7fe6918eec DLID-5vrs9fnet7de"

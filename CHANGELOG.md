@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file.
 
+## [forge 0.1.3] - 2026-11-20
+
+### forge
+
+- **feat**: エラー分類の規範を、文書を作る工程・レビュー観点・CLAUDE.md へ行き渡らせた
+- **fix**: 文書検索 backend を doc-link へ差し替え、backend の参照を wrapper に集約した。forge 内蔵文書の検索索引も doc-link へ移した
+- **fix**: 文書検索 wrapper の仕様をレビューし、要件・設計・SKILL の食い違いを直した
+- **fix**: コンテキスト収集の文書検索を Agent に委ねず直接実行し、失敗したら後続へ進まないようにした (#11)
+- **fix**: 見出しの行末の DLID で壊れた ADR の構成検査と DES-085 のアンカーを直した
+- **fix**: 文書への参照をリファレンスリンクで書く規範に改め、既存のリンクを書き換えた
+
+## [marketplace 0.1.3] - 2026-11-20
+
+### marketplace
+
+- **chore**: forge 0.1.3 のリリースに伴い marketplace バージョンをバンプ
+
 ## [forge 0.1.2] - 2026-11-17
 
 ### forge

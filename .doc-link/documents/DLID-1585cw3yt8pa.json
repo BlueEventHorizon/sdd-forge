@@ -1,0 +1,39 @@
+{
+  "content_hash": "7f8da9d31c1f0a15bf852ca8a91fa827e18cdf2853ff1266ea55b24db6a4b186",
+  "doc_link_id": "DLID-1585cw3yt8pa",
+  "keywords": [
+    "start-plan",
+    "plan workflow",
+    "plan-strategist",
+    "strategy_exchange",
+    "implementation strategy",
+    "task extraction",
+    "traceability matrix",
+    "required_reading",
+    "agent data exchange",
+    "orchestrator"
+  ],
+  "path": "docs/specs/forge/design/DES-019_create_plan_workflow_design.md",
+  "purpose": "Design of the /forge:start-plan orchestrator skill that derives implementation strategy from design documents, extracts tasks and creates a plan document, including the plan-strategist agent exchange.",
+  "summary": [
+    "Overview: context gathering, strategy, task extraction, plan creation, AI review, human approval",
+    "Delegation to the plan-strategist custom agent and direct search by the orchestrator",
+    "Agent data exchange: identifiers, request JSON, strategy file, result value and cleanup",
+    "strategy_exchange.py subcommands open, request-path, finish and check",
+    "Flowchart of preparation, context collection, document reading, strategy phase and plan creation",
+    "Phases 1 and 2: collection of specs and rules, reading, additive development judgment, related spec search",
+    "Phase 3 strategy creation, approval and handling of differential development",
+    "Phase 4 plan creation with task granularity, required_reading and completeness checks",
+    "Phase 5 review and completion steps",
+    "Design principles: agent-sized tasks, traceability, update-mode asset check"
+  ],
+  "tasks": [
+    "Modifying the start-plan skill workflow",
+    "Modifying the plan-strategist agent or strategy_exchange script",
+    "Creating plan documents from design documents",
+    "Splitting tasks for executor agents",
+    "Designing agent data exchange via request and result files",
+    "Reviewing plan workflow design"
+  ],
+  "title": "DES-019 forge 計画書作成ワークフロー 設計書"
+}

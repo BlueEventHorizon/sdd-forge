@@ -1,0 +1,40 @@
+{
+  "content_hash": "122ed8c0e2c204415b769da5fcc1c745339b2a4c8ac0db7dda3dad870536612a",
+  "doc_link_id": "DLID-t8jcg5jkb5mj",
+  "keywords": [
+    "plan",
+    "task",
+    "traceability",
+    "required_reading",
+    "task group",
+    "build_check",
+    "depends_on",
+    "acceptance criteria",
+    "severity catalog",
+    "unit test"
+  ],
+  "path": "plugins/forge/docs/plan_principles_spec.md",
+  "purpose": "General principles for authoring plan documents when no project-specific rules exist: structure, task design, dependencies, acceptance criteria, tests, traceability, and severity catalog.",
+  "summary": [
+    "Plan definition: responsibility, lifetime, and JSON format of the plan file",
+    "Task ID prefixes and priority ranges",
+    "Plan structure: only requirements_traceability, design_traceability and tasks; mandatory requirement_ids",
+    "Task granularity and the rule against copying implementation details from design documents",
+    "required_reading field specification, including strategy documents and glossaries",
+    "Task groups, build_check values, and the ban on temporary compatibility code",
+    "Dependency management and implicit dependency patterns",
+    "Acceptance criteria and test norms",
+    "Traceability norms, with no exemption for requirements lacking tasks",
+    "Severity catalog mapping violations to severities"
+  ],
+  "tasks": [
+    "Creating a plan document",
+    "Reviewing a plan document",
+    "Decomposing work into tasks",
+    "Defining task dependencies and groups",
+    "Writing acceptance criteria for tasks",
+    "Setting required_reading for tasks",
+    "Checking requirement traceability"
+  ],
+  "title": "計画書 作成原則"
+}

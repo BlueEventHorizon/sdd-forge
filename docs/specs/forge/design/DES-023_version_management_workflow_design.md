@@ -1,17 +1,21 @@
-# DES-023 バージョン管理ワークフロー設計書
+---
+doc_link_id: DLID-hme4nqx9d5gs
+---
 
-## 1. 概要
+# DES-023 バージョン管理ワークフロー設計書 DLID-g3n4wfswtwa0
+
+## 1. 概要 DLID-bqzmhp0gw1cc
 
 マルチプラグインリポジトリにおいて、バージョン番号が複数ファイル（plugin.json, marketplace.json, README, CHANGELOG）に散在する。手動更新は不整合の原因となるため、設定ファイル `.version-config.yaml` を中心に一括更新する仕組みを提供する。
 
-### スキル構成
+### スキル構成 DLID-z689hqzcpf8z
 
 | スキル                 | 役割                                                                     | user-invocable |
 | ---------------------- | ------------------------------------------------------------------------ | -------------- |
 | `setup-version-config` | プロジェクトをスキャンし `.version-config.yaml` を対話的に生成・更新する | Yes            |
 | `update-version`       | `.version-config.yaml` に基づきバージョンを一括更新する                  | Yes            |
 
-### 設計原則
+### 設計原則 DLID-wgc08vmgm7m3
 
 | 原則                                     | 説明                                                                                                                                                 |
 | ---------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -23,9 +27,9 @@
 
 ---
 
-## 2. .version-config.yaml スキーマ
+## 2. .version-config.yaml スキーマ DLID-pppvtwx5mv6e
 
-### 2.1 全体構造
+### 2.1 全体構造 DLID-cn4d07dw5yr5
 
 ```yaml
 # version_config_version: 1.0
@@ -35,7 +39,7 @@ changelog: # CHANGELOG 更新設定（任意）
 git: # git commit/tag 設定（任意）
 ```
 
-### 2.2 targets
+### 2.2 targets DLID-zr34x2m00p1w
 
 ```yaml
 targets:
@@ -55,7 +59,7 @@ targets:
         optional: true # true: ファイル不在時はスキップ
 ```
 
-#### フィールド定義
+#### フィールド定義 DLID-n8njkq8g9dxd
 
 | フィールド     | 型     | 必須 | 説明                                                                                    |
 | -------------- | ------ | ---- | --------------------------------------------------------------------------------------- |
@@ -64,7 +68,7 @@ targets:
 | `version_path` | string | Yes  | version_file 内のバージョンフィールドパス。ネストは `.` 区切り（例: `package.version`） |
 | `sync_files`   | array  | No   | バージョンを同期する追加ファイルのリスト                                                |
 
-#### sync_files エントリ
+#### sync_files エントリ DLID-555j3xdw87s9
 
 | フィールド | 型      | 必須 | 説明                                                                                              |
 | ---------- | ------- | ---- | ------------------------------------------------------------------------------------------------- |
@@ -73,7 +77,7 @@ targets:
 | `filter`   | string  | No   | 置換対象を限定する文字列。指定時は `_update_with_filter` が使用される（§3.3 参照）                |
 | `optional` | boolean | No   | `true` の場合、ファイルが存在しなくてもエラーにならない。デフォルト: `false`                      |
 
-### 2.3 changelog
+### 2.3 changelog DLID-t4ea2wg38cp2
 
 ```yaml
 changelog:
@@ -83,7 +87,7 @@ changelog:
   section_per_target: true # true: target ごとに ### サブセクション
 ```
 
-### 2.4 git
+### 2.4 git DLID-va9z2hv4bw7d
 
 ```yaml
 git:
@@ -110,9 +114,9 @@ prefix を持たない候補は target を区別しないため、マルチ targ
 
 ---
 
-## 3. スクリプト設計
+## 3. スクリプト設計 DLID-j1abkjkv93qs
 
-### 3.1 scan_version_targets.py
+### 3.1 scan_version_targets.py DLID-pjsrw8psmap7
 
 **責務**: プロジェクトをスキャンしてバージョン関連ファイルのメタデータを JSON で出力する。
 
@@ -159,7 +163,7 @@ prefix を持たない候補は target を区別しないため、マルチ targ
 - 最大探索深度: 6（デフォルト）
 - シンボリックリンクの循環を検出して回避
 
-#### 3.1.1 version_ref_files の検出アルゴリズム
+#### 3.1.1 version_ref_files の検出アルゴリズム DLID-9c34h25aebg5
 
 **目的**: バージョン参照を持つファイルを漏れなく発見する。事前登録リストに依存しない。
 
@@ -194,7 +198,7 @@ prefix を持たない候補は target を区別しないため、マルチ targ
 | version_files | version_file 自体は `--version-path` で更新される    |
 | CHANGELOG     | SKILL.md の Step 6 で専用処理される                  |
 
-### 3.2 calculate_version.py
+### 3.2 calculate_version.py DLID-2bmmsccg5eb2
 
 **責務**: 現在のバージョンとバンプ種別から新バージョンを計算する。
 
@@ -219,7 +223,7 @@ prefix を持たない候補は target を区別しないため、マルチ targ
 
 **`v` prefix の許容**: 入力の先頭 `v` / `V`（例: `v0.6.9`）を許容する。CHANGELOG を canonical version source とするケースで `v` 付き表記を扱えるようにするため。`v` は normalize して計算し、`current` / `new` ともに **数値 `X.Y.Z` 形式** で出力する（見出しへの `v` 再付与は update_version_files.py 側が担う）。
 
-### 3.3 update_version_files.py
+### 3.3 update_version_files.py DLID-csq79ek72y16
 
 **責務**: ファイル内のバージョン文字列を置換し、更新後の内容を stdout に出力する。元ファイルは書き換えない（NFR-01）。
 
@@ -234,7 +238,7 @@ prefix を持たない候補は target を区別しないため、マルチ targ
 - stdout: 更新後のファイル内容
 - stderr: JSON ステータス `{"status": "ok", "file": "...", "old": "...", "new": "..."}`
 
-#### 3つの置換モード
+#### 3つの置換モード DLID-vkjb6xdr8w6h
 
 引数の組み合わせで3つのモードが決まる:
 
@@ -249,7 +253,7 @@ prefix を持たない候補は target を区別しないため、マルチ targ
 
 **`version_path` の引用符 normalize**: `--version-path` の値は内部で前後空白・引用符（`'` / `"`）を strip してから解釈する。`.version-config.yaml` に `version_path: "version"` と書かれていても、YAML パースを経ずに生文字列が low-level script へ渡る経路で一致失敗しないようにするため。設定上は引用符なしで記述することを推奨する。
 
-#### filter モードの動作
+#### filter モードの動作 DLID-y9y6rnv9h71k
 
 ```
 _update_with_filter(content, old_version, new_version, filter_pattern, max_distance=10)
@@ -274,7 +278,7 @@ _update_with_filter(content, old_version, new_version, filter_pattern, max_dista
 
 **重要**: `pattern` フィールドはスクリプトに渡されない。スクリプトは `old_version` の文字列置換を行い、`filter` で対象行を限定する。`pattern` は人間が設定を読む際の参考情報である。
 
-#### filter が必要なケース [MANDATORY]
+#### filter が必要なケース [MANDATORY] DLID-n68xx6m686vp
 
 同一ファイル内に複数 target のバージョンが記載されるファイルには **必ず `filter` を指定する**:
 
@@ -288,7 +292,7 @@ _update_with_filter(content, old_version, new_version, filter_pattern, max_dista
 
 **安全指針**: target が単一であっても、将来の target 追加に備えて filter を付与することを推奨する。
 
-#### path モードの動作
+#### path モードの動作 DLID-10xrb19aa61n
 
 ```
 _update_with_path(content, old_version, new_version, version_path)
@@ -304,7 +308,7 @@ _update_with_path(content, old_version, new_version, version_path)
 
 > **simple モード（`_replace_first`）は対象外**: フィールド名という手がかりが存在しないため、「対象外」と「ドリフト」を安全に区別する判定基準を構造的に持てない（老朽化した任意の version 文字列をヒューリスティックに探すことは誤検知の温床になる）。したがって simple モードは従来通り `ValueError` のみを返す。実際に `--optional` と組み合わせて呼ばれるのは `update_optional_dependent.py`（filter なし・optional 可）のみだが、これは常に simple モードを経由するため、この対象外判断は本設計の対象外（review_priorities_spec.md §3.4 の比例性確認）。
 
-#### changelog_header モードの動作
+#### changelog_header モードの動作 DLID-nc1wh6dnk1jr
 
 ```
 _update_changelog_header(content, old_version, new_version)
@@ -315,7 +319,7 @@ _update_changelog_header(content, old_version, new_version)
 3. version 末尾に境界（`(?![\d.])`）を設け、`0.6.1` が `## [0.6.10]` を前方一致で破壊しないようにする
 4. 該当見出しが見つからない場合は `ValueError`
 
-### 3.4 get_version_status.py
+### 3.4 get_version_status.py DLID-k05wvhrfeb0k
 
 **責務**: base ブランチ（既定: main）と現在ブランチのバージョンを target ごとに比較し、二重バンプ防止・marketplace バンプ要否を判定する。
 
@@ -333,9 +337,9 @@ _update_changelog_header(content, old_version, new_version)
 
 ---
 
-## 4. ワークフロー
+## 4. ワークフロー DLID-92cdbh3ec6gm
 
-### 4.1 setup-version-config ワークフロー
+### 4.1 setup-version-config ワークフロー DLID-k0dh70epjye1
 
 ```
 Step 1: 既存 .version-config.yaml の確認
@@ -351,7 +355,7 @@ Step 5: .version-config.yaml を Write
 Step 6: 結果表示と次のステップ案内
 ```
 
-#### 設定草案の生成ルール
+#### 設定草案の生成ルール DLID-t79zbxctb43b
 
 **targets**: 各 version_file を1つの target として定義する。
 
@@ -365,7 +369,7 @@ Step 6: 結果表示と次のステップ案内
 
 **git**: マルチターゲットの場合は `tag_format: "{target}-v{version}"`、単一の場合は `"v{version}"`。
 
-### 4.2 update-version ワークフロー
+### 4.2 update-version ワークフロー DLID-bzpvbc1jezp4
 
 ```
 Step 1: .version-config.yaml を Read
@@ -399,7 +403,7 @@ Step 10: git 操作（auto_commit/auto_tag が有効な場合。タグ名は §2
 
 > **Step 5 → 6 → 7 の順序が重要**: 変更内容の収集（Step 5）はバージョンファイル更新（Step 6）より前に実行する。バージョン番号を書き換える前にコミット履歴を収集することで、バージョン番号変更のノイズが混入しない。
 
-#### Step 5: 変更内容の収集
+#### Step 5: 変更内容の収集 DLID-w7rxt7pambsd
 
 前バージョンからのコミット履歴を取得し、CHANGELOG エントリを生成する:
 
@@ -410,7 +414,7 @@ Step 10: git 操作（auto_commit/auto_tag が有効な場合。タグ名は §2
 
 AI がコミットメッセージを Conventional Commits 形式で分類し、意味のある単位でグループ化して CHANGELOG エントリを生成する。空テンプレート（`-` のみ）は禁止。
 
-#### Step 6 の詳細
+#### Step 6 の詳細 DLID-pq5y545fa42z
 
 version_file と各 sync_file に対して、対応する **I/O アダプタ** を呼び出す。I/O アダプタは内部で `update_version_files.py` を `capture_output` 付きで呼び、成功時 (`rc==0` かつ stdout 非空) に対象ファイルへ書き戻す責務を持つ。低レベル `update_version_files.py` は引き続き stdout-only（NFR-01）で、本ワークフローから直接呼ばない。
 
@@ -430,7 +434,7 @@ version_file と各 sync_file に対して、対応する **I/O アダプタ** �
 
 AI 側で stdout を手動 Write する手順は **不要**。SKILL.md にも該当手順は存在しない。
 
-#### Step 7: CHANGELOG 挿入
+#### Step 7: CHANGELOG 挿入 DLID-a1gbdr384zmz
 
 Step 5 で生成したエントリを CHANGELOG ファイルに挿入する。挿入アンカーは `changelog.format` で分岐する:
 
@@ -462,16 +466,16 @@ Step 5 で生成したエントリを CHANGELOG ファイルに挿入する。�
 
 ---
 
-## 5. エラーハンドリング
+## 5. エラーハンドリング DLID-4gjc9chzfjxc
 
-### 5.1 setup-version-config
+### 5.1 setup-version-config DLID-1hrw0epcsqxj
 
 | エラー                | 対応                                                 |
 | --------------------- | ---------------------------------------------------- |
 | スキャン結果が空      | 「バージョンファイルが見つかりません」と報告して終了 |
 | README のパターン不明 | AI が判断し、AskUserQuestion で確認                  |
 
-### 5.2 update-version
+### 5.2 update-version DLID-0qwcwdnx4bdm
 
 | エラー                                                       | 対応                                                                                                                                                                                                                                           |
 | ------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -489,9 +493,9 @@ Step 5 で生成したエントリを CHANGELOG ファイルに挿入する。�
 
 ---
 
-## 6. テスト
+## 6. テスト DLID-j86danyz76vr
 
-### テストファイル一覧
+### テストファイル一覧 DLID-znb5f240s751
 
 | ファイル                                                        | テスト数 | 対象                    |
 | --------------------------------------------------------------- | -------- | ----------------------- |
@@ -499,9 +503,9 @@ Step 5 で生成したエントリを CHANGELOG ファイルに挿入する。�
 | `tests/forge/update-version/test_calculate_version.py`          | ~20      | calculate_version.py    |
 | `tests/forge/update-version/test_update_version_files.py`       | ~30      | update_version_files.py |
 
-### 主要テストケース
+### 主要テストケース DLID-htpchq3ba0vq
 
-#### update_version_files.py
+#### update_version_files.py DLID-prmkhwzhx8nt
 
 | カテゴリ      | ケース                                                   |
 | ------------- | -------------------------------------------------------- |
@@ -512,7 +516,7 @@ Step 5 で生成したエントリを CHANGELOG ファイルに挿入する。�
 
 ---
 
-## 7. 影響範囲
+## 7. 影響範囲 DLID-bat93ynk4m49
 
 | ファイル                                                                    | 役割                               |
 | --------------------------------------------------------------------------- | ---------------------------------- |

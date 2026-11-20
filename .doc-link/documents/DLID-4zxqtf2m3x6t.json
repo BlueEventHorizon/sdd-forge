@@ -1,0 +1,35 @@
+{
+  "content_hash": "727c5b42f32361aa00dcefeee0cb76cc4e9280b9fd1c5e4985f5a4ec4b008f7f",
+  "doc_link_id": "DLID-4zxqtf2m3x6t",
+  "keywords": [
+    "requirement review",
+    "review criteria",
+    "SSOT reference",
+    "What/How boundary",
+    "additive feature",
+    "doc_status",
+    "feature_type",
+    "create_issue",
+    "contradiction detection"
+  ],
+  "path": "plugins/forge/docs/criteria/review_criteria_requirement.md",
+  "purpose": "Review criteria for requirement documents: lists the delegated SSOT documents, check order (P1 rule match, P2 contradiction, P3 needless complexity) and recommendation rules.",
+  "summary": [
+    "Delegated SSOT reference table for requirement review with priorities P1 to P3",
+    "P1 check order: requirement principles, What/How boundary, format, priorities, project rules",
+    "Mandatory feature_type frontmatter check for additive feature requirements",
+    "Document reference notation check against the style guide",
+    "P2 contradiction detection among requirements and related designs",
+    "Additive feature exclusion rule for old-spec contradictions",
+    "doc_status exclusion rule for not_implemented and draft documents",
+    "P3 needless complexity judgment",
+    "Recommendation rules and three conditions for create_issue"
+  ],
+  "tasks": [
+    "Reviewing a requirements document",
+    "Writing review perspectives for requirements",
+    "Judging severity and recommendation of requirement review findings",
+    "Reviewing an additive feature requirements document"
+  ],
+  "title": "requirement レビュー基準"
+}

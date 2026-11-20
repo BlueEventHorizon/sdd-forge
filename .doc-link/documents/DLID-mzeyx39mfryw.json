@@ -1,0 +1,38 @@
+{
+  "content_hash": "04c49729cad34e2b9b6fe6fb6e4d7623120a8e50c8a5b567c153cc75c15f8188",
+  "doc_link_id": "DLID-mzeyx39mfryw",
+  "keywords": [
+    "evaluator",
+    "evaluation",
+    "meta-perspectives",
+    "disposition",
+    "finding_id",
+    "flawed_premise",
+    "evaluate_result.json",
+    "review round",
+    "count_actionable",
+    "consult"
+  ],
+  "path": "docs/specs/review/design/DES-083_evaluator_perspective_design.md",
+  "purpose": "Design for how the evaluator independently judges reviewer findings and applies meta-perspectives, and how the main body examines evaluations, advances rounds and cleans up, including the supporting scripts and JSON.",
+  "summary": [
+    "Overview: evaluator works like reviewer but starts from findings, and outputs evaluations that redefine problems (one evaluation may bundle several findings)",
+    "Sequence S10-S20: evaluator run, body reading findings/evaluations, counting actionable items, round advance and deletion",
+    "Class diagram of body, evaluator, shared and body-only scripts, and JSON files",
+    "Evaluator definition: inputs, finding-first reading, five meta-perspectives reflected in evaluation shape, new findings via --new, reason writing, severity and confidence rules",
+    "Body responsibilities: critical examination of evaluations, presentation per evaluation, termination judgment, round limit, deletion after reporting",
+    "Interim consult measures: no agenda recording, state kept in conversation context, sources of unhandled findings",
+    "Evaluation result JSON (evaluate_result.json) structure and guarantees enforced by scripts; finding_id numbering shared with reviewer",
+    "Script specs: evaluator wrappers, append_result/seal_result for evaluations, resolve_review_path, count_actionable, advance_round, delete_review, body wrappers",
+    "Test design (unit, contract, integration) and open item TBD-001 on whether meta-perspectives actually work"
+  ],
+  "tasks": [
+    "Implementing or modifying the evaluator agent definition",
+    "Implementing evaluation-related review scripts (append_result, seal_result, count_actionable, advance_round, delete_review)",
+    "Editing the review skill body steps S10-S20",
+    "Reviewing or revising evaluator and evaluation design",
+    "Writing tests for evaluator, evaluation JSON and wrappers",
+    "Adjusting consult behavior during agenda refresh"
+  ],
+  "title": "DES-083 evaluator の独立評価とメタ観点 設計書"
+}

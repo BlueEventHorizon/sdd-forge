@@ -1224,8 +1224,8 @@ def find_doc(config, category, doc_type, name, project_root):
 def search_dirs(config, category):
     """文書検索の対象ディレクトリ一覧を返す。
 
-    `dirs` / `exclude` は宣言の値そのまま（glob 展開しない）。そのまま下流ツール
-    （doc-advisor の `--dirs-json` / `--exclude-json` 等）へ転送する用途に使う。
+    `dirs` / `exclude` は宣言の値そのまま（glob 展開しない）。そのまま下流ツールへ
+    転送する用途に使う。
     `filtered_dirs` は、末尾のディレクトリ名が exclude のいずれかに一致する
     `dirs` のエントリを除いたもの（自前で Grep 等に渡す用途の参考値。ネストした
     除外ディレクトリの混入は許容する）。

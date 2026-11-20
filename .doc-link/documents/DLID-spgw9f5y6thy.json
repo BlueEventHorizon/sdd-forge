@@ -1,0 +1,35 @@
+{
+  "content_hash": "048d9ed163fc7a158641e4d9ed2db4189886745e99ba4cb4c1977ce7bc7a184d",
+  "doc_link_id": "DLID-spgw9f5y6thy",
+  "keywords": [
+    "code review",
+    "review criteria",
+    "SSOT reference",
+    "priority P1 P2 P3",
+    "create_issue",
+    "recommendation",
+    "anti-patterns",
+    "deterministic generation",
+    "design consistency"
+  ],
+  "path": "plugins/forge/docs/criteria/review_criteria_code.md",
+  "purpose": "Review criteria for code review: lists the delegated SSOT documents to check by priority, the check order, and the rules for choosing fix, create_issue or skip.",
+  "summary": [
+    "Delegates severity and gray-zone judgment to principles documents; holds no judgment itself",
+    "P1 SSOT table: project-specific rules, related design docs, deterministic generation spec",
+    "P2 consistency check between design docs and target files",
+    "P3 unnecessary complexity check via anti-patterns document",
+    "Check order: P1 rule match, P2 contradiction, P3 complexity",
+    "Recommendation rules: fix, create_issue, skip with adoption conditions",
+    "Three conditions for create_issue: no applicable rule, recurrence or objectivity, codifiable granularity",
+    "Fallback to built-in rules when project rules are missing"
+  ],
+  "tasks": [
+    "Reviewing source code against project rules",
+    "Building a review packet for code review",
+    "Judging fix, create_issue or skip for code findings",
+    "Checking code against related design documents",
+    "Authoring or updating review criteria"
+  ],
+  "title": "code レビュー基準"
+}

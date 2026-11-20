@@ -4,77 +4,59 @@ description: |
   forge 内蔵ドキュメントの検索インデックスを更新する。
   /forge:query-forge-rules の検索結果を最新化したいときに使う。
   トリガー: "forge ToC 更新", "update forge toc", "forge インデックス更新", "forge 内蔵ドキュメントの ToC を再生成"
-allowed-tools: Bash, Read, Skill
 user-invocable: true
+allowed-tools: Bash, Skill
 argument-hint: ""
 ---
 
 # update-forge-toc
 
-forge 内蔵ドキュメント（`plugins/forge/docs/`, `plugins/forge/skills/*/docs/`）から、
-新 doc-advisor の `index-docs` で ToC を生成し、forge 同梱の検索インデックス
-`plugins/forge/toc/rules/rules_toc.yaml` を更新する。
+forge 内蔵ドキュメント（`plugins/forge/docs/`, `plugins/forge/skills/*/docs/`）の索引を doc-link で構築し、
+その内容から forge 同梱の検索インデックス `plugins/forge/toc/rules/rules_toc.yaml` を生成する。
+
+同梱ファイルの形式は forge のものである。配布物（`/forge:query-forge-rules` とその worker）は
+同梱ファイルだけを読み、doc-link を知らない。
 
 ## 前提条件
 
-- `doc-advisor` プラグイン（外部 marketplace `BlueEventHorizon/DocAdvisor`）がインストールされ、
-  `doc-advisor:index-docs` が available-skills に存在すること
+- `doc-link` プラグインがインストールされ、`doc-link:index-docs` が available-skills に存在すること
 - 未インストールの場合はその旨を報告して終了する
 
 ## 実行フロー
 
-### Step 1: 対象パスの解決
+### Step 1: 索引を構築する
 
-forge KB の対象 Markdown を、本 SKILL 同梱の `forge_doc_structure.yaml` から解決する
-（doc-advisor は `.doc_structure.yaml` を読まないため、forge 側でパスを解決して渡す）:
+`Skill` ツールで `doc-link:index-docs` を呼ぶ。キーは `forge-rules`、対象指定は次のとおりで、変えない。
+
+```
+/doc-link:index-docs --key forge-rules --dirs-json '["plugins/forge/docs/", "plugins/forge/skills/*/docs/"]' --exclude-json '[]'
+```
+
+構築が失敗した場合、または索引に入らなかった文書が残る場合は、Step 2 へ進まず、返された内容を報告して終了する。
+
+### Step 2: 同梱ファイルを生成する
 
 ```bash
-python3 plugins/forge/scripts/doc_structure/resolve_doc_structure.py \
-  --type rules \
-  --doc-structure .claude/skills/update-forge-toc/forge_doc_structure.yaml
+python3 .claude/skills/update-forge-toc/scripts/build_forge_toc.py
 ```
 
-stdout JSON の `rules` 配列（project-root-relative パス）を取得する。`status` が `error` なら `message` を報告して終了。
+- 終了コード 0: 標準出力の JSON の `output` と `file_count` を控えて Step 3 へ進む
+- それ以外: 標準出力の JSON の `errors` を報告して終了する。索引の文書の集合が内蔵文書と一致しないときは、ここでエラーになる
 
-### Step 2: ToC 生成（index-docs）
-
-`Skill` ツールで `doc-advisor:index-docs` を **1 回だけ** 呼ぶ。key には予約語と衝突しない `forge-rules` を使う:
-
-```
-/doc-advisor:index-docs --key forge-rules --paths-json '<Step 1 の rules 配列の JSON>'
-```
-
-完了レポート JSON の `toc_path`（例: `.claude/doc-advisor/toc/forge-rules-<hash>/toc.yaml`）を取得する。
-
-### Step 3: 同梱場所へコピー [MANDATORY]
-
-doc-advisor が生成した `toc.yaml` と、同じディレクトリの `.toc_checksums.yaml` を、forge プラグイン同梱の
-場所へコピーする（配布されるのは `rules_toc.yaml`）。checksums は doc-advisor が `toc.yaml` と同時に書くため、
-forge は再計算せず、内容を変えずにコピーする。**2 つとも必ずコピーする**
-（片方だけだと、鮮度の契約テストが失敗する）:
-
-```bash
-cp "<Step 2 の toc_path>" plugins/forge/toc/rules/rules_toc.yaml
-cp "$(dirname "<Step 2 の toc_path>")/.toc_checksums.yaml" plugins/forge/toc/rules/.toc_checksums.yaml
-```
-
-checksums ファイルは、鮮度の契約テストが現在のソース文書と突き合わせるために使う。
-`rules_toc.yaml` と必ずセットでコミットする。
-
-### Step 4: 完了報告
+### Step 3: 完了報告
 
 ```
 forge 内蔵 docs の検索インデックスを更新しました
 
 - 生成元: plugins/forge/docs/, plugins/forge/skills/*/docs/
 - key: forge-rules
-- 出力: plugins/forge/toc/rules/rules_toc.yaml
-- checksums: plugins/forge/toc/rules/.toc_checksums.yaml
+- 出力: plugins/forge/toc/rules/rules_toc.yaml（<file_count> 件）
 ```
 
 ## Notes
 
-- forge 同梱 ToC は `.claude/doc-advisor/toc/<slug>/` の doc-advisor 管理 ToC を **コピー** して配布する設計。
-  ランタイムの `/forge:query-forge-rules` は同梱ファイルを直接 Read するため doc-advisor インストール不要。
-- `.bak` ファイル（`rules_toc.yaml.bak` 等）はコミットしない。`tests/forge/doc_structure/test_forge_toc_freshness.py`
-  が残存を検出する。
+- 同梱ファイル、`.doc-link/` の変更、DLID の入った内蔵文書は、同じコミットに入れる。
+  `tests/forge/doc_structure/test_forge_toc_freshness.py` が、索引と内蔵文書の集合の一致と、同梱ファイルと生成結果の一致を検査する。
+  索引の内容が現物の文書より古いかは、doc-link の検査（`doc-link:check-toc`。`doc-link:index-docs` も構築の前に確かめる）が担う。内蔵文書を変えたら、本 skill を実行する。
+- ランタイムの `/forge:query-forge-rules` は同梱ファイルを直接 Read するため、利用者の環境に doc-link は要らない。
+- `.bak` ファイル（`rules_toc.yaml.bak` 等）はコミットしない。同じテストが残存を検出する。

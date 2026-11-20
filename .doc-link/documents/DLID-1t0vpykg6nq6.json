@@ -1,0 +1,37 @@
+{
+  "content_hash": "0dffb877656450c8483eed4da693a7d9dbfdefbcfaf189276de5ea06b05637b4",
+  "doc_link_id": "DLID-1t0vpykg6nq6",
+  "keywords": [
+    "document access",
+    "direct reference",
+    "query-db-rules",
+    "query-db-specs",
+    "wrapper",
+    "backend",
+    "anti-patterns",
+    "built-in docs",
+    "CLAUDE_PLUGIN_ROOT",
+    "session_dir"
+  ],
+  "path": "docs/rules/forge_doc_access_principle.md",
+  "purpose": "Development rule defining the only two routes by which forge internals reach documents (direct reference for built-in docs, wrapper queries for project specs/rules) and restricting document-search backend references to wrappers.",
+  "summary": [
+    "Two access routes only: A direct path reference and B query via wrapper skills",
+    "Route A scope: built-in plugin docs or a skill's own docs directory; never another skill's docs",
+    "Route B: project specs/rules accessed through query-db-specs and query-db-rules",
+    "Rationale: built-in docs update with releases so fixed paths stay valid; project docs change often",
+    "Anti-patterns: querying built-in docs, referencing project docs from distributions, procedures as docs, session_dir file passing, cross-skill docs",
+    "Backend name may appear only in wrapper skills and the doc_backend scripts",
+    "Exemptions for mechanically written index identifiers and the single place per layer that explains the backend",
+    "External use note: query-forge-rules is the entry point for outside users"
+  ],
+  "tasks": [
+    "Writing or editing SKILL.md files that read documents",
+    "Designing agents or scripts that need document access",
+    "Reviewing changes for document reference violations",
+    "Editing wrapper skills for document search and update",
+    "Writing CLAUDE.md blocks or procedure documents distributed to users",
+    "Promoting shared documents to plugin-level docs"
+  ],
+  "title": "forge ドキュメントアクセス原則"
+}

@@ -1,0 +1,39 @@
+{
+  "content_hash": "3810426fdc1ba38be6c96d7d61bbcba3e23f49876cc3cdbdbe1959b7f90f6c4d",
+  "doc_link_id": "DLID-4wn8sb8y1f80",
+  "keywords": [
+    "error handling",
+    "silent fallback",
+    "except Exception",
+    "exception propagation",
+    "external-cause error",
+    "internal bug",
+    "pure function",
+    "error reporting",
+    "bug hiding",
+    "exception policy"
+  ],
+  "path": "docs/specs/common/requirements/COMMON-REQ-002_error_handling_policy.md",
+  "purpose": "Defines the error handling policy that prevents hiding bugs by forbidding silent fallbacks and allowing only external-cause errors to be caught, for early problem detection and easier debugging.",
+  "summary": [
+    "Overview: prohibit silent fallback and catch only external-cause errors",
+    "Scope: all Python scripts and SKILL.md in the project, with background commits",
+    "Glossary: external-cause error, internal bug, silent fallback",
+    "FR-01 exception catching principle: no broad except, specific types only, propagate bugs",
+    "FR-02 allowed catches: file I/O, network, type conversion, HTTP server handlers",
+    "FR-03 error reporting: deliver error info to caller in format set by script error output rules",
+    "FR-04 pure functions: exceptions are bugs, no rollback, guarantee via tests",
+    "Correct and forbidden code patterns with examples",
+    "Decision flowchart for handling an exception",
+    "Table of applied locations by version"
+  ],
+  "tasks": [
+    "Writing Python scripts with try/except",
+    "Reviewing code for silent fallback or broad except",
+    "Designing script error reporting",
+    "Writing pure functions such as migrations",
+    "Writing SKILL.md error handling instructions",
+    "Fixing bugs hidden by exception handling"
+  ],
+  "title": "COMMON-REQ-002: エラーハンドリングポリシー要件定義書"
+}

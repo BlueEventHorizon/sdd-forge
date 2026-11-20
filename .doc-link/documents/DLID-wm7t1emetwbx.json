@@ -1,0 +1,35 @@
+{
+  "content_hash": "cff328dfcaec10e442d67240ec0bac698908d34ab2016f11143ddf29119ca8d3",
+  "doc_link_id": "DLID-wm7t1emetwbx",
+  "keywords": [
+    "document review",
+    "generic review",
+    "review criteria",
+    "style guide",
+    "error classification",
+    "SSOT reference",
+    "create_issue",
+    "term consistency"
+  ],
+  "path": "plugins/forge/docs/criteria/review_criteria_generic.md",
+  "purpose": "Review criteria for generic documents: lists the delegated SSOT documents, check order, and rules for choosing fix, create_issue or skip.",
+  "summary": [
+    "Delegates severity and gray-zone judgment to principles documents; holds no judgment itself",
+    "P1 SSOT table: document style guide, project document rules, error classification spec",
+    "P2 contradiction check such as term mismatch and duplication",
+    "P3 unnecessary complexity check via spec priorities spec",
+    "Check order: style, project rules, error handling, contradiction, complexity",
+    "Error handling check: swallowed errors, judgeable events, per-cause values",
+    "Recommendation rules: fix, create_issue, skip",
+    "Three conditions for create_issue",
+    "Fallback to built-in style guide when project rules are missing"
+  ],
+  "tasks": [
+    "Reviewing general documents",
+    "Building a review packet for document review",
+    "Checking documents against the style guide",
+    "Checking error handling descriptions in documents",
+    "Authoring or updating review criteria"
+  ],
+  "title": "generic レビュー基準"
+}

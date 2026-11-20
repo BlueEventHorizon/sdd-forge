@@ -1,41 +1,10 @@
 ---
-type: doc-advisor
-title: SKILL.md and Script Placement and Contract Design
-purpose: Defines placement rules and invocation contracts for skill-local operation adapters and shared low-level scripts, separating SKILL.md responsibilities from script responsibilities
-content_details:
-  - Semantic choice boundary deciding whether logic belongs in SKILL.md or in a script
-  - "Skill-local operation adapter types: fixed-context, operation-contract, I/O and composite adapters"
-  - Wrapper creation criteria and the exclusion cases in the wrap-or-not decision list
-  - Intentional duplication of wrappers as per-skill fixed call contracts rather than implementation logic
-  - "Placement rules: shared low-level scripts under plugins/forge/scripts/{domain}/ and skill-local scripts under each skill"
-  - Prohibition of a shared wrapper layer and of a single dispatcher across skills
-  - Public CLI contract stability and one-way dependency direction from SKILL.md to local script to shared script to external file
-  - Template with passthrough exit codes declared in the module docstring and a stage identifier on stderr for composite adapters
-  - Ordered phase exposure through explicit modes such as --start and --status, rejecting all other forms
-  - Per-skill contract tests and change-triggered semantic conformance review
-applicable_tasks:
-  - Creation or removal of skill-local operation wrappers
-  - Changes to script invocation in SKILL.md
-  - Placement review of scripts between shared and skill-local locations
-  - CLI compatibility and exit code and error output contract review
-  - Wrapper contract test design
-keywords:
-  - DES-024
-  - operation adapter
-  - fixed-context adapter
-  - skill-local script
-  - shared low-level script
-  - exit code passthrough
-  - ordered phases
-  - semantic choice boundary
-  - dependency direction
-  - wrapper
-body_hash: sha256:347ce9bb1a5aac9e61d163e595e44a5efe045de21069a23219b40f4b45c61505
+doc_link_id: DLID-ckbysbfdrsv5
 ---
 
-# DES-024 SKILL.md と script の配置・契約設計
+# DES-024 SKILL.md と script の配置・契約設計 DLID-8apgjbg4ne1q
 
-## 1. 概要
+## 1. 概要 DLID-q7n29w40cw5f
 
 本設計は[REQ-003 SKILL.md と script の責務分離要件][req-003]の How を定める。
 
@@ -45,11 +14,11 @@ SKILL.md はユーザー意図の解釈、進行管理、現在状態に基づ�
 
 低レベル script は複数 SKILL が再利用する汎用処理を所有し、各 SKILL 配下の操作入口は SKILL 固有値を束縛し、公開操作を必要範囲へ限定する。操作入口同士が固定値以外で同一でも、この配置は AI の選択領域を除去し、SKILL 間の依存と共有領域への固有値混入を防ぐための意図的な境界である。
 
-## 2. SKILL ローカル操作入口の型
+## 2. SKILL ローカル操作入口の型 DLID-2tjek8814kq6
 
 `plugins/forge/skills/{skill}/scripts/` にはラッパーだけでなく、単一 SKILL が所有する決定論的な実体ロジックも置かれる。本節のラッパー契約は、共有低レベル script を委譲するファイルに適用する。
 
-### 2.1 固定文脈アダプタ
+### 2.1 固定文脈アダプタ DLID-cgteh9v523ve
 
 共有低レベル CLI に必要な SKILL 固有値を束縛する。代表例は category `rules` / `specs`、文書種別、SKILL 名である。
 
@@ -58,7 +27,7 @@ SKILL.md はユーザー意図の解釈、進行管理、現在状態に基づ�
 - 当該 SKILL が必要とする操作・引数だけを受理する
 - 低レベル CLI に将来追加された引数を自動的に公開しない
 
-### 2.2 操作契約アダプタ
+### 2.2 操作契約アダプタ DLID-kkp4fjbdb71x
 
 共有低レベル CLI の複数機能から、当該 SKILL が使う操作だけを公開する。低レベル引数を無条件に透過せず、許可する operation と入力の対応を明示する。
 
@@ -66,7 +35,7 @@ SKILL.md はユーザー意図の解釈、進行管理、現在状態に基づ�
 
 例: `sync_documents.py --start` と `sync_documents.py --status <job_id>` は同一同期ジョブの「投入→観測」という順序付き位相である。各場面の呼び出しは確定済みであり、AI が方針を自由選択する構造ではないため、同じ入口に保つ。
 
-### 2.3 I/O アダプタ
+### 2.3 I/O アダプタ DLID-zcm6v6j0ad8x
 
 低レベル script の入出力と SKILL が必要とする副作用を適応する。低レベル script が NFR 上「元ファイルを書き換えない」と決まっており、更新後の内容を **stdout のみに出力する** 場合（例: `update_version_files.py`）、当該低レベルを呼ぶラッパーは次を担う:
 
@@ -79,7 +48,7 @@ SKILL.md はユーザー意図の解釈、進行管理、現在状態に基づ�
 
 この類型は対象を **「低レベルが stdout-only 設計の場合のみ」** に限定する。
 
-### 2.4 複合操作アダプタ
+### 2.4 複合操作アダプタ DLID-ktv8t16tyj0s
 
 単一 SKILL に閉じた複数の低レベル処理を、決定論的な一操作へ合成する。次を全て満たす場合に追加できる:
 
@@ -88,7 +57,7 @@ SKILL.md はユーザー意図の解釈、進行管理、現在状態に基づ�
 - 共有すべき実体ロジックを複製しない
 - 失敗段階を機械判定可能な出力で返す
 
-### 2.5 ラッパー化判断基準
+### 2.5 ラッパー化判断基準 DLID-ntkk973pe0yk
 
 **作る**（いずれかを満たす）:
 
@@ -104,7 +73,7 @@ SKILL.md はユーザー意図の解釈、進行管理、現在状態に基づ�
 - 位置引数と名前付き引数を相互変換するだけ
 - mode をファイル名へ移すだけで、AI に残る意味的選択が減らない
 
-### 2.6 意図的な重複の設計意図 [MANDATORY]
+### 2.6 意図的な重複の設計意図 [MANDATORY] DLID-00vbhxbe2q55
 
 ラッパーの類似性や行数だけを理由に、削除または共有化してはならない。重複しているのは実体ロジックではなく、SKILL ごとに確定した共有 CLI の呼び出し契約である。
 
@@ -117,20 +86,20 @@ SKILL.md はユーザー意図の解釈、進行管理、現在状態に基づ�
 
 削除または低レベル script の直接呼び出しへ変更できるのは、§2.5 の「作る」基準をいずれも満たさず、AI に SKILL 固有値・固定方針・未決定の意味的選択を戻さない場合に限る。
 
-## 3. 配置基準
+## 3. 配置基準 DLID-nv2mw41tdbhm
 
-### 3.1 script の配置
+### 3.1 script の配置 DLID-4e35kcws6dgt
 
 - **低レベル script**: `plugins/forge/scripts/{domain}/`
   複数 SKILL が再利用する汎用の実体ロジックを持つ。
 - **SKILL ローカル script**: `plugins/forge/skills/{skill}/scripts/`
   単一 SKILL が所有する操作入口または決定論的な実体ロジックを持つ。共有低レベル script を委譲する場合に限り、本設計のラッパー契約を適用する。
 
-### 3.2 共有ラッパー層を作らない
+### 3.2 共有ラッパー層を作らない DLID-5aebdxr6kv4h
 
 複数 SKILL から同じ operation を呼びたくなった場合、汎用の実体ロジックは低レベル script の責務である。中間に「共有ラッパー層」を作ると配置判断が複雑化し、二重実装の温床になる。SKILL 固有値を束縛する必要がある場合、各 SKILL はそれぞれローカルな操作入口で委譲する。§2.5 の「作る」基準に該当しない場合のみ、ラッパーなしで低レベルを直接呼ぶ。
 
-### 3.3 公開契約を安定させる [MANDATORY]
+### 3.3 公開契約を安定させる [MANDATORY] DLID-ak9x6fr0752w
 
 SKILL.md が呼ぶローカル操作入口の path / 引数仕様 / stdout / stderr / exit code は公開契約であり、互換性を維持する。
 
@@ -144,13 +113,13 @@ SKILL.md が呼ぶローカル操作入口の path / 引数仕様 / stdout / std
 - 同一 domain の script 群が共通モジュールを import してもよい
 - ローカル操作入口の契約を維持したまま、内部の低レベル引数を変更してよい
 
-## 4. 命名規則
+## 4. 命名規則 DLID-1h7bv6sywsb8
 
 - operation 名 (動詞主体) を使う: `scan_spec_ids.py` / `calculate_version.py` / `collect_modified_files.py` / `resolve_doc_structure.py`
 - 低レベル script 名はラッパー名に含めない (`{low_level}_wrapper.py` のような名前を避ける)
 - 同一 operation を複数 SKILL が持つ場合、ファイル名は揃える
 
-## 5. SKILL.md 側の記述ルール
+## 5. SKILL.md 側の記述ルール DLID-zs2n08bcxy43
 
 - 各場面で呼び出し全体を一意に確定する
 - SKILL 固有値・固定方針を引数として AI に選ばせない
@@ -162,9 +131,9 @@ SKILL.md が呼ぶローカル操作入口の path / 引数仕様 / stdout / std
 
 継承型 SKILL の `Skill` ツール起動は subprocess ではなく、Python ラッパーから実行する API も無い。この経路では、呼び出し元 SKILL.md 自体がローカル操作入口となる。`key` や category 等の固定値は、外部 SKILL の各起動箇所へ完全なリテラルとして記述し、AI が選ぶ候補や置換対象として示さない。異なる外部 SKILL の起動箇所が同じ固定値を必要とする場合も、それぞれの起動契約を自己完結させる。固定値の重複だけを理由に、実行不能な script ラッパーや共通 dispatcher を設けない。
 
-## 6. モジュール一覧と依存方向
+## 6. モジュール一覧と依存方向 DLID-wza8svy73scd
 
-### 6.1 層構造
+### 6.1 層構造 DLID-cagm43r83j2q
 
 | 層                     | 配置                                                  | 役割                                                       |
 | ---------------------- | ----------------------------------------------------- | ---------------------------------------------------------- |
@@ -174,7 +143,7 @@ SKILL.md が呼ぶローカル操作入口の path / 引数仕様 / stdout / std
 | 共有低レベル script    | `plugins/forge/scripts/{domain}/{script}.py`          | 複数 SKILL が再利用する汎用ロジック                        |
 | 外部ファイル           | `.doc_structure.yaml` 等                              | 永続状態・設定・成果物                                     |
 
-### 6.2 依存方向
+### 6.2 依存方向 DLID-a7fnn8q6pm8m
 
 依存は **SKILL.md → SKILL ローカル script → 共有低レベル script → 外部ファイル** の一方向。ローカルラッパー同士の呼び出し・低レベル → ローカル script の逆流・SKILL.md 間の直接参照はいずれも禁止。
 
@@ -192,16 +161,16 @@ flowchart LR
     LL --> FS
 ```
 
-### 6.3 Yes/No 判定可能な性質
+### 6.3 Yes/No 判定可能な性質 DLID-bzfx52xdyed5
 
 - 低レベル script が wrapper / SKILL.md を import していない
 - wrapper が他 skill の wrapper を呼んでいない
 - 共有低レベル CLI の追加引数がローカル操作入口へ自動公開されない
 - 複合操作アダプタが §2.4 の制約を全て満たす
 
-## 7. 実装テンプレート
+## 7. 実装テンプレート DLID-6j9q9vrr78nc
 
-### 7.1 固定文脈アダプタ
+### 7.1 固定文脈アダプタ DLID-4b0r2kmq0v6x
 
 実行時データを受け取らない形を基本テンプレートとする。固定文脈は位置引数に限定せず、低レベル CLI の契約に応じた名前付き引数でよい。
 
@@ -269,7 +238,7 @@ command = [sys.executable, str(LOW_LEVEL), *FIXED_ARGS, args[0]]
 
 上のテンプレートは低レベルの終了コードを透過する。透過する値域は、このラッパー自身の docstring に宣言する（[script のエラー出力][script-error-output]）。宣言しない場合、透過せず `0` と `1` に畳む。
 
-### 7.2 順序付き位相を持つ操作入口
+### 7.2 順序付き位相を持つ操作入口 DLID-zehbnfj9v155
 
 同一資源の位相を 1 つの入口で公開する場合、受理する形式を列挙し、それ以外を拒否する。
 
@@ -295,7 +264,7 @@ def build_command(args: list[str]) -> list[str] | None:
 
 `--start` / `--status` は構文上の flag だが、SKILL の各場面で呼び出しが確定しているため許容される。低レベル CLI に別 mode が追加されても、この操作入口が明示的に採用するまで公開されない。
 
-### 7.3 複合操作アダプタ
+### 7.3 複合操作アダプタ DLID-c8t8g4w81ymr
 
 複合操作アダプタは複数段の subprocess を連鎖させ、失敗時に stage 識別子で障害切り分けを可能にする。§2.4 の制約を全て満たす場合にのみ追加できる。
 
@@ -327,7 +296,7 @@ stderr 契約 (失敗時のみ stderr 先頭行に付与):
 
 この stderr は障害切り分けのための付加情報であり、失敗の内容そのものは stdout のエラー JSON に含める（[script のエラー出力][script-error-output]）。stage 識別子を stderr だけに置き、stdout を空にしてはならない。
 
-## 8. テスト原則
+## 8. テスト原則 DLID-ca0k2pa0kw2y
 
 `plugins/` 配下の Python にはテストが必須。テストの置き場はスキル名と一致させる。
 
@@ -341,7 +310,7 @@ stderr 契約 (失敗時のみ stderr 先頭行に付与):
 - wrapper テストの assert ロジックは共通 helper へ寄せてよい
 - 固定文脈以外が同一のラッパーでも、SKILL ごとの束縛契約を別々に検証する
 
-### 8.1 適合レビューの契機
+### 8.1 適合レビューの契機 DLID-6dhmmv0s1t7z
 
 次の変更では、本設計への適合レビューを行う:
 
@@ -351,7 +320,7 @@ stderr 契約 (失敗時のみ stderr 先頭行に付与):
 
 レビューでは、各入力を REQ-003 FNC-002 の 4 分類へ割り当て、SKILL 固有値が束縛されていること、同一場面に競合する operation が残らないこと、低レベル CLI の追加引数が自動公開されないことを確認する。機械検証は、公開契約ごとの許可・拒否テスト、依存方向、無条件な `sys.argv[1:]` 透過の有無を対象とする。ユーザー意図や現在状態の解釈が必要かという意味的分類は機械判定へ置き換えず、上記の変更契機でレビューする。
 
-## 9. 非採用案
+## 9. 非採用案 DLID-xq3c5wwxnjnn
 
 | 案                                                                | 不採用理由                                                                            |
 | ----------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
@@ -364,5 +333,5 @@ stderr 契約 (失敗時のみ stderr 先頭行に付与):
 | 低レベル引数を `*sys.argv[1:]` で無条件に透過する                 | 低レベルの将来追加がローカル公開契約へ自動的に漏れる                                  |
 | 単一 wrapper に判断を伴う複合操作を畳み込む                       | §2.4 の決定論的連鎖という制約を侵す                                                   |
 
-[req-003]: ../requirements/REQ-003_skill_script_separation.md
-[script-error-output]: ../../../rules/plugin_script_error_output_rules.md
+[req-003]: ../requirements/REQ-003_skill_script_separation.md "323aaf2b05f6 DLID-bgxgcq0pvkm7"
+[script-error-output]: ../../../rules/plugin_script_error_output_rules.md "f1c5b6752ce7 DLID-fz66nns8q521"

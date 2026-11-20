@@ -1,0 +1,37 @@
+{
+  "content_hash": "c928ae0546c6c37363cb698627afb207e006af83d9e1401b33a1965b4dadf2f2",
+  "doc_link_id": "DLID-wbwkxysswr60",
+  "keywords": [
+    "Apple HIG",
+    "Liquid Glass",
+    "Nielsen heuristics",
+    "Gestalt principles",
+    "accessibility",
+    "SF Pro typography",
+    "semantic color",
+    "8pt grid",
+    "UX evaluation checklist"
+  ],
+  "path": "plugins/forge/skills/start-uxui-design/docs/apple_design_principles.md",
+  "purpose": "Knowledge base of Apple platform UX/UI design philosophy that an AI consults during design analysis, covering HIG principles, usability heuristics, accessibility, and an evaluation checklist.",
+  "summary": [
+    "Four Apple HIG principles: Clarity, Deference, Depth, Consistency",
+    "Liquid Glass design language of 2025-2026",
+    "SF font families and text style hierarchy",
+    "Semantic color system with light/dark mode rules",
+    "Nielsen 10 usability heuristics with violation examples",
+    "Seven Gestalt principles and their UI applications",
+    "Visual, operational, and cognitive accessibility guidance",
+    "8pt grid spacing system",
+    "Design evaluation checklist for UX notes"
+  ],
+  "tasks": [
+    "UX/UI design analysis of Apple platform screens",
+    "Writing UX notes for UI component catalogs",
+    "Reviewing UI designs against HIG principles",
+    "Evaluating usability with Nielsen heuristics",
+    "Accessibility review of iOS and macOS designs",
+    "Defining typography, color, and spacing tokens"
+  ],
+  "title": "Apple デザイン原則 & UX/UI 哲学知識ベース"
+}

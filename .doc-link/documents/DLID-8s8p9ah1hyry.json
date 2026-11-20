@@ -1,0 +1,38 @@
+{
+  "content_hash": "98bf338f755fd8a0e23dd88108130afb096c4bacc527758a45ecf2f426418f22",
+  "doc_link_id": "DLID-8s8p9ah1hyry",
+  "keywords": [
+    "agenda_render",
+    "agenda.html",
+    "HTML generation",
+    "data-changed",
+    "severity badge",
+    "auto refresh",
+    "content_version",
+    "agenda_state.js",
+    "WCAG",
+    "display layer"
+  ],
+  "path": "docs/specs/consult/agenda/design/DES-077_agenda_display_design.md",
+  "purpose": "Design of the agenda display layer (agenda_render.py): HTML generation from agenda.json, change highlighting, state derivation, and automatic tab refresh.",
+  "summary": [
+    "Choice of HTML and first display via the open command",
+    "Template structure: summary table, item cards, dl fields, generated notice",
+    "Status shown as a single gutter dot rather than full background color",
+    "Severity badge using pastel color plus text label, resolved via config.severity_field",
+    "Field-level change marking with data-changed from last_changed_fields",
+    "CSS selector targets, with concrete values decided at implementation",
+    "Status derivation (not started, in progress, settled) from background, essence and decision",
+    "Auto-refresh by comparing content_version via script src swap, with scroll position preserved",
+    "Test design including unit and manual verification",
+    "Existing components reused"
+  ],
+  "tasks": [
+    "Implementing or modifying agenda_render.py",
+    "Changing agenda.html layout or styling",
+    "Changing change highlighting or severity badge display",
+    "Writing tests for the display layer",
+    "Reviewing agenda display design"
+  ],
+  "title": "DES-077 agenda 表示層設計書"
+}

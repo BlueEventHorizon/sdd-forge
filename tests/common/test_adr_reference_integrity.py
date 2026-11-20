@@ -39,12 +39,20 @@ CROSS_REF_ROOTS = ("docs", "plugins", "tests")
 CROSS_REF_SUFFIXES = (".md", ".py", ".sh")
 
 MD_LINK_RE = re.compile(r"\[[^\]]*\]\(([^)\s]+\.md)(?:#[^)]*)?\)")
+#: リファレンスリンク（`[表示名][ラベル]`）と、その定義（`[ラベル]: パス "title"`）。
+REF_LINK_RE = re.compile(r"\[[^\]]*\]\[([^\]]+)\]")
+REF_DEF_RE = re.compile(
+    r'^\[([^\]]+)\]:\s*<?([^\s#>]+\.md)(?:#[^\s>]*)?>?(?:\s+"[^"]*")?\s*$'
+)
 #: リンク直後に続く `§X.Y`（`§5.2 / §5.6` のように複数続くことがある）。
 TRAILING_SECTION_RE = re.compile(r"\A(?:\s*§\d+(?:\.\d+)*(?:\s*/)?)+")
 SECTION_RE = re.compile(r"§(\d+(?:\.\d+)*)")
 ADR_SECTION_REF_RE = re.compile(r"ADR-(\d{3})\s*§(\d+(?:\.\d+)*)")
 HEADING_NUM_RE = re.compile(r"^#{2,6}\s+(\d+(?:\.\d+)*)\.?\s")
 INVALIDATION_RE = re.compile(r"⚠️失効")
+# 見出しの行末に機械的に付与される文書検索用の識別子。見出しの名前には含めない
+# （document_style_guide.md §1.1）。
+HEADING_ID_RE = re.compile(r"\s+DLID-[0-9a-z]+\s*$")
 
 #: 決定の節が持つ 4 つの小節（番号の下 1 桁と名前）。
 DECISION_SUBSECTIONS = (
@@ -75,6 +83,52 @@ def strip_code(text: str) -> str:
             continue
         out.append("" if in_fence else re.sub(r"`[^`]*`", "", line))
     return "\n".join(out)
+
+
+def markdown_links(path: Path) -> list[tuple[int, str, int, str]]:
+    """文書が Markdown 文書へ張るリンクを `(行番号, 行, リンクの終わりの位置, リンク先)` で返す。
+
+    インラインリンクと、リファレンスリンク（本文の `[表示名][ラベル]` を定義で解決したもの）の
+    両方を返す。定義だけがあって本文から使われていないものは返さない。
+    """
+    lines = strip_code(path.read_text(encoding="utf-8")).splitlines()
+    definitions: dict[str, str] = {}
+    for line in lines:
+        d = REF_DEF_RE.match(line)
+        if d:
+            definitions[d.group(1).lower()] = d.group(2)
+    found: list[tuple[int, str, int, str]] = []
+    for lineno, line in enumerate(lines, 1):
+        for m in MD_LINK_RE.finditer(line):
+            found.append((lineno, line, m.end(), m.group(1)))
+        for m in REF_LINK_RE.finditer(line):
+            target = definitions.get(m.group(1).lower())
+            if target is not None:
+                found.append((lineno, line, m.end(), target))
+    return found
+
+
+#: 定義行のラベル（リンク先の種類を問わない。外部 URL の定義も含む）。
+ANY_DEF_RE = re.compile(r"^\[([^\]]+)\]:\s*\S")
+
+
+def undefined_reference_labels(path: Path) -> list[tuple[int, str]]:
+    """本文のリファレンスリンク `[表示名][ラベル]` のうち、定義の無いものを `(行番号, ラベル)` で返す。
+
+    定義の無い参照は、リンクにならずそのままの文字で表示される。`markdown_links` は定義で
+    解決できた参照だけを返すので、ここで拾わないと、宛先を失った参照ほど検査を通ってしまう。
+    """
+    lines = strip_code(path.read_text(encoding="utf-8")).splitlines()
+    defined = {
+        m.group(1).lower() for m in (ANY_DEF_RE.match(line) for line in lines) if m
+    }
+    return [
+        (lineno, m.group(1))
+        for lineno, line in enumerate(lines, 1)
+        if not ANY_DEF_RE.match(line)
+        for m in REF_LINK_RE.finditer(line)
+        if m.group(1).lower() not in defined
+    ]
 
 
 def heading_numbers(path: Path) -> set[str]:
@@ -144,7 +198,7 @@ def structure_violations(path: Path) -> list[str]:
                     f"{rel} 小節が直近の `## N.` の `### N.M ` の形ではない: {line}"
                 )
                 continue
-            seen.append((int(m.group(2)), m.group(3).strip()))
+            seen.append((int(m.group(2)), HEADING_ID_RE.sub("", m.group(3)).strip()))
     close_section(0)
 
     if titles != 1:
@@ -182,14 +236,10 @@ class TestADRReferenceIntegrity(unittest.TestCase):
         """マークダウンリンクのリンク先ファイルが実在すること。"""
         broken: list[str] = []
         for path in adr_files():
-            for lineno, line in enumerate(
-                strip_code(path.read_text(encoding="utf-8")).splitlines(), 1
-            ):
-                for m in MD_LINK_RE.finditer(line):
-                    target = (path.parent / m.group(1)).resolve()
-                    if not target.is_file():
-                        rel = path.relative_to(REPO_ROOT)
-                        broken.append(f"{rel}:{lineno} -> {m.group(1)}")
+            for lineno, _line, _end, link in markdown_links(path):
+                if not (path.parent / link).resolve().is_file():
+                    rel = path.relative_to(REPO_ROOT)
+                    broken.append(f"{rel}:{lineno} -> {link}")
         self.assertEqual(
             [],
             broken,
@@ -197,25 +247,35 @@ class TestADRReferenceIntegrity(unittest.TestCase):
             + "\n".join(broken),
         )
 
+    def test_reference_links_have_definitions(self):
+        """本文のリファレンスリンクのラベルに、定義があること。"""
+        broken: list[str] = []
+        for path in adr_files():
+            rel = path.relative_to(REPO_ROOT)
+            for lineno, label in undefined_reference_labels(path):
+                broken.append(f"{rel}:{lineno} -> [{label}]")
+        self.assertEqual(
+            [],
+            broken,
+            "ADR のリファレンスリンクに定義が無い:\n" + "\n".join(broken),
+        )
+
     def test_section_suffix_of_links_exists_in_target(self):
         """リンクに添えた `§X.Y` が参照先文書に実在する見出しであること。"""
         broken: list[str] = []
         for path in adr_files():
-            for lineno, line in enumerate(
-                strip_code(path.read_text(encoding="utf-8")).splitlines(), 1
-            ):
-                for m in MD_LINK_RE.finditer(line):
-                    target = (path.parent / m.group(1)).resolve()
-                    if not target.is_file():
-                        continue  # 上のテストが報告する
-                    tail = TRAILING_SECTION_RE.match(line[m.end() :])
-                    if not tail:
-                        continue
-                    available = heading_numbers(target)
-                    for number in SECTION_RE.findall(tail.group(0)):
-                        if number not in available:
-                            rel = path.relative_to(REPO_ROOT)
-                            broken.append(f"{rel}:{lineno} -> {m.group(1)} §{number}")
+            for lineno, line, end, link in markdown_links(path):
+                target = (path.parent / link).resolve()
+                if not target.is_file():
+                    continue  # 上のテストが報告する
+                tail = TRAILING_SECTION_RE.match(line[end:])
+                if not tail:
+                    continue
+                available = heading_numbers(target)
+                for number in SECTION_RE.findall(tail.group(0)):
+                    if number not in available:
+                        rel = path.relative_to(REPO_ROOT)
+                        broken.append(f"{rel}:{lineno} -> {link} §{number}")
         self.assertEqual(
             [],
             broken,
@@ -354,6 +414,50 @@ class TestFormatChecksDetectViolations(unittest.TestCase):
 
     def test_good_file_passes(self):
         self.assertEqual([], structure_violations(self._adr(GOOD_ADR)))
+
+    def test_reference_links_are_resolved_through_their_definitions(self):
+        """リファレンスリンクは、定義で解決したリンク先として拾う（title つきの定義を含む）。"""
+        path = self._adr(
+            "判定は [DES-001][des-001] §3.2 に従う。書式は [foo][foo-format] を見る。\n"
+            "\n"
+            '[des-001]: ../design/DES-001_foo_design.md "abc DLID-xxxxxxxxxxxx"\n'
+            "[foo-format]: foo_format.md#section\n"
+        )
+        links = markdown_links(path)
+        self.assertEqual(
+            ["../design/DES-001_foo_design.md", "foo_format.md"],
+            [link for _lineno, _line, _end, link in links],
+        )
+        _lineno, line, end, _link = links[0]
+        self.assertTrue(line[end:].startswith(" §3.2"))
+
+    def test_inline_links_are_still_found(self):
+        path = self._adr("書式は [foo](foo_format.md) を見る。\n")
+        self.assertEqual(
+            ["foo_format.md"], [link for *_rest, link in markdown_links(path)]
+        )
+
+    def test_reference_without_definition_is_detected(self):
+        """ラベルの書き誤り・定義の書き忘れは、黙って通さずに拾う。"""
+        path = self._adr(
+            "書式は [foo][foo-fromat] を見る。外部は [RFC][rfc] を見る。\n"
+            "\n"
+            "[foo-format]: foo_format.md\n"
+            "[rfc]: https://example.com/rfc\n"
+        )
+        self.assertEqual([(1, "foo-fromat")], undefined_reference_labels(path))
+
+    def test_links_in_code_are_not_links(self):
+        path = self._adr("例: `[foo][foo-format]`\n\n[foo-format]: foo_format.md\n")
+        self.assertEqual([], markdown_links(path))
+
+    def test_heading_identifiers_are_not_part_of_the_names(self):
+        """見出しの行末に付与された識別子は、小節の名前に含めない。"""
+        text = "\n".join(
+            f"{line} DLID-abc123def456" if line.startswith("#") else line
+            for line in GOOD_ADR.splitlines()
+        )
+        self.assertEqual([], structure_violations(self._adr(text)))
 
     def test_multiple_decisions_in_one_file_are_allowed(self):
         """1 つのファイルに、決定の節が複数並ぶ。"""

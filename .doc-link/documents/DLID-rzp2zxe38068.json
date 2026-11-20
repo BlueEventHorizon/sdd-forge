@@ -1,0 +1,39 @@
+{
+  "content_hash": "ceac5067e2b62aa7f676bafc45ae0b3dc974486a0f04e8b150436aee70974507",
+  "doc_link_id": "DLID-rzp2zxe38068",
+  "keywords": [
+    "agent-review",
+    "reviewer",
+    "review backend",
+    "availability check",
+    "custom Agent",
+    "read-only",
+    "retains_context",
+    "permission mode plan",
+    "git read-only queries",
+    "stateless"
+  ],
+  "path": "docs/specs/agent-review/design/DES-072_agent_review_backend_design.md",
+  "purpose": "Design of the agent-review backend: a read-only custom Agent reviewer, an availability check SKILL, agent definition constraints, stateless operation, and test design.",
+  "summary": [
+    "Overview: agent-review is a review backend SKILL whose only duty is the availability check; the review body launches reviewer directly",
+    "Architecture with component responsibilities for the agent-review SKILL, the reviewer Agent, and the review body",
+    "Agent definition constraints: no Write/Edit/Agent/Skill tools, Read/Grep/Glob/Bash allowed, plan permission mode, advisor tool forbidden",
+    "Allowed read-only git queries and forbidden mutating git operations",
+    "Rationale for permitting general command execution and why constraints do not guarantee read-only",
+    "Availability check: five conditions on the definition file, tools, model and permission mode, role rules, and required scripts and documents",
+    "Result format: available flag, missing list with axis, detail and remedy, no side effects",
+    "retains_context is always false because each round launches a fresh reviewer; it must match the resolver declaration",
+    "State and resources: no sessions, transcripts, history, DB records, or resident processes",
+    "Test design for availability check, declaration, read-only constraints, and non-persistence"
+  ],
+  "tasks": [
+    "Implementing or modifying the agent-review backend SKILL",
+    "Editing the reviewer custom Agent definition and its tool constraints",
+    "Implementing the availability check logic and its missing-item reporting",
+    "Reviewing design consistency between review backends and the review body",
+    "Writing tests for the availability check and read-only restrictions",
+    "Changing the retains_context declaration or backend resolution"
+  ],
+  "title": "DES-072 agent-review バックエンド設計"
+}

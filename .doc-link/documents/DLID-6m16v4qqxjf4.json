@@ -1,0 +1,39 @@
+{
+  "content_hash": "a90619ea16a555c6b077c3ba6a672ccd3b8e51f99872319d93aa23691d393aa9",
+  "doc_link_id": "DLID-6m16v4qqxjf4",
+  "keywords": [
+    "forge.yaml",
+    "forge_settings",
+    "SettingsError",
+    "settings file",
+    "YAML subset",
+    "section",
+    "load",
+    "forward compatibility",
+    "configuration",
+    "doc_backend"
+  ],
+  "path": "docs/specs/forge/design/DES-061_forge_settings_file_design.md",
+  "purpose": "Defines the container conventions (location, structure, reading, error handling) of the optional project settings file .claude/.forge.yaml for tuning forge behavior, not the individual setting values.",
+  "summary": [
+    "Overview of .claude/.forge.yaml and its relation to .doc_structure.yaml and .version-config.yaml",
+    "File conventions: optional file, git-managed under .claude/, top-level sections per feature area",
+    "Unknown sections are ignored for forward compatibility, within the constrained YAML subset",
+    "Schema ownership by the design document of each feature; snake_case names, defaults required",
+    "Reading centralized in forge_settings.py with load and section functions using a line-based stdlib parser",
+    "Scalar typing rules: booleans, integers, strings; list items always strings",
+    "Error handling: missing file is normal, unparsable or unreadable file raises SettingsError with line position",
+    "Section must be a mapping; value validation is the consumer responsibility",
+    "File is hand-written; an interactive setup SKILL is out of scope",
+    "Test design table for forge_settings.py under tests/forge/scripts"
+  ],
+  "tasks": [
+    "Adding a new configuration section to .claude/.forge.yaml",
+    "Implementing or modifying forge_settings.py",
+    "Reading forge project settings from a script",
+    "Designing defaults for missing settings",
+    "Writing tests for the settings reader",
+    "Deciding where a new forge configuration item belongs"
+  ],
+  "title": "DES-061 forge プロジェクト設定ファイル設計"
+}

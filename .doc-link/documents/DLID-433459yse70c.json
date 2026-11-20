@@ -1,0 +1,39 @@
+{
+  "content_hash": "8d2adba82a1b6754e2936e51aeab6f6d30c59621c1f8143330f0983d7e442be3",
+  "doc_link_id": "DLID-433459yse70c",
+  "keywords": [
+    "consult",
+    "consult topic",
+    "consult brief",
+    "progress table",
+    "confidence mark",
+    "dialogue facilitation",
+    "review delegation",
+    "recommendation",
+    "presentation state",
+    "requirements"
+  ],
+  "path": "docs/specs/consult/requirements/REQ-017_consult_skill.md",
+  "purpose": "Requirements for the consult skill, which runs dialogue with users so they understand topics and give correct decisions, covering progress tables, briefs, confidence, and recording.",
+  "summary": [
+    "Overview: consult is responsible for dialogue; three uses (review, dialogue-based fixing, new creation)",
+    "Terminology: evaluation, consult topic, consult brief, presentation state, dialogue use",
+    "Scope: in-scope presentation, Q&A, decision capture; out-of-scope generation and unrequested execution",
+    "Prerequisites: review JSON exchange of findings and evaluations; dialogue input from conversation context",
+    "FNC-001/002: topic intake and verification; progress table with status, results, issues, and skill-led progression",
+    "FNC-003 to 006: two-field consult brief (summary and recommendation), confidence marks, context restatement, brevity about 10 lines",
+    "FNC-007 to 010: Q&A, decision capture, interruption/hold/out-of-scope handling, user owns settlement",
+    "FNC-012 to 014: main Claude authors briefs before addressing user; briefs recorded by script as JSON",
+    "BL-001/002 and NFR: no execution of undecided items, faithful presentation, single state location, use-independence, secret non-disclosure, failure visibility",
+    "Open items TBD-002 to TBD-010 such as batch threshold, record location, resumption"
+  ],
+  "tasks": [
+    "Implementing or modifying the consult skill",
+    "Designing consult presentation formats and progress tables",
+    "Integrating review delegation of findings to consult",
+    "Reviewing consult-related requirements and designs",
+    "Writing consult briefs and confidence marks per rules",
+    "Implementing the HTML generation script for dialogue use"
+  ],
+  "title": "REQ-017 consult 対話進行スキル要件定義書"
+}

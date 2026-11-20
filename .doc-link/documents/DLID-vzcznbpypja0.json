@@ -1,0 +1,40 @@
+{
+  "content_hash": "7052a1614b27cf086b665ebf68aa18074365b4713f52ac8fac829426acbe8420",
+  "doc_link_id": "DLID-vzcznbpypja0",
+  "keywords": [
+    "start-requirements",
+    "requirements workflow",
+    "interactive mode",
+    "reverse-engineering",
+    "from-figma",
+    "dispatcher",
+    "draft-driven",
+    "temporary-feature",
+    "orchestrator",
+    "glossary"
+  ],
+  "path": "docs/specs/forge/design/DES-017_create_requirements_workflow_design.md",
+  "purpose": "Design of the /forge:start-requirements dispatcher skill and its three mode workflows (interactive, reverse-engineering, from-figma) for creating requirements documents.",
+  "summary": [
+    "Overview of the dispatcher design: SKILL.md selects mode and delegates to self-contained workflow files",
+    "File layout of the start-requirements skill and its three workflow docs",
+    "Flowchart of mode selection and per-mode phases through review, ToC update and commit",
+    "Dispatcher responsibilities and the common rule for decisions made just before writing the requirements file",
+    "Decision order: completely-new check, additive vs differential type approval, feature, output directory, file name",
+    "Interactive mode: draft-driven, no up-front context collection, type judgment, temporary marker, glossary",
+    "Reverse-engineering mode: bulk context collection and source code analysis phases",
+    "From-figma mode: Figma MCP prerequisite, design tokens, SCR/CMP/FNC and static assets",
+    "Design principles: focus on What, per-mode context collection, workflow self-containment, ID consistency",
+    "Related files table for the skill, workflows and format docs"
+  ],
+  "tasks": [
+    "Modifying the start-requirements skill or its workflow files",
+    "Creating requirements documents in interactive mode",
+    "Deriving requirements from existing source code",
+    "Creating requirements from Figma designs",
+    "Deciding feature, output location and file name for a new requirements document",
+    "Judging additive versus differential development type",
+    "Reviewing requirements workflow design"
+  ],
+  "title": "DES-017 forge 要件定義書作成ワークフロー 設計書"
+}

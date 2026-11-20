@@ -1,0 +1,37 @@
+{
+  "content_hash": "d1f79607a42d8d248ea238937b800a2bf0d80c41e49e9afa75f8916eb154dcf5",
+  "doc_link_id": "DLID-y42g1frxwkf5",
+  "keywords": [
+    "reviewer",
+    "target type",
+    "review criteria",
+    "findings",
+    "target_unreadable",
+    "base_branch",
+    "diff",
+    "criteria documents",
+    "review mechanism"
+  ],
+  "path": "docs/specs/review/requirements/REQ-027_reviewer.md",
+  "purpose": "Requirements for the reviewer agent in the review mechanism: how it reads targets, determines target type, which documents it uses per type, and what findings and error values it returns.",
+  "summary": [
+    "Reviewer reads targets and applies review perspectives to return findings",
+    "Defines target type, review perspective, and perspective document terms",
+    "Reviewer definition contents specific to the reviewer (FNC-301)",
+    "Reading targets by targets shape: paths, base_branch, diff, including deletions and renames (FNC-306)",
+    "Target type determination among code, requirement, design, plan, uxui using config and file content (FNC-307)",
+    "Per-target-type documents: common set plus type-specific criteria, norms, project rules and cross-check targets (FNC-308)",
+    "Findings output: none means zero findings; reviewers are interchangeable (FNC-309)",
+    "Only error value is target_unreadable (FNC-315)",
+    "Secret detection is out of scope; shared contract is delegated to REQ-029"
+  ],
+  "tasks": [
+    "Reviewing or modifying the reviewer agent definition",
+    "Implementing target type determination",
+    "Changing review criteria documents or norm mapping per target type",
+    "Defining reviewer error values",
+    "Reviewing requirement documents on the review mechanism",
+    "Changing resolve_doc_structure script for type resolution"
+  ],
+  "title": "REQ-027 reviewer の入力・作業・出力の契約 要件定義書"
+}

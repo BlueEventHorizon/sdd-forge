@@ -1,0 +1,35 @@
+{
+  "content_hash": "33ca402717950090220ca5a32c82b447178cc0c93899e3d8a8f872c98379f4b8",
+  "doc_link_id": "DLID-yw5v4138tvb8",
+  "keywords": [
+    "macOS",
+    "Apple HIG",
+    "menu bar",
+    "keyboard shortcuts",
+    "window management",
+    "sidebar",
+    "toolbar",
+    "drag and drop",
+    "information density",
+    "platform guide"
+  ],
+  "path": "plugins/forge/skills/start-uxui-design/docs/macos_platform_guide.md",
+  "purpose": "macOS-specific UX/UI design guide that consolidates Apple HIG guidance for macOS: pointer and keyboard input, navigation, window management, layout, components, UX patterns and a checklist.",
+  "summary": [
+    "Pointer and keyboard input model: click targets, cursors, shortcuts",
+    "Navigation patterns: menu bar, toolbar, sidebar, inspector, tabs",
+    "Window management: window styles, full screen, layout patterns",
+    "Layout: information density, spacing standards, text sizes versus iOS",
+    "Standard macOS components: controls, content display, navigation",
+    "macOS UX patterns: system integration, drag and drop, multi-selection, undo/redo",
+    "Evaluation checklist for pointer, keyboard, menu bar, windows, density, accessibility"
+  ],
+  "tasks": [
+    "Designing or analyzing macOS app UI",
+    "Mapping a design to HIG standard components",
+    "Reviewing menu bar and keyboard shortcut design",
+    "Reviewing window management and layout of a macOS design",
+    "Creating design tokens for a macOS app"
+  ],
+  "title": "macOS プラットフォームガイド"
+}

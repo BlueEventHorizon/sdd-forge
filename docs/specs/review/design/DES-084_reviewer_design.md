@@ -1,8 +1,12 @@
-# DES-084 reviewer と受け渡し機構 設計書
+---
+doc_link_id: DLID-j50s0xwkwx00
+---
 
-## 1. 概要
+# DES-084 reviewer と受け渡し機構 設計書 DLID-6e1dbyw7qqz4
 
-[REQ-029](../requirements/REQ-029_review_exchange.md) のうち、レビューの開始から reviewer の区間までの受け渡し・採番・書き出しと終了の値・本体の仕事と、[REQ-027](../requirements/REQ-027_reviewer.md) を実現する設計を定める。
+## 1. 概要 DLID-vbe7n0w13fam
+
+[REQ-029][req-029] のうち、レビューの開始から reviewer の区間までの受け渡し・採番・書き出しと終了の値・本体の仕事と、[REQ-027][req-027] を実現する設計を定める。
 
 **主体はスキルとエージェント（本体・reviewer）である。その間を取り持つのが JSON と script であり、これらをクラスとして説明する。** シーケンスが全体の流れを示し、クラスごとに責務・入出力を定める。
 
@@ -20,7 +24,7 @@
 2. **script は決定論で済む処理だけを担う。** 識別値、採番、封緘である。何を所見として挙げるかは reviewer が、レビューの進め方は最終決定者である本体が判断する（REQ-029 FNC-312）。
 3. **reviewer の定義に渡す script は、`--kind` を固定したラッパーだけにする。** reviewer の定義には、所見以外を書く口が現れない（`forge:REQ-013` FNC-1322）。
 
-## 2. シーケンス
+## 2. シーケンス DLID-0vngzm7zyfx6
 
 図の S 番号は、§4 と §6 の説明と同じである。S2・S4・S5 は script を呼ばない（AI の判断、または起動である）。「書く」は script が JSON を書く処理、「直接読む」は AI が JSON を読む処理で、どちらも自分の処理である。reviewer は、ラウンドごとに 1 回起動される。
 
@@ -60,7 +64,7 @@ sequenceDiagram
 
 **エラーフロー:** reviewer が `target_unreadable` で終えたとき、または書き出さずに終えたとき、所見の結果は `resolve_review_path.py` で読み出せない（§5.4）。
 
-## 3. クラス図
+## 3. クラス図 DLID-wvq7y3ksxx2n
 
 主体（スキル・エージェント）と、その間を取り持つ JSON・script の関係である。点線は script が JSON を読む処理、太線は AI が JSON を直接読む処理、実線は script が JSON を書く処理を表す。ラッパーは、主体から script への矢印の上に名前を書く（§6.6）。
 
@@ -104,22 +108,22 @@ flowchart LR
 
 - 依存の向きは、主体 → script → JSON の一方向である。script 同士は呼び合わない（ラッパーが基本の script を呼ぶ関係を除く）。
 - `append_result.py` は、採番のために、全ラウンドの結果の JSON を読む（点線は省略している）。
-- **共有の枠は、[DES-083](DES-083_evaluator_perspective_design.md) §3 にも同じものを描く。** 共有の枠の構成（どの script を含むか）を変えるときは、両方の図を同時に直す。
+- **共有の枠は、[DES-083][des-083] §3 にも同じものを描く。** 共有の枠の構成（どの script を含むか）を変えるときは、両方の図を同時に直す。
 
-## 4. スキル・エージェント
+## 4. スキル・エージェント DLID-yek9bknzdtzy
 
-### 4.1 review 本体
+### 4.1 review 本体 DLID-2kbjb8vdva8t
 
 `plugins/forge/skills/review/SKILL.md` が持つ（REQ-029 FNC-314）。本体は最終決定者である（REQ-029 FNC-312）。本節は、レビューを始めて reviewer を起こすまでの本体の仕事を定める。
 
-#### 定義が持つもの
+#### 定義が持つもの DLID-dgmnrmykd4kk
 
 | 持つもの        | 内容                                                                                                                                 |
 | --------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
 | script の呼び方 | `publish_request.py`（第 1 引数に `${CLAUDE_PROJECT_DIR}`）、`resolve_review_backend.py`（`--project-root "${CLAUDE_PROJECT_DIR}"`） |
 | 本体の判断      | 下記                                                                                                                                 |
 
-#### 本体の仕事
+#### 本体の仕事 DLID-8nn47g2ahr2y
 
 | S | 仕事                                           | 呼ぶ script                 | 要件                 |
 | - | ---------------------------------------------- | --------------------------- | -------------------- |
@@ -129,11 +133,11 @@ flowchart LR
 | 4 | `retains_context` で流れを分ける               | —                           | REQ-029 FNC-316      |
 | 5 | reviewer を起動する                            | —                           | REQ-029 FNC-302      |
 
-#### 判断の内容
+#### 判断の内容 DLID-j4rm8vfwkhq6
 
 - **依頼の組み立て（S2）:** 利用者の指定を `targets` へ読み替える。`base_branch` は AskUserQuestion で確認する。`focus` / `scope` を抽出し、Write ツールで `<project_root>/.temp/forge/review/review_focus.txt`・`review_scope.txt` に書く。参照文書は `/forge:query-db-rules` / `/forge:query-db-specs` の結果を用いる。`references` は target 種別で絞らない。どの種別が対象に含まれるかは reviewer が判定するので、依頼を組み立てる時点では確定しない。全種別分を問い合わせて渡し、reviewer が該当するものを使う。依頼の組み立ては script が行い、本体は値を渡すだけである（REQ-029 FNC-303）。利用者の指定と検索結果のパスは、プロジェクトルートからの相対パスで得られる。本体は `${CLAUDE_PROJECT_DIR}/` を前置して絶対パスにしてから `publish_request.py` に渡す（`publish_request.py` は絶対パス以外を受け付けない。REQ-029 FNC-303・DM-304）。
 
-#### 使う reviewer と `retains_context`（S1・S4）
+#### 使う reviewer と `retains_context`（S1・S4） DLID-e6ghqr70k1sf
 
 要件は、reviewer の実行主体を「バックエンド」と呼ぶ（REQ-029 FNC-316）。バックエンドは reviewer そのものであり、本体と reviewer の間に別の層があるわけではない。本体は、レビューを始める前に、使うバックエンドを決め、その `retains_context` を得る。
 
@@ -146,11 +150,11 @@ flowchart LR
 
 `false` の場合が本書の流れ（reviewer は毎ラウンド新しく起こされ、毎ラウンド同じ依頼を読む）である。`true` の場合は分岐し、その先は別の要件定義書・設計書が定める（Issue #67）。現状 `true` を返すバックエンドは無い。
 
-### 4.2 reviewer
+### 4.2 reviewer DLID-9g02qf2eewvf
 
 `plugins/forge/agents/reviewer.md` が持つ（REQ-027 FNC-301）。reviewer は依頼 JSON を直接読むが、JSON を生成しない。出力値は script に渡すだけである。
 
-#### 定義が持つもの
+#### 定義が持つもの DLID-vxv75vnn4nmj
 
 | 持つもの                  | 内容                                                                                                                                                                                                                                                                                       |
 | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -160,7 +164,7 @@ flowchart LR
 | target 種別ごとに読む文書 | `criteria/review_target_types.md` を読む指示（下記）                                                                                                                                                                                                                                       |
 | 所見として何を述べるか    | 何を問題として挙げ、どこまで書くか                                                                                                                                                                                                                                                         |
 
-#### 対象を読む
+#### 対象を読む DLID-fdcms6sasprr
 
 対象の読み方は `targets` のキーで決まる（REQ-027 FNC-306）。
 
@@ -172,7 +176,7 @@ flowchart LR
 
 差分から確定する場合、削除とリネームも変更に含める。`reviewer.md` は `git diff` 等を実行できるので、一覧を渡さなくても確定できる。
 
-#### target 種別を判定する
+#### target 種別を判定する DLID-yzxr4kaexdtj
 
 先に設定を引いて種別を決め、決まらないものと細分が要るものだけファイルを読む（REQ-027 FNC-307）。
 
@@ -196,21 +200,21 @@ flowchart TB
 - **uxui は設定に区分を持たない:** UI を扱う文書は requirement または design の置き場にあるので、設定で大分類を得た後にファイルを読んで見分ける。
 - **決まらない対象:** REQ-027 FNC-308 の「全 target 種別に共通」の文書だけで見る。所見にもエラーにもしない。名前だけで target 種別を当てない。
 
-#### target 種別ごとに読む文書
+#### target 種別ごとに読む文書 DLID-jwh82yyg7928
 
 判定の手順と、種別ごとに上乗せする観点文書の対応は、`plugins/forge/docs/criteria/review_target_types.md` に置く。`reviewer.md` がこの文書を読む（REQ-027 FNC-307・308）。同じ判定と対応を他の主体も使うので、置き場を 1 つにする。
 
 - **書くもの:** 判定の手順（`adr` を design として扱うことを含む）と「種別ごとに上乗せする観点文書」、すべての種別に当てる共通の文書。種別ごとの内蔵規範・プロジェクト固有の規約・突き合わせる対象は、各観点文書が持つので写さない。
-- **観点文書の置き場に置く理由:** 種別を判定する目的が、上乗せする観点文書を選ぶことだからである（[forge_document_type_roles.md](../../../rules/forge_document_type_roles.md)）。
-- **参照の記法:** 内蔵文書は `${CLAUDE_PLUGIN_ROOT}/docs/` 配下の固定パスで直接参照する。プロジェクト固有の文書は依頼の `references` が運ぶ（[forge_doc_access_principle.md](../../../rules/forge_doc_access_principle.md)）。
+- **観点文書の置き場に置く理由:** 種別を判定する目的が、上乗せする観点文書を選ぶことだからである（[forge_document_type_roles.md][forge-document-type-roles]）。
+- **参照の記法:** 内蔵文書は `${CLAUDE_PLUGIN_ROOT}/docs/` 配下の固定パスで直接参照する。プロジェクト固有の文書は依頼の `references` が運ぶ（[forge_doc_access_principle.md][forge-doc-access-principle]）。
 
-#### 所見を渡す
+#### 所見を渡す DLID-6jbtz4bz8ax6
 
 すべての判断を確定させてから書き出す（REQ-029 FNC-310）。確定した所見を 1 件ずつ `reviewer_add_finding` へ渡す。`finding_id` は script が採るので、reviewer は渡さない。所見が無ければ 1 件も渡さない（REQ-027 FNC-309）。書き出し終えたら `reviewer_finish` を呼ぶ（所見が 0 件でも呼ぶ）。対象が読めないときは `reviewer_abort` を呼ぶ（エラー値は `target_unreadable` だけである。REQ-027 FNC-315）。
 
-## 5. JSON
+## 5. JSON DLID-ek3k12wtpgcr
 
-### 5.1 置き場
+### 5.1 置き場 DLID-h8dbr8frdfq0
 
 ```text
 <project_root>/.temp/forge/review/
@@ -224,7 +228,7 @@ flowchart TB
 
 置き場は、`review_id` と `round_number` から script が決める。AI は組み立てない。依頼（`review_request.json`）はレビューに 1 つ置き（REQ-029 FNC-305）、所見の結果（`review_result.json`）はラウンドごとに置く。結果は上書きしないので、ラウンドごとに分けても取り違えない。`focus` / `scope` の受け渡しファイルは、この置き場の直下に置く（§6.1）。
 
-### 5.2 依頼（`review_request.json`）
+### 5.2 依頼（`review_request.json`） DLID-c44w3621c3ve
 
 構造は REQ-029 DM-301 が定める。1 つのレビューに 1 つで、公開後は書き換えない（FNC-305）。依頼は対象の種別を持たない（FNC-317）。
 
@@ -241,7 +245,7 @@ flowchart TB
 
 target は `paths`（絶対パスの配列）・`base_branch`（文字列）・`diff`（空の構造）のうち、ちょうど 1 つのキーを持つ。`paths` はディレクトリを配下へ展開しない。
 
-### 5.3 所見の結果（`review_result.json`）
+### 5.3 所見の結果（`review_result.json`） DLID-dxmkn50sg9df
 
 構造は REQ-029 DM-305（reviewer の結果）と DM-302（finding）が定める。reviewer がラウンドごとに 1 つ書く。
 
@@ -256,7 +260,7 @@ target は `paths`（絶対パスの配列）・`base_branch`（文字列）・`
 
 finding は `finding_id`（`append_result.py` が採番）、`location`（`--location…`、1 個以上）、`body`（標準入力）を持つ。所見は severity を持たない（DM-302）。
 
-### 5.4 終了の値と成否
+### 5.4 終了の値と成否 DLID-00ybm2nj7t3f
 
 結果の `exit` と、結果の有無が、成否を表す（REQ-029 FNC-311）。読み出す script（`resolve_review_path.py`）が判定し、AI に判定させない。
 
@@ -269,26 +273,26 @@ finding は `finding_id`（`append_result.py` が採番）、`location`（`--loc
 
 エラー値の集合は閉じている。`seal_result.py` は、所見の結果に `"0"` と `target_unreadable` だけを受け付ける（REQ-027 FNC-315）。
 
-### 5.5 `finding_id`
+### 5.5 `finding_id` DLID-a41tadb2jvsq
 
 `finding_id` は script が採る。reviewer は ID を渡さない（REQ-029 FNC-313）。
 
 - **次の番号:** そのレビューに保持された全ラウンドの結果に現れる `finding_id` の最大値の次。どれにも無ければ `1`。採番のための状態を別に持たない。採番と書き込みは 1 回の操作なので、採った番号が書かれないまま残ることはない。
 
-## 6. script
+## 6. script DLID-674fb63dr76c
 
-### 6.1 共通の約束
+### 6.1 共通の約束 DLID-jmxtvwpmaq9a
 
 script は `plugins/forge/scripts/review/` に置く。基本の script が処理を持ち、ラッパーは呼ぶ主体から決定論的に決まるオプションを固定して基本の script を呼ぶだけである（§6.6）。AI が判断して決める値（`disposition`、位置、確信度など）は、ラッパーに畳まず引数として渡す。
 
 - **引数:** `<project_root> <review_id> <round_number>` の順に、位置引数で渡す。持たない script は右から省く（`publish_request.py` は `<project_root>` だけ）。プロジェクトルートは、定義のコマンド行に書いた `${CLAUDE_PROJECT_DIR}` が置換されたものを渡す（REQ-029 FNC-314）。script ファイルの中にプレースホルダは書かない（置換するのはスキル機構であり、script ファイルは機構を通らない）。
-- **標準出力:** 成功時は JSON object を 1 つ出力する。返す値が無ければ `{}`。失敗時は終了コード `1` と、自然文の日本語の配列 `errors` を持つ JSON object。引数の誤りは終了コード `2`（`argparse` が返す）。`3` 以上は使わない（[plugin_script_error_output_rules.md](../../../rules/plugin_script_error_output_rules.md)）。
-- **標準入力:** 自由記述は標準入力の全体を 1 つの値として、加工せずに受け取る。値の内容を理由に拒まない（REQ-029 FNC-304）。`focus` / `scope` だけは、2 つの自由記述を 1 回の操作で渡すため、本体が Write ツールで `<project_root>/.temp/forge/review/review_focus.txt`・`review_scope.txt` に書いたファイルで受け取り、`publish_request.py` が読んで削除する（[plugin_implementation_guidelines.md](../../../rules/plugin_implementation_guidelines.md) の一時ファイルの節）。
+- **標準出力:** 成功時は JSON object を 1 つ出力する。返す値が無ければ `{}`。失敗時は終了コード `1` と、自然文の日本語の配列 `errors` を持つ JSON object。引数の誤りは終了コード `2`（`argparse` が返す）。`3` 以上は使わない（[plugin_script_error_output_rules.md][plugin-script-error-output-rules]）。
+- **標準入力:** 自由記述は標準入力の全体を 1 つの値として、加工せずに受け取る。値の内容を理由に拒まない（REQ-029 FNC-304）。`focus` / `scope` だけは、2 つの自由記述を 1 回の操作で渡すため、本体が Write ツールで `<project_root>/.temp/forge/review/review_focus.txt`・`review_scope.txt` に書いたファイルで受け取り、`publish_request.py` が読んで削除する（[plugin_implementation_guidelines.md][plugin-implementation-guidelines] の一時ファイルの節）。
 - **書き込み:** JSON は、同じディレクトリの一時ファイルへ書いてから置き換える。読み手が途中の状態を読まない。文字コードは UTF-8 とする。
 - **絶対パス:** 依頼と結果が持つパスと位置は、すべて絶対パスである（REQ-029 DM-304）。
 - **共通の部品:** 上の約束を実現する部品（JSON の出力、失敗の返し方、一時ファイルを経由した公開、絶対パスの検査）は、`plugins/forge/scripts/review/review_common.py` に 1 つだけ置き、各 script が import する。script ごとに複製しない。後続の script が必要とする部品は、必要になったときにここへ足す。
 
-### 6.2 `publish_request.py`
+### 6.2 `publish_request.py` DLID-dbnvsvhm5ftr
 
 **責務:** 依頼を組み立てて公開し、`review_id` とラウンド 1 を作る（REQ-029 FNC-302・303・305・317、DM-301）。
 
@@ -307,7 +311,7 @@ script は `plugins/forge/scripts/review/` に置く。基本の script が処�
 
 **エラー（終了コード 1）:** target が 1 つも無い。`--paths`・`--references` に絶対パスでないものがある。`--focus-file`・`--scope-file` が読めない。書き込みに失敗した。失敗したときは、作りかけの `<review_id>/` を残さず、`--focus-file`・`--scope-file` のファイルは削除しない。
 
-### 6.3 `append_result.py`
+### 6.3 `append_result.py` DLID-dvrryerg0thv
 
 **責務:** 結果へ 1 件追記する。`finding_id` を採る（REQ-029 FNC-310・313、DM-302）。
 
@@ -319,7 +323,7 @@ script は `plugins/forge/scripts/review/` に置く。基本の script が処�
 
 **共通の動作:** ラウンドの置き場が実在することを確かめる。追記先の結果が封緘済み（`exit` を持つ）なら失敗する。追記は、ファイルが無ければ空の配列から始める。次の `finding_id` は、§5.5 のとおり導く。
 
-#### `--kind findings`
+#### `--kind findings` DLID-hkn9n0bhnn6k
 
 | 引数            | 内容                                                           |
 | --------------- | -------------------------------------------------------------- |
@@ -330,7 +334,7 @@ script は `plugins/forge/scripts/review/` に置く。基本の script が処�
 
 **エラー:** 封緘済み。本文が空。`--location` が無い（引数の誤り。終了コード 2）。
 
-### 6.4 `seal_result.py`
+### 6.4 `seal_result.py` DLID-5n1rqmnpb5gq
 
 **責務:** 結果を封緘する（REQ-029 FNC-311、REQ-027 FNC-315）。
 
@@ -346,7 +350,7 @@ script は `plugins/forge/scripts/review/` に置く。基本の script が処�
 
 **エラー（終了コード 1）:** 既に封緘済み。
 
-### 6.5 `resolve_review_path.py`
+### 6.5 `resolve_review_path.py` DLID-0fqp5q41k524
 
 **責務:** 読み出せる状態かを判定し、絶対パスを返す。JSON 本文は返さない（REQ-029 FNC-302・311）。
 
@@ -363,7 +367,7 @@ script は `plugins/forge/scripts/review/` に置く。基本の script が処�
 
 **エラー（終了コード 1）:** `review_id` が保持されていない。ラウンドが無い。依頼が公開されていない。結果が無い。`exit` が無い。`exit` が `"0"` でない（値を `errors` に入れる）。
 
-### 6.6 ラッパー
+### 6.6 ラッパー DLID-ay2jzjm585n9
 
 ラッパーは、呼ぶ主体から決定論的に決まるオプションを固定して、基本の script を呼ぶ。処理を持たず、標準出力と終了コードをそのまま返す。受け取る引数は、基本の script の引数から、固定したオプションを除いたものである。
 
@@ -376,7 +380,7 @@ script は `plugins/forge/scripts/review/` に置く。基本の script が処�
 
 本体は、決定論的なオプションを持たない基本の script（`publish_request.py`）を直接呼ぶ。reviewer の定義には、所見以外を書く口が現れない。
 
-### 6.7 `resolve_review_backend.py`（改修）
+### 6.7 `resolve_review_backend.py`（改修） DLID-07a0g1j2wgwg
 
 **責務:** 使う reviewer（バックエンド）の候補と、候補ごとの `retains_context` を返す（REQ-029 FNC-316）。置き場は `plugins/forge/skills/review/scripts/`。
 
@@ -387,7 +391,7 @@ script は `plugins/forge/scripts/review/` に置く。基本の script が処�
 | 出力   | 成功時の JSON に `retains_context`（候補名 → 真偽値のオブジェクト）を加える。値は本 script が持つ表（現在は `agent-review` が `false`）から引く                                |
 | エラー | `order` の候補に、値の宣言が無い名前があるとき、終了コード `20`、`reason_code` は `backend_undeclared`。値を補わない。`message` に指定された値そのものを載せない（既存の方針） |
 
-### 6.8 `resolve_doc_structure.py`（改修）
+### 6.8 `resolve_doc_structure.py`（改修） DLID-skkwxaxav9q2
 
 **責務:** パスを 1 つ受け取り、`.doc_structure.yaml` の宣言から種別を返す（REQ-027 FNC-307）。置き場は `plugins/forge/scripts/doc_structure/`。reviewer が呼ぶ。
 
@@ -401,7 +405,7 @@ script は `plugins/forge/scripts/review/` に置く。基本の script が処�
 | 出力   | `{"status": "ok", "category": …, "path": <相対パス>, "doc_type": <宣言された doc_type。"design" \| "plan" \| "requirement" \| "adr" \| "glossary" 等> \| null}`。宣言に合わないパスは `null`                                                                                                                                            |
 | エラー | `.doc_structure.yaml` が無い、または不正なときは、既存と同じ（`status: error`、終了コード 1）                                                                                                                                                                                                                                           |
 
-## 7. テスト設計
+## 7. テスト設計 DLID-hbc58a2a8q8a
 
 **単体テスト対象**
 
@@ -427,3 +431,11 @@ script は `plugins/forge/scripts/review/` に置く。基本の script が処�
 - `targets` の 3 形（`paths` / `base_branch` / `diff`）すべてで、`review_id` の生成から、依頼の公開、パスによる JSON の直接読み出し、所見の書き出しと封緘までが成立すること。
 - reviewer が `target_unreadable` で終えたとき、`resolve_review_path.py` が失敗し、`errors` にエラー値が入ること。
 - reviewer が書き出さずに終えたとき、`resolve_review_path.py` が失敗すること。
+
+[req-029]: ../requirements/REQ-029_review_exchange.md "4e7fe6918eec DLID-5vrs9fnet7de"
+[req-027]: ../requirements/REQ-027_reviewer.md "d1f79607a42d DLID-y42g1frxwkf5"
+[des-083]: DES-083_evaluator_perspective_design.md "04c49729cad3 DLID-mzeyx39mfryw"
+[forge-document-type-roles]: ../../../rules/forge_document_type_roles.md "7b634212b043 DLID-mmxpd4dms815"
+[forge-doc-access-principle]: ../../../rules/forge_doc_access_principle.md "cb6aae1960a3 DLID-1t0vpykg6nq6"
+[plugin-script-error-output-rules]: ../../../rules/plugin_script_error_output_rules.md "f1c5b6752ce7 DLID-fz66nns8q521"
+[plugin-implementation-guidelines]: ../../../rules/plugin_implementation_guidelines.md "231d1a822305 DLID-jzs5n6cre1jh"

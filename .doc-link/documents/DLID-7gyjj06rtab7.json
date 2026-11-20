@@ -1,0 +1,41 @@
+{
+  "content_hash": "e5233def35da6382f8c642fa0772ffc61f6dd8a6399fe87bc10a01f02e636f53",
+  "doc_link_id": "DLID-7gyjj06rtab7",
+  "keywords": [
+    "ADR writer",
+    "architecture decision record",
+    "approval record",
+    "judgment record",
+    "verdict",
+    "rejection criteria",
+    "ADR file",
+    "isolated context",
+    "start-design",
+    "REQ-030"
+  ],
+  "path": "docs/specs/adr-writer/requirements/REQ-030_adr_writer.md",
+  "purpose": "Requirements for the ADR writer, an isolated agent that judges, rejects, repairs and records architecture decision records separately from the design flow, with verdicts of created, rejected or insufficient.",
+  "summary": [
+    "Overview and scope of the ADR writer as an isolated subject that examines and records ADRs",
+    "Glossary: request types (approval record, judgment record, update) and verdicts (created, rejected, insufficient)",
+    "Request intake rules with required content per request type",
+    "Rejection criteria for judgment records and repair rules for malformed ADRs",
+    "Handling of insufficient information: return what is missing instead of inventing",
+    "Approval records are never rejected, only checked for completeness",
+    "Updating existing decisions by rewriting the same section, moving rejected ideas to alternatives",
+    "Verdict return contract and treating incomplete runs as failures",
+    "Output location: one ADR file per feature, ADR-{NNN}_{feature}.md, write scope limited to ADR files",
+    "Invocation path, start-design decoupling, single source of norms, isolation and failure visibility requirements"
+  ],
+  "tasks": [
+    "Designing or implementing the ADR writer agent or skill",
+    "Writing or updating ADR files",
+    "Requesting an ADR from start-design or other skills",
+    "Recording user approval for designs not covered by requirements",
+    "Reviewing ADR-related documents for requirement conformance",
+    "Deciding whether a decision deserves an ADR",
+    "Updating or retracting an existing ADR decision",
+    "Handling ADR writer verdicts in a calling skill"
+  ],
+  "title": "REQ-030 ADR ライター 要件定義書"
+}

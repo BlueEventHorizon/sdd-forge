@@ -1,0 +1,40 @@
+{
+  "content_hash": "f8233c87c5642511792eda5229fecdaa5df34d6d678cbd321bbd762f99a3b230",
+  "doc_link_id": "DLID-f9ny9e932trv",
+  "keywords": [
+    "requirements",
+    "design",
+    "responsibility split",
+    "boundary",
+    "dependency direction",
+    "Goodhart",
+    "severity catalog",
+    "TBD",
+    "non-functional requirements",
+    "review perspectives"
+  ],
+  "path": "plugins/forge/docs/spec_priorities_spec.md",
+  "purpose": "Defines the values to prioritize and the aims to avoid when writing or reviewing requirements and design documents, plus review severity routing.",
+  "summary": [
+    "Structural design principles to prioritize: responsibility split, boundary definition, dependency direction",
+    "Document-level dependency direction across requirements, design, and plan documents",
+    "Quality attributes treated as outcomes, never as direct numeric targets (Goodhart's law)",
+    "Prohibited primary aims: quantifying structural quality, KPIs, fabricated unconfirmed numbers",
+    "Typical inverted patterns and self-check questions for judgment",
+    "Routing of quantitative targets to the spec/design boundary document",
+    "Perspective routing of this document for review perspectives P1, P2, and P3",
+    "Severity catalog mapping each norm violation to critical or major",
+    "Gray-zone tolerance table for numeric targets, TBD handling, and coverage goals",
+    "Non-functional requirement category coverage with severity scoping and exclusion rationale"
+  ],
+  "tasks": [
+    "Writing requirements documents",
+    "Writing design documents",
+    "Reviewing requirements documents",
+    "Reviewing design documents",
+    "Judging severity of review findings",
+    "Deciding whether to set numeric targets",
+    "Checking dependency direction between generated documents"
+  ],
+  "title": "要件定義書・設計書で優先すること"
+}

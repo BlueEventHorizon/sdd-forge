@@ -1,0 +1,33 @@
+{
+  "content_hash": "7b634212b0432a1cf47528e6cc15b8c3f8a218a851b4305aeb4913e04ac25036",
+  "doc_link_id": "DLID-mmxpd4dms815",
+  "keywords": [
+    "document types",
+    "format.md",
+    "principles_spec.md",
+    "SKILL.md",
+    "review_criteria",
+    "single source of truth",
+    "forge distributables"
+  ],
+  "path": "docs/rules/forge_document_type_roles.md",
+  "purpose": "Development rule defining which kind of file in forge distributables holds which content, so format, principles, procedure, and criteria documents are not mixed.",
+  "summary": [
+    "Basic forms table mapping file types to what they contain and exclude",
+    "*_format.md holds structures, templates, and naming schemes",
+    "*_principles_spec.md holds principles, prohibitions, criteria, and severity catalogs",
+    "SKILL.md and procedure documents hold flows, phases, steps, and branches",
+    "criteria/review_criteria_*.md holds matching order, delegation lists, and finding handling conditions",
+    "Documents with a suffix follow its basic form",
+    "One document should hold one kind of content",
+    "Normative text lives in one place and is referenced, not restated"
+  ],
+  "tasks": [
+    "Creating a new normative document under plugins/forge",
+    "Deciding where to place a rule, template, or procedure",
+    "Reviewing documents for mixed concerns",
+    "Writing or editing SKILL.md procedures",
+    "Writing review criteria documents"
+  ],
+  "title": "forge 配布物の文書型と役割"
+}

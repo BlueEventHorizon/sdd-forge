@@ -10,15 +10,15 @@
 ## 設定と既定値
 
 `.claude/.forge.yaml`（入れ物の規約は `forge_settings.py` に一元化）の
-`doc_backend` セクションを読む。許容する形は mapping `{prefer: doc-db | doc-advisor}`
-のみである。**既定値（doc-advisor 先位）の定義点は本モジュールの `DEFAULT_ORDER`
+`doc_backend` セクションを読む。許容する形は mapping `{prefer: doc-db | doc-link}`
+のみである。**既定値（doc-link 先位）の定義点は本モジュールの `DEFAULT_ORDER`
 1 箇所である。**
 
 | 設定の状態                 | 出力                                                        |
 | -------------------------- | ----------------------------------------------------------- |
-| 未指定・ファイル不在       | 既定値の順序 `["doc-advisor", "doc-db"]`（`source=default`） |
-| `prefer: doc-advisor`      | `["doc-advisor", "doc-db"]`（`source=setting`）              |
-| `prefer: doc-db`           | `["doc-db", "doc-advisor"]`（`source=setting`）              |
+| 未指定・ファイル不在       | 既定値の順序 `["doc-link", "doc-db"]`（`source=default`） |
+| `prefer: doc-link`      | `["doc-link", "doc-db"]`（`source=setting`）              |
+| `prefer: doc-db`           | `["doc-db", "doc-link"]`（`source=setting`）              |
 | 不正（許容する形に反する） | exit 20 / `settings_invalid`。**推測で既定値に落ちない**     |
 
 不正には、セクションが mapping でない・未知のキーを含む（綴り誤りを黙って無視すると
@@ -84,10 +84,10 @@ REASON_SETTINGS_INVALID = "settings_invalid"
 
 #: backend 名（順序リストの要素であり `prefer` の値域でもある）
 BACKEND_DOC_DB = "doc-db"
-BACKEND_DOC_ADVISOR = "doc-advisor"
+BACKEND_DOC_LINK = "doc-link"
 
-#: 既定値の順序（doc-advisor 先位）。**既定値の定義点はこの 1 箇所のみ**
-DEFAULT_ORDER = (BACKEND_DOC_ADVISOR, BACKEND_DOC_DB)
+#: 既定値の順序（doc-link 先位）。**既定値の定義点はこの 1 箇所のみ**
+DEFAULT_ORDER = (BACKEND_DOC_LINK, BACKEND_DOC_DB)
 
 #: `order` の由来: 既定値 / 設定の明示指定
 SOURCE_DEFAULT = "default"
@@ -96,7 +96,7 @@ SOURCE_SETTING = "setting"
 #: 設定のセクション名とスキーマ（スキーマの所有は backend 選択設計）
 SETTINGS_SECTION = "doc_backend"
 SETTINGS_PREFER_KEY = "prefer"
-ALLOWED_PREFER_VALUES = (BACKEND_DOC_DB, BACKEND_DOC_ADVISOR)
+ALLOWED_PREFER_VALUES = (BACKEND_DOC_DB, BACKEND_DOC_LINK)
 
 
 # --- 内部例外 -------------------------------------------------------------------

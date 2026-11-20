@@ -1,0 +1,41 @@
+{
+  "content_hash": "66dc0707bf1228c636add943299f9cb1ba511940a1bc474db9804c84b89ac2ef",
+  "doc_link_id": "DLID-yg0c67zs3zky",
+  "keywords": [
+    "review policy",
+    "review priorities",
+    "criteria",
+    "severity catalog",
+    "confidence",
+    "auto fix",
+    "backend",
+    "reviewer",
+    "evaluator",
+    "granularity preservation"
+  ],
+  "path": "docs/specs/forge/requirements/REQ-013_review_policy.md",
+  "purpose": "Requirements for the forge review policy: document-based review priorities, findings as observations, option axes, backends, reviewer/evaluator verification and rule-gap handling.",
+  "summary": [
+    "Background: over-proposal and double detection in AI review; shift to document-centered review with complete information at design time",
+    "Review position: findings are observations, adoption decided by the main body; quality controlled via inputs",
+    "FNC-1301/1302/1309/1311: P1-P3 priorities, criteria without judgment, fixed three-section structure, principles severity catalog",
+    "FNC-1303/1312/1310: target axis flags and preserving user-specified granularity, CLI structure",
+    "FNC-1304: interaction axis, auto-fix decided by confidence rather than severity",
+    "FNC-1313/1319/1320: focus, scope and carried-in rules and specs options",
+    "FNC-1318: backend axis, resolution order, availability check, fail-closed behavior, cleanup",
+    "FNC-1321/1322: reviewer self-verification and independent evaluator assessment with mechanical linkage",
+    "FNC-1314/1305/1306: document reference viewpoint, built-in rule fallback, issue creation for rule gaps with three conditions",
+    "Affected targets and open items TBD-1302 to TBD-1304"
+  ],
+  "tasks": [
+    "Changing /forge:review SKILL.md or its options",
+    "Writing or editing review_criteria files",
+    "Defining reviewer and evaluator behavior",
+    "Adding or modifying a review backend",
+    "Designing auto-fix and confidence handling",
+    "Reviewing documents for rule compliance",
+    "Extending principles severity catalogs",
+    "Deciding whether to file a rule-gap issue"
+  ],
+  "title": "REQ-013 レビューポリシー要件"
+}

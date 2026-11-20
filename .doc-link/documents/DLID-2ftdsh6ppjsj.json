@@ -1,0 +1,37 @@
+{
+  "content_hash": "d88087d2cf223f44533f61ddcdeb2648c8f532769fc88cbc1bc8451a097546c8",
+  "doc_link_id": "DLID-2ftdsh6ppjsj",
+  "keywords": [
+    "consult",
+    "dialogue revision",
+    "console display",
+    "HTML",
+    "topic list",
+    "current topic",
+    "presentation state",
+    "location path line",
+    "execution"
+  ],
+  "path": "plugins/forge/skills/consult/docs/dialogue_revision_handling.md",
+  "purpose": "Defines how the consult skill is used for dialogue-based revision, where decisions are applied on the spot, including console and HTML display, list format, current-topic format, recording, and execution.",
+  "summary": [
+    "Input is the conversation context; consult extracts topics from it",
+    "Display roles split between console (overview) and HTML (details); the HTML script does not exist yet",
+    "Console list format with columns for number, topic, status, result, and pending issue",
+    "Current-topic format with decision point, gist, recommendation, and clickable path:line locations",
+    "Rules for markers: arrow for current row, updated and new suffixes, no importance column",
+    "Other console rules: tables for parallel items, no fine chapters, at most one extra table or code block",
+    "Single-topic case omits the list",
+    "Presentation state is held in conversation context",
+    "consult brief is not recorded",
+    "Topics decided by the user may be executed immediately; final list is the result"
+  ],
+  "tasks": [
+    "Running consult for dialogue-based revision",
+    "Answering reports or questions through consult",
+    "Formatting consult console output",
+    "Deciding when to execute decided topics",
+    "Writing or revising consult display rules"
+  ],
+  "title": "対話による修正の手順"
+}

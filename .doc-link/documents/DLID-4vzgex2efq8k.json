@@ -1,0 +1,35 @@
+{
+  "content_hash": "7c226f3c93be416f43785057e1d70594da429ac3d2323872f776d4edc6731c55",
+  "doc_link_id": "DLID-4vzgex2efq8k",
+  "keywords": [
+    "design philosophy",
+    "three-layer model",
+    "Fitts law",
+    "Hick law",
+    "modular scale",
+    "color harmony",
+    "Dieter Rams",
+    "wabi-sabi",
+    "quality checklist"
+  ],
+  "path": "plugins/forge/skills/start-uxui-design/docs/design_philosophy.md",
+  "purpose": "Provides a three-layer framework that integrates conflicting design theories, explaining how to apply cognitive constraints, structural tools, and a chosen aesthetic direction in order.",
+  "summary": [
+    "Rationale: beauty improves perceived usability",
+    "Three-layer model applied from the bottom up",
+    "Layer 1 cognitive constraints: Fitts, Hick, Miller, contrast ratio",
+    "Layer 2 structural tools: modular scale, color harmony, 60-30-10, 8pt grid",
+    "Composition principles and curvature psychology with radius guidance",
+    "Layer 3 aesthetic directions: Rams, Norman, Tufte, wabi-sabi",
+    "Direction selection guide by app character",
+    "Integrated three-layer quality checklist"
+  ],
+  "tasks": [
+    "Choosing a design direction for an app",
+    "Deriving typography, color, and spacing values with rationale",
+    "Reviewing designs against cognitive constraints",
+    "Running UX/UI design phases consistently",
+    "Justifying design token values"
+  ],
+  "title": "デザイン哲学 — 美しいデザインの統合的原理"
+}

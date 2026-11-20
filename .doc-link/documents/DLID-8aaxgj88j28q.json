@@ -1,0 +1,41 @@
+{
+  "content_hash": "1d8889eae72ea3af04c1da7bc033c4d69a85053c4b53e280cfb31e1490f1a33e",
+  "doc_link_id": "DLID-8aaxgj88j28q",
+  "keywords": [
+    "additive development",
+    "parallel state",
+    "old spec",
+    "spec consumer",
+    "machine-readable identification",
+    "temporary feature",
+    "implementer",
+    "conveyance",
+    "identification failure",
+    "merge"
+  ],
+  "path": "docs/specs/forge/requirements/REQ-025_additive_development_spec.md",
+  "purpose": "Defines requirements for mechanically identifying documents in a parallel state during additive development and conveying that to spec consumers so outdated specs are not used as the basis for decisions.",
+  "summary": [
+    "Overview: old spec documents are not rewritten until implementation completes, creating parallel old and new specs",
+    "Why a mechanism is needed: parallel state cannot be inferred from content or location, and consumers cannot tell not-delivered from nonexistent",
+    "Glossary: parallel state, old spec, spec consumer, implementer",
+    "Scope: consumers table (implementation, review, upstream generation, merge) with conveyance status",
+    "Out of scope: additive-development criteria, merge procedure, preventing missed markers, mechanisms outside forge",
+    "FNC-001: machine-readable identification of parallel state; plans carry no marker",
+    "FNC-002: identification result carries state only, not actions",
+    "FNC-003: conveyance to each consumer before judgment, including when none exist",
+    "FNC-004: old spec description is not the current spec, regardless of contradiction",
+    "FNC-005: identification failure must not be treated as not in parallel state"
+  ],
+  "tasks": [
+    "Designing or implementing additive development (differential feature) handling",
+    "Writing requirements or designs marked as temporary feature",
+    "Implementing code based on requirements and designs in parallel state",
+    "Reviewing artifacts against specs that may be in parallel state",
+    "Generating upstream documents (design, plan, requirements, UX/UI) from existing specs",
+    "Merging parallel-state documents into old specs",
+    "Determining whether a plan belongs to an additive feature",
+    "Reviewing additive-development requirements"
+  ],
+  "title": "REQ-025 差分開発の仕組み 要件定義書"
+}

@@ -194,7 +194,7 @@ python3 "$SCRIPT" --search-dirs --category {category}
 | `exclude`       | 宣言された除外パターン                                                                                                                         |
 | `filtered_dirs` | `dirs` のうち、末尾のディレクトリ名が `exclude` のいずれかに一致するエントリを除いたもの（参考値。ネストした除外ディレクトリの混入は許容する） |
 
-`dirs` と `exclude` をそのまま下流のツール（doc-advisor の `--dirs-json` / `--exclude-json` 等）へ転送する呼び出し側は、`filtered_dirs` を使わず `dirs` / `exclude` を使う。自前で Grep 等に渡す呼び出し側は、`filtered_dirs` を使う。
+`dirs` と `exclude` をそのまま下流のツールへ転送する呼び出し側は、`filtered_dirs` を使わず `dirs` / `exclude` を使う。自前で Grep 等に渡す呼び出し側は、`filtered_dirs` を使う。
 
 ### spec-root
 

@@ -1,0 +1,37 @@
+{
+  "content_hash": "59d34cc27a7e5c6dffe3e6d22b33dc10d3c1acec6226084802aa4e4a07c6d942",
+  "doc_link_id": "DLID-0nfgax46wehg",
+  "keywords": [
+    "doc-db",
+    "doc-link",
+    "backend selection",
+    "query-db",
+    "update-db",
+    "DLID",
+    "index freshness",
+    "fallback",
+    "series",
+    "unprepared index"
+  ],
+  "path": "docs/specs/doc-db/requirements/REQ-014_doc_db_backend_selection_spec.md",
+  "purpose": "Defines requirements for how forge query-db and update-db wrappers automatically select between the doc-link and doc-db search backends, handle fallback, unprepared indexes, freshness, and failures.",
+  "summary": [
+    "Automatic backend selection driven by an ordered list, with availability judgment owned by each backend",
+    "Query wrapper behavior: no index preparation of its own, approval-gated index building via update wrapper, nonexistent paths filtered out",
+    "Update wrapper behavior: DLID writing to documents, doc-link index sync, backend specification without fallback",
+    "Notification requirements for execution path, fallback reasons, DLID writes, freshness, and failures",
+    "Business rules BL-001 to BL-007: default order, freshness, success vs failure, unprepared vs fault, series scoping, backend designation, index population ownership",
+    "Non-functional requirements: observability, backward compatibility, responsiveness, availability, information protection",
+    "Error case table mapping conditions to actions",
+    "Scope, prerequisites, glossary, and flow diagram for backend selection"
+  ],
+  "tasks": [
+    "Implementing or modifying query-db-rules and query-db-specs wrappers",
+    "Implementing or modifying update-db-rules and update-db-specs wrappers",
+    "Designing doc-link and doc-db backend selection and fallback logic",
+    "Handling unprepared index approval and index rebuilding flows",
+    "Reviewing error handling and failure classification of document search",
+    "Writing tests for backend selection behavior"
+  ],
+  "title": "REQ-014 doc-db バックエンド選択 要件定義書"
+}

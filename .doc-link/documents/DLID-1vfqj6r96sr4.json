@@ -1,0 +1,33 @@
+{
+  "content_hash": "8f258f0aff986b902da120f1ee3cf067df64429642070153e657673661dcc8a2",
+  "doc_link_id": "DLID-1vfqj6r96sr4",
+  "keywords": [
+    "context gathering",
+    "document search",
+    "existing code survey",
+    "general agent",
+    "return value",
+    "prompt template",
+    "query-db-specs",
+    "query-db-rules",
+    "create skills"
+  ],
+  "path": "docs/specs/forge/design/DES-013_context_gathering_design.md",
+  "purpose": "Specification of the context-gathering tasks used by forge create-style skills: document search by the orchestrator, existing-code exploration by a general agent, and how instructions and failures are handled.",
+  "summary": [
+    "Overview of two kinds of context gathering and their execution",
+    "No Agent intermediary for document search; no session directories or intermediate files",
+    "Stop and report to the user when search fails or an agent terminates with an error",
+    "Task list: spec survey, implementation-rule survey, existing-code survey with executor, output and method",
+    "Agent bullet-list line format of path and reason",
+    "Per-skill applicability matrix delegated to DES-010; start-implement is out of scope",
+    "Agent instruction template of purpose, method and output contract, self-contained"
+  ],
+  "tasks": [
+    "Implementing context gathering in create-style skills",
+    "Writing agent prompt templates for code exploration",
+    "Designing or reviewing start-design, start-plan or start-requirements collection phases",
+    "Handling failures in context collection"
+  ],
+  "title": "DES-013 コンテキスト収集タスク仕様"
+}

@@ -74,6 +74,7 @@ class StrategyExchangeTest(unittest.TestCase):
         self.assertEqual(request["requirement_docs"], [str(self.req.resolve())])
         self.assertEqual(request["design_docs"], [str(self.des.resolve())])
         self.assertEqual(request["rules_docs"], [])
+        self.assertEqual(request["related_spec_docs"], [])
         self.assertIsNone(request["existing_strategy"])
         self.assertEqual(
             request["strategy_path"], str((self.plan_dir / "foo_strategy.md").resolve())
@@ -101,6 +102,20 @@ class StrategyExchangeTest(unittest.TestCase):
         self.assertEqual(
             self._request()["design_docs"],
             [str(other.resolve()), str(self.des.resolve())],
+        )
+
+    def test_open_publishes_related_spec_docs_in_order(self):
+        """関連する既存の仕様書は、呼び出し元が検索して渡した順のまま依頼に載る。"""
+        old = self.root / "specs" / "bar" / "design" / "DES-009_bar_design.md"
+        old.parent.mkdir(parents=True, exist_ok=True)
+        old.write_text("# bar\n", encoding="utf-8")
+        code, _ = self._open(
+            "--related-spec-doc", str(old), "--related-spec-doc", str(self.req)
+        )
+        self.assertEqual(code, 0)
+        self.assertEqual(
+            self._request()["related_spec_docs"],
+            [str(old.resolve()), str(self.req.resolve())],
         )
 
     def test_open_converts_relative_paths_to_absolute(self):

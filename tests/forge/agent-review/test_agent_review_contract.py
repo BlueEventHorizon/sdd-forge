@@ -362,26 +362,36 @@ class ReviewerDefinitionContractTest(unittest.TestCase):
         )
 
     def test_review_target_types_has_all_target_types_and_documents(self):
+        """読むべき文書が、リファレンスリンクの定義のリンク先として挙がっていること。"""
+        definitions = {
+            label.lower(): target
+            for label, target in re.findall(
+                r"(?m)^\[([^\]]+)\]: ([^\s#]+)", self.target_types
+            )
+        }
+        # 本文（表）から使われている参照だけを数える。定義だけが残っていても、読まれない
+        targets = {
+            definitions[label.lower()]
+            for label in re.findall(r"\[[^\]]*\]\[([^\]]+)\]", self.target_types)
+            if label.lower() in definitions
+        }
+        self.assertTrue(targets)
         for kind in PER_TYPE_DOCS:
             self.assertIn(kind, self.target_types)
         for name in COMMON_DOCS:
-            self.assertIn(
-                f"]({'' if name.startswith('review_criteria') else '../'}{name})",
-                self.target_types,
-            )
+            prefix = "" if name.startswith("review_criteria") else "../"
+            self.assertIn(f"{prefix}{name}", targets)
         for kind, names in PER_TYPE_DOCS.items():
             for name in names:
                 prefix = "" if name.startswith("review_criteria") else "../"
-                self.assertIn(
-                    f"]({prefix}{name})", self.target_types, f"{kind}: {name}"
-                )
+                self.assertIn(f"{prefix}{name}", targets, f"{kind}: {name}")
 
     def test_review_target_types_states_adr_is_design(self):
         self.assertRegex(self.target_types, r"`adr`[^\n]*design として扱う")
 
     def test_review_target_types_links_resolve(self):
-        """文書が挙げる相対リンクが、すべて実在すること。"""
-        links = re.findall(r"\]\(([^)#]+)\)", self.target_types)
+        """文書が挙げる相対リンク（リファレンスリンクの定義）が、すべて実在すること。"""
+        links = re.findall(r"(?m)^\[[^\]]+\]: ([^\s#]+)", self.target_types)
         self.assertTrue(links)
         for link in links:
             self.assertTrue((TARGET_TYPES_PATH.parent / link).is_file(), link)

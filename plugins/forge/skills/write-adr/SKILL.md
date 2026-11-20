@@ -141,7 +141,7 @@ Skill ツールで `/forge:review --files {ADR ファイル} --auto` を起動�
 
 ### specs ToC 更新
 
-`/forge:update-db-specs` が利用可能であれば実行する（利用不可の場合はスキップ）。
+`/forge:update-db-specs` を実行する。
 
 ### commit/push 確認
 

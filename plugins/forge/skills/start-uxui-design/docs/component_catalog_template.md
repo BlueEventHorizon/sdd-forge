@@ -1,9 +1,10 @@
 ---
 name: component_catalog_template
 description: UI コンポーネント一覧出力テンプレート（UX ノート付き）
+doc_link_id: DLID-690azhnc61t0
 ---
 
-# UI コンポーネント一覧テンプレート
+# UI コンポーネント一覧テンプレート DLID-q1v5azvkth0a
 
 以下のテンプレートに従って UI コンポーネント一覧文書を生成する。`{...}` は実際の値に置換すること。コンポーネントの数に応じてセクション 3 のコンポーネント定義を増減する。
 

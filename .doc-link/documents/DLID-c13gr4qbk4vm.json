@@ -1,0 +1,33 @@
+{
+  "content_hash": "1abf0122bdeb0f4c39c78385bd4943cce5677d26fa34b21ea891cbf9eac2cd6c",
+  "doc_link_id": "DLID-c13gr4qbk4vm",
+  "keywords": [
+    "requirements document",
+    "default format",
+    "requirement ID catalog",
+    "temporary-feature",
+    "frontmatter",
+    "error cases",
+    "severity",
+    "open items",
+    "template"
+  ],
+  "path": "plugins/forge/docs/requirement_format.md",
+  "purpose": "Default requirements document format used when no project-specific format exists: frontmatter for additive features, requirement ID catalog, body template, error case rules, and severity catalog.",
+  "summary": [
+    "Frontmatter required for additive (temporary-feature) requirement documents",
+    "Requirement ID prefix catalog such as FNC, NFR, SEC, ERR and GLS",
+    "Body template: title, glossary line, overview, preconditions, requirement list, error cases, open items",
+    "Error case table with classification and recovery or reporting",
+    "Guidance on writing error cases following the error classification spec",
+    "Severity catalog for the additive feature frontmatter violation"
+  ],
+  "tasks": [
+    "Creating a requirements document",
+    "Reviewing a requirements document",
+    "Choosing requirement IDs",
+    "Writing error cases in requirements",
+    "Deciding additive feature frontmatter"
+  ],
+  "title": "要件定義書 デフォルトフォーマット"
+}

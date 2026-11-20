@@ -5,13 +5,14 @@ feature_note:
   - 旧仕様ファイルは本 feature 実装完了まで書き換えない。新規ファイル / 新規ディレクトリとして切り出すこと。
   - 本 feature 実装完了後、旧設計書との齟齬を解消する（merge）。merge は意味の統合であり、文書の物理的な結合ではない。
   - 旧設計書と同一スコープの内容は旧設計書側へ移す。スコープが異なる内容は分離したまま維持し、この文書を残す。
+doc_link_id: DLID-pcket5v36c0g
 ---
 
-# DES-085 ADR ライター 設計書
+# DES-085 ADR ライター 設計書 DLID-6v2tm05rfrxk
 
-## 1. 概要
+## 1. 概要 DLID-a4ca7y4rr10y
 
-[REQ-030](../requirements/REQ-030_adr_writer.md) の How を定める。
+[REQ-030][req-030] の How を定める。
 
 ADR ライターは、3 つの部品からなる。
 
@@ -19,11 +20,11 @@ ADR ライターは、3 つの部品からなる。
 - カスタム Agent `adr-writer`: 隔離した context で、依頼を吟味し、ADR ファイルへ記載する
 - 受け渡しの script `adr_exchange.py`: 識別値の生成、依頼の公開、判定の記録、後始末を行う
 
-構成は `start-plan`（SKILL）と `plan-strategist`（カスタム Agent）の先例（[DES-019](../../forge/design/DES-019_create_plan_workflow_design.md)）に倣う。呼び出し元と Agent の間で運ぶのは識別値だけで、依頼の中身は script が公開したファイルを Agent が読み、判定は script が記録する。
+構成は `start-plan`（SKILL）と `plan-strategist`（カスタム Agent）の先例（[DES-019][des-019]）に倣う。呼び出し元と Agent の間で運ぶのは識別値だけで、依頼の中身は script が公開したファイルを Agent が読み、判定は script が記録する。
 
 ADR は、feature ごとに 1 つの ADR ファイルへ、すべて書く。決定ごとにファイルを分けない。
 
-## 2. アーキテクチャ
+## 2. アーキテクチャ DLID-3c8ddx1ay951
 
 ```mermaid
 flowchart TB
@@ -58,7 +59,7 @@ flowchart TB
     Writer -->|"ADR ファイルへ書く"| Dir
 ```
 
-### 2.1 責務
+### 2.1 責務 DLID-83xxh6bb41br
 
 | 部品               | 責務                                                                                      | 書き込み先                          |
 | ------------------ | ----------------------------------------------------------------------------------------- | ----------------------------------- |
@@ -67,9 +68,9 @@ flowchart TB
 | `adr_exchange.py`  | 識別値の生成、記載先の決定、依頼と判定の公開、判定と ADR ファイルの状態の対応検査、後始末 | `adr/` の依頼ファイルと判定ファイル |
 | 規範文書           | ADR の定義の核、吟味の基準、書式、配置（本文は 1 か所に持ち、Agent 定義は参照する）       | なし                                |
 
-### 2.2 設計判断
+### 2.2 設計判断 DLID-bjr6bz0fjtwp
 
-#### Agent にする理由
+#### Agent にする理由 DLID-c3rab2dbaja6
 
 ADR の判断を、設計と同じ context で行うと、設計の途中経過が判断に混ざる。継承型 SKILL は親の context を引き継ぐため、SKILL として新設するだけでは、この混ざりを除けない。`context: fork` は採用しない（[Claude Code リファレンス][reference] §1 の不具合の記録）。
 
@@ -78,31 +79,31 @@ ADR の判断を、設計と同じ context で行うと、設計の途中経過�
 - 書き込みの境界（ADR ファイルだけ）を常時拘束したい
 - 親の context が肥大する（作らない場合が大半の ADR の規範・書式が常駐する）
 
-#### 入口を SKILL にする理由
+#### 入口を SKILL にする理由 DLID-k7bvbds56vfg
 
 Agent は単独で起動できず、SKILL 経由になる（`plan-strategist`・`reviewer` と同じ）。呼び出し元が複数（利用者の直接起動、`start-design`）あっても、依頼の形と完了処理を、入口 1 か所に保つ。
 
-#### feature ごとに 1 つの ADR ファイルへ書く
+#### feature ごとに 1 つの ADR ファイルへ書く DLID-j8ws7xdq02yy
 
 同じ feature の決定は、すべて 1 つの ADR ファイルに書き、決定ごとにファイルを分けない。読み手が「検討済みか」を引くとき、開くファイルが 1 つで済む。ファイル名に番号（`ADR-{NNN}`）を持たせるのは、ファイル名で指定し、検索できるようにするためである。番号は、ファイルを最初に作るときに 1 回だけ決める。
 
 否決は、同じ決定の節の書き直しで扱う。別の ADR を作らず、失効の印も付けない。旧い案は、同じ節の「検討した代替案」へ移す。誤った理由を残しても、読み手は間違った理由を読むだけであり、ADR を可変にしたのは、書き損じを書き直して正すためだからである。
 
-#### ADR の本文は Agent が直接書く
+#### ADR の本文は Agent が直接書く DLID-vv2cn0yss8w4
 
-置き場・ファイル名・ID・判定の記録は、決定論的に作れるので script が担う。ADR の本文は、内容そのものの決定であり、AI が担う（[deterministic_generation_spec.md](../../../../plugins/forge/docs/deterministic_generation_spec.md) §6）。先例の `plan-strategist` も、戦略書を直接書く。
+置き場・ファイル名・ID・判定の記録は、決定論的に作れるので script が担う。ADR の本文は、内容そのものの決定であり、AI が担う（[deterministic_generation_spec.md][deterministic-generation-spec] §6）。先例の `plan-strategist` も、戦略書を直接書く。
 
 節構成の検査（決定の節の番号、4 つの小節、旧書式の混入など）は、script の実行時検査に持たせない。受け取る側の形式検査は、検査点を増やし、落ちた理由を分からなくする（同 §7）。節構成は、既存の `test_adr_reference_integrity.py` と、レビュー観点（`review_criteria_design.md` の「ADR 運用」）が担う。
 
-#### 返すのは判定だけにする
+#### 返すのは判定だけにする DLID-h20h4aefv57b
 
 ADR ライターは独立した書き手であり、「作成」は、できたこと自体で足りる。記載先は、feature の ADR ファイルであり、呼び出し元が出力先から知っている。返す情報があるのは、呼び出し元が次の手を取るために理由を要する、棄却と不足だけである。理由は量が小さく、読み手が人と呼び出し元の AI なので、return value に自然文で書く。呼び出し元が分岐に使う判定は、閉じた 3 値として script が記録する。承認記録で判定を読み違えると、承認の記録が無いまま設計が進むためである。
 
-[DES-022](../../forge/design/DES-022_parallel_agent_output_contract_design.md) は、収集系・並列の Agent の結果の受け渡し契約であり、書き込み系の ADR ライターには、その §3.0 により適用されない。
+[DES-022][des-022] は、収集系・並列の Agent の結果の受け渡し契約であり、書き込み系の ADR ライターには、その §3.0 により適用されない。
 
-## 3. モジュール設計
+## 3. モジュール設計 DLID-gmfmpyeh6gcc
 
-### 3.1 モジュール一覧
+### 3.1 モジュール一覧 DLID-7gr81gb15tz4
 
 | モジュール                                  | 責務                                                             | 依存                                             |
 | ------------------------------------------- | ---------------------------------------------------------------- | ------------------------------------------------ |
@@ -115,14 +116,14 @@ ADR ライターは独立した書き手であり、「作成」は、できた�
 
 依存は、SKILL → script・Agent → script・規範文書の一方向である。script は SKILL・Agent を import しない。
 
-### 3.2 `adr_exchange.py`
+### 3.2 `adr_exchange.py` DLID-0c5xt8c0hd3v
 
-#### 識別値と置き場
+#### 識別値と置き場 DLID-4aq4vdrgqs81
 
 - 識別値は、出力先ディレクトリ（`adr_dir`）と `request_id` の 2 つである。`request_id` は `open` が依頼ごとに生成して返す。同じ feature で複数の依頼があり得るため、先例（feature ごとに 1 件）と違い、依頼ごとの値を持つ
 - 依頼と判定のファイルは、`adr_dir` に `adr_request_{request_id}.json`、`adr_result_{request_id}.json` として置く。残骸は、`git status` に未追跡として現れるため、異常を検知できる
 
-#### 記載先の決定
+#### 記載先の決定 DLID-9nem5z72v6wt
 
 `open` が、`adr_dir` の `ADR-*.md` を調べて、記載先を決める。
 
@@ -132,7 +133,7 @@ ADR ライターは独立した書き手であり、「作成」は、できた�
 | 無い                      | `{adr_dir}/{adr_id}_{feature}.md`。`--adr-id` が必須。`{feature}` は、feature 名の `-` を `_` に直した値 |
 | 2 つ以上ある              | 失敗する。同じ feature の ADR は 1 つのファイルに書く決定に反する状態であり、どれに書くかを推測しない    |
 
-#### サブコマンド
+#### サブコマンド DLID-yctkbv77yrp2
 
 | サブコマンド   | 呼ぶ主体 | 動作                                                                                                |
 | -------------- | -------- | --------------------------------------------------------------------------------------------------- |
@@ -141,7 +142,7 @@ ADR ライターは独立した書き手であり、「作成」は、できた�
 | `finish`       | Agent    | 判定（`created` / `rejected` / `insufficient`）を検査して記録する。上書きしない                     |
 | `check`        | SKILL    | 判定を返す。成否にかかわらず依頼と判定を削除する。ADR ファイルは残す                                |
 
-#### 依頼のフィールド
+#### 依頼のフィールド DLID-afdnjpjctb81
 
 | フィールド        | 内容                                                                                                                   |
 | ----------------- | ---------------------------------------------------------------------------------------------------------------------- |
@@ -156,7 +157,7 @@ ADR ライターは独立した書き手であり、「作成」は、できた�
 
 自由記述の値（`decision` など）は、コマンド引数ではなく、利用者の会話から整理して Write ツールで書いた入力ファイルから読む。コマンド引数にすると、改行・引用符・バッククォートが変形するためである。値は生成・要約・改変せずに置く。
 
-#### `open` の入力
+#### `open` の入力 DLID-fppevddrxwt2
 
 入力ファイルは、SKILL が `.temp/forge/write-adr/adr-${CLAUDE_SESSION_ID}-{名前}.md` に書く。`open` は、読んだあとに削除する。
 
@@ -178,7 +179,7 @@ ADR ライターは独立した書き手であり、「作成」は、できた�
 
 `open` の出力は、標準出力の JSON の `request_id` である。
 
-#### 検査
+#### 検査 DLID-c569e10kaqyw
 
 引数の形の検査（`open`）:
 
@@ -194,24 +195,24 @@ ADR ライターは独立した書き手であり、「作成」は、できた�
 | `created`                   | 記載先が実在し、空でない                 | 内容のハッシュが `baseline_sha256` と違う |
 | `rejected` / `insufficient` | 記載先が存在しない                       | 内容のハッシュが `baseline_sha256` と同じ |
 
-#### 終了コードと出力
+#### 終了コードと出力 DLID-tpejtgtgt8fd
 
-終了コードは `0`（完了）・`1`（区別のないエラー）・`2`（引数を受理できない）だけを返す。標準出力は、`0` のとき結果の JSON、非 0 のとき `errors`（自然文の配列）を持つ JSON とする（`2` は `argparse` が標準エラー出力へ書く）。例外のキャッチは外部要因（`OSError`、判定ファイルの `ValueError`）に限り、内部のバグは握りつぶさない（[COMMON-REQ-002](../../common/requirements/COMMON-REQ-002_error_handling_policy.md)）。
+終了コードは `0`（完了）・`1`（区別のないエラー）・`2`（引数を受理できない）だけを返す。標準出力は、`0` のとき結果の JSON、非 0 のとき `errors`（自然文の配列）を持つ JSON とする（`2` は `argparse` が標準エラー出力へ書く）。例外のキャッチは外部要因（`OSError`、判定ファイルの `ValueError`）に限り、内部のバグは握りつぶさない（[COMMON-REQ-002][common-req-002-error-handling-policy]）。
 
 判定の `rejected` と `insufficient` はエラーではなく、判定できる結果であり、終了コードは `0` である。
 
-### 3.3 `adr-writer` Agent
+### 3.3 `adr-writer` Agent DLID-20trhab84r93
 
-| 項目     | 内容                                                                                                                                                                                  |
-| -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| tools    | `Read` / `Grep` / `Glob` / `Bash` / `Write` / `Edit`。`Agent`・`Skill`・`AskUserQuestion` は持たない                                                                                  |
-| model    | `inherit`                                                                                                                                                                             |
-| 書き込み | 依頼の `adr_path` だけ（ADR ファイル）。仕様・ルール・コードを書き換えない                                                                                                            |
-| Bash     | 受け渡しの script（`request-path`、`finish`）だけ                                                                                                                                     |
-| 必読     | `adr_principles_spec.md`、`adr_format.md`、`document_style_guide.md`。呼び出し元は渡さない                                                                                            |
-| 入力     | 識別値の 2 つ（`adr_dir`、`request_id`）だけ。依頼の中身は、識別値を `request-path` へ渡して得た絶対パスのファイルを直接読んで知る。フィールドは[依頼のフィールド](#依頼のフィールド) |
-| 出力     | return value に、棄却と不足のときだけ、理由を自然文で書く。作成のときは書かない。ADR の本文は載せない。判定は `finish` で 1 回だけ記録する                                            |
-| 異常     | 最後まで終えられないときは、`finish` を呼ばずに終える。何が起きたかは return value に自然文で書く                                                                                     |
+| 項目     | 内容                                                                                                                                                                                                    |
+| -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| tools    | `Read` / `Grep` / `Glob` / `Bash` / `Write` / `Edit`。`Agent`・`Skill`・`AskUserQuestion` は持たない                                                                                                    |
+| model    | `inherit`                                                                                                                                                                                               |
+| 書き込み | 依頼の `adr_path` だけ（ADR ファイル）。仕様・ルール・コードを書き換えない                                                                                                                              |
+| Bash     | 受け渡しの script（`request-path`、`finish`）だけ                                                                                                                                                       |
+| 必読     | `adr_principles_spec.md`、`adr_format.md`、`document_style_guide.md`。呼び出し元は渡さない                                                                                                              |
+| 入力     | 識別値の 2 つ（`adr_dir`、`request_id`）だけ。依頼の中身は、識別値を `request-path` へ渡して得た絶対パスのファイルを直接読んで知る。フィールドは[依頼のフィールド](#依頼のフィールド-dlid-afdnjpjctb81) |
+| 出力     | return value に、棄却と不足のときだけ、理由を自然文で書く。作成のときは書かない。ADR の本文は載せない。判定は `finish` で 1 回だけ記録する                                                              |
+| 異常     | 最後まで終えられないときは、`finish` を呼ばずに終える。何が起きたかは return value に自然文で書く                                                                                                       |
 
 吟味の基準は、規範文書（`adr_principles_spec.md`「吟味の基準」）が持つ。Agent 定義は、その節に従うことと、類型ごとの扱い（下表）だけを持ち、基準の本文を再掲しない。
 
@@ -223,7 +224,7 @@ ADR ライターは独立した書き手であり、「作成」は、できた�
 
 記載するときは、書く前に、書こうとする各文が依頼の内容か読んだ文書に根拠を持つかを 1 文ずつ確かめる。根拠の無い文は書かず、棄却理由の根拠が無ければ「不足」へ改める。根拠の基準は、規範文書（`adr_principles_spec.md`「吟味の基準」）が持つ。
 
-### 3.4 `write-adr` SKILL
+### 3.4 `write-adr` SKILL DLID-q099rj29v2kh
 
 継承型 SKILL（`context: fork` を指定しない）。冒頭に、「このスキルは ADR の作成の依頼のみを行う。親が依頼している他の作業を引き継いではならない」を書く。
 
@@ -251,9 +252,9 @@ ADR ライターは独立した書き手であり、「作成」は、できた�
 
 8. **完了処理**（`--defer-finish` が無いとき）: `/forge:review --files {ADR ファイル} --auto`、`/forge:update-db-specs`、commit の確認（`anvil:commit`）の順に行う
 
-呼び出し元（`start-design`）は、`--defer-finish` を固定の値として、起動箇所にリテラルで書く（[REQ-003](../../forge/requirements/REQ-003_skill_script_separation.md) FNC-006）。
+呼び出し元（`start-design`）は、`--defer-finish` を固定の値として、起動箇所にリテラルで書く（[REQ-003][req-003] FNC-006）。
 
-### 3.5 規範文書
+### 3.5 規範文書 DLID-83k0wa2c0p2y
 
 | 文書                        | 変更                                                                                                                                                                                                                                                         |
 | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -262,9 +263,9 @@ ADR ライターは独立した書き手であり、「作成」は、できた�
 | `adr_format.md`             | ADR ファイルの書式。決定ごとの節（`## N.`）と、4 つの小節。失効マーカーの廃止。ID への言及の記法                                                                                                                                                             |
 | `doc_structure_format.md`   | 推奨する文書種別に `adr` を足す                                                                                                                                                                                                                              |
 
-## 4. ユースケース設計
+## 4. ユースケース設計 DLID-z4q6tnfdh8y3
 
-### 4.1 ユースケース一覧
+### 4.1 ユースケース一覧 DLID-506m30wbwkpe
 
 | ID    | ユースケース                                     | 主体                         |
 | ----- | ------------------------------------------------ | ---------------------------- |
@@ -275,7 +276,7 @@ ADR ライターは独立した書き手であり、「作成」は、できた�
 | UC-05 | 既存の決定が否決され、同じ節が書き直される       | 利用者 → `write-adr`         |
 | UC-06 | Agent が最後まで終えられず、異常として報告される | `write-adr`                  |
 
-### 4.2 シーケンス図
+### 4.2 シーケンス図 DLID-0rxmr20nbm4m
 
 ```mermaid
 sequenceDiagram
@@ -315,7 +316,7 @@ sequenceDiagram
 - `finish` の失敗（判定と ADR ファイルの状態が合わない）: Agent は、内容を直して `finish` をやり直す。直せなければ呼ばずに終える
 - `check` の失敗（判定が記録されていない）: 異常として報告し、再実行か中止かを確認する
 
-## 5. 使用する既存コンポーネント
+## 5. 使用する既存コンポーネント DLID-c38fbs9k94gk
 
 | コンポーネント            | ファイルパス                                                                                 | 用途                                               |
 | ------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------- |
@@ -326,7 +327,7 @@ sequenceDiagram
 | ADR の参照と書式の検査    | `tests/common/test_adr_reference_integrity.py`                                               | `adr/` 配下の ADR ファイルを `rglob` で走査する    |
 | ADR のレビュー観点        | `plugins/forge/docs/criteria/review_criteria_design.md`                                      | `target_files` に ADR が含まれる場合の「ADR 運用」 |
 
-## 6. テスト設計
+## 6. テスト設計 DLID-t44kffx8ndn2
 
 - **単体テスト対象**: `adr_exchange.py`（`tests/forge/adr/test_adr_exchange.py`）
 
@@ -348,9 +349,15 @@ sequenceDiagram
   - `start-design` が、ADR の書式・規範文書の読み込みと、ADR の採番の手順を持たない
 - **評価テスト**（`ai_tests/forge/adr-writer/`）: 吟味の基準の評価。決定・文脈・代替案と期待判定（作成・棄却・不足）を持つケースを、Markdown で置く。ケースは、実在の決定を改変したものと、架空のものからなる。ADR ライターにケースを渡し、判定を期待と比べる。判定は AI の出力で揺れ、費用もかかるため、CI のゲートには入れず、手動で実行する。手順は同じ場所の `README.md` が持つ
 
-## 7. 未確定事項
+## 7. 未確定事項 DLID-v1bpcwfejxzq
 
 該当なし。
 
-[reference]: ../../../rules/plugin_claude_code_reference.md
-[authoring-guide]: ../../../rules/plugin_claude_code_authoring_guide.md
+[reference]: ../../../rules/plugin_claude_code_reference.md "4925fe0a5d6e DLID-d384sm5xwctj"
+[authoring-guide]: ../../../rules/plugin_claude_code_authoring_guide.md "1b4400f836cd DLID-pvwk8en5c2rq"
+[req-030]: ../requirements/REQ-030_adr_writer.md "e5233def35da DLID-7gyjj06rtab7"
+[des-019]: ../../forge/design/DES-019_create_plan_workflow_design.md "7f8da9d31c1f DLID-1585cw3yt8pa"
+[deterministic-generation-spec]: ../../../../plugins/forge/docs/deterministic_generation_spec.md "75383cc8c6d8 DLID-tm2m7nv23dqd"
+[des-022]: ../../forge/design/DES-022_parallel_agent_output_contract_design.md "55060c313fdc DLID-5h7wqxcknyha"
+[common-req-002-error-handling-policy]: ../../common/requirements/COMMON-REQ-002_error_handling_policy.md "3810426fdc1b DLID-4wn8sb8y1f80"
+[req-003]: ../../forge/requirements/REQ-003_skill_script_separation.md "323aaf2b05f6 DLID-bgxgcq0pvkm7"

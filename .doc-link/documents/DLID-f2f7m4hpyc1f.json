@@ -1,0 +1,39 @@
+{
+  "content_hash": "905a3f8f8174f67b4ff955ceeb20ffad55c02cb9e7fa1a31257f70e8a2eaf76b",
+  "doc_link_id": "DLID-f2f7m4hpyc1f",
+  "keywords": [
+    "uv",
+    "PEP 723",
+    "inline metadata",
+    "pyproject.toml",
+    "lockfile",
+    "uv run --locked",
+    "exclude-newer",
+    "dependency management",
+    "requires-python",
+    "uv add --bounds lower"
+  ],
+  "path": "docs/rules/plugin_uv_usage_rules.md",
+  "purpose": "Rules for running Python scripts and managing dependencies with uv, so version numbers are chosen and written by uv rather than by humans or AI.",
+  "summary": [
+    "Scope: applies only when project instructions mandate uv; distribution to users needs a judgment",
+    "Where to declare dependencies: PEP 723 inline metadata vs project-root pyproject.toml",
+    "Execution: run Python scripts with uv run, declare Python version and deps in inline metadata",
+    "Adding and removing dependencies via uv add/remove --script with --bounds lower, after user permission",
+    "Never write version numbers by hand; lower bound only sets candidates, lockfile decides the version",
+    "Locking: uv lock --script, commit lockfile, uv run --locked detects mismatch",
+    "Updating: uv tree --outdated, uv lock --upgrade, review lockfile diff before commit",
+    "Supply-chain defense: exclude-newer = \"3 days\", with per-package exception for urgent security fixes",
+    "Python version: requires-python lower bound follows latest stable, excluding alpha/beta/rc"
+  ],
+  "tasks": [
+    "Writing or modifying a Python script that uses uv",
+    "Adding, removing, or upgrading a script dependency",
+    "Choosing between PEP 723 metadata and pyproject.toml",
+    "Creating or updating a lockfile for a script",
+    "Configuring exclude-newer supply-chain protection",
+    "Setting requires-python for a script",
+    "Deciding whether to apply uv to distributed scripts"
+  ],
+  "title": "uv 利用ルール"
+}

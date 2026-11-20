@@ -1,9 +1,10 @@
 ---
 name: design_token_template
 description: デザイントークン出力テンプレート（UX ノート付き）
+doc_link_id: DLID-3x673x4r3h83
 ---
 
-# デザイントークンテンプレート
+# デザイントークンテンプレート DLID-tz4yc8w71g3n
 
 以下のテンプレートに従ってデザイントークン文書を生成する。`{...}` は実際の値に置換すること。
 

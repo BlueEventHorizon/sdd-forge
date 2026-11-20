@@ -1,0 +1,38 @@
+{
+  "content_hash": "52bc13fba8373e34af6ebd61cbc1c898038a16554ee90dc584cfac411bf2e318",
+  "doc_link_id": "DLID-3c038need73s",
+  "keywords": [
+    "document system",
+    "document ID",
+    "prefix",
+    "numbering",
+    "next-spec-id",
+    "doc_structure",
+    "cross-component spec",
+    "ID collision",
+    "placement",
+    "requirements"
+  ],
+  "path": "docs/specs/forge/requirements/REQ-028_document_system.md",
+  "purpose": "Defines the document system of the project: which document kinds exist, how they are identified, placed and referenced, to prevent duplicated content, ID collisions and unfindable documents.",
+  "summary": [
+    "Overview: purpose of defining a document system and the problems it prevents",
+    "Target system nature: internal documentation operation of the forge plugin and project",
+    "Premise: document placement declared by .doc_structure.yaml",
+    "Premise: document IDs allocated by the next-spec-id skill",
+    "FNC-001: document identifier as PREFIX-NNN with global numbering",
+    "FNC-001: different prefixes use separate number sequences",
+    "FNC-002: cross-component specs identified and placed without belonging to one component",
+    "FNC-003: new document IDs are allocated via skill, never manually, to avoid branch collisions",
+    "Open items: none"
+  ],
+  "tasks": [
+    "Creating a new requirements, design or ADR document",
+    "Allocating a new document ID",
+    "Deciding where to place a document",
+    "Writing specs shared across components",
+    "Editing .doc_structure.yaml",
+    "Reviewing document naming and ID rules"
+  ],
+  "title": "REQ-028 文書体系 要件定義書"
+}

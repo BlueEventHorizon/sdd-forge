@@ -150,7 +150,12 @@ dprint check    # 差分チェックのみ（CI 向け）
 ## 7. 参考
 
 - `CLAUDE.md` — リポジトリ全体の規約・構成説明
-- [docs/rules/plugin_claude_code_authoring_guide.md](docs/rules/plugin_claude_code_authoring_guide.md) — SKILL.md / カスタム Agent の書き方の規約（汎用）
-- [docs/rules/plugin_claude_code_reference.md](docs/rules/plugin_claude_code_reference.md) — Claude Code の SKILL・プラグイン・Agent の仕組みの事実（汎用）
-- [docs/rules/forge_claude_code_authoring_policy.md](docs/rules/forge_claude_code_authoring_policy.md) — forge が決めた作成方針
-- [docs/rules/plugin_implementation_guidelines.md](docs/rules/plugin_implementation_guidelines.md) — 実装ガイドライン（汎用）
+- [docs/rules/plugin_claude_code_authoring_guide.md][plugin-claude-code-authoring-guide] — SKILL.md / カスタム Agent の書き方の規約（汎用）
+- [docs/rules/plugin_claude_code_reference.md][plugin-claude-code-reference] — Claude Code の SKILL・プラグイン・Agent の仕組みの事実（汎用）
+- [docs/rules/forge_claude_code_authoring_policy.md][forge-claude-code-authoring-policy] — forge が決めた作成方針
+- [docs/rules/plugin_implementation_guidelines.md][plugin-implementation-guidelines] — 実装ガイドライン（汎用）
+
+[plugin-claude-code-authoring-guide]: docs/rules/plugin_claude_code_authoring_guide.md
+[plugin-claude-code-reference]: docs/rules/plugin_claude_code_reference.md
+[forge-claude-code-authoring-policy]: docs/rules/forge_claude_code_authoring_policy.md
+[plugin-implementation-guidelines]: docs/rules/plugin_implementation_guidelines.md

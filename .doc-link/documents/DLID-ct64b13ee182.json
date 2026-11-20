@@ -1,0 +1,39 @@
+{
+  "content_hash": "8954ef4d1f67e80eda38388335884dae380043ed46514c0bb66afad17a1da05c",
+  "doc_link_id": "DLID-ct64b13ee182",
+  "keywords": [
+    "orchestrator",
+    "delegation",
+    "God-Skill",
+    "return value",
+    "query skill",
+    "parallel execution",
+    "completion flow",
+    "document format",
+    "argument interpretation",
+    "self-contained reference"
+  ],
+  "path": "docs/specs/forge/requirements/REQ-001_orchestrator_pattern.md",
+  "purpose": "Requirements for designing forge user-invocable skills as orchestrators that delegate detailed work, to avoid God-Skill problems and define data hand-off and completion flow.",
+  "summary": [
+    "Background: God-Skill problems of single-context execution (context use, accuracy, no parallelism, loss)",
+    "Target skills using orchestrator plus delegation (start-design, start-plan, start-implement, start-requirements, review)",
+    "FNC-001: orchestrators manage flow and dialogue; delegate details; call query skills directly without an Agent in between",
+    "FNC-003: reference documents given to agents must be self-contained, placed in plugins/forge/docs",
+    "FNC-004: independent steps run in parallel; results passed by return value; minimal prompt data",
+    "FNC-005: format choice, JSON for machine-processed plans, Markdown for requirements and designs",
+    "FNC-006: common completion flow of review, ToC update and commit for document-generating skills",
+    "FNC-007: user input interpretation is done by AI, not by argument-parsing scripts",
+    "Table of data hand-off methods per skill"
+  ],
+  "tasks": [
+    "Designing a new user-invocable forge skill",
+    "Deciding what an orchestrator delegates to agents or skills",
+    "Designing data exchange between agents",
+    "Writing reference documents for agents",
+    "Choosing JSON or Markdown for a managed document",
+    "Implementing completion processing of document-generating skills",
+    "Handling command argument interpretation in skills"
+  ],
+  "title": "REQ-001 オーケストレータパターン要件"
+}

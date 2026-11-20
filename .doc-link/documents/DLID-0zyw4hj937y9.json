@@ -1,0 +1,37 @@
+{
+  "content_hash": "69bd620fe0b7dc5906416e94c689eebf5439e32652fc996bcb6196a25591ebdd",
+  "doc_link_id": "DLID-0zyw4hj937y9",
+  "keywords": [
+    "design review",
+    "review criteria",
+    "SSOT reference",
+    "ADR",
+    "temporary-feature",
+    "doc_status",
+    "What/How boundary",
+    "frontmatter",
+    "create_issue"
+  ],
+  "path": "plugins/forge/docs/criteria/review_criteria_design.md",
+  "purpose": "Review criteria for design documents: lists the delegated SSOT documents, check order, special exclusions for additive features and doc_status, and rules for fix, create_issue or skip.",
+  "summary": [
+    "Delegates severity and gray-zone judgment to principles documents; holds no judgment itself",
+    "P1 SSOT table: spec-design boundary, design principles, design method, additive development, frontmatter, ADR, style guide, deterministic generation, project rules",
+    "P2 contradiction check inside target and against related requirements",
+    "P3 unnecessary complexity check via spec priorities spec",
+    "Check order with additive feature frontmatter requirement",
+    "Document reference and ADR operation checks",
+    "Exclusion rules for temporary-feature and doc_status not_implemented or draft",
+    "Recommendation rules: fix, create_issue, skip",
+    "Three conditions for create_issue"
+  ],
+  "tasks": [
+    "Reviewing design documents",
+    "Reviewing ADR files",
+    "Building a review packet for design review",
+    "Judging contradictions in additive feature designs",
+    "Checking What/How boundary in design documents",
+    "Authoring or updating review criteria"
+  ],
+  "title": "design レビュー基準"
+}

@@ -1,0 +1,38 @@
+{
+  "content_hash": "644193dcc8fec831dee55850bfce5f38a1c6bef00b8567a4165b186eaffc1a43",
+  "doc_link_id": "DLID-yxmqmdjqhsjm",
+  "keywords": [
+    "APP-001",
+    "application overview",
+    "requirements document",
+    "writing standard",
+    "scope",
+    "success criteria",
+    "target users",
+    "known risks",
+    "What vs How",
+    "feature index"
+  ],
+  "path": "plugins/forge/skills/start-requirements/docs/app_overview_writing_standard.md",
+  "purpose": "Defines the items, purposes, and writing guidelines that the application overview requirements document (APP-001) must contain, applicable to any project type.",
+  "summary": [
+    "Positions APP-001 as the project compass answering why, what, for whom, how used, and how to verify",
+    "Lists 17 items from overview, background, and problems to terms and related documents",
+    "Each item has a purpose, writing guideline, and required or recommended level",
+    "Covers goals with FNC traceability and verifiable success criteria",
+    "Requires scope to state both in-scope and explicitly out-of-scope items",
+    "Covers target users, supported platforms, prerequisites, and environment composition",
+    "Covers usage scenarios and the feature index pointing to FNC documents",
+    "Covers external dependencies, constraints, and known risks with impact levels",
+    "Notes to write What not How, use the user manual test, and keep no change history"
+  ],
+  "tasks": [
+    "Writing an application overview requirements document (APP-001)",
+    "Reviewing APP-001 for missing or weak items",
+    "Deciding whether content belongs in APP-001 or a design document",
+    "Defining project scope and out-of-scope items",
+    "Writing success criteria and risks for a project",
+    "Creating requirements for a new project from scratch"
+  ],
+  "title": "APP概要要件定義書 記載基準"
+}

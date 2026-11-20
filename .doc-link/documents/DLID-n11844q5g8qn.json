@@ -1,0 +1,30 @@
+{
+  "content_hash": "5800bff02e731cef57920725e8e3abd3a451a8c43732e0446bdc35745ecc2195",
+  "doc_link_id": "DLID-n11844q5g8qn",
+  "keywords": [
+    "agenda",
+    "open design questions",
+    "storage format",
+    "JSON",
+    "TBD",
+    "FNC-004",
+    "NFR-001",
+    "design notes"
+  ],
+  "path": "docs/specs/consult/agenda/design/NOTES_open_design_questions.md",
+  "purpose": "Design notes carrying over unresolved design questions from the agenda requirements TBDs (storage format and FNC-004 measurement) for the formal design document.",
+  "summary": [
+    "Origin: HOW-related TBDs removed from the requirements and handed over to design",
+    "Storage format and file name question with constraints (no PyYAML, standard library only)",
+    "Design direction: JSON with agenda.json, TOML unusable because it cannot be written",
+    "FNC-004 measurement method question for reduction of AI output and read volume",
+    "Requirement to define comparison target, unit and method at design time"
+  ],
+  "tasks": [
+    "Creating the agenda design document",
+    "Deciding agenda storage format",
+    "Defining FNC-004 measurement procedure",
+    "Reviewing agenda requirements TBD handling"
+  ],
+  "title": "agenda 機構 設計メモ（未解決の設計論点）"
+}

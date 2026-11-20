@@ -1,0 +1,39 @@
+{
+  "content_hash": "795179e854620cbceb6931c06d325468e327e7dabdbd96284620b89d14cdd3d5",
+  "doc_link_id": "DLID-45wzpggz1set",
+  "keywords": [
+    "ADR",
+    "architecture decision record",
+    "decision screening",
+    "rejected alternatives",
+    "mutable document",
+    "section numbers",
+    "ID numbering",
+    "severity catalog",
+    "scope block",
+    "approval record"
+  ],
+  "path": "plugins/forge/docs/adr_principles_spec.md",
+  "purpose": "Defines the normative principles for creating and revising ADRs: what to record, how to screen content, mutability, rejection handling, placement, ID numbering, tolerance, and severity catalog.",
+  "summary": [
+    "ADR definition: responsibility, what not to write, exception for approval records, lifespan",
+    "Primary beneficiary is the AI about to propose an alternative",
+    "Criteria for what to write: two conditions must hold at once; ADRs are not specs or rules",
+    "Conditions for writing the optional scope block",
+    "Screening criteria table: reject, accept after fixing, or flag as insufficient",
+    "ADRs are mutable: rewrite sections, keep section numbers, no history log",
+    "Rejection of a decision handled by rewriting the same section",
+    "Placement per feature, single file per feature, ID numbering via next-spec-id",
+    "Gray-zone tolerance table of allowed and disallowed practices",
+    "Severity catalog of violation patterns"
+  ],
+  "tasks": [
+    "Writing or updating an ADR",
+    "Deciding whether a decision deserves an ADR",
+    "Screening content submitted for an ADR",
+    "Reviewing ADRs for rule violations",
+    "Numbering and placing a new ADR file",
+    "Handling a reversed or corrected decision"
+  ],
+  "title": "ADR（アーキテクチャ決定記録）運用原則"
+}

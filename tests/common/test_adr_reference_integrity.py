@@ -45,6 +45,9 @@ SECTION_RE = re.compile(r"§(\d+(?:\.\d+)*)")
 ADR_SECTION_REF_RE = re.compile(r"ADR-(\d{3})\s*§(\d+(?:\.\d+)*)")
 HEADING_NUM_RE = re.compile(r"^#{2,6}\s+(\d+(?:\.\d+)*)\.?\s")
 INVALIDATION_RE = re.compile(r"⚠️失効")
+# 見出しの行末に機械的に付与される文書検索用の識別子。見出しの名前には含めない
+# （document_style_guide.md §1.1）。
+HEADING_ID_RE = re.compile(r"\s+DLID-[0-9a-z]+\s*$")
 
 #: 決定の節が持つ 4 つの小節（番号の下 1 桁と名前）。
 DECISION_SUBSECTIONS = (
@@ -144,7 +147,7 @@ def structure_violations(path: Path) -> list[str]:
                     f"{rel} 小節が直近の `## N.` の `### N.M ` の形ではない: {line}"
                 )
                 continue
-            seen.append((int(m.group(2)), m.group(3).strip()))
+            seen.append((int(m.group(2)), HEADING_ID_RE.sub("", m.group(3)).strip()))
     close_section(0)
 
     if titles != 1:
@@ -354,6 +357,14 @@ class TestFormatChecksDetectViolations(unittest.TestCase):
 
     def test_good_file_passes(self):
         self.assertEqual([], structure_violations(self._adr(GOOD_ADR)))
+
+    def test_heading_identifiers_are_not_part_of_the_names(self):
+        """見出しの行末に付与された識別子は、小節の名前に含めない。"""
+        text = "\n".join(
+            f"{line} DLID-abc123def456" if line.startswith("#") else line
+            for line in GOOD_ADR.splitlines()
+        )
+        self.assertEqual([], structure_violations(self._adr(text)))
 
     def test_multiple_decisions_in_one_file_are_allowed(self):
         """1 つのファイルに、決定の節が複数並ぶ。"""

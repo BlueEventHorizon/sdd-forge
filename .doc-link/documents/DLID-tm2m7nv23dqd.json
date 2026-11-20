@@ -1,0 +1,37 @@
+{
+  "content_hash": "75383cc8c6d823206f420e0966ac5a7a358d619349b855c87ce4dd54e3cea1d3",
+  "doc_link_id": "DLID-tm2m7nv23dqd",
+  "keywords": [
+    "deterministic generation",
+    "deterministic executor",
+    "allowlist",
+    "silent drop",
+    "format validation",
+    "validation placement",
+    "AI responsibility",
+    "severity catalog",
+    "ID numbering"
+  ],
+  "path": "plugins/forge/docs/deterministic_generation_spec.md",
+  "purpose": "Defines the principle that deterministic artifacts are produced by a deterministic executor rather than AI, what checks become unnecessary, and where validation belongs.",
+  "summary": [
+    "Purpose: break the chain where AI-built artifacts require checks that silently drop items",
+    "Principle: deterministic executor builds the artifact; AI only decides content",
+    "Rationale chain: AI builds, errors possible, checks needed, allowlist, silent drops",
+    "What becomes unnecessary: runtime format checks, duplicate schemas, path mix-ups, intermediate files",
+    "Scope: structured data, file paths and names, writes, ID numbering, enumeration and aggregation",
+    "Non-applicable areas: natural language interpretation, flow control, dialogue, content decisions",
+    "Exception: validating an AI response received as structured data at a single boundary",
+    "Validation placement: on the producer side, one check point per data",
+    "Severity catalog of violation patterns with critical and major levels"
+  ],
+  "tasks": [
+    "Designing a skill or agent that passes data to scripts",
+    "Reviewing code or documents for AI-built structured output",
+    "Deciding whether to move file writing or ID numbering into a script",
+    "Designing input validation and allowlists",
+    "Designing subagent response handling",
+    "Assigning review severity for deterministic generation violations"
+  ],
+  "title": "決定論的な生成物は AI が作らない"
+}

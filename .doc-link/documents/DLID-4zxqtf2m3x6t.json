@@ -1,0 +1,40 @@
+{
+  "content_hash": "957c9e095e8acfe2c5c3d1ea1b999628cfaa99ca267a42363ed85ab252f60ebd",
+  "doc_link_id": "DLID-4zxqtf2m3x6t",
+  "keywords": [
+    "requirement review",
+    "review criteria",
+    "SSOT reference",
+    "What/How boundary",
+    "additive feature",
+    "temporary-feature",
+    "doc_status",
+    "contradiction check",
+    "create_issue",
+    "unnecessary complexity"
+  ],
+  "path": "plugins/forge/docs/criteria/review_criteria_requirement.md",
+  "purpose": "Review criteria for requirement documents: lists the SSOT documents to check by priority, the order of checks, exclusion rules for P2, and the rules for deciding recommendations.",
+  "summary": [
+    "Delegates norms and severity to principles; this file holds no judgment itself",
+    "SSOT reference table with P1/P2/P3 priorities, doc types and roles",
+    "P1 order: requirement principles, spec-design boundary, requirement format, spec priorities, project rules",
+    "Additive feature requirements must carry temporary-feature frontmatter, with false-positive exemptions",
+    "Document reference notation checked against the style guide",
+    "P2 contradiction checks among requirements and with related design docs",
+    "P2 exclusion for additive features and doc_status not_implemented or draft documents",
+    "P3 unnecessary complexity check against spec priorities, answered Yes/No",
+    "Recommendation rules: fix, create_issue, skip",
+    "Three conditions required for create_issue"
+  ],
+  "tasks": [
+    "Reviewing a requirement document",
+    "Choosing which reference documents to check in a requirement review",
+    "Deciding fix, create_issue or skip for a requirement review finding",
+    "Judging whether a requirement doc is an additive feature needing frontmatter",
+    "Handling doc_status draft or not_implemented during review",
+    "Checking contradictions between requirements and design",
+    "Maintaining the review criteria documents"
+  ],
+  "title": "requirement レビュー基準"
+}

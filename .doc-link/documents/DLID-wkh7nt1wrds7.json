@@ -1,0 +1,30 @@
+{
+  "content_hash": "0e4a099e332f8b2be143f85317143d2763d4bbe38e57f4a93497badd20c5ea42",
+  "doc_link_id": "DLID-wkh7nt1wrds7",
+  "keywords": [
+    "anti-pattern",
+    "review",
+    "fallback",
+    "rule conformance",
+    "auto-append prohibition",
+    "issue filing",
+    "distributed template"
+  ],
+  "path": "plugins/forge/docs/forge_anti_patterns.md",
+  "purpose": "Skeleton of the base anti-pattern collection that the review skill uses as a fallback for rule-conformance checks when project rules are missing or insufficient.",
+  "summary": [
+    "Distributed template used as the P1 rule-conformance fallback during review",
+    "Referenced when project-specific rules are not set up or insufficient, to check against industry-standard anti-patterns",
+    "Scope is limited to placing the template; initial content is headings only",
+    "Prohibition on automatic AI additions to this file",
+    "Flow for newly found anti-patterns: judge as issue-worthy, file an issue, then add via human-reviewed PR",
+    "Rationale: changing a distributed file during review breaks release management",
+    "Empty category headings: code, design, plan, document"
+  ],
+  "tasks": [
+    "Running code, design, plan or document review without project rules",
+    "Deciding whether to add an anti-pattern to the collection",
+    "Handling a newly discovered anti-pattern during review"
+  ],
+  "title": "forge アンチパターン集"
+}

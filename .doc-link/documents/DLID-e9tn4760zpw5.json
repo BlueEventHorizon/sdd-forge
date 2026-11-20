@@ -1,0 +1,38 @@
+{
+  "content_hash": "fb7b98fcb15cb933b955ec821c945e8da8c4cb51ec0c864cc44fb4868c077a7b",
+  "doc_link_id": "DLID-e9tn4760zpw5",
+  "keywords": [
+    "uxui review",
+    "review criteria",
+    "Apple HIG",
+    "design system",
+    "SSOT reference",
+    "fallback",
+    "THEME CMP SCR UXEVAL",
+    "contradiction check",
+    "create_issue",
+    "unnecessary complexity"
+  ],
+  "path": "plugins/forge/docs/criteria/review_criteria_uxui.md",
+  "purpose": "Review criteria for UX/UI documents: lists the SSOT documents to check by priority, with provisional fallbacks, the order of checks, and the rules for deciding recommendations.",
+  "summary": [
+    "Delegates norms and severity to principles; this file holds no judgment itself",
+    "Notes that dedicated UX/UI principles are not yet available and a fallback is used",
+    "SSOT reference table: Apple HIG, project design system rules, document style guide",
+    "P1 order: Apple HIG, project rules (skipped if absent), style guide fallback",
+    "Targets include THEME, CMP, SCR, UXEVAL and UI design inside design docs",
+    "P2 contradiction checks on tokens, components, screens and interactions",
+    "P3 unnecessary complexity check against spec priorities, answered Yes/No",
+    "Recommendation rules: fix, create_issue, skip",
+    "Three conditions required for create_issue"
+  ],
+  "tasks": [
+    "Reviewing a UX/UI document",
+    "Reviewing UI design sections inside a design document",
+    "Checking compliance with Apple HIG in a review",
+    "Deciding fix, create_issue or skip for a UX/UI review finding",
+    "Checking contradictions between UI specs and requirements or design",
+    "Maintaining the review criteria documents"
+  ],
+  "title": "uxui レビュー基準"
+}

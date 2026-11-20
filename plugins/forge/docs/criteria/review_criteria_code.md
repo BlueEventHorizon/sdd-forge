@@ -1,10 +1,14 @@
-# code レビュー基準
+---
+doc_link_id: DLID-spgw9f5y6thy
+---
+
+# code レビュー基準 DLID-txgrjrgwkxrs
 
 > SoT: [review_priorities_spec.md](../review_priorities_spec.md)
 > 重大度判定 / グレーゾーン許容範囲は委譲先 principles 側を参照すること。本ファイルは判断を持たない。
 > severity は委譲先 principles の重大度カタログから取得する ([review_priorities_spec.md](../review_priorities_spec.md) §2.2)。
 
-## 1. SSOT参照
+## 1. SSOT参照 DLID-4deh3fzhm9x1
 
 P1 で照合すべき委譲先文書一覧。各文書は「規範本体 + 重大度カタログ (拡充済み)」を保持する SoT である。複数文書間の優先順位は「プロジェクト固有 > 内蔵」とする (review_priorities_spec.md)。
 
@@ -18,7 +22,7 @@ P1 で照合すべき委譲先文書一覧。各文書は「規範本体 + 重�
 
 委譲先ルールが未整備の場合は forge 内蔵ルールへフォールバックする。
 
-## 2. チェック順
+## 2. チェック順 DLID-5jxvea20ckbt
 
 種別ごとに「どの委譲先文書から先に読むか」の順序。規範本体は再掲しない:
 
@@ -26,7 +30,7 @@ P1 で照合すべき委譲先文書一覧。各文書は「規範本体 + 重�
 2. **P2 矛盾・齟齬**: P1 で参照した設計書と target_files 間で、同一対象への相反記述 (インターフェース定義 / データモデル / 処理フロー等) を突き合わせる (不足・欠落は P2 対象外)
 3. **P3 不要な複雑化**: [forge_anti_patterns.md](../forge_anti_patterns.md) を参照し、より少ない要素で同じ目的を達成できる代替案の有無を Yes/No で判定する
 
-## 3. 判定ルール
+## 3. 判定ルール DLID-xye42s3bmpb8
 
 | recommendation | 採用条件                                                                                                          |
 | -------------- | ----------------------------------------------------------------------------------------------------------------- |
@@ -34,7 +38,7 @@ P1 で照合すべき委譲先文書一覧。各文書は「規範本体 + 重�
 | `create_issue` | ルール未整備で発見した場合 ([review_priorities_spec.md](../review_priorities_spec.md) §4 の 3 条件をすべて満たす) |
 | `skip`         | false positive / グレーゾーン許容範囲内 (principles の許容範囲に該当)                                             |
 
-### `recommendation: create_issue` の 3 条件
+### `recommendation: create_issue` の 3 条件 DLID-bekxrdnrhpqz
 
 | # | 条件               | 内容                                                                                                                    |
 | - | ------------------ | ----------------------------------------------------------------------------------------------------------------------- |

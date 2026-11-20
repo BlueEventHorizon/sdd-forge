@@ -1,0 +1,35 @@
+{
+  "content_hash": "c0af704de2b5ea23db869d9b8eb5ea5731a50b2a6f2d15d1e058fd660edeea20",
+  "doc_link_id": "DLID-ns59za8fens1",
+  "keywords": [
+    "ADR",
+    "architecture decision record",
+    "ADR format",
+    "template",
+    "scope block",
+    "rejected alternatives",
+    "section numbering",
+    "file naming",
+    "impact"
+  ],
+  "path": "plugins/forge/docs/adr_format.md",
+  "purpose": "Provides the default ADR format, covering file naming, structure, optional scope block, how to write rejections, and the template, used when no project-specific ADR format exists.",
+  "summary": [
+    "Default ADR format used when no project-specific format is found",
+    "File naming rule ADR-{NNN}_{feature}.md, one file per feature, number fixed at creation",
+    "File structure: single H1, numbered decision sections with four fixed subsections",
+    "Section numbers are never changed, and no metadata table or status history",
+    "Optional scope block placed after the H1 with paired in-scope and out-of-scope items",
+    "How to write rejections by rewriting the same decision section and moving the old option to alternatives",
+    "Full markdown template with guidance for alternatives and impact subsections",
+    "Impact must be evidence-based; no file path listings; use links rather than bare IDs"
+  ],
+  "tasks": [
+    "Creating a new ADR file",
+    "Adding a decision to an existing ADR",
+    "Revising or rejecting an existing decision",
+    "Reviewing ADR structure and format",
+    "Writing the scope block of an ADR"
+  ],
+  "title": "ADR（アーキテクチャ決定記録）デフォルトフォーマット"
+}

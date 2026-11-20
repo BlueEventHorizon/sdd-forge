@@ -24,7 +24,6 @@ __pycache__/
 .claude/settings.local.json
 .claude/scheduled_tasks.lock
 .claude/.temp/
-.claude/doc-advisor/index/
 
 # テスト用一時ディレクトリ（tempfile.mkdtemp の出力先・/tmp 不可環境のフォールバック）
 tests/**/.temp/

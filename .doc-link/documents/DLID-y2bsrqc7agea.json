@@ -1,0 +1,38 @@
+{
+  "content_hash": "17bb6ff90a292d9a24567cd9a45a50ef34b263c7d7da4bd3adda0748ad9283e7",
+  "doc_link_id": "DLID-y2bsrqc7agea",
+  "keywords": [
+    "Figma",
+    "requirements",
+    "design tokens",
+    "theme",
+    "screen requirements",
+    "SCR",
+    "CMP",
+    "FNC",
+    "static assets",
+    "workflow"
+  ],
+  "path": "plugins/forge/skills/start-requirements/docs/requirements_from_figma_workflow.md",
+  "purpose": "Workflow for extracting requirements from Figma design files, building design tokens and a theme, and producing requirement documents for screens, components and functions.",
+  "summary": [
+    "Required reading list of requirement principles, format, error classification, and style guides",
+    "Five-phase flow: preparation, design system, requirement writing, static assets, quality check",
+    "Phase 1 checks Figma MCP availability, confirms with the user, and retrieves rules and specs",
+    "Two-layer design system: design tokens and semantic themes, plus reusable component identification",
+    "Screen requirements (SCR) with screen-specific part names and ASCII layout diagrams",
+    "Component (CMP) and function (FNC) requirements, plus supplementing requirements absent from the design",
+    "Output location decision and ID numbering via next-spec-id",
+    "Static asset handling policy for icons, illustrations, logos and backgrounds",
+    "Quality checklists, AI review, specs index update, commit, and completion guidance"
+  ],
+  "tasks": [
+    "Creating requirement documents from a Figma design file",
+    "Design-first development of a new app",
+    "Redesigning an existing app using Figma",
+    "Extracting design tokens from Figma",
+    "Defining screen and UI component requirements",
+    "Reviewing the start-requirements Figma mode workflow"
+  ],
+  "title": "Figma 要件定義書作成ワークフロー"
+}

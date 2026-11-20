@@ -1,0 +1,38 @@
+{
+  "content_hash": "4939a77b72d91d5efb8ba4a3c01358e9158b479dac8f31ab47cc726f20416582",
+  "doc_link_id": "DLID-31c3mp46a5p2",
+  "keywords": [
+    "plan review",
+    "review criteria",
+    "SSOT reference",
+    "plan.json",
+    "additive feature",
+    "temporary-feature",
+    "contradiction check",
+    "create_issue",
+    "recommendation",
+    "unnecessary complexity"
+  ],
+  "path": "plugins/forge/docs/criteria/review_criteria_plan.md",
+  "purpose": "Review criteria for plan documents: lists the SSOT documents to check by priority, the order of checks, and the rules for deciding recommendations, delegating norms and severity to principles.",
+  "summary": [
+    "Delegates norms and severity to principles; this file holds no judgment itself",
+    "SSOT reference table with P1/P2/P3 priorities, doc types and roles",
+    "P1 rule conformance order: plan principles, related design and requirement docs, project rules",
+    "Additive feature detection via feature_type temporary-feature in traced requirement or design docs",
+    "Plans carry no frontmatter, so its absence must not be flagged",
+    "P2 contradiction checks with exclusion of intentional differences in additive features",
+    "P3 unnecessary complexity check against spec priorities, answered Yes/No",
+    "Recommendation rules: fix, create_issue, skip",
+    "Three conditions required for create_issue"
+  ],
+  "tasks": [
+    "Reviewing a plan document (plan.json)",
+    "Choosing which reference documents to check in a plan review",
+    "Deciding fix, create_issue or skip for a plan review finding",
+    "Judging whether a plan belongs to an additive feature",
+    "Checking contradictions between a plan and requirements or design",
+    "Maintaining the review criteria documents"
+  ],
+  "title": "plan レビュー基準"
+}

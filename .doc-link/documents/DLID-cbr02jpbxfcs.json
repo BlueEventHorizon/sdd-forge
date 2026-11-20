@@ -1,0 +1,38 @@
+{
+  "content_hash": "f3c1912663945df1d3fb62cedc90313361e132b66b22228ee4b725d988a470d5",
+  "doc_link_id": "DLID-cbr02jpbxfcs",
+  "keywords": [
+    ".doc_structure.yaml",
+    "root_dirs",
+    "doc_types_map",
+    "doc_type",
+    "patterns.exclude",
+    "glob pattern",
+    "resolve_doc_structure.py",
+    "feature-based structure",
+    "plan exclusion"
+  ],
+  "path": "plugins/forge/docs/doc_structure_format.md",
+  "purpose": "Specifies the .doc_structure.yaml format that declares document locations and types for rules and specs, used by forge to resolve paths and search index targets.",
+  "summary": [
+    "Overview of the project-level config file and its consumers",
+    "File placement at the project root",
+    "Schema for rules and specs categories with root_dirs, doc_types_map, patterns",
+    "root_dirs rules and glob support for single-level and recursive matching",
+    "doc_types_map and recommended doc_type names for specs and rules",
+    "doc_types forge resolves locations from and behavior when undeclared or duplicated",
+    "patterns.exclude matching rules and exclusion of plan from the index",
+    "Version management via comment line",
+    "Samples: flat, feature-based, nested, with exclude",
+    "Consumer guide: resolve_doc_structure.py usage and path hand-off to the document search index"
+  ],
+  "tasks": [
+    "Writing or editing .doc_structure.yaml",
+    "Resolving document paths in a forge skill",
+    "Configuring search index target paths and exclusions",
+    "Adding a feature directory or doc_type",
+    "Reviewing doc structure configuration",
+    "Implementing scripts that use resolve_doc_structure"
+  ],
+  "title": ".doc_structure.yaml フォーマット仕様"
+}

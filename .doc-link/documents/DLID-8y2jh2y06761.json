@@ -1,0 +1,35 @@
+{
+  "content_hash": "343c2ddd1b8f416d48d344aa50bb0e5b2cef05dfe60c75c2ac3baeb428bae185",
+  "doc_link_id": "DLID-8y2jh2y06761",
+  "keywords": [
+    "requirements document",
+    "principles",
+    "responsibility",
+    "user perspective",
+    "stakeholders",
+    "implementation exclusion",
+    "additive development",
+    "revision",
+    "lifetime"
+  ],
+  "path": "plugins/forge/docs/requirement_principles_spec.md",
+  "purpose": "Generic principles for writing requirement documents, used when no project-specific rules exist: defines the responsibility, scope, lifetime and revision of a requirements document.",
+  "summary": [
+    "Requirements document responsibility: describe what to build from the user perspective",
+    "Readers are all stakeholders",
+    "Excluded content: implementation methods belong to design documents",
+    "Exception: already-decided matters with no choice are written concretely",
+    "Lifetime is permanent but not immutable",
+    "Revision via additive development; the additive-side requirements are current during the period",
+    "Old requirements are not edited during implementation and are revised at merge",
+    "Project-specific rules take priority over these generic principles"
+  ],
+  "tasks": [
+    "Writing a requirements document",
+    "Reviewing a requirements document",
+    "Deciding requirements versus design placement",
+    "Revising requirements through additive development",
+    "Creating requirements without project-specific rules"
+  ],
+  "title": "要件定義書 作成原則"
+}

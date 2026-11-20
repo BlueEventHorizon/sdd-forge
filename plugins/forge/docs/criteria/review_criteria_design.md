@@ -1,10 +1,14 @@
-# design レビュー基準
+---
+doc_link_id: DLID-0zyw4hj937y9
+---
+
+# design レビュー基準 DLID-nn6q8w6wjj17
 
 > SoT: [review_priorities_spec.md](../review_priorities_spec.md)
 > 重大度判定 / グレーゾーン許容範囲は委譲先 principles 側を参照すること。本ファイルは判断を持たない。
 > severity は委譲先 principles の重大度カタログから取得する ([review_priorities_spec.md](../review_priorities_spec.md) §2.2)。
 
-## 1. SSOT参照
+## 1. SSOT参照 DLID-ewtb84tz9xk9
 
 P1 で照合すべき委譲先文書一覧。各文書は「規範本体 + 重大度カタログ (拡充済み)」を保持する SoT である。複数文書間の優先順位は「プロジェクト固有 > 内蔵」とする (review_priorities_spec.md)。
 
@@ -25,7 +29,7 @@ P1 で照合すべき委譲先文書一覧。各文書は「規範本体 + 重�
 
 委譲先ルールが未整備の場合は forge 内蔵ルールへフォールバックする。`(query-db-rules: "設計レビューに関するプロジェクト固有のアーキテクチャ・設計規約")` の解決結果が 0 件の場合は P1 を内蔵 principles のみで構成する。
 
-## 2. チェック順
+## 2. チェック順 DLID-m1g06w2rhhgp
 
 種別ごとに「どの委譲先文書から先に読むか」の順序。規範本体は再掲しない:
 
@@ -38,7 +42,7 @@ P1 で照合すべき委譲先文書一覧。各文書は「規範本体 + 重�
    - **doc_status 除外規定**: target が `doc_status: not_implemented` を持つ場合 ([frontmatter_format.md](../frontmatter_format.md) §2)、同文書が前提とする「まだ実装・設計されていない依存先」との齟齬は、宣言された未完了の依存先に限り P2 矛盾扱いしない。ただし、依存先の機構が既に実装・設計済みであることが確認できる場合 (対応する設計書・実装コードの存在等)、doc_status の削除し忘れとして所見報告する (severity は [review_priorities_spec.md](../review_priorities_spec.md) の重大度カタログに従う)。`doc_status: draft` を持つ場合は、レビュー未了である旨を所見冒頭で明示したうえで通常どおりレビューする (draft は内容の完成度を免除するマーカーではなく、レビュー未了である事実の宣言に過ぎないため、P2 矛盾判定そのものは除外しない)
 3. **P3 不要な複雑化**: [spec_priorities_spec.md](../spec_priorities_spec.md) §3.4 (直接数値化禁止) / §4 (倒錯パターン) を参照し、より少ない要素で同じ目的を達成できる代替案の有無を Yes/No で判定する
 
-## 3. 判定ルール
+## 3. 判定ルール DLID-e7ps4egzqzbe
 
 | recommendation | 採用条件                                                                                                          |
 | -------------- | ----------------------------------------------------------------------------------------------------------------- |
@@ -46,7 +50,7 @@ P1 で照合すべき委譲先文書一覧。各文書は「規範本体 + 重�
 | `create_issue` | ルール未整備で発見した場合 ([review_priorities_spec.md](../review_priorities_spec.md) §4 の 3 条件をすべて満たす) |
 | `skip`         | false positive / グレーゾーン許容範囲内 (principles の許容範囲に該当)                                             |
 
-### `recommendation: create_issue` の 3 条件
+### `recommendation: create_issue` の 3 条件 DLID-4zngvb3407g1
 
 | # | 条件               | 内容                                                                                                                    |
 | - | ------------------ | ----------------------------------------------------------------------------------------------------------------------- |

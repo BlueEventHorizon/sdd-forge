@@ -1,10 +1,14 @@
-# 用語集 デフォルトフォーマット
+---
+doc_link_id: DLID-z571pg6rda7f
+---
+
+# 用語集 デフォルトフォーマット DLID-42d51easw9qm
 
 用語集のファイルの構造・ID・命名を定める。用語の命名と本文での表記は [document_style_guide.md](document_style_guide.md) §9 に従う。
 
 ---
 
-## 配置と ID
+## 配置と ID DLID-wc2vmnt3a0w3
 
 - doc_type は `glossary` とする（[doc_structure_format.md](doc_structure_format.md)）
 - 要件側の用語集は、要件定義書と同じ ID 体系で採番する。プロジェクトに要件 ID の体系が無いときは、[requirement_format.md](requirement_format.md) の要件ID カタログの `GLS` を使う
@@ -12,7 +16,7 @@
 - 採番は、`next-spec-id` スキルで行う（要件定義書・設計書と同じ）。手で番号を決めない
 - ファイル名は `{用語集 ID}_{name}_glossary.md` とする。`{name}` は英語のスネークケースで、その用語集が対象とする範囲を表す名前にする
 
-## 文書冒頭の用語集の行
+## 文書冒頭の用語集の行 DLID-e67dws213kme
 
 用語集を使う要件定義書・設計書は、タイトル行の直後に、用語集の ID を 1 行で書く。複数あるときは `、` で区切る。
 
@@ -26,7 +30,7 @@
 - ID だけの言及は、リンクを併記しなくてよい（[document_style_guide.md](document_style_guide.md) §5.1 の系統 (3)）
 - 用語集が無い文書には、この行を書かない
 
-## 本体フォーマット
+## 本体フォーマット DLID-1dx3mwg7gq3g
 
 ```markdown
 # {用語集 ID} {対象} 用語集

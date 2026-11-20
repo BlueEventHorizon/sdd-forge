@@ -1,34 +1,39 @@
 {
-  "content_hash": "31e53fa6502107892540d2b0126df4838d29dce807bcb1e6bdaf1409b6163b4a",
+  "content_hash": "f706781c884164979e48c2e55f053c92e2a2b7b96eb00c4d2433c74d7c2a561c",
   "doc_link_id": "DLID-5h7wqxcknyha",
   "keywords": [
-    "parallel agent",
+    "parallel agents",
     "output contract",
     "return value",
     "race condition",
+    "shared file write",
     "orchestrator",
-    "shared resource",
-    "intermediate file",
-    "anti-pattern"
+    "intermediate files",
+    "collector agent",
+    "anti-patterns",
+    "partial failure"
   ],
   "path": "docs/specs/forge/design/DES-022_parallel_agent_output_contract_design.md",
-  "purpose": "Design document defining an output contract for parallel agents so shared-resource write races cannot occur, by returning results as return values to the orchestrator.",
+  "purpose": "Design contract for parallel agents: return results via return value, never via shared files or intermediate files, so write race conditions cannot occur.",
   "summary": [
-    "Problem of concurrent writes to shared files by parallel agents in Claude Code",
-    "Scope: contract covers result handoff to the orchestrator, not editing by writer agents",
-    "Basic principle: agents return results as return values, not via shared resources",
+    "Problem: concurrent agent writes to a shared file cause lost updates",
+    "Claude Code constraints: independent subprocesses, no file locks, return value only",
+    "Scope: covers result handoff to the orchestrator, not write-type agents editing their own scope",
+    "Basic principle: agents return results as return values, orchestrator holds them in main context",
+    "Collector agents never write artifacts; orchestrator writes once after all complete",
     "No intermediate files or session directories for result handoff",
-    "Responsibilities of agents and orchestrator, including partial failure handling",
-    "Application example: context gathering with specs, rules, and code agents",
+    "Agent and orchestrator responsibility tables including partial failure handling",
+    "Application example: reverse-engineering code collection agent",
     "Anti-patterns: shared file writes, read-modify-write, file locks, intermediate files",
     "Checklist for designing new parallel agents"
   ],
   "tasks": [
-    "Designing parallel agents",
-    "Reviewing agent result handoff",
-    "Implementing context gathering agents",
-    "Choosing between return values and files",
-    "Avoiding race conditions in agent workflows"
+    "Designing a new parallel agent",
+    "Reviewing agent output handoff design",
+    "Implementing orchestrator skills that launch multiple agents",
+    "Writing collector agents for research or search",
+    "Handling partial agent failures in an orchestrator",
+    "Deciding whether to use intermediate files for agent results"
   ],
   "title": "DES-022 並列 agent 出力契約パターン 設計書"
 }

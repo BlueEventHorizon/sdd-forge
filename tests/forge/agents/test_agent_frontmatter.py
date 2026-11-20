@@ -13,7 +13,7 @@ fork 型 SKILL を採用せず Agent 起動に置き換える方針は `docs/rul
    - reviewer: Read, Grep, Glob, Bash（read-only、対象を自分で探索するため Grep/Glob を持つ）
    - evaluator: Read, Grep, Glob, Bash（read-only、reviewer と同じ独立調査能力を持つ）
    - rules-query-worker: Read, Grep, Glob（read-only、内蔵 ToC と文書の Read だけで完結するため Bash を持たない）
-   - plan-strategist: Read, Grep, Glob, Skill, Bash, Write, Edit, Agent, AskUserQuestion（既存の仕様書・ルールを query スキルで検索するため Skill、受け渡しの script を呼ぶため Bash、戦略書を書くため Write / Edit を持つ。query スキルは継承型で plan-strategist 自身の context で実行され、backend によっては検索用 Agent の起動や索引整備の確認を求めるため Agent / AskUserQuestion を持つ。書いてよいのは戦略書 1 ファイルだけ、Agent / AskUserQuestion は query スキルの手順が指示する場面でだけ使うという制約は agent 定義が持つ）
+   - plan-strategist: Read, Grep, Glob, Bash, Write, Edit（渡された文書と既存コードを読むため Read/Grep/Glob、受け渡しの script を呼ぶため Bash、戦略書を書くため Write / Edit を持つ。Agent / Skill / AskUserQuestion は持たない。関連する既存の仕様書の検索は呼び出し元が行って依頼に載せる（Agent の中からは利用者への確認を出せないため）。書いてよいのは戦略書 1 ファイルだけという制約は agent 定義が持つ）
    - adr-writer: Read, Grep, Glob, Bash, Write, Edit（仕様・ルール・コードを読んで吟味するため Read/Grep/Glob、受け渡しの script を呼ぶため Bash、ADR ファイルを書くため Write / Edit を持つ。Agent / Skill / AskUserQuestion は持たず、利用者に質問しない。書いてよいのは依頼の記載先の ADR ファイルだけという制約は agent 定義が持つ）
    - executor: Read, Write, Edit, Grep, Glob, Bash（タスクコンテキストと必読文書を読むため Read/Grep/Glob、実装するため Write / Edit、受け渡しの script とビルド・テストを実行するため Bash を持つ。Agent / Skill / AskUserQuestion は持たない。編集可能ファイルの allowlist は課さない。1 タスクだけを実装し、範囲外・計画書・設計書・要件定義書を変更しないという制約は agent 定義が持つ）
    - fixer: 未実装（forge は fixer を分離しない。修正の実施は review 本体が直接担う）
@@ -42,19 +42,7 @@ EXPECTED_TOOLS: dict[str, frozenset[str]] = {
     "reviewer": frozenset({"Read", "Grep", "Glob", "Bash"}),
     "evaluator": frozenset({"Read", "Grep", "Glob", "Bash"}),
     "rules-query-worker": frozenset({"Read", "Grep", "Glob"}),
-    "plan-strategist": frozenset(
-        {
-            "Read",
-            "Grep",
-            "Glob",
-            "Skill",
-            "Bash",
-            "Write",
-            "Edit",
-            "Agent",
-            "AskUserQuestion",
-        }
-    ),
+    "plan-strategist": frozenset({"Read", "Grep", "Glob", "Bash", "Write", "Edit"}),
     "adr-writer": frozenset({"Read", "Grep", "Glob", "Bash", "Write", "Edit"}),
     "executor": frozenset({"Read", "Write", "Edit", "Grep", "Glob", "Bash"}),
 }

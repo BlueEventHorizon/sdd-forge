@@ -1,0 +1,34 @@
+{
+  "content_hash": "14c4d2f32884008c8bbbb3ad5b3df428bcb5f36e6ec7d16c69848db77d26c512",
+  "doc_link_id": "DLID-jtc4qnjwbdxf",
+  "keywords": [
+    "frontmatter",
+    "feature_type",
+    "temporary-feature",
+    "feature_note",
+    "doc_status",
+    "draft",
+    "not_implemented",
+    "additive development"
+  ],
+  "path": "plugins/forge/docs/frontmatter_format.md",
+  "purpose": "Single source of truth for the frontmatter keys (feature_type, feature_note, doc_status) attached to requirements and design documents in additive feature development.",
+  "summary": [
+    "Role as the aggregated definition of frontmatter keys for additive feature operation",
+    "feature_type temporary-feature marker and its judgment criteria, including avoiding false positives",
+    "Frontmatter template for requirements documents with feature_note text",
+    "Frontmatter template for design documents with feature_note text",
+    "Plans carry no frontmatter; type is traced via traceability to requirements or design",
+    "doc_status lifecycle marker with values draft and not_implemented",
+    "doc_status target documents, notation, and removal conditions",
+    "Key naming to avoid collisions with keys written by other tools"
+  ],
+  "tasks": [
+    "Marking a requirements or design document as an additive feature",
+    "Setting or removing doc_status on a document",
+    "Judging whether a plan belongs to an additive feature",
+    "Writing or reviewing document frontmatter",
+    "Merging an additive feature after implementation"
+  ],
+  "title": "追加 feature frontmatter 定義"
+}

@@ -1,0 +1,36 @@
+{
+  "content_hash": "c84efeb1c2c4316c976d8c52a29f23b4a49c0206e1b33b4c2b726b4bd736e837",
+  "doc_link_id": "DLID-v5e2zg521ymv",
+  "keywords": [
+    "consult",
+    "review delegation",
+    "findings",
+    "consult brief",
+    "severity",
+    "report-only",
+    "recording script",
+    "bulk fix",
+    "adoption decision"
+  ],
+  "path": "plugins/forge/skills/consult/docs/review_handling.md",
+  "purpose": "Defines how the consult skill behaves when delegated from the review skill, covering received findings, display format, bulk-fix offer, brief recording via script, and the result returned to review.",
+  "summary": [
+    "Handling of received findings: topics needing user decision versus report-only items",
+    "Order by evaluator severity: critical, major, minor",
+    "Presentation state kept only in conversation context and not persisted",
+    "Consult does not execute decisions; review core executes them",
+    "Display format with two-line overview, horizontal table, and bulleted current topic",
+    "Bulk-fix offer for correct and safely fixable findings, excluding flawed premises",
+    "Recording of consult brief via Write and a recording script with exit-code handling",
+    "Secret values must not appear in the brief",
+    "Result returned to review: adoption decisions and settlement status"
+  ],
+  "tasks": [
+    "Running consult when delegated from review",
+    "Presenting review findings to the user for adoption decisions",
+    "Recording consult briefs with the recording script",
+    "Returning decisions to the review core",
+    "Modifying review-consult handoff rules"
+  ],
+  "title": "review から委譲されたときの手順"
+}

@@ -39,7 +39,7 @@ doc_link_id: DLID-540ak6kxrsxp
 
 ## 差分開発で最も難しいこと DLID-jzfkn19jkack
 
-差分開発では、既存の要件・設計に反する変更が起きる。What や How 自体を修正することになる（[additive_development_spec.md](additive_development_spec.md) §0 差分開発型）。
+差分開発では、既存の要件・設計に反する変更が起きる。What や How 自体を修正することになる（[additive_development_spec.md][additive-development-spec] §0 差分開発型）。
 
 このとき既存の実装との関係はさまざまで、それぞれ扱いが異なる。
 
@@ -62,11 +62,11 @@ doc_link_id: DLID-540ak6kxrsxp
 
 ### 対象は実装であって旧仕様の文書ではない DLID-0g84f9zw6dkw
 
-差分開発の期間中、旧仕様の要件定義書・設計書は書き換えない（[additive_development_spec.md](additive_development_spec.md) §3）。したがって戦略が突き合わせる相手は**既存の実装（コード）**である。旧仕様の文書は、実装がそうなっている理由を知るために読むに留める。
+差分開発の期間中、旧仕様の要件定義書・設計書は書き換えない（[additive_development_spec.md][additive-development-spec] §3）。したがって戦略が突き合わせる相手は**既存の実装（コード）**である。旧仕様の文書は、実装がそうなっている理由を知るために読むに留める。
 
 ## 追加開発ワークフローとの関係 DLID-x4sk8dy3bxgq
 
-実装戦略書は [additive_development_spec.md](additive_development_spec.md) と密接な関係にある。同文書が定めるのは差分開発そのものの規範であり、実装戦略書はその規範のもとで**具体的にどう進めるか**を決める。
+実装戦略書は [additive_development_spec.md][additive-development-spec] と密接な関係にある。同文書が定めるのは差分開発そのものの規範であり、実装戦略書はその規範のもとで**具体的にどう進めるか**を決める。
 
 | 参照先                          | 戦略書が受ける制約                                                                                                  |
 | ------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
@@ -74,3 +74,5 @@ doc_link_id: DLID-540ak6kxrsxp
 | §3 実装期間中に書き換えないもの | 旧仕様の文書を書き換える戦略を立てない。実装は新要件に従って修正してよい                                            |
 | §3.1 この制約は実装を縛らない   | 旧実装を残してよいのは、本 feature の外が依存していて同時に壊せない場合だけ。残すなら依存が解消された時点で削除する |
 | §4 merge タイミングと手順       | merge は文書の齟齬を解消する作業であり、コードの後始末を含まない。旧実装の削除時期を merge に紐づけない             |
+
+[additive-development-spec]: additive_development_spec.md "307dc53425f0 DLID-cyrk9xr8vcap"

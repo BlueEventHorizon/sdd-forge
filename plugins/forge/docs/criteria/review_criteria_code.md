@@ -4,9 +4,9 @@ doc_link_id: DLID-spgw9f5y6thy
 
 # code レビュー基準 DLID-txgrjrgwkxrs
 
-> SoT: [review_priorities_spec.md](../review_priorities_spec.md)
+> SoT: [review_priorities_spec.md][review-priorities-spec]
 > 重大度判定 / グレーゾーン許容範囲は委譲先 principles 側を参照すること。本ファイルは判断を持たない。
-> severity は委譲先 principles の重大度カタログから取得する ([review_priorities_spec.md](../review_priorities_spec.md) §2.2)。
+> severity は委譲先 principles の重大度カタログから取得する ([review_priorities_spec.md][review-priorities-spec] §2.2)。
 
 ## 1. SSOT参照 DLID-4deh3fzhm9x1
 
@@ -16,9 +16,9 @@ P1 で照合すべき委譲先文書一覧。各文書は「規範本体 + 重�
 | -------- | ------------------------------------------------------------------------------------------------------ | ---------- | ----------------------------------------------------------------------------------------------------------------- |
 | P1       | `(query-db-rules: "コードレビューに関するプロジェクト固有の実装・コーディング・出力フォーマット規約")` | rules      | プロジェクト固有の実装・コーディング・出力フォーマット規約 (規範本体 + 重大度カタログ、query-db-rules で動的解決) |
 | P1       | 関連設計書 (`.doc_structure.yaml` の doc_type `design`)                                                | specs      | target に対応する関連設計書 (規範本体 + 重大度カタログ)                                                           |
-| P1       | [deterministic_generation_spec.md](../deterministic_generation_spec.md)                                | principles | 決定論的な生成物の作り手 (AI が組み立てる生成物・検査の置き場・適用しない場面、規範本体 + §8 重大度カタログ)      |
+| P1       | [deterministic_generation_spec.md][deterministic-generation-spec]                                      | principles | 決定論的な生成物の作り手 (AI が組み立てる生成物・検査の置き場・適用しない場面、規範本体 + §8 重大度カタログ)      |
 | P2       | 関連設計書と実装の整合性チェック対象                                                                   | specs      | 矛盾検出 (P1 で参照した設計書 + target_files 間の相反記述を突合)                                                  |
-| P3       | [forge_anti_patterns.md](../forge_anti_patterns.md)                                                    | principles | 不要な複雑化判定 (Yes/No 判定原則、拡充後はアンチパターン重大度カタログ)                                          |
+| P3       | [forge_anti_patterns.md][forge-anti-patterns]                                                          | principles | 不要な複雑化判定 (Yes/No 判定原則、拡充後はアンチパターン重大度カタログ)                                          |
 
 委譲先ルールが未整備の場合は forge 内蔵ルールへフォールバックする。
 
@@ -28,15 +28,15 @@ P1 で照合すべき委譲先文書一覧。各文書は「規範本体 + 重�
 
 1. **P1 ルール合致**: `(query-db-rules: "コードレビューに関するプロジェクト固有の実装・コーディング・出力フォーマット規約")` → 関連設計書の順で対象コードと照合する
 2. **P2 矛盾・齟齬**: P1 で参照した設計書と target_files 間で、同一対象への相反記述 (インターフェース定義 / データモデル / 処理フロー等) を突き合わせる (不足・欠落は P2 対象外)
-3. **P3 不要な複雑化**: [forge_anti_patterns.md](../forge_anti_patterns.md) を参照し、より少ない要素で同じ目的を達成できる代替案の有無を Yes/No で判定する
+3. **P3 不要な複雑化**: [forge_anti_patterns.md][forge-anti-patterns] を参照し、より少ない要素で同じ目的を達成できる代替案の有無を Yes/No で判定する
 
 ## 3. 判定ルール DLID-xye42s3bmpb8
 
-| recommendation | 採用条件                                                                                                          |
-| -------------- | ----------------------------------------------------------------------------------------------------------------- |
-| `fix`          | 規範違反であり、修正による副作用が限定的な場合                                                                    |
-| `create_issue` | ルール未整備で発見した場合 ([review_priorities_spec.md](../review_priorities_spec.md) §4 の 3 条件をすべて満たす) |
-| `skip`         | false positive / グレーゾーン許容範囲内 (principles の許容範囲に該当)                                             |
+| recommendation | 採用条件                                                                                                    |
+| -------------- | ----------------------------------------------------------------------------------------------------------- |
+| `fix`          | 規範違反であり、修正による副作用が限定的な場合                                                              |
+| `create_issue` | ルール未整備で発見した場合 ([review_priorities_spec.md][review-priorities-spec] §4 の 3 条件をすべて満たす) |
+| `skip`         | false positive / グレーゾーン許容範囲内 (principles の許容範囲に該当)                                       |
 
 ### `recommendation: create_issue` の 3 条件 DLID-bekxrdnrhpqz
 
@@ -47,3 +47,7 @@ P1 で照合すべき委譲先文書一覧。各文書は「規範本体 + 重�
 | 3 | 明文化可能粒度     | ルールとして明文化可能な具体粒度を持ち、Issue として書き起こせる (「主観的にシンプルでない」等の評価語のみは不可)       |
 
 3 条件のいずれかが不成立の場合は `recommendation: skip` (skip_reason に該当条件不成立の理由を記載) とする。
+
+[review-priorities-spec]: ../review_priorities_spec.md "dc0c7761adf3 DLID-dcec6pr177c9"
+[deterministic-generation-spec]: ../deterministic_generation_spec.md "75383cc8c6d8 DLID-tm2m7nv23dqd"
+[forge-anti-patterns]: ../forge_anti_patterns.md "0e4a099e332f DLID-wkh7nt1wrds7"

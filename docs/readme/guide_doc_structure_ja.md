@@ -6,11 +6,11 @@
 
 forge は **Feature（フィーチャー）** 単位で文書を管理することもできる。Feature とは、関連する仕様をグループ化した開発単位。Feature なしでも動作する。
 
-| 開発パターン                           | Feature の使い方                                                |
-| -------------------------------------- | --------------------------------------------------------------- |
-| [追加開発](guide_sdd_ja.md#6-追加開発) | 既存のメイン仕様に後から追加する機能群を Feature として分割する |
-| アジャイル開発                         | イテレーションごとに Feature 単位で開発・デリバリーする         |
-| 小規模プロジェクト                     | プロジェクト全体を1つの Feature として扱ってもよい              |
+| 開発パターン               | Feature の使い方                                                |
+| -------------------------- | --------------------------------------------------------------- |
+| [追加開発][guide-sdd-ja-s] | 既存のメイン仕様に後から追加する機能群を Feature として分割する |
+| アジャイル開発             | イテレーションごとに Feature 単位で開発・デリバリーする         |
+| 小規模プロジェクト         | プロジェクト全体を1つの Feature として扱ってもよい              |
 
 Feature を使う場合、各 Feature は共通のディレクトリ構造で管理する:
 
@@ -37,7 +37,7 @@ specs/
 
 `rules` と `specs` の2カテゴリで構成され、各カテゴリに `root_dirs`（対象ディレクトリ。glob 対応）・`doc_types_map`（パス→doc_typeのマッピング）・`patterns`（検索パターン・除外設定）を持つ。Feature ごとに個別設定を追加する必要はなく、`docs/specs/*/design/` のような glob パターン1つで全 Feature を横断できる（`**` を使えばネストした Feature も一括対応する。例: `docs/specs/forge/design/` と `docs/specs/forge/review-PR/design/` の両方が自動検出される）。Feature 追加時に `.doc_structure.yaml` 自体の変更は不要で、対象ディレクトリを作成するだけで自動的に検出される。
 
-フィールドの詳細・具体的な yaml 例（シンプル構成・Feature ベース構成・ネスト Feature 構成）は [doc_structure_format.md](../../plugins/forge/docs/doc_structure_format.md) を参照。
+フィールドの詳細・具体的な yaml 例（シンプル構成・Feature ベース構成・ネスト Feature 構成）は [doc_structure_format.md][doc-structure-format] を参照。
 
 ## /forge:setup-doc-structure
 
@@ -65,4 +65,7 @@ specs/
 
 ## スキーマ仕様リファレンス
 
-詳細なフォーマット仕様は [doc_structure_format.md](../../plugins/forge/docs/doc_structure_format.md) を参照。
+詳細なフォーマット仕様は [doc_structure_format.md][doc-structure-format] を参照。
+
+[guide-sdd-ja-s]: guide_sdd_ja.md#6-追加開発
+[doc-structure-format]: ../../plugins/forge/docs/doc_structure_format.md

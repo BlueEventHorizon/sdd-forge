@@ -1,35 +1,39 @@
 {
-  "content_hash": "ea2b75f531fdd7bec7003d12371666925f5f743089993e6bd0b800030ad1af7d",
+  "content_hash": "1e2687f788a0654a657ebdc41319f5d070d6c8772a9cf52a8b3004da48367302",
   "doc_link_id": "DLID-3bmft1apetsm",
   "keywords": [
     "agent-review",
-    "reviewer agent",
+    "reviewer",
     "read-only",
     "availability check",
     "retains_context",
     "review backend",
     "fail closed",
+    "review_id",
     "non-persistence",
-    "review_id"
+    "custom Agent"
   ],
   "path": "docs/specs/agent-review/requirements/REQ-016_agent_review_backend.md",
-  "purpose": "Requirements for the agent-review backend: a dependency-free, read-only, per-round reviewer custom Agent that satisfies the review backend contract (availability check, retains_context=false).",
+  "purpose": "Requirements for the agent-review backend: a read-only, dependency-free reviewer Agent that runs one round per Agent, declares availability and retains_context=false.",
   "summary": [
-    "Background: default review must work without external tools, message DB or resident sessions",
-    "Scope: availability check, read-only reviewer Agent, retains_context declaration; excludes launching, fixing, history, fallback",
-    "FNC-1601: reviewer is read-only and may not modify files, git state, or external services",
-    "FNC-1602: a fresh reviewer Agent per round with no implicit context inheritance",
-    "FNC-1604: side-effect-free availability check of agent definition, read-only constraints, and scripts/docs",
-    "FNC-1606: no review history persistence and no resuming under the same review_id",
-    "NFR: non-persistence, no external dependencies, fail closed when unverifiable",
-    "Acceptance criteria covering distinct agents per round, tool constraints, checks, and no leftover resources"
+    "Background: default review must work without external tools, message DB, or resident sessions",
+    "Scope: availability check, read-only reviewer, retains_context=false; excludes launching, fixing, history, fallback",
+    "FNC-1601: reviewer is read-only and may only write findings through its dedicated script",
+    "FNC-1602: a fresh Agent per round, no context inherited across rounds",
+    "FNC-1604: side-effect-free availability check of definition, read-only constraints, scripts and docs",
+    "FNC-1606: no review history persisted and no resume with the same review_id",
+    "NFR-1601: non-persistence, no DB, history files, resident processes or reused sessions",
+    "NFR-1602: no external dependencies beyond the plugin and host custom Agent facility",
+    "NFR-1603: fail closed, unconfirmed availability or read-only is reported unavailable with reason",
+    "Acceptance criteria: distinct Agents per round, tool restrictions, availability reporting, no leftover resources"
   ],
   "tasks": [
-    "Implementing the agent-review backend and reviewer Agent",
-    "Reviewing or designing the review backend contract",
-    "Writing the availability check for the reviewer Agent",
-    "Restricting reviewer Agent tools and role instructions",
-    "Writing acceptance tests for agent-review"
+    "Implementing the agent-review backend",
+    "Writing or editing the reviewer Agent definition and tool constraints",
+    "Implementing the backend availability check",
+    "Reviewing the agent-review requirements or design",
+    "Designing review backend contracts (retains_context, review_id)",
+    "Writing acceptance tests for the review backend"
   ],
   "title": "REQ-016 agent-review バックエンド"
 }

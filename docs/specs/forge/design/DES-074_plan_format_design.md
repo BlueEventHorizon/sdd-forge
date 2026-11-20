@@ -6,11 +6,11 @@ doc_link_id: DLID-42wh7646hjhq
 
 プロジェクト固有の `plan_format.md` が見つからない場合に使用する汎用フォーマット。
 
-作成原則: [plan_principles_spec.md](../../../../plugins/forge/docs/plan_principles_spec.md)
+作成原則: [plan_principles_spec.md][plan-principles-spec]
 
-本文書は、計画書の形式と、複数のスキルが共有する `feature_marker.py` の並行状態判定の契約を定義する開発文書である（配布物ではない）。AI はランタイムでこの文書を読まない。計画書を消費する `start-implement` の script の契約は、[DES-088](../../start-implement/design/DES-088_start_implement_design.md) が定める。
+本文書は、計画書の形式と、複数のスキルが共有する `feature_marker.py` の並行状態判定の契約を定義する開発文書である（配布物ではない）。AI はランタイムでこの文書を読まない。計画書を消費する `start-implement` の script の契約は、[DES-088][des-088] が定める。
 
-要件: [REQ-024 実装計画書 要件定義書](../requirements/REQ-024_implementation_plan_spec.md)
+要件: [REQ-024 実装計画書 要件定義書][req-024]
 
 ## フォーマット選定理由 DLID-24jey4ez4zdd
 
@@ -31,8 +31,8 @@ doc_link_id: DLID-42wh7646hjhq
 
 トップレベルキーは `requirements_traceability` / `design_traceability` / `tasks` のみ許容する（それ以外の追加は 🟡 major 違反）。
 
-frontmatter 定義: [frontmatter_format.md](../../../../plugins/forge/docs/frontmatter_format.md) §1.3
-判定基準・旧仕様の置き換え・merge 手順: [additive_development_spec.md](../../../../plugins/forge/docs/additive_development_spec.md) §1 適用条件
+frontmatter 定義: [frontmatter_format.md][frontmatter-format] §1.3
+判定基準・旧仕様の置き換え・merge 手順: [additive_development_spec.md][additive-development-spec] §1 適用条件
 
 ---
 
@@ -118,7 +118,7 @@ frontmatter 定義: [frontmatter_format.md](../../../../plugins/forge/docs/front
 
 ## status の遷移 DLID-42csqzcr792e
 
-`status` の値は、上の表のとおりである。各値の意味は [REQ-024](../requirements/REQ-024_implementation_plan_spec.md) FNC-002 が、許される遷移と失敗の波及は [DES-088](../../start-implement/design/DES-088_start_implement_design.md) 6.3 が定める。
+`status` の値は、上の表のとおりである。各値の意味は [REQ-024][req-024] FNC-002 が、許される遷移と失敗の波及は [DES-088][des-088] 6.3 が定める。
 
 ---
 
@@ -134,7 +134,7 @@ frontmatter 定義: [frontmatter_format.md](../../../../plugins/forge/docs/front
 
 ## `feature_marker.py` の並行状態判定の契約 DLID-59s7z6h118sr
 
-要件: [REQ-025 差分開発の仕組み 要件定義書](../requirements/REQ-025_additive_development_spec.md) FNC-003（仕様の適用者への伝達）・FNC-005（識別できない場合の扱い）
+要件: [REQ-025 差分開発の仕組み 要件定義書][req-025] FNC-003（仕様の適用者への伝達）・FNC-005（識別できない場合の扱い）
 
 ### frontmatter の解析 DLID-5yq8gcm2pq9m
 
@@ -153,8 +153,15 @@ frontmatter 定義: [frontmatter_format.md](../../../../plugins/forge/docs/front
 - 対象文書を読めない
 - 先頭の `---` に対応する終端の `---` が無い
 - `feature_type` が複数回現れ、値を一意に決められない
-- `feature_type` の値が `temporary-feature` 以外である（[frontmatter_format.md](../../../../plugins/forge/docs/frontmatter_format.md) §1 は他の値を定義していない）
+- `feature_type` の値が `temporary-feature` 以外である（[frontmatter_format.md][frontmatter-format] §1 は他の値を定義していない）
 
 **キーの順序で判定結果が変わってはならない。** `frontmatter_format.md` §2.3 は `feature_type` と `doc_status` の併記を許可し、キーの順序を制約していない。`feature_note` はリスト値を持つため後続行がインデントされるが、これも `feature_type` の抽出に影響してはならない。規約が許可している書式のいずれかで解析が失敗する実装は、この契約に違反する。
 
 解析失敗は「並行状態にない」と区別する（REQ-025 FNC-005）。並行状態にあるかを判定できないまま実装へ進むと、実装者は旧仕様に従って実装しうる。呼び出し側は、判定できないとき、先へ進まずに、対象のパスと理由を伝える。
+
+[plan-principles-spec]: ../../../../plugins/forge/docs/plan_principles_spec.md "122ed8c0e2c2 DLID-t8jcg5jkb5mj"
+[des-088]: ../../start-implement/design/DES-088_start_implement_design.md "5b20e32ba921 DLID-f8gem0wa3ac4"
+[req-024]: ../requirements/REQ-024_implementation_plan_spec.md "0304d66b6d45 DLID-zehb6ge71vgb"
+[frontmatter-format]: ../../../../plugins/forge/docs/frontmatter_format.md "19cf661699b0 DLID-jtc4qnjwbdxf"
+[additive-development-spec]: ../../../../plugins/forge/docs/additive_development_spec.md "307dc53425f0 DLID-cyrk9xr8vcap"
+[req-025]: ../requirements/REQ-025_additive_development_spec.md "1d8889eae72e DLID-8aaxgj88j28q"

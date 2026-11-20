@@ -10,10 +10,10 @@ SKILL（呼び出し側）とカスタム Agent の間で、**1 回の処理の�
 
 ## 適用範囲 DLID-t3gxsypygs95
 
-| 対象                                                    | 扱う文書                                                       |
-| ------------------------------------------------------- | -------------------------------------------------------------- |
-| 処理の間だけ存在し、終われば消えるデータ（依頼・結果）  | **本文書**                                                     |
-| 恒久的に置かれている文書（内蔵 docs・プロジェクト文書） | [forge_doc_access_principle.md](forge_doc_access_principle.md) |
+| 対象                                                    | 扱う文書                                                    |
+| ------------------------------------------------------- | ----------------------------------------------------------- |
+| 処理の間だけ存在し、終われば消えるデータ（依頼・結果）  | **本文書**                                                  |
+| 恒久的に置かれている文書（内蔵 docs・プロジェクト文書） | [forge_doc_access_principle.md][forge-doc-access-principle] |
 
 両者はライフサイクルが違う。forge_doc_access_principle.md が「ファイル経由の受け渡しは採用しない」とするのは恒久的な文書への到達経路のことであり、本文書が定める一過性のデータには当たらない。
 
@@ -23,7 +23,7 @@ prompt と return value に全文を載せると、次のことが起こる。
 
 - **大きくなると破綻する。** 渡す側も受ける側も、全文を自分のコンテキストに抱える
 - **AI が中継することになる。** 中継のたびに要約・欠落・書き換えが入りうる。受け取った側は、それが元のままかを確かめる手段を持たない
-- **形が決まらない。** AI が組み立てた出力は、受け取る側に検査を要求する（[deterministic_generation_spec.md](../../plugins/forge/docs/deterministic_generation_spec.md)）
+- **形が決まらない。** AI が組み立てた出力は、受け取る側に検査を要求する（[deterministic_generation_spec.md][deterministic-generation-spec]）
 
 ## 基本原則 DLID-cjvev6zzedq8
 
@@ -75,7 +75,7 @@ JSON を直接読む以上、読む側は各フィールドの意味を事前に
 
 - **正常時にだけ印が残る形にする。** 異常時に何かを書かせる形では、落ちた・黙って終えた・起動に失敗した場合を取りこぼす。終了の値が取れないことを異常として扱えば、それらがすべて収束する
 - 終了の値は文字列とし、正常は `"0"` とする。エラー値は閉じた集合とし、定義に無い値は異常として扱う
-- 何をエラー値にするかは [error_classification_spec.md](../../plugins/forge/docs/error_classification_spec.md) に従う。挙げるべきものが無ければ、集合は空でよい
+- 何をエラー値にするかは [error_classification_spec.md][error-classification-spec] に従う。挙げるべきものが無ければ、集合は空でよい
 - 成否の判定は script が行う。AI に終了の値を確かめさせて進退を決めさせない
 
 ### 形式の検証を置かない DLID-b54vn0nbz504
@@ -103,3 +103,7 @@ script が組み立てる以上、形が壊れるのはバグである。実行�
 - 依頼と結果のフィールドと、その意味
 - エラー値の集合
 - 受け渡し以外の振る舞い（採番・終端条件等）
+
+[forge-doc-access-principle]: forge_doc_access_principle.md "0dffb8776564 DLID-1t0vpykg6nq6"
+[deterministic-generation-spec]: ../../plugins/forge/docs/deterministic_generation_spec.md "75383cc8c6d8 DLID-tm2m7nv23dqd"
+[error-classification-spec]: ../../plugins/forge/docs/error_classification_spec.md "04397ae80f5c DLID-5ykqs19cdbks"

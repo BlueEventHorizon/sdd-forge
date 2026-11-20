@@ -8,7 +8,7 @@ doc_link_id: DLID-5vrs9fnet7de
 
 review 機構は、成果物の誤りを正しく効率よく見つけて直し、プロジェクトを正しく完成させるためにある。本書の共通契約により、所見と評価が欠けず書き換わらずに届き、利用者は取り違えの無い結果をもとに誤りを直せる。
 
-本書には、通常は設計書に属する具体的な記述（JSON のフィールド名・型等）を含む。これは、既に決定済みで選択の余地が無い事項を要件定義書に具体的に書く原則（[spec_design_boundary_spec.md](../../../../plugins/forge/docs/spec_design_boundary_spec.md) §2）に基づく。
+本書には、通常は設計書に属する具体的な記述（JSON のフィールド名・型等）を含む。これは、既に決定済みで選択の余地が無い事項を要件定義書に具体的に書く原則（[spec_design_boundary_spec.md][spec-design-boundary-spec] §2）に基づく。
 
 **本書は、review 機構を成り立たせる共通の契約を定める。** レビューの進み方、reviewer/evaluator agent との受け渡し、finding_id の採番、書き出しと終了の値、review 本体の仕事、そして本体と agent の間を行き来するデータの構造である。
 
@@ -18,11 +18,11 @@ review 機構は、成果物の誤りを正しく効率よく見つけて直し�
 
 **本書は、基本の仕組みと、reviewer がカスタム Agent として毎ラウンド新しく起こされ、前ラウンドを覚えていない場合の流れを定める。** ラウンド間でコンテキストを永続化するレビューを使う場合は分岐し（FNC-316）、分岐した先の中身は別の要件定義書が定める。evaluator は常に毎ラウンド新しく起こされる。
 
-対象は review 本体（[review/SKILL.md](../../../../plugins/forge/skills/review/SKILL.md)）と、本体が起動する reviewer/evaluator agent（[reviewer.md](../../../../plugins/forge/agents/reviewer.md)・[evaluator.md](../../../../plugins/forge/agents/evaluator.md)）である。
+対象は review 本体（[review/SKILL.md][review-skill]）と、本体が起動する reviewer/evaluator agent（[reviewer.md][reviewer]・[evaluator.md][evaluator]）である。
 
 ## 対象システムの性質 DLID-yq15sa6f1djc
 
-開発者が自分の端末で使う review 機構の一部であり、外部公開・本番運用・個人情報の保持を伴わない（[spec_priorities_spec.md](../../../../plugins/forge/docs/spec_priorities_spec.md) §10.1 の「上記いずれにも該当しない」に該当する）。性能・可用性・運用性の定量目標は持たない。
+開発者が自分の端末で使う review 機構の一部であり、外部公開・本番運用・個人情報の保持を伴わない（[spec_priorities_spec.md][spec-priorities-spec] §10.1 の「上記いずれにも該当しない」に該当する）。性能・可用性・運用性の定量目標は持たない。
 
 ## 用語 DLID-gn3j29xp8rdv
 
@@ -46,7 +46,7 @@ review 機構は、成果物の誤りを正しく効率よく見つけて直し�
 
 ## レビューの進み方 DLID-gymsjr1k016b
 
-**この流れは既に決まっており、選択の余地が無い。** したがって要件定義書に具体的に書く（[spec_design_boundary_spec.md](../../../../plugins/forge/docs/spec_design_boundary_spec.md) §2）。抽象化すると、決まっていることが決まっていないことになる。
+**この流れは既に決まっており、選択の余地が無い。** したがって要件定義書に具体的に書く（[spec_design_boundary_spec.md][spec-design-boundary-spec] §2）。抽象化すると、決まっていることが決まっていないことになる。
 
 ```mermaid
 sequenceDiagram
@@ -112,7 +112,7 @@ sequenceDiagram
 
 ### 1. 受け渡し DLID-n6haqpvdkytg
 
-**本節と「3. 書き出しと終了の値」は、[forge_agent_data_exchange_rules.md](../../../rules/forge_agent_data_exchange_rules.md) が定める受け渡しの型を review に当てはめたものである。** 型そのもの（識別値だけを運ぶ・script が書く・パスを得て直接読む・終了の値で成否を表す）はそちらが定め、本書は review における具体（`review_id` と `round_number`・依頼と結果の構成・採番）を定める。
+**本節と「3. 書き出しと終了の値」は、[forge_agent_data_exchange_rules.md][forge-agent-data-exchange-rules] が定める受け渡しの型を review に当てはめたものである。** 型そのもの（識別値だけを運ぶ・script が書く・パスを得て直接読む・終了の値で成否を表す）はそちらが定め、本書は review における具体（`review_id` と `round_number`・依頼と結果の構成・採番）を定める。
 
 #### FNC-302: 入力は `review_id` と `round_number` で受け渡す [MANDATORY] DLID-tgyfygv11b5m
 
@@ -125,7 +125,7 @@ sequenceDiagram
 - `round_number` は最初を `1` とし、次ラウンドへ進むたびに script が 1 増やした値を返す。AI は返された値をそのまま運び、自ら数えない
 - レビューが終わったら、そのレビューのために保持したものをすべて削除する。依頼・所見・評価のいずれも残さない
 
-**本体と agent の間で AI が運ぶ識別値は `review_id` と `round_number` に限る。** JSON 本文を script の標準出力へ載せたり、AI が相手へ書き写したりしない。置き場は 2 つの値から script が決め、AI は返された絶対パスをその場のファイル読み込みにだけ使う（[deterministic_generation_spec.md](../../../../plugins/forge/docs/deterministic_generation_spec.md) §5）。
+**本体と agent の間で AI が運ぶ識別値は `review_id` と `round_number` に限る。** JSON 本文を script の標準出力へ載せたり、AI が相手へ書き写したりしない。置き場は 2 つの値から script が決め、AI は返された絶対パスをその場のファイル読み込みにだけ使う（[deterministic_generation_spec.md][deterministic-generation-spec] §5）。
 
 | 性質         | 内容                                                                                 |
 | ------------ | ------------------------------------------------------------------------------------ |
@@ -141,7 +141,7 @@ sequenceDiagram
 
 依頼は、任意項目を含む組み立てが終わるまで未公開の下書きとして保持し、完成後に 1 回の操作で公開する。パス解決 script は公開済みのものだけを返し、組み立て途中の JSON を agent に読ませない。
 
-したがって**形式の検証を置かない**。形が壊れるのはバグであり、実行時の検査で受け止める対象ではない（[deterministic_generation_spec.md](../../../../plugins/forge/docs/deterministic_generation_spec.md) §3・§4）。同文書 §6.1 が「AI の応答を受け取る側に検査を置く」とする例外は、**代わりに組み立てられる実行系が存在しない**ことを根拠としており、script が組み立てる本設計では成立しない。公開済みかの確認は形式検証ではなく、読み出してよい状態かの判定である。
+したがって**形式の検証を置かない**。形が壊れるのはバグであり、実行時の検査で受け止める対象ではない（[deterministic_generation_spec.md][deterministic-generation-spec] §3・§4）。同文書 §6.1 が「AI の応答を受け取る側に検査を置く」とする例外は、**代わりに組み立てられる実行系が存在しない**ことを根拠としており、script が組み立てる本設計では成立しない。公開済みかの確認は形式検証ではなく、読み出してよい状態かの判定である。
 
 #### FNC-304: 値は変形せずに受け渡される DLID-q0ssnejpxx6r
 
@@ -206,13 +206,13 @@ agent は書き出し終えたら、**終了の値を渡す**。終了の値は�
 
 **書けない異常終了は、終了の値が取れないことで表される。** 異常時に何かを書かせる形では、書けない異常（落ちた・黙って終えた・起動に失敗した）を取りこぼす。正常時にだけ印が残る形なら、それらがすべて「終了の値が取れない」に収束する。
 
-**エラーの感知は script が行う。** 結果を入力にする script が終了の値を読み、`"0"` でなければ失敗して何も書かない。そのための状態を自ら持たず、JSON 本文も返さない。終了の値を AI に確かめさせ、その結果で進退を決めさせない——判定材料は終了の値だけであり、AI の判断を要しない（[deterministic_generation_spec.md](../../../../plugins/forge/docs/deterministic_generation_spec.md) §5）。
+**エラーの感知は script が行う。** 結果を入力にする script が終了の値を読み、`"0"` でなければ失敗して何も書かない。そのための状態を自ら持たず、JSON 本文も返さない。終了の値を AI に確かめさせ、その結果で進退を決めさせない——判定材料は終了の値だけであり、AI の判断を要しない（[deterministic_generation_spec.md][deterministic-generation-spec] §5）。
 
 終了の値は**文字列**とする。正常終了は `"0"`、エラーはそれ以外の定義済みの値である。同じフィールドに数値と文字列が混在すると、受け取る側が型で分岐することになる。
 
 エラー値は**閉じた集合**とする。定義に無い値は、書けない異常終了と同じ扱いとする（未知の値を正常として通さない）。**どの値を持つかは、それを挙げる agent の要件定義書が定める。** 自覚できる失敗は agent ごとに異なるためである。**集合が空でもよい**——挙げるべきものが無ければ、その agent の失敗はすべて書けない異常終了として現れる。
 
-**何をエラー値とするかは [error_classification_spec.md](../../../../plugins/forge/docs/error_classification_spec.md) が定める。** 値を与えるのは、受け取る側の振る舞いが変わるエラーだけである。原因（バグ・障害）ごとの値や、判定できるものには、値を与えない。
+**何をエラー値とするかは [error_classification_spec.md][error-classification-spec] が定める。** 値を与えるのは、受け取る側の振る舞いが変わるエラーだけである。原因（バグ・障害）ごとの値や、判定できるものには、値を与えない。
 
 - **エラー終了した場合、それまでに書かれたものを後続の工程で使わない。** 結果が不完全であるため。利用者への報告に用いることは妨げない
 - **正常に終えたのに終了の値を書き忘れた場合も、書けない異常終了として扱う。** 正しい結果が異常として扱われることはあるが、異常が正常として通るよりは安全である
@@ -430,7 +430,7 @@ evaluator の結果の `evaluations` の要素である（DM-305）。
 
 **severity の値**
 
-`critical` / `major` / `minor` の 3 つである。**どれを付けるかは書く側の主観ではなく、その所見が違反している規範文書の重大度カタログが決める**（[review_priorities_spec.md](../../../../plugins/forge/docs/review_priorities_spec.md) §2.2）。カタログから転記し、推測で割り当てない。
+`critical` / `major` / `minor` の 3 つである。**どれを付けるかは書く側の主観ではなく、その所見が違反している規範文書の重大度カタログが決める**（[review_priorities_spec.md][review-priorities-spec] §2.2）。カタログから転記し、推測で割り当てない。
 
 **confidence の値**
 
@@ -472,3 +472,13 @@ evaluator の結果の `evaluations` の要素である（DM-305）。
 したがって**修正する側は、対象を読み直して位置を確定してから適用する**。行番号は「どこの話か」を伝えるためのものであり、修正箇所を機械的に決めるための座標ではない。
 
 利用者への提示で長くなる点は、表示のときに短く出せば足りる。保持する値の問題ではない。
+
+[spec-design-boundary-spec]: ../../../../plugins/forge/docs/spec_design_boundary_spec.md "4e2a4cd68a8a DLID-h9h90g9wcy8f"
+[review-skill]: ../../../../plugins/forge/skills/review/SKILL.md
+[reviewer]: ../../../../plugins/forge/agents/reviewer.md
+[evaluator]: ../../../../plugins/forge/agents/evaluator.md
+[spec-priorities-spec]: ../../../../plugins/forge/docs/spec_priorities_spec.md "f8233c87c564 DLID-f9ny9e932trv"
+[forge-agent-data-exchange-rules]: ../../../rules/forge_agent_data_exchange_rules.md "ad12d06f3966 DLID-7zh3q09p2acs"
+[deterministic-generation-spec]: ../../../../plugins/forge/docs/deterministic_generation_spec.md "75383cc8c6d8 DLID-tm2m7nv23dqd"
+[error-classification-spec]: ../../../../plugins/forge/docs/error_classification_spec.md "04397ae80f5c DLID-5ykqs19cdbks"
+[review-priorities-spec]: ../../../../plugins/forge/docs/review_priorities_spec.md "2822ed686d56 DLID-dcec6pr177c9"

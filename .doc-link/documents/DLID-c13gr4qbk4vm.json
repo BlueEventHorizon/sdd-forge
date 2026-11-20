@@ -1,31 +1,33 @@
 {
-  "content_hash": "ce1132c700d0106d1dee1c37b90252939b0f5d71a04405438b92efe283b50ea3",
+  "content_hash": "1abf0122bdeb0f4c39c78385bd4943cce5677d26fa34b21ea891cbf9eac2cd6c",
   "doc_link_id": "DLID-c13gr4qbk4vm",
   "keywords": [
     "requirements document",
     "default format",
-    "requirement ID",
-    "error cases",
-    "additive feature",
+    "requirement ID catalog",
     "temporary-feature",
     "frontmatter",
-    "severity catalog"
+    "error cases",
+    "severity",
+    "open items",
+    "template"
   ],
   "path": "plugins/forge/docs/requirement_format.md",
-  "purpose": "Default requirements document format used when no project-specific format exists: frontmatter for additive features, requirement ID catalog, body template, error case notation, and severity catalog.",
+  "purpose": "Default requirements document format used when no project-specific format exists: frontmatter for additive features, requirement ID catalog, body template, error case rules, and severity catalog.",
   "summary": [
-    "Frontmatter rule for additive-feature requirements documents (feature_type: temporary-feature) and when it applies",
-    "Requirement ID prefix catalog (APP, SCR, FNC, BL, DM, API, NFR, SEC, ERR and others) with usage",
-    "Body template: title, glossary, overview, preconditions, requirement list, error cases, open items",
-    "How to write error cases: classification as recoverable or unrecoverable, recovery means, and user reporting",
-    "Severity catalog for violations, as the source of truth for review severity"
+    "Frontmatter required for additive (temporary-feature) requirement documents",
+    "Requirement ID prefix catalog such as FNC, NFR, SEC, ERR and GLS",
+    "Body template: title, glossary line, overview, preconditions, requirement list, error cases, open items",
+    "Error case table with classification and recovery or reporting",
+    "Guidance on writing error cases following the error classification spec",
+    "Severity catalog for the additive feature frontmatter violation"
   ],
   "tasks": [
     "Creating a requirements document",
     "Reviewing a requirements document",
-    "Choosing requirement ID prefixes",
+    "Choosing requirement IDs",
     "Writing error cases in requirements",
-    "Deciding on additive feature frontmatter"
+    "Deciding additive feature frontmatter"
   ],
   "title": "要件定義書 デフォルトフォーマット"
 }

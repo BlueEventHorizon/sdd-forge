@@ -20,12 +20,12 @@ ADR を正しく書くには、作るかどうかの判定、仕様・ルール�
 
 ### 1.1 対象システムの性質 DLID-jgcjataqadk4
 
-forge プラグイン内部の文書運用であり、外部公開・本番運用・個人情報の保持を伴わない開発支援ツール相当のスコープである（[spec_priorities_spec.md](../../../../plugins/forge/docs/spec_priorities_spec.md) §10.1 の「上記いずれにも該当しない」に該当する）。
+forge プラグイン内部の文書運用であり、外部公開・本番運用・個人情報の保持を伴わない開発支援ツール相当のスコープである（[spec_priorities_spec.md][spec-priorities-spec] §10.1 の「上記いずれにも該当しない」に該当する）。
 
 ## 2. 前提条件 DLID-b90cfdhy5nae
 
-- ADR が何であり、どんなときに作るかは、規範文書が定める（[adr_principles_spec.md](../../../../plugins/forge/docs/adr_principles_spec.md)）
-- 文書の配置は `.doc_structure.yaml` が宣言する（[REQ-028 文書体系 要件定義書](../../forge/requirements/REQ-028_document_system.md)）
+- ADR が何であり、どんなときに作るかは、規範文書が定める（[adr_principles_spec.md][adr-principles-spec]）
+- 文書の配置は `.doc_structure.yaml` が宣言する（[REQ-028 文書体系 要件定義書][req-028]）
 - 新規の文書 ID は採番スキルで決める。手動で決めない（同 FNC-003）
 
 ## 3. 用語 DLID-714c9735pmkg
@@ -169,3 +169,7 @@ ADR ライターが最後まで終えられなかった場合に、成功とし�
 ## 6. 未確定事項 DLID-9jw9pnhce68a
 
 該当なし。
+
+[spec-priorities-spec]: ../../../../plugins/forge/docs/spec_priorities_spec.md "f8233c87c564 DLID-f9ny9e932trv"
+[adr-principles-spec]: ../../../../plugins/forge/docs/adr_principles_spec.md "c6de50f76bc5 DLID-45wzpggz1set"
+[req-028]: ../../forge/requirements/REQ-028_document_system.md "52bc13fba837 DLID-3c038need73s"

@@ -1,37 +1,39 @@
 {
-  "content_hash": "6066105ac8ad7c760f0f8e1b5e36f7dfc19ed701d581d0bee5d8cb112df65539",
+  "content_hash": "c93dadeb6dc40e0a246e717e442b966ea7bdb917b4d644cd07703843b2690357",
   "doc_link_id": "DLID-s1ds8dcyfn7p",
   "keywords": [
     "orchestrator",
+    "create skills",
     "context gathering",
     "start-design",
     "start-plan",
     "start-requirements",
-    "query-db-rules",
     "query-db-specs",
-    "code collection agent",
-    "failure handling",
-    "no session directory"
+    "query-db-rules",
+    "return value",
+    "failure handling"
   ],
   "path": "docs/specs/forge/design/DES-010_create_skills_orchestrator_design.md",
-  "purpose": "Design document defining how start-design, start-plan and start-requirements are structured as orchestrators with a shared context-gathering framework and per-skill collection rules.",
+  "purpose": "Design of the orchestrator pattern for start-design, start-plan and start-requirements skills, including the shared context-gathering framework, responsibility split, failure handling and per-skill collection matrices.",
   "summary": [
-    "Overview of the orchestrator pattern shared by the three create skills",
-    "Orchestrator structure and responsibility split between main context, document search, code-collection agent, review and post-processing",
-    "Rationale for running document authoring in the main context because of user dialogue",
-    "Common context-gathering framework: document search via query-db skills called directly, code exploration via a general-purpose agent",
-    "Collection result handoff via return values with no session directory, and inline prompt template for the code agent",
-    "Failure handling: stop and report on search failure, skipped search or agent error; zero results is valid",
-    "Per-skill design for start-design inputs, start-plan phases and collection matrix, start-requirements agent matrix",
-    "Reverse-engineering collection sequence diagram",
-    "Existing components used and the reason for not using sessions"
+    "Overview of orchestrator-pattern construction for three create-style skills",
+    "Orchestrator structure diagram for start-design",
+    "Responsibility split between orchestrator, document search, code-collection agent, authoring, AI review and post-processing",
+    "Shared context-gathering framework: document search via query-db skills in main context, code exploration via general-purpose agent",
+    "Result handoff via return values without session directories, and inline prompt templates for agents",
+    "Collection order and integration sequence diagram",
+    "Failure handling: stop and report on search failure, not-performed search or agent error; zero results are valid",
+    "Per-skill design: start-design inputs, start-plan phases and matrix, start-requirements agent matrix and reverse-engineering sequence",
+    "Existing components reused by the design",
+    "Rationale for not using session directories"
   ],
   "tasks": [
-    "Designing or modifying the start-design, start-plan or start-requirements orchestrators",
-    "Changing context gathering behavior or search skill invocation",
-    "Defining failure handling for document search in skills",
-    "Reviewing create-skill design documents for consistency",
-    "Writing or editing SKILL.md for create-style skills"
+    "Designing or modifying start-design, start-plan or start-requirements skills",
+    "Implementing context gathering in create-style skills",
+    "Deciding where document search versus code exploration runs",
+    "Defining agent prompt templates and return-value contracts",
+    "Handling collection failures in orchestrators",
+    "Reviewing orchestrator-pattern design documents"
   ],
   "title": "DES-010 create-* スキル オーケストレータ化設計書"
 }

@@ -19,17 +19,17 @@ doc_link_id: DLID-1585cw3yt8pa
 | 実装戦略の策定 | カスタム Agent `forge:plan-strategist`（役割・制約・手順・出力を 1 ファイルで持つ） |
 | AIレビュー     | `/forge:review`                                                                     |
 
-要件定義書・設計書・ルールの収集は Agent に委譲せず、オーケストレータが検索スキルを直接呼ぶ（[DES-010](DES-010_create_skills_orchestrator_design.md) §3.1）。
+要件定義書・設計書・ルールの収集は Agent に委譲せず、オーケストレータが検索スキルを直接呼ぶ（[DES-010][des-010] §3.1）。
 
 実装戦略の策定をカスタム Agent とするのは、手順と制約を Agent の定義に固定するためである。
 
-この Agent は、依頼に挙がった要件定義書・設計書に加えて、**関連する既存の仕様書と既存コードを読む**。既存の仕様とコードを読まなければ戦略は立てられないためである。関連する既存の仕様書の検索は Agent が行わず、オーケストレータが Phase 2 で行って依頼に載せる。検索の途中で利用者への確認（索引の更新など）が要ることがあり、Agent の中からは確認を出せないためである（[DES-010](DES-010_create_skills_orchestrator_design.md) §3.1）。
+この Agent は、依頼に挙がった要件定義書・設計書に加えて、**関連する既存の仕様書と既存コードを読む**。既存の仕様とコードを読まなければ戦略は立てられないためである。関連する既存の仕様書の検索は Agent が行わず、オーケストレータが Phase 2 で行って依頼に載せる。検索の途中で利用者への確認（索引の更新など）が要ることがあり、Agent の中からは確認を出せないためである（[DES-010][des-010] §3.1）。
 
-差分開発で既存実装と旧仕様を読むが、実装期間中は旧仕様を書き換えてはならない（[additive_development_spec.md](../../../../plugins/forge/docs/additive_development_spec.md) §3）。Agent が書いてよいのは依頼が指す戦略書 1 ファイルだけであり、仕様書・コードの書き換えは制約として禁じる。
+差分開発で既存実装と旧仕様を読むが、実装期間中は旧仕様を書き換えてはならない（[additive_development_spec.md][additive-development-spec] §3）。Agent が書いてよいのは依頼が指す戦略書 1 ファイルだけであり、仕様書・コードの書き換えは制約として禁じる。
 
 ### Agent との受け渡し DLID-mzg8wps2vabt
 
-受け渡しは [forge_agent_data_exchange_rules.md](../../../rules/forge_agent_data_exchange_rules.md) に従う。戦略書は大きくなりうるため、依頼の中身も戦略書の本文も prompt / return value に載せない。
+受け渡しは [forge_agent_data_exchange_rules.md][forge-agent-data-exchange-rules] に従う。戦略書は大きくなりうるため、依頼の中身も戦略書の本文も prompt / return value に載せない。
 
 | 本書が決める事項 | 内容                                                                                                                                                                                                                                 |
 | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -113,7 +113,7 @@ flowchart TD
 
 **読み込む defaults:**
 
-- [plan_principles_spec.md](../../../../plugins/forge/docs/plan_principles_spec.md) — 計画書作成原則ガイド
+- [plan_principles_spec.md][plan-principles-spec] — 計画書作成原則ガイド
 
 ### Phase 1: コンテキスト収集 [MANDATORY] DLID-hj1350cj4mab
 
@@ -126,11 +126,11 @@ flowchart TD
 
 ### Phase 2: 文書の読み込み DLID-6haar131n8qv
 
-| Step | 内容                                                                                                                                                                                                                                                              | 実行者       |
-| ---- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ |
-| 2.1  | 仕様書の検索結果 → 要件定義書・設計書を Read（設計書が無ければ利用者に手動指定してもらう。指定できなければ中止）。計画書ルールの検索結果 → プロジェクト固有ルールを Read                                                                                          | orchestrator |
-| 2.2  | 読み込んだ設計書・要件定義書の一時マーカー（`feature_type: temporary-feature`）を `feature_marker.py` で判定する。追加開発なら、追加開発の規範文書を Read する。引数では指定しない                                                                                | orchestrator |
-| 2.3  | `/forge:query-db-specs` で、関連する既存の仕様書（追加開発では旧仕様、型を問わず依存・接続する機能の仕様）を検索する。当該 feature の文書は除く。失敗時・検索が行われなかったときは後続へ進まない（[DES-010](DES-010_create_skills_orchestrator_design.md) §3.5） | orchestrator |
+| Step | 内容                                                                                                                                                                                                                         | 実行者       |
+| ---- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ |
+| 2.1  | 仕様書の検索結果 → 要件定義書・設計書を Read（設計書が無ければ利用者に手動指定してもらう。指定できなければ中止）。計画書ルールの検索結果 → プロジェクト固有ルールを Read                                                     | orchestrator |
+| 2.2  | 読み込んだ設計書・要件定義書の一時マーカー（`feature_type: temporary-feature`）を `feature_marker.py` で判定する。追加開発なら、追加開発の規範文書を Read する。引数では指定しない                                           | orchestrator |
+| 2.3  | `/forge:query-db-specs` で、関連する既存の仕様書（追加開発では旧仕様、型を問わず依存・接続する機能の仕様）を検索する。当該 feature の文書は除く。失敗時・検索が行われなかったときは後続へ進まない（[DES-010][des-010] §3.5） | orchestrator |
 
 ### Phase 3: 実装戦略の策定 [MANDATORY] DLID-dnrsdv26yzjb
 
@@ -220,11 +220,20 @@ flowchart TD
 
 ## 6. 関連ファイル DLID-n1396f9y4n1k
 
-| ファイル                                                                                  | 説明                                         |
-| ----------------------------------------------------------------------------------------- | -------------------------------------------- |
-| [start-plan SKILL.md](../../../../plugins/forge/skills/start-plan/SKILL.md)               | スキル仕様                                   |
-| [plan-strategist.md](../../../../plugins/forge/agents/plan-strategist.md)                 | 実装戦略 Agent の役割・制約・策定手順・出力  |
-| [strategy_exchange.py](../../../../plugins/forge/scripts/plan/strategy_exchange.py)       | 実装戦略の依頼と終了の値の受け渡し           |
-| [strategy_principles_spec.md](../../../../plugins/forge/docs/strategy_principles_spec.md) | 実装戦略書の定義と原則                       |
-| [DES-074](DES-074_plan_format_design.md)                                                  | 計画書 script 実装契約（`write_plan.py` 等） |
-| [plan_principles_spec.md](../../../../plugins/forge/docs/plan_principles_spec.md)         | 計画書作成原則ガイド                         |
+| ファイル                                                                            | 説明                                         |
+| ----------------------------------------------------------------------------------- | -------------------------------------------- |
+| [start-plan SKILL.md][start-plan-skill]                                             | スキル仕様                                   |
+| [plan-strategist.md][plan-strategist]                                               | 実装戦略 Agent の役割・制約・策定手順・出力  |
+| [strategy_exchange.py](../../../../plugins/forge/scripts/plan/strategy_exchange.py) | 実装戦略の依頼と終了の値の受け渡し           |
+| [strategy_principles_spec.md][strategy-principles-spec]                             | 実装戦略書の定義と原則                       |
+| [DES-074][des-074]                                                                  | 計画書 script 実装契約（`write_plan.py` 等） |
+| [plan_principles_spec.md][plan-principles-spec]                                     | 計画書作成原則ガイド                         |
+
+[des-010]: DES-010_create_skills_orchestrator_design.md "c93dadeb6dc4 DLID-s1ds8dcyfn7p"
+[additive-development-spec]: ../../../../plugins/forge/docs/additive_development_spec.md "307dc53425f0 DLID-cyrk9xr8vcap"
+[forge-agent-data-exchange-rules]: ../../../rules/forge_agent_data_exchange_rules.md "ad12d06f3966 DLID-7zh3q09p2acs"
+[plan-principles-spec]: ../../../../plugins/forge/docs/plan_principles_spec.md "122ed8c0e2c2 DLID-t8jcg5jkb5mj"
+[start-plan-skill]: ../../../../plugins/forge/skills/start-plan/SKILL.md
+[plan-strategist]: ../../../../plugins/forge/agents/plan-strategist.md
+[strategy-principles-spec]: ../../../../plugins/forge/docs/strategy_principles_spec.md "e1b25ede799d DLID-540ak6kxrsxp"
+[des-074]: DES-074_plan_format_design.md "b6a1775c9364 DLID-42wh7646hjhq"

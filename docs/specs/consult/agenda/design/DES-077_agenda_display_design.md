@@ -6,13 +6,13 @@ doc_link_id: DLID-8s8p9ah1hyry
 
 ## 1. 概要 DLID-j5ckxcbfs60h
 
-agenda:REQ-021 が定める表示層（`agenda_render.py`）の設計。データ保存層・状態遷移・CLI 設計は親設計書 [DES-075](DES-075_agenda_mechanism_design.md)（agenda 機構全体。agenda:REQ-019 / consult:REQ-017 も対応）が持つ。本文書は[DES-075](DES-075_agenda_mechanism_design.md) §8 から分離した（表示層の実装詳細が量的に増え、単一ファイルが肥大化したため。design_principles_spec.md「階層構造ガイドライン」）。
+agenda:REQ-021 が定める表示層（`agenda_render.py`）の設計。データ保存層・状態遷移・CLI 設計は親設計書 [DES-075][des-075]（agenda 機構全体。agenda:REQ-019 / consult:REQ-017 も対応）が持つ。本文書は[DES-075][des-075] §8 から分離した（表示層の実装詳細が量的に増え、単一ファイルが肥大化したため。design_principles_spec.md「階層構造ガイドライン」）。
 
 ## 2. 生成形式と初回表示 DLID-gsa241gvajgp
 
 ### 2.1 HTML の採用理由 DLID-ckyqfkz34eb2
 
-HTML を採用する（識別子からの直接到達（FNC-005）をアンカーリンク `#item-01` で実現できる。[consult:REQ-017](../../requirements/REQ-017_consult_skill.md) §1.2 が示す 3 つの理由——大量情報の整理・番号指定ジャンプ・コンソールノイズからの分離——のうち後 2 つは HTML でのみ満たせる）。
+HTML を採用する（識別子からの直接到達（FNC-005）をアンカーリンク `#item-01` で実現できる。[consult:REQ-017][req-017] §1.2 が示す 3 つの理由——大量情報の整理・番号指定ジャンプ・コンソールノイズからの分離——のうち後 2 つは HTML でのみ満たせる）。
 
 ### 2.2 初回表示のトリガー（`open` コマンド） DLID-ybvr5jsha2k0
 
@@ -73,7 +73,7 @@ HTML を採用する（識別子からの直接到達（FNC-005）をアンカ�
 - きつい原色は避ける（利用者の要望）
 - 具体的な配色の値（色コード）は本設計書で確定しない。実装後に生成された `agenda.html` を見ながら利用者と調整する（§3.2 と同じ扱い）
 
-**中立性原則との整合**: agenda 機構は呼び出し側固有の項目属性のキー名・値の意味を解釈しない（FNC-009）。したがって `agenda_render.py` は `severity` というキー名を決め打ちでバッジ表示するのではなく、**`config.severity_field`（[DES-075](DES-075_agenda_mechanism_design.md) §4）が指定するキー名**を参照する。`severity_field` が未指定（`null`）の場合、バッジは表示しない。
+**中立性原則との整合**: agenda 機構は呼び出し側固有の項目属性のキー名・値の意味を解釈しない（FNC-009）。したがって `agenda_render.py` は `severity` というキー名を決め打ちでバッジ表示するのではなく、**`config.severity_field`（[DES-075][des-075] §4）が指定するキー名**を参照する。`severity_field` が未指定（`null`）の場合、バッジは表示しない。
 
 **値は 2 箇所を探す**。`items[].fields` の中を先に見て、そこに無い（または空の）場合は項目の直下を見る。呼び出し側が属性を `fields` にまとめるか項目の直下に置くかは呼び出し側の都合であり、表示層はどちらでも同じバッジを出す。両方に無ければバッジを出さない。
 
@@ -81,13 +81,13 @@ HTML を採用する（識別子からの直接到達（FNC-005）をアンカ�
 <span class="severity-badge" data-severity="{severity}">{severity}</span>
 ```
 
-- `data-severity` の値（`critical`/`major`/`minor` 等）は呼び出し側が渡した文字列そのままであり、agenda 側はこの値の意味（重大度の順序等）を解釈しない。CSS 側は `data-severity` の値ごとにパステル配色を対応させる（例: `[data-severity="critical"] { ... }`）が、これは表示層が呼び出し側の語彙に依存する数少ない箇所であり、[DES-075](DES-075_agenda_mechanism_design.md) §5.1 の状態遷移契約（`agenda_schema.py`の`required_fields_for()`/`validate()`。語彙の意味に立ち入らない）とは異なるレイヤーの話である
+- `data-severity` の値（`critical`/`major`/`minor` 等）は呼び出し側が渡した文字列そのままであり、agenda 側はこの値の意味（重大度の順序等）を解釈しない。CSS 側は `data-severity` の値ごとにパステル配色を対応させる（例: `[data-severity="critical"] { ... }`）が、これは表示層が呼び出し側の語彙に依存する数少ない箇所であり、[DES-075][des-075] §5.1 の状態遷移契約（`agenda_schema.py`の`required_fields_for()`/`validate()`。語彙の意味に立ち入らない）とは異なるレイヤーの話である
 
 ### 3.1b 変更箇所は欄の粒度まで示す DLID-qb5db41da4ex
 
 §3.1 のドットは「**どの項目**が変わったか」を示す。加えて、その項目の「**どの欄**が変わったか」を欄そのものの見た目で示す（FNC-002「直前の更新で変わった箇所が、提示上で他と区別できること」）。
 
-- 記録側が持つ `last_changed_fields`（[DES-075](DES-075_agenda_mechanism_design.md) §4「直前の更新の一意性」）の**フィールド名**を使う。表示層はこの配列が空かどうかだけでなく、中身の名前を見る
+- 記録側が持つ `last_changed_fields`（[DES-075][des-075] §4「直前の更新の一意性」）の**フィールド名**を使う。表示層はこの配列が空かどうかだけでなく、中身の名前を見る
 - 名前は入れ子表記に対応させる。`decision.by` が変わったなら「決着」欄（`decision`）が変わったものとして扱う。表示上の 1 欄が記録上の複数フィールドに対応するのは決着欄だけである
 - 変わった欄は `<dt>` と `<dd>` の双方へ `data-changed="true"` を付ける。付かない側（変化が無い欄）を既定とする
 - アジェンダ表（`#agenda-summary`）の該当項目の行にも `<tr data-changed="true">` を付ける。項目カードまで下りなくても、俯瞰の段階でどの行が動いたかが分かる
@@ -97,7 +97,7 @@ HTML を採用する（識別子からの直接到達（FNC-005）をアンカ�
 
 ### 3.2 CSS の適用対象（値は実装時に決定） DLID-wda6nrx4kkk3
 
-どのセレクタが何をスタイリングするかは設計事項として以下に固定する。**具体的な値（色コード・px サイズ等）は本設計書で確定しない**——実装後に生成された `agenda.html` を実際に見て、利用者と調整しながら決める（[design_principles_spec.md](../../../../../plugins/forge/docs/design_principles_spec.md)「実行後に人間が体感して決める値」と同じ扱い）。
+どのセレクタが何をスタイリングするかは設計事項として以下に固定する。**具体的な値（色コード・px サイズ等）は本設計書で確定しない**——実装後に生成された `agenda.html` を実際に見て、利用者と調整しながら決める（[design_principles_spec.md][design-principles-spec]「実行後に人間が体感して決める値」と同じ扱い）。
 
 | セレクタ                                         | 適用対象                                              | 備考                                                                                                                                                                                                                |
 | ------------------------------------------------ | ----------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -115,7 +115,7 @@ HTML を採用する（識別子からの直接到達（FNC-005）をアンカ�
 
 ### 3.3 「状態」欄の導出（独立フィールドを持たない） DLID-s0h8dynx7kf8
 
-[DES-075](DES-075_agenda_mechanism_design.md) §4「状態の表現」の通り、項目は独立した状態フィールドを持たない。アジェンダ表（`#agenda-summary`）の「状態」欄、および項目節の表示は、`background`・`essence`・`decision`の記入有無から次の状態遷移で導出する（consult:REQ-017 FNC-002が区別を要求する4状態と対応する）。
+[DES-075][des-075] §4「状態の表現」の通り、項目は独立した状態フィールドを持たない。アジェンダ表（`#agenda-summary`）の「状態」欄、および項目節の表示は、`background`・`essence`・`decision`の記入有無から次の状態遷移で導出する（consult:REQ-017 FNC-002が区別を要求する4状態と対応する）。
 
 ```mermaid
 stateDiagram-v2
@@ -131,7 +131,7 @@ stateDiagram-v2
 | 進行中     | `background`・`essence`のいずれかが非空で、まだ決着していない | 「進行中」                                                                                                             |
 | 決着／棄却 | `decision`の3値（`by`・`outcome`・`reason`）がすべて空でない  | `decision.outcome`の内容をそのまま表示（「決着」「棄却」等、呼び出し側の自由記述。agenda機構は内容の意味を解釈しない） |
 
-判定は`background`→`essence`→`decision`の順に記入されるという、consultの対話進行（1 回の呼び出しで 1 つの値を加える。[DES-075](DES-075_agenda_mechanism_design.md) §6.2）と対応しており、この順序を逆行する記入（`decision`のみ先に記入する等）は`agenda_schema.py`の状態遷移契約（[DES-075](DES-075_agenda_mechanism_design.md) §5.1。`decision`を含む差分パッチは`background`/`essence`の非空を要求する）により拒否される。
+判定は`background`→`essence`→`decision`の順に記入されるという、consultの対話進行（1 回の呼び出しで 1 つの値を加える。[DES-075][des-075] §6.2）と対応しており、この順序を逆行する記入（`decision`のみ先に記入する等）は`agenda_schema.py`の状態遷移契約（[DES-075][des-075] §5.1。`decision`を含む差分パッチは`background`/`essence`の非空を要求する）により拒否される。
 
 ## 4. 表示の更新方式（自動追従） DLID-x0zexe72k996
 
@@ -143,7 +143,7 @@ stateDiagram-v2
 
 ### 4.2 採用方式: 世代番号の比較による全体再読み込み DLID-s8t7ab2se581
 
-`agenda_render.py` は書き込み成功時（[DES-075](DES-075_agenda_mechanism_design.md) §8.1 のトリガー）に、次の 2 ファイルを毎回まるごと再生成する。
+`agenda_render.py` は書き込み成功時（[DES-075][des-075] §8.1 のトリガー）に、次の 2 ファイルを毎回まるごと再生成する。
 
 | ファイル          | 内容                                                                                                                 |
 | ----------------- | -------------------------------------------------------------------------------------------------------------------- |
@@ -155,7 +155,7 @@ stateDiagram-v2
 1. 数秒ごとに `agenda_state.js` を §4.1 の手法（`<script src="agenda_state.js?t=<timestamp>">` の差し替え。クエリはブラウザキャッシュ回避のため）で読み込む
 2. 読み込んだ `contentVersion` が、自ページに埋め込まれた世代番号と**同じ**なら何もしない。**異なる**なら `location.reload()` でページ全体を再読み込みする
 
-世代番号には `agenda.json` の `content_version`（[DES-075](DES-075_agenda_mechanism_design.md) §3.2。書き込みごとに増える整数）をそのまま使う。世代番号が変わらない限り再読み込みが起きないため、「読んでいる最中に定期リロードでページ先頭へ戻される」ことはない。
+世代番号には `agenda.json` の `content_version`（[DES-075][des-075] §3.2。書き込みごとに増える整数）をそのまま使う。世代番号が変わらない限り再読み込みが起きないため、「読んでいる最中に定期リロードでページ先頭へ戻される」ことはない。
 
 **部分更新（DOM の差し替え）は持たない**。`agenda_wrapper.py` が公開する `start` / `record` はいずれも store の書き込み系関数を呼ぶ操作であり、常に全項目の再表示が要る。「本文を変えずに軽量な状態フラグだけを更新する」という書き込みが存在しないため、全体再読み込みと部分更新を使い分ける複雑さに見合う利得が無い。
 
@@ -174,7 +174,11 @@ stateDiagram-v2
 
 ## 6. 使用する既存コンポーネント DLID-cajbkn0b59p6
 
-| コンポーネント           | ファイルパス                                                      | 用途                                                                                                               |
-| ------------------------ | ----------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
-| 討議ファイルテンプレート | `plugins/forge/skills/consult/assets/discussion_file_template.md` | 表示テンプレートへリライトして転用（移行手順は実装戦略書が持つ。[DES-075](DES-075_agenda_mechanism_design.md) §1） |
-| HTML エスケープパターン  | `.claude/skills/prepare-figma/scripts/json_to_html.py`            | `agenda_render.py` の `html.escape()` 使用箇所の参考                                                               |
+| コンポーネント           | ファイルパス                                                      | 用途                                                                                    |
+| ------------------------ | ----------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| 討議ファイルテンプレート | `plugins/forge/skills/consult/assets/discussion_file_template.md` | 表示テンプレートへリライトして転用（移行手順は実装戦略書が持つ。[DES-075][des-075] §1） |
+| HTML エスケープパターン  | `.claude/skills/prepare-figma/scripts/json_to_html.py`            | `agenda_render.py` の `html.escape()` 使用箇所の参考                                    |
+
+[des-075]: DES-075_agenda_mechanism_design.md "84e8b637dc1d DLID-vyz6fzhdfk3a"
+[req-017]: ../../requirements/REQ-017_consult_skill.md "8d2adba82a1b DLID-433459yse70c"
+[design-principles-spec]: ../../../../../plugins/forge/docs/design_principles_spec.md "169ae99c4eed DLID-061pwjejh6yc"

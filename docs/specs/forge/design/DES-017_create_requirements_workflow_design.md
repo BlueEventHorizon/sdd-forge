@@ -196,7 +196,7 @@ SKILL.md への参照・戻りは不要。
 
 ### ID 体系の一貫性 DLID-fas5fps7jrk5
 
-要件 ID の体系は [requirement_format.md](../../../../plugins/forge/docs/requirement_format.md) が定める。
+要件 ID の体系は [requirement_format.md][requirement-format] が定める。
 
 ---
 
@@ -210,3 +210,5 @@ SKILL.md への参照・戻りは不要。
 | `plugins/forge/skills/start-requirements/docs/requirements_from_figma_workflow.md`          | Figma 型ワークフロー           |
 | `plugins/forge/docs/requirement_format.md`                                                  | 要件定義書テンプレート         |
 | `plugins/forge/docs/spec_design_boundary_spec.md`                                           | 要件/設計の境界ガイド          |
+
+[requirement-format]: ../../../../plugins/forge/docs/requirement_format.md "1abf0122bdeb DLID-c13gr4qbk4vm"

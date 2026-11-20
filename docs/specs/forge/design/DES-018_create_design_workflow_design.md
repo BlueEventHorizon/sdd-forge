@@ -108,7 +108,7 @@ flowchart TD
 
 使えるものが見つからなければ、そのまま Phase 4 へ進む。
 
-3.5 の検索が失敗したとき・行われなかったときは、Phase 4 へ進まず利用者に報告して指示を待つ（[DES-010](DES-010_create_skills_orchestrator_design.md) §3.5）。検索の結果を得ないまま「どちらにも当たらない」として扱わない。
+3.5 の検索が失敗したとき・行われなかったときは、Phase 4 へ進まず利用者に報告して指示を待つ（[DES-010][des-010] §3.5）。検索の結果を得ないまま「どちらにも当たらない」として扱わない。
 
 3.5 の結果の扱い:
 
@@ -193,3 +193,5 @@ flowchart TD
 | `plugins/forge/docs/design_method.md`             | 設計の手順と成果物    |
 | `plugins/forge/docs/design_principles_spec.md`    | 設計原則ガイド        |
 | `plugins/forge/docs/spec_design_boundary_spec.md` | 要件/設計の境界ガイド |
+
+[des-010]: DES-010_create_skills_orchestrator_design.md "c93dadeb6dc4 DLID-s1ds8dcyfn7p"

@@ -1,37 +1,36 @@
 {
-  "content_hash": "8773aa681946a80a0c98aa10eee37dba75cb840bc83751657c2cb14952c104dd",
+  "content_hash": "856185c37ce24f83e706f458f0f56f28250855845f91c2cab54a0a944623a4b1",
   "doc_link_id": "DLID-p1v5z5mme4tw",
   "keywords": [
     "evaluator",
     "meta-perspective",
     "disposition",
-    "flawed_premise",
     "finding",
-    "evaluation",
-    "review mechanism",
     "independent evaluation",
+    "flawed_premise",
+    "review mechanism",
     "exit value"
   ],
   "path": "docs/specs/review/requirements/REQ-026_evaluator_perspective.md",
-  "purpose": "Requirements for the evaluator agent in the review mechanism: how it independently verifies reviewer findings using meta-perspectives, decides dispositions, and reports evaluations.",
+  "purpose": "Requirements for the evaluator agent in the review mechanism: independently verifying reviewer findings using meta-perspectives, rejecting wrong findings, and stating root causes via evaluations.",
   "summary": [
-    "Overview: evaluator independently verifies findings, rejects wrong ones, and points to root causes",
-    "Scope: only evaluator-specific behavior; exchange, numbering, exit values and data structures are delegated to the common review contract",
-    "FNC-208: contents of the evaluator definition, reading from findings outward, target-kind judgment shared with the reviewer",
-    "FNC-201: five meta-perspectives questioning root cause, source information, existing decisions, reasonable reading, and own judgment",
-    "FNC-206: evaluator may newly raise findings missed by the reviewer, with valid disposition and explicit location",
-    "FNC-209: evaluations are written only after all judgments are finalized; zero findings does not imply zero evaluations",
-    "FNC-319: evaluator has no error values; only normal exit \"0\" is passed",
-    "DM-202: inputs are the request and findings, read separately without a merged input file",
-    "TBD-001: practical effectiveness of the meta-perspectives is unverified until after implementation"
+    "Evaluator independently judges reviewer findings and returns evaluations with dispositions",
+    "Defines the meta-perspective term and the five meta-perspectives (FNC-201) for doubting root causes and source information",
+    "Evaluator reads from the finding outward rather than reading the whole target",
+    "Target type determination and per-type documents reuse the reviewer rules",
+    "Evaluator may newly report reviewer oversights with valid disposition and script-assigned finding_id (FNC-206)",
+    "Output rules: write evaluations only after all judgments are finalized; zero evaluations is allowed (FNC-209)",
+    "Evaluator has no error values; only exit value \"0\" (FNC-319)",
+    "Evaluator input is the request plus findings, with no combined input file (DM-202)",
+    "Shared exchange contract is delegated to REQ-029; open item TBD-001 on verifying meta-perspective effectiveness"
   ],
   "tasks": [
-    "Writing or modifying the evaluator agent definition",
-    "Reviewing evaluator behavior against requirements",
-    "Designing how dispositions are determined",
-    "Implementing new-finding handling by the evaluator",
-    "Designing evaluator exit and error handling",
-    "Reviewing review mechanism documents"
+    "Reviewing or modifying the evaluator agent definition",
+    "Implementing evaluator behavior in the review mechanism",
+    "Deciding disposition values for reviewer findings",
+    "Designing how evaluators report new findings",
+    "Reviewing requirement documents on the review mechanism",
+    "Defining evaluator error handling and exit values"
   ],
   "title": "REQ-026 evaluator の独立評価とメタ観点 要件定義書"
 }

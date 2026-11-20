@@ -65,4 +65,6 @@ review:
 ## 注意
 
 - `.claude/.forge.yaml` は制約付き YAML サブセットとして読まれる。アンカー・エイリアス（`&` / `*`）、複数行文字列（`|` / `>`）、flow style（`[...]` / `{...}`）は使えず、含まれるとファイル全体が解析不能として明示エラーになる
-- レビュー実行主体の候補順の設計根拠・各バックエンドの前提条件は [guide_review_ja.md](forge/guide_review_ja.md) を参照
+- レビュー実行主体の候補順の設計根拠・各バックエンドの前提条件は [guide_review_ja.md][guide-review-ja] を参照
+
+[guide-review-ja]: forge/guide_review_ja.md

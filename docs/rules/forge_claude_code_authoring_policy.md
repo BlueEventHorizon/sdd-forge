@@ -8,7 +8,7 @@ forge とローカル skill で、汎用の [Claude Code 作成ガイド][guide]
 
 ## 公式仕様の確かめ方 DLID-r5qyakcb0vbe
 
-- 公式仕様は、meta の参照（`meta:author-skill` / `meta:author-plugin` が持つ、公式ページの本文と照合した写し）→ 必要なら claude-code-guide Agent の順で確かめてから書く。出典の記し方は [plugin_claude_code_reference.md](plugin_claude_code_reference.md) に従う
+- 公式仕様は、meta の参照（`meta:author-skill` / `meta:author-plugin` が持つ、公式ページの本文と照合した写し）→ 必要なら claude-code-guide Agent の順で確かめてから書く。出典の記し方は [plugin_claude_code_reference.md][plugin-claude-code-reference] に従う
 
 ## SKILL 実行モデル [MANDATORY] DLID-k90j7p53dfqx
 
@@ -33,4 +33,5 @@ forge とローカル skill で、汎用の [Claude Code 作成ガイド][guide]
 
 - SKILL.md の説明は日本語で書く
 
-[guide]: plugin_claude_code_authoring_guide.md
+[guide]: plugin_claude_code_authoring_guide.md "1b4400f836cd DLID-pvwk8en5c2rq"
+[plugin-claude-code-reference]: plugin_claude_code_reference.md "4925fe0a5d6e DLID-d384sm5xwctj"

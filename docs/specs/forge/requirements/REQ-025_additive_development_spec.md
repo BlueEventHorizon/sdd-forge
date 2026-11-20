@@ -20,7 +20,7 @@ doc_link_id: DLID-8aaxgj88j28q
 
 ### 1.2 対象システムの性質 DLID-acmwf5b2jbvc
 
-forge プラグイン内部の文書運用であり、外部公開・本番運用・個人情報の保持を伴わない開発支援ツール相当のスコープである（[spec_priorities_spec.md](../../../../plugins/forge/docs/spec_priorities_spec.md) §10.1 の「上記いずれにも該当しない」に該当する）。
+forge プラグイン内部の文書運用であり、外部公開・本番運用・個人情報の保持を伴わない開発支援ツール相当のスコープである（[spec_priorities_spec.md][spec-priorities-spec] §10.1 の「上記いずれにも該当しない」に該当する）。
 
 ## 2. 用語 DLID-9c38kemxsvrr
 
@@ -107,3 +107,5 @@ forge プラグイン内部の文書運用であり、外部公開・本番運�
 ## 5. 未確定事項 DLID-80qxtftzben7
 
 該当なし。
+
+[spec-priorities-spec]: ../../../../plugins/forge/docs/spec_priorities_spec.md "f8233c87c564 DLID-f9ny9e932trv"

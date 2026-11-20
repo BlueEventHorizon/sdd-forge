@@ -166,4 +166,6 @@ No arguments.
 
 ## Schema Reference
 
-For the full format specification, see [doc_structure_format.md](../../plugins/forge/docs/doc_structure_format.md).
+For the full format specification, see [doc_structure_format.md][doc-structure-format].
+
+[doc-structure-format]: ../../plugins/forge/docs/doc_structure_format.md

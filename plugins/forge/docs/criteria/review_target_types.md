@@ -39,12 +39,12 @@ target 種別は **code / requirement / design / plan / uxui** の 5 つであ�
 
 すべての対象に適用する。種別が決まった対象には、次節の文書を上乗せする。
 
-| 文書                                                              | 役割                                         |
-| ----------------------------------------------------------------- | -------------------------------------------- |
-| [review_criteria_generic.md](review_criteria_generic.md)          | すべての対象に適用するレビュー観点           |
-| [review_priorities_spec.md](../review_priorities_spec.md)         | 重大度の判断基準                             |
-| [scope_proportionality_spec.md](../scope_proportionality_spec.md) | 比例性の原則（過剰設計の抑止）               |
-| [error_classification_spec.md](../error_classification_spec.md)   | エラーの定義・分類（回復可能性）・原因の扱い |
+| 文書                                                        | 役割                                         |
+| ----------------------------------------------------------- | -------------------------------------------- |
+| [review_criteria_generic.md][review-criteria-generic]       | すべての対象に適用するレビュー観点           |
+| [review_priorities_spec.md][review-priorities-spec]         | 重大度の判断基準                             |
+| [scope_proportionality_spec.md][scope-proportionality-spec] | 比例性の原則（過剰設計の抑止）               |
+| [error_classification_spec.md][error-classification-spec]   | エラーの定義・分類（回復可能性）・原因の扱い |
 
 ## 3. 種別ごとに上乗せする文書 DLID-y7ny461sst3j
 
@@ -52,45 +52,69 @@ target 種別は **code / requirement / design / plan / uxui** の 5 つであ�
 
 ### 3.1 code（ソースコード） DLID-8vpdyxy3p22b
 
-| 区分             | 内容                                                                                                                          |
-| ---------------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| レビュー観点     | [review_criteria_code.md](review_criteria_code.md)                                                                            |
-| 内蔵規範         | [deterministic_generation_spec.md](../deterministic_generation_spec.md) / [forge_anti_patterns.md](../forge_anti_patterns.md) |
-| プロジェクト固有 | 実装・コーディング・出力フォーマット規約                                                                                      |
-| 突き合わせ対象   | 対象に対応する関連設計書                                                                                                      |
+| 区分             | 内容                                                                                                              |
+| ---------------- | ----------------------------------------------------------------------------------------------------------------- |
+| レビュー観点     | [review_criteria_code.md][review-criteria-code]                                                                   |
+| 内蔵規範         | [deterministic_generation_spec.md][deterministic-generation-spec] / [forge_anti_patterns.md][forge-anti-patterns] |
+| プロジェクト固有 | 実装・コーディング・出力フォーマット規約                                                                          |
+| 突き合わせ対象   | 対象に対応する関連設計書                                                                                          |
 
 ### 3.2 requirement（要件定義書） DLID-j1pxx7pwvpa0
 
-| 区分             | 内容                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| レビュー観点     | [review_criteria_requirement.md](review_criteria_requirement.md)                                                                                                                                                                                                                                                                                                                                                                |
-| 内蔵規範         | [requirement_principles_spec.md](../requirement_principles_spec.md) / [requirement_format.md](../requirement_format.md) / [spec_design_boundary_spec.md](../spec_design_boundary_spec.md) / [spec_priorities_spec.md](../spec_priorities_spec.md) / [additive_development_spec.md](../additive_development_spec.md) / [frontmatter_format.md](../frontmatter_format.md) / [document_style_guide.md](../document_style_guide.md) |
-| プロジェクト固有 | 文書記述・仕様記述規約                                                                                                                                                                                                                                                                                                                                                                                                          |
-| 突き合わせ対象   | 対象ファイル内部 / 関連設計書                                                                                                                                                                                                                                                                                                                                                                                                   |
+| 区分             | 内容                                                                                                                                                                                                                                                                                                                                                                                  |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| レビュー観点     | [review_criteria_requirement.md][review-criteria-requirement]                                                                                                                                                                                                                                                                                                                         |
+| 内蔵規範         | [requirement_principles_spec.md][requirement-principles-spec] / [requirement_format.md][requirement-format] / [spec_design_boundary_spec.md][spec-design-boundary-spec] / [spec_priorities_spec.md][spec-priorities-spec] / [additive_development_spec.md][additive-development-spec] / [frontmatter_format.md][frontmatter-format] / [document_style_guide.md][document-style-guide] |
+| プロジェクト固有 | 文書記述・仕様記述規約                                                                                                                                                                                                                                                                                                                                                                |
+| 突き合わせ対象   | 対象ファイル内部 / 関連設計書                                                                                                                                                                                                                                                                                                                                                         |
 
 ### 3.3 design（設計書・ADR） DLID-7c120qp5qtwx
 
-| 区分             | 内容                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| レビュー観点     | [review_criteria_design.md](review_criteria_design.md)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-| 内蔵規範         | [spec_design_boundary_spec.md](../spec_design_boundary_spec.md) / [design_principles_spec.md](../design_principles_spec.md) / [design_method.md](../design_method.md) / [additive_development_spec.md](../additive_development_spec.md) / [frontmatter_format.md](../frontmatter_format.md) / [adr_format.md](../adr_format.md) / [adr_principles_spec.md](../adr_principles_spec.md) / [document_style_guide.md](../document_style_guide.md) / [deterministic_generation_spec.md](../deterministic_generation_spec.md) / [spec_priorities_spec.md](../spec_priorities_spec.md) |
-| プロジェクト固有 | アーキテクチャ・設計規約                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-| 突き合わせ対象   | 対象ファイル内部 / 関連要件定義書                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| 区分             | 内容                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| レビュー観点     | [review_criteria_design.md][review-criteria-design]                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| 内蔵規範         | [spec_design_boundary_spec.md][spec-design-boundary-spec] / [design_principles_spec.md][design-principles-spec] / [design_method.md][design-method] / [additive_development_spec.md][additive-development-spec] / [frontmatter_format.md][frontmatter-format] / [adr_format.md][adr-format] / [adr_principles_spec.md][adr-principles-spec] / [document_style_guide.md][document-style-guide] / [deterministic_generation_spec.md][deterministic-generation-spec] / [spec_priorities_spec.md][spec-priorities-spec] |
+| プロジェクト固有 | アーキテクチャ・設計規約                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| 突き合わせ対象   | 対象ファイル内部 / 関連要件定義書                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 
 ### 3.4 plan（計画書） DLID-0vayzdt2agj4
 
-| 区分             | 内容                                                                                                                                                                                                                                |
-| ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| レビュー観点     | [review_criteria_plan.md](review_criteria_plan.md)                                                                                                                                                                                  |
-| 内蔵規範         | [plan_principles_spec.md](../plan_principles_spec.md) / [additive_development_spec.md](../additive_development_spec.md) / [frontmatter_format.md](../frontmatter_format.md) / [spec_priorities_spec.md](../spec_priorities_spec.md) |
-| プロジェクト固有 | 依存関係・ワークフロー規約                                                                                                                                                                                                          |
-| 突き合わせ対象   | 対象の計画書内部 / 関連設計書・要件定義書                                                                                                                                                                                           |
+| 区分             | 内容                                                                                                                                                                                                        |
+| ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| レビュー観点     | [review_criteria_plan.md][review-criteria-plan]                                                                                                                                                             |
+| 内蔵規範         | [plan_principles_spec.md][plan-principles-spec] / [additive_development_spec.md][additive-development-spec] / [frontmatter_format.md][frontmatter-format] / [spec_priorities_spec.md][spec-priorities-spec] |
+| プロジェクト固有 | 依存関係・ワークフロー規約                                                                                                                                                                                  |
+| 突き合わせ対象   | 対象の計画書内部 / 関連設計書・要件定義書                                                                                                                                                                   |
 
 ### 3.5 uxui（UI / UX に関わる文書） DLID-enyjmb2hb2rm
 
-| 区分             | 内容                                                                                                          |
-| ---------------- | ------------------------------------------------------------------------------------------------------------- |
-| レビュー観点     | [review_criteria_uxui.md](review_criteria_uxui.md)                                                            |
-| 内蔵規範         | [document_style_guide.md](../document_style_guide.md) / [spec_priorities_spec.md](../spec_priorities_spec.md) |
-| プロジェクト固有 | デザインシステム・HIG 準拠規約                                                                                |
-| 突き合わせ対象   | 対象ファイル内部 / 関連要件定義書・設計書                                                                     |
+| 区分             | 内容                                                                                              |
+| ---------------- | ------------------------------------------------------------------------------------------------- |
+| レビュー観点     | [review_criteria_uxui.md][review-criteria-uxui]                                                   |
+| 内蔵規範         | [document_style_guide.md][document-style-guide] / [spec_priorities_spec.md][spec-priorities-spec] |
+| プロジェクト固有 | デザインシステム・HIG 準拠規約                                                                    |
+| 突き合わせ対象   | 対象ファイル内部 / 関連要件定義書・設計書                                                         |
+
+[review-criteria-generic]: review_criteria_generic.md "cff328dfcaec DLID-wm7t1emetwbx"
+[review-priorities-spec]: ../review_priorities_spec.md "dc0c7761adf3 DLID-dcec6pr177c9"
+[scope-proportionality-spec]: ../scope_proportionality_spec.md "be634f5152a6 DLID-s1dhhaprgf1r"
+[error-classification-spec]: ../error_classification_spec.md "04397ae80f5c DLID-5ykqs19cdbks"
+[review-criteria-code]: review_criteria_code.md "048d9ed163fc DLID-spgw9f5y6thy"
+[deterministic-generation-spec]: ../deterministic_generation_spec.md "75383cc8c6d8 DLID-tm2m7nv23dqd"
+[forge-anti-patterns]: ../forge_anti_patterns.md "0e4a099e332f DLID-wkh7nt1wrds7"
+[review-criteria-requirement]: review_criteria_requirement.md "727c5b42f323 DLID-4zxqtf2m3x6t"
+[requirement-principles-spec]: ../requirement_principles_spec.md "c1cb19da9ad5 DLID-8y2jh2y06761"
+[requirement-format]: ../requirement_format.md "1abf0122bdeb DLID-c13gr4qbk4vm"
+[spec-design-boundary-spec]: ../spec_design_boundary_spec.md "4e2a4cd68a8a DLID-h9h90g9wcy8f"
+[spec-priorities-spec]: ../spec_priorities_spec.md "f8233c87c564 DLID-f9ny9e932trv"
+[additive-development-spec]: ../additive_development_spec.md "307dc53425f0 DLID-cyrk9xr8vcap"
+[frontmatter-format]: ../frontmatter_format.md "19cf661699b0 DLID-jtc4qnjwbdxf"
+[document-style-guide]: ../document_style_guide.md "69dee42932c2 DLID-c59znr7b8f56"
+[review-criteria-design]: review_criteria_design.md "69bd620fe0b7 DLID-0zyw4hj937y9"
+[design-principles-spec]: ../design_principles_spec.md "169ae99c4eed DLID-061pwjejh6yc"
+[design-method]: ../design_method.md "157820b1afb7 DLID-pdvdjb49qpr4"
+[adr-format]: ../adr_format.md "0dc06fb958c8 DLID-ns59za8fens1"
+[adr-principles-spec]: ../adr_principles_spec.md "3ae4e3bfdd65 DLID-45wzpggz1set"
+[review-criteria-plan]: review_criteria_plan.md "a315870eafb0 DLID-31c3mp46a5p2"
+[plan-principles-spec]: ../plan_principles_spec.md "122ed8c0e2c2 DLID-t8jcg5jkb5mj"
+[review-criteria-uxui]: review_criteria_uxui.md "c84b92682539 DLID-e9tn4760zpw5"

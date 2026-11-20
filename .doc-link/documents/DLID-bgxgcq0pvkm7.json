@@ -1,38 +1,39 @@
 {
-  "content_hash": "6b85cf75b26b1b9a85ad8c06e9afdfdbe59e35fc354b382f88adcae5af01cfc1",
+  "content_hash": "323aaf2b05f6afc5973d411abe79296306802fd57ac785132270f42fc59916a8",
   "doc_link_id": "DLID-bgxgcq0pvkm7",
   "keywords": [
     "SKILL.md",
     "script separation",
-    "clean state",
     "wrapper",
     "fixed values",
+    "clean state",
     "call contract",
     "misuse defense",
     "cognitive load",
-    "shared low-level script"
+    "SKILL-local entry point",
+    "input responsibility"
   ],
   "path": "docs/specs/forge/requirements/REQ-003_skill_script_separation.md",
-  "purpose": "Requirements separating SKILL.md responsibilities from script responsibilities, so SKILL.md keeps judgment and dialogue while scripts apply fixed values and deterministic processing.",
+  "purpose": "Requirements separating responsibilities between SKILL.md (judgment, flow, dialogue) and scripts (deterministic processing), with SKILL-local wrapper entry points and misuse defense placement.",
   "summary": [
-    "Background: script-specific detail in SKILL.md burdens AI judgment, yet orchestration must stay in the skill",
-    "Purpose: fix operations and values in advance and leave no free semantic choice to the AI at runtime",
-    "FNC-001: clean state of SKILL.md, what may remain and what must not be written",
+    "Background: script details in SKILL.md burden AI context; unresolved semantic choices are what should be reduced",
+    "Purpose: SKILL.md keeps interpretation and branching; scripts handle fixed values and mechanical derivation",
+    "FNC-001: what SKILL.md may and may not contain (clean state)",
     "FNC-002: classification of script inputs by origin and responsibility",
-    "FNC-003: one scene, one fully determined call contract",
-    "FNC-004: placement of misuse defenses, script guards first and no prohibition warnings in SKILL.md",
-    "FNC-005: measurement-based refactoring judged by review and grep",
-    "FNC-006: skill-local wrapper boundary binding fixed values over shared low-level scripts",
-    "Non-goals including minimizing wrappers and quantitative targets"
+    "FNC-003: one scene, one fully determined invocation contract",
+    "FNC-004: placement order of misuse defenses, with no prohibition warnings in SKILL.md",
+    "FNC-005: evidence-based refactoring judged by review and grep, no quantitative targets",
+    "FNC-006: SKILL-local wrappers binding fixed values over shared low-level scripts, allowing duplication",
+    "Scope covering all forge SKILL.md files and scripts, and non-goals such as minimizing wrapper count"
   ],
   "tasks": [
-    "Writing or refactoring a SKILL.md",
-    "Designing a skill-local wrapper script",
-    "Deciding what logic belongs in a script versus SKILL.md",
-    "Designing script arguments and input responsibilities",
-    "Placing misuse prevention for scripts",
-    "Reviewing SKILL.md for noise such as exposed flags and prohibition warnings",
-    "Invoking inherited skills via the Skill tool"
+    "Writing or editing a SKILL.md",
+    "Designing script interfaces and arguments",
+    "Creating SKILL-local wrapper scripts",
+    "Refactoring noisy SKILL.md content",
+    "Deciding where to place misuse prevention",
+    "Invoking external skills via the Skill tool with fixed values",
+    "Reviewing SKILL.md and script structure"
   ],
   "title": "REQ-003 SKILL.md と script の責務分離要件"
 }

@@ -62,4 +62,4 @@ fork 型 SKILL を採用しない（または避ける）根拠。Anthropic の�
 - background で動いた subagent には AskUserQuestion が無かった。`tools:` に AskUserQuestion を列挙したカスタム Agent でも、`tools:` を省いた `general-purpose` でも同じだった。原因は確認できず。出典: 2026-09-28 / 2.1.283 / 観測
 - `ScheduleWakeup` は `/loop` 動的モードの起動予約ツールであり、background 作業の完了はハーネスが通知する。出典: 2026-09-26 / 2.1.283 / 観測（ツール説明「Schedule when to resume work in /loop dynamic mode」）
 
-[authoring-guide]: plugin_claude_code_authoring_guide.md
+[authoring-guide]: plugin_claude_code_authoring_guide.md "1b4400f836cd DLID-pvwk8en5c2rq"

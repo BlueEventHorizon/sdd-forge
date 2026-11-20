@@ -65,4 +65,6 @@ Precedence: **argument > `.claude/.forge.yaml` > default order**.
 ## Notes
 
 - `.claude/.forge.yaml` is parsed as a restricted YAML subset. Anchors/aliases (`&` / `*`), multi-line strings (`|` / `>`), and flow style (`[...]` / `{...}`) are not supported; if present, the whole file is treated as unparsable and raises an explicit error
-- For the rationale behind the review-executor candidate order and each backend's prerequisites, see [guide_review.md](forge/guide_review.md)
+- For the rationale behind the review-executor candidate order and each backend's prerequisites, see [guide_review.md][guide-review]
+
+[guide-review]: forge/guide_review.md

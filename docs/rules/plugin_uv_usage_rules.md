@@ -11,7 +11,7 @@ Python script の実行と依存の管理を uv で行うときのルール。�
 ## 適用範囲 DLID-ta3tydds361a
 
 - 本文書は、プロジェクトの指示（CLAUDE.md・利用者の指示等）が uv の利用を定めているときに適用する。指示が無いプロジェクトに適用を強いない
-- 指示が無いプロジェクトでも、script が標準ライブラリ以外に依存するときは、本文書の採否を検討する。依存を足すこと自体は、[plugin_implementation_guidelines.md](plugin_implementation_guidelines.md) のとおり利用者の許諾を要する
+- 指示が無いプロジェクトでも、script が標準ライブラリ以外に依存するときは、本文書の採否を検討する。依存を足すこと自体は、[plugin_implementation_guidelines.md][plugin-implementation-guidelines] のとおり利用者の許諾を要する
 - 配布する script に適用すると、利用者の環境に uv の導入を求める。配布物に適用するかは、利用者環境への要求として判断する
 - 標準ライブラリだけの script は、依存の管理が要らない。実行を `uv run` に揃えるかは、プロジェクトの指示に従う
 
@@ -56,7 +56,7 @@ Python script の実行と依存の管理を uv で行うときのルール。�
 
 ## 依存の追加と削除 [MANDATORY] DLID-0e2cbd842rmw
 
-- 依存を加える前に、利用者の許諾を得る（[plugin_implementation_guidelines.md](plugin_implementation_guidelines.md)）
+- 依存を加える前に、利用者の許諾を得る（[plugin_implementation_guidelines.md][plugin-implementation-guidelines]）
 - 依存は `uv add --script <script> --bounds lower <package>` で加える。uv が解決した版を下限として宣言に書き込む
 - 依存は `uv remove --script <script> <package>` で外す
 - 版番号を手で書かない。手で書くと、書き手が知っている古い版が下限になる
@@ -96,3 +96,5 @@ Python script の実行と依存の管理を uv で行うときのルール。�
 
 - `requires-python` の下限は、最新の安定版に合わせる。古い版は修正の提供が終わり、セキュリティ上の懸念が残るため、新しい版を強制する。手元に無ければ uv がダウンロードする
 - 利用できる版は `uv python list` で確かめる。一覧の先頭は alpha・beta・rc の版のことがあるため、これらを除いた最新を選ぶ
+
+[plugin-implementation-guidelines]: plugin_implementation_guidelines.md "231d1a822305 DLID-jzs5n6cre1jh"

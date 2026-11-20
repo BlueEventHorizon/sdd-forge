@@ -6,7 +6,7 @@ doc_link_id: DLID-mzeyx39mfryw
 
 ## 1. 概要 DLID-wrd992367ze4
 
-[REQ-026](../requirements/REQ-026_evaluator_perspective.md) と、評価の扱いに関わる [REQ-029](../requirements/REQ-029_review_exchange.md) の要件（FNC-203・FNC-311・FNC-312・FNC-313・FNC-318・FNC-319）を実現する設計を定める。evaluator が評価を書くまでと、本体が所見・評価を読んで吟味し、ラウンドを進めて終えるまで（S10〜S20）を持つ。レビューの開始から reviewer の区間までは [DES-084](DES-084_reviewer_design.md) が持つ。
+[REQ-026][req-026] と、評価の扱いに関わる [REQ-029][req-029] の要件（FNC-203・FNC-311・FNC-312・FNC-313・FNC-318・FNC-319）を実現する設計を定める。evaluator が評価を書くまでと、本体が所見・評価を読んで吟味し、ラウンドを進めて終えるまで（S10〜S20）を持つ。レビューの開始から reviewer の区間までは [DES-084][des-084] が持つ。
 
 **evaluator は reviewer と同じ仕組みで動く。** 受け渡し・入力パスの解決と JSON の直接読み出し・target 種別の判定・確定後に 1 件ずつ渡すこと・終了の値は、DES-084 が reviewer について定めるものと同一である。本書が定めるのは、reviewer と異なる 3 点である。
 
@@ -74,7 +74,7 @@ sequenceDiagram
 
 ## 3. クラス図 DLID-ybezw5b732bv
 
-本体・evaluator と、その間を取り持つ JSON・script の関係である。§2 のシーケンスの登場人物に合わせ、本体は S10〜S20 で evaluator を起こし、所見と評価を扱い、ラウンドを進めて終える処理を描く。reviewer 側の処理は [DES-084](DES-084_reviewer_design.md) が持つので、ここには描かない。点線は script が JSON を読む処理、太線は AI が JSON を直接読む処理、実線は script が JSON を書く処理を表す。
+本体・evaluator と、その間を取り持つ JSON・script の関係である。§2 のシーケンスの登場人物に合わせ、本体は S10〜S20 で evaluator を起こし、所見と評価を扱い、ラウンドを進めて終える処理を描く。reviewer 側の処理は [DES-084][des-084] が持つので、ここには描かない。点線は script が JSON を読む処理、太線は AI が JSON を直接読む処理、実線は script が JSON を書く処理を表す。
 
 ```mermaid
 flowchart LR
@@ -126,7 +126,7 @@ flowchart LR
     Body ==> JE
 ```
 
-- **共有の枠は、[DES-084](DES-084_reviewer_design.md) §3 にも同じものを描く。** reviewer と evaluator の双方が使う script であり、図ごとに主体との関係を示すために両方の図へ描く。共有の枠の構成（どの script を含むか）を変えるときは、両方の図を同時に直す。
+- **共有の枠は、[DES-084][des-084] §3 にも同じものを描く。** reviewer と evaluator の双方が使う script であり、図ごとに主体との関係を示すために両方の図へ描く。共有の枠の構成（どの script を含むか）を変えるときは、両方の図を同時に直す。
 
 ## 4. スキル・エージェント DLID-fpecg9brak42
 
@@ -136,7 +136,7 @@ flowchart LR
 
 #### reviewer と同じ部分 DLID-xsc3vryxmzhv
 
-次は [DES-084](DES-084_reviewer_design.md) が定めるものをそのまま適用する。
+次は [DES-084][des-084] が定めるものをそのまま適用する。
 
 | 事柄                                                 | 定めている箇所          |
 | ---------------------------------------------------- | ----------------------- |
@@ -263,11 +263,11 @@ reviewer が返した所見のどれとも対応しない問題を見つけた�
 
 `evaluator.md` は、次の 3 つの値の付け方を持つ（REQ-029 DM-201）。
 
-| 値              | 付け方                                                                                                                                                                                                                                   |
-| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `severity`      | evaluator の主観で決めない。その所見が違反している規範文書の重大度カタログから転記する（[review_priorities_spec.md](../../../../plugins/forge/docs/review_priorities_spec.md) §2.2）。推測で割り当てない。`disposition` の値によらず必須 |
-| `confidence`    | 指摘そのものが正しいと言えるか。確認済み（実物を見た・実行した）は `confirmed`、推論は `inferred`、記憶や推測だけは `unverified`                                                                                                         |
-| `fix_confident` | その修正を責任を持って実行できるか。`confidence` が `confirmed` でなければ真にしない                                                                                                                                                     |
+| 値              | 付け方                                                                                                                                                                                                 |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `severity`      | evaluator の主観で決めない。その所見が違反している規範文書の重大度カタログから転記する（[review_priorities_spec.md][review-priorities-spec] §2.2）。推測で割り当てない。`disposition` の値によらず必須 |
+| `confidence`    | 指摘そのものが正しいと言えるか。確認済み（実物を見た・実行した）は `confirmed`、推論は `inferred`、記憶や推測だけは `unverified`                                                                       |
+| `fix_confident` | その修正を責任を持って実行できるか。`confidence` が `confirmed` でなければ真にしない                                                                                                                   |
 
 `confidence` と `fix_confident` は `valid` の評価だけが持つ。対象が違うので混ぜない（指摘は正しいが直し方が分からない、を表せるようにする）。
 
@@ -287,7 +287,7 @@ evaluator が挙げうるエラー値は無い（REQ-026 FNC-319）。`evaluator
 
 ### 4.2 本体（所見と評価を扱う仕事） DLID-dd5jby3vryxp
 
-`plugins/forge/skills/review/SKILL.md` が持つ（REQ-029 FNC-314）。本体は最終決定者である（REQ-029 FNC-312）。所見も評価も判断の材料であり、決定ではない。本節は、evaluator を起こして以降の本体の仕事（S10・S15〜S20）を定める。レビューの開始から reviewer を起こすまでは [DES-084](DES-084_reviewer_design.md) §4.1 が持つ。
+`plugins/forge/skills/review/SKILL.md` が持つ（REQ-029 FNC-314）。本体は最終決定者である（REQ-029 FNC-312）。所見も評価も判断の材料であり、決定ではない。本節は、evaluator を起こして以降の本体の仕事（S10・S15〜S20）を定める。レビューの開始から reviewer を起こすまでは [DES-084][des-084] §4.1 が持つ。
 
 #### 定義が持つもの DLID-6emfnrknq5j0
 
@@ -320,7 +320,7 @@ evaluator が挙げうるエラー値は無い（REQ-026 FNC-319）。`evaluator
 
 ### 4.3 consult（暫定措置） DLID-g58822ngf943
 
-**本節は暫定措置であり、本 feature の要件と設計が実装し終わった後に見直す。** それまでの間、consult を壊さずに動かすための最小限の措置だけを定め、恒久的な設計は定めない（[REQ-026](../requirements/REQ-026_evaluator_perspective.md) の「概要」）。review 本体の手順の読み替え（下記）も、記録を前提にしないという方針だけを示し、それ以上は詰めない。見直しは、実装の完了後に agenda 全面刷新の feature と合わせて行う。
+**本節は暫定措置であり、本 feature の要件と設計が実装し終わった後に見直す。** それまでの間、consult を壊さずに動かすための最小限の措置だけを定め、恒久的な設計は定めない（[REQ-026][req-026] の「概要」）。review 本体の手順の読み替え（下記）も、記録を前提にしないという方針だけを示し、それ以上は詰めない。見直しは、実装の完了後に agenda 全面刷新の feature と合わせて行う。
 
 #### agenda を使わない DLID-67etbx0gtyts
 
@@ -425,7 +425,7 @@ reviewer の所見（DES-084 §5.3）との違いは 2 つである。
 
 ## 6. script DLID-kt9rd7s3hd19
 
-基本の script の共通の約束と、所見に関わる動作は [DES-084](DES-084_reviewer_design.md) §6 が持つ。本節は、評価に関わる動作と、evaluator・本体のラッパーを定める。
+基本の script の共通の約束と、所見に関わる動作は [DES-084][des-084] §6 が持つ。本節は、評価に関わる動作と、evaluator・本体のラッパーを定める。
 
 ### 6.1 evaluator のラッパー DLID-433ysk0pt19v
 
@@ -590,6 +590,11 @@ evaluator は、次のラッパーを通して基本の script を呼ぶ。`--ki
 
 ## 8. 未確定事項 DLID-hcwa97m6ggyb
 
-| ID      | 内容                                                                                                                                                                                                        | 期限   |
-| ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ |
-| TBD-001 | FNC-201 の 5 つのメタ観点を evaluator が実際に働かせられるかは未検証（[REQ-026](../requirements/REQ-026_evaluator_perspective.md) TBD-001 を継承）。§4.1 の「評価に現れる形」が実際に観測できるかで検証する | 実装後 |
+| ID      | 内容                                                                                                                                                               | 期限   |
+| ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------ |
+| TBD-001 | FNC-201 の 5 つのメタ観点を evaluator が実際に働かせられるかは未検証（[REQ-026][req-026] TBD-001 を継承）。§4.1 の「評価に現れる形」が実際に観測できるかで検証する | 実装後 |
+
+[req-026]: ../requirements/REQ-026_evaluator_perspective.md "856185c37ce2 DLID-p1v5z5mme4tw"
+[req-029]: ../requirements/REQ-029_review_exchange.md "4e7fe6918eec DLID-5vrs9fnet7de"
+[des-084]: DES-084_reviewer_design.md "daa286494b24 DLID-j50s0xwkwx00"
+[review-priorities-spec]: ../../../../plugins/forge/docs/review_priorities_spec.md "2822ed686d56 DLID-dcec6pr177c9"

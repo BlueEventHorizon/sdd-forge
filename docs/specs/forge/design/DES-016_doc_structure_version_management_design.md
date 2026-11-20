@@ -7,8 +7,8 @@ doc_link_id: DLID-vfdedgq63evv
 ## 概要 DLID-jsh7ymjq4ctb
 
 `.doc_structure.yaml` のバージョン管理・マイグレーション方式を定義する。
-[COMMON-REQ-001](../../common/requirements/COMMON-REQ-001_versioned_migration.md) に準拠し、Python スクリプトによる機械的なマイグレーションを実現する。
-ファイルの形式そのものは、[.doc_structure.yaml フォーマット仕様](../../../../plugins/forge/docs/doc_structure_format.md)が定める。
+[COMMON-REQ-001][common-req-001-versioned-migration] に準拠し、Python スクリプトによる機械的なマイグレーションを実現する。
+ファイルの形式そのものは、[.doc_structure.yaml フォーマット仕様][doc-structure-format]が定める。
 
 ## バージョン識別子 DLID-073rb28bwvev
 
@@ -272,3 +272,6 @@ content = open(".doc_structure.yaml").read()
 version = get_version(content)  # "3.0"
 major = get_major_version(content)  # 3
 ```
+
+[common-req-001-versioned-migration]: ../../common/requirements/COMMON-REQ-001_versioned_migration.md "857319588069 DLID-dqkf6wa1z2cp"
+[doc-structure-format]: ../../../../plugins/forge/docs/doc_structure_format.md "50a324934bb2 DLID-cbr02jpbxfcs"

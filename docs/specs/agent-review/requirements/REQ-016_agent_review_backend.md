@@ -8,9 +8,9 @@ doc_link_id: DLID-3bmft1apetsm
 
 既定のレビューを開始するために、外部ツール、メッセージ DB、常駐セッションを準備する必要があると、プラグイン単体での利用が成立しない。
 
-`agent-review` は、プラグインに同梱した read-only カスタム Agent `reviewer` をレビュー実行主体とし、外部依存なしでバックエンドの契約（可用性検査と `retains_context` の宣言。[REQ-013](../../forge/requirements/REQ-013_review_policy.md) FNC-1318）を満たす。ラウンドを越える状態を持たず、レビュー対象の変更、履歴の保存、常駐資源の管理を行わない。
+`agent-review` は、プラグインに同梱した read-only カスタム Agent `reviewer` をレビュー実行主体とし、外部依存なしでバックエンドの契約（可用性検査と `retains_context` の宣言。[REQ-013][req-013] FNC-1318）を満たす。ラウンドを越える状態を持たず、レビュー対象の変更、履歴の保存、常駐資源の管理を行わない。
 
-reviewer の起動と所見の受け渡しは、レビュー本体が直接行う（[REQ-029](../../review/requirements/REQ-029_review_exchange.md)）。
+reviewer の起動と所見の受け渡しは、レビュー本体が直接行う（[REQ-029][req-029]）。
 
 ## 2. スコープ DLID-24t8hs6x4ez5
 
@@ -87,3 +87,6 @@ reviewer の起動と所見の受け渡しは、レビュー本体が直接行�
 ## 6. 未確定事項 DLID-60fwetem8kfn
 
 なし。
+
+[req-013]: ../../forge/requirements/REQ-013_review_policy.md "66dc0707bf12 DLID-yg0c67zs3zky"
+[req-029]: ../../review/requirements/REQ-029_review_exchange.md "4e7fe6918eec DLID-5vrs9fnet7de"

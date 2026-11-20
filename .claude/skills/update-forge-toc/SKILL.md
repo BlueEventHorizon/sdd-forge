@@ -41,7 +41,7 @@ python3 .claude/skills/update-forge-toc/scripts/build_forge_toc.py
 ```
 
 - 終了コード 0: 標準出力の JSON の `output` と `file_count` を控えて Step 3 へ進む
-- それ以外: 標準出力の JSON の `errors` を報告して終了する。索引が現物の文書と一致しないときは、ここでエラーになる
+- それ以外: 標準出力の JSON の `errors` を報告して終了する。索引の文書の集合が内蔵文書と一致しないときは、ここでエラーになる
 
 ### Step 3: 完了報告
 
@@ -56,6 +56,7 @@ forge 内蔵 docs の検索インデックスを更新しました
 ## Notes
 
 - 同梱ファイル、`.doc-link/` の変更、DLID の入った内蔵文書は、同じコミットに入れる。
-  `tests/forge/doc_structure/test_forge_toc_freshness.py` が、索引と現物の一致と、同梱ファイルと生成結果の一致を検査する。
+  `tests/forge/doc_structure/test_forge_toc_freshness.py` が、索引と内蔵文書の集合の一致と、同梱ファイルと生成結果の一致を検査する。
+  索引の内容が現物の文書より古いかは、doc-link の検査（`doc-link:check-toc`。`doc-link:index-docs` も構築の前に確かめる）が担う。内蔵文書を変えたら、本 skill を実行する。
 - ランタイムの `/forge:query-forge-rules` は同梱ファイルを直接 Read するため、利用者の環境に doc-link は要らない。
 - `.bak` ファイル（`rules_toc.yaml.bak` 等）はコミットしない。同じテストが残存を検出する。

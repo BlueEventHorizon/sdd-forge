@@ -139,7 +139,7 @@ sequenceDiagram
 
 ### 4.1 start-design DLID-5t4zehyzcgv3
 
-フェーズ構成は [DES-018](DES-018_create_design_workflow_design.md) を正本とする。入力の収集は次のとおり。
+フェーズ構成は [DES-018][des-018] を正本とする。入力の収集は次のとおり。
 
 #### 入力の収集 DLID-8q9m48m16szv
 
@@ -201,7 +201,7 @@ Phase 5: AIレビュー [MANDATORY]（FNC-006 準拠: --auto モード）
 
 ### 4.3 start-requirements DLID-nrgfa8zy309t
 
-フェーズ構成は [DES-017](DES-017_create_requirements_workflow_design.md) を正本とする。コンテキスト収集は次のとおり。
+フェーズ構成は [DES-017][des-017] を正本とする。コンテキスト収集は次のとおり。
 
 #### 既存コード収集 agent の適用マトリクス DLID-a7qcmtpn4jjb
 
@@ -250,3 +250,6 @@ create-* スキルは**セッションディレクトリを使用しない**。�
 
 - フェーズ間の中間成果物を複数 worker で共有する必要がない（収集結果は main AI コンテキストに保持し、成果物は出力先ディレクトリへ直接書き出す）
 - 直線的ワークフローであり、中断時は最初からやり直す方が効率的（再開すべき中間状態を持たない）
+
+[des-018]: DES-018_create_design_workflow_design.md "8999c4488a91 DLID-zfh5q9h29c8y"
+[des-017]: DES-017_create_requirements_workflow_design.md "7052a1614b27 DLID-vzcznbpypja0"

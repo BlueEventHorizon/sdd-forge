@@ -1,6 +1,6 @@
 # 仕様駆動開発ガイド
 
-forge が採用する**仕様駆動開発（Spec-Driven Development, SDD）** の哲学と方法論を解説する。操作手順は [文書作成ガイド](forge/guide_create_docs_ja.md) と [実装ガイド](forge/guide_implement_ja.md) を参照のこと。
+forge が採用する**仕様駆動開発（Spec-Driven Development, SDD）** の哲学と方法論を解説する。操作手順は [文書作成ガイド][guide-create-docs-ja] と [実装ガイド][guide-implement-ja] を参照のこと。
 
 ---
 
@@ -52,7 +52,7 @@ forge は上記の業界動向と同じ思想に立ちつつ、**5 段階（要�
 - 要件定義書は **What** — 何を作るか（ユーザー視点・技術中立）
 - 設計書は **How** — どう作るか（開発者視点・技術依存）
 
-境界の判断は [要件定義書と設計書の境界ガイド](../../plugins/forge/docs/spec_design_boundary_spec.md) に従う。「ユーザーマニュアルに書くか？」が最もシンプルな判定基準である。
+境界の判断は [要件定義書と設計書の境界ガイド][spec-design-boundary-spec] に従う。「ユーザーマニュアルに書くか？」が最もシンプルな判定基準である。
 
 ---
 
@@ -71,10 +71,10 @@ forge は SDD を 5 段階に分けて進める。各段階は別々の skill �
 
 **重要**: このガイドでは各段階の概念を示すにとどめる。具体的な skill の引数・モード・実行フローは以下を参照:
 
-- [文書作成ガイド](forge/guide_create_docs_ja.md) — 要件定義・設計・計画の 3 段階
-- [実装ガイド](forge/guide_implement_ja.md) — start-implement の詳細
-- [レビューガイド](forge/guide_review_ja.md) — review の詳細
-- [UXUI デザインガイド](forge/guide_uxui_design_ja.md) — start-uxui-design の詳細
+- [文書作成ガイド][guide-create-docs-ja] — 要件定義・設計・計画の 3 段階
+- [実装ガイド][guide-implement-ja] — start-implement の詳細
+- [レビューガイド][guide-review-ja] — review の詳細
+- [UXUI デザインガイド][guide-uxui-design-ja] — start-uxui-design の詳細
 
 ### 補足: テストの扱い（現状と今後の改善課題）
 
@@ -89,7 +89,7 @@ SDD 業界では**テストと受け入れ基準 (Acceptance Criteria)** が中�
 
 - テストは独立した段階として定義されておらず、**実装段階および review 段階**に内包される
 - 計画書レベルでテストタスクを **実装前に配置する TDD フローは未整備**
-- 要件定義書テンプレート ([requirement_format.md](../../plugins/forge/docs/requirement_format.md)) には表示要件・操作要件・エラーケースの枠はあるが、**Acceptance Criteria として仕様化しテスト生成に連動させる形は未整備**
+- 要件定義書テンプレート ([requirement_format.md][requirement-format]) には表示要件・操作要件・エラーケースの枠はあるが、**Acceptance Criteria として仕様化しテスト生成に連動させる形は未整備**
 
 **今後の改善課題**:
 
@@ -109,7 +109,7 @@ SDD 業界では**テストと受け入れ基準 (Acceptance Criteria)** が中�
 - **新規立ち上げ** — プロジェクト初期仕様を素直に書く。詳細は 5 章
 - **追加開発** — 既存プロジェクトに feature を追加する。6 章で詳説する
 
-なお、forge は Feature（機能単位のディレクトリ分割）をサポートするが、**Feature は必須ではない**。小規模プロジェクトでは Feature を使わず `specs/requirements/` 直下に仕様を置くだけで動作する。Feature を使う場合の恒久仕様は慣習的に「main」と呼ぶ（対比として一時的な追加 feature がある）。詳細は [文書構造ガイド](guide_doc_structure_ja.md) を参照。
+なお、forge は Feature（機能単位のディレクトリ分割）をサポートするが、**Feature は必須ではない**。小規模プロジェクトでは Feature を使わず `specs/requirements/` 直下に仕様を置くだけで動作する。Feature を使う場合の恒久仕様は慣習的に「main」と呼ぶ（対比として一時的な追加 feature がある）。詳細は [文書構造ガイド][guide-doc-structure-ja] を参照。
 
 ---
 
@@ -141,7 +141,7 @@ SDD 業界では**テストと受け入れ基準 (Acceptance Criteria)** が中�
 | 中〜大規模（複数機能）   | Feature ごとに分割。`specs/{feature}/requirements/` |
 | 段階的リリース計画あり   | Feature で MVP / Phase2 等を切り分ける              |
 
-Feature を使う構成では、恒久仕様を保持する Feature を慣例的に「**main**」と呼ぶ（`specs/main/requirements/` のように配置）。以降の追加 feature は main と並列に置かれる。Feature を使わない構成では「main」という概念自体が不要。詳細は [文書構造ガイド](guide_doc_structure_ja.md) の「Feature（フィーチャー）」を参照。
+Feature を使う構成では、恒久仕様を保持する Feature を慣例的に「**main**」と呼ぶ（`specs/main/requirements/` のように配置）。以降の追加 feature は main と並列に置かれる。Feature を使わない構成では「main」という概念自体が不要。詳細は [文書構造ガイド][guide-doc-structure-ja] の「Feature（フィーチャー）」を参照。
 
 ---
 
@@ -149,7 +149,7 @@ Feature を使う構成では、恒久仕様を保持する Feature を慣例的
 
 既存プロジェクトに新しい feature を追加する、あるいは既存仕様を差分開発として変更するケース。
 
-feature を使うかどうかは **仕様の意味が変わるか** で判定する — 既存の要件定義書・設計書が定める意味を変える場合、追加・修正・削除いずれの方向でも feature を使うのが原則である。「バグ修正だから」という名目だけを理由に不要と判定してはならない。一方、意味の変わらない仕様に実体（実装・文書の記述）が食い違っている不具合は、差分開発ではなく原本を直接直す。「既存要件定義書へ追記したか／新しい要件定義書を作ったか」という文書操作の形式も判定条件ではない。feature を使わずに済むのは、変更規模が小さく **かつ** 旧仕様との一時的矛盾・ID 連番競合・実装完了後の統合が必要な規模のいずれにも該当しない場合に限る（判定基準の詳細は [`additive_development_spec.md`](../../plugins/forge/docs/additive_development_spec.md) §1）。
+feature を使うかどうかは **仕様の意味が変わるか** で判定する — 既存の要件定義書・設計書が定める意味を変える場合、追加・修正・削除いずれの方向でも feature を使うのが原則である。「バグ修正だから」という名目だけを理由に不要と判定してはならない。一方、意味の変わらない仕様に実体（実装・文書の記述）が食い違っている不具合は、差分開発ではなく原本を直接直す。「既存要件定義書へ追記したか／新しい要件定義書を作ったか」という文書操作の形式も判定条件ではない。feature を使わずに済むのは、変更規模が小さく **かつ** 旧仕様との一時的矛盾・ID 連番競合・実装完了後の統合が必要な規模のいずれにも該当しない場合に限る（判定基準の詳細は [`additive_development_spec.md`][additive-development-spec] §1）。
 
 ### 6-1. なぜ独立した要件定義書が必要か
 
@@ -165,7 +165,7 @@ feature を使うかどうかは **仕様の意味が変わるか** で判定す
 
 ### 6-2. `feature_type: temporary-feature` frontmatter
 
-追加開発の要件定義書には、文書先頭に `feature_type: temporary-feature` の frontmatter を付ける。ただし既存仕様と一切重複・矛盾しない純粋追加型の feature には付けない。feature_note には①この文書が対象範囲における現在の仕様であり旧仕様の記述は置き換わっていること②旧仕様ファイルは書き換えず新規ファイル・新規ディレクトリへ切り出すこと③実装完了後に旧仕様との齟齬を解消する（merge）こと④同一スコープの内容は旧仕様側へ移しスコープが異なる内容は分離維持すること、の4点を記載する。正式な文言は [`requirement_format.md`](../../plugins/forge/docs/requirement_format.md)「追加 feature 用 frontmatter」節、または [frontmatter_format.md](../../plugins/forge/docs/frontmatter_format.md) §1.1 を参照。
+追加開発の要件定義書には、文書先頭に `feature_type: temporary-feature` の frontmatter を付ける。ただし既存仕様と一切重複・矛盾しない純粋追加型の feature には付けない。feature_note には①この文書が対象範囲における現在の仕様であり旧仕様の記述は置き換わっていること②旧仕様ファイルは書き換えず新規ファイル・新規ディレクトリへ切り出すこと③実装完了後に旧仕様との齟齬を解消する（merge）こと④同一スコープの内容は旧仕様側へ移しスコープが異なる内容は分離維持すること、の4点を記載する。正式な文言は [`requirement_format.md`][requirement-format]「追加 feature 用 frontmatter」節、または [frontmatter_format.md][frontmatter-format] §1.1 を参照。
 
 このうち①〜③はそれぞれ次の意味を持つ。
 
@@ -214,7 +214,7 @@ feature を使うかどうかは **仕様の意味が変わるか** で判定す
 
 ### 6-5. 実装期間中の旧仕様の置き換え
 
-追加開発の要件定義書・設計書は、その対象範囲における現在の仕様である（[additive_development_spec.md](../../plugins/forge/docs/additive_development_spec.md) §2）。既存の要件定義書・設計書・計画書・ソースコードの記述は、その範囲について現在の仕様ではなく、内容としては追加開発側へ置き換わっている。新要件「ユーザーはゲスト状態でも閲覧可能」と旧要件「全機能は認証必須」があれば、**現在の仕様は新要件**である。旧記述の更新は merge 時に一括で行う。
+追加開発の要件定義書・設計書は、その対象範囲における現在の仕様である（[additive_development_spec.md][additive-development-spec] §2）。既存の要件定義書・設計書・計画書・ソースコードの記述は、その範囲について現在の仕様ではなく、内容としては追加開発側へ置き換わっている。新要件「ユーザーはゲスト状態でも閲覧可能」と旧要件「全機能は認証必須」があれば、**現在の仕様は新要件**である。旧記述の更新は merge 時に一括で行う。
 
 この関係を「優先」と考えてはならない。優先とすると、矛盾を見つけたときだけ新しい方を取ればよいことになり、矛盾を見落とせば旧仕様のまま実装される。
 
@@ -236,18 +236,28 @@ merge では以下を行う:
 4. **移し終えて独立して存在する意味を失った文書のみ削除する**。別スコープの内容を含み分離を維持する文書は、frontmatter を外して恒久仕様に切り替え、残す
 5. `/forge:update-db-specs` で specs の検索インデックスを更新
 
-**「一時文書だから削除する」ではない**。削除は「役目を終えた文書」だけに限られ、スコープが異なる内容を含む文書は残る（[additive_development_spec.md](../../plugins/forge/docs/additive_development_spec.md) §4.2 参照）。
+**「一時文書だから削除する」ではない**。削除は「役目を終えた文書」だけに限られ、スコープが異なる内容を含む文書は残る（[additive_development_spec.md][additive-development-spec] §4.2 参照）。
 
-**AI が追加開発のタスクを実行するときの詳細な判定基準**は [additive_development_spec.md](../../plugins/forge/docs/additive_development_spec.md) §4.3 にまとめてある。
+**AI が追加開発のタスクを実行するときの詳細な判定基準**は [additive_development_spec.md][additive-development-spec] §4.3 にまとめてある。
 
 ---
 
 ## 7. 関連ドキュメント
 
-- [文書作成ガイド](forge/guide_create_docs_ja.md) — 要件定義・設計・計画の作成手順
-- [実装ガイド](forge/guide_implement_ja.md) — start-implement の詳細
-- [レビューガイド](forge/guide_review_ja.md) — review の詳細
-- [文書構造ガイド](guide_doc_structure_ja.md) — Feature 管理と `.doc_structure.yaml`
-- [要件定義書フォーマット](../../plugins/forge/docs/requirement_format.md) — 要件定義書の正式フォーマット
-- [追加開発ワークフロー仕様](../../plugins/forge/docs/additive_development_spec.md) — AI 向けの追加開発判定基準
-- [要件定義書と設計書の境界ガイド](../../plugins/forge/docs/spec_design_boundary_spec.md) — What/How の境界判定
+- [文書作成ガイド][guide-create-docs-ja] — 要件定義・設計・計画の作成手順
+- [実装ガイド][guide-implement-ja] — start-implement の詳細
+- [レビューガイド][guide-review-ja] — review の詳細
+- [文書構造ガイド][guide-doc-structure-ja] — Feature 管理と `.doc_structure.yaml`
+- [要件定義書フォーマット][requirement-format] — 要件定義書の正式フォーマット
+- [追加開発ワークフロー仕様][additive-development-spec] — AI 向けの追加開発判定基準
+- [要件定義書と設計書の境界ガイド][spec-design-boundary-spec] — What/How の境界判定
+
+[guide-create-docs-ja]: forge/guide_create_docs_ja.md
+[guide-implement-ja]: forge/guide_implement_ja.md
+[spec-design-boundary-spec]: ../../plugins/forge/docs/spec_design_boundary_spec.md
+[guide-review-ja]: forge/guide_review_ja.md
+[guide-uxui-design-ja]: forge/guide_uxui_design_ja.md
+[requirement-format]: ../../plugins/forge/docs/requirement_format.md
+[guide-doc-structure-ja]: guide_doc_structure_ja.md
+[additive-development-spec]: ../../plugins/forge/docs/additive_development_spec.md
+[frontmatter-format]: ../../plugins/forge/docs/frontmatter_format.md

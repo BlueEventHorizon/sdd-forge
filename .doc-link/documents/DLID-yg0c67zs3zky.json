@@ -1,39 +1,41 @@
 {
-  "content_hash": "fb1da44989edc621538fa3b77ab53c2dd4d3a3e49c38657e93e67e96b800a74a",
+  "content_hash": "66dc0707bf1228c636add943299f9cb1ba511940a1bc474db9804c84b89ac2ef",
   "doc_link_id": "DLID-yg0c67zs3zky",
   "keywords": [
     "review policy",
-    "review priorities P1 P2 P3",
-    "review criteria",
-    "interactive auto intervention",
-    "confidence-based auto fix",
-    "target granularity preservation",
-    "review backend",
-    "focus and scope",
-    "self-verification evaluator",
-    "issue creation for missing rules"
+    "review priorities",
+    "criteria",
+    "severity catalog",
+    "confidence",
+    "auto fix",
+    "backend",
+    "reviewer",
+    "evaluator",
+    "granularity preservation"
   ],
   "path": "docs/specs/forge/requirements/REQ-013_review_policy.md",
-  "purpose": "Requirements for the forge review policy: document-driven review limited to rule conformance, contradiction and needless complexity, with targeting, intervention, backend and verification axes.",
+  "purpose": "Requirements for the forge review policy: document-based review priorities, findings as observations, option axes, backends, reviewer/evaluator verification and rule-gap handling.",
   "summary": [
-    "Background: over-proposal and double detection in AI review; shift to document-centric review with review results treated as observations, not instructions",
-    "Three review priorities P1 rule conformance, P2 contradiction, P3 needless complexity; criteria hold no perspective or judgment and use a fixed three-section structure",
-    "Target axes --diff, --branch, --files, --dirs are mutually exclusive, and the target granularity the user specified is preserved when passed to the reviewer",
-    "Intervention axes --interactive and --auto, where automatic fixing depends on the main agent confidence (fix confidence versus finding confidence), not severity",
-    "Optional axes: focus (points of attention), scope (completion baseline), and carrying in project rules and specs",
-    "Backend axis: resolution order, fail-closed behavior, availability check, retains_context declaration, finding locations, and failure and cleanup handling",
-    "Quality assurance: chain-of-verification self-check of findings and independent evaluator assessment with mechanical linkage of all findings",
-    "Permanent document-reference review viewpoint, built-in anti-pattern fallback rules, and issue creation under three conditions when rules are missing",
-    "CLI structure designed to avoid AI misjudgment, principles expansion with severity catalog, affected targets, and open TBD items"
+    "Background: over-proposal and double detection in AI review; shift to document-centered review with complete information at design time",
+    "Review position: findings are observations, adoption decided by the main body; quality controlled via inputs",
+    "FNC-1301/1302/1309/1311: P1-P3 priorities, criteria without judgment, fixed three-section structure, principles severity catalog",
+    "FNC-1303/1312/1310: target axis flags and preserving user-specified granularity, CLI structure",
+    "FNC-1304: interaction axis, auto-fix decided by confidence rather than severity",
+    "FNC-1313/1319/1320: focus, scope and carried-in rules and specs options",
+    "FNC-1318: backend axis, resolution order, availability check, fail-closed behavior, cleanup",
+    "FNC-1321/1322: reviewer self-verification and independent evaluator assessment with mechanical linkage",
+    "FNC-1314/1305/1306: document reference viewpoint, built-in rule fallback, issue creation for rule gaps with three conditions",
+    "Affected targets and open items TBD-1302 to TBD-1304"
   ],
   "tasks": [
-    "Writing or revising the review skill and its SKILL.md",
-    "Designing review backends, reviewer and evaluator definitions",
-    "Authoring review_criteria files and review priorities specs",
-    "Reviewing requirement, design and plan documents",
-    "Implementing review request building and target resolution scripts",
-    "Deciding auto-fix versus interactive handling of review findings",
-    "Handling missing-rule discoveries and issue creation from review"
+    "Changing /forge:review SKILL.md or its options",
+    "Writing or editing review_criteria files",
+    "Defining reviewer and evaluator behavior",
+    "Adding or modifying a review backend",
+    "Designing auto-fix and confidence handling",
+    "Reviewing documents for rule compliance",
+    "Extending principles severity catalogs",
+    "Deciding whether to file a rule-gap issue"
   ],
   "title": "REQ-013 レビューポリシー要件"
 }

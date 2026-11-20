@@ -1,39 +1,38 @@
 {
-  "content_hash": "e0ecc101ddc26eebdb4c502ae46aaca35b170a69cca710d585d5d8b4fd03e72d",
+  "content_hash": "84e8b637dc1d6d2a4f66d36413917cef2589689e456de36bca52d47fff7164f4",
   "doc_link_id": "DLID-vyz6fzhdfk3a",
   "keywords": [
     "agenda",
     "agenda.json",
     "agenda_store",
     "agenda_wrapper",
-    "consult",
     "structural judgment",
-    "decision",
+    "state transition",
     "content_version",
-    "last_changed_fields",
-    "state transition"
+    "consult",
+    "decision",
+    "last_changed_fields"
   ],
   "path": "docs/specs/consult/agenda/design/DES-075_agenda_mechanism_design.md",
-  "purpose": "Design of the shared agenda mechanism that records, validates state transitions of, and renders discussion items (review findings, consult topics) via JSON storage and CLI scripts.",
+  "purpose": "Design of the agenda mechanism: a shared storage layer that records agenda items (review findings, discussion points), judges state transitions, and triggers display generation for consult.",
   "summary": [
-    "Overview: storage layer and display layer split, JSON format, one-way dependency consult -> wrapper -> store",
-    "Architecture: agenda_wrapper, agenda_store, agenda_render, agenda_schema modules and their responsibilities",
-    "Data schema of agenda.json: content_version, config, structural_judgment, items, decision, last_changed_fields",
-    "State representation without a status field: an item is settled when decision by/outcome/reason are all non-empty",
-    "State transition rules: structural judgment required first, background and essence required before decision",
-    "Structural judgment re-required when a new item is added, done atomically in one record call",
-    "Input interface: wrapper CLI start/record/pending/next/finish, one value per record call, no AI-built JSON",
-    "Placement, count and lifetime of records per origin (review/consult), deletion on all items settled",
-    "Automatic re-render trigger after each successful write, with partial status on render failure",
-    "Test design and measurement method for reduced AI output (FNC-004)"
+    "Overview and one-way architecture: consult, agenda_wrapper, agenda_store, agenda_render",
+    "Module list and class diagram of the agenda.json data structure",
+    "JSON schema fields: content_version, config, structural_judgment, items, decision, last_changed_fields",
+    "State expressed by the three decision values being non-empty, with no separate status vocabulary",
+    "Transition conditions in agenda_schema and structural judgment re-required when adding items",
+    "Input CLI design via agenda_wrapper: start, record one value per call, next, pending, finish",
+    "Location, count and lifetime of records per origin (review, consult)",
+    "Automatic re-render trigger after writes and failure handling",
+    "Test design and measurement method for FNC-004",
+    "Existing components reused"
   ],
   "tasks": [
-    "Implementing or modifying agenda_store, agenda_wrapper, agenda_schema",
-    "Changing the agenda.json schema or adding fields",
-    "Modifying consult skill agenda calls",
-    "Designing state transition or settlement rules",
+    "Implementing or modifying agenda_store, agenda_wrapper or agenda_schema",
+    "Changing the agenda.json schema",
+    "Integrating consult with the agenda mechanism",
     "Writing tests for the agenda mechanism",
-    "Reviewing agenda-related design documents"
+    "Reviewing agenda design documents"
   ],
   "title": "DES-075 agenda 機構 設計書"
 }

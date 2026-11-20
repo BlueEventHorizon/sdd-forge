@@ -12,11 +12,11 @@ doc_link_id: DLID-zehb6ge71vgb
 
 ### 1.1 対象システムの性質 DLID-x7vaf58m3c5w
 
-forge プラグイン内部の文書運用であり、外部公開・本番運用・個人情報の保持を伴わない開発支援ツール相当のスコープである（[spec_priorities_spec.md](../../../../plugins/forge/docs/spec_priorities_spec.md) §10.1 の「上記いずれにも該当しない」に該当する）。
+forge プラグイン内部の文書運用であり、外部公開・本番運用・個人情報の保持を伴わない開発支援ツール相当のスコープである（[spec_priorities_spec.md][spec-priorities-spec] §10.1 の「上記いずれにも該当しない」に該当する）。
 
 ## 2. 前提条件 DLID-pe4jmfx4589a
 
-- 計画書のファイル形式は JSON である（[REQ-001 オーケストレータパターン要件](REQ-001_orchestrator_pattern.md) FNC-005 が文書フォーマットの選定基準として定める）
+- 計画書のファイル形式は JSON である（[REQ-001 オーケストレータパターン要件][req-001] FNC-005 が文書フォーマットの選定基準として定める）
 
 ## 3. 機能要件 DLID-e576kkv3zcpq
 
@@ -69,7 +69,7 @@ forge プラグイン内部の文書運用であり、外部公開・本番運�
 
 ### FNC-007: 差分 feature の識別子を持たない DLID-38kgmvzsazpq
 
-計画書は差分 feature の識別子を持たないこと。計画書が差分 feature に属するかは、トレーサビリティが参照する要件定義書の識別子を辿って判定すること（[REQ-025 差分開発の仕組み 要件定義書](REQ-025_additive_development_spec.md) FNC-001）。
+計画書は差分 feature の識別子を持たないこと。計画書が差分 feature に属するかは、トレーサビリティが参照する要件定義書の識別子を辿って判定すること（[REQ-025 差分開発の仕組み 要件定義書][req-025] FNC-001）。
 
 理由: 同じ事実を 2 か所に持つと、一方だけが更新された状態が生まれる。辿れる関係が既にあるなら、辿る側に持たせない。
 
@@ -85,3 +85,7 @@ forge プラグイン内部の文書運用であり、外部公開・本番運�
 ## 4. 未確定事項 DLID-2xc0dk2tkthy
 
 該当なし。
+
+[spec-priorities-spec]: ../../../../plugins/forge/docs/spec_priorities_spec.md "f8233c87c564 DLID-f9ny9e932trv"
+[req-001]: REQ-001_orchestrator_pattern.md "8954ef4d1f67 DLID-ct64b13ee182"
+[req-025]: REQ-025_additive_development_spec.md "1d8889eae72e DLID-8aaxgj88j28q"

@@ -1,40 +1,38 @@
 {
-  "content_hash": "1c233fa6833df6764ec21e23122b857ecdfaaf0709fcbd2bde6e26d22628841d",
+  "content_hash": "084894e5104bd1ba6ad5b40935743427970faca2aede89af6b6a92832036a475",
   "doc_link_id": "DLID-5c0nw4er6es2",
   "keywords": [
     "interactive requirements",
-    "draft requirements",
-    "dialogue",
-    "TBD",
-    "additive development",
+    "draft first",
+    "differential development",
     "temporary-feature",
     "doc_status draft",
     "glossary",
-    "scope management",
-    "anti-patterns"
+    "TBD",
+    "anti-patterns",
+    "start-requirements"
   ],
   "path": "plugins/forge/skills/start-requirements/docs/requirements_interactive_workflow.md",
-  "purpose": "Interactive workflow for writing a draft requirements document first and refining it through dialogue when no Figma or screen design exists, for new apps or feature additions.",
+  "purpose": "Interactive requirements workflow that drafts a requirements document first and refines it through dialogue with the user when no Figma or screen design exists, for new apps or feature additions.",
   "summary": [
-    "Required reading list including additive development spec and frontmatter format",
-    "Phase 0: confirm what is known from prior discussion and determine whether the work is completely new",
-    "Phase 1: fetch rules and existing assets, optional external research",
-    "Phase 2: confirm vision, value, scope, and out-of-scope items",
-    "Phase 3: classify pure-additive versus differential type with approval, decide placement, number IDs, write draft with doc_status draft",
-    "Phase 4: discuss draft, scenarios, screen lists, glossary, bottom-up exploration order, create requirements, re-judge type and add temporary marker",
-    "Phase 5: quality checks, TBD organization, AI review, remove draft status, specs index update, commit, completion guidance",
-    "Basic dialogue principles: visual confirmation, tolerating TBD, focus on What, staged presentation, scope control, no history sections, consistency check",
-    "Anti-patterns table and special rules for ambiguity handled as TBD, with review severity matrix",
+    "Required reading list including additive development spec, frontmatter format, requirement format and error classification",
+    "Phase 0: confirm what is known from prior conversation and decide whether the work is entirely new",
+    "Phase 1: fetch rules and existing assets via search skills, investigate external information",
+    "Phase 2: confirm vision, value, scope, constraints and impact",
+    "Phase 3: judge pure-additive versus differential type with approval, decide placement, number IDs, write draft with doc_status draft",
+    "Phase 4: discuss the draft, scenarios, screen lists, glossary, layered exploration order, write requirements, re-judge type and add temporary marker",
+    "Phase 5: quality checks, TBD organization, AI review, remove draft status, DB update, commit, completion guidance",
+    "Dialogue principles and anti-patterns specific to requirements definition",
+    "Special rules for unresolved items (TBD) and review severity table",
     "Question templates and deliverables list per phase"
   ],
   "tasks": [
-    "Creating requirements without Figma or screen designs",
-    "Starting a new app from scratch",
-    "Adding a new feature to an existing app",
+    "Creating requirements from scratch through dialogue",
+    "Adding a feature to an existing app requirements set",
     "Judging pure-additive versus differential development type",
-    "Drafting requirements and refining through discussion",
-    "Reviewing requirements with TBD and ambiguity rules",
-    "Building a glossary and exploring system architecture"
+    "Running start-requirements in interactive mode",
+    "Managing TBD items in requirements documents",
+    "Reviewing requirements for ambiguity and How leakage"
   ],
   "title": "対話型要件定義ワークフロー"
 }

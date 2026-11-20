@@ -1,37 +1,41 @@
 {
-  "content_hash": "5372c53c4325a51422e9bd61b74a47b15dbb7c1066e730a40e9927aab28ec2d5",
+  "content_hash": "102f5179bca8f34b278e50deeaa746675b15166cf984426fbabfd7f9b9820633",
   "doc_link_id": "DLID-1585cw3yt8pa",
   "keywords": [
     "start-plan",
     "plan-strategist",
     "implementation strategy",
     "strategy_exchange",
+    "plan document",
+    "orchestrator",
     "task extraction",
     "traceability matrix",
-    "required_reading",
-    "write_plan",
-    "agent data exchange",
-    "plan document"
+    "additive development",
+    "agent data exchange"
   ],
   "path": "docs/specs/forge/design/DES-019_create_plan_workflow_design.md",
-  "purpose": "Design document for the start-plan workflow that derives an implementation strategy from design documents, extracts tasks, creates a plan, and passes AI and human review, including the plan-strategist agent exchange.",
+  "purpose": "Design document for the /forge:start-plan orchestrator skill, defining how implementation strategy is delegated to an agent and how the plan document is created, reviewed, and approved.",
   "summary": [
-    "Overview of the start-plan orchestrator flow from document gathering to strategy, plan creation and review",
-    "Delegation to agents: general-purpose gathering, custom plan-strategist agent, and review",
-    "Agent data exchange contract: identifiers, request JSON, strategy document, completion value and cleanup",
-    "strategy_exchange script subcommands open, request-path, finish and check",
-    "Flowchart including strategy approval loop and failure handling",
-    "Preparation and Phase 1 context collection with design documents required and requirements optional",
-    "Phase 2 document reading and Phase 3 strategy creation, including diff-development handling",
-    "Phase 4 plan creation with task granularity, required_reading rules and completeness checks",
-    "Phase 5 review, completion steps, design principles and related files"
+    "Overview of start-plan flow: context gathering, strategy, task extraction, plan creation, AI review, human approval",
+    "Delegation of strategy drafting to the custom agent forge:plan-strategist, while the orchestrator searches specs and rules directly",
+    "Agent data exchange contract: identifiers, request JSON fields, strategy file and exit value, cleanup",
+    "strategy_exchange.py subcommands: open, request-path, finish, check and which caller uses each",
+    "Mermaid flowchart of phases 1 to 5 including approval loop and create/update mode branching",
+    "Phase details: prerequisite checks, context collection, document reading, strategy, plan writing, AI review, completion",
+    "Additive development handling: temporary-feature marker detection and strategy covering old/new spec mismatches",
+    "Task granularity, completeness checks, and requirement-design-task traceability matrix",
+    "Update mode checks of existing plan and next-step guidance to /forge:start-implement",
+    "Related files list: SKILL.md, plan-strategist agent, strategy_exchange script, principles specs"
   ],
   "tasks": [
-    "Modifying the start-plan skill or its workflow",
-    "Changing the plan-strategist agent or strategy_exchange script",
-    "Creating or updating a plan document from design documents",
-    "Defining task granularity and traceability in plans",
-    "Reviewing plan workflow design consistency"
+    "Modifying the start-plan skill workflow",
+    "Editing the plan-strategist agent definition",
+    "Changing strategy_exchange.py behavior or its request/result contract",
+    "Designing or reviewing plan document creation",
+    "Implementing task extraction and splitting for plans",
+    "Reviewing design consistency with orchestrator pattern requirements",
+    "Handling additive development in planning",
+    "Writing tests for the plan workflow scripts"
   ],
   "title": "DES-019 forge 計画書作成ワークフロー 設計書"
 }

@@ -11,15 +11,15 @@ start-requirements → start-design → start-plan → start-implement
 
 ### Context Gathering
 
-All three skills share a common context-gathering pattern. Before document creation, parallel agents collect the following and return the results as return values (markdown lists):
+All three skills share a common context-gathering pattern. Before document creation, they collect the following:
 
-| Agent       | Target                                     | Search Method           |
-| ----------- | ------------------------------------------ | ----------------------- |
-| specs agent | Specifications (requirements, design docs) | `/forge:query-db-specs` |
-| rules agent | Project rule documents                     | `/forge:query-db-rules` |
-| code agent  | Existing implementations                   | Direct `Grep` / `Glob`  |
+| Target                                     | Method                                                    |
+| ------------------------------------------ | --------------------------------------------------------- |
+| Specifications (requirements, design docs) | The skill calls `/forge:query-db-specs` directly          |
+| Project rule documents                     | The skill calls `/forge:query-db-rules` directly          |
+| Existing implementations                   | An agent explores with `Grep` / `Glob` and returns a list |
 
-The agents launched differ by skill. start-design identifies the requirements document from its location and gathers only the project rules with an agent (existing implementations are read after the design, during matching).
+What is collected differs by skill. start-design identifies the requirements document from its location and searches only for the project rules (existing implementations are read after the design, during matching). If a search fails, the skill does not proceed to later steps; it reports the error and waits for instructions.
 
 ### Completion Flow
 
@@ -159,12 +159,14 @@ Extract tasks from design documents and create a JSON plan.
 ### Execution Flow
 
 1. Confirm Feature name
-2. **Context gathering** (2 agents in parallel)
+2. **Context gathering** (two searches)
    - Retrieve requirements + design docs
    - Collect plan rules
-3. Check for existing plan (update mode)
-4. Create/update plan (task extraction → granularity check → ID assignment)
-5. Completion flow (review → search-index update → commit)
+3. Read the documents and search for related existing specs
+4. Devise the implementation strategy (strategy approval)
+5. Check for existing plan (update mode)
+6. Create/update plan (task extraction → granularity check → ID assignment)
+7. Completion flow (review → search-index update → commit)
 
 ### Task Granularity Criteria
 

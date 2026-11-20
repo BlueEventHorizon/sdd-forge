@@ -61,31 +61,11 @@ graph TD
 
 3. 返却された文書を全文読み込み
 
-**Skill 失敗時**: エラー内容をユーザーに報告し、指示を待つ
+**Skill が失敗したとき、または検索が行われなかったとき**（索引が未整備で、整備が見送られたとき。検索スキルは失敗として返さない）: 後続へ進まず、その内容をユーザーに報告し、指示を待つ
 
-### 1.3 コンテキスト収集 agent の起動 DLID-v8jypevg155y
+### 1.3 既存コード収集 agent の起動 DLID-v8jypevg155y
 
-Agent ツールで以下を**並列起動**する。各 agent の **return value** を main AI コンテキストに直接保持する。
-
-**rules agent**:
-
-```
-Agent ツール起動: 実装ルール収集
-prompt:
-  既存アプリ解析による要件定義書作成に適用するプロジェクト固有ルール (UX / アーキ規約等) を検索する。
-
-  検索手順 (優先順):
-  - `/forge:query-db-rules 既存アプリ解析による要件定義書作成`
-  - 利用不可なら `python3 ${CLAUDE_PLUGIN_ROOT}/scripts/doc_structure/resolve_doc_structure.py --type rules`
-  - それも不可なら `Glob: docs/rules/**/*.md`
-
-  return value として以下の markdown 形式で返す:
-
-  ## 実装ルール (N 件)
-  - `path/to/rule.md` — 関連理由
-```
-
-**code agent**:
+Agent ツールで以下を起動する。agent の **return value** を main AI コンテキストに直接保持する。プロジェクトのルールは 1.2 で特定済みであり、ここでは集めない。
 
 ```
 Agent ツール起動: 既存コード収集
@@ -105,11 +85,11 @@ prompt:
 
 ### 1.4 収集結果の確認 DLID-x7gq60kkg789
 
-全 agent 完了後、2 つの return value をそのままユーザーに表示する（5 件以下は全件、6 件以上は先頭 3 件 + `... 他 N 件`）。
+agent の完了後、1.2 の検索結果（ルール・既存の仕様書）と agent の return value を、そのままユーザーに表示する（5 件以下は全件、6 件以上は先頭 3 件 + `... 他 N 件`）。
 
 **失敗時の扱い**:
 
-- agent がエラー終了 → 該当カテゴリの return value なしで後続工程に進む
+- agent がエラー終了 → 後続の Phase へ進まず、エラーの内容を利用者に報告して指示を待つ
 - agent が空結果 → 正常扱い
 
 ---

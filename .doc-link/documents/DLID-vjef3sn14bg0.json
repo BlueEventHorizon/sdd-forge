@@ -1,36 +1,37 @@
 {
-  "content_hash": "8521a5b36e841e9e9e426774f3cb21c5e1c736ca517cd753ee4c0c3f103c944f",
+  "content_hash": "fdc452f8441fed5079394ff085d6515e1fcdbd224701a4916ccfcb30826b8ca1",
   "doc_link_id": "DLID-vjef3sn14bg0",
   "keywords": [
     "reverse engineering",
-    "existing app analysis",
+    "requirements",
+    "existing app",
     "source code analysis",
-    "requirements extraction",
-    "legacy app",
-    "APP-001",
+    "legacy",
+    "APP",
     "SCR",
     "FNC",
+    "feature extraction",
     "workflow"
   ],
   "path": "plugins/forge/skills/start-requirements/docs/requirements_reverse_engineering_workflow.md",
-  "purpose": "Workflow for extracting requirements from an existing application source code and writing requirements documents, keeping functionality while allowing a redesign of the look.",
+  "purpose": "Workflow for reverse-engineering requirement documents from the source code of an existing application, keeping functionality while allowing the design to be renewed.",
   "summary": [
-    "Required reading list: requirement principles, format, error classification, boundary, priorities, style guide",
-    "Purpose: preserve features, renew design, not clone the existing design",
-    "Phase 1: confirm design policy and source path, fetch rules and specs, launch parallel context-collection agents",
-    "Phase 2: analyze project structure, screens and components, navigation, treatment of design elements",
-    "Phase 3: requirement extraction priority order and practical steps for actions, branches, persistence, error handling",
-    "Feature extraction checklist per screen",
-    "Phase 4: placement and ID numbering, creation order, What-only writing principles, glossary",
-    "Phase 5: quality checks, AI review, reference existence check placeholder, specs index update, commit confirmation",
-    "Completion guidance with the next start-design command"
+    "Required reading list of requirement principles, format, error classification, and style guides",
+    "Purpose: extract requirements from existing source code, keep features, renew design",
+    "Five-phase flow: preparation, source analysis, requirement extraction, document writing, quality check",
+    "Phase 1 confirms design policy and source path, retrieves rules and specs, runs a code collection agent",
+    "Source analysis of project structure, screens, navigation and design element handling",
+    "Extraction priority order APP, SCR, FNC, BL, DM and others, with practical extraction examples",
+    "Feature extraction checklist covering actions, UI, data, transitions, business rules and integrations",
+    "Output location decision, ID numbering via next-spec-id, creation order and What-only principle",
+    "Quality checklists, AI review, specs index update, commit, and completion guidance"
   ],
   "tasks": [
-    "Rebuilding an existing app from scratch",
-    "Re-architecting a legacy app",
-    "Deriving requirements from existing source code",
-    "Extracting screen, function, and data requirements from code",
-    "Reviewing reverse-engineered requirements"
+    "Creating requirement documents from existing application source code",
+    "Rebuilding a legacy app on a new architecture",
+    "Recovering requirements from code",
+    "Extracting user actions, branching and persistence as requirements",
+    "Reviewing the start-requirements reverse-engineering mode workflow"
   ],
   "title": "要件定義書作成ワークフロー（既存アプリ解析版）"
 }

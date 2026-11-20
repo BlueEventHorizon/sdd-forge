@@ -11,14 +11,16 @@ forge スキルは多くの作業工程を持つ（文書収集・分析・実�
 
 1. **コンテキスト消費**: 長い SKILL.md + 参照文書 + 中間結果がコンテキストを圧迫する
 2. **追従精度の低下**: 指示が長くなるほど AI が正確に追従しきれない
-3. **並列処理の不可**: 独立した調査（仕様書検索・ルール検索・コード探索）を直列で実行せざるを得ない
+3. **並列処理の不可**: 独立した作業（コード探索・タスク実行等）を直列で実行せざるを得ない
 4. **コンテキスト圧縮による消失**: 長時間セッションで中間結果が失われる
 
 ### 適用対象 DLID-cf9v4hahqs5p
 
 オーケストレータ + 委譲の構造を採るスキル:
 
-- `start-design` / `start-plan` / `start-implement` — Agent ツールでカスタム / 汎用 Agent へ委譲し、結果を return value で収集する
+- `start-design` — 文書検索を query スキルへ、レビューを `review` へ、Skill ツールで委譲する
+- `start-plan` — 文書検索を query スキルへ、実装戦略の策定をカスタム Agent へ委譲する
+- `start-implement` — Agent ツールでカスタム / 汎用 Agent へ委譲し、結果を return value で収集する
 - `start-requirements` — ワークフロー文書側から query スキル・Agent へ委譲する
 - `review` — 依頼を組み立てて reviewer・evaluator（カスタム Agent）を起動し、返った所見と評価を吟味して、修正・終端判断まで進める
 
@@ -31,7 +33,8 @@ forge スキルは多くの作業工程を持つ（文書収集・分析・実�
 forge の user-invocable スキルはオーケストレータとして設計する。
 
 - オーケストレータは全体の進行管理・判断分岐・ユーザー対話を担う
-- 詳細な作業（文書検索・レビュー実行・修正等）は汎用 Agent / カスタム Agent に委譲する
+- 詳細な作業（レビュー実行・修正等）は、別のスキル・汎用 Agent・カスタム Agent に委譲する
+- 文書検索（仕様書・ルール）は query スキルへ委譲する。オーケストレータが Skill ツールで直接呼び、間に Agent を挟まない。検索の途中で利用者への確認（索引の更新など）が要ることがあり、Agent の中からは確認を出せないためである
 - オーケストレータの SKILL.md には「何を委譲するか」を書き、「どう実行するか」は書かない
 
 ### FNC-003: 参照文書の自己完結性 DLID-svjw8ytshy64
@@ -47,7 +50,8 @@ agent に渡す参照文書（ガイド・フォーマット定義等）は自�
 
 独立した調査・実行工程は並列実行できる構造にする。
 
-- 仕様書検索・ルール検索・コード探索・タスク実行は互いに独立
+- コード探索・タスク実行は互いに独立
+- 文書検索（仕様書・ルール）は並列実行の対象外である。オーケストレータが query スキルを順に呼ぶ（FNC-001）
 - 各 agent は結果を return value として返す。結果の受け渡しに共有リソース・中間ファイルを使わないことで、共有リソースへの競合書き込みを防ぐ（並列 agent 出力契約）
 - 書き込み系の agent が**担当範囲の成果物を編集すること自体は上記の対象外**。担当範囲の分離の方法は、当該スキルの要件が定める（`start-implement` は [REQ-034](../../start-implement/requirements/REQ-034_start_implement_spec.md) FNC-010・FNC-011）
 - オーケストレータが全 agent の結果を収集・統合して次の工程に渡す
@@ -78,7 +82,7 @@ Markdown は表現力が高いが、AI によるパースが不確実（テー�
 文書生成系オーケストレーター（start-requirements, start-design, start-plan）は成果物作成後に以下の完了処理を実行する。
 
 1. `/forge:review --files {差分ファイル} --auto` — AIレビュー+自動修正（対象はオーケストレーターが作成・変更したファイルのみ）
-2. `/forge:update-db-specs` — ToC 更新（利用可能な場合のみ）
+2. `/forge:update-db-specs` — ToC 更新
 3. `/anvil:commit` — commit/push 確認
 
 > **注記**: start-implement の完了処理は、[REQ-034](../../start-implement/requirements/REQ-034_start_implement_spec.md) FNC-013 が定める。
@@ -99,8 +103,8 @@ Markdown は表現力が高いが、AI によるパースが不確実（テー�
 
 ## 3. 適用対象 DLID-0wz5a4q3pg07
 
-| スキル                                         | オーケストレータ化 | データの受け渡し方法（FNC-004）                                                                                                         |
-| ---------------------------------------------- | ------------------ | --------------------------------------------------------------------------------------------------------------------------------------- |
-| review                                         | 済み               | reviewer・evaluator が script 経由で書いた所見と評価のパスを得て、本体が直接読み、吟味・修正する                                        |
-| start-design / start-plan / start-requirements | 済み               | query スキルへの委譲 + agent の return value                                                                                            |
-| start-implement                                | 済み               | タスクコンテキストは識別値で渡し（script が書いた JSON を executor agent が読む）、結果は executor agent が return value の JSON で返す |
+| スキル                                         | オーケストレータ化 | データの受け渡し方法（FNC-004）                                                                                                                                         |
+| ---------------------------------------------- | ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| review                                         | 済み               | reviewer・evaluator が script 経由で書いた所見と評価のパスを得て、本体が直接読み、吟味・修正する                                                                        |
+| start-design / start-plan / start-requirements | 済み               | 文書検索は query スキルの検索結果（パスの一覧）。agent を起動する工程は agent の return value（`start-plan` の実装戦略の策定は、識別値で渡し、script が成否を判定する） |
+| start-implement                                | 済み               | タスクコンテキストは識別値で渡し（script が書いた JSON を executor agent が読む）、結果は executor agent が return value の JSON で返す                                 |

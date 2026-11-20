@@ -78,30 +78,28 @@ agent の結果を orchestrator へ渡すための**中間ファイル・セッ�
 
 ### 3.4 orchestrator の責務 DLID-t76fgnjg74rc
 
-| 責務                  | 説明                                                                             |
-| --------------------- | -------------------------------------------------------------------------------- |
-| 全 agent の完了を待機 | `run_in_background` で起動した場合、全通知を受け取るまで待つ                     |
-| return value の統合   | main context で行う                                                              |
-| 成果物への書き込み    | 収集系 agent の結果に基づく書き込みは orchestrator のみが行う（§3.0）            |
-| 部分失敗の扱い        | 一部 agent が結果を返さなかった場合の方針を決める（収集系は fail-open。DES-013） |
+| 責務                  | 説明                                                                                                                    |
+| --------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| 全 agent の完了を待機 | `run_in_background` で起動した場合、全通知を受け取るまで待つ                                                            |
+| return value の統合   | main context で行う                                                                                                     |
+| 成果物への書き込み    | 収集系 agent の結果に基づく書き込みは orchestrator のみが行う（§3.0）                                                   |
+| 部分失敗の扱い        | 一部 agent が結果を返さなかった場合の方針を決める（コンテキスト収集は、後続工程へ進まず利用者に報告する。DES-010 §3.5） |
 
 ---
 
 ## 4. 適用例 DLID-w2n511gwsg50
 
-### 4.1 コンテキスト収集（start-requirements / start-design / start-plan） DLID-fserqd5yahdj
+### 4.1 既存コードの収集（start-requirements の reverse-engineering） DLID-fserqd5yahdj
 
 ```
 orchestrator
-  ├─ specs agent → return value（仕様書リスト）
-  ├─ rules agent → return value（ルールリスト）
-  └─ code agent  → return value（既存コードリスト）
+  └─ 既存コード収集 agent → return value（既存コードリスト）
   │
-  ▼ 全 agent 完了後
-  orchestrator が return value を統合し、必要なファイルを Read して後続工程へ進む
+  ▼ 完了後
+  orchestrator が結果を統合し、必要なファイルを Read して後続工程へ進む
 ```
 
-起動する agent の組み合わせはスキルごとに異なり、[DES-010](DES-010_create_skills_orchestrator_design.md) §4 が定める。タスクの内容・返却形式は DES-013 が定める。
+コンテキスト収集で agent を起動するのは、この 1 箇所だけである。仕様書・ルールの検索は検索スキルをオーケストレータが直接呼び、agent を挟まないので、本契約の対象ではない（[DES-010](DES-010_create_skills_orchestrator_design.md) §3.1・§4）。タスクの内容・返却形式は DES-013 が定める。
 
 ---
 

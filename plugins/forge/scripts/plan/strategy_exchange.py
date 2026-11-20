@@ -24,7 +24,8 @@ prompt / return value に載せない。依頼は本 script が組み立てて�
 
 Usage:
     python3 strategy_exchange.py open --output-dir DIR --feature NAME \\
-        --design-doc PATH [...] [--requirement-doc PATH ...] [--rules-doc PATH ...]
+        --design-doc PATH [...] [--requirement-doc PATH ...] [--rules-doc PATH ...] \\
+        [--related-spec-doc PATH ...]
     python3 strategy_exchange.py request-path --output-dir DIR --feature NAME
     python3 strategy_exchange.py finish --output-dir DIR --feature NAME
     python3 strategy_exchange.py check --output-dir DIR --feature NAME
@@ -88,6 +89,7 @@ def cmd_open(args):
         "requirement_docs": _absolute(args.requirement_doc or []),
         "design_docs": _absolute(args.design_doc),
         "rules_docs": _absolute(args.rules_doc or []),
+        "related_spec_docs": _absolute(args.related_spec_doc or []),
         "existing_strategy": str(existing) if existing else None,
         "strategy_path": str(paths["strategy"]),
     }
@@ -186,6 +188,8 @@ def build_parser():
     p_open.add_argument("--requirement-doc", action="append")
     p_open.add_argument("--design-doc", action="append", required=True)
     p_open.add_argument("--rules-doc", action="append")
+    # 関連する既存の仕様書。検索は呼び出し元が行う（Agent の中からは利用者への確認を出せない）
+    p_open.add_argument("--related-spec-doc", action="append")
     p_open.set_defaults(func=cmd_open)
 
     for name, func in (

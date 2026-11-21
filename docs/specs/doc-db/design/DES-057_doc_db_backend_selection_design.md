@@ -651,6 +651,15 @@ update SKILL が doc-link を用いる場合、次の順に処理する。
 2 と 3 には、1 で得た同じ対象指定（`--key {category}`・`--dirs-json`・`--exclude-json`）を渡す。
 `doc-link:index-docs` の完了報告は構造変換せず親へ返す。
 
+doc-link は、渡した対象指定のうち一致するものが無かった指定を、問題（`no_match`）として返す。
+このうち 1 で得た `root_dirs` と同じものは、`.doc_structure.yaml` が宣言していて、まだ文書が置かれていない置き場である。
+宣言は置き場の実在を求めないので、SKILL はこれを問題として伝えず、「宣言済みで文書の無い置き場」として分けて伝える。
+宣言の書き間違いも同じ欄に現れるため、利用者から見えなくはならない。
+
+**forge は、置き場の実在を自分で判定して対象指定から外さない。** 一致の判定は対象の展開の一部であり、
+doc-link 側が所有する（§5.1「索引母集団の差」）。forge が外すと、glob の解釈が食い違ったときに、
+実在する置き場の文書が索引から黙って落ちる。
+
 索引入力準備 CLI は成功時に exit code `0` と `status=success`、dprint、設定解決、入力検証のいずれかが失敗した場合に
 exit code `20` と `status=operation_error` を返す。
 SKILL は exit code だけで後続へ進むかを選択し、準備失敗時は doc-link の SKILL を呼ばない。

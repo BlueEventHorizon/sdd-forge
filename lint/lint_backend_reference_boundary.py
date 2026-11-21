@@ -15,13 +15,13 @@ backend の名前は `resolve_backend_order.py` の `DEFAULT_ORDER` から得る
 本ファイルに名前を書き足す必要が無い。
 
 実行:
-    python3 -m unittest tests.forge.doc_backend.test_backend_reference_boundary -v
+    python3 -m unittest lint.lint_backend_reference_boundary -v
 """
 
 import importlib.util
 import unittest
 
-from tests import REPO_ROOT
+from lint import REPO_ROOT
 
 PLUGIN_ROOT = REPO_ROOT / "plugins" / "forge"
 SKILLS_ROOT = PLUGIN_ROOT / "skills"

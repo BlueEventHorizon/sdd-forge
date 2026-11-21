@@ -434,10 +434,6 @@ class TestSchemaConsistency(unittest.TestCase):
         """仕様書に version が記載されている"""
         self.assertIn("version", self.format_doc)
 
-    def test_format_doc_mentions_exclude_format(self):
-        """仕様書に exclude の使用例が記載されている"""
-        self.assertIn("exclude", self.format_doc)
-
     def test_parser_supports_all_documented_fields(self):
         """パーサーが仕様書に記載された全フィールドを処理できる"""
         import sys

@@ -6,8 +6,6 @@
 （B 層の Role 制約は docs/rules/plugin_claude_code_authoring_guide.md「多重防御」に基づく。
 git 管理ファイル書き換え禁止と引数解釈ガードは、本テストが独自に課す項目）:
 
-- fork 型 SKILL の frontmatter に `context: fork` が含まれている
-  （作成ガイドは fork 型 SKILL を採用しないため対象は空であり、この検証は監査用に残している）
 - 全 query-* SKILL の Role 章に read-only 制約 (Edit/Write/MultiEdit/NotebookEdit 禁止) が
   明記されている (B 層: AI 行動規範での逸脱抑止)
 - Role 章に git 管理ファイル書き換え禁止が明記されている
@@ -32,13 +30,9 @@ from pathlib import Path
 
 from tests import REPO_ROOT
 
-# fork 型 SKILL（context: fork 必須）の対象。
-# 本リポジトリには、配布される fork 型 query skill は存在しない（空リスト）。
-FORK_TARGET_SKILLS: list[Path] = []
-
 # Role 制約・引数解釈ガード・出力契約を維持する全 query-* SKILL と、その worker Agent
-# (fork 型 + 継承型 dispatcher の SKILL + 実検索を担う read-only Agent)
-CONSTRAINT_TARGET_SKILLS = FORK_TARGET_SKILLS + [
+# (継承型 dispatcher の SKILL + 実検索を担う read-only Agent)
+CONSTRAINT_TARGET_SKILLS = [
     REPO_ROOT / "plugins" / "forge" / "skills" / "query-forge-rules" / "SKILL.md",
     REPO_ROOT / "plugins" / "forge" / "agents" / "rules-query-worker.md",
 ]
@@ -65,24 +59,6 @@ def _split_frontmatter_body(skill_path: Path):
     fm = text[3:end]
     body = text[end + 4 :]
     return fm, body
-
-
-class TestQuerySkillFrontmatterFork(unittest.TestCase):
-    """fork 型 SKILL の frontmatter に `context: fork` が含まれていることを検証
-
-    対象は fork 型 SKILL のみ。継承型の SKILL は本検証の対象外。
-    """
-
-    def test_context_fork_present(self):
-        for skill_path in FORK_TARGET_SKILLS:
-            with self.subTest(skill=str(skill_path.relative_to(REPO_ROOT))):
-                fm, _ = _split_frontmatter_body(skill_path)
-                self.assertRegex(
-                    fm,
-                    r"(?m)^context:\s*fork\s*$",
-                    f"{skill_path.relative_to(REPO_ROOT)} の frontmatter に "
-                    f"`context: fork` がない (fork 型の対象リスト違反)",
-                )
 
 
 class TestQuerySkillRoleReadonlyConstraint(unittest.TestCase):

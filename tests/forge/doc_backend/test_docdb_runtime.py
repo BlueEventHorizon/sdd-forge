@@ -15,7 +15,6 @@ port 解決は明示指定または一時ディレクトリの設定ファイル
 
 import importlib.util
 import inspect
-import re
 import subprocess
 import tempfile
 import unittest
@@ -418,19 +417,6 @@ class SpawnServerTest(unittest.TestCase):
         self.assertTrue(kwargs["start_new_session"])
         self.assertTrue(kwargs["close_fds"])
 
-    def test_no_log_file_is_opened_by_forge(self):
-        """forge 側でログファイルを作らない（出力先は doc-db 自身の設定に委ねる）。"""
-        source = _SCRIPT_PATH.read_text(encoding="utf-8")
-        code = "\n".join(
-            line for line in source.splitlines() if not line.lstrip().startswith("#")
-        )
-        # `Popen(` は許容し、単独の `open(` だけを検出する
-        self.assertIsNone(
-            re.search(r"\bopen\s*\(", code), "ファイルを開く処理が混入している"
-        )
-        for forbidden in ("NamedTemporaryFile", "write_text", ".log"):
-            self.assertNotIn(forbidden, code, f"ログ・ファイル生成の疑い: {forbidden}")
-
     def test_startup_command_takes_no_extra_arguments(self):
         """port やログ先を起動引数で上書きしない（利用者の doc-db 設定を尊重する）。"""
         with mock.patch.object(docdb_runtime.subprocess, "Popen") as popen:
@@ -496,34 +482,10 @@ class PortResolutionTest(unittest.TestCase):
 
 
 class NoCredentialHandlingTest(unittest.TestCase):
-    """認証情報・環境変数値・設定本文を読まず、出力もしないこと。"""
+    """失敗理由に、認証情報・設定本文を出力しないこと。
 
-    def _code(self):
-        source = _SCRIPT_PATH.read_text(encoding="utf-8")
-        return "\n".join(
-            line for line in source.splitlines() if not line.lstrip().startswith("#")
-        )
-
-    def test_module_source_has_no_credential_reads(self):
-        code = self._code().lower()
-        for forbidden in (
-            "api_key",
-            "apikey",
-            "token",
-            "password",
-            "secret",
-            "authorization",
-        ):
-            self.assertNotIn(
-                forbidden, code, f"認証情報の取り扱いが混入している: {forbidden}"
-            )
-
-    def test_module_source_does_not_read_environment(self):
-        code = self._code()
-        for forbidden in ("os.environ", "getenv", "environb"):
-            self.assertNotIn(
-                forbidden, code, f"環境変数の読み取りが混入している: {forbidden}"
-            )
+    ソースが認証情報・環境変数を読まないことは、lint（`lint/lint_script_source.py`）が検査する。
+    """
 
     def test_failure_detail_contains_no_config_body(self):
         """設定ファイルに認証情報らしき値があっても、失敗理由に混ざらないこと。"""

@@ -197,29 +197,6 @@ class _Base(unittest.TestCase):
         return exit_code, payload, client
 
 
-# --- 責務分離（設定を読まないこと） ------------------------------------------------
-
-
-class NoSettingsDependencyTest(unittest.TestCase):
-    """本 CLI は設定・優先指定・選択順序を知らない（§2.5 の責務分離）。
-
-    順序リストの解決（`.claude/.forge.yaml` の読み取り）は
-    `resolve_backend_order.py` が担い、その分岐テストも同 CLI 側にある。
-    """
-
-    def test_does_not_import_forge_settings(self):
-        import ast
-
-        tree = ast.parse(_SCRIPT_PATH.read_text(encoding="utf-8"))
-        imported = set()
-        for node in ast.walk(tree):
-            if isinstance(node, ast.Import):
-                imported.update(alias.name.split(".")[0] for alias in node.names)
-            elif isinstance(node, ast.ImportFrom) and node.module:
-                imported.add(node.module.split(".")[0])
-        self.assertNotIn("forge_settings", imported, "設定を読んではならない")
-
-
 # --- 対象文書 0 件の先行判定 -------------------------------------------------------
 
 

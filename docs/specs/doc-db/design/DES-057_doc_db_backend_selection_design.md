@@ -943,7 +943,7 @@ SKILL 経由の実行では script の標準エラー出力が利用者に届か
 `update-db-*` 配下の prepare wrapper が利用者入力を受理しないこと、sync wrapper が
 `--start` / `--status <job_id>` の両操作を受理し、欠落値・余分な引数・未知 operation を
 低レベルへ渡さず拒否することを確認する。
-**`query-db-*` 配下に sync / prepare wrapper が存在しないこと**を静的に確認する（索引整備の入口の二重化防止）。
+**`query-db-*` 配下に sync / prepare wrapper が存在しないこと**を静的に確認する（索引整備の入口の二重化防止。lint で行う）。
 **`query-db-*` 配下に対象文書数を数える wrapper が存在しないこと**も静的に確認する
 （母集団を所有しない側の件数を数えないため。REQ-014 BL-007 / §5.1）。
 
@@ -968,7 +968,8 @@ JSON 応答・SSE 応答・tool error・HTTP error はいずれも注入で決�
 
 ### 9.4 doc-link 契約テスト DLID-8r40ev2ptje3
 
-doc-link は外部 SKILL のため、HTTP 境界への注入では検証できない。forge 側では次を静的または契約テストする。
+doc-link は外部 SKILL のため、HTTP 境界への注入では検証できない。forge 側では、wrapper の SKILL.md の記述を
+静的に検査する（script を実行しない検査であり、lint で行う）。
 契約テストは依拠する外部 I/F に対して書く。I/F の所有は提供側にあるため、
 契約が改訂された場合は固定点の更新とテストの追従を同じ変更で行う。
 

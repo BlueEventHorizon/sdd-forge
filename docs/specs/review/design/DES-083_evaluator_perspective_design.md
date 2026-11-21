@@ -570,11 +570,14 @@ evaluator は、次のラッパーを通して基本の script を呼ぶ。`--ki
 - `delete_review.py`: `<review_id>/` がディレクトリごと削除されること。置き場が無くても成功すること。`.temp/forge/review/` の外を指す `review_id`（空、`.`、`..`、パス区切りを含む値）とシンボリックリンクが、何も削除されずに拒まれること。
 - ラッパー: `evaluator_*` が、評価以外に書けないこと。
 
-**契約テスト対象**
+**契約テスト対象**（定義に書かれた呼び方を、実際の script で実行して確かめる）
+
+- `evaluator.md` が持つ script の呼び方が、§6 の `evaluator_*` のラッパーと `resolve_doc_structure.py` の実際の引数と一致すること。第 1 引数に `${CLAUDE_PROJECT_DIR}` を置き、`resolve_doc_structure.py` に `--project-root ${CLAUDE_PROJECT_DIR}` を渡すこと。
+
+**lint 対象**（定義の文面を見る。script は実行しない）
 
 - 本体の定義（`SKILL.md`）が、`disposition` などの値にそのまま従わず、内容を吟味してから修正・ドロップ・終端を決める指示を持つこと。
-
-- `evaluator.md` が持つ script の呼び方が、§6 の `evaluator_*` のラッパーと `resolve_doc_structure.py` の実際の引数と一致すること。`evaluator.md` に `reviewer_*` と `body_*` が現れないこと。第 1 引数に `${CLAUDE_PROJECT_DIR}` を置き、`resolve_doc_structure.py` に `--project-root ${CLAUDE_PROJECT_DIR}` を渡すこと。
+- `evaluator.md` に `reviewer_*` と `body_*` が現れないこと。
 - `evaluator.md` が、`criteria/review_target_types.md`（DES-084 §4.2）を読む指示を持つこと。
 - `evaluator.md` が REQ-026 FNC-208 の項目をすべて持つこと。
 - `evaluator.md` が FNC-201 の 5 つのメタ観点すべてと、`disposition` の 5 値を持つこと。

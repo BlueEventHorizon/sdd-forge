@@ -12,7 +12,6 @@
   python3 -m unittest tests.forge.doc_backend.test_project_documents -v
 """
 
-import ast
 import importlib.util
 import json
 import os
@@ -459,33 +458,6 @@ class ResolverDelegationTest(unittest.TestCase):
             "specs", Path(MAIN_WORKTREE), runner=_resolver_runner(RESOLVER_SPECS_OK)
         )
         self.assertEqual(paths, ["docs/specs/foo/design/DES-001_foo.md"])
-
-    def test_no_yaml_parsing_is_reimplemented(self):
-        """`.doc_structure.yaml` を自前で解釈していないこと（二重実装の防止）。"""
-        tree = ast.parse(_SCRIPT_PATH.read_text(encoding="utf-8"))
-        imported = set()
-        for node in ast.walk(tree):
-            if isinstance(node, ast.Import):
-                imported.update(alias.name.split(".")[0] for alias in node.names)
-            elif isinstance(node, ast.ImportFrom) and node.module:
-                imported.add(node.module.split(".")[0])
-        for forbidden in ("glob", "fnmatch", "yaml", "os"):
-            self.assertNotIn(
-                forbidden, imported, f"resolver の責務を再実装している: {forbidden}"
-            )
-
-        defined = {
-            node.name for node in ast.walk(tree) if isinstance(node, ast.FunctionDef)
-        }
-        for forbidden in (
-            "parse_config",
-            "expand_globs",
-            "collect_md_files",
-            "is_excluded",
-        ):
-            self.assertNotIn(
-                forbidden, defined, f"resolver の責務を再実装している: {forbidden}"
-            )
 
     def test_unknown_category_is_rejected(self):
         with self.assertRaises(project_documents.ProjectDocumentsError):

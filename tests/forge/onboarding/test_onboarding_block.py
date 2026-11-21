@@ -392,47 +392,5 @@ class TestCli(unittest.TestCase):
             self.assertIn("error", json.loads(proc.stdout))
 
 
-class TestRealCopyBlock(unittest.TestCase):
-    """配布物の実体が転記可能な状態であることを検証する。"""
-
-    def setUp(self):
-        self.region = ob.read_region(ob.SOURCE.read_text(encoding="utf-8"))
-
-    def test_source_file_is_the_dedicated_copy_block(self):
-        self.assertEqual(ob.SOURCE.name, "copy_block.md")
-        self.assertTrue(ob.SOURCE.is_file())
-
-    def test_real_copy_region_is_not_empty(self):
-        self.assertTrue(self.region.strip())
-
-    def test_real_copy_region_headings_are_forge_prefixed(self):
-        """転記先での見出し重複を防ぐ規約。script は接頭辞を付けないので、ここで強制する。"""
-        h2 = [ln for ln in self.region.splitlines() if ln.startswith("## ")]
-        self.assertTrue(h2, "転記範囲に ## 見出しが無い")
-        for line in h2:
-            self.assertTrue(
-                line.startswith("## forge "),
-                f"転記範囲の ## 見出しは 'forge ' で始めること: {line!r}",
-            )
-
-    def test_real_copy_region_has_no_destination_markers(self):
-        """転記先マーカーが混入するとブロック検出が壊れる。"""
-        self.assertNotIn("FORGE_ONBOARDING_START", self.region)
-        self.assertNotIn(ob.MARKER_END, self.region)
-
-    def test_skill_md_does_not_duplicate_the_copy_block(self):
-        """SKILL.md は起動時に全文注入される。転記範囲を持たせると必ず二重読みになる。"""
-        skill = (_SKILL_DIR / "SKILL.md").read_text(encoding="utf-8")
-        for line in self.region.splitlines():
-            body = line.strip()
-            if len(body) < 20:
-                continue
-            self.assertNotIn(
-                body,
-                skill,
-                f"転記範囲の記述が SKILL.md に複製されている: {body[:40]!r}",
-            )
-
-
 if __name__ == "__main__":
     unittest.main()

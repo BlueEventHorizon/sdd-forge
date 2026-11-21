@@ -4,14 +4,14 @@ TEST-S002: SKILL.md 本文に /forge:<skill> / /anvil:<skill> の Skill 呼出�
 allowed-tools に Skill が含まれること。
 
 実行:
-    python3 -m unittest tests.forge.subagent.test_skill_allowedtools_consistency -v
+    python3 -m unittest lint.lint_skill_allowedtools_consistency -v
 """
 
 import re
 import unittest
 from pathlib import Path
 
-from tests import REPO_ROOT
+from lint import REPO_ROOT
 
 SKILLS_DIR = REPO_ROOT / "plugins" / "forge" / "skills"
 

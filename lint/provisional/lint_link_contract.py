@@ -15,13 +15,13 @@ doc-link は外部 SKILL であり、`Skill` ツール起動を伴う経路は�
 （DES-057 §2.4）。
 
 実行:
-  python3 -m unittest tests.forge.doc_backend.test_link_contract -v
+  python3 -m unittest lint.provisional.lint_link_contract -v
 """
 
 import unittest
 from pathlib import Path
 
-from tests import REPO_ROOT
+from lint import REPO_ROOT
 
 _SKILLS_DIR = REPO_ROOT / "plugins" / "forge" / "skills"
 

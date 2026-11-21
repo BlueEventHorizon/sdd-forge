@@ -5,7 +5,7 @@
 （文言の存在は規範の存在を意味せず、否定形に書き換えても通るため検証として成立しない）。
 
 実行:
-  python3 -m unittest tests.forge.plan_principles.test_early_verification_principle -v
+  python3 -m unittest lint.provisional.lint_early_verification_principle -v
 """
 
 from __future__ import annotations
@@ -15,7 +15,7 @@ import unittest
 from pathlib import Path
 
 
-from tests import REPO_ROOT
+from lint import REPO_ROOT
 
 PLAN_PRINCIPLES_SPEC = (
     REPO_ROOT / "plugins" / "forge" / "docs" / "plan_principles_spec.md"

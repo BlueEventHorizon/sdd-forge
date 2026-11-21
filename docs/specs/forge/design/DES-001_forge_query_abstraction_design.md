@@ -111,8 +111,10 @@ grep による代替検索は行わない）。書き込み・コミット・自
   `tools` が read-only であることを検査する（lint）。
 - `lint/provisional/lint_query_skill_phrases.py` — 同じ対象の Role 制約・引数解釈ガード・
   `Required documents:` 出力契約の文言があることを検査する（暫定の lint。文字列の有無だけを見る）。
-- `tests/forge/doc_backend/` — backend 選択（順序リスト・settings_invalid）、doc-db 経路の低レベル CLI、
-  doc-link 契約（`test_link_contract.py`）を検証する。
+- `tests/forge/doc_backend/` — backend 選択（順序リスト・settings_invalid）、doc-db 経路の低レベル CLI を検証する。
+- `lint/provisional/lint_link_contract.py` — wrapper の SKILL.md の記述が doc-link の契約に沿うことを検査する
+  （暫定の lint。文字列の有無と順序だけを見る）。
+- `lint/lint_index_maintenance_boundary.py` — 索引整備の wrapper が `update-db-*` にだけあることを検査する（lint）。
 - `tests/forge/{query,update}-db-{rules,specs}/` — SKILL 固有 wrapper の透過性を検証する。
 
 [authoring-guide]: ../../../rules/plugin_claude_code_authoring_guide.md "1b4400f836cd DLID-pvwk8en5c2rq"

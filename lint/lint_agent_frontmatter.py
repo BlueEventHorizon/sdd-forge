@@ -25,14 +25,14 @@ fork 型 SKILL を採用せず Agent 起動に置き換える方針は `docs/rul
 外部依存 (PyYAML 等) は使用しない。frontmatter は regex で抽出する。
 
 実行:
-  python3 -m unittest tests.forge.agents.test_agent_frontmatter -v
+  python3 -m unittest lint.lint_agent_frontmatter -v
 """
 
 import re
 import unittest
 from pathlib import Path
 
-from tests import REPO_ROOT
+from lint import REPO_ROOT
 
 AGENTS_DIR = REPO_ROOT / "plugins" / "forge" / "agents"
 

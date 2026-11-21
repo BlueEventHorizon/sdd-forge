@@ -4,14 +4,14 @@ TEST-S001: SKILL.md 本文に Agent ツール / 汎用 Agent を起動 / カス�
 allowed-tools に Agent が含まれること。
 
 実行:
-    python3 -m unittest tests.forge.subagent.test_agent_allowedtools_consistency -v
+    python3 -m unittest lint.lint_agent_allowedtools_consistency -v
 """
 
 import re
 import unittest
 from pathlib import Path
 
-from tests import REPO_ROOT
+from lint import REPO_ROOT
 
 SKILLS_DIR = REPO_ROOT / "plugins" / "forge" / "skills"
 

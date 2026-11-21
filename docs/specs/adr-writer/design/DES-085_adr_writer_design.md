@@ -323,7 +323,7 @@ sequenceDiagram
 | 受け渡しの型の先例        | `plugins/forge/scripts/plan/strategy_exchange.py`、`plugins/forge/agents/plan-strategist.md` | `open` / `request-path` / `finish` / `check` の型  |
 | 出力先の解決              | `plugins/forge/skills/doc-structure/SKILL.md`                                                | 文書種別 `adr` の出力先、宣言が無い場合の引き継ぎ  |
 | 採番                      | `plugins/forge/skills/next-spec-id/SKILL.md`                                                 | ADR ファイルの番号。`ADR`・共有 `ADR,DES`          |
-| Agent の frontmatter 検査 | `tests/forge/agents/test_agent_frontmatter.py`                                               | tools の allowlist の回帰検査                      |
+| Agent の frontmatter 検査 | `lint/lint_agent_frontmatter.py`（lint）                                                     | tools の allowlist の回帰検査                      |
 | ADR の参照と書式の検査    | `lint/lint_adr.py`（lint）                                                                   | `adr/` 配下の ADR ファイルを `rglob` で走査する    |
 | ADR のレビュー観点        | `plugins/forge/docs/criteria/review_criteria_design.md`                                      | `target_files` に ADR が含まれる場合の「ADR 運用」 |
 
@@ -342,8 +342,8 @@ sequenceDiagram
 | `check`              | 判定だけを返す。判定が無い・壊れている・未知の値は失敗する。成否にかかわらず依頼と判定を削除し、ADR を残す |
 | 出力契約             | 終了コードが 0・1・2 だけである。失敗は `errors` の配列で返る。例外は握りつぶされない                      |
 
-- **Agent の Role 制約**: `tests/forge/agents/test_agent_frontmatter.py` に `adr-writer` の tools の allowlist を足し、`Agent`・`Skill`・`AskUserQuestion` を持たないことを検査する
-- **契約テスト**（`tests/forge/adr/test_adr_writer_contract.py`）:
+- **Agent の Role 制約**: `lint/lint_agent_frontmatter.py`（lint）に `adr-writer` の tools の allowlist を足し、`Agent`・`Skill`・`AskUserQuestion` を持たないことを検査する
+- **文面の検査**（`lint/provisional/lint_adr_writer_contract.py`。暫定の lint で、文字列の有無だけを見る）:
   - `write-adr` が `forge:adr-writer` を起動し、`allowed-tools` に `Agent` を持つ
   - `adr-writer.md` が、書き込みの範囲と、利用者に質問しないことを述べる
   - `start-design` が、ADR の書式・規範文書の読み込みと、ADR の採番の手順を持たない

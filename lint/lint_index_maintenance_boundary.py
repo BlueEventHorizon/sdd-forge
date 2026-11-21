@@ -7,14 +7,14 @@ REQ-014 FNC-002 は query wrapper が索引の整備の手順を持たないこ�
 （DES-057 §5.3 の乖離）。エラーにならないため、ファイルの有無で構造的に検査する。
 
 **本ファイルの主題は「ファイル構成」である [MANDATORY]**。SKILL.md 本文が何を書いている / 書いて
-いないかという記述内容の契約は `test_link_contract.py` が持つ。
+いないかという記述内容の契約は `provisional/lint_link_contract.py` が持つ。
 
 実行:
-    python3 -m unittest tests.forge.doc_backend.test_index_maintenance_boundary -v
+    python3 -m unittest lint.lint_index_maintenance_boundary -v
 """
 
 import unittest
-from tests import REPO_ROOT
+from lint import REPO_ROOT
 
 SKILLS_ROOT = REPO_ROOT / "plugins" / "forge" / "skills"
 

@@ -1,38 +1,40 @@
 {
-  "content_hash": "04c49729cad34e2b9b6fe6fb6e4d7623120a8e50c8a5b567c153cc75c15f8188",
+  "content_hash": "79c19317db1affaa332f04803be4855ca175bad2c5f7c6b39c993d533005baa4",
   "doc_link_id": "DLID-mzeyx39mfryw",
   "keywords": [
     "evaluator",
+    "meta-perspective",
     "evaluation",
-    "meta-perspectives",
     "disposition",
     "finding_id",
-    "flawed_premise",
     "evaluate_result.json",
-    "review round",
     "count_actionable",
-    "consult"
+    "advance_round",
+    "flawed_premise",
+    "review round"
   ],
   "path": "docs/specs/review/design/DES-083_evaluator_perspective_design.md",
-  "purpose": "Design for how the evaluator independently judges reviewer findings and applies meta-perspectives, and how the main body examines evaluations, advances rounds and cleans up, including the supporting scripts and JSON.",
+  "purpose": "Design for the evaluator independent assessment and meta-perspectives: how the evaluator judges reviewer findings, how the main body scrutinizes them and advances rounds, plus evaluation scripts and JSON.",
   "summary": [
-    "Overview: evaluator works like reviewer but starts from findings, and outputs evaluations that redefine problems (one evaluation may bundle several findings)",
-    "Sequence S10-S20: evaluator run, body reading findings/evaluations, counting actionable items, round advance and deletion",
-    "Class diagram of body, evaluator, shared and body-only scripts, and JSON files",
-    "Evaluator definition: inputs, finding-first reading, five meta-perspectives reflected in evaluation shape, new findings via --new, reason writing, severity and confidence rules",
-    "Body responsibilities: critical examination of evaluations, presentation per evaluation, termination judgment, round limit, deletion after reporting",
-    "Interim consult measures: no agenda recording, state kept in conversation context, sources of unhandled findings",
-    "Evaluation result JSON (evaluate_result.json) structure and guarantees enforced by scripts; finding_id numbering shared with reviewer",
-    "Script specs: evaluator wrappers, append_result/seal_result for evaluations, resolve_review_path, count_actionable, advance_round, delete_review, body wrappers",
-    "Test design (unit, contract, integration) and open item TBD-001 on whether meta-perspectives actually work"
+    "Evaluator works like the reviewer but starts from findings and outputs evaluations that redefine problems",
+    "Sequence S10-S20: evaluator run, body reading findings and evaluations, round advance, deletion",
+    "Class diagram of body, evaluator, shared scripts, and JSON files",
+    "Five meta-perspectives expressed in evaluation results, not self-reported",
+    "Disposition values, severity copied from rule catalogs, confidence and fix_confident",
+    "New findings via --new with script-assigned finding_id and mandatory location",
+    "Body as final decider: scrutinizes evaluations, presents per evaluation, terminal judgment",
+    "Evaluation JSON structure and script guarantees on finding-evaluation relations",
+    "Scripts: evaluator wrappers, append/seal evaluations, count_actionable, advance_round, delete_review",
+    "Consult interim measure without agenda, test design, and open TBD"
   ],
   "tasks": [
     "Implementing or modifying the evaluator agent definition",
-    "Implementing evaluation-related review scripts (append_result, seal_result, count_actionable, advance_round, delete_review)",
-    "Editing the review skill body steps S10-S20",
-    "Reviewing or revising evaluator and evaluation design",
-    "Writing tests for evaluator, evaluation JSON and wrappers",
-    "Adjusting consult behavior during agenda refresh"
+    "Implementing evaluation-related review scripts",
+    "Editing the review SKILL body flow for findings and evaluations",
+    "Designing or reviewing finding_id numbering",
+    "Writing tests for evaluator scripts and contracts",
+    "Reviewing design documents of the review feature",
+    "Changing consult presentation behavior"
   ],
   "title": "DES-083 evaluator の独立評価とメタ観点 設計書"
 }

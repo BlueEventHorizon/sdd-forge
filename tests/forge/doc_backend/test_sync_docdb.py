@@ -19,7 +19,6 @@ doc-db・git・利用者の home 設定には依存しない。doc-db 利用可�
   python3 -m unittest tests.forge.doc_backend.test_sync_docdb -v
 """
 
-import ast
 import importlib.util
 import json
 import subprocess
@@ -491,27 +490,6 @@ class StatusSingleShotTest(unittest.TestCase):
         )
 
 
-# --- 責務分離（設定を読まないこと） ------------------------------------------------
-
-
-class NoSettingsDependencyTest(unittest.TestCase):
-    """本 CLI は設定・優先指定・選択順序を知らない（責務分離）。
-
-    順序リストの解決（`.claude/.forge.yaml` の読み取り）は
-    `resolve_backend_order.py` が担い、その分岐テストも同 CLI 側にある。
-    """
-
-    def test_does_not_import_forge_settings(self):
-        tree = ast.parse(_SCRIPT_PATH.read_text(encoding="utf-8"))
-        imported = set()
-        for node in ast.walk(tree):
-            if isinstance(node, ast.Import):
-                imported.update(alias.name.split(".")[0] for alias in node.names)
-            elif isinstance(node, ast.ImportFrom) and node.module:
-                imported.add(node.module.split(".")[0])
-        self.assertNotIn("forge_settings", imported, "設定を読んではならない")
-
-
 # --- CLI 契約（exit code / JSON） --------------------------------------------------
 
 
@@ -562,44 +540,6 @@ class CliContractTest(unittest.TestCase):
         self.assertEqual(result.returncode, sync_docdb.EXIT_OPERATION_ERROR)
         payload = json.loads(result.stdout)
         self.assertEqual(payload["reason_code"], "invalid_input")
-
-
-# --- ポーリングループを持たないこと（静的検証） --------------------------------------
-
-
-class NoPollingLoopTest(unittest.TestCase):
-    """完了待ちを SKILL 側へ固定するため、script 内に時間待ち・反復問い合わせを持たない。"""
-
-    def test_no_time_import_and_no_sleep_calls(self):
-        tree = ast.parse(_SCRIPT_PATH.read_text(encoding="utf-8"))
-        imported = set()
-        for node in ast.walk(tree):
-            if isinstance(node, ast.Import):
-                imported.update(alias.name.split(".")[0] for alias in node.names)
-            elif isinstance(node, ast.ImportFrom) and node.module:
-                imported.add(node.module.split(".")[0])
-        self.assertNotIn("time", imported, "ポーリングのための時間待ちを持ち込まない")
-
-        sleep_calls = [
-            node
-            for node in ast.walk(tree)
-            if isinstance(node, ast.Call)
-            and isinstance(node.func, ast.Attribute)
-            and node.func.attr == "sleep"
-        ]
-        self.assertEqual(sleep_calls, [])
-
-    def test_no_loop_around_status_retrieval(self):
-        """`get_sync_status` の呼び出しがループ（while / for）の中にないこと。"""
-        tree = ast.parse(_SCRIPT_PATH.read_text(encoding="utf-8"))
-        for loop in [n for n in ast.walk(tree) if isinstance(n, (ast.While, ast.For))]:
-            for node in ast.walk(loop):
-                if isinstance(node, ast.Call) and isinstance(node.func, ast.Attribute):
-                    self.assertNotEqual(
-                        node.func.attr,
-                        "get_sync_status",
-                        "状態取得をプロセス内ループで反復してはならない",
-                    )
 
 
 if __name__ == "__main__":

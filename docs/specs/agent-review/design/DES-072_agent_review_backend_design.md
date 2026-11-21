@@ -93,6 +93,9 @@ reviewer が書く依頼・所見・評価は、本体が管理する保持物�
 | read-only 制約 | 編集・外部書き込みツールが無く、変更 git 操作を許可していない                             |
 | 非永続性       | 検査の後に DB、履歴ファイル、常駐プロセス、再利用可能な Agent 参照が残らない              |
 
+可用性検査・read-only 制約・非永続性は、SKILL と Agent 定義の文面と frontmatter を見る lint で確かめる。
+申告のうち `resolve_review_backend.py` の宣言との一致は、script の定数と突き合わせる契約テストで確かめる。
+
 ## 6. 未確定事項 DLID-0bwzvms367gn
 
 なし。

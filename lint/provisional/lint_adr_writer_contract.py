@@ -6,14 +6,14 @@
 文書であり、意味の検査はレビューが担う。本テストは、文面に残る契約の取りこぼしを検出する。
 
 実行:
-  python3 -m unittest tests.forge.adr.test_adr_writer_contract -v
+  python3 -m unittest lint.provisional.lint_adr_writer_contract -v
 """
 
 import re
 import unittest
 from pathlib import Path
 
-from tests import REPO_ROOT
+from lint import REPO_ROOT
 
 PLUGIN = REPO_ROOT / "plugins" / "forge"
 WRITE_ADR = PLUGIN / "skills" / "write-adr" / "SKILL.md"

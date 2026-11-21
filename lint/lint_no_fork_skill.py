@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-fork 型 SKILL 不採用の継続的検証テスト
+lint: fork 型 SKILL を採用していないこと
 
 「fork 型 SKILL 不採用 + カスタム Agent 起動」方針（docs/rules/forge_claude_code_authoring_policy.md
 「SKILL 実行モデル」）の継続的な再発防止用静的検証。
@@ -9,29 +9,22 @@ fork 型 SKILL 不採用の継続的検証テスト
 検証ロジック:
 - ALL_SKILLS_FORK_FREE=True のとき plugins/*/skills/*/SKILL.md 全件の frontmatter に
   `context: fork` が **含まれていない** ことを assert する
-- WORKING_SKILLS は段階移行期に使った部分検査リスト。フィーチャー完了後は空のままで運用する
-  (新規に context: fork を持つ SKILL を入れたい場合のみ列挙して個別検査できる)
 
-外部依存 (PyYAML 等) は使用しない (test_query_skill_isolation.py と同じ方針)。
-frontmatter は regex で抽出する。
+外部依存 (PyYAML 等) は使用しない。frontmatter は regex で抽出する。
 
 実行:
-  python3 -m unittest tests.common.test_no_fork_skill -v
+  python3 -m unittest lint.lint_no_fork_skill -v
 """
 
 import re
 import unittest
 from pathlib import Path
 
-from tests import REPO_ROOT
+from lint import REPO_ROOT
 
-
-# WORKING_SKILLS: 個別の SKILL.md に対して「fork 不在」を assert したいときの部分検査リスト。
-# 通常は空でよい (ALL_SKILLS_FORK_FREE で全件カバーされるため)。
-WORKING_SKILLS: list[Path] = []
 
 # ALL_SKILLS_FORK_FREE: True のとき plugins/*/skills/*/SKILL.md を全件対象に検査する。
-# True のとき、新規に context: fork を持つ SKILL.md を追加すると本テストが fail する
+# True のとき、新規に context: fork を持つ SKILL.md を追加すると本検査が fail する
 # (docs/rules/forge_claude_code_authoring_policy.md の fork 不採用方針の継続的な再発防止)。
 ALL_SKILLS_FORK_FREE: bool = True
 
@@ -60,32 +53,6 @@ def _has_context_fork(skill_path: Path) -> bool:
 def _iter_all_skills() -> list[Path]:
     """plugins/*/skills/*/SKILL.md を全件返す。"""
     return sorted((REPO_ROOT / "plugins").glob("*/skills/*/SKILL.md"))
-
-
-class TestWorkingSkillsForkFree(unittest.TestCase):
-    """WORKING_SKILLS に列挙された SKILL.md の frontmatter に `context: fork` が無いこと。"""
-
-    def test_no_context_fork_in_working_skills(self):
-        if not WORKING_SKILLS:
-            self.skipTest(
-                "WORKING_SKILLS が空 (通常運用)。全件検査は TestAllSkillsForkFree が担当する"
-            )
-        for rel in WORKING_SKILLS:
-            skill_path = REPO_ROOT / rel if not rel.is_absolute() else rel
-            with self.subTest(skill=str(skill_path.relative_to(REPO_ROOT))):
-                self.assertTrue(
-                    skill_path.exists(),
-                    f"{skill_path.relative_to(REPO_ROOT)} が存在しない。"
-                    f"WORKING_SKILLS の登録ミスか、旧 SKILL.md が既に削除されている可能性",
-                )
-                self.assertFalse(
-                    _has_context_fork(skill_path),
-                    f"{skill_path.relative_to(REPO_ROOT)} の frontmatter に "
-                    f"`context: fork` が残っている。docs/rules/forge_claude_code_authoring_policy.md "
-                    f"「SKILL 実行モデル」に従い、"
-                    f"対応する Agent (plugins/forge/agents/<name>.md) へ移行し "
-                    f"`context: fork` を削除すること",
-                )
 
 
 class TestAllSkillsForkFree(unittest.TestCase):

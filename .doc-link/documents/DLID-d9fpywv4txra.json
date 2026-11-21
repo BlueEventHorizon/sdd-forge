@@ -1,38 +1,38 @@
 {
-  "content_hash": "de2d2a29ba9f0a0993518918ba5cee2fafb304ed284151f9403192cc09b630ba",
+  "content_hash": "c41572c41fc2c76334b5fed1a8f186bf3b709e334a82e3f46db84b66971b09ac",
   "doc_link_id": "DLID-d9fpywv4txra",
   "keywords": [
     "document search",
-    "wrapper skill",
+    "query-db-rules",
+    "query-db-specs",
+    "update-db-rules",
+    "update-db-specs",
     "doc-link",
     "doc-db",
     "backend selection",
-    "query-db-rules",
-    "update-db-specs",
     "Required documents",
-    "desired state",
-    "inherited skill"
+    "desired state"
   ],
   "path": "docs/specs/forge/design/DES-001_forge_query_abstraction_design.md",
-  "purpose": "Design document defining the abstraction of four forge wrapper skills that delegate document search and index updates to external backends (doc-link, doc-db).",
+  "purpose": "Design spec for the four forge wrapper SKILLs (query/update for rules and specs) that delegate document search and index maintenance to external backends: skill list, arguments, output contract, SKILL contract.",
   "summary": [
-    "Overview: forge delegates search and indexing to doc-link or doc-db via four wrapper skills",
-    "Skill list: query-db-rules, query-db-specs, update-db-rules, update-db-specs with fixed categories",
-    "Query flow: resolve backend order, pick first available backend, no grep fallback, explicit errors",
-    "Output contract: Required documents path list built by script, common across backends",
-    "Query skill contract: inherited-type skill, allowed tools, args limited to keywords and short task text",
-    "Update flow: explicit backend option overrides selection, no switching on unavailability",
-    "Desired state: .doc_structure.yaml is authoritative; paths not included are removed from the index",
-    "Prerequisites: at least one backend usable, judged by capability not version",
-    "Test layout covering doc structure resolution, backend selection, doc-link contract, wrapper transparency"
+    "Overview: forge delegates document search and index updates to backends doc-link and doc-db via four wrapper SKILLs",
+    "Skill list: query-db-rules, query-db-specs, update-db-rules, update-db-specs with fixed category and user-invocable true",
+    "Query flow: resolve backend order, run first available backend, no index maintenance, delegate to update with approval",
+    "Query output contract: Required documents path list built by script, common across backends",
+    "Query SKILL contract: inherited-type search SKILL, no context fork, allowed-tools without Grep, args limited to keywords",
+    "Update flow: explicit backend option skips selection, otherwise ordered availability check, then backend-specific update path",
+    "Desired-state semantics: .doc_structure.yaml is the source of truth; paths not included are removed from the index",
+    "Prerequisites: at least one backend available, judged by capability rather than version",
+    "Test and lint inventory covering path resolution, query wiring, link contract, and index maintenance boundary"
   ],
   "tasks": [
-    "Modifying the query-db or update-db wrapper skills",
-    "Designing or changing backend selection behavior",
-    "Reviewing the document search output contract",
-    "Writing or updating tests for doc backend wrappers",
-    "Implementing skills that call query or update skills",
-    "Updating the document index after spec or rule changes"
+    "Modifying query-db or update-db wrapper SKILLs",
+    "Designing or changing backend selection and fallback behavior",
+    "Reviewing SKILL contracts and allowed-tools for search SKILLs",
+    "Updating index maintenance flow and desired-state handling",
+    "Adding or changing tests and lint for document search wrappers",
+    "Calling query-db skills from other forge SKILLs"
   ],
   "title": "DES-001 文書検索ラッパー（forge → 文書検索 backend）設計書"
 }

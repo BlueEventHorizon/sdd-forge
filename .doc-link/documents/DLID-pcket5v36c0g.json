@@ -1,5 +1,5 @@
 {
-  "content_hash": "9dd190a30aaef187c573d0c55e2c886270fa2252bfb770aca2fbb7c3a18da8ee",
+  "content_hash": "ddcfa87cac98c2524462a921a47f0ca4fb2f1b36003ebf8c5b8585117bfe76fd",
   "doc_link_id": "DLID-pcket5v36c0g",
   "keywords": [
     "ADR",
@@ -7,34 +7,35 @@
     "write-adr",
     "adr_exchange.py",
     "custom agent",
+    "decision record",
     "verdict",
-    "one ADR file per feature",
     "request_id",
-    "baseline_sha256",
-    "approval record"
+    "DES-085",
+    "REQ-030"
   ],
   "path": "docs/specs/adr-writer/design/DES-085_adr_writer_design.md",
-  "purpose": "Design document defining how the ADR writer is built: a write-adr skill, an isolated adr-writer custom agent, and an adr_exchange.py script, so ADRs are recorded one file per feature.",
+  "purpose": "Defines the design of the ADR writer: the write-adr skill, adr-writer custom agent, and adr_exchange.py script that record decisions into one ADR file per feature.",
   "summary": [
-    "Overview of the three components: write-adr entry skill, adr-writer agent, adr_exchange.py script",
-    "Architecture diagram and responsibilities of each component and write targets",
-    "Design decisions: why an agent, why a skill entry, one ADR file per feature, agent writes the body, returns only a verdict",
-    "adr_exchange.py design: identifiers, target file resolution, subcommands open/request-path/finish/check, request fields, inputs",
-    "Validation rules: argument checks and verdict-to-file-state correspondence checks in finish",
-    "Exit codes and output contract (0/1/2, errors array, rejected and insufficient are not errors)",
-    "adr-writer agent spec: tools, write boundary, required reading, per-kind review handling",
-    "write-adr skill flow: output resolution, content organizing, numbering, request, agent launch, branching, completion",
-    "Normative documents to change and use case/sequence design with error flows",
-    "Existing components reused and test design: unit, agent role, contract, and evaluation tests"
+    "Three-part architecture: inheriting write-adr SKILL entry point, isolated adr-writer custom Agent, and adr_exchange.py handoff script",
+    "Design rationale: why an Agent, why a SKILL entry, one ADR file per feature, rejection handled by rewriting the same section",
+    "adr_exchange.py subcommands open, request-path, finish, check with request fields, input files, and exit codes 0/1/2",
+    "Target ADR file resolution by existing ADR file count and verdict-to-file-state consistency checks",
+    "adr-writer agent spec: tools allowlist, write boundary limited to the ADR file, required reading, handling by kind",
+    "write-adr SKILL flow: output dir resolution, content organization, numbering, request publish, agent launch, verdict branching, completion",
+    "Verdict is a closed set of three values (created, rejected, insufficient) recorded by the script; reasons returned as natural language",
+    "Normative documents to change: adr_principles_spec, adr_usage_spec, adr_format, doc_structure_format",
+    "Use cases and sequence diagram with error flows for open, finish, and check failures",
+    "Test design: unit tests for the script, lint for agent tools and contract wording, manual evaluation tests"
   ],
   "tasks": [
     "Implementing the write-adr skill",
     "Implementing the adr-writer agent",
     "Implementing or modifying adr_exchange.py",
-    "Writing tests for the ADR writer",
-    "Reviewing ADR writer design or implementation",
+    "Writing or reviewing ADR files",
     "Calling write-adr from start-design",
-    "Updating ADR principles, format, and usage documents"
+    "Writing tests and lint for the ADR writer",
+    "Updating ADR normative documents",
+    "Reviewing design documents against REQ-030"
   ],
   "title": "DES-085 ADR ライター 設計書"
 }

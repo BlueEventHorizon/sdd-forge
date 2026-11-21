@@ -420,9 +420,13 @@ script は `plugins/forge/scripts/review/` に置く。基本の script が処�
 - `resolve_doc_structure.py`（改修分）: 宣言するパターンに合うパスへ種別を返し、`exclude: [plan]` の設定でも計画書に `plan` を返すこと。ディスクに無いパス（削除されたファイル）にも種別を返すこと。`--feature-of` が成功するパスでは、同じ種別を返すこと。feature を求められないキー（`**` が複数・一部だけの glob）でも、種別は宣言から決まること。
 - `resolve_review_backend.py`（改修分）: 候補ごとに `retains_context` を返し、値を持たない名前で失敗すること。
 
-**契約テスト対象**
+**契約テスト対象**（定義に書かれた呼び方を、実際の script で実行して確かめる）
 
-- `reviewer.md` が持つ script の呼び方が、§6.6 のラッパーと `resolve_doc_structure.py` の実際の引数と一致すること。`reviewer.md` に、reviewer 以外の主体のラッパー（`evaluator_*`・`body_*`）が現れないこと。
+- `reviewer.md` が持つ script の呼び方が、§6.6 のラッパーと `resolve_doc_structure.py` の実際の引数と一致すること。
+
+**lint 対象**（定義の文面を見る。script は実行しない）
+
+- `reviewer.md` に、reviewer 以外の主体のラッパー（`evaluator_*`・`body_*`）が現れないこと。
 - `criteria/review_target_types.md` が、REQ-027 FNC-308 の全 target 種別と、種別ごとに上乗せする観点文書、全 target 種別に共通の文書を持つこと。
 - `reviewer.md` が、`criteria/review_target_types.md` を読む指示を持つこと。
 

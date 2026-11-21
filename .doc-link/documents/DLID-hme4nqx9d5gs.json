@@ -1,37 +1,39 @@
 {
-  "content_hash": "a7e0df95f12cdad8ce2115f6f5e436c770c827491214fa1cf8c7d2de806eb262",
+  "content_hash": "b7f54a0eaeefd3ffedc5e1b3af5247437a7f766b4a2d6eb43ea1936ccb805138",
   "doc_link_id": "DLID-hme4nqx9d5gs",
   "keywords": [
     "version management",
     ".version-config.yaml",
     "update-version",
+    "setup-version-config",
     "sync_files",
+    "filter",
     "CHANGELOG",
-    "semver",
-    "version drift",
-    "git tag",
-    "filter"
+    "tag_format",
+    "VersionDriftError",
+    "semver bump"
   ],
   "path": "docs/specs/forge/design/DES-023_version_management_workflow_design.md",
-  "purpose": "Design document for the version management workflow that updates versions across plugin.json, marketplace.json, README, and CHANGELOG from a central .version-config.yaml.",
+  "purpose": "Design of the version management workflow: .version-config.yaml schema, scripts, and update-version/setup-version-config procedures for synchronizing versions across files in multi-plugin repositories.",
   "summary": [
-    "Skills setup-version-config and update-version and their design principles",
+    "Overview and design principles: non-destructive low-level script, text-based replacement, filter narrowing",
     ".version-config.yaml schema: targets, sync_files, changelog, git settings",
-    "Tag search rules using four candidate forms and tag_format semantics",
+    "Git tag search rules: four candidates by prefix and v presence, with search order",
     "scan_version_targets.py design and version_ref_files detection algorithm",
-    "calculate_version.py bump computation with v prefix tolerance",
-    "update_version_files.py replacement modes: filter, changelog_header, path, simple",
-    "Drift versus not-applicable error distinction and I/O adapter wrappers",
-    "get_version_status.py base branch comparison to prevent double bumps",
-    "Step-by-step update-version workflow, CHANGELOG insertion, error handling, and tests"
+    "calculate_version.py: bump specs, v prefix tolerance, warning on non-increasing versions",
+    "update_version_files.py: filter, changelog_header, path, simple modes and drift/not-found error separation",
+    "get_version_status.py: base branch comparison and version extraction",
+    "setup-version-config and update-version step-by-step workflows, CHANGELOG insertion",
+    "Error handling tables, test file list, and affected files"
   ],
   "tasks": [
-    "Modifying update-version or setup-version-config skills",
+    "Implementing or modifying update-version skill",
+    "Implementing or modifying setup-version-config skill",
     "Editing .version-config.yaml",
-    "Changing version update scripts",
-    "Releasing a new version",
-    "Generating CHANGELOG entries",
-    "Writing tests for version scripts"
+    "Changing update_version_files.py or its I/O adapters",
+    "Changing calculate_version.py or get_version_status.py",
+    "Generating CHANGELOG entries and git tags during release",
+    "Writing or reviewing tests for version scripts"
   ],
   "title": "DES-023 バージョン管理ワークフロー設計書"
 }

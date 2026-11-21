@@ -544,20 +544,5 @@ class CheckTest(AdrExchangeTestBase):
         self.assertEqual(code, 1)
 
 
-class ContractTest(unittest.TestCase):
-    def test_module_docstring_declares_exit_codes_only_0_1_2(self):
-        """3 以上を返さない script は、0 / 1 / 2 だけを宣言する。"""
-        text = SCRIPT.read_text(encoding="utf-8")
-        self.assertIn("## 終了コード", text)
-        for code in ("| 0 ", "| 1 ", "| 2 "):
-            self.assertIn(code, text)
-
-    def test_no_blanket_exception_catch(self):
-        """内部バグを握りつぶさない（COMMON-REQ-002）。"""
-        text = SCRIPT.read_text(encoding="utf-8")
-        self.assertNotIn("except Exception", text)
-        self.assertNotIn("except:", text)
-
-
 if __name__ == "__main__":
     unittest.main()

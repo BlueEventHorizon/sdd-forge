@@ -427,28 +427,5 @@ class PublishFailureTest(_Fixture):
         )
 
 
-class ImportsTest(unittest.TestCase):
-    def test_script_imports_only_the_standard_library(self):
-        import ast
-
-        tree = ast.parse(SCRIPT.read_text(encoding="utf-8"))
-        modules = set()
-        for node in ast.walk(tree):
-            if isinstance(node, ast.Import):
-                modules.update(alias.name.split(".")[0] for alias in node.names)
-            elif isinstance(node, ast.ImportFrom):
-                self.assertEqual(node.level, 0, "相対 import がある")
-                modules.add((node.module or "").split(".")[0])
-        self.assertTrue(modules)
-        self.assertLessEqual(
-            modules,
-            set(sys.stdlib_module_names),
-            sorted(modules - set(sys.stdlib_module_names)),
-        )
-
-    def test_does_not_touch_sys_path_for_sibling_components(self):
-        self.assertNotIn("sys.path", SCRIPT.read_text(encoding="utf-8"))
-
-
 if __name__ == "__main__":
     unittest.main()

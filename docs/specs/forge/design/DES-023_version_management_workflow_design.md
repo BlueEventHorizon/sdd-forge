@@ -159,7 +159,7 @@ prefix を持たない候補は target を区別しないため、マルチ targ
 
 **制約**:
 
-- `SKIP_DIRS` でスキャン対象外ディレクトリを除外（node_modules, .git, **pycache** 等）
+- `SKIP_DIRS` でスキャン対象外ディレクトリを除外（`node_modules`、`.git`、`__pycache__` 等）
 - 最大探索深度: 6（デフォルト）
 - シンボリックリンクの循環を検出して回避
 

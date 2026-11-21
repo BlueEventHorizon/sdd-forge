@@ -1,35 +1,36 @@
 {
-  "content_hash": "41e67eb507c7d8f125601a48bc6cb8927f28698de4973912cf09d9c34af942ff",
+  "content_hash": "7308cf389a3e52aa109b827499eea4eafa0a28f099a6bc6b3e54886f93e83f59",
   "doc_link_id": "DLID-33rp07ycsdym",
   "keywords": [
-    "Claude Code authoring policy",
-    "SKILL execution model",
-    "context fork",
+    "SKILL",
     "custom agent",
+    "context: fork",
     "AskUserQuestion",
-    "inheritance-type skill",
-    "official spec verification",
-    "forge"
+    "inheritance type",
+    "authoring policy",
+    "forge",
+    "Claude Code",
+    "disallowed-tools"
   ],
   "path": "docs/rules/forge_claude_code_authoring_policy.md",
-  "purpose": "Defines forge-specific policies for authoring Claude Code SKILLs and agents, on top of the generic authoring guide: verifying official specs, inheritance-type SKILLs, custom Agents, and user questions.",
+  "purpose": "Defines forge-specific policies for authoring Claude Code SKILLs, custom agents and user questions, supplementing the generic authoring guide.",
   "summary": [
-    "How to verify official Claude Code specifications",
-    "SKILLs are inheritance-type; no context: fork or agent",
-    "Isolated-context work goes to custom Agents",
-    "Inheritance SKILL must state it does only its own task",
-    "New custom Agent needs design rationale and Role constraint tests",
-    "Questions and confirmations use AskUserQuestion",
-    "Exception for discussion-centered SKILLs with declared boundary",
+    "Policy on verifying official Claude Code specs via meta references",
+    "SKILL execution model: inheritance type only, no context: fork or agent",
+    "Isolated-context processing implemented as custom agents",
+    "Inherited SKILL must state it only does its own task",
+    "Custom agent additions need design rationale and Role constraint tests",
+    "User questions must use AskUserQuestion, not plain text",
+    "Exception for discussion-driven SKILLs with declared boundaries",
     "Do not block AskUserQuestion via disallowed-tools",
     "SKILL.md descriptions are written in Japanese"
   ],
   "tasks": [
     "Creating or editing a SKILL.md",
-    "Adding a custom Agent",
-    "Writing user confirmation steps in skills",
-    "Reviewing plugin authoring conformance",
-    "Verifying official Claude Code specs"
+    "Adding a custom agent",
+    "Writing user confirmation steps in a SKILL",
+    "Verifying official Claude Code specifications",
+    "Reviewing SKILLs for policy compliance"
   ],
   "title": "Claude Code 作成方針（forge）"
 }

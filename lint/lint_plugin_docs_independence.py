@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""docs/rules/ の接頭辞による分類と、汎用規範（`plugin_`）の独立性を検査する。
+"""lint: docs/rules/ の接頭辞による分類と、汎用規範（`plugin_`）の独立性を検査する。
 
 `plugin_` を付けた文書は、他のプラグイン開発プロジェクトへそのままコピーして使う。
 `forge_` を付けた文書は、forge 固有の規範で、コピーの対象にしない。
@@ -10,13 +10,14 @@
   実在する `plugin_` の文書だけである（コピー先で壊れないための条件）
 
 実行:
-    python3 -m unittest tests.common.test_plugin_docs_independence -v
+    python3 -m unittest lint.lint_plugin_docs_independence -v
 """
 
 import re
 import unittest
 from pathlib import Path
-from tests import REPO_ROOT
+
+from lint import REPO_ROOT
 
 RULES_DIR = REPO_ROOT / "docs" / "rules"
 PREFIXES = ("plugin_", "forge_")

@@ -27,3 +27,18 @@ jobs:
 
       - name: Run dprint check
         run: $HOME/.dprint/bin/dprint check
+
+  lint:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.14"
+
+      - name: Run lint
+        run: python3 -m unittest discover -s lint -p 'lint_*.py'

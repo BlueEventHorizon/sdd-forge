@@ -1,39 +1,40 @@
 {
-  "content_hash": "6a371cd09123e9bea90cc3db5b0a0158da8f9eeae3a0f1bbe6885cb84ec9f91a",
+  "content_hash": "259a88a9ae6e03d407c1978850f58f8d6b3d7d6c403a8b68c9a908689c0c6ce1",
   "doc_link_id": "DLID-s3cjh3q3c0vc",
   "keywords": [
     "consult",
     "consult brief",
     "consult topic",
     "progress list",
+    "dialogue flow",
     "review delegation",
     "record_review_brief",
-    "dialogue flow",
+    "REQ-017",
     "confidence marks",
-    "DES-078",
-    "REQ-017"
+    "hard link publish"
   ],
   "path": "docs/specs/consult/design/DES-078_consult_dialogue_flow_design.md",
-  "purpose": "Design document realizing REQ-017: how the consult skill presents topics via a progress list, builds and states consult briefs, records them via script, and separates review-specific handling.",
+  "purpose": "Design for the consult dialogue flow: a progress list across all consult topics, per-topic consult briefs (summary and recommendation), recording of briefs via script, and separation of review-specific handling.",
   "summary": [
-    "Overview: consult conveys content clearly and obtains correct user decisions through a whole-picture progress list and per-topic consult briefs",
-    "Scenarios S-01 to S-17 mapped to requirement IDs, covering normal, abnormal, and always-on behaviors",
-    "Responsibilities: dialogue progression, brief creation by the main claude, and a record-writing script, with class diagram",
-    "Behavior: progress list columns, status vocabulary, re-display on each step, and sequence diagrams for topic presentation and recording",
-    "Contracts: shared data definitions (evaluation JSON, consult_brief record, handoff body files, presentation state) and module table M-01 to M-07",
-    "Detailed design of record_review_brief.py: CLI, exit codes, record JSON schema, sequence numbering, atomic hard-link publishing, tests",
-    "Review-delegated procedure document: display format, bulk-fix offer, recording steps, result return",
-    "Brief output rules: summary and recommendation within about 10 lines, confidence marks, no secret values",
-    "Traceability table from requirements to design elements, and TBD-001 for the unwritten dialogue-use design"
+    "Overview realizing REQ-017: whole-list presentation plus per-topic consult briefs",
+    "Scenarios S-01 to S-17 mapping requirements to responses",
+    "Responsibilities: dialogue progression, brief creation, record writing, with class diagram",
+    "Progress list behavior: columns, statuses, re-display on every step, sequence diagram",
+    "Consult topic presentation and recording flow, withdrawal and new topic handling",
+    "Contracts: shared data definitions and module table M-01 to M-07",
+    "Detailed design: record script invocation, JSON record structure, hardlink publishing, algorithm",
+    "Review-delegated procedure document, display format, and test perspectives",
+    "Brief output constraints: roughly 10 lines, confidence marks, secrets excluded",
+    "Traceability table and open item TBD-001 for the dialogue use case"
   ],
   "tasks": [
-    "Implementing or modifying the consult skill SKILL.md",
-    "Implementing record_review_brief.py and its unit tests",
-    "Writing review_handling.md for review-delegated consult",
-    "Reviewing the consult dialogue flow design against REQ-017",
-    "Designing the dialogue-use extension of consult (TBD-001)",
-    "Changing the review skill delegation contract to consult",
-    "Writing ai_tests for consult brief generation quality"
+    "Implementing the consult skill and its SKILL.md",
+    "Implementing record_review_brief.py",
+    "Writing docs/review_handling.md procedure",
+    "Reviewing the consult design document",
+    "Writing tests for the consult record script",
+    "Designing review-to-consult delegation",
+    "Designing the dialogue use case of consult (TBD-001)"
   ],
   "title": "DES-078 consult 対話進行フロー設計書"
 }

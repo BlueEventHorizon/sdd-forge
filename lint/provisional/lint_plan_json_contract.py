@@ -2,7 +2,7 @@
 """forge 実装計画書 `{feature}_plan.json` の JSON 正本契約を静的検査する回帰テスト。
 
 実行:
-  python3 -m unittest tests.forge.plan_json_contract.test_plan_json_contract -v
+  python3 -m unittest lint.provisional.lint_plan_json_contract -v
 
 検査対象:
   1. ユーザー向けガイド・SKILL の JSON 例が DES-074（計画書フォーマット設計書）の必須フィールドを欠かない
@@ -15,7 +15,7 @@ import unittest
 from pathlib import Path
 
 
-from tests import REPO_ROOT
+from lint import REPO_ROOT
 
 
 PLAN_FORMAT = (

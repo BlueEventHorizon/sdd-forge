@@ -651,6 +651,15 @@ update SKILL が doc-link を用いる場合、次の順に処理する。
 2 と 3 には、1 で得た同じ対象指定（`--key {category}`・`--dirs-json`・`--exclude-json`）を渡す。
 `doc-link:index-docs` の完了報告は構造変換せず親へ返す。
 
+doc-link は、渡した対象指定のうち一致するものが無かった指定を、問題（`no_match`）として返す。
+このうち 1 で得た `root_dirs` と同じものは、`.doc_structure.yaml` が宣言していて、まだ文書が置かれていない置き場である。
+宣言は置き場の実在を求めないので、SKILL はこれを問題として伝えず、「宣言済みで文書の無い置き場」として分けて伝える。
+宣言の書き間違いも同じ欄に現れるため、利用者から見えなくはならない。
+
+**forge は、置き場の実在を自分で判定して対象指定から外さない。** 一致の判定は対象の展開の一部であり、
+doc-link 側が所有する（§5.1「索引母集団の差」）。forge が外すと、glob の解釈が食い違ったときに、
+実在する置き場の文書が索引から黙って落ちる。
+
 索引入力準備 CLI は成功時に exit code `0` と `status=success`、dprint、設定解決、入力検証のいずれかが失敗した場合に
 exit code `20` と `status=operation_error` を返す。
 SKILL は exit code だけで後続へ進むかを選択し、準備失敗時は doc-link の SKILL を呼ばない。
@@ -934,7 +943,7 @@ SKILL 経由の実行では script の標準エラー出力が利用者に届か
 `update-db-*` 配下の prepare wrapper が利用者入力を受理しないこと、sync wrapper が
 `--start` / `--status <job_id>` の両操作を受理し、欠落値・余分な引数・未知 operation を
 低レベルへ渡さず拒否することを確認する。
-**`query-db-*` 配下に sync / prepare wrapper が存在しないこと**を静的に確認する（索引整備の入口の二重化防止）。
+**`query-db-*` 配下に sync / prepare wrapper が存在しないこと**を静的に確認する（索引整備の入口の二重化防止。lint で行う）。
 **`query-db-*` 配下に対象文書数を数える wrapper が存在しないこと**も静的に確認する
 （母集団を所有しない側の件数を数えないため。REQ-014 BL-007 / §5.1）。
 
@@ -959,7 +968,8 @@ JSON 応答・SSE 応答・tool error・HTTP error はいずれも注入で決�
 
 ### 9.4 doc-link 契約テスト DLID-8r40ev2ptje3
 
-doc-link は外部 SKILL のため、HTTP 境界への注入では検証できない。forge 側では次を静的または契約テストする。
+doc-link は外部 SKILL のため、HTTP 境界への注入では検証できない。forge 側では、wrapper の SKILL.md の記述を
+静的に検査する（script を実行しない検査であり、lint で行う）。
 契約テストは依拠する外部 I/F に対して書く。I/F の所有は提供側にあるため、
 契約が改訂された場合は固定点の更新とテストの追従を同じ変更で行う。
 

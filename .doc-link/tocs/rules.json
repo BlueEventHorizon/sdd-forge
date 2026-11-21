@@ -13,12 +13,12 @@
       "doc_link_id": "DLID-jzs5n6cre1jh"
     },
     {
-      "applied_hash": "41e67eb507c7d8f125601a48bc6cb8927f28698de4973912cf09d9c34af942ff",
-      "doc_link_id": "DLID-33rp07ycsdym"
-    },
-    {
       "applied_hash": "4925fe0a5d6eaf27d1783599266bea2ba7dae01c37d0e722c5614b1260b7f009",
       "doc_link_id": "DLID-d384sm5xwctj"
+    },
+    {
+      "applied_hash": "7308cf389a3e52aa109b827499eea4eafa0a28f099a6bc6b3e54886f93e83f59",
+      "doc_link_id": "DLID-33rp07ycsdym"
     },
     {
       "applied_hash": "7b634212b0432a1cf47528e6cc15b8c3f8a218a851b4305aeb4913e04ac25036",
@@ -39,47 +39,47 @@
   ],
   "last_checks": [
     {
-      "checked_at": "2026-11-20T12:29:33+00:00",
+      "checked_at": "2026-11-21T13:00:47+00:00",
       "doc_link_id": "DLID-1t0vpykg6nq6",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-20T12:29:33+00:00",
+      "checked_at": "2026-11-21T13:00:47+00:00",
       "doc_link_id": "DLID-33rp07ycsdym",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-20T12:29:33+00:00",
+      "checked_at": "2026-11-21T13:00:47+00:00",
       "doc_link_id": "DLID-7zh3q09p2acs",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-20T12:29:33+00:00",
+      "checked_at": "2026-11-21T13:00:47+00:00",
       "doc_link_id": "DLID-d384sm5xwctj",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-20T12:29:33+00:00",
+      "checked_at": "2026-11-21T13:00:47+00:00",
       "doc_link_id": "DLID-f2f7m4hpyc1f",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-20T12:29:33+00:00",
+      "checked_at": "2026-11-21T13:00:47+00:00",
       "doc_link_id": "DLID-fz66nns8q521",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-20T12:29:33+00:00",
+      "checked_at": "2026-11-21T13:00:47+00:00",
       "doc_link_id": "DLID-jzs5n6cre1jh",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-20T12:29:33+00:00",
+      "checked_at": "2026-11-21T13:00:47+00:00",
       "doc_link_id": "DLID-mmxpd4dms815",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-20T12:29:33+00:00",
+      "checked_at": "2026-11-21T13:00:47+00:00",
       "doc_link_id": "DLID-pvwk8en5c2rq",
       "result": "success"
     }
@@ -87,14 +87,14 @@
   "references": [
     {
       "check": {
-        "checked_at": "2026-11-20T12:29:33+00:00",
+        "checked_at": "2026-11-21T13:00:47+00:00",
         "found_path": "docs/rules/forge_doc_access_principle.md",
         "result": "match",
         "scope": "docs/rules"
       },
       "kind": "document",
       "position": 0,
-      "recorded_content_hash": "cb6aae1960a3",
+      "recorded_content_hash": "0dffb8776564",
       "recorded_path": "forge_doc_access_principle.md",
       "source_doc_id": "DLID-7zh3q09p2acs",
       "source_section_id": null,
@@ -103,7 +103,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-20T12:29:33+00:00",
+        "checked_at": "2026-11-21T13:00:47+00:00",
         "found_path": "docs/rules/plugin_claude_code_authoring_guide.md",
         "result": "match",
         "scope": "docs/rules"
@@ -119,7 +119,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-20T12:29:33+00:00",
+        "checked_at": "2026-11-21T13:00:47+00:00",
         "found_path": "docs/rules/plugin_claude_code_authoring_guide.md",
         "result": "match",
         "scope": "docs/rules"
@@ -135,7 +135,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-20T12:29:33+00:00",
+        "checked_at": "2026-11-21T13:00:47+00:00",
         "found_path": "docs/rules/plugin_claude_code_reference.md",
         "result": "match",
         "scope": "docs/rules"
@@ -151,7 +151,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-20T12:29:33+00:00",
+        "checked_at": "2026-11-21T13:00:47+00:00",
         "found_path": "docs/rules/plugin_claude_code_reference.md",
         "result": "match",
         "scope": "docs/rules"
@@ -167,7 +167,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-20T12:29:33+00:00",
+        "checked_at": "2026-11-21T13:00:47+00:00",
         "found_path": "docs/rules/plugin_implementation_guidelines.md",
         "result": "match",
         "scope": "docs/rules"
@@ -183,7 +183,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-20T12:29:33+00:00",
+        "checked_at": "2026-11-21T13:00:47+00:00",
         "found_path": "docs/rules/plugin_implementation_guidelines.md",
         "result": "match",
         "scope": "docs/rules"
@@ -199,7 +199,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-20T12:29:33+00:00",
+        "checked_at": "2026-11-21T13:00:47+00:00",
         "found_path": "plugins/forge/docs/deterministic_generation_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -215,7 +215,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-20T12:29:33+00:00",
+        "checked_at": "2026-11-21T13:00:47+00:00",
         "found_path": "plugins/forge/docs/error_classification_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -407,13 +407,6 @@
       "section_id": "DLID-0e2cbd842rmw"
     },
     {
-      "content_hash": "34716333881829f25463c119859e54c0d3d9a96470b7a2361b10d5adb8c31ab5",
-      "doc_link_id": "DLID-33rp07ycsdym",
-      "heading": "Claude Code 作成方針（forge）",
-      "position": 0,
-      "section_id": "DLID-rr0676nkzb8r"
-    },
-    {
       "content_hash": "3531bbb9d90b6559bb7e722dd58fec2333d28629b785b2b5f069ca053cffb557",
       "doc_link_id": "DLID-jzs5n6cre1jh",
       "heading": "例外",
@@ -426,6 +419,13 @@
       "heading": "フォールバックを反射的に書かない [MANDATORY]",
       "position": 12,
       "section_id": "DLID-krbjqshc6tre"
+    },
+    {
+      "content_hash": "359ee86f1a4208b7c636c9dac79363df7e216f417858551affbed23236f4896c",
+      "doc_link_id": "DLID-33rp07ycsdym",
+      "heading": "Claude Code 作成方針（forge）",
+      "position": 0,
+      "section_id": "DLID-rr0676nkzb8r"
     },
     {
       "content_hash": "36e8d3b6cfea0f6fb9c200305eac7f2794fbb94b4cc952744a19af55a9bd4d7f",
@@ -547,18 +547,18 @@
       "section_id": "DLID-z83hbjrxnnf1"
     },
     {
+      "content_hash": "6fadd74e149588fd2066f35f92cb1f94d47e71bcc00d3fc5cfda415237781d24",
+      "doc_link_id": "DLID-33rp07ycsdym",
+      "heading": "SKILL 実行モデル [MANDATORY]",
+      "position": 2,
+      "section_id": "DLID-k90j7p53dfqx"
+    },
+    {
       "content_hash": "73595843f26917d0081e8533fcf6e2530232fe79ac12d3ed717923136b50d01e",
       "doc_link_id": "DLID-fz66nns8q521",
       "heading": "終了コード [MANDATORY]",
       "position": 1,
       "section_id": "DLID-18b8vnfch38d"
-    },
-    {
-      "content_hash": "749bfbc0f9d4f580a6b19b972661596635f9dffe713112f6c29bfe6f9b12322c",
-      "doc_link_id": "DLID-33rp07ycsdym",
-      "heading": "SKILL 実行モデル [MANDATORY]",
-      "position": 2,
-      "section_id": "DLID-k90j7p53dfqx"
     },
     {
       "content_hash": "7621edfa675c5ed9e0a11c67984c4f3b08a9ff0f42fc04d06a008fdb046e6c0e",
@@ -879,5 +879,5 @@
     "paths": []
   },
   "toc_key": "rules",
-  "version": 4
+  "version": 5
 }

@@ -9,7 +9,7 @@ import re
 import unittest
 from pathlib import Path
 
-from tests import REPO_ROOT
+from lint import REPO_ROOT
 
 PLUGIN_ROOT = REPO_ROOT / "plugins" / "forge"
 SKILL_PATH = PLUGIN_ROOT / "skills" / "consult" / "SKILL.md"

@@ -16,14 +16,14 @@ CI / ローカルテストで検出する:
 4. 同梱の `rules_toc.yaml` の索引パス集合が、内蔵文書のパス集合と完全一致し、すべて実在すること
 
 実行:
-    python3 -m unittest tests.forge.doc_structure.test_forge_toc_freshness -v
+    python3 -m unittest lint.lint_forge_toc_freshness -v
 """
 
 import importlib.util
 import re
 import unittest
 
-from tests import REPO_ROOT
+from lint import REPO_ROOT
 
 BUILD_SCRIPT = (
     REPO_ROOT

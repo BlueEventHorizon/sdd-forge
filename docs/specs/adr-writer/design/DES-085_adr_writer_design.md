@@ -93,7 +93,7 @@ Agent は単独で起動できず、SKILL 経由になる（`plan-strategist`・
 
 置き場・ファイル名・ID・判定の記録は、決定論的に作れるので script が担う。ADR の本文は、内容そのものの決定であり、AI が担う（[deterministic_generation_spec.md][deterministic-generation-spec] §6）。先例の `plan-strategist` も、戦略書を直接書く。
 
-節構成の検査（決定の節の番号、4 つの小節、旧書式の混入など）は、script の実行時検査に持たせない。受け取る側の形式検査は、検査点を増やし、落ちた理由を分からなくする（同 §7）。節構成は、既存の `test_adr_reference_integrity.py` と、レビュー観点（`review_criteria_design.md` の「ADR 運用」）が担う。
+節構成の検査（決定の節の番号、4 つの小節、旧書式の混入など）は、script の実行時検査に持たせない。受け取る側の形式検査は、検査点を増やし、落ちた理由を分からなくする（同 §7）。節構成は、lint（`lint/lint_adr.py`）と、レビュー観点（`review_criteria_design.md` の「ADR 運用」）が担う。
 
 #### 返すのは判定だけにする DLID-h20h4aefv57b
 
@@ -324,7 +324,7 @@ sequenceDiagram
 | 出力先の解決              | `plugins/forge/skills/doc-structure/SKILL.md`                                                | 文書種別 `adr` の出力先、宣言が無い場合の引き継ぎ  |
 | 採番                      | `plugins/forge/skills/next-spec-id/SKILL.md`                                                 | ADR ファイルの番号。`ADR`・共有 `ADR,DES`          |
 | Agent の frontmatter 検査 | `tests/forge/agents/test_agent_frontmatter.py`                                               | tools の allowlist の回帰検査                      |
-| ADR の参照と書式の検査    | `tests/common/test_adr_reference_integrity.py`                                               | `adr/` 配下の ADR ファイルを `rglob` で走査する    |
+| ADR の参照と書式の検査    | `lint/lint_adr.py`（lint）                                                                   | `adr/` 配下の ADR ファイルを `rglob` で走査する    |
 | ADR のレビュー観点        | `plugins/forge/docs/criteria/review_criteria_design.md`                                      | `target_files` に ADR が含まれる場合の「ADR 運用」 |
 
 ## 6. テスト設計 DLID-t44kffx8ndn2

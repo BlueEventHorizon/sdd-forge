@@ -12,7 +12,7 @@ forge とローカル skill で、汎用の [Claude Code 作成ガイド][guide]
 
 ## SKILL 実行モデル [MANDATORY] DLID-k90j7p53dfqx
 
-- SKILL はすべて継承型で書く。`context: fork` / `agent` を書かない（理由はリファレンスの「`context: fork` の不具合」。`tests/common/test_no_fork_skill.py` が検査する）
+- SKILL はすべて継承型で書く。`context: fork` / `agent` を書かない（理由はリファレンスの「`context: fork` の不具合」。`lint/lint_no_fork_skill.py` が検査する）
 - 隔離 context が要る処理はカスタム Agent（`agents/<name>.md`）にし、Agent ツールで `<plugin>:<name>` として起動する
 
 ### 継承型 SKILL DLID-9zr8t6mry206

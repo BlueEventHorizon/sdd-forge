@@ -106,9 +106,11 @@ grep による代替検索は行わない）。書き込み・コミット・自
 ## 6. テスト DLID-4037xyweqrx7
 
 - `tests/forge/doc_structure/test_resolve_doc_structure.py` — `.doc_structure.yaml` のパス解決を検証する。
-- `tests/common/test_query_skill_isolation.py` — forge 内蔵ドキュメント検索（`query-forge-rules` 継承型 dispatcher
-  SKILL と、実検索を隔離する read-only カスタム Agent `forge:rules-query-worker`）の Role 制約・引数解釈ガード・
-  `Required documents:` 出力契約を機械検証する。
+- `lint/lint_query_skill_wiring.py` — forge 内蔵ドキュメント検索（`query-forge-rules` 継承型 dispatcher
+  SKILL と、実検索を隔離する read-only カスタム Agent `forge:rules-query-worker`）の対応と、worker の
+  `tools` が read-only であることを検査する（lint）。
+- `lint/provisional/lint_query_skill_phrases.py` — 同じ対象の Role 制約・引数解釈ガード・
+  `Required documents:` 出力契約の文言があることを検査する（暫定の lint。文字列の有無だけを見る）。
 - `tests/forge/doc_backend/` — backend 選択（順序リスト・settings_invalid）、doc-db 経路の低レベル CLI、
   doc-link 契約（`test_link_contract.py`）を検証する。
 - `tests/forge/{query,update}-db-{rules,specs}/` — SKILL 固有 wrapper の透過性を検証する。

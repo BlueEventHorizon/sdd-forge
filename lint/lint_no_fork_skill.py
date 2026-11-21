@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-fork 型 SKILL 不採用の継続的検証テスト
+lint: fork 型 SKILL を採用していないこと
 
 「fork 型 SKILL 不採用 + カスタム Agent 起動」方針（docs/rules/forge_claude_code_authoring_policy.md
 「SKILL 実行モデル」）の継続的な再発防止用静的検証。
@@ -10,22 +10,21 @@ fork 型 SKILL 不採用の継続的検証テスト
 - ALL_SKILLS_FORK_FREE=True のとき plugins/*/skills/*/SKILL.md 全件の frontmatter に
   `context: fork` が **含まれていない** ことを assert する
 
-外部依存 (PyYAML 等) は使用しない (test_query_skill_isolation.py と同じ方針)。
-frontmatter は regex で抽出する。
+外部依存 (PyYAML 等) は使用しない。frontmatter は regex で抽出する。
 
 実行:
-  python3 -m unittest tests.common.test_no_fork_skill -v
+  python3 -m unittest lint.lint_no_fork_skill -v
 """
 
 import re
 import unittest
 from pathlib import Path
 
-from tests import REPO_ROOT
+from lint import REPO_ROOT
 
 
 # ALL_SKILLS_FORK_FREE: True のとき plugins/*/skills/*/SKILL.md を全件対象に検査する。
-# True のとき、新規に context: fork を持つ SKILL.md を追加すると本テストが fail する
+# True のとき、新規に context: fork を持つ SKILL.md を追加すると本検査が fail する
 # (docs/rules/forge_claude_code_authoring_policy.md の fork 不採用方針の継続的な再発防止)。
 ALL_SKILLS_FORK_FREE: bool = True
 

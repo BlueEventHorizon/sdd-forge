@@ -10,7 +10,7 @@ Claude Code プラグインのマーケットプレイスリポジトリ。forge
 
 - **forge** (v0.1.3) — ドキュメントライフサイクルツール。要件定義・設計・計画書の作成、コード・文書レビュー、自動修正に対応。レビューは交換可能なバックエンドで実行し、現在の唯一の候補は外部依存を持たない `agent-review`（`review` / `agent-review`）
 
-> 上記の版数は `.version-config.yaml` が CLAUDE.md を同期対象として宣言している箇所であり、`/forge:update-version` が機械的に書き換える。手で消したり書式を変えたりしない（`tests/common/test_version_sync_drift.py` が検証する）。
+> 上記の版数は `.version-config.yaml` が CLAUDE.md を同期対象として宣言している箇所であり、`/forge:update-version` が機械的に書き換える。手で消したり書式を変えたりしない（`lint/lint_version_sync_drift.py` が検査する）。
 
 全体像・スキル一覧・ワークフロー図は [README.md][readme] を参照。
 
@@ -129,7 +129,7 @@ forge の文書検索は doc-link / doc-db の 2 backend 構成で、**どちら
 `makefile` は MCP サーバーの接続・切断用であり、プラグインのインストールには使わない。
 
 - **Python 3.14 以上をサポート対象とする**。Python 3.13 以下は対象外
-- **CI（`.github/workflows/ci.yml`）のゲートは 2 つ**: `python3 -m unittest discover -s tests -p 'test_*.py'` と `dprint check`。Python / TOML / Markdown / YAML を編集したら [dprint](https://dprint.dev/) で `dprint fmt` を通す（設定は `dprint.jsonc`）。通さないと CI が落ちる
+- **CI（`.github/workflows/ci.yml`）のゲートは 3 つ**: 単体テスト `python3 -m unittest discover -s tests -p 'test_*.py'`、lint `python3 -m unittest discover -s lint -p 'lint_*.py'`、`dprint check`。Python / TOML / Markdown / YAML を編集したら [dprint](https://dprint.dev/) で `dprint fmt` を通す（設定は `dprint.jsonc`）。通さないと CI が落ちる
 - ローカル読み込み: `claude --plugin-dir ./plugins/forge`。詳細は [DEVELOPMENT.md][development]
 - `AGENTS.md` は `CLAUDE.md` へのシンボリックリンク（Codex 向け）。どちらを編集しても同一実体が変わる
 
@@ -163,7 +163,7 @@ git -C <実体パス> show main:<契約を定める SKILL.md やスクリプト>
 
 `plugins/` 配下の Python スクリプトにはテストが必須。
 
-**テストを実行・追加・変更する前に、[DEVELOPMENT.md][development] の「4. テスト」を Read する。** 実行コマンド、`tests/`（単体テスト）と `ai_tests/`（AI の判断を試すテスト）の使い分け、配置の規則は、そこにだけ書いてある。読まずにコマンドや置き場を推測しない。
+**テスト・lint を実行・追加・変更する前に、[DEVELOPMENT.md][development] の「4. テストと lint」を Read する。** 実行コマンド、`tests/`（単体テスト）・`lint/`（成果物を規則と照合する検査）・`ai_tests/`（AI の判断を試すテスト）の使い分け、配置の規則は、そこにだけ書いてある。読まずにコマンドや置き場を推測しない。
 
 ## Session Resumption
 

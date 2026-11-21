@@ -583,5 +583,29 @@ class TestCLI(unittest.TestCase):
         self.assertIn('"999.88.8"', result.stdout)
 
 
+class TestFilterlessOptionalSyncFileDrift(unittest.TestCase):
+    """filter 無し（version_path 使用）sync_file のドリフト検出を保証する回帰テスト。
+
+    本リポジトリの `.version-config.yaml` は全 sync_files に filter が設定されているため、
+    実データではこの経路は顕在化しない。下流プロジェクトで filter 無し optional sync_file
+    が使われた場合でも `update_version_in_text` が正しくドリフトを検出することを、
+    合成データで直接検証する。
+    """
+
+    def test_filterless_optional_sync_file_with_drifted_value_is_detected(self):
+        """version_path 使用・filter 無しの sync_file で値が乖離している場合、
+        VersionDriftError として検出できる（サイレントな status: skipped 化を防ぐ）"""
+        content = '{\n  "version": "0.2.2"\n}'
+        current_ver = "999.88.7"
+
+        with self.assertRaises(VersionDriftError):
+            update_version_in_text(
+                content,
+                current_ver,
+                current_ver,
+                version_path="version",
+            )
+
+
 if __name__ == "__main__":
     unittest.main()

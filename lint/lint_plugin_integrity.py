@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """
-プラグイン整合性テスト
+lint: プラグインの整合性
 
 JSON マニフェスト（marketplace.json, plugin.json）の構造・バージョン整合性、
-SKILL.md の frontmatter 検証、相互参照チェック、参照ファイル存在確認をテストする。
+SKILL.md の frontmatter、相互参照、参照ファイルの存在を検査する。
 標準ライブラリのみ使用。
 
 実行:
-  python3 -m unittest tests.common.test_plugin_integrity -v
+  python3 -m unittest lint.lint_plugin_integrity -v
 """
 
 import json
@@ -16,8 +16,7 @@ import re
 import unittest
 from pathlib import Path
 
-# リポジトリルート
-from tests import REPO_ROOT
+from lint import REPO_ROOT
 
 PLUGINS_DIR = REPO_ROOT / "plugins"
 

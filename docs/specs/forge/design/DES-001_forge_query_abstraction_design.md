@@ -109,8 +109,9 @@ grep による代替検索は行わない）。書き込み・コミット・自
 - `lint/lint_query_skill_wiring.py` — forge 内蔵ドキュメント検索（`query-forge-rules` 継承型 dispatcher
   SKILL と、実検索を隔離する read-only カスタム Agent `forge:rules-query-worker`）の対応と、worker の
   `tools` が read-only であることを検査する（lint）。
-- `lint/provisional/lint_query_skill_phrases.py` — 同じ対象の Role 制約・引数解釈ガード・
-  `Required documents:` 出力契約の文言があることを検査する（暫定の lint。文字列の有無だけを見る）。
+- `ai_lint/checks/query_skill_constraints.json` — 同じ対象が、書き込みの禁止・親の作業を引き継がないこと・
+  引数を実装指示として解釈しないこと・出力を `Required documents:` 形式に限ることを述べているかを、
+  判定モデルに問うて検査する（AI-Linter。ローカルで実行する）。
 - `tests/forge/doc_backend/` — backend 選択（順序リスト・settings_invalid）、doc-db 経路の低レベル CLI を検証する。
 - `lint/provisional/lint_link_contract.py` — wrapper の SKILL.md の記述が doc-link の契約に沿うことを検査する
   （暫定の lint。文字列の有無と順序だけを見る）。

@@ -163,7 +163,7 @@ git -C <実体パス> show main:<契約を定める SKILL.md やスクリプト>
 
 `plugins/` 配下の Python スクリプトにはテストが必須。
 
-**テスト・lint を実行・追加・変更する前に、[DEVELOPMENT.md][development] の「4. テストと lint」を Read する。** 実行コマンド、`tests/`（単体テスト）・`lint/`（成果物を規則と照合する検査）・`ai_tests/`（AI の判断を試すテスト）の使い分け、配置の規則は、そこにだけ書いてある。読まずにコマンドや置き場を推測しない。
+**テスト・lint を実行・追加・変更する前に、[DEVELOPMENT.md][development] の「4. テストと lint」を Read する。** 実行コマンド、`tests/`（単体テスト）・`lint/`（成果物を規則と照合する検査）・`ai_lint/`（文章の意味を判定モデルに問う検査）・`ai_tests/`（AI の判断を試すテスト）の使い分け、配置の規則は、そこにだけ書いてある。読まずにコマンドや置き場を推測しない。
 
 ## Session Resumption
 

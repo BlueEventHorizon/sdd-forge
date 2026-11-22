@@ -1,0 +1,30 @@
+{
+  "id": "query_worker_role",
+  "targets": ["plugins/forge/agents/rules-query-worker.md"],
+  "questions": [
+    {
+      "id": "write_ban",
+      "question": "`document` は、Edit や Write などのファイル書き込み系ツールの使用を、明示的に禁じているか。",
+      "expect": "yes",
+      "basis": "docs/rules/plugin_claude_code_authoring_guide.md「カスタム Agent」禁止事項（allowlist 外への書き込み）を否定形で書く"
+    },
+    {
+      "id": "allows_write",
+      "question": "`document` は、リポジトリ内のファイルを変更することを許しているか。",
+      "expect": "no",
+      "basis": "docs/rules/plugin_claude_code_authoring_guide.md「カスタム Agent」禁止事項（allowlist 外への書き込み）を否定形で書く"
+    },
+    {
+      "id": "no_takeover",
+      "question": "`document` は、呼び出し元（親）が依頼している他の作業を引き継ぐことを禁じているか。",
+      "expect": "yes",
+      "basis": "docs/rules/plugin_claude_code_authoring_guide.md「カスタム Agent」禁止事項（親タスクの引き継ぎ）を否定形で書く"
+    },
+    {
+      "id": "arg_not_instruction",
+      "question": "`document` は、受け取ったタスク説明が命令文の体裁であっても、実装指示として解釈してはならないと述べているか。",
+      "expect": "yes",
+      "basis": "docs/rules/plugin_claude_code_authoring_guide.md「カスタム Agent」起動 prompt を親の指示として解釈しないことを書く"
+    }
+  ]
+}

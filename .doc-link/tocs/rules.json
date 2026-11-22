@@ -5,20 +5,16 @@
       "doc_link_id": "DLID-1t0vpykg6nq6"
     },
     {
+      "applied_hash": "1b4400f836cd80e1d2a282b37cd91be2ca2a4cae9d89c5b83a30f754ad5a3f4b",
+      "doc_link_id": "DLID-pvwk8en5c2rq"
+    },
+    {
       "applied_hash": "231d1a8223057f87637795d1ab1e95dcc3b4e910c12f6a15de6ce06a3c0573ea",
       "doc_link_id": "DLID-jzs5n6cre1jh"
     },
     {
       "applied_hash": "4925fe0a5d6eaf27d1783599266bea2ba7dae01c37d0e722c5614b1260b7f009",
       "doc_link_id": "DLID-d384sm5xwctj"
-    },
-    {
-      "applied_hash": "5b093831bbcd006fe1bd08c5823b8e49437300f840aee22cb541f55ef1ee82d6",
-      "doc_link_id": "DLID-pvwk8en5c2rq"
-    },
-    {
-      "applied_hash": "7308cf389a3e52aa109b827499eea4eafa0a28f099a6bc6b3e54886f93e83f59",
-      "doc_link_id": "DLID-33rp07ycsdym"
     },
     {
       "applied_hash": "7b634212b0432a1cf47528e6cc15b8c3f8a218a851b4305aeb4913e04ac25036",
@@ -33,53 +29,57 @@
       "doc_link_id": "DLID-7zh3q09p2acs"
     },
     {
+      "applied_hash": "c9c071f114169f6844070b369c1a40fa609eb40c8adead39246734502cbb3ab5",
+      "doc_link_id": "DLID-33rp07ycsdym"
+    },
+    {
       "applied_hash": "f1c5b6752ce76e530473ed1ef1d201c5091cf8fe0f8d3899aec579d7d1aaacce",
       "doc_link_id": "DLID-fz66nns8q521"
     }
   ],
   "last_checks": [
     {
-      "checked_at": "2026-11-22T06:24:32+00:00",
+      "checked_at": "2026-11-22T06:33:03+00:00",
       "doc_link_id": "DLID-1t0vpykg6nq6",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-22T06:24:32+00:00",
+      "checked_at": "2026-11-22T06:33:03+00:00",
       "doc_link_id": "DLID-33rp07ycsdym",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-22T06:24:32+00:00",
+      "checked_at": "2026-11-22T06:33:03+00:00",
       "doc_link_id": "DLID-7zh3q09p2acs",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-22T06:24:32+00:00",
+      "checked_at": "2026-11-22T06:33:03+00:00",
       "doc_link_id": "DLID-d384sm5xwctj",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-22T06:24:32+00:00",
+      "checked_at": "2026-11-22T06:33:03+00:00",
       "doc_link_id": "DLID-f2f7m4hpyc1f",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-22T06:24:32+00:00",
+      "checked_at": "2026-11-22T06:33:03+00:00",
       "doc_link_id": "DLID-fz66nns8q521",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-22T06:24:32+00:00",
+      "checked_at": "2026-11-22T06:33:03+00:00",
       "doc_link_id": "DLID-jzs5n6cre1jh",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-22T06:24:32+00:00",
+      "checked_at": "2026-11-22T06:33:03+00:00",
       "doc_link_id": "DLID-mmxpd4dms815",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-22T06:24:32+00:00",
+      "checked_at": "2026-11-22T06:33:03+00:00",
       "doc_link_id": "DLID-pvwk8en5c2rq",
       "result": "success"
     }
@@ -87,7 +87,7 @@
   "references": [
     {
       "check": {
-        "checked_at": "2026-11-22T06:24:32+00:00",
+        "checked_at": "2026-11-22T06:33:03+00:00",
         "found_path": "docs/rules/forge_doc_access_principle.md",
         "result": "match",
         "scope": "docs/rules"
@@ -103,14 +103,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:24:32+00:00",
+        "checked_at": "2026-11-22T06:33:03+00:00",
         "found_path": "docs/rules/plugin_claude_code_authoring_guide.md",
         "result": "match",
         "scope": "docs/rules"
       },
       "kind": "document",
       "position": 0,
-      "recorded_content_hash": "1b4400f836cd",
+      "recorded_content_hash": "5b093831bbcd",
       "recorded_path": "plugin_claude_code_authoring_guide.md",
       "source_doc_id": "DLID-33rp07ycsdym",
       "source_section_id": null,
@@ -119,14 +119,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:24:32+00:00",
+        "checked_at": "2026-11-22T06:33:03+00:00",
         "found_path": "docs/rules/plugin_claude_code_authoring_guide.md",
         "result": "match",
         "scope": "docs/rules"
       },
       "kind": "document",
       "position": 0,
-      "recorded_content_hash": "1b4400f836cd",
+      "recorded_content_hash": "5b093831bbcd",
       "recorded_path": "plugin_claude_code_authoring_guide.md",
       "source_doc_id": "DLID-d384sm5xwctj",
       "source_section_id": null,
@@ -135,7 +135,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:24:32+00:00",
+        "checked_at": "2026-11-22T06:33:03+00:00",
         "found_path": "docs/rules/plugin_claude_code_reference.md",
         "result": "match",
         "scope": "docs/rules"
@@ -151,7 +151,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:24:32+00:00",
+        "checked_at": "2026-11-22T06:33:03+00:00",
         "found_path": "docs/rules/plugin_claude_code_reference.md",
         "result": "match",
         "scope": "docs/rules"
@@ -167,7 +167,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:24:32+00:00",
+        "checked_at": "2026-11-22T06:33:03+00:00",
         "found_path": "docs/rules/plugin_implementation_guidelines.md",
         "result": "match",
         "scope": "docs/rules"
@@ -183,7 +183,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:24:32+00:00",
+        "checked_at": "2026-11-22T06:33:03+00:00",
         "found_path": "docs/rules/plugin_implementation_guidelines.md",
         "result": "match",
         "scope": "docs/rules"
@@ -199,7 +199,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:24:32+00:00",
+        "checked_at": "2026-11-22T06:33:03+00:00",
         "found_path": "plugins/forge/docs/deterministic_generation_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -215,7 +215,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:24:32+00:00",
+        "checked_at": "2026-11-22T06:33:03+00:00",
         "found_path": "plugins/forge/docs/error_classification_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -344,6 +344,13 @@
       "section_id": "DLID-5vtwm17q4g2d"
     },
     {
+      "content_hash": "247032b2cd738b0c0aa04f3f5f639d4c7e4b3e51e77eee24e44d534c2b4b4fdc",
+      "doc_link_id": "DLID-pvwk8en5c2rq",
+      "heading": "起動経路",
+      "position": 2,
+      "section_id": "DLID-r6hmza9tpvap"
+    },
+    {
       "content_hash": "2771623995b0c718998b7e5acb7e81c76326404df1bc3d7ef9a786d59a0743a5",
       "doc_link_id": "DLID-pvwk8en5c2rq",
       "heading": "別スキルの呼び出し [MANDATORY]",
@@ -379,6 +386,13 @@
       "section_id": "DLID-gbfr9jmjz6jk"
     },
     {
+      "content_hash": "2e957f1b717af98ca1b1fc6a927592517a3332c8e4f7c1a53bddd38681147a98",
+      "doc_link_id": "DLID-pvwk8en5c2rq",
+      "heading": "継承型 SKILL",
+      "position": 4,
+      "section_id": "DLID-vtftgv7ffq6x"
+    },
+    {
       "content_hash": "302671fbfb35c6fa25ef9e206296eef7104ea7574656460baee40c2c7ffc0424",
       "doc_link_id": "DLID-7zh3q09p2acs",
       "heading": "確定してから書き、上書きしない",
@@ -407,25 +421,11 @@
       "section_id": "DLID-krbjqshc6tre"
     },
     {
-      "content_hash": "359ee86f1a4208b7c636c9dac79363df7e216f417858551affbed23236f4896c",
-      "doc_link_id": "DLID-33rp07ycsdym",
-      "heading": "Claude Code 作成方針（forge）",
-      "position": 0,
-      "section_id": "DLID-rr0676nkzb8r"
-    },
-    {
       "content_hash": "36e8d3b6cfea0f6fb9c200305eac7f2794fbb94b4cc952744a19af55a9bd4d7f",
       "doc_link_id": "DLID-7zh3q09p2acs",
       "heading": "なぜ prompt と return value で運ばないか",
       "position": 2,
       "section_id": "DLID-84m6dcn7avqw"
-    },
-    {
-      "content_hash": "37312be1675d601473b732c28b39c31b52fc855218f213eaaa38e9cfe1688119",
-      "doc_link_id": "DLID-pvwk8en5c2rq",
-      "heading": "起動経路",
-      "position": 2,
-      "section_id": "DLID-r6hmza9tpvap"
     },
     {
       "content_hash": "3c9879ebba911c4326b7a19845998759764d6ce80c241f0c9f8a5d4355f783cd",
@@ -454,6 +454,13 @@
       "heading": "ロック",
       "position": 5,
       "section_id": "DLID-6ajbcke3avay"
+    },
+    {
+      "content_hash": "4996bbd597481d14d945557741cfbfeab81e77959a329ba0cc95ef769b1648b7",
+      "doc_link_id": "DLID-33rp07ycsdym",
+      "heading": "Claude Code 作成方針（forge）",
+      "position": 0,
+      "section_id": "DLID-rr0676nkzb8r"
     },
     {
       "content_hash": "4a6fbc45f7e1033e3c532e2a5b5424ebc2c04eba81f592bd9df6481e2f70aa0d",
@@ -526,18 +533,18 @@
       "section_id": "DLID-nnts0cbbzxcz"
     },
     {
+      "content_hash": "63153fe5e5020d37768dd5896b8589f05ab77d2dac5e6b3dfe054c0f5230e0b1",
+      "doc_link_id": "DLID-pvwk8en5c2rq",
+      "heading": "Claude Code 作成ガイド（SKILL / カスタム Agent）",
+      "position": 0,
+      "section_id": "DLID-12jnf0mbtaj3"
+    },
+    {
       "content_hash": "6316f949df1244b76cc880dd5752a032acd2659decbf294b40efce78f04eb8d0",
       "doc_link_id": "DLID-jzs5n6cre1jh",
       "heading": "編集しない対象",
       "position": 17,
       "section_id": "DLID-z83hbjrxnnf1"
-    },
-    {
-      "content_hash": "6fadd74e149588fd2066f35f92cb1f94d47e71bcc00d3fc5cfda415237781d24",
-      "doc_link_id": "DLID-33rp07ycsdym",
-      "heading": "SKILL 実行モデル [MANDATORY]",
-      "position": 2,
-      "section_id": "DLID-k90j7p53dfqx"
     },
     {
       "content_hash": "73595843f26917d0081e8533fcf6e2530232fe79ac12d3ed717923136b50d01e",
@@ -659,11 +666,11 @@
       "section_id": "DLID-k5haywd1wpqg"
     },
     {
-      "content_hash": "9ed3b2bb1cba2e0a86cb79d9ea916bc33f99867c047138cabd5c9daf324b2e16",
-      "doc_link_id": "DLID-pvwk8en5c2rq",
+      "content_hash": "9a592f9549efb752784fc552910f921682aea4b428f6f1e8ccca587c086bc184",
+      "doc_link_id": "DLID-33rp07ycsdym",
       "heading": "継承型 SKILL",
-      "position": 4,
-      "section_id": "DLID-vtftgv7ffq6x"
+      "position": 3,
+      "section_id": "DLID-9zr8t6mry206"
     },
     {
       "content_hash": "a06584e553e599acc9ecb0492e9740814933bc9d00440743a08c369f8e0e71b3",
@@ -715,6 +722,13 @@
       "section_id": "DLID-k1q2nnbpqn3a"
     },
     {
+      "content_hash": "be709cf8d649ad3c052b7f8152c65ed057204495754da28a2a3dffd0c6c1db67",
+      "doc_link_id": "DLID-33rp07ycsdym",
+      "heading": "SKILL 実行モデル [MANDATORY]",
+      "position": 2,
+      "section_id": "DLID-k90j7p53dfqx"
+    },
+    {
       "content_hash": "bfa1ab5055d801d1617196f9c8f8c38a256c1ed552d1261b40f18b8a6a1d88db",
       "doc_link_id": "DLID-jzs5n6cre1jh",
       "heading": "使わないコードは削除する [IMPORTANT]",
@@ -748,13 +762,6 @@
       "heading": "やってはいけない (アンチパターン)",
       "position": 3,
       "section_id": "DLID-g38qcpvqmjmx"
-    },
-    {
-      "content_hash": "d3c046749afbada1698ddb62d0f403e93da20a419ebc6324ad96df2a4c723bda",
-      "doc_link_id": "DLID-33rp07ycsdym",
-      "heading": "継承型 SKILL",
-      "position": 3,
-      "section_id": "DLID-9zr8t6mry206"
     },
     {
       "content_hash": "d53f4d702b0cd5345454d539b587726b8f4d2d432b0b8d6a71adae424bf88298",
@@ -834,13 +841,6 @@
       "section_id": "DLID-evw0ed4xmkxb"
     },
     {
-      "content_hash": "f5257e432a7d18b8a3c47fca39f7f5751b00b2594993622ee14062ff2c272438",
-      "doc_link_id": "DLID-pvwk8en5c2rq",
-      "heading": "Claude Code 作成ガイド（SKILL / カスタム Agent）",
-      "position": 0,
-      "section_id": "DLID-12jnf0mbtaj3"
-    },
-    {
       "content_hash": "f808559aefa42da4f88382536cb921e2fd5f3e6520dc5701833e33de000bc5cb",
       "doc_link_id": "DLID-33rp07ycsdym",
       "heading": "公式仕様の確かめ方",
@@ -879,5 +879,5 @@
     "paths": []
   },
   "toc_key": "rules",
-  "version": 6
+  "version": 7
 }

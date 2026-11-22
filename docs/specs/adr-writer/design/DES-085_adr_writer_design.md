@@ -360,4 +360,4 @@ sequenceDiagram
 [deterministic-generation-spec]: ../../../../plugins/forge/docs/deterministic_generation_spec.md "75383cc8c6d8 DLID-tm2m7nv23dqd"
 [des-022]: ../../forge/design/DES-022_parallel_agent_output_contract_design.md "55060c313fdc DLID-5h7wqxcknyha"
 [common-req-002-error-handling-policy]: ../../common/requirements/COMMON-REQ-002_error_handling_policy.md "3810426fdc1b DLID-4wn8sb8y1f80"
-[req-003]: ../../forge/requirements/REQ-003_skill_script_separation.md "323aaf2b05f6 DLID-bgxgcq0pvkm7"
+[req-003]: ../../forge/requirements/REQ-003_skill_script_separation.md "3b1c5409fe80 DLID-bgxgcq0pvkm7"

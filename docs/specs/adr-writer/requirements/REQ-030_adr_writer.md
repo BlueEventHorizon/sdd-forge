@@ -171,5 +171,5 @@ ADR ライターが最後まで終えられなかった場合に、成功とし�
 該当なし。
 
 [spec-priorities-spec]: ../../../../plugins/forge/docs/spec_priorities_spec.md "f8233c87c564 DLID-f9ny9e932trv"
-[adr-principles-spec]: ../../../../plugins/forge/docs/adr_principles_spec.md "c6de50f76bc5 DLID-45wzpggz1set"
-[req-028]: ../../forge/requirements/REQ-028_document_system.md "52bc13fba837 DLID-3c038need73s"
+[adr-principles-spec]: ../../../../plugins/forge/docs/adr_principles_spec.md "3ae4e3bfdd65 DLID-45wzpggz1set"
+[req-028]: ../../forge/requirements/REQ-028_document_system.md "5f3e63bd9cc3 DLID-3c038need73s"

@@ -481,4 +481,4 @@ evaluator の結果の `evaluations` の要素である（DM-305）。
 [forge-agent-data-exchange-rules]: ../../../rules/forge_agent_data_exchange_rules.md "ad12d06f3966 DLID-7zh3q09p2acs"
 [deterministic-generation-spec]: ../../../../plugins/forge/docs/deterministic_generation_spec.md "75383cc8c6d8 DLID-tm2m7nv23dqd"
 [error-classification-spec]: ../../../../plugins/forge/docs/error_classification_spec.md "04397ae80f5c DLID-5ykqs19cdbks"
-[review-priorities-spec]: ../../../../plugins/forge/docs/review_priorities_spec.md "2822ed686d56 DLID-dcec6pr177c9"
+[review-priorities-spec]: ../../../../plugins/forge/docs/review_priorities_spec.md "dc0c7761adf3 DLID-dcec6pr177c9"

@@ -39,47 +39,47 @@
   ],
   "last_checks": [
     {
-      "checked_at": "2026-11-22T06:33:03+00:00",
+      "checked_at": "2026-11-22T06:59:01+00:00",
       "doc_link_id": "DLID-1t0vpykg6nq6",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-22T06:33:03+00:00",
+      "checked_at": "2026-11-22T06:59:01+00:00",
       "doc_link_id": "DLID-33rp07ycsdym",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-22T06:33:03+00:00",
+      "checked_at": "2026-11-22T06:59:01+00:00",
       "doc_link_id": "DLID-7zh3q09p2acs",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-22T06:33:03+00:00",
+      "checked_at": "2026-11-22T06:59:01+00:00",
       "doc_link_id": "DLID-d384sm5xwctj",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-22T06:33:03+00:00",
+      "checked_at": "2026-11-22T06:59:01+00:00",
       "doc_link_id": "DLID-f2f7m4hpyc1f",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-22T06:33:03+00:00",
+      "checked_at": "2026-11-22T06:59:01+00:00",
       "doc_link_id": "DLID-fz66nns8q521",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-22T06:33:03+00:00",
+      "checked_at": "2026-11-22T06:59:01+00:00",
       "doc_link_id": "DLID-jzs5n6cre1jh",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-22T06:33:03+00:00",
+      "checked_at": "2026-11-22T06:59:01+00:00",
       "doc_link_id": "DLID-mmxpd4dms815",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-22T06:33:03+00:00",
+      "checked_at": "2026-11-22T06:59:01+00:00",
       "doc_link_id": "DLID-pvwk8en5c2rq",
       "result": "success"
     }
@@ -87,7 +87,7 @@
   "references": [
     {
       "check": {
-        "checked_at": "2026-11-22T06:33:03+00:00",
+        "checked_at": "2026-11-22T06:59:01+00:00",
         "found_path": "docs/rules/forge_doc_access_principle.md",
         "result": "match",
         "scope": "docs/rules"
@@ -103,14 +103,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:33:03+00:00",
+        "checked_at": "2026-11-22T06:59:01+00:00",
         "found_path": "docs/rules/plugin_claude_code_authoring_guide.md",
         "result": "match",
         "scope": "docs/rules"
       },
       "kind": "document",
       "position": 0,
-      "recorded_content_hash": "5b093831bbcd",
+      "recorded_content_hash": "1b4400f836cd",
       "recorded_path": "plugin_claude_code_authoring_guide.md",
       "source_doc_id": "DLID-33rp07ycsdym",
       "source_section_id": null,
@@ -119,14 +119,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:33:03+00:00",
+        "checked_at": "2026-11-22T06:59:01+00:00",
         "found_path": "docs/rules/plugin_claude_code_authoring_guide.md",
         "result": "match",
         "scope": "docs/rules"
       },
       "kind": "document",
       "position": 0,
-      "recorded_content_hash": "5b093831bbcd",
+      "recorded_content_hash": "1b4400f836cd",
       "recorded_path": "plugin_claude_code_authoring_guide.md",
       "source_doc_id": "DLID-d384sm5xwctj",
       "source_section_id": null,
@@ -135,7 +135,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:33:03+00:00",
+        "checked_at": "2026-11-22T06:59:01+00:00",
         "found_path": "docs/rules/plugin_claude_code_reference.md",
         "result": "match",
         "scope": "docs/rules"
@@ -151,7 +151,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:33:03+00:00",
+        "checked_at": "2026-11-22T06:59:01+00:00",
         "found_path": "docs/rules/plugin_claude_code_reference.md",
         "result": "match",
         "scope": "docs/rules"
@@ -167,7 +167,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:33:03+00:00",
+        "checked_at": "2026-11-22T06:59:01+00:00",
         "found_path": "docs/rules/plugin_implementation_guidelines.md",
         "result": "match",
         "scope": "docs/rules"
@@ -183,7 +183,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:33:03+00:00",
+        "checked_at": "2026-11-22T06:59:01+00:00",
         "found_path": "docs/rules/plugin_implementation_guidelines.md",
         "result": "match",
         "scope": "docs/rules"
@@ -199,7 +199,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:33:03+00:00",
+        "checked_at": "2026-11-22T06:59:01+00:00",
         "found_path": "plugins/forge/docs/deterministic_generation_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -215,7 +215,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:33:03+00:00",
+        "checked_at": "2026-11-22T06:59:01+00:00",
         "found_path": "plugins/forge/docs/error_classification_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -879,5 +879,5 @@
     "paths": []
   },
   "toc_key": "rules",
-  "version": 7
+  "version": 8
 }

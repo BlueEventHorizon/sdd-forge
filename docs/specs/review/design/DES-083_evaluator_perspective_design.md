@@ -599,5 +599,5 @@ evaluator は、次のラッパーを通して基本の script を呼ぶ。`--ki
 
 [req-026]: ../requirements/REQ-026_evaluator_perspective.md "856185c37ce2 DLID-p1v5z5mme4tw"
 [req-029]: ../requirements/REQ-029_review_exchange.md "4e7fe6918eec DLID-5vrs9fnet7de"
-[des-084]: DES-084_reviewer_design.md "daa286494b24 DLID-j50s0xwkwx00"
-[review-priorities-spec]: ../../../../plugins/forge/docs/review_priorities_spec.md "2822ed686d56 DLID-dcec6pr177c9"
+[des-084]: DES-084_reviewer_design.md "0e741f0a00db DLID-j50s0xwkwx00"
+[review-priorities-spec]: ../../../../plugins/forge/docs/review_priorities_spec.md "dc0c7761adf3 DLID-dcec6pr177c9"

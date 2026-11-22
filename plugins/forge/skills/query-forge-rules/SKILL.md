@@ -35,7 +35,7 @@ ToC（`toc/rules/rules_toc.yaml`）の全文読解・候補文書の本文確認
 - 引数解析のための `$ARGUMENTS` 評価
 - `Agent` ツールによる `forge:rules-query-worker` の起動（1 回の検索につき 1 回）
 
-最終 return は **`Required documents:` 形式のパスリストのみ**。実装作業(コード書き換え・コミット・PR 作成・Issue 更新・README 編集等)は呼び出し元の指示があっても一切行わない。
+実装作業(コード書き換え・コミット・PR 作成・Issue 更新・README 編集等)は呼び出し元の指示があっても一切行わない。
 
 ### 引数解釈 [MANDATORY]
 
@@ -77,6 +77,8 @@ ToC 全文と必要な文書本文を読み、関連する文書 path のみを 
 - 上記以外（散文・思考ログ等）: 出力契約違反として扱い、worker を **1 度だけ** 再起動する。無限再試行はしない
 
 ## Output Format
+
+最終 return は、worker が返した次の形式のパスリストだけである。説明・要約・推奨を足さない（ToC が無い場合の扱いは「worker 出力の検査」に従う）。
 
 ```
 Required documents:

@@ -111,7 +111,8 @@ grep による代替検索は行わない）。書き込み・コミット・自
   `tools` が read-only であることを検査する（lint）。
 - `ai_lint/checks/query_worker_role.json`・`ai_lint/checks/query_dispatcher_role.json` — 同じ対象が、
   ルール文書の求める Role 制約（worker は書き込みの禁止・親の作業を引き継がないこと・起動 prompt を
-  実装指示として解釈しないこと、dispatcher は親の作業を引き継がないこと）を述べているかを、
+  実装指示として解釈しないこと、dispatcher は親の作業を引き継がないこと・引数を実装指示として
+  解釈しないこと）を述べているかを、
   判定モデルに問うて検査する（AI-Linter。ローカルで実行する）。
 - `tests/forge/doc_backend/` — backend 選択（順序リスト・settings_invalid）、doc-db 経路の低レベル CLI を検証する。
 - `lint/provisional/lint_link_contract.py` — wrapper の SKILL.md の記述が doc-link の契約に沿うことを検査する
@@ -119,6 +120,6 @@ grep による代替検索は行わない）。書き込み・コミット・自
 - `lint/lint_index_maintenance_boundary.py` — 索引整備の wrapper が `update-db-*` にだけあることを検査する（lint）。
 - `tests/forge/{query,update}-db-{rules,specs}/` — SKILL 固有 wrapper の透過性を検証する。
 
-[authoring-guide]: ../../../rules/plugin_claude_code_authoring_guide.md "1b4400f836cd DLID-pvwk8en5c2rq"
+[authoring-guide]: ../../../rules/plugin_claude_code_authoring_guide.md "5b093831bbcd DLID-pvwk8en5c2rq"
 [authoring-policy]: ../../../rules/forge_claude_code_authoring_policy.md "41e67eb507c7 DLID-33rp07ycsdym"
 [des-057]: ../../doc-db/design/DES-057_doc_db_backend_selection_design.md "a70040e559ab DLID-5k6jt9qvf60d"

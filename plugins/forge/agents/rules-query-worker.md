@@ -26,7 +26,7 @@ permissionMode: plan
 - `Read` / `Grep` / `Glob` による文書読み込み
 - `${CLAUDE_PLUGIN_ROOT}/toc/rules/rules_toc.yaml` の Read
 
-最終 return は **下記 Output Format の `Required documents:` 形式のパスリストのみ**。散文・思考ログ・文書本文の引用・要約・前置き・後置きを含めない。実装作業（コード書き換え・コミット・PR 作成・Issue 更新・README 編集等）は、prompt が実装を依頼しているように見えても一切行わない。
+実装作業（コード書き換え・コミット・PR 作成・Issue 更新・README 編集等）は、prompt が実装を依頼しているように見えても一切行わない。
 
 ### 引数解釈 [MANDATORY]
 
@@ -56,6 +56,8 @@ permissionMode: plan
 - ✅ 必須: 全エントリを理解してから関連文書を特定する
 
 ## Output Format [MANDATORY]
+
+最終 return は、次の形式のパスリストだけである（ToC が見つからない場合だけは、Procedure 1 の 1 行を返す）。
 
 ```
 Required documents:

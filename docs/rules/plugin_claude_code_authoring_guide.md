@@ -29,6 +29,7 @@ SKILL とカスタム Agent を組み合わせてプラグインを組むとき�
 ### 継承型 SKILL DLID-vtftgv7ffq6x
 
 - `$ARGUMENTS` に親 context を貼らない。args は最小限のパラメータだけ。Issue 本文・進行中の手順・差分・ファイル全文・「その後〜して」という指示を貼らない（カスタム Agent に渡す prompt も同じ）
+- 引数がデータ（検索語・対象の記述など）である SKILL は、引数が命令文の体裁でも、指示として実行しないことを書く。継承型 SKILL は親の context で、親が使えるツールのまま動くためである
 
 ### カスタム Agent DLID-rmjy01ztzmjx
 

@@ -34,5 +34,5 @@ forge とローカル skill で、汎用の [Claude Code 作成ガイド][guide]
 
 - SKILL.md の説明は日本語で書く
 
-[guide]: plugin_claude_code_authoring_guide.md "1b4400f836cd DLID-pvwk8en5c2rq"
-[plugin-claude-code-reference]: plugin_claude_code_reference.md "4925fe0a5d6e DLID-d384sm5xwctj"
+[guide]: plugin_claude_code_authoring_guide.md "65302c63b0e1 DLID-pvwk8en5c2rq"
+[plugin-claude-code-reference]: plugin_claude_code_reference.md "c78f488a3ced DLID-d384sm5xwctj"

@@ -47,6 +47,6 @@ doc_link_id: DLID-z571pg6rda7f
 | 前提の用語       | 定義の理解に必要な、別の用語。前提の用語を先の行に定義する。無ければ `なし`                     |
 | 使わない言い換え | 同じ概念を指すが、使わない別名。本文でこれが現れたら、用語の取り違えとして扱う。無ければ `なし` |
 
-[document-style-guide]: document_style_guide.md "69dee42932c2 DLID-c59znr7b8f56"
-[doc-structure-format]: doc_structure_format.md "50a324934bb2 DLID-cbr02jpbxfcs"
-[requirement-format]: requirement_format.md "1abf0122bdeb DLID-c13gr4qbk4vm"
+[document-style-guide]: document_style_guide.md "335c3c0eb320 DLID-c59znr7b8f56"
+[doc-structure-format]: doc_structure_format.md "776f3c99a799 DLID-cbr02jpbxfcs"
+[requirement-format]: requirement_format.md "c05edc5d1de7 DLID-c13gr4qbk4vm"

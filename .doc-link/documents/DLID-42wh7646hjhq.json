@@ -1,37 +1,38 @@
 {
-  "content_hash": "b6a1775c93644383dea1ed09837f1f5aee175cc2e0599581a6e612abee15191c",
+  "content_hash": "2f1bdcf996ea83075c637fc0c1f8d94aa7907852ac641ac980ac6b9670bcd424",
   "doc_link_id": "DLID-42wh7646hjhq",
   "keywords": [
     "plan format",
-    "plan JSON",
-    "task schema",
+    "plan.json",
+    "tasks",
     "traceability",
     "feature_marker",
     "temporary-feature",
     "frontmatter parsing",
-    "task status",
-    "priority"
+    "priority",
+    "status",
+    "start-implement"
   ],
   "path": "docs/specs/forge/design/DES-074_plan_format_design.md",
-  "purpose": "Defines the default JSON plan format, field definitions and status values, and the feature_marker.py contract for judging parallel (temporary-feature) state of documents.",
+  "purpose": "Defines the default JSON format of implementation plans and the feature_marker.py contract for judging parallel (temporary-feature) state, used when no project-specific plan_format.md exists.",
   "summary": [
-    "Rationale for choosing JSON for plans so start-implement can parse and update them mechanically",
-    "Plans carry no frontmatter; additive feature status is derived from the linked requirements document",
-    "JSON schema with requirements_traceability, design_traceability and tasks top-level keys",
-    "Field definitions for each section, including task status, build_check and required_reading",
-    "Status values and pointers to the documents that define transitions",
-    "Priority ranges guideline",
-    "feature_marker.py frontmatter parsing using only the standard library",
-    "Three-way judgment: in parallel state, not in parallel state, parse failure",
-    "Parse failure cases and the rule that key order must not change the result",
-    "Callers must stop and report path and reason when judgment is impossible"
+    "Rationale for choosing JSON as the plan format",
+    "Plans carry no frontmatter; additive-feature status is traced via requirements",
+    "Allowed top-level keys: requirements_traceability, design_traceability, tasks",
+    "JSON schema example for plan file {feature}_plan.json",
+    "Field definitions for traceability sections and tasks",
+    "Task status values and pointers to transition rules",
+    "Priority guideline ranges",
+    "feature_marker.py frontmatter parsing contract with three judgments",
+    "Parse failure cases distinguished from not-in-parallel state"
   ],
   "tasks": [
-    "Creating or validating an implementation plan JSON",
-    "Modifying start-implement plan consumption",
+    "Generating an implementation plan",
+    "Validating or parsing plan JSON",
+    "Implementing start-implement plan consumption",
     "Modifying feature_marker.py",
-    "Judging whether a document is a temporary-feature",
-    "Reviewing plan documents against the format"
+    "Reviewing plan documents",
+    "Judging additive development state of documents"
   ],
   "title": "計画書 デフォルトフォーマット"
 }

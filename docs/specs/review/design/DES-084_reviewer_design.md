@@ -436,10 +436,10 @@ script は `plugins/forge/scripts/review/` に置く。基本の script が処�
 - reviewer が `target_unreadable` で終えたとき、`resolve_review_path.py` が失敗し、`errors` にエラー値が入ること。
 - reviewer が書き出さずに終えたとき、`resolve_review_path.py` が失敗すること。
 
-[req-029]: ../requirements/REQ-029_review_exchange.md "4e7fe6918eec DLID-5vrs9fnet7de"
-[req-027]: ../requirements/REQ-027_reviewer.md "d1f79607a42d DLID-y42g1frxwkf5"
-[des-083]: DES-083_evaluator_perspective_design.md "79c19317db1a DLID-mzeyx39mfryw"
+[req-029]: ../requirements/REQ-029_review_exchange.md "d635cdb8307b DLID-5vrs9fnet7de"
+[req-027]: ../requirements/REQ-027_reviewer.md "36bb4e693dd2 DLID-y42g1frxwkf5"
+[des-083]: DES-083_evaluator_perspective_design.md "7f23e0705a84 DLID-mzeyx39mfryw"
 [forge-document-type-roles]: ../../../rules/forge_document_type_roles.md "7b634212b043 DLID-mmxpd4dms815"
-[forge-doc-access-principle]: ../../../rules/forge_doc_access_principle.md "0dffb8776564 DLID-1t0vpykg6nq6"
+[forge-doc-access-principle]: ../../../rules/forge_doc_access_principle.md "2f044acb76b2 DLID-1t0vpykg6nq6"
 [plugin-script-error-output-rules]: ../../../rules/plugin_script_error_output_rules.md "f1c5b6752ce7 DLID-fz66nns8q521"
 [plugin-implementation-guidelines]: ../../../rules/plugin_implementation_guidelines.md "231d1a822305 DLID-jzs5n6cre1jh"

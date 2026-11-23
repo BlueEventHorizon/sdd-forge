@@ -54,4 +54,4 @@ SKILL とカスタム Agent を組み合わせてプラグインを組むとき�
 
 - 完了を `ScheduleWakeup` で待たない。ターンを終えて完了通知を待つ（待ち方の書き方は、meta の `author-skill` が持つ）
 
-[reference]: plugin_claude_code_reference.md "4925fe0a5d6e DLID-d384sm5xwctj"
+[reference]: plugin_claude_code_reference.md "c78f488a3ced DLID-d384sm5xwctj"

@@ -1,38 +1,38 @@
 {
-  "content_hash": "633856e89ea045652746a07da53eceee676f0a735ed3f64af70efba869fbd07f",
+  "content_hash": "49079c26d04d8b964b8eb511ae4297beb98c01882bf98570329db203f9775519",
   "doc_link_id": "DLID-vfdedgq63evv",
   "keywords": [
     "doc_structure",
-    "versioning",
     "migration",
-    "MIGRATIONS",
+    "versioning",
     "CURRENT_VERSION",
+    "MIGRATIONS",
     "migrate_doc_structure",
-    "setup-doc-structure",
     "check_doc_structure",
-    "resolve_doc_structure",
-    "text-based migration"
+    "setup-doc-structure",
+    "dry-run",
+    "COMMON-REQ-001"
   ],
   "path": "docs/specs/forge/design/DES-016_doc_structure_version_management_design.md",
-  "purpose": "Design of versioning and migration for .doc_structure.yaml: version marker, stepwise text-based migrations, migration script CLI, and how setup-doc-structure invokes it.",
+  "purpose": "Design for versioning and migrating .doc_structure.yaml: version marker, stepwise text-based migration registry, migration script CLI, and setup-doc-structure call flow.",
   "summary": [
-    "Version identifier as a YAML comment and meaning of major and minor bumps",
+    "Version identifier as a YAML comment (doc_structure_version X.Y) and major/minor meaning",
     "Stepwise migration flow with CURRENT_VERSION constant and MIGRATIONS registry",
-    "Error handling: pure functions, propagate bugs, skip newer versions, treat undetectable as v1",
-    "Procedure for adding a new migration",
-    "Design decision to use str text operations since no standard YAML parser exists",
+    "Error handling rules: no silent fallback, newer versions skipped, detection failure treated as v1",
+    "Procedure for adding a new migration function",
+    "Design decision to use str text operations because no stdlib YAML parser exists",
     "Reuse of version detection from resolve_doc_structure.py",
     "Conversion specs for v1 to v2 and v2 to v3",
-    "Migration script placement, CLI modes, output and exit codes",
-    "Write responsibility on caller and setup-doc-structure call flow using check_doc_structure.py",
+    "migrate_doc_structure.py CLI modes (default, --dry-run, --check), output and exit codes",
+    "check_doc_structure.py output and the three-way branching flow in setup-doc-structure",
     "User settings preserved during migration and version detection API"
   ],
   "tasks": [
-    "Adding a new .doc_structure.yaml migration",
-    "Modifying migrate_doc_structure.py or resolve_doc_structure.py",
-    "Changing setup-doc-structure migration flow",
-    "Bumping doc_structure_version",
-    "Reviewing .doc_structure.yaml versioning design"
+    "Modifying .doc_structure.yaml migration logic",
+    "Adding a new doc_structure version migration",
+    "Editing migrate_doc_structure.py or check_doc_structure.py",
+    "Changing the setup-doc-structure skill flow",
+    "Reviewing doc_structure format version compatibility"
   ],
   "title": "DES-016 .doc_structure.yaml バージョン管理設計"
 }

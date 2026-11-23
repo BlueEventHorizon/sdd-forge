@@ -172,9 +172,9 @@ reviewer は対象を読んで得た所見を渡す。渡し方・書き出す�
 
 **target 種別が判定できないことはエラーに含めない。** その対象は FNC-308 の「全 target 種別に共通」の文書だけで見る（FNC-307）ため、正常終了の範囲である。
 
-[spec-design-boundary-spec]: ../../../../plugins/forge/docs/spec_design_boundary_spec.md "4e2a4cd68a8a DLID-h9h90g9wcy8f"
-[req-029]: REQ-029_review_exchange.md "4e7fe6918eec DLID-5vrs9fnet7de"
+[spec-design-boundary-spec]: ../../../../plugins/forge/docs/spec_design_boundary_spec.md "e0d1a83f7e47 DLID-h9h90g9wcy8f"
+[req-029]: REQ-029_review_exchange.md "d635cdb8307b DLID-5vrs9fnet7de"
 [reviewer]: ../../../../plugins/forge/agents/reviewer.md
-[spec-priorities-spec]: ../../../../plugins/forge/docs/spec_priorities_spec.md "f8233c87c564 DLID-f9ny9e932trv"
+[spec-priorities-spec]: ../../../../plugins/forge/docs/spec_priorities_spec.md "b68b930cec1d DLID-f9ny9e932trv"
 [deterministic-generation-spec]: ../../../../plugins/forge/docs/deterministic_generation_spec.md "75383cc8c6d8 DLID-tm2m7nv23dqd"
-[error-classification-spec]: ../../../../plugins/forge/docs/error_classification_spec.md "04397ae80f5c DLID-5ykqs19cdbks"
+[error-classification-spec]: ../../../../plugins/forge/docs/error_classification_spec.md "94496cc6d044 DLID-5ykqs19cdbks"

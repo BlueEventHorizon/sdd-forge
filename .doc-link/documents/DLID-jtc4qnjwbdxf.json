@@ -1,5 +1,5 @@
 {
-  "content_hash": "19cf661699b088a13675ad64b26809971e63efff0a2ae6ea0d82ca018d4fe4ff",
+  "content_hash": "867507803b4ad33a2c99cdb8b07550bd5bf4bb63a6f03fb3afa878a5f47bb9a7",
   "doc_link_id": "DLID-jtc4qnjwbdxf",
   "keywords": [
     "frontmatter",
@@ -14,24 +14,24 @@
     "key collision"
   ],
   "path": "plugins/forge/docs/frontmatter_format.md",
-  "purpose": "Single source of truth for frontmatter keys attached to requirements and design documents in additive feature development: feature_type, feature_note, and doc_status, with notation and removal conditions.",
+  "purpose": "Single source of truth for frontmatter keys attached to requirement and design documents in additive feature development: feature_type, feature_note, and doc_status.",
   "summary": [
-    "feature_type temporary-feature marker for additive features",
-    "Frontmatter templates for requirements documents and design documents",
-    "Plans carry no frontmatter; additive status is traced via referenced documents",
-    "doc_status key for lifecycle state with draft and not_implemented values",
-    "Omitted doc_status means complete and implemented",
-    "doc_status applies to requirements and design documents, not plans",
-    "Notation allowing coexistence with feature_type, key order irrelevant",
-    "Removal conditions for draft and not_implemented",
-    "Key naming avoids collisions with other tools frontmatter keys"
+    "Scope: key definitions only; criteria and merge procedure live elsewhere",
+    "feature_type temporary-feature marker and its judgment principle",
+    "feature_note templates for requirement documents",
+    "feature_note templates for design documents",
+    "Plans carry no frontmatter; their feature status is traced via requirement or design documents",
+    "doc_status key as an independent lifecycle marker",
+    "doc_status value domain: draft and not_implemented, omission meaning complete",
+    "doc_status targets, notation and removal conditions",
+    "Key naming to avoid collisions with other tools frontmatter keys"
   ],
   "tasks": [
-    "Creating additive feature requirements documents",
-    "Creating additive feature design documents",
-    "Marking a document as draft or not implemented",
-    "Removing doc_status after review or implementation",
-    "Judging whether a plan belongs to an additive feature"
+    "Creating or updating additive feature requirement documents",
+    "Creating or updating additive feature design documents",
+    "Setting or removing doc_status on documents",
+    "Judging whether a plan belongs to an additive feature",
+    "Reviewing document frontmatter"
   ],
   "title": "追加 feature frontmatter 定義"
 }

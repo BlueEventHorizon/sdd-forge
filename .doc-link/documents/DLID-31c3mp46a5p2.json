@@ -1,34 +1,33 @@
 {
-  "content_hash": "a315870eafb067a273aa5d7e66459f6ae36f730abdd78d7df8894a767eb71a4c",
+  "content_hash": "fa4854482b2e98e5e2926d17f59a294a773757b6ed3526e9181aba338ec65dec",
   "doc_link_id": "DLID-31c3mp46a5p2",
   "keywords": [
     "plan review",
     "review criteria",
-    "SSOT reference",
-    "P1 P2 P3",
+    "SSOT delegation",
+    "P1 P2 P3 check order",
     "additive feature",
     "temporary-feature",
     "create_issue",
-    "plan.json",
-    "contradiction detection"
+    "recommendation",
+    "plan.json"
   ],
   "path": "plugins/forge/docs/criteria/review_criteria_plan.md",
-  "purpose": "Review criteria for plan documents: lists the delegated SSOT documents, check order (P1 rule match, P2 contradiction, P3 needless complexity) and recommendation rules.",
+  "purpose": "Defines the review criteria for plan documents (plan.json): which delegated SSOT documents to check, in what order, and how to decide recommendations.",
   "summary": [
-    "Delegated SSOT reference table for plan review with priorities P1 to P3",
-    "P1 rule conformance check order across plan principles, requirements/design docs and project rules",
-    "Additive feature determination via feature_type temporary-feature in traceability targets",
-    "P2 contradiction detection between plan.json, designs and requirements",
-    "Additive feature exclusion rule for old-spec contradictions",
-    "P3 needless complexity judgment on task granularity and dependencies",
-    "Recommendation rules: fix, create_issue, skip",
-    "Three conditions required for create_issue"
+    "Lists delegated SSOT documents for P1 rule matching with priorities and roles",
+    "Defines the check order across P1 rule conformance, P2 contradiction, and P3 needless complexity",
+    "Specifies how to judge whether a plan belongs to an additive feature via traceability targets",
+    "Describes the additive-feature exclusion rule for P2 contradictions with old specifications",
+    "Defines recommendation values fix, create_issue, and skip with adoption conditions",
+    "States the three conditions required for create_issue",
+    "Delegates severity and gray-zone judgment to principles documents"
   ],
   "tasks": [
     "Reviewing a plan document",
-    "Writing review perspectives for plans",
-    "Judging severity and recommendation of plan review findings",
-    "Reviewing an additive feature plan"
+    "Authoring or revising plan review criteria",
+    "Deciding the recommendation for a review finding on a plan",
+    "Judging whether a plan belongs to an additive feature"
   ],
   "title": "plan レビュー基準"
 }

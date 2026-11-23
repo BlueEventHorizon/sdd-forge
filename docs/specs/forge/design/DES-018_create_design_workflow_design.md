@@ -194,4 +194,4 @@ flowchart TD
 | `plugins/forge/docs/design_principles_spec.md`    | 設計原則ガイド        |
 | `plugins/forge/docs/spec_design_boundary_spec.md` | 要件/設計の境界ガイド |
 
-[des-010]: DES-010_create_skills_orchestrator_design.md "c93dadeb6dc4 DLID-s1ds8dcyfn7p"
+[des-010]: DES-010_create_skills_orchestrator_design.md "2129dbe03f23 DLID-s1ds8dcyfn7p"

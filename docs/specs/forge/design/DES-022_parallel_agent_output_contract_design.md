@@ -143,6 +143,6 @@ Claude Code の Agent 環境ではファイルロック（`flock` 等）の信�
 | 4 | 一部の agent が結果を返さなかった場合の方針は定義されているか                        |
 | 5 | 結果の受け渡しに中間ファイル・セッションディレクトリを使っていないか                 |
 
-[authoring-guide]: ../../../rules/plugin_claude_code_authoring_guide.md "1b4400f836cd DLID-pvwk8en5c2rq"
-[forge-agent-data-exchange-rules]: ../../../rules/forge_agent_data_exchange_rules.md "ad12d06f3966 DLID-7zh3q09p2acs"
-[des-010]: DES-010_create_skills_orchestrator_design.md "c93dadeb6dc4 DLID-s1ds8dcyfn7p"
+[authoring-guide]: ../../../rules/plugin_claude_code_authoring_guide.md "65302c63b0e1 DLID-pvwk8en5c2rq"
+[forge-agent-data-exchange-rules]: ../../../rules/forge_agent_data_exchange_rules.md "d359747d755f DLID-7zh3q09p2acs"
+[des-010]: DES-010_create_skills_orchestrator_design.md "2129dbe03f23 DLID-s1ds8dcyfn7p"

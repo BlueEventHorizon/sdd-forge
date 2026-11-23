@@ -1,41 +1,40 @@
 {
-  "content_hash": "66dc0707bf1228c636add943299f9cb1ba511940a1bc474db9804c84b89ac2ef",
+  "content_hash": "8447df198f9e2bc861864f5d8d4dfda3c48c253594a3f599ba4b6631f7d64492",
   "doc_link_id": "DLID-yg0c67zs3zky",
   "keywords": [
     "review policy",
-    "review priorities",
-    "criteria",
-    "severity catalog",
-    "confidence",
-    "auto fix",
-    "backend",
     "reviewer",
     "evaluator",
-    "granularity preservation"
+    "criteria",
+    "severity",
+    "confidence",
+    "auto-fix",
+    "backend",
+    "focus and scope",
+    "finding verification"
   ],
   "path": "docs/specs/forge/requirements/REQ-013_review_policy.md",
-  "purpose": "Requirements for the forge review policy: document-based review priorities, findings as observations, option axes, backends, reviewer/evaluator verification and rule-gap handling.",
+  "purpose": "Defines the review policy requirements for forge: document-centered review priorities, review as observations not instructions, CLI axes, confidence-based auto-fix, backends, and finding verification.",
   "summary": [
-    "Background: over-proposal and double detection in AI review; shift to document-centered review with complete information at design time",
-    "Review position: findings are observations, adoption decided by the main body; quality controlled via inputs",
-    "FNC-1301/1302/1309/1311: P1-P3 priorities, criteria without judgment, fixed three-section structure, principles severity catalog",
-    "FNC-1303/1312/1310: target axis flags and preserving user-specified granularity, CLI structure",
-    "FNC-1304: interaction axis, auto-fix decided by confidence rather than severity",
-    "FNC-1313/1319/1320: focus, scope and carried-in rules and specs options",
-    "FNC-1318: backend axis, resolution order, availability check, fail-closed behavior, cleanup",
-    "FNC-1321/1322: reviewer self-verification and independent evaluator assessment with mechanical linkage",
-    "FNC-1314/1305/1306: document reference viewpoint, built-in rule fallback, issue creation for rule gaps with three conditions",
-    "Affected targets and open items TBD-1302 to TBD-1304"
+    "Background and philosophy: review purified into document matching, with complete information available at design time",
+    "Review position: findings are observations, and the main body decides adoption; severity does not decide adoption",
+    "FNC-1301/1302/1309: priorities P1 rule match, P2 contradiction, P3 unnecessary complexity; criteria hold no judgment and a fixed 3-section structure",
+    "FNC-1303/1312/1310: target axes diff, branch, files, dirs; granularity preserved; CLI structure without positional arguments",
+    "FNC-1304: interaction axes interactive and auto; confidence marks decide auto-fix, not severity",
+    "FNC-1313/1319/1320: focus, scope, and project rules or specs passed in by callers",
+    "FNC-1318: backend axis with resolution order, availability check, retains_context, finding location, failure handling, cleanup",
+    "FNC-1321/1322: reviewer self-verification and independent evaluator assessment with mechanical linkage of findings",
+    "FNC-1305/1306/1311/1314: built-in rule fallback, Issue creation for missing rules, principles severity catalog, document reference viewpoint",
+    "Applicability table and open items TBD-1302 to TBD-1304"
   ],
   "tasks": [
-    "Changing /forge:review SKILL.md or its options",
-    "Writing or editing review_criteria files",
-    "Defining reviewer and evaluator behavior",
-    "Adding or modifying a review backend",
-    "Designing auto-fix and confidence handling",
-    "Reviewing documents for rule compliance",
-    "Extending principles severity catalogs",
-    "Deciding whether to file a rule-gap issue"
+    "Designing or modifying the review skill",
+    "Writing or revising review_criteria documents",
+    "Implementing reviewer or evaluator agents",
+    "Implementing a review backend",
+    "Deciding auto-fix behavior for review findings",
+    "Handling review CLI flags and argument interpretation",
+    "Extending principles with severity catalogs"
   ],
   "title": "REQ-013 レビューポリシー要件"
 }

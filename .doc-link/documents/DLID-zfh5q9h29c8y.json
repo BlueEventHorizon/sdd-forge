@@ -1,39 +1,38 @@
 {
-  "content_hash": "8999c4488a91e68f6eff7678c776bad9eb41e6176f4f1f98a6b86672dadc3e55",
+  "content_hash": "cac86d74fa8a4def8fd42323ec2442db3b257101b28bcaf668458a7fd6d342fa",
   "doc_link_id": "DLID-zfh5q9h29c8y",
   "keywords": [
     "start-design",
     "design workflow",
     "design_method",
     "upstream design",
-    "existing pattern matching",
+    "existing implementation reuse",
+    "temporary-feature",
     "traceability",
-    "temporary marker",
     "state table",
-    "orchestrator",
-    "ADR approval"
+    "ADR approval record",
+    "orchestrator"
   ],
   "path": "docs/specs/forge/design/DES-018_create_design_workflow_design.md",
-  "purpose": "Design of the /forge:start-design orchestrator skill that creates design documents from requirements, from upstream design through existing-pattern matching, detail design, consistency check and review.",
+  "purpose": "Design of the start-design orchestrator skill: building a design document from requirements, matching existing implementations, detailed design, consistency check, review and commit.",
   "summary": [
-    "Overview: requirements-first design, then matching with existing implementations, then detail design",
-    "Flowchart from preparation through phases 1 to 6 to completion",
-    "Preparation steps: requirement identification, feature, output dir, differential check, completely-new check, mode, state table, norms",
-    "Phase 1 collects project rules via query-db-rules",
-    "Phase 2 upstream design from requirements only, with approvals and ID numbering",
-    "Phase 3 matching with existing implementations and design patterns, redesign loop, spec comparison and type determination",
-    "Phases 4 to 6 detail design, consistency traceability check, AI and user review",
-    "Handling of needs not in the requirements: stop, report, and record approval in an ADR",
-    "Completion steps and design principles: build from requirements, reuse existing, full coverage, What/How boundary",
+    "Overview: upstream design from requirements only, then matching existing patterns",
+    "Flowchart of preparation and Phases 1 to 6 with a redesign loop",
+    "Preparation steps: requirement specification, feature, output dir, temporary marker, mode, state table",
+    "Phase 1 to 2: rule collection and upstream design with approvals and ID numbering",
+    "Phase 3: matching existing implementations and specs, deciding differential development",
+    "Phase 4 to 5: detailed design reusing existing code and traceability consistency check",
+    "Phase 6: AI and user review",
+    "Handling needs absent from requirements, with ADR approval record",
+    "Completion steps and design principles (requirements-first, reuse, full coverage, What/How)",
     "Next-step guidance and related files"
   ],
   "tasks": [
-    "Modifying the start-design skill workflow",
-    "Creating design documents from requirements",
-    "Judging differential development for design documents",
-    "Handling requirements gaps discovered during design",
-    "Matching designs against existing implementations",
-    "Reviewing design workflow documents"
+    "Modifying the start-design skill",
+    "Creating a design document from requirements",
+    "Reviewing design workflow phases",
+    "Deciding differential development for design documents",
+    "Handling design needs missing from requirements"
   ],
   "title": "DES-018 forge 設計書作成ワークフロー 設計書"
 }

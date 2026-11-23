@@ -1,41 +1,40 @@
 {
-  "content_hash": "307dc53425f033da6a5ac1a7ddfdbd9456453b316a3b50d1ef4aa8f725af6ee5",
+  "content_hash": "3be39e634c1c7c530c866982d67df159eaa0bf7251fa8cc7b23f2324f1926cba",
   "doc_link_id": "DLID-cyrk9xr8vcap",
   "keywords": [
     "additive development",
-    "feature namespace",
     "differential feature",
+    "feature namespace",
     "temporary-feature",
     "merge",
     "old spec replacement",
     "pure addition",
-    "brand-new",
+    "brand new",
     "worktree isolation",
-    "scope judgment"
+    "spec meaning change"
   ],
   "path": "plugins/forge/docs/additive_development_spec.md",
-  "purpose": "Defines the criteria and procedure for the additive development workflow used when adding features to an existing project, including feature namespaces, replacement of old specs, and merge.",
+  "purpose": "Defines criteria and procedures for the additive development workflow: when to use a feature namespace, how old and new specs are replaced, what not to rewrite, and how to merge.",
   "summary": [
-    "Concept of a feature as a namespace and the three types: brand-new, purely additive, differential",
-    "Requirements and design types are judged per document and may differ",
-    "When feature namespaces are needed or unnecessary, and the ban on AI renaming feature names",
+    "Feature as a namespace and three types: brand new, purely additive, differential",
+    "Requirements and design types are judged separately and may differ",
+    "When feature names are needed or unnecessary, and the ban on AI renaming them",
     "Applicability: judged by whether spec meaning changes, not by document operation form or change label",
-    "Bug fixes are not additive development; exclusion conditions for small changes and red flags",
-    "During implementation the additive docs are the current spec; old spec is replaced unconditionally",
-    "Design is built from requirements, not bent to existing implementation",
-    "Old spec documents are not rewritten during implementation; implementation is not constrained; isolated worktree",
-    "Merge definition, scope-based decision of what to move or keep separate, and merge procedure",
-    "Frontmatter definition delegated to frontmatter_format as single source of truth"
+    "Exclusion conditions for small changes and qualitative red flags",
+    "Unconditional replacement of old specs by additive documents during implementation",
+    "Do not rewrite old spec documents during implementation; implementation code is not constrained",
+    "Isolated working copy (worktree) for implementation",
+    "Merge definition, scope-based decision on what to move or keep separate, and merge steps",
+    "Frontmatter definition delegated to frontmatter_format"
   ],
   "tasks": [
-    "Creating requirements documents for an existing project",
-    "Creating design documents that change existing designs",
     "Deciding whether a change needs a differential feature",
-    "Choosing feature names and document placement",
-    "Implementing against a temporary-feature spec",
-    "Merging additive documents into old specs after implementation",
-    "Reviewing documents for additive development compliance",
-    "Classifying a defect versus a spec change"
+    "Creating requirements or design documents for an existing project",
+    "Choosing feature namespace names and directory layout",
+    "Implementing against additive documents with old specs present",
+    "Merging additive documents into old specifications after implementation",
+    "Reviewing documents marked temporary-feature",
+    "Classifying a fix as bug fix versus spec change"
   ],
   "title": "追加開発ワークフロー仕様"
 }

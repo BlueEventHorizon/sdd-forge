@@ -1,39 +1,39 @@
 {
-  "content_hash": "d8aa531bdbafb0faed72355aabdffbf2ecf4fea35c6de9d003649b40eec749c6",
+  "content_hash": "2646153bc1d21ff1f51e16f68c1a6aac8f8134cdaf701d352df8986e4cba7734",
   "doc_link_id": "DLID-ckbysbfdrsv5",
   "keywords": [
     "wrapper",
     "SKILL.md",
+    "local entry point",
     "low-level script",
     "fixed-context adapter",
     "dependency direction",
-    "script placement",
-    "naming convention",
     "public contract",
-    "sys.argv passthrough",
-    "REQ-003"
+    "script layout",
+    "REQ-003",
+    "naming convention"
   ],
   "path": "docs/specs/forge/design/DES-024_skill_script_layout_design.md",
-  "purpose": "Design defining the placement and contracts of SKILL.md, SKILL-local entry scripts and shared low-level scripts, with one-way dependency, wrapper criteria and naming rules.",
+  "purpose": "Defines placement, naming and contracts of SKILL-local script entry points versus shared low-level scripts, establishing a one-way dependency from SKILL.md to external files.",
   "summary": [
-    "Overview: one-way dependency SKILL.md to local entry to shared low-level script to external files",
-    "Wrapper types: fixed-context, operation-contract, I/O and composite adapters",
+    "One-way dependency: SKILL.md, SKILL-local entry, shared low-level script, external file",
+    "Adapter types: fixed-context, operation-contract, I/O, and composite operation adapters",
     "Criteria for when to create or not create a wrapper",
-    "Intentional duplication of wrappers and its design rationale",
-    "Script placement: shared scripts vs SKILL-local scripts, no shared wrapper layer",
-    "Stable public contracts for local entry points",
+    "Rationale for intentional duplication of wrappers, which must not be removed for similarity",
+    "Placement rules, no shared wrapper layer, and keeping public contracts stable",
     "Naming rules using verb-based operation names",
-    "SKILL.md description rules and layer/dependency structure",
-    "Implementation templates and test principles with conformance review triggers",
-    "Rejected alternatives with reasons"
+    "Rules for describing script calls in SKILL.md, including inherited SKILL invocations",
+    "Layer structure and yes/no verifiable properties",
+    "Implementation templates and testing principles with review triggers",
+    "Rejected alternatives such as shared dispatcher and transparent argv passthrough"
   ],
   "tasks": [
-    "Adding or modifying a SKILL-local script",
+    "Adding or changing SKILL-local scripts",
+    "Writing SKILL.md calls to scripts or external skills",
     "Deciding whether to create a wrapper script",
-    "Editing SKILL.md calls to scripts",
     "Changing shared low-level CLI arguments",
-    "Writing wrapper tests",
-    "Reviewing conformance to script layout design"
+    "Writing tests for wrapper scripts",
+    "Reviewing conformance to script separation design"
   ],
   "title": "DES-024 SKILL.md と script の配置・契約設計"
 }

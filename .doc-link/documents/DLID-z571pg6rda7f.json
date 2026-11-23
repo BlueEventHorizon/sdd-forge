@@ -1,34 +1,33 @@
 {
-  "content_hash": "dae8698216c58f8cce9be9887374de1a57f72da23d5b32e0261cc1bbcb3264f9",
+  "content_hash": "1252d41a14b35e4ca51250cf8cc1eb373a34bd514246341ee1638381aede3caa",
   "doc_link_id": "DLID-z571pg6rda7f",
   "keywords": [
     "glossary",
-    "terminology",
-    "glossary format",
-    "GLS",
     "term definition",
+    "glossary ID",
+    "GLS",
     "disallowed paraphrase",
-    "prerequisite terms",
-    "file naming",
-    "doc ID numbering"
+    "prerequisite term",
+    "naming convention",
+    "doc_type"
   ],
   "path": "plugins/forge/docs/glossary_format.md",
-  "purpose": "Defines the default structure, ID scheme and naming of glossary files, including the glossary line at the top of requirement and design documents.",
+  "purpose": "Defines the structure, ID assignment, naming, and table format of glossary files used by requirements and design documents.",
   "summary": [
-    "Glossary doc_type, ID numbering via the next-spec-id skill, and file naming convention",
-    "Requirement-side glossaries use the requirement ID scheme, falling back to the GLS prefix",
-    "Design-side glossaries use the design ID scheme (default DES)",
-    "Glossary line placed right after the title of documents that use a glossary",
-    "Design documents list their own glossary IDs followed by those from the input requirements",
-    "Body table format with four columns: term, definition, prerequisite terms, disallowed paraphrases",
-    "Rules for what to write in each column and the none placeholder"
+    "Glossary doc_type, ID numbering via next-spec-id, and file naming rule",
+    "Requirement-side and design-side glossary ID systems (GLS prefix fallback)",
+    "One-line glossary reference placed right after the title of a document",
+    "Order of glossary IDs in design documents (design first, then input requirements)",
+    "Glossary body template: heading and four-column table",
+    "Column rules: term, definition, prerequisite terms, disallowed paraphrases",
+    "Disallowed paraphrases treated as term misuse when found in body text"
   ],
   "tasks": [
-    "Creating a glossary",
-    "Writing a requirements document that uses a glossary",
-    "Writing a design document that uses a glossary",
-    "Numbering a new glossary ID",
-    "Reviewing glossary structure and naming"
+    "Creating a glossary file",
+    "Numbering a glossary ID",
+    "Writing requirement documents that use a glossary",
+    "Writing design documents that use a glossary",
+    "Reviewing glossary format compliance"
   ],
   "title": "用語集 デフォルトフォーマット"
 }

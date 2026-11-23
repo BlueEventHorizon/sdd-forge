@@ -1,31 +1,32 @@
 {
-  "content_hash": "253f59c3f26d0ffbb4cf773b2dcd7aace2f0af054faf72afd8694a17ba1745f6",
+  "content_hash": "b87fce46708efb1b1dab38437f30f67dc634adcad92fc22803aa4ce4fdb0c4fd",
   "doc_link_id": "DLID-m77gjek2tw2b",
   "keywords": [
     "ADR",
     "architecture decision record",
-    "rejection reason",
     "non-binding",
+    "rejection reason",
+    "premise check",
     "ADR number citation",
     "severity catalog",
-    "premise verification"
+    "reader obligation"
   ],
   "path": "plugins/forge/docs/adr_usage_spec.md",
-  "purpose": "Defines the obligations of readers who rely on ADRs when deciding to drop a proposal or review finding: ADRs are non-binding, rejection premises must be rechecked, and ADR numbers must be cited.",
+  "purpose": "Defines obligations of readers who rely on an ADR to decline a proposal or finding: ADRs are non-binding, rejection premises must be rechecked, and the ADR number must be cited.",
   "summary": [
-    "ADRs are insights, not instructions; a proposal may still be made if the rejection reason is judged wrong",
-    "Reader obligation: verify the premises of the rejection reason still hold before relying on an ADR",
-    "Reader obligation: cite the ADR number and section (ADR-NNN §N) when dropping a proposal or finding",
-    "No mechanism is introduced to raise ADR reach, such as preloading all ADRs, because the loss is only a duplicate proposal",
-    "Severity catalog: omitting the ADR number when dropping a proposal is minor",
-    "Points to the ADR principles spec and ADR format for authors of ADRs"
+    "ADRs are awareness, not instructions; a proposal may be made if still judged correct",
+    "Reader must verify the premises of the rejection still hold",
+    "Cite the ADR number and section (ADR-NNN §N) when declining",
+    "No mechanism to raise ADR reach, such as preloading all ADRs",
+    "Severity catalog: missing ADR number is minor",
+    "Points to ADR principles and format documents for authors"
   ],
   "tasks": [
-    "Making a proposal while checking past ADR decisions",
-    "Dropping a proposal based on an ADR rejection reason",
-    "Code or document review where a finding is dropped because of an ADR",
-    "Implementation work that consults ADRs",
-    "Assigning severity to ADR usage violations"
+    "Making proposals during design",
+    "Implementation decisions referencing past decisions",
+    "Code and document review declining findings",
+    "Citing an ADR as grounds for declining",
+    "Reviewing ADR citation compliance"
   ],
   "title": "ADR 利用規範"
 }

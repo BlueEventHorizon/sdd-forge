@@ -1,84 +1,72 @@
 {
   "documents": [
     {
-      "applied_hash": "04397ae80f5c88f54034424e6acf90884593e390faa1976a3a5186cce3cdcfb2",
-      "doc_link_id": "DLID-5ykqs19cdbks"
-    },
-    {
-      "applied_hash": "048d9ed163fc7a158641e4d9ed2db4189886745e99ba4cb4c1977ce7bc7a184d",
-      "doc_link_id": "DLID-spgw9f5y6thy"
-    },
-    {
       "applied_hash": "084894e5104bd1ba6ad5b40935743427970faca2aede89af6b6a92832036a475",
       "doc_link_id": "DLID-5c0nw4er6es2"
     },
     {
-      "applied_hash": "0c44206d275e91a9135b213bcf77191eb5f3c5eebc2695e99f31af01be3690d4",
-      "doc_link_id": "DLID-4wshmhbcgynm"
+      "applied_hash": "0aaf2e1f04138042c759918ea0fefbb57e2a85ca5bece38fa7235b45c7c59c5d",
+      "doc_link_id": "DLID-wm7t1emetwbx"
     },
     {
-      "applied_hash": "0dc06fb958c8f3ca5b99e3fb8ffb40799e16d2211e84245917320dbf5fab143a",
-      "doc_link_id": "DLID-ns59za8fens1"
+      "applied_hash": "0b7187e6bfc6c8dae89442228afcc5830f70a26dd362b7bf41b4a00c6642db2f",
+      "doc_link_id": "DLID-0zyw4hj937y9"
     },
     {
       "applied_hash": "0e4a099e332f8b2be143f85317143d2763d4bbe38e57f4a93497badd20c5ea42",
       "doc_link_id": "DLID-wkh7nt1wrds7"
     },
     {
-      "applied_hash": "122ed8c0e2c204415b769da5fcc1c745339b2a4c8ac0db7dda3dad870536612a",
-      "doc_link_id": "DLID-t8jcg5jkb5mj"
+      "applied_hash": "1252d41a14b35e4ca51250cf8cc1eb373a34bd514246341ee1638381aede3caa",
+      "doc_link_id": "DLID-z571pg6rda7f"
     },
     {
       "applied_hash": "157820b1afb7f147bb5bcd06705a68ff853fff6c16f4cace53e875b0020f9813",
       "doc_link_id": "DLID-pdvdjb49qpr4"
     },
     {
-      "applied_hash": "169ae99c4eed0a9036b08eafd6d24b6cfd8f162f8c145bf7691ff145fe8ca192",
-      "doc_link_id": "DLID-061pwjejh6yc"
-    },
-    {
       "applied_hash": "17bb6ff90a292d9a24567cd9a45a50ef34b263c7d7da4bd3adda0748ad9283e7",
       "doc_link_id": "DLID-y2bsrqc7agea"
     },
     {
-      "applied_hash": "19cf661699b088a13675ad64b26809971e63efff0a2ae6ea0d82ca018d4fe4ff",
-      "doc_link_id": "DLID-jtc4qnjwbdxf"
-    },
-    {
-      "applied_hash": "1abf0122bdeb0f4c39c78385bd4943cce5677d26fa34b21ea891cbf9eac2cd6c",
-      "doc_link_id": "DLID-c13gr4qbk4vm"
-    },
-    {
-      "applied_hash": "253f59c3f26d0ffbb4cf773b2dcd7aace2f0af054faf72afd8694a17ba1745f6",
-      "doc_link_id": "DLID-m77gjek2tw2b"
-    },
-    {
-      "applied_hash": "307dc53425f033da6a5ac1a7ddfdbd9456453b316a3b50d1ef4aa8f725af6ee5",
-      "doc_link_id": "DLID-cyrk9xr8vcap"
+      "applied_hash": "1fb15e199859ddffbd22f99b13017278aa493f8bfbdbb97fa536be4005283f05",
+      "doc_link_id": "DLID-45wzpggz1set"
     },
     {
       "applied_hash": "3254eefb2b30cf4361700213432a2da9b32ff0d04bff507a0c175e148d1aaea3",
       "doc_link_id": "DLID-690azhnc61t0"
     },
     {
+      "applied_hash": "335c3c0eb3204a74b41569a7cbffc4f72d38b5e16679f251cb9fbca0272e6501",
+      "doc_link_id": "DLID-c59znr7b8f56"
+    },
+    {
       "applied_hash": "33ca402717950090220ca5a32c82b447178cc0c93899e3d8a8f872c98379f4b8",
       "doc_link_id": "DLID-yw5v4138tvb8"
     },
     {
-      "applied_hash": "3ae4e3bfdd65f2e76915ea719e8c2a1303e068d06a251d90480ffa15d4d6cb7a",
-      "doc_link_id": "DLID-45wzpggz1set"
+      "applied_hash": "33e1e8046cdc7b1dc973a2e621797599b9b860e9f0c6a1510f073457dc9b4994",
+      "doc_link_id": "DLID-t8jcg5jkb5mj"
     },
     {
-      "applied_hash": "4e2a4cd68a8aacfe921d3de2d0b62f8b81d0dadac669bdd623bcb0ec810f6365",
-      "doc_link_id": "DLID-h9h90g9wcy8f"
+      "applied_hash": "3a31a2d6bfe3ab3f1feb09b33218f0b3a9e852fa320c284cb17040e3522db4b9",
+      "doc_link_id": "DLID-ns59za8fens1"
+    },
+    {
+      "applied_hash": "3be39e634c1c7c530c866982d67df159eaa0bf7251fa8cc7b23f2324f1926cba",
+      "doc_link_id": "DLID-cyrk9xr8vcap"
+    },
+    {
+      "applied_hash": "3f63be26ad5cc2477082172edfe79bb25c5a8f96577f20aae3acaee2c28e091a",
+      "doc_link_id": "DLID-540ak6kxrsxp"
+    },
+    {
+      "applied_hash": "458b42b8deb4b784a99ac4f1569c913b01f75480e6e290d9dd8fc71d18a1f405",
+      "doc_link_id": "DLID-dcec6pr177c9"
     },
     {
       "applied_hash": "50265bb6a0233856b27e455dd28f4e63d0de3024f72ead3e11867fdfed0505fe",
       "doc_link_id": "DLID-m9xnmkwxvjpf"
-    },
-    {
-      "applied_hash": "50a324934bb22b552e6ae0fdbf15e468e745b8667fa9c5a2ac0f120c4223bd61",
-      "doc_link_id": "DLID-cbr02jpbxfcs"
     },
     {
       "applied_hash": "5207edeee42ee4bc2ef5263d4703448ab26cec5e0f3b6d1d9474aa8f29b516d4",
@@ -89,44 +77,60 @@
       "doc_link_id": "DLID-yxmqmdjqhsjm"
     },
     {
-      "applied_hash": "69bd620fe0b7dc5906416e94c689eebf5439e32652fc996bcb6196a25591ebdd",
-      "doc_link_id": "DLID-0zyw4hj937y9"
-    },
-    {
-      "applied_hash": "69dee42932c29e93c7a78ba905536f16f98d58f293d59a03c8a735c8ea2ab167",
-      "doc_link_id": "DLID-c59znr7b8f56"
-    },
-    {
-      "applied_hash": "727c5b42f32361aa00dcefeee0cb76cc4e9280b9fd1c5e4985f5a4ec4b008f7f",
-      "doc_link_id": "DLID-4zxqtf2m3x6t"
-    },
-    {
       "applied_hash": "75383cc8c6d823206f420e0966ac5a7a358d619349b855c87ce4dd54e3cea1d3",
       "doc_link_id": "DLID-tm2m7nv23dqd"
+    },
+    {
+      "applied_hash": "776f3c99a799ed4ae4e251af404916659dc9da62b38581262ac05849faf71567",
+      "doc_link_id": "DLID-cbr02jpbxfcs"
     },
     {
       "applied_hash": "7c226f3c93be416f43785057e1d70594da429ac3d2323872f776d4edc6731c55",
       "doc_link_id": "DLID-4vzgex2efq8k"
     },
     {
+      "applied_hash": "867507803b4ad33a2c99cdb8b07550bd5bf4bb63a6f03fb3afa878a5f47bb9a7",
+      "doc_link_id": "DLID-jtc4qnjwbdxf"
+    },
+    {
+      "applied_hash": "8a9331ce5ff313a81befdc8c41f815037374e4765ba96d0aa5f9069b09300bfc",
+      "doc_link_id": "DLID-4wshmhbcgynm"
+    },
+    {
+      "applied_hash": "8c5971b68aaf33b618cf6c35a00c0ec23490d1e1a118f1f343443bdec3b118b3",
+      "doc_link_id": "DLID-8y2jh2y06761"
+    },
+    {
+      "applied_hash": "90aabf3f4899a9621282af3236d68f9ff7e3c923a52af974e093dfd2c91364f7",
+      "doc_link_id": "DLID-4zxqtf2m3x6t"
+    },
+    {
+      "applied_hash": "94496cc6d044cdcf1f68aaa0c48abfb62cc088d16f78637067870ea2e43c9ce8",
+      "doc_link_id": "DLID-5ykqs19cdbks"
+    },
+    {
       "applied_hash": "996752510a5f18418735be23db1272658c5a64115b1251331ebb8b8cc45bc3ef",
       "doc_link_id": "DLID-rx0jy7wbtg59"
     },
     {
-      "applied_hash": "a315870eafb067a273aa5d7e66459f6ae36f730abdd78d7df8894a767eb71a4c",
-      "doc_link_id": "DLID-31c3mp46a5p2"
+      "applied_hash": "a7ceb082eeaf2fc01a25b780782c10f4b5859351a4c129478374ed4c7a1dfc3a",
+      "doc_link_id": "DLID-spgw9f5y6thy"
+    },
+    {
+      "applied_hash": "b68b930cec1d85974b997e3fb6f3c39f89c72216228fab1e73a13a51e078e6f2",
+      "doc_link_id": "DLID-f9ny9e932trv"
+    },
+    {
+      "applied_hash": "b87fce46708efb1b1dab38437f30f67dc634adcad92fc22803aa4ce4fdb0c4fd",
+      "doc_link_id": "DLID-m77gjek2tw2b"
     },
     {
       "applied_hash": "be634f5152a6857cbedf3d345cf3ac28bc9cc9fdddd8ac9164c6eb8a6399b2f8",
       "doc_link_id": "DLID-s1dhhaprgf1r"
     },
     {
-      "applied_hash": "c1cb19da9ad5aea76595c24d513076f5bacbf8111817d114ca1ceb049b0db5de",
-      "doc_link_id": "DLID-8y2jh2y06761"
-    },
-    {
-      "applied_hash": "c84b92682539e1ad4eb92ac762aeb3fb1f727013478e4a64d6265d6d554cbdd1",
-      "doc_link_id": "DLID-e9tn4760zpw5"
+      "applied_hash": "c05edc5d1de787391f8a2a74d5e4608fc9e03afd90a4df2f3f5f13e4e8d00f39",
+      "doc_link_id": "DLID-c13gr4qbk4vm"
     },
     {
       "applied_hash": "c84efeb1c2c4316c976d8c52a29f23b4a49c0206e1b33b4c2b726b4bd736e837",
@@ -137,36 +141,32 @@
       "doc_link_id": "DLID-wbwkxysswr60"
     },
     {
-      "applied_hash": "cff328dfcaec10e442d67240ec0bac698908d34ab2016f11143ddf29119ca8d3",
-      "doc_link_id": "DLID-wm7t1emetwbx"
-    },
-    {
       "applied_hash": "d88087d2cf223f44533f61ddcdeb2648c8f532769fc88cbc1bc8451a097546c8",
       "doc_link_id": "DLID-2ftdsh6ppjsj"
     },
     {
-      "applied_hash": "dae8698216c58f8cce9be9887374de1a57f72da23d5b32e0261cc1bbcb3264f9",
-      "doc_link_id": "DLID-z571pg6rda7f"
+      "applied_hash": "e0d1a83f7e47d93c77bb7a26107dcb00b310149e00ffc8db4fbcdc7c6555670e",
+      "doc_link_id": "DLID-h9h90g9wcy8f"
     },
     {
-      "applied_hash": "dc0c7761adf36084fcf0a199342dbb5e4f15a300a21695a4f4fba17a1f15846b",
-      "doc_link_id": "DLID-dcec6pr177c9"
-    },
-    {
-      "applied_hash": "e1b25ede799db0452c10a3c0150e27c39dd2e3f66e0acbb0cb8ab1d5ce254b21",
-      "doc_link_id": "DLID-540ak6kxrsxp"
+      "applied_hash": "e590554be385d6bade0cafea28481a6c548a8f9c89017c9232bad31368ba163b",
+      "doc_link_id": "DLID-061pwjejh6yc"
     },
     {
       "applied_hash": "eebfb17cd1c2dcc47f839faf898f930ba27f2d32e424e48d3768194e68a372c0",
       "doc_link_id": "DLID-3x673x4r3h83"
     },
     {
-      "applied_hash": "f8233c87c5642511792eda5229fecdaa5df34d6d678cbd321bbd762f99a3b230",
-      "doc_link_id": "DLID-f9ny9e932trv"
+      "applied_hash": "f2e598645f127472ebb803524fba4e01d9a859d7bc0a4cb78fc80cb1b2efccb6",
+      "doc_link_id": "DLID-e9tn4760zpw5"
     },
     {
       "applied_hash": "f97f5e879df904c9b65b2c2cbe61ae9fb1eda284cb175ac5427c3b12d9a5a7e3",
       "doc_link_id": "DLID-25mzdyrk3jdx"
+    },
+    {
+      "applied_hash": "fa4854482b2e98e5e2926d17f59a294a773757b6ed3526e9181aba338ec65dec",
+      "doc_link_id": "DLID-31c3mp46a5p2"
     },
     {
       "applied_hash": "fdc452f8441fed5079394ff085d6515e1fcdbd224701a4916ccfcb30826b8ca1",
@@ -175,217 +175,217 @@
   ],
   "last_checks": [
     {
-      "checked_at": "2026-11-22T06:59:02+00:00",
+      "checked_at": "2026-11-23T14:13:17+00:00",
       "doc_link_id": "DLID-061pwjejh6yc",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-22T06:59:02+00:00",
+      "checked_at": "2026-11-23T14:13:17+00:00",
       "doc_link_id": "DLID-0zyw4hj937y9",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-22T06:59:02+00:00",
+      "checked_at": "2026-11-23T14:13:17+00:00",
       "doc_link_id": "DLID-25mzdyrk3jdx",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-22T06:59:02+00:00",
+      "checked_at": "2026-11-23T14:13:17+00:00",
       "doc_link_id": "DLID-2ftdsh6ppjsj",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-22T06:59:02+00:00",
+      "checked_at": "2026-11-23T14:13:17+00:00",
       "doc_link_id": "DLID-31c3mp46a5p2",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-22T06:59:02+00:00",
+      "checked_at": "2026-11-23T14:13:17+00:00",
       "doc_link_id": "DLID-3x673x4r3h83",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-22T06:59:02+00:00",
+      "checked_at": "2026-11-23T14:13:17+00:00",
       "doc_link_id": "DLID-40n3c780ae20",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-22T06:59:02+00:00",
+      "checked_at": "2026-11-23T14:13:17+00:00",
       "doc_link_id": "DLID-45wzpggz1set",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-22T06:59:02+00:00",
+      "checked_at": "2026-11-23T14:13:17+00:00",
       "doc_link_id": "DLID-4vzgex2efq8k",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-22T06:59:02+00:00",
+      "checked_at": "2026-11-23T14:13:17+00:00",
       "doc_link_id": "DLID-4wshmhbcgynm",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-22T06:59:02+00:00",
+      "checked_at": "2026-11-23T14:13:17+00:00",
       "doc_link_id": "DLID-4zxqtf2m3x6t",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-22T06:59:02+00:00",
+      "checked_at": "2026-11-23T14:13:17+00:00",
       "doc_link_id": "DLID-540ak6kxrsxp",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-22T06:59:02+00:00",
+      "checked_at": "2026-11-23T14:13:17+00:00",
       "doc_link_id": "DLID-5c0nw4er6es2",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-22T06:59:02+00:00",
+      "checked_at": "2026-11-23T14:13:17+00:00",
       "doc_link_id": "DLID-5ykqs19cdbks",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-22T06:59:02+00:00",
+      "checked_at": "2026-11-23T14:13:17+00:00",
       "doc_link_id": "DLID-690azhnc61t0",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-22T06:59:02+00:00",
+      "checked_at": "2026-11-23T14:13:17+00:00",
       "doc_link_id": "DLID-8y2jh2y06761",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-22T06:59:02+00:00",
+      "checked_at": "2026-11-23T14:13:17+00:00",
       "doc_link_id": "DLID-c13gr4qbk4vm",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-22T06:59:02+00:00",
+      "checked_at": "2026-11-23T14:13:17+00:00",
       "doc_link_id": "DLID-c59znr7b8f56",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-22T06:59:02+00:00",
+      "checked_at": "2026-11-23T14:13:17+00:00",
       "doc_link_id": "DLID-cbr02jpbxfcs",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-22T06:59:02+00:00",
+      "checked_at": "2026-11-23T14:13:17+00:00",
       "doc_link_id": "DLID-cyrk9xr8vcap",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-22T06:59:02+00:00",
+      "checked_at": "2026-11-23T14:13:17+00:00",
       "doc_link_id": "DLID-dcec6pr177c9",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-22T06:59:02+00:00",
+      "checked_at": "2026-11-23T14:13:17+00:00",
       "doc_link_id": "DLID-e9tn4760zpw5",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-22T06:59:02+00:00",
+      "checked_at": "2026-11-23T14:13:17+00:00",
       "doc_link_id": "DLID-f9ny9e932trv",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-22T06:59:02+00:00",
+      "checked_at": "2026-11-23T14:13:17+00:00",
       "doc_link_id": "DLID-h9h90g9wcy8f",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-22T06:59:02+00:00",
+      "checked_at": "2026-11-23T14:13:17+00:00",
       "doc_link_id": "DLID-jtc4qnjwbdxf",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-22T06:59:02+00:00",
+      "checked_at": "2026-11-23T14:13:17+00:00",
       "doc_link_id": "DLID-m77gjek2tw2b",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-22T06:59:02+00:00",
+      "checked_at": "2026-11-23T14:13:17+00:00",
       "doc_link_id": "DLID-m9xnmkwxvjpf",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-22T06:59:02+00:00",
+      "checked_at": "2026-11-23T14:13:17+00:00",
       "doc_link_id": "DLID-ns59za8fens1",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-22T06:59:02+00:00",
+      "checked_at": "2026-11-23T14:13:17+00:00",
       "doc_link_id": "DLID-pdvdjb49qpr4",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-22T06:59:02+00:00",
+      "checked_at": "2026-11-23T14:13:17+00:00",
       "doc_link_id": "DLID-rx0jy7wbtg59",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-22T06:59:02+00:00",
+      "checked_at": "2026-11-23T14:13:17+00:00",
       "doc_link_id": "DLID-s1dhhaprgf1r",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-22T06:59:02+00:00",
+      "checked_at": "2026-11-23T14:13:17+00:00",
       "doc_link_id": "DLID-spgw9f5y6thy",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-22T06:59:02+00:00",
+      "checked_at": "2026-11-23T14:13:17+00:00",
       "doc_link_id": "DLID-t8jcg5jkb5mj",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-22T06:59:02+00:00",
+      "checked_at": "2026-11-23T14:13:17+00:00",
       "doc_link_id": "DLID-tm2m7nv23dqd",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-22T06:59:02+00:00",
+      "checked_at": "2026-11-23T14:13:17+00:00",
       "doc_link_id": "DLID-v5e2zg521ymv",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-22T06:59:02+00:00",
+      "checked_at": "2026-11-23T14:13:17+00:00",
       "doc_link_id": "DLID-vjef3sn14bg0",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-22T06:59:02+00:00",
+      "checked_at": "2026-11-23T14:13:17+00:00",
       "doc_link_id": "DLID-wbwkxysswr60",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-22T06:59:02+00:00",
+      "checked_at": "2026-11-23T14:13:17+00:00",
       "doc_link_id": "DLID-wkh7nt1wrds7",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-22T06:59:02+00:00",
+      "checked_at": "2026-11-23T14:13:17+00:00",
       "doc_link_id": "DLID-wm7t1emetwbx",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-22T06:59:02+00:00",
+      "checked_at": "2026-11-23T14:13:17+00:00",
       "doc_link_id": "DLID-y2bsrqc7agea",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-22T06:59:02+00:00",
+      "checked_at": "2026-11-23T14:13:17+00:00",
       "doc_link_id": "DLID-yw5v4138tvb8",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-22T06:59:02+00:00",
+      "checked_at": "2026-11-23T14:13:17+00:00",
       "doc_link_id": "DLID-yxmqmdjqhsjm",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-22T06:59:02+00:00",
+      "checked_at": "2026-11-23T14:13:17+00:00",
       "doc_link_id": "DLID-z571pg6rda7f",
       "result": "success"
     }
@@ -393,7 +393,7 @@
   "references": [
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/additive_development_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -409,7 +409,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/additive_development_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -425,7 +425,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/additive_development_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -441,7 +441,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/additive_development_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -457,7 +457,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/additive_development_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -473,7 +473,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/additive_development_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -489,7 +489,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/additive_development_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -505,7 +505,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/additive_development_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -521,7 +521,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/additive_development_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -537,7 +537,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/additive_development_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -553,7 +553,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/additive_development_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -569,7 +569,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/adr_format.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -585,7 +585,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/adr_format.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -601,7 +601,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/adr_format.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -617,7 +617,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/adr_format.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -633,7 +633,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/adr_format.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -649,7 +649,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/adr_principles_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -665,7 +665,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/adr_principles_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -681,7 +681,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/adr_principles_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -697,7 +697,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/adr_principles_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -713,7 +713,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/adr_principles_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -729,7 +729,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/adr_principles_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -745,7 +745,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/adr_principles_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -761,7 +761,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/adr_usage_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -777,7 +777,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/adr_usage_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -793,7 +793,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/adr_usage_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -809,7 +809,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/adr_usage_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -825,7 +825,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/criteria/review_criteria_code.md",
         "result": "match",
         "scope": "plugins/forge/docs/criteria"
@@ -841,7 +841,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/criteria/review_criteria_design.md",
         "result": "match",
         "scope": "plugins/forge/docs/criteria"
@@ -857,7 +857,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/criteria/review_criteria_generic.md",
         "result": "match",
         "scope": "plugins/forge/docs/criteria"
@@ -873,7 +873,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/criteria/review_criteria_plan.md",
         "result": "match",
         "scope": "plugins/forge/docs/criteria"
@@ -889,7 +889,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/criteria/review_criteria_requirement.md",
         "result": "match",
         "scope": "plugins/forge/docs/criteria"
@@ -905,7 +905,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/criteria/review_criteria_uxui.md",
         "result": "match",
         "scope": "plugins/forge/docs/criteria"
@@ -921,7 +921,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/design_method.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -937,7 +937,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/design_method.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -953,7 +953,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/design_method.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -969,7 +969,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/design_principles_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -985,7 +985,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/design_principles_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -1001,7 +1001,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/design_principles_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -1017,7 +1017,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/design_principles_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -1033,7 +1033,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/deterministic_generation_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -1049,7 +1049,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/deterministic_generation_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -1065,7 +1065,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/deterministic_generation_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -1081,7 +1081,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/doc_structure_format.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -1097,7 +1097,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/document_style_guide.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -1113,7 +1113,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/document_style_guide.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -1129,7 +1129,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/document_style_guide.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -1145,7 +1145,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/document_style_guide.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -1161,7 +1161,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/document_style_guide.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -1177,7 +1177,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/document_style_guide.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -1193,7 +1193,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/document_style_guide.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -1209,7 +1209,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/document_style_guide.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -1225,7 +1225,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/document_style_guide.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -1241,7 +1241,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/document_style_guide.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -1257,7 +1257,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/error_classification_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -1273,7 +1273,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/error_classification_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -1289,7 +1289,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/error_classification_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -1305,7 +1305,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/error_classification_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -1321,7 +1321,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/forge_anti_patterns.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -1337,7 +1337,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/forge_anti_patterns.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -1353,7 +1353,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/frontmatter_format.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -1369,7 +1369,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/frontmatter_format.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -1385,7 +1385,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/frontmatter_format.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -1401,7 +1401,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/frontmatter_format.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -1417,7 +1417,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/frontmatter_format.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -1433,7 +1433,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/frontmatter_format.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -1449,7 +1449,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/frontmatter_format.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -1465,7 +1465,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/frontmatter_format.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -1481,7 +1481,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/glossary_format.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -1497,7 +1497,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/glossary_format.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -1513,7 +1513,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/plan_principles_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -1529,7 +1529,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/plan_principles_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -1545,7 +1545,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/requirement_format.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -1561,7 +1561,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/requirement_format.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -1577,7 +1577,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/requirement_format.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -1593,7 +1593,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/requirement_format.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -1609,7 +1609,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/requirement_principles_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -1625,7 +1625,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/requirement_principles_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -1641,7 +1641,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/requirement_principles_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -1657,7 +1657,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/review_priorities_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -1673,7 +1673,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/review_priorities_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -1689,7 +1689,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/review_priorities_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -1705,7 +1705,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/review_priorities_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -1721,7 +1721,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/review_priorities_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -1737,7 +1737,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/review_priorities_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -1753,7 +1753,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/review_priorities_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -1769,7 +1769,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/scope_proportionality_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -1785,7 +1785,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/scope_proportionality_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -1801,7 +1801,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/scope_proportionality_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -1817,7 +1817,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/spec_design_boundary_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -1833,7 +1833,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/spec_design_boundary_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -1849,7 +1849,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/spec_design_boundary_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -1865,7 +1865,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/spec_design_boundary_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -1881,7 +1881,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/spec_design_boundary_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -1897,7 +1897,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/spec_design_boundary_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -1913,7 +1913,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/spec_design_boundary_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -1929,7 +1929,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/spec_design_boundary_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -1945,7 +1945,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/spec_priorities_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -1961,7 +1961,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/spec_priorities_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -1977,7 +1977,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/spec_priorities_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -1993,7 +1993,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/spec_priorities_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -2009,7 +2009,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/spec_priorities_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -2025,7 +2025,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/spec_priorities_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -2041,7 +2041,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/spec_priorities_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -2057,7 +2057,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/spec_priorities_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -2073,7 +2073,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/spec_priorities_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -2089,7 +2089,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-22T06:59:02+00:00",
+        "checked_at": "2026-11-23T14:13:17+00:00",
         "found_path": "plugins/forge/docs/strategy_principles_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -2750,6 +2750,13 @@
   ],
   "sections": [
     {
+      "content_hash": "0010f574741cf090a5ea40a134c5dc769c0b7d7cefec6e3560201dd1c5f10d3b",
+      "doc_link_id": "DLID-e9tn4760zpw5",
+      "heading": "uxui レビュー基準",
+      "position": 0,
+      "section_id": "DLID-j336y8qdsy3k"
+    },
+    {
       "content_hash": "002164053373c9bfac9f064fc994b3ce3aaca63087f33db25fb4e617c5527b0f",
       "doc_link_id": "DLID-dcec6pr177c9",
       "heading": "1.3 P3 — 不要な複雑化",
@@ -2797,6 +2804,13 @@
       "heading": "1.2 Deference（従属性）",
       "position": 3,
       "section_id": "DLID-wpwsc0knnqpq"
+    },
+    {
+      "content_hash": "02fb97d119b0707467cf8cabaf2aee8f92c9b943aba8cadaf7db63d12fdf628a",
+      "doc_link_id": "DLID-spgw9f5y6thy",
+      "heading": "code レビュー基準",
+      "position": 0,
+      "section_id": "DLID-txgrjrgwkxrs"
     },
     {
       "content_hash": "032aa6e45b926d1a56244dcac402ce3fa74102dac94fe15ce337fa8f59c76fd8",
@@ -2855,13 +2869,6 @@
       "section_id": "DLID-j3d40t180zkp"
     },
     {
-      "content_hash": "0618afe57848e8c228d823bf0fa2ad6ffd4e6e22abdbf90eadf790f16a796694",
-      "doc_link_id": "DLID-m77gjek2tw2b",
-      "heading": "重大度カタログ",
-      "position": 4,
-      "section_id": "DLID-0551wvn8eny7"
-    },
-    {
       "content_hash": "062bf1e36acd711edaac544633d951d199969a3bed76605784159e5cd6fef4aa",
       "doc_link_id": "DLID-h9h90g9wcy8f",
       "heading": "主要な判断基準",
@@ -2888,13 +2895,6 @@
       "heading": "doc_types_map",
       "position": 6,
       "section_id": "DLID-t5ty8qa46p6f"
-    },
-    {
-      "content_hash": "06d5afeceaca2d25c52a8be1f095edc61d7f2e18fdbf1a26067d3dac82d45d68",
-      "doc_link_id": "DLID-dcec6pr177c9",
-      "heading": "レビュー優先度仕様",
-      "position": 0,
-      "section_id": "DLID-93gfsh8hwgxw"
     },
     {
       "content_hash": "06f36c57e24b844edbe775655664c27685fa2d7b40a9494d26083ff2468575ff",
@@ -2988,6 +2988,20 @@
       "section_id": "DLID-ysyetw9k29ny"
     },
     {
+      "content_hash": "09b5e5adf00c7c248c06809f9188d1b9ff1cba2094205068acc5a7cc94f05c17",
+      "doc_link_id": "DLID-c13gr4qbk4vm",
+      "heading": "追加 feature 用 frontmatter",
+      "position": 6,
+      "section_id": "DLID-29nvbbd9e3rm"
+    },
+    {
+      "content_hash": "0a35bbcae78b3bf07fdad970c2231f6e82006b8f05dd3fd0abc4f05a10a013c1",
+      "doc_link_id": "DLID-jtc4qnjwbdxf",
+      "heading": "追加 feature frontmatter 定義",
+      "position": 0,
+      "section_id": "DLID-mtbb2d3xdgax"
+    },
+    {
       "content_hash": "0b30c2a0cfcb208485d25e1a19105b37a7aabefb1a1285f5757502c4996f7e44",
       "doc_link_id": "DLID-f9ny9e932trv",
       "heading": "3. 主目的にしてはいけないもの [CRITICAL]",
@@ -3002,11 +3016,11 @@
       "section_id": "DLID-6xpqvaspw0tv"
     },
     {
-      "content_hash": "0b9ee79ca11d2e4b0f06e379d33b153a59706ee580021f404b7e0d3231cf7e1c",
-      "doc_link_id": "DLID-cyrk9xr8vcap",
-      "heading": "追加開発ワークフロー仕様",
+      "content_hash": "0c08304137744fd47ecd063f1d4a2ea8070d22df29a221b7abab8a5a50d83e11",
+      "doc_link_id": "DLID-m77gjek2tw2b",
+      "heading": "ADR 利用規範",
       "position": 0,
-      "section_id": "DLID-gaykhs6rgh9b"
+      "section_id": "DLID-gdb2e7ddxswr"
     },
     {
       "content_hash": "0c1d95b60a198c67284a5aeef5e95df4a4b549462c59217e2018b86b9c8d3313",
@@ -3035,6 +3049,13 @@
       "heading": "4. セマンティックカラーシステム",
       "position": 10,
       "section_id": "DLID-85c7tj9gwxyc"
+    },
+    {
+      "content_hash": "0df2d23ac6eb694883f193267d3d6caf9b7ed0301ee3b94cfcf1cd6a7e5d3f57",
+      "doc_link_id": "DLID-061pwjejh6yc",
+      "heading": "追加 feature 用 frontmatter",
+      "position": 26,
+      "section_id": "DLID-tg0r1w833qbz"
     },
     {
       "content_hash": "0e682797dfab79d613c268de12418a4e152fb3e6a8144c0a8bd2b48f0e8098df",
@@ -3149,6 +3170,13 @@
       "section_id": "DLID-1jj39emhmvsq"
     },
     {
+      "content_hash": "1285509177b0af2d475e4564a9b212eaf6aff8ed02004a01de90ab9d9845d538",
+      "doc_link_id": "DLID-cbr02jpbxfcs",
+      "heading": ".doc_structure.yaml フォーマット仕様",
+      "position": 0,
+      "section_id": "DLID-y0y5cv8m4p0g"
+    },
+    {
       "content_hash": "128e555241713685c995bb99cc9d4cf3315438d544d3c712b7996f6afd712d30",
       "doc_link_id": "DLID-spgw9f5y6thy",
       "heading": "1. SSOT参照",
@@ -3177,6 +3205,13 @@
       "section_id": "DLID-qp0w6qgesjrx"
     },
     {
+      "content_hash": "1384b619c0165ea90b00e6ab37dfad787c3ecd0f52f39a925cd59d811f10e91e",
+      "doc_link_id": "DLID-dcec6pr177c9",
+      "heading": "5. 各 `review_criteria_*.md` の構造",
+      "position": 20,
+      "section_id": "DLID-9dfa8447ntjx"
+    },
+    {
       "content_hash": "140464c0b66109c7d322d125c9114fa9597224ab32e41edf927a016b2c95f45d",
       "doc_link_id": "DLID-25mzdyrk3jdx",
       "heading": "スワイプアクション",
@@ -3196,6 +3231,13 @@
       "heading": "1. SSOT参照",
       "position": 1,
       "section_id": "DLID-9m3kxp12y06x"
+    },
+    {
+      "content_hash": "15fbb389c9c1bbe9b86067d89715883b920c01371ae699c927eed1d0c2843bd9",
+      "doc_link_id": "DLID-e9tn4760zpw5",
+      "heading": "`recommendation: create_issue` の 3 条件",
+      "position": 4,
+      "section_id": "DLID-g55zarnetzfj"
     },
     {
       "content_hash": "16453db23a9b6308e5422c3f66e9322752d4a5048418bc6e4c5060d6a5c29a15",
@@ -3219,25 +3261,11 @@
       "section_id": "DLID-vymdmf5grfz6"
     },
     {
-      "content_hash": "175b961d375726d75a97aceb61f67a8fa94a025a0059cd4c56746d46324d0531",
-      "doc_link_id": "DLID-ns59za8fens1",
-      "heading": "ADR（アーキテクチャ決定記録）デフォルトフォーマット",
-      "position": 0,
-      "section_id": "DLID-gym9brgcd7hg"
-    },
-    {
       "content_hash": "17c8846dc2e8d5e05278fe3433c58a2037ad348e488da1211bcdc20ecaeebd99",
       "doc_link_id": "DLID-m9xnmkwxvjpf",
       "heading": "6. 記録",
       "position": 6,
       "section_id": "DLID-3b7rcjets16c"
-    },
-    {
-      "content_hash": "1842d7c70922bd17d082893493065ce1f7538f1aac48d0d6a1abbb94c6de4389",
-      "doc_link_id": "DLID-e9tn4760zpw5",
-      "heading": "uxui レビュー基準",
-      "position": 0,
-      "section_id": "DLID-j336y8qdsy3k"
     },
     {
       "content_hash": "1871efe20a019781215a44b985c6aa37504deb6acafe96c025059e613d84b3b5",
@@ -3331,6 +3359,13 @@
       "section_id": "DLID-w01ytcecskaa"
     },
     {
+      "content_hash": "1bad6db5169c516c422eb30edfd0896040f99e451bd2c1169f532a72bc8b3e70",
+      "doc_link_id": "DLID-540ak6kxrsxp",
+      "heading": "追加開発ワークフローとの関係",
+      "position": 6,
+      "section_id": "DLID-x4sk8dy3bxgq"
+    },
+    {
       "content_hash": "1bc4fe7d12a25e0c0452c20bc4614f0d1cd3826b2409e9baa3efc100a189ad84",
       "doc_link_id": "DLID-yw5v4138tvb8",
       "heading": "5. macOS 標準コンポーネント",
@@ -3401,6 +3436,13 @@
       "section_id": "DLID-p3hfs4w6qbpd"
     },
     {
+      "content_hash": "1ecdfba368ade0be84f6deb27fe4c91e188a172cb8e90a3af14ae23d80d3b96c",
+      "doc_link_id": "DLID-31c3mp46a5p2",
+      "heading": "plan レビュー基準",
+      "position": 0,
+      "section_id": "DLID-yk277h9z9t3b"
+    },
+    {
       "content_hash": "1ef314258f376de4c026e2da2e85a54b6b382da3b2801ce4062a63757a36a80f",
       "doc_link_id": "DLID-wbwkxysswr60",
       "heading": "7.1 視覚アクセシビリティ",
@@ -3427,13 +3469,6 @@
       "heading": "決定の否決：同じ節を書き直す",
       "position": 7,
       "section_id": "DLID-7sz8sjb88w6n"
-    },
-    {
-      "content_hash": "1f777437558d49cd509f46a4907d12d2650b3bdab9a20d4d84725c004bf15328",
-      "doc_link_id": "DLID-4zxqtf2m3x6t",
-      "heading": "3. 判定ルール",
-      "position": 3,
-      "section_id": "DLID-rq073b3srn5w"
     },
     {
       "content_hash": "1fcbe57336ebea9dda0ccd0319dc115139a7974cefe8bbda45dc88767fba12d0",
@@ -3499,18 +3534,18 @@
       "section_id": "DLID-hx44sczxqdw7"
     },
     {
+      "content_hash": "228be5760a11af68bec4a19517f44bdb8cd2b2b0f0b4fda3f15a0f7e36201981",
+      "doc_link_id": "DLID-061pwjejh6yc",
+      "heading": "重大度カタログ",
+      "position": 21,
+      "section_id": "DLID-9khqhrkz2vrt"
+    },
+    {
       "content_hash": "22c2795f5f3a367928cd9e5cbd62c65084346aee5003e8a182dd3422477e92d2",
       "doc_link_id": "DLID-rx0jy7wbtg59",
       "heading": "UX/UI デザイン創造ワークフロー",
       "position": 0,
       "section_id": "DLID-am88frpvnh5j"
-    },
-    {
-      "content_hash": "22c70bbc74b549d721c550613ca364b4c117af6e25deab32285ec69b03124ba7",
-      "doc_link_id": "DLID-31c3mp46a5p2",
-      "heading": "3. 判定ルール",
-      "position": 3,
-      "section_id": "DLID-8yw9833k97tn"
     },
     {
       "content_hash": "233d366c56b9d1fee74def0daccda1e60bb4cd38b72b45d33020903bc3bf4d22",
@@ -3525,13 +3560,6 @@
       "heading": "4.1 体験フロー・構成",
       "position": 18,
       "section_id": "DLID-k0zd2p3g2rz4"
-    },
-    {
-      "content_hash": "237d4da0d1392be2c934907236e96c9c99bd050a1ea8c738931634d018fdf38a",
-      "doc_link_id": "DLID-cbr02jpbxfcs",
-      "heading": "文書検索の索引へのパス受け渡し",
-      "position": 22,
-      "section_id": "DLID-a2jsgd6g86yg"
     },
     {
       "content_hash": "23bba4b5fac0f01edc43755bf56a18e4c9fc34e68275d551550958863fb16aee",
@@ -3555,11 +3583,11 @@
       "section_id": "DLID-eashsr7j455k"
     },
     {
-      "content_hash": "2460491270be3525c3a7f9e9cc340896d07789edfebd94679d10980fa1d4e4aa",
-      "doc_link_id": "DLID-45wzpggz1set",
-      "heading": "重大度カタログ",
-      "position": 10,
-      "section_id": "DLID-cnjkzn06efrj"
+      "content_hash": "249e7e4d462929a281fd0cd3c41ef06067cd3777f034211fa3e179a9e548fb53",
+      "doc_link_id": "DLID-0zyw4hj937y9",
+      "heading": "`recommendation: create_issue` の 3 条件",
+      "position": 4,
+      "section_id": "DLID-4zngvb3407g1"
     },
     {
       "content_hash": "24ab3a1dfb81e0091e2678576fdbf46a01ce0c7c11eef0b4afa7e985502885ad",
@@ -3602,6 +3630,20 @@
       "heading": "1.4 アクターを「実装方法が決まっているか」で選ぶ理由",
       "position": 5,
       "section_id": "DLID-3743tyhjjx53"
+    },
+    {
+      "content_hash": "26644b1b10bec8e629fcc2623aed00f4fd438e025882f5cd7de4c750b2015b30",
+      "doc_link_id": "DLID-4zxqtf2m3x6t",
+      "heading": "`recommendation: create_issue` の 3 条件",
+      "position": 4,
+      "section_id": "DLID-psxtsf0zwksq"
+    },
+    {
+      "content_hash": "2676bc28ddaf91de8ca29bd7bd1094b3819e9e2721961bb51d9584dceac38b35",
+      "doc_link_id": "DLID-31c3mp46a5p2",
+      "heading": "`recommendation: create_issue` の 3 条件",
+      "position": 4,
+      "section_id": "DLID-8ey9p7zpj0m8"
     },
     {
       "content_hash": "2705cab6fc99f62a890fdaca5c225dd059071f17c6443a987b41220bc956e362",
@@ -3653,18 +3695,18 @@
       "section_id": "DLID-2xt4ecc4kv26"
     },
     {
-      "content_hash": "2aa8444c61cf2872e2b68cc17ca91226a20a1a333179a1552b6ff2a75ebd95f3",
-      "doc_link_id": "DLID-c59znr7b8f56",
-      "heading": "9.4 用語集",
-      "position": 25,
-      "section_id": "DLID-k0v2ycby4pbv"
-    },
-    {
       "content_hash": "2ad2db7dd3d23920f35332676a780d368917a19a1c3c8a95ea5adb5f8177f7dd",
       "doc_link_id": "DLID-t8jcg5jkb5mj",
       "heading": "`required_reading` フィールド (本文書既存)",
       "position": 32,
       "section_id": "DLID-rv431mgqp0s8"
+    },
+    {
+      "content_hash": "2ad52cebc73119839b4f32a286e6c1ed6b61b4189a82d4c7f238fb5dd04520b8",
+      "doc_link_id": "DLID-4zxqtf2m3x6t",
+      "heading": "requirement レビュー基準",
+      "position": 0,
+      "section_id": "DLID-xc41w976xdae"
     },
     {
       "content_hash": "2bc181688181f485c88de91901e846e53be3fdc307d7baddce02042540371671",
@@ -3723,6 +3765,13 @@
       "section_id": "DLID-trnabes2eed6"
     },
     {
+      "content_hash": "2db66880e907c0c19fe3319104118a91a5e2171f76bdc220fb020aa04c9651bb",
+      "doc_link_id": "DLID-spgw9f5y6thy",
+      "heading": "`recommendation: create_issue` の 3 条件",
+      "position": 4,
+      "section_id": "DLID-bekxrdnrhpqz"
+    },
+    {
       "content_hash": "2e5d1d18eddfd3acd56d4bb71a6dabbf036ee5c67a5bd809e18fb6826c008812",
       "doc_link_id": "DLID-m9xnmkwxvjpf",
       "heading": "3. 表示",
@@ -3742,13 +3791,6 @@
       "heading": "3. レイアウト",
       "position": 10,
       "section_id": "DLID-nmv5x3vk4kcm"
-    },
-    {
-      "content_hash": "2f4497a6dea70bb4422a67bde26a98128625542f60322d829b8df28539fa019b",
-      "doc_link_id": "DLID-0zyw4hj937y9",
-      "heading": "`recommendation: create_issue` の 3 条件",
-      "position": 4,
-      "section_id": "DLID-4zngvb3407g1"
     },
     {
       "content_hash": "2fbdb378009cc44884012b83870345a546960cf698571249f7d6ce1a1293e727",
@@ -3947,6 +3989,13 @@
       "section_id": "DLID-7brb6aec23dt"
     },
     {
+      "content_hash": "3a701b51af3583bd0d8cfcd059a3a74bce82036e49e76678eb1727f43493062c",
+      "doc_link_id": "DLID-0zyw4hj937y9",
+      "heading": "3. 判定ルール",
+      "position": 3,
+      "section_id": "DLID-e7ps4egzqzbe"
+    },
+    {
       "content_hash": "3ab3bdc6462b00ad8758eea766cf88408afb008d5153747499a3c2cd0c7393e4",
       "doc_link_id": "DLID-2ftdsh6ppjsj",
       "heading": "5. 提示状態の置き場",
@@ -3959,6 +4008,13 @@
       "heading": "目的",
       "position": 2,
       "section_id": "DLID-by829hnqz7b3"
+    },
+    {
+      "content_hash": "3ae729441c4fa0d9896676642db45f1fe8ceb23680e1b4c1d990a410889bf20f",
+      "doc_link_id": "DLID-45wzpggz1set",
+      "heading": "ADR（アーキテクチャ決定記録）運用原則",
+      "position": 0,
+      "section_id": "DLID-baw3nkzf4q55"
     },
     {
       "content_hash": "3b52ac91f9b044e0669106e800f7ca0f2043ac0d7be0dc28f473a51fafc564a2",
@@ -3975,25 +4031,11 @@
       "section_id": "DLID-qygqa9rc3asf"
     },
     {
-      "content_hash": "3bdbec9cb22cbac5886cd41bd6b64b7384d0a1c82e25341ce390d1fac4385a82",
-      "doc_link_id": "DLID-t8jcg5jkb5mj",
-      "heading": "重大度カタログ",
-      "position": 28,
-      "section_id": "DLID-mpf05ws34t7a"
-    },
-    {
       "content_hash": "3c2ae79059e8d8139d6e5fbf2e27a9f4f57a279bdf41640a22772889f54c9aa9",
       "doc_link_id": "DLID-v5e2zg521ymv",
       "heading": "2.3 いまの論点（いま扱っている consult topic）",
       "position": 7,
       "section_id": "DLID-7fymb089r3a2"
-    },
-    {
-      "content_hash": "3cc3327b6fd65eeb0661315d4165ed2a4183d9f2f7a56cde3fd7738aef0e387c",
-      "doc_link_id": "DLID-540ak6kxrsxp",
-      "heading": "実装戦略書 作成原則",
-      "position": 0,
-      "section_id": "DLID-fwyy5a0yrjzb"
     },
     {
       "content_hash": "3d337b90718cf7b0bf18610721d741e9afbce6b630ac835a3b6038303d870095",
@@ -4015,6 +4057,13 @@
       "heading": "Edward Tufte — \"Above all else, show the data\"",
       "position": 18,
       "section_id": "DLID-rmf27mqb8gx8"
+    },
+    {
+      "content_hash": "3dfc4c2bb287e1399798ef15bf4d950919edd0053281bd3d69bd2886bda70cdb",
+      "doc_link_id": "DLID-31c3mp46a5p2",
+      "heading": "3. 判定ルール",
+      "position": 3,
+      "section_id": "DLID-8yw9833k97tn"
     },
     {
       "content_hash": "3ed0d3473f84dee15e91be6413ad7bdaf9cb93d2f3ccb08a8a6b9036c3adf848",
@@ -4115,13 +4164,6 @@
       "section_id": "DLID-01xd440jn190"
     },
     {
-      "content_hash": "42769ead9f8834bb76623c7c28e2adc06cb6a76fe96d529cd5b31d0e9874aa0b",
-      "doc_link_id": "DLID-jtc4qnjwbdxf",
-      "heading": "追加 feature frontmatter 定義",
-      "position": 0,
-      "section_id": "DLID-mtbb2d3xdgax"
-    },
-    {
       "content_hash": "42b8926f1b3445be339a7b424e82626e142fb7dbd4dad21b1fc96b243c678fb9",
       "doc_link_id": "DLID-jtc4qnjwbdxf",
       "heading": "2.4 解除条件",
@@ -4164,6 +4206,13 @@
       "section_id": "DLID-pcef7rqe6c03"
     },
     {
+      "content_hash": "440b553b6fbab9fee04c2df048c4601d39be479877704e3bda8a743b081e9bd0",
+      "doc_link_id": "DLID-f9ny9e932trv",
+      "heading": "10. 非機能要件カテゴリ網羅性",
+      "position": 15,
+      "section_id": "DLID-nqy4h59s3abq"
+    },
+    {
       "content_hash": "447d7a2b5c28874f9d045626ab6890e9d78b47d1f141698d3848c710e9e3609d",
       "doc_link_id": "DLID-y2bsrqc7agea",
       "heading": "Phase 1: 事前準備",
@@ -4192,11 +4241,11 @@
       "section_id": "DLID-jg0wvn3grtym"
     },
     {
-      "content_hash": "45ae56cbfdb32de96c6279e241d32caf74742b1c823b9d46e340f1068f3c17e1",
-      "doc_link_id": "DLID-cbr02jpbxfcs",
-      "heading": "Consumer Guide",
-      "position": 19,
-      "section_id": "DLID-b5t2hmm6gsgs"
+      "content_hash": "45d31bd0228b872585dec2a15c4941fdba6253be4ba67e2cde963e45e3d7698a",
+      "doc_link_id": "DLID-wm7t1emetwbx",
+      "heading": "`recommendation: create_issue` の 3 条件",
+      "position": 4,
+      "section_id": "DLID-f92ap1mvdegp"
     },
     {
       "content_hash": "46ff4152a3451a82a089120c2c1e73ce419065b014bd7e598c932fbe84dbafbb",
@@ -4225,6 +4274,13 @@
       "heading": "2.1 アプリの性格分析",
       "position": 19,
       "section_id": "DLID-7jef1f27j4qr"
+    },
+    {
+      "content_hash": "480e6ba29ab8c69c3feeff5d1c8c04c05fac183ae3027d55e1b79c0b03ef1c85",
+      "doc_link_id": "DLID-0zyw4hj937y9",
+      "heading": "design レビュー基準",
+      "position": 0,
+      "section_id": "DLID-nn6q8w6wjj17"
     },
     {
       "content_hash": "496be789b635297c61d041d180931948a803d6ff9744301e8f71be1ebfbc20e3",
@@ -4276,6 +4332,13 @@
       "section_id": "DLID-6kjadrnext23"
     },
     {
+      "content_hash": "4aaaf74e14610f9bf59444b96356a88b34e5e9080da6b329e897129c12c7ca09",
+      "doc_link_id": "DLID-c13gr4qbk4vm",
+      "heading": "重大度カタログ",
+      "position": 5,
+      "section_id": "DLID-6ygh93jm4py6"
+    },
+    {
       "content_hash": "4b6ee7e28586451c9c7c394af13d41a126e857fb3eae4a1762bdba59d4639fc8",
       "doc_link_id": "DLID-dcec6pr177c9",
       "heading": "5.3 複数 SoT 間の優先順位",
@@ -4304,7 +4367,7 @@
       "section_id": "DLID-xq37t0t0r1b5"
     },
     {
-      "content_hash": "4d45c3898dfe909d0d8f66e2aba783f9c509d3159a127b330c6ad5b7c64146fc",
+      "content_hash": "4c9745b8b9f9e1db645b581265b271d6636ca77e82e7aa0bd2f29d6432a12e48",
       "doc_link_id": "DLID-4wshmhbcgynm",
       "heading": "3.5 uxui（UI / UX に関わる文書）",
       "position": 11,
@@ -4358,6 +4421,13 @@
       "heading": "ID 採番",
       "position": 15,
       "section_id": "DLID-m3cf6hs7k9aw"
+    },
+    {
+      "content_hash": "50c3f384c7725883082973f66e1f2b8b2726d0150e6db1f75caed97782adea75",
+      "doc_link_id": "DLID-z571pg6rda7f",
+      "heading": "用語集 デフォルトフォーマット",
+      "position": 0,
+      "section_id": "DLID-42d51easw9qm"
     },
     {
       "content_hash": "512af8b9fe894a1fda424178b131c0aaed847b971e194476d0f177f8c09a11c8",
@@ -4535,6 +4605,13 @@
       "section_id": "DLID-1tsfg2en7s15"
     },
     {
+      "content_hash": "58a8b47b327742d46a55ecc79e46315b6e3e34b6949f4f5b6e898981f42ba136",
+      "doc_link_id": "DLID-e9tn4760zpw5",
+      "heading": "3. 判定ルール",
+      "position": 3,
+      "section_id": "DLID-9vhfq2kspkkw"
+    },
+    {
       "content_hash": "58aa4eb7c0bb848105e37607c6916367562b1fb5cf4422745926fcc96c52c695",
       "doc_link_id": "DLID-wbwkxysswr60",
       "heading": "H9: エラーからの回復支援",
@@ -4570,18 +4647,18 @@
       "section_id": "DLID-gkkecvdp3q2q"
     },
     {
-      "content_hash": "59c739ef7d835cbca9fb5d9de24c4528122bba946eefdd004cf7924dda18ae23",
-      "doc_link_id": "DLID-wm7t1emetwbx",
-      "heading": "3. 判定ルール",
-      "position": 3,
-      "section_id": "DLID-ygkp2zrfehc0"
-    },
-    {
       "content_hash": "59d671be47a8f0a93c361a934035272271f2867d6b5e1cfdc22a71265127586e",
       "doc_link_id": "DLID-4wshmhbcgynm",
       "heading": "2. 全 target 種別に共通の文書",
       "position": 5,
       "section_id": "DLID-66jzrce09d5t"
+    },
+    {
+      "content_hash": "5b1598879c114c36cf59141f1936a0c2af805c1835b36a0aa21490b5351c4dc0",
+      "doc_link_id": "DLID-45wzpggz1set",
+      "heading": "重大度カタログ",
+      "position": 10,
+      "section_id": "DLID-cnjkzn06efrj"
     },
     {
       "content_hash": "5b6e64293322f1f8ed3d56f79e2c0f55757043965ab5099df9d029709b8a1047",
@@ -4675,25 +4752,18 @@
       "section_id": "DLID-rpkcdfvrcgd6"
     },
     {
-      "content_hash": "610bcde0226897f9dc094e3af54c9a078ff124f37a02e0fd9ff896ecf99c317c",
-      "doc_link_id": "DLID-5ykqs19cdbks",
-      "heading": "6. 重大度カタログ",
-      "position": 8,
-      "section_id": "DLID-24jm5h2279w9"
-    },
-    {
-      "content_hash": "62bcbd613bf9dc4e9b55af4f3b8522c13d190fc98e45d5328bfbc0092bf2cbd6",
-      "doc_link_id": "DLID-jtc4qnjwbdxf",
-      "heading": "3. 他のツールのキーとの衝突回避",
-      "position": 10,
-      "section_id": "DLID-bj3cgenw0m2f"
-    },
-    {
       "content_hash": "6309e294ce7371643e24983ffb9ee614e946ed401f0154ce73ceab1bc26cd45d",
       "doc_link_id": "DLID-c13gr4qbk4vm",
       "heading": "本体フォーマット",
       "position": 3,
       "section_id": "DLID-6qbgqbk1xcw9"
+    },
+    {
+      "content_hash": "631c905a8086aaf9a39ff1e5bbb94a7d121aec1279032585c23c1badc6057972",
+      "doc_link_id": "DLID-5ykqs19cdbks",
+      "heading": "6. 重大度カタログ",
+      "position": 8,
+      "section_id": "DLID-24jm5h2279w9"
     },
     {
       "content_hash": "635b22ffd867b351fe0c32653e82676137290a9f343742fda3075593bb8f6263",
@@ -4724,13 +4794,6 @@
       "section_id": "DLID-3xm6xx08kdy2"
     },
     {
-      "content_hash": "64a79654773cacd3e866020fd4be3a5e8e507706e2bc00f3044da344d6c5bfdd",
-      "doc_link_id": "DLID-h9h90g9wcy8f",
-      "heading": "6. トレーサビリティ規範 (軽量版)",
-      "position": 19,
-      "section_id": "DLID-erf6ew4vws5y"
-    },
-    {
       "content_hash": "64b05bee4e299cc7b325d4b1df1bb7e85e19bfc3ce67dc205d6230570013be7a",
       "doc_link_id": "DLID-cbr02jpbxfcs",
       "heading": "specs カテゴリ",
@@ -4750,13 +4813,6 @@
       "heading": "1. 目的",
       "position": 1,
       "section_id": "DLID-ryzrg0r8bhah"
-    },
-    {
-      "content_hash": "653b113094315a45e42975167711828935eeb65cbbc248811937b95ba8d33620",
-      "doc_link_id": "DLID-0zyw4hj937y9",
-      "heading": "design レビュー基準",
-      "position": 0,
-      "section_id": "DLID-nn6q8w6wjj17"
     },
     {
       "content_hash": "658fc2cf09ef6d34833d0e97ffe1d4a171c9411c38c8f889931cf5eaf0a9745e",
@@ -4871,13 +4927,6 @@
       "section_id": "DLID-5a2syaga91c1"
     },
     {
-      "content_hash": "6b22a67e93ae947613358388252611761f7d68d37eee945a64cd3072be007691",
-      "doc_link_id": "DLID-f9ny9e932trv",
-      "heading": "10.2 除外理由の明示",
-      "position": 17,
-      "section_id": "DLID-mq15p9q5d071"
-    },
-    {
       "content_hash": "6b813b74ca72797a07dbe90867fffff2e0b45abc13036163b28b45cab4a4cd11",
       "doc_link_id": "DLID-cbr02jpbxfcs",
       "heading": "Flat Structure（単一プロジェクト）",
@@ -4920,18 +4969,18 @@
       "section_id": "DLID-9jr0061khqwk"
     },
     {
+      "content_hash": "6d1bd16f636443b599f54061bd5d87d1c7c40392e2db9da060f7d47cd788d53a",
+      "doc_link_id": "DLID-8y2jh2y06761",
+      "heading": "要件定義書 作成原則",
+      "position": 0,
+      "section_id": "DLID-ayakhapp41gd"
+    },
+    {
       "content_hash": "6d46884999f9f4b54d39947ae638b8989868c1c28390227026329354246ac0c8",
       "doc_link_id": "DLID-rx0jy7wbtg59",
       "heading": "6.1 文書ファイルの生成",
       "position": 55,
       "section_id": "DLID-y8hd8ej6717k"
-    },
-    {
-      "content_hash": "6dd2b8ed3015c8614240f751d57a830eb5feb801477313fa3cbfb6f6368e8bc9",
-      "doc_link_id": "DLID-c59znr7b8f56",
-      "heading": "9. 用語",
-      "position": 21,
-      "section_id": "DLID-dgkks0jxv46c"
     },
     {
       "content_hash": "6e539746c16ed843243601ee351debbcd190be9c079db5fd6e4c9e42b40b6b34",
@@ -5025,13 +5074,6 @@
       "section_id": "DLID-jmyjp59xafs7"
     },
     {
-      "content_hash": "740d6335af16e68f76d5faa0cb0b804c1ac9d52ece312706d9477c37308c91ae",
-      "doc_link_id": "DLID-c13gr4qbk4vm",
-      "heading": "追加 feature 用 frontmatter",
-      "position": 6,
-      "section_id": "DLID-29nvbbd9e3rm"
-    },
-    {
       "content_hash": "744bbac8ffeca66bf3dbf76bfd52d7f3ba25d5e34cbf151c4747da7fc030ad1b",
       "doc_link_id": "DLID-wbwkxysswr60",
       "heading": "H7: 柔軟性と効率性",
@@ -5053,6 +5095,13 @@
       "section_id": "DLID-bzjch8rw131d"
     },
     {
+      "content_hash": "7564bfaed5663f5d8e5253b9b1507d8c505edb47b99c99847780f8c7db80992e",
+      "doc_link_id": "DLID-t8jcg5jkb5mj",
+      "heading": "計画書 作成原則",
+      "position": 0,
+      "section_id": "DLID-5fpx9rxg6208"
+    },
+    {
       "content_hash": "756bd0e98e4e3b2f4ec71bf09e6f30658fbaa9bb6ba9adddfdaa185b090fba33",
       "doc_link_id": "DLID-5c0nw4er6es2",
       "heading": "3.3 ドラフトの作成",
@@ -5065,13 +5114,6 @@
       "heading": "3.0 置き場の決定と ID 採番",
       "position": 15,
       "section_id": "DLID-stsseyt9d18c"
-    },
-    {
-      "content_hash": "769320cf9125f3e02e5704488b9efb46cc22078034d040bc554b46cfb6ede690",
-      "doc_link_id": "DLID-dcec6pr177c9",
-      "heading": "5. 各 `review_criteria_*.md` の構造",
-      "position": 20,
-      "section_id": "DLID-9dfa8447ntjx"
     },
     {
       "content_hash": "76950f68c477cac9af6aad22419800a554e2d6de88a23105059098a437eb8450",
@@ -5170,13 +5212,6 @@
       "heading": "5.6 commit/push 確認",
       "position": 30,
       "section_id": "DLID-apk7wqb0zy6g"
-    },
-    {
-      "content_hash": "7ada63cdda99fb53179def8efddc12ebbaed3dcecc0cb9d33a788ecf101b61c0",
-      "doc_link_id": "DLID-z571pg6rda7f",
-      "heading": "本体フォーマット",
-      "position": 3,
-      "section_id": "DLID-1dx3mwg7gq3g"
     },
     {
       "content_hash": "7b40ea08afb5e9954f5f6a4630f8387d4ada6b456d17dcbfacdb8deaece3b46a",
@@ -5298,13 +5333,6 @@
       "section_id": "DLID-qd4e64cxrzqy"
     },
     {
-      "content_hash": "81510099039a17caf6a3e507d83196e3e34754db551a6e95ca30cb6ed70234b5",
-      "doc_link_id": "DLID-cbr02jpbxfcs",
-      "heading": ".doc_structure.yaml フォーマット仕様",
-      "position": 0,
-      "section_id": "DLID-y0y5cv8m4p0g"
-    },
-    {
       "content_hash": "8172ebcae3a45213f15695a1ba0a5b29c7e55ca3c0e1c2dc159d1bfe51cfd70f",
       "doc_link_id": "DLID-5c0nw4er6es2",
       "heading": "4.3 要件の作成",
@@ -5338,13 +5366,6 @@
       "heading": "2.1 プロジェクト構造の把握",
       "position": 10,
       "section_id": "DLID-q8yx9g8m22hb"
-    },
-    {
-      "content_hash": "82b35c313fd3d2be105612b5a622e6b1af858dd616386f52d4148fbe08e11021",
-      "doc_link_id": "DLID-45wzpggz1set",
-      "heading": "ADR（アーキテクチャ決定記録）運用原則",
-      "position": 0,
-      "section_id": "DLID-baw3nkzf4q55"
     },
     {
       "content_hash": "82baed982c1d39f33c528c4f652a5ca2309d183ce3cee3f244de6393ca8da5c2",
@@ -5396,6 +5417,13 @@
       "section_id": "DLID-8vg3s8zztdvy"
     },
     {
+      "content_hash": "85b33f6709cc26139e4a7f524f4c9d6b5250e8aede5d2db8329fb1a34b59f54f",
+      "doc_link_id": "DLID-ns59za8fens1",
+      "heading": "ADR（アーキテクチャ決定記録）デフォルトフォーマット",
+      "position": 0,
+      "section_id": "DLID-gym9brgcd7hg"
+    },
+    {
       "content_hash": "863788fb1c9075e01f49622b8bca598e642e8c53763d9fd7a3ed6baffb700687",
       "doc_link_id": "DLID-f9ny9e932trv",
       "heading": "1. 優先するもの（構造的設計原則）",
@@ -5424,6 +5452,13 @@
       "section_id": "DLID-vyx9exjvvvqp"
     },
     {
+      "content_hash": "879f1710c36e3b37de2ff4f50c92aa2ad2fa10f00821b93fe02b05b7d3dd4189",
+      "doc_link_id": "DLID-5ykqs19cdbks",
+      "heading": "エラーの定義・分類・原因",
+      "position": 0,
+      "section_id": "DLID-xgwskmwyrwc8"
+    },
+    {
       "content_hash": "8839329e37f370a802ff27e0ae7d46aac245bcf1bbda7cf38919b11f92a97799",
       "doc_link_id": "DLID-4vzgex2efq8k",
       "heading": "構成の原理 — 配置の秩序",
@@ -5445,13 +5480,6 @@
       "section_id": "DLID-8vpdyxy3p22b"
     },
     {
-      "content_hash": "89279b2a39d8931a660a201ec3fe450920a3280e55e34c99044f73444a02d900",
-      "doc_link_id": "DLID-f9ny9e932trv",
-      "heading": "10. 非機能要件カテゴリ網羅性",
-      "position": 15,
-      "section_id": "DLID-nqy4h59s3abq"
-    },
-    {
       "content_hash": "895e376ddaecc58dda01f53828f289b851e502151077b6651236701e501f9ebf",
       "doc_link_id": "DLID-yw5v4138tvb8",
       "heading": "メニューバー",
@@ -5464,13 +5492,6 @@
       "heading": "第 1 層: 認知の制約（従う）",
       "position": 3,
       "section_id": "DLID-msbx3x3fjqea"
-    },
-    {
-      "content_hash": "8a13db2288457c595c7d958153a74799eeea460a51323253dc39d0bdb62d5fa4",
-      "doc_link_id": "DLID-c59znr7b8f56",
-      "heading": "文書スタイル指針",
-      "position": 0,
-      "section_id": "DLID-k579tbm0ny8c"
     },
     {
       "content_hash": "8a51a6cd31129751535e4766fcb50b8bf93f0e30233489d9f65234753c5adea9",
@@ -5550,13 +5571,6 @@
       "section_id": "DLID-eq8q3fp4s490"
     },
     {
-      "content_hash": "8caad01348a1266b21f6f57a87850097102624f80d0d341dbd5b0f24d800efd9",
-      "doc_link_id": "DLID-cyrk9xr8vcap",
-      "heading": "6. frontmatter 定義",
-      "position": 24,
-      "section_id": "DLID-5afnnzgbm4dn"
-    },
-    {
       "content_hash": "8cbc4dcdd6dc947c141bcb5b53b46d437f7af61af45181e22a7f692ba99e906a",
       "doc_link_id": "DLID-h9h90g9wcy8f",
       "heading": "3.2 機能の存在理由・価値",
@@ -5585,6 +5599,13 @@
       "section_id": "DLID-kt5jqamtc64h"
     },
     {
+      "content_hash": "8e029698edaaeffe2eef2256f966b3d84cdf9a70d48a36cb8f479bf2e7a98d0c",
+      "doc_link_id": "DLID-dcec6pr177c9",
+      "heading": "5.4 廃止セクション",
+      "position": 24,
+      "section_id": "DLID-91qfqn0je7dj"
+    },
+    {
       "content_hash": "8e10658b7abfe97542c8cebd6c1e7a94a7ae5b3bea71d0ef0bff45dfec13348d",
       "doc_link_id": "DLID-vjef3sn14bg0",
       "heading": "Phase 2: ソースコード解析",
@@ -5599,6 +5620,13 @@
       "section_id": "DLID-3men7fms3r7s"
     },
     {
+      "content_hash": "8e48878b3b49992af91e9f8be0a425dc64cf41b6377d97bf111e5c9af46078d0",
+      "doc_link_id": "DLID-4zxqtf2m3x6t",
+      "heading": "3. 判定ルール",
+      "position": 3,
+      "section_id": "DLID-rq073b3srn5w"
+    },
+    {
       "content_hash": "8e6fb07efb74ceee90221ad4ee5bc4b73d638e373dffce4f3be6d639cc7283c4",
       "doc_link_id": "DLID-wbwkxysswr60",
       "heading": "7.3 認知アクセシビリティ",
@@ -5611,13 +5639,6 @@
       "heading": "1. 概要",
       "position": 3,
       "section_id": "DLID-q0ek70bfq4gx"
-    },
-    {
-      "content_hash": "8eeeb7e06890f8aa5638107d05745d3c4628f908b458fa429d10c7343c00da9c",
-      "doc_link_id": "DLID-z571pg6rda7f",
-      "heading": "用語集 デフォルトフォーマット",
-      "position": 0,
-      "section_id": "DLID-42d51easw9qm"
     },
     {
       "content_hash": "8f51064b9c2281da7fd6c6608be4a5adb8f597ae0b07a40f186248a4eadd2079",
@@ -5648,11 +5669,11 @@
       "section_id": "DLID-kecdnfkn2a76"
     },
     {
-      "content_hash": "9171db07a2dc677fc0918cc5a2cca48e7fc4b6c82d35bea38290f52e48b34dd3",
-      "doc_link_id": "DLID-540ak6kxrsxp",
-      "heading": "追加開発ワークフローとの関係",
+      "content_hash": "91224b0badbf9b22a75045f4cb6da82c7f6f597bf6c20d662a8e91acf2030333",
+      "doc_link_id": "DLID-4wshmhbcgynm",
+      "heading": "3. 種別ごとに上乗せする文書",
       "position": 6,
-      "section_id": "DLID-x4sk8dy3bxgq"
+      "section_id": "DLID-y7ny461sst3j"
     },
     {
       "content_hash": "91a1cacd638695677deb7a96fd88ab378570409f060bd60c3673eb6be450fcb5",
@@ -5660,6 +5681,13 @@
       "heading": "3.6 トークン品質検証",
       "position": 34,
       "section_id": "DLID-23dhc8nd7rmd"
+    },
+    {
+      "content_hash": "921e0747149e4d66c88e289ae80122621c12069c6a0d2ac9577afaa7d3c76af0",
+      "doc_link_id": "DLID-c13gr4qbk4vm",
+      "heading": "要件定義書 デフォルトフォーマット",
+      "position": 0,
+      "section_id": "DLID-xce107ay8m4n"
     },
     {
       "content_hash": "92c07e54deac1e04fb4074e110916d84ffd02ce598c8bc261660fcfea5dd7fc8",
@@ -5802,6 +5830,13 @@
       "section_id": "DLID-1yeq7vcn25rx"
     },
     {
+      "content_hash": "98071b342143fc4672129a536d65e7a66d18dce6f23c6f1d6c7998859fbfe30b",
+      "doc_link_id": "DLID-h9h90g9wcy8f",
+      "heading": "要件定義書と設計書の境界ガイド",
+      "position": 0,
+      "section_id": "DLID-dmnfe7cxwbte"
+    },
+    {
       "content_hash": "994f41ac2931a4732ed9badd3e198d91218e30cd7d3d1b12c71292ae4e4e5ba6",
       "doc_link_id": "DLID-h9h90g9wcy8f",
       "heading": "ADR との関係",
@@ -5821,13 +5856,6 @@
       "heading": "情報密度",
       "position": 21,
       "section_id": "DLID-cw39w8mtbkva"
-    },
-    {
-      "content_hash": "9ac70309a2d401ca5b75177bad54ea086f2c2f48318bf0ed26c656e57fa64997",
-      "doc_link_id": "DLID-h9h90g9wcy8f",
-      "heading": "要件定義書と設計書の境界ガイド",
-      "position": 0,
-      "section_id": "DLID-dmnfe7cxwbte"
     },
     {
       "content_hash": "9b35a9d0db2bfeb6a92c8215754252869d98cffb139cab14f4956eb19b8de8da",
@@ -5884,13 +5912,6 @@
       "heading": "エラーケースの書き方",
       "position": 4,
       "section_id": "DLID-pzsvndgxcyfb"
-    },
-    {
-      "content_hash": "9c78fbdc9fce4a48a4269c7e06a075ba3fbfb052019eba7faf77473b605f7b3e",
-      "doc_link_id": "DLID-ns59za8fens1",
-      "heading": "テンプレート",
-      "position": 5,
-      "section_id": "DLID-xc0qvbhjn1xv"
     },
     {
       "content_hash": "9cd66559bb9aaf2626b08801033267b484be67fd1f737b5e2c33d2d38a2f6f6e",
@@ -6054,13 +6075,6 @@
       "section_id": "DLID-s8gdrzx4xqwg"
     },
     {
-      "content_hash": "a68f2320ceeacf7ed1db1928383a4ef6a548e4a1b266164a32e973ac1c0419f7",
-      "doc_link_id": "DLID-spgw9f5y6thy",
-      "heading": "3. 判定ルール",
-      "position": 3,
-      "section_id": "DLID-xye42s3bmpb8"
-    },
-    {
       "content_hash": "a6d9027af025445fa46774bb454d4867719c8a27f0c488d27bc6672f4ec074af",
       "doc_link_id": "DLID-h9h90g9wcy8f",
       "heading": "5.3 G.3 定量目標",
@@ -6178,13 +6192,6 @@
       "heading": "8. 対応プラットフォーム",
       "position": 10,
       "section_id": "DLID-gsxe4pz8zgw2"
-    },
-    {
-      "content_hash": "abcbc7a5e9c4b8388a81a024ae2d8b70924efe95728bb84b65121c1a861870c9",
-      "doc_link_id": "DLID-8y2jh2y06761",
-      "heading": "要件定義書の定義",
-      "position": 1,
-      "section_id": "DLID-msg9bk6n4fcy"
     },
     {
       "content_hash": "abd7aa1e581be66c88543135b7205eb91a7677d135ceb7ce5fa6f3164b6d2e8b",
@@ -6383,6 +6390,13 @@
       "section_id": "DLID-a3x0ectvfbwz"
     },
     {
+      "content_hash": "b8b7358875b760785a8d2fe759c578f6587271016352e662f7a55c0d2e27c68c",
+      "doc_link_id": "DLID-t8jcg5jkb5mj",
+      "heading": "追加 feature の計画書",
+      "position": 37,
+      "section_id": "DLID-ec9yzsk5466p"
+    },
+    {
       "content_hash": "b8cdef80d0647a7f5f2497c2d066916b2713d254684f8fbba1bd737a8739acfd",
       "doc_link_id": "DLID-cyrk9xr8vcap",
       "heading": "差分開発型が時間軸を持つ理由",
@@ -6460,13 +6474,6 @@
       "section_id": "DLID-2326hh69ht5r"
     },
     {
-      "content_hash": "bbc61d915cd9ddb2b934612005236b7f8e17ed6fcf35f018eadebc4e15c54b12",
-      "doc_link_id": "DLID-c13gr4qbk4vm",
-      "heading": "要件定義書 デフォルトフォーマット",
-      "position": 0,
-      "section_id": "DLID-xce107ay8m4n"
-    },
-    {
       "content_hash": "bbd1b32f36d9f72fcfacdf29c774d53dc42aac0ca04cf0ed1b5d39177514e992",
       "doc_link_id": "DLID-25mzdyrk3jdx",
       "heading": "ナビゲーション",
@@ -6474,18 +6481,18 @@
       "section_id": "DLID-n70cgk2g8062"
     },
     {
+      "content_hash": "bc044a7f3112733dad685d65f6da012250fb102f0b2a27f4fb0c80bcc8731a78",
+      "doc_link_id": "DLID-cyrk9xr8vcap",
+      "heading": "6. frontmatter 定義",
+      "position": 24,
+      "section_id": "DLID-5afnnzgbm4dn"
+    },
+    {
       "content_hash": "bc2f005a52e82f8fc8a7fb00335b389a3e66bb54fd2b79f3f6e611d1a7079714",
       "doc_link_id": "DLID-t8jcg5jkb5mj",
       "heading": "典型的な暗黙依存パターン",
       "position": 24,
       "section_id": "DLID-x6vcftsykrx7"
-    },
-    {
-      "content_hash": "bd033a14a04165b68ba9472f73dd59dc038da8092ae933fbdc71a109e6ca986a",
-      "doc_link_id": "DLID-4wshmhbcgynm",
-      "heading": "3. 種別ごとに上乗せする文書",
-      "position": 6,
-      "section_id": "DLID-y7ny461sst3j"
     },
     {
       "content_hash": "bd1eba53da15fae41fc8b299f0bd88e12a73f009b8f9a5a244880a070157d24e",
@@ -6572,6 +6579,13 @@
       "section_id": "DLID-c9w270mp2fc7"
     },
     {
+      "content_hash": "c08f04837a921aa52c8dc3d4ff2e5c0abc8ffc8b9f2dd5f8c61240d612fc8dd8",
+      "doc_link_id": "DLID-wm7t1emetwbx",
+      "heading": "generic レビュー基準",
+      "position": 0,
+      "section_id": "DLID-1d22mabn3k7z"
+    },
+    {
       "content_hash": "c0cef25d2bdc3b10672af94b4d322f08a56a2c75c0c0c9704ff377273084b5cb",
       "doc_link_id": "DLID-dcec6pr177c9",
       "heading": "2.4 重大度カタログ（用語）",
@@ -6591,13 +6605,6 @@
       "heading": "1.1 Clarity（明瞭性）",
       "position": 2,
       "section_id": "DLID-wrnp0p5nh4zd"
-    },
-    {
-      "content_hash": "c24efc2a0fdcd9209b0eb4ad48b3466df98d38c0c056d25f53ced112f11b3587",
-      "doc_link_id": "DLID-spgw9f5y6thy",
-      "heading": "`recommendation: create_issue` の 3 条件",
-      "position": 4,
-      "section_id": "DLID-bekxrdnrhpqz"
     },
     {
       "content_hash": "c258e9bfc711287d012dd012566a7f5c9650194104d73e138b826c55ef8f786f",
@@ -6628,6 +6635,13 @@
       "section_id": "DLID-ndckerr4v995"
     },
     {
+      "content_hash": "c4622e4cda761ff05cda12c5c964c2b49e50b72fbdda5d7c58ae4165b0713b85",
+      "doc_link_id": "DLID-f9ny9e932trv",
+      "heading": "10.2 除外理由の明示",
+      "position": 17,
+      "section_id": "DLID-mq15p9q5d071"
+    },
+    {
       "content_hash": "c52cd343aac056e8e712aa8990dd4426f7bc367a69658a12f1376ce7910d6ba0",
       "doc_link_id": "DLID-rx0jy7wbtg59",
       "heading": "5.3 HIG / Nielsen / Gestalt チェック",
@@ -6654,6 +6668,13 @@
       "heading": "2.1 エラーではないもの: 判定できるもの",
       "position": 3,
       "section_id": "DLID-1evp4g4x9qr1"
+    },
+    {
+      "content_hash": "c68965ea50020650b0f935de2d14b79ada3e2c78b09eaaa65966ea123fd19776",
+      "doc_link_id": "DLID-061pwjejh6yc",
+      "heading": "設計書 作成原則",
+      "position": 0,
+      "section_id": "DLID-mvjghckvewxj"
     },
     {
       "content_hash": "c6cfde025f9def1ac4f3c39712e8e7648ea6959315dc247f3efa819f70051872",
@@ -6738,13 +6759,6 @@
       "heading": "2. エラーとは何か",
       "position": 2,
       "section_id": "DLID-2sqfsh3m2b0r"
-    },
-    {
-      "content_hash": "ca320c3ecd2de420a9db38f51002b5f10c234c1e2ef598be3a063387f4b3c381",
-      "doc_link_id": "DLID-e9tn4760zpw5",
-      "heading": "3. 判定ルール",
-      "position": 3,
-      "section_id": "DLID-9vhfq2kspkkw"
     },
     {
       "content_hash": "ca723178cfba2a63506df1edeb44e5205c35af8c5b9ac6d7aab6ce153b2ed3d5",
@@ -6838,13 +6852,6 @@
       "section_id": "DLID-f90s4ys839cy"
     },
     {
-      "content_hash": "cd7db8dcad2863abe8f7ba69359a72d4bf13e9bf31c9d13ca184b2a62d2398b5",
-      "doc_link_id": "DLID-4zxqtf2m3x6t",
-      "heading": "`recommendation: create_issue` の 3 条件",
-      "position": 4,
-      "section_id": "DLID-psxtsf0zwksq"
-    },
-    {
       "content_hash": "cda5f5fe6ceb655c7dbf0e34f820e2a979b430ef663a9618ffd146c420f0e6c8",
       "doc_link_id": "DLID-s1dhhaprgf1r",
       "heading": "2. 適用対象の限定",
@@ -6857,13 +6864,6 @@
       "heading": "3.3 機能抽出チェックリスト",
       "position": 20,
       "section_id": "DLID-mh9j0pm2330q"
-    },
-    {
-      "content_hash": "ce0e642544c1722ed2cff3634eb9bc264594c8167522c5b8f3dd005ee3a4ce51",
-      "doc_link_id": "DLID-061pwjejh6yc",
-      "heading": "追加 feature 用 frontmatter",
-      "position": 26,
-      "section_id": "DLID-tg0r1w833qbz"
     },
     {
       "content_hash": "ce2e85003e6efd92f48d9da4837c2f05dc89f3fbcff12a9ddf6550591f381ef4",
@@ -6936,25 +6936,11 @@
       "section_id": "DLID-v37p341eczq8"
     },
     {
-      "content_hash": "d17f3854a1d800709c9a68a8a9480e644d20e8ed2a8faff0022d7a7b1b43c769",
-      "doc_link_id": "DLID-f9ny9e932trv",
-      "heading": "要件定義書・設計書で優先すること",
-      "position": 0,
-      "section_id": "DLID-03hk8vasbrh7"
-    },
-    {
       "content_hash": "d1a1bbeeecca632603cfa25aa60c394d15e5f94fa8270b8f72420ec002aad9ac",
       "doc_link_id": "DLID-c59znr7b8f56",
       "heading": "4.3 表",
       "position": 13,
       "section_id": "DLID-nrh9a0gy26m4"
-    },
-    {
-      "content_hash": "d1c350d781df26e272238b74dc0f7a9ff39a5f50fe896ea05ffc76cf1df9cc0b",
-      "doc_link_id": "DLID-0zyw4hj937y9",
-      "heading": "3. 判定ルール",
-      "position": 3,
-      "section_id": "DLID-e7ps4egzqzbe"
     },
     {
       "content_hash": "d27c2a31d68661f4c8fa7e868531962fb3b5043a65b3ae12a0ed9a87cc0413a9",
@@ -6999,6 +6985,13 @@
       "section_id": "DLID-8qpvkrr0yk15"
     },
     {
+      "content_hash": "d39872b7c1f1c379f41213da9146c2696b5717167306d2c7369b508be3a7ac26",
+      "doc_link_id": "DLID-t8jcg5jkb5mj",
+      "heading": "重大度カタログ",
+      "position": 28,
+      "section_id": "DLID-mpf05ws34t7a"
+    },
+    {
       "content_hash": "d39f348e3ce0b1d4a8dab9a88ab9c7ac235a1135d0a9b4dc97a0ed2bcc5a2f95",
       "doc_link_id": "DLID-t8jcg5jkb5mj",
       "heading": "トレーサビリティの 2 つの配列",
@@ -7020,13 +7013,6 @@
       "section_id": "DLID-vj0jcfec1668"
     },
     {
-      "content_hash": "d415b04d5d5ad9f1f739123218580b4501f191dd03a989f79f3ae38a0e571a59",
-      "doc_link_id": "DLID-m77gjek2tw2b",
-      "heading": "ADR 利用規範",
-      "position": 0,
-      "section_id": "DLID-gdb2e7ddxswr"
-    },
-    {
       "content_hash": "d42d822093f9ff1a3737507915055702961ddb7817c041e67409cdac943a2078",
       "doc_link_id": "DLID-vjef3sn14bg0",
       "heading": "要件定義書作成ワークフロー（既存アプリ解析版）",
@@ -7039,6 +7025,13 @@
       "heading": "モジュール表",
       "position": 18,
       "section_id": "DLID-rvg40swxrz7w"
+    },
+    {
+      "content_hash": "d44c9c8ff975eed07d921db09852ecb0dec7aece24c49ac08d6de97ccd7fa6c4",
+      "doc_link_id": "DLID-wm7t1emetwbx",
+      "heading": "3. 判定ルール",
+      "position": 3,
+      "section_id": "DLID-ygkp2zrfehc0"
     },
     {
       "content_hash": "d46e3636e63ee7c628ef42eaec12540f60ea253506319023112385c8b011460c",
@@ -7060,13 +7053,6 @@
       "heading": "3.2 いまの論点",
       "position": 5,
       "section_id": "DLID-2gpt4ccz6gg6"
-    },
-    {
-      "content_hash": "d4c1407cb577f28038d59f5b7e2ef67b146c8b83de69cbe8cb036ff0ac8a8296",
-      "doc_link_id": "DLID-061pwjejh6yc",
-      "heading": "設計書 作成原則",
-      "position": 0,
-      "section_id": "DLID-mvjghckvewxj"
     },
     {
       "content_hash": "d52c859b46b36ecec6f5581508b2cbbb3632dbefe84e0336a78c8a6d3dc21c38",
@@ -7104,13 +7090,6 @@
       "section_id": "DLID-hxhk033fzgrc"
     },
     {
-      "content_hash": "d6ab8bc09d0b96ae1326e6923dfce4a4a8f3475825291023468a14e62bef436b",
-      "doc_link_id": "DLID-061pwjejh6yc",
-      "heading": "重大度カタログ",
-      "position": 21,
-      "section_id": "DLID-9khqhrkz2vrt"
-    },
-    {
       "content_hash": "d6b69a217d71241d18f78aa6560272dadb68eeb8e73080d488d2ad74a93ff476",
       "doc_link_id": "DLID-40n3c780ae20",
       "heading": "バージョンマイグレーション実装仕様",
@@ -7132,6 +7111,20 @@
       "section_id": "DLID-ma4kxhc0esn4"
     },
     {
+      "content_hash": "d720a6b53c1e73549eb9800e970d39d7b11942c6b703b97e2ab61d3bdf22d617",
+      "doc_link_id": "DLID-f9ny9e932trv",
+      "heading": "要件定義書・設計書で優先すること",
+      "position": 0,
+      "section_id": "DLID-03hk8vasbrh7"
+    },
+    {
+      "content_hash": "d79211b7d712e87b7a0d32c0fcb0e1ca17f7e4ef51b284e9040336a786f4b0b9",
+      "doc_link_id": "DLID-dcec6pr177c9",
+      "heading": "レビュー優先度仕様",
+      "position": 0,
+      "section_id": "DLID-93gfsh8hwgxw"
+    },
+    {
       "content_hash": "d7ae84fc60776e9f5a342031afcd13c31dd0b957970e64535dac4a4c28d00f46",
       "doc_link_id": "DLID-25mzdyrk3jdx",
       "heading": "Reachability（片手操作考慮）",
@@ -7144,6 +7137,13 @@
       "heading": "9. グレーゾーン許容範囲",
       "position": 14,
       "section_id": "DLID-c6xnwdy1pzk8"
+    },
+    {
+      "content_hash": "d8f82df94c717f312a85ab12f8a912958736f15416d0a58f4ff00bc8c5c62245",
+      "doc_link_id": "DLID-spgw9f5y6thy",
+      "heading": "3. 判定ルール",
+      "position": 3,
+      "section_id": "DLID-xye42s3bmpb8"
     },
     {
       "content_hash": "d8f999cb4fc534e3fc917aa158f797546d885dbcffcf8bd69aa5bf2fecf8a6eb",
@@ -7165,13 +7165,6 @@
       "heading": "コントラスト比 — 視認性の閾値",
       "position": 7,
       "section_id": "DLID-67cg5qn63b26"
-    },
-    {
-      "content_hash": "d9862630d73876770301c0c005f048d6deda227b967c986b498484a17e19d46f",
-      "doc_link_id": "DLID-t8jcg5jkb5mj",
-      "heading": "追加 feature の計画書",
-      "position": 37,
-      "section_id": "DLID-ec9yzsk5466p"
     },
     {
       "content_hash": "d9dd057bbca1b04f342b4bd2f4368d7b1ab7ee4154070b553100159ebf413c62",
@@ -7244,6 +7237,13 @@
       "section_id": "DLID-sj5h69q7936w"
     },
     {
+      "content_hash": "dc8240613ac7652af55ab4fadbe52f73bf1cf7d76dae4e5c50306dc4d7395e41",
+      "doc_link_id": "DLID-cyrk9xr8vcap",
+      "heading": "追加開発ワークフロー仕様",
+      "position": 0,
+      "section_id": "DLID-gaykhs6rgh9b"
+    },
+    {
       "content_hash": "dcb21c9423b8718997f3654f773364a6e04fd4e9fda768b412384dd1ad45aea7",
       "doc_link_id": "DLID-wbwkxysswr60",
       "heading": "6.2 類似の法則（Similarity）",
@@ -7272,11 +7272,25 @@
       "section_id": "DLID-syzf2fybw615"
     },
     {
-      "content_hash": "dd3b485d408ef83349bfb68f7195dad50b9bfa61c32359a8f5077441ba4bf2e1",
-      "doc_link_id": "DLID-wm7t1emetwbx",
-      "heading": "`recommendation: create_issue` の 3 条件",
-      "position": 4,
-      "section_id": "DLID-f92ap1mvdegp"
+      "content_hash": "dd41a0257e3dca98eb7c289b94a809338408ffd996792db4ba1058cdb4e3c230",
+      "doc_link_id": "DLID-z571pg6rda7f",
+      "heading": "本体フォーマット",
+      "position": 3,
+      "section_id": "DLID-1dx3mwg7gq3g"
+    },
+    {
+      "content_hash": "dd51c573e0588d5c91c6c96ced07751c1307098d54ba3f91ea9fdabdadaeb5f1",
+      "doc_link_id": "DLID-540ak6kxrsxp",
+      "heading": "実装戦略書 作成原則",
+      "position": 0,
+      "section_id": "DLID-fwyy5a0yrjzb"
+    },
+    {
+      "content_hash": "dd75d06c51b585b656ecc9788a994d05a987e5cdeb1ef67b15aef62e749f3456",
+      "doc_link_id": "DLID-h9h90g9wcy8f",
+      "heading": "6. トレーサビリティ規範 (軽量版)",
+      "position": 19,
+      "section_id": "DLID-erf6ew4vws5y"
     },
     {
       "content_hash": "dd8351734e407fe58e5652d6e5e9263f11a4172257135acad842442aa2a2e185",
@@ -7291,6 +7305,13 @@
       "heading": "アクセシビリティ",
       "position": 39,
       "section_id": "DLID-gvvbjp53xgdw"
+    },
+    {
+      "content_hash": "debeffd8f244aefcb7f2d36512b1945b1d53e781cee80b237c1ccad3f3676d2c",
+      "doc_link_id": "DLID-ns59za8fens1",
+      "heading": "テンプレート",
+      "position": 5,
+      "section_id": "DLID-xc0qvbhjn1xv"
     },
     {
       "content_hash": "df248b5266dd7eed40444f1100498e09450e244e55b2579983a5625ce8afe631",
@@ -7326,13 +7347,6 @@
       "heading": "責務分割・凝集度規範 (Appendix A.8 由来)",
       "position": 15,
       "section_id": "DLID-1srwnyqds2zg"
-    },
-    {
-      "content_hash": "e0ee6822dcf8fa05f6c696b09c85f230dcf2fac41846b809670cb7cded219551",
-      "doc_link_id": "DLID-8y2jh2y06761",
-      "heading": "要件定義書 作成原則",
-      "position": 0,
-      "section_id": "DLID-ayakhapp41gd"
     },
     {
       "content_hash": "e10be1e2529df40af5e4f32058ef597b2353aeb0d9f3e3c0150b9379c88a9197",
@@ -7384,11 +7398,11 @@
       "section_id": "DLID-mwzgw5p5w4jf"
     },
     {
-      "content_hash": "e2f0ff57d439ec06c9734fe3e15f2a44eb093bf9a481010bba6a5b54aad0ef70",
-      "doc_link_id": "DLID-4zxqtf2m3x6t",
-      "heading": "requirement レビュー基準",
-      "position": 0,
-      "section_id": "DLID-xc41w976xdae"
+      "content_hash": "e2c9c582cc615875ca174be30caca392220d254f883f5bba67b34d87a72d9aa0",
+      "doc_link_id": "DLID-jtc4qnjwbdxf",
+      "heading": "3. 他のツールのキーとの衝突回避",
+      "position": 10,
+      "section_id": "DLID-bj3cgenw0m2f"
     },
     {
       "content_hash": "e2fc1d86e4880319c37011286a7fa7bc8d3fa5e0245fbb7e7296f4ff60308879",
@@ -7410,13 +7424,6 @@
       "heading": "マイグレーション関数の規約",
       "position": 3,
       "section_id": "DLID-qwhjxfedqz47"
-    },
-    {
-      "content_hash": "e3a5f237f5d2d501ad4cfc4d603633599e6346a629aa393d12ffa03d3158f9e1",
-      "doc_link_id": "DLID-4wshmhbcgynm",
-      "heading": "レビュー対象の種別と読む文書",
-      "position": 0,
-      "section_id": "DLID-a3nc5ac2jq91"
     },
     {
       "content_hash": "e3b575c851e81221f82b202a609d7264eca776323dc236a614e70159884e4cfa",
@@ -7461,13 +7468,6 @@
       "section_id": "DLID-prjjwpcgwwfx"
     },
     {
-      "content_hash": "e552f5ed6f9d25141f5cfe6b6c83dc9529b317a20aa3c8716340dce0d3effbfc",
-      "doc_link_id": "DLID-wm7t1emetwbx",
-      "heading": "generic レビュー基準",
-      "position": 0,
-      "section_id": "DLID-1d22mabn3k7z"
-    },
-    {
       "content_hash": "e5546184e92a19c7c06776c90fff3c5ece6555577fdc823d382fd7b845824578",
       "doc_link_id": "DLID-wkh7nt1wrds7",
       "heading": "AI 自動追記禁止方針 [MANDATORY]",
@@ -7494,13 +7494,6 @@
       "heading": "3.2 P3 の対象外",
       "position": 12,
       "section_id": "DLID-62ay4x1bapwe"
-    },
-    {
-      "content_hash": "e622bdc73d6aaf0684de0fa5128a0a63922a9b1203dbd1162fbc7af9feeed5f9",
-      "doc_link_id": "DLID-c13gr4qbk4vm",
-      "heading": "重大度カタログ",
-      "position": 5,
-      "section_id": "DLID-6ygh93jm4py6"
     },
     {
       "content_hash": "e62e481d10bdc5608c3b270ccaf43ca853799d80f00fe06e843ab90b6635ffd2",
@@ -7536,6 +7529,13 @@
       "heading": "フィーチャー名が不要な場合",
       "position": 5,
       "section_id": "DLID-wmgtzjnwjb82"
+    },
+    {
+      "content_hash": "e729f6f7837e755cea66beba53679a0723e4c694988188f6498659a25af9390c",
+      "doc_link_id": "DLID-4wshmhbcgynm",
+      "heading": "レビュー対象の種別と読む文書",
+      "position": 0,
+      "section_id": "DLID-a3nc5ac2jq91"
     },
     {
       "content_hash": "e7388ed926be73acbe1bbcf86f47d8b86e5990d30442dac646c05b89a1705e2b",
@@ -7622,25 +7622,11 @@
       "section_id": "DLID-znjr49596qtz"
     },
     {
-      "content_hash": "ebc3280e1092374991c0b8ff1232b0b457beaa869eb96cdb137b2f87993edb6e",
-      "doc_link_id": "DLID-spgw9f5y6thy",
-      "heading": "code レビュー基準",
-      "position": 0,
-      "section_id": "DLID-txgrjrgwkxrs"
-    },
-    {
       "content_hash": "ec1885bab7ac33239402392c53906e2b373a5c28e35ed00ea0988e5d78e44773",
       "doc_link_id": "DLID-c59znr7b8f56",
       "heading": "4. 構造化要素",
       "position": 10,
       "section_id": "DLID-ssctmdw5vez6"
-    },
-    {
-      "content_hash": "ec3b278ed82f0276ceef73fd508c4bafe8bda08aa0173221d664a3c234d78650",
-      "doc_link_id": "DLID-e9tn4760zpw5",
-      "heading": "`recommendation: create_issue` の 3 条件",
-      "position": 4,
-      "section_id": "DLID-g55zarnetzfj"
     },
     {
       "content_hash": "ec65baa21bae851671c217dca6fbfb8f8a6454716603e9570b155abe79438505",
@@ -7678,13 +7664,6 @@
       "section_id": "DLID-0g84f9zw6dkw"
     },
     {
-      "content_hash": "ee404f7c3a469317bcb6631d1f9b0f426ba3e70fd2eecbfb63d02eade991e80a",
-      "doc_link_id": "DLID-dcec6pr177c9",
-      "heading": "5.4 廃止セクション",
-      "position": 24,
-      "section_id": "DLID-91qfqn0je7dj"
-    },
-    {
       "content_hash": "ee7b5a4c29ccdf1ba73bd60af7cdf4f2924f99b350d88aba0798c04c6d9591ea",
       "doc_link_id": "DLID-vjef3sn14bg0",
       "heading": "実行フロー概要",
@@ -7699,6 +7678,13 @@
       "section_id": "DLID-0hfjk3sjsbt8"
     },
     {
+      "content_hash": "ef7ad51f1cb4c534531c232dc574801ce2d7a29d6f40ec73fb92de27a79ea8ae",
+      "doc_link_id": "DLID-8y2jh2y06761",
+      "heading": "要件定義書の定義",
+      "position": 1,
+      "section_id": "DLID-msg9bk6n4fcy"
+    },
+    {
       "content_hash": "f038aa2be11761032f904627c2e21fe9637f7f1d9c15a790a1164552263cfb34",
       "doc_link_id": "DLID-yw5v4138tvb8",
       "heading": "マルチセレクション",
@@ -7711,6 +7697,13 @@
       "heading": "概要",
       "position": 1,
       "section_id": "DLID-r1d1j7a74adn"
+    },
+    {
+      "content_hash": "f0f6f0310ffd6d26a446b2e6874a0badbc19733702a4ee11481c32eda845e9bd",
+      "doc_link_id": "DLID-cbr02jpbxfcs",
+      "heading": "文書検索の索引へのパス受け渡し",
+      "position": 22,
+      "section_id": "DLID-a2jsgd6g86yg"
     },
     {
       "content_hash": "f12c7bb3be5fee589d7fbf6cee949526f41d79fca6fc9321c0be7005ca17df30",
@@ -7734,6 +7727,13 @@
       "section_id": "DLID-hrmjtg07zdw8"
     },
     {
+      "content_hash": "f259c7a44c6cb8070c6ee58a98ccd40e9e9b9575fde899efa3f5706e8303931b",
+      "doc_link_id": "DLID-c59znr7b8f56",
+      "heading": "9.4 用語集",
+      "position": 25,
+      "section_id": "DLID-k0v2ycby4pbv"
+    },
+    {
       "content_hash": "f2786741cc713d6f2bf18628aac0e0e0d0f9a501228c8decc4f7cafc2660d501",
       "doc_link_id": "DLID-690azhnc61t0",
       "heading": "UI コンポーネント一覧テンプレート",
@@ -7755,18 +7755,18 @@
       "section_id": "DLID-m7gn7hh44spj"
     },
     {
-      "content_hash": "f34c3504dccf6fb62c11685436afcc4767b881e5708108e11117f7ad5351ba7f",
-      "doc_link_id": "DLID-31c3mp46a5p2",
-      "heading": "`recommendation: create_issue` の 3 条件",
-      "position": 4,
-      "section_id": "DLID-8ey9p7zpj0m8"
-    },
-    {
       "content_hash": "f3ca7cd8f25ff185a633b20ac6da6fb379999e374117885e5cf3c87923605e93",
       "doc_link_id": "DLID-4vzgex2efq8k",
       "heading": "色彩調和 — 色の秩序",
       "position": 10,
       "section_id": "DLID-1pwxbv78nng2"
+    },
+    {
+      "content_hash": "f3da231fb23ef2c2051f790522ddce7c60bf061780f32bcf60ce23bc9aa3b09c",
+      "doc_link_id": "DLID-cbr02jpbxfcs",
+      "heading": "Consumer Guide",
+      "position": 19,
+      "section_id": "DLID-b5t2hmm6gsgs"
     },
     {
       "content_hash": "f3f76418f44d24fe8356223406a9179a2021279ec96dbf0ca616ec50ac92aaf0",
@@ -7825,25 +7825,11 @@
       "section_id": "DLID-bb83ht7ta7zy"
     },
     {
-      "content_hash": "f61f4efb70321e2ae0d4b348a2a5f4336387457950e61d7e08dc991f0ff8dc7c",
-      "doc_link_id": "DLID-t8jcg5jkb5mj",
-      "heading": "計画書 作成原則",
-      "position": 0,
-      "section_id": "DLID-5fpx9rxg6208"
-    },
-    {
       "content_hash": "f699c9b6370a7fccc261a9036b07883386d0fac7a57163ab2b5cb879fafdacea",
       "doc_link_id": "DLID-cbr02jpbxfcs",
       "heading": "Python スクリプトから（同一プラグイン内）",
       "position": 21,
       "section_id": "DLID-kdg37p8d3cxj"
-    },
-    {
-      "content_hash": "f7270189c45c980a59cd34907ba93b3d4f11c1a0dd07a4542e3604ab478cb41b",
-      "doc_link_id": "DLID-5ykqs19cdbks",
-      "heading": "エラーの定義・分類・原因",
-      "position": 0,
-      "section_id": "DLID-xgwskmwyrwc8"
     },
     {
       "content_hash": "f7dfa83c321632948024679c8536055f72d1db135508e6bc018d36d14ce3c46f",
@@ -7874,13 +7860,6 @@
       "section_id": "DLID-xc43eza03rkn"
     },
     {
-      "content_hash": "f8aac3229a4213b3fdf658a450c8a5e0ab7db5cdf3da43b58428f95a5e6c0b1a",
-      "doc_link_id": "DLID-31c3mp46a5p2",
-      "heading": "plan レビュー基準",
-      "position": 0,
-      "section_id": "DLID-yk277h9z9t3b"
-    },
-    {
       "content_hash": "f8ce4ef532f06170490754424820193371bd2d8bca9bf5e46c0a4f9673fe27b5",
       "doc_link_id": "DLID-s1dhhaprgf1r",
       "heading": "4. 3点チェック",
@@ -7909,6 +7888,13 @@
       "section_id": "DLID-6cqc2nwvsedd"
     },
     {
+      "content_hash": "fa61d0714f9e28772446e72ef37f6478cc476525564ba0ef231d2e85fde1a5f8",
+      "doc_link_id": "DLID-c59znr7b8f56",
+      "heading": "9. 用語",
+      "position": 21,
+      "section_id": "DLID-dgkks0jxv46c"
+    },
+    {
       "content_hash": "fad18b74cd57fa99e56fbe0253a5c99bec2286a63c84c85b68931f3362a3efc8",
       "doc_link_id": "DLID-rx0jy7wbtg59",
       "heading": "4.4 UX ノートの付与",
@@ -7921,6 +7907,13 @@
       "heading": "2. ナビゲーションパターン",
       "position": 5,
       "section_id": "DLID-91s8zjymwcbr"
+    },
+    {
+      "content_hash": "fb97e1027bec8fbaf743d44a6371e10913da7fe234a88dedd6f145b7d148be77",
+      "doc_link_id": "DLID-c59znr7b8f56",
+      "heading": "文書スタイル指針",
+      "position": 0,
+      "section_id": "DLID-k579tbm0ny8c"
     },
     {
       "content_hash": "fbd165b420e4086d42a811597df78f5bbc7e00d2ea8e8e57f3506411fd0f5c9e",
@@ -7949,6 +7942,13 @@
       "heading": "キーボード操作",
       "position": 4,
       "section_id": "DLID-yj4861bm3er9"
+    },
+    {
+      "content_hash": "fef33ab551c7d44a05278e5c8a641b47959cabb9aa638eff00aef87da6111d25",
+      "doc_link_id": "DLID-m77gjek2tw2b",
+      "heading": "重大度カタログ",
+      "position": 4,
+      "section_id": "DLID-0551wvn8eny7"
     }
   ],
   "target_spec": {
@@ -7962,5 +7962,5 @@
     "paths": []
   },
   "toc_key": "forge-rules",
-  "version": 10
+  "version": 11
 }

@@ -1,40 +1,39 @@
 {
-  "content_hash": "0e741f0a00db1e072a8507c0cdfaf1921fe017289620a6bd982697b78e79dc24",
+  "content_hash": "90cd46356caa8e60e529e7e0a167cc764d9c44cec6fc131f05347ef00f4f2259",
   "doc_link_id": "DLID-j50s0xwkwx00",
   "keywords": [
     "reviewer",
     "review_request.json",
     "review_result.json",
     "publish_request",
-    "append_result",
-    "seal_result",
+    "finding_id",
     "retains_context",
     "target type",
-    "finding_id",
-    "wrapper script"
+    "wrapper script",
+    "seal_result",
+    "exit value"
   ],
   "path": "docs/specs/review/design/DES-084_reviewer_design.md",
-  "purpose": "Design for the reviewer and the handoff mechanism: request publishing, reviewer run, finding output, finding_id numbering, exit values, and the scripts and JSON that connect the review body and reviewer.",
+  "purpose": "Design for the review exchange mechanism from review start to the reviewer interval: request publishing, JSON results, finding_id numbering, exit values, scripts and wrappers.",
   "summary": [
-    "Sequence from backend selection to the reviewer section, S1-S9",
-    "Class diagram of body, reviewer, scripts, and JSON with dependency direction",
-    "Review body work until starting the reviewer, request assembly, retains_context",
-    "Reviewer definition: how to read targets, target type judgment, criteria documents",
-    "JSON layout: review_request.json, review_result.json, exit values and success judgment",
-    "finding_id numbering done by script as next of the maximum across rounds",
-    "Common script conventions: arguments, stdout, atomic writes, absolute paths",
+    "Sequence from backend resolution to reviewer writing findings (S1-S9)",
+    "Class diagram of main body, reviewer, shared scripts and JSON files",
+    "Main body duties until reviewer launch, request assembly, and retains_context handling",
+    "Reviewer definition: reading targets by key, determining target type, reading criteria documents",
+    "JSON layout: storage, review_request.json, review_result.json, exit values and success judgment",
+    "finding_id numbering by script across all rounds",
     "Script specs: publish_request, append_result, seal_result, resolve_review_path, wrappers",
-    "Modifications to resolve_review_backend and resolve_doc_structure --match-path",
-    "Test design: unit, contract, lint, and integration targets"
+    "Modifications to resolve_review_backend.py and resolve_doc_structure.py --match-path",
+    "Test design: unit, contract, lint and integration cases"
   ],
   "tasks": [
-    "Implementing or modifying the reviewer agent definition",
-    "Implementing review exchange scripts",
-    "Editing the review SKILL start-up flow",
-    "Modifying resolve_doc_structure or resolve_review_backend",
-    "Writing tests for review scripts and wrappers",
-    "Reviewing design documents of the review feature",
-    "Adding a new review backend"
+    "Implementing publish_request, append_result, seal_result and resolve_review_path",
+    "Implementing reviewer.md and reviewer wrapper scripts",
+    "Implementing the review SKILL start-up steps",
+    "Modifying resolve_doc_structure.py or resolve_review_backend.py",
+    "Writing criteria/review_target_types.md",
+    "Reviewing or revising the reviewer design",
+    "Designing tests and lint for reviewer definitions"
   ],
   "title": "DES-084 reviewer と受け渡し機構 設計書"
 }

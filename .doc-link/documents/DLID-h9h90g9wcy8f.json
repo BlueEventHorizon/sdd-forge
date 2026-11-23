@@ -1,37 +1,33 @@
 {
-  "content_hash": "4e2a4cd68a8aacfe921d3de2d0b62f8b81d0dadac669bdd623bcb0ec810f6365",
+  "content_hash": "e0d1a83f7e47d93c77bb7a26107dcb00b310149e00ffc8db4fbcdc7c6555670e",
   "doc_link_id": "DLID-h9h90g9wcy8f",
   "keywords": [
-    "What vs How",
-    "requirements design boundary",
+    "requirements vs design",
+    "What and How boundary",
     "user manual criterion",
     "quantitative goals",
     "severity catalog",
     "gray zone",
     "traceability",
-    "ADR",
-    "diagrams and types"
+    "ADR"
   ],
   "path": "plugins/forge/docs/spec_design_boundary_spec.md",
-  "purpose": "Clarifies the boundary between requirements (What) and design (How) documents and supports deciding where content belongs, with severity catalog, gray-zone tolerances, and traceability norms.",
+  "purpose": "Clarifies the boundary between requirements (What) and design (How) documents and supports deciding where content belongs, with severity catalog, gray-zone allowances, and traceability rules.",
   "summary": [
-    "Basic principles contrasting requirements (What) and design (How) documents",
-    "Relationship with ADRs: design states current design, ADR holds rationale",
-    "Decision criteria: already decided with no choice goes to requirements, then user manual test",
-    "Category guides for quantitative goals and feature rationale and value",
-    "Severity catalog for What/How boundary violations and diagram or type gray zones",
-    "Gray-zone tolerances for data model types, diagrams, and quantitative goals",
-    "Lightweight traceability norms for design reviews",
-    "Approval record rule: design adding features absent from requirements needs a linked ADR",
-    "Additive development treats the diff-side requirements as the current spec"
+    "Basic principles contrasting requirements and design documents, and relation to ADRs",
+    "Decision criteria: already-decided first, then whether the user manual would cover it",
+    "Category guides for quantitative goals and feature rationale/value",
+    "Severity catalog for What/How boundary violations",
+    "Gray-zone allowances for data model types, diagrams, and quantitative targets",
+    "Lightweight traceability rules for design review",
+    "Approval record via ADR for features not in requirements"
   ],
   "tasks": [
-    "Deciding whether content belongs in requirements or design",
-    "Writing a requirements document",
-    "Writing a design document",
-    "Reviewing requirements or design for boundary violations",
-    "Writing quantitative targets such as performance goals",
-    "Checking design traceability to requirement IDs"
+    "Deciding whether content goes in requirements or design",
+    "Reviewing requirements documents",
+    "Reviewing design documents",
+    "Writing quantitative goals",
+    "Checking design-to-requirement traceability"
   ],
   "title": "要件定義書と設計書の境界ガイド"
 }

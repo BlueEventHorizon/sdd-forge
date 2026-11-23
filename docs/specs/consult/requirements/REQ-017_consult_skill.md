@@ -308,4 +308,4 @@ consult brief を作れないとき（原文へ到達できない）、および
 [three-talk]: https://wlv.openrepository.com/items/a439e902-fdde-4b52-adab-de3b3bbcc267
 [steyvers]: https://arxiv.org/abs/2401.13835
 [bansal]: https://arxiv.org/abs/2006.14779
-[spec-priorities-spec]: ../../../../plugins/forge/docs/spec_priorities_spec.md "f8233c87c564 DLID-f9ny9e932trv"
+[spec-priorities-spec]: ../../../../plugins/forge/docs/spec_priorities_spec.md "b68b930cec1d DLID-f9ny9e932trv"

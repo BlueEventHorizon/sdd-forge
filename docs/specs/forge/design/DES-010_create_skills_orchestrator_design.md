@@ -251,5 +251,5 @@ create-* スキルは**セッションディレクトリを使用しない**。�
 - フェーズ間の中間成果物を複数 worker で共有する必要がない（収集結果は main AI コンテキストに保持し、成果物は出力先ディレクトリへ直接書き出す）
 - 直線的ワークフローであり、中断時は最初からやり直す方が効率的（再開すべき中間状態を持たない）
 
-[des-018]: DES-018_create_design_workflow_design.md "8999c4488a91 DLID-zfh5q9h29c8y"
-[des-017]: DES-017_create_requirements_workflow_design.md "7052a1614b27 DLID-vzcznbpypja0"
+[des-018]: DES-018_create_design_workflow_design.md "cac86d74fa8a DLID-zfh5q9h29c8y"
+[des-017]: DES-017_create_requirements_workflow_design.md "53ad6002f211 DLID-vzcznbpypja0"

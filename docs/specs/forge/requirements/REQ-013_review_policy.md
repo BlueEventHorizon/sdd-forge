@@ -393,4 +393,4 @@ criteria から判断を除去するための前提として、principles 側を
 | TBD-1303 | uxui 種別の委譲先ルール文書の整備（HIG・デザインシステム規約等）。FNC-1311 の拡充対象 4 文書に uxui 系は含まれないため別途整備が必要 |
 | TBD-1304 | ルール未整備プロジェクトでの動作確認手段（forge 内蔵ルールのみで一定の検出が成立するかを検証する方法）                               |
 
-[req-029]: ../../review/requirements/REQ-029_review_exchange.md "4e7fe6918eec DLID-5vrs9fnet7de"
+[req-029]: ../../review/requirements/REQ-029_review_exchange.md "d635cdb8307b DLID-5vrs9fnet7de"

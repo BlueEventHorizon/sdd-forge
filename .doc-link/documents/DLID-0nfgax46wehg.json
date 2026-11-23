@@ -1,5 +1,5 @@
 {
-  "content_hash": "59d34cc27a7e5c6dffe3e6d22b33dc10d3c1acec6226084802aa4e4a07c6d942",
+  "content_hash": "4976d725a8a511e8d17628cd86d0181d908a4dca201ab3eaba1ebf5808d1ce0a",
   "doc_link_id": "DLID-0nfgax46wehg",
   "keywords": [
     "doc-db",
@@ -7,31 +7,33 @@
     "backend selection",
     "query-db",
     "update-db",
-    "DLID",
+    "availability judgment",
     "index freshness",
-    "fallback",
-    "series",
-    "unprepared index"
+    "unprepared index",
+    "DLID",
+    "fallback"
   ],
   "path": "docs/specs/doc-db/requirements/REQ-014_doc_db_backend_selection_spec.md",
-  "purpose": "Defines requirements for how forge query-db and update-db wrappers automatically select between the doc-link and doc-db search backends, handle fallback, unprepared indexes, freshness, and failures.",
+  "purpose": "Requirements for automatic selection between document search backends (doc-link, doc-db) in the query-db and update-db wrappers, including availability, freshness, unprepared index handling and failure rules.",
   "summary": [
-    "Automatic backend selection driven by an ordered list, with availability judgment owned by each backend",
-    "Query wrapper behavior: no index preparation of its own, approval-gated index building via update wrapper, nonexistent paths filtered out",
-    "Update wrapper behavior: DLID writing to documents, doc-link index sync, backend specification without fallback",
-    "Notification requirements for execution path, fallback reasons, DLID writes, freshness, and failures",
-    "Business rules BL-001 to BL-007: default order, freshness, success vs failure, unprepared vs fault, series scoping, backend designation, index population ownership",
+    "Overview and scope of the four query-db-*/update-db-* wrappers and backend selection",
+    "Preconditions defining usable doc-link and the doc-db status identifier requirement",
+    "Usage flow with an ordered backend list and per-backend availability judgment",
+    "Functional requirements FNC-001 to FNC-004: selection, query, update, route notification",
+    "BL-001 selection order, default order and invalid configuration error",
+    "BL-002 index freshness: backend-owned checks and session-change confirmation",
+    "BL-004 unprepared index versus failure, user approval, zero-document handling",
+    "BL-005 to BL-007: series scoping, explicit backend designation, index population ownership",
     "Non-functional requirements: observability, backward compatibility, responsiveness, availability, information protection",
-    "Error case table mapping conditions to actions",
-    "Scope, prerequisites, glossary, and flow diagram for backend selection"
+    "Error case table mapping conditions to behaviors"
   ],
   "tasks": [
-    "Implementing or modifying query-db-rules and query-db-specs wrappers",
-    "Implementing or modifying update-db-rules and update-db-specs wrappers",
-    "Designing doc-link and doc-db backend selection and fallback logic",
-    "Handling unprepared index approval and index rebuilding flows",
-    "Reviewing error handling and failure classification of document search",
-    "Writing tests for backend selection behavior"
+    "Designing or changing backend selection logic of query-db and update-db wrappers",
+    "Implementing query-db-rules and query-db-specs",
+    "Implementing update-db-rules and update-db-specs",
+    "Reviewing backend fallback and failure handling behavior",
+    "Writing tests for wrapper error cases and notifications",
+    "Changing the default backend order or preferred backend setting"
   ],
   "title": "REQ-014 doc-db バックエンド選択 要件定義書"
 }

@@ -1,39 +1,38 @@
 {
-  "content_hash": "3ae4e3bfdd65f2e76915ea719e8c2a1303e068d06a251d90480ffa15d4d6cb7a",
+  "content_hash": "1fb15e199859ddffbd22f99b13017278aa493f8bfbdbb97fa536be4005283f05",
   "doc_link_id": "DLID-45wzpggz1set",
   "keywords": [
     "ADR",
     "architecture decision record",
-    "operating principles",
     "screening criteria",
     "rejected alternatives",
+    "mutable document",
     "severity catalog",
-    "section renumbering",
     "ID numbering",
     "scope box",
-    "mutable document"
+    "decision reversal"
   ],
   "path": "plugins/forge/docs/adr_principles_spec.md",
-  "purpose": "Defines the operating principles for creating and revising ADRs: what to record, how to screen content, mutability, rejection handling, placement and numbering, tolerance zones, and a severity catalog.",
+  "purpose": "Defines norms for creating and revising ADRs: what to record and not record, screening criteria, mutability, handling reversed decisions, placement and numbering, and severity of violations.",
   "summary": [
-    "ADR definition: responsibility, what not to write, exception for approved designs, permanence and revision",
-    "Beneficiary is the AI about to propose alternatives, so rejection reasons must be thorough",
-    "Criteria for what to write: future plausible proposal and not answerable from code, rules or specs",
+    "ADR definition: responsibility, exceptions, lifetime, and revision approach",
+    "Primary beneficiary is an AI about to propose an alternative already considered",
+    "What to write: only when a plausible proposal is likely and its error is not evident elsewhere",
+    "Do not copy specs or rules into ADRs; link to them by reference",
     "Conditions for the optional scope box",
-    "Screening criteria table: reject, revise and record, or insufficient",
-    "ADR is mutable: rewrite sections, never renumber, no change-log section",
-    "Rejected decisions are folded into the same section, with old option moved to alternatives",
-    "Placement per feature, single file per feature, numbering via next-spec-id skill",
-    "Gray zone tolerance table of allowed and disallowed practices",
-    "Severity catalog of violation patterns"
+    "Screening criteria table: reject, fix and record, or insufficient",
+    "Mutable document: rewrite sections, keep numbers, no history sections",
+    "Reversed decisions rewrite the same section, never add a new ADR",
+    "Placement, one file per feature, and numbering via next-spec-id",
+    "Gray-zone tolerance table and severity catalog"
   ],
   "tasks": [
-    "Creating or updating an ADR",
     "Deciding whether content deserves an ADR",
-    "Reviewing an ADR or judging review findings",
-    "Handling a revoked or corrected decision",
-    "Assigning an ADR number and placing the file",
-    "Proposing an alternative design and checking whether it was already considered"
+    "Writing or updating an ADR",
+    "Reviewing an ADR for norm violations",
+    "Handling a reversed or corrected decision",
+    "Numbering and placing a new ADR file",
+    "Judging severity of ADR defects"
   ],
   "title": "ADR（アーキテクチャ決定記録）運用原則"
 }

@@ -18,6 +18,6 @@ doc_link_id: DLID-8y2jh2y06761
 - **存在期間**: 恒久。ただし不変ではない
 - **改訂**: 差分開発によって修正されうる。差分開発の期間中、その範囲の現在の仕様は差分側の要件定義書であり、旧要件定義書の記述は既に置き換わっている。旧側は実装期間中は書き換えず、実装完了後の merge で改訂する（[additive_development_spec.md][additive-development-spec] §2・§3・§4）
 
-[requirement-format]: requirement_format.md "1abf0122bdeb DLID-c13gr4qbk4vm"
-[spec-design-boundary-spec]: spec_design_boundary_spec.md "4e2a4cd68a8a DLID-h9h90g9wcy8f"
-[additive-development-spec]: additive_development_spec.md "307dc53425f0 DLID-cyrk9xr8vcap"
+[requirement-format]: requirement_format.md "c05edc5d1de7 DLID-c13gr4qbk4vm"
+[spec-design-boundary-spec]: spec_design_boundary_spec.md "e0d1a83f7e47 DLID-h9h90g9wcy8f"
+[additive-development-spec]: additive_development_spec.md "3be39e634c1c DLID-cyrk9xr8vcap"

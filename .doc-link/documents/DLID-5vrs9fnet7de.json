@@ -1,39 +1,39 @@
 {
-  "content_hash": "4e7fe6918eec2171c9c2a8c94774657455edcfbbd5a8e91de03a992eb4c8aaa7",
+  "content_hash": "d635cdb8307bd7344382ae884057c4b1a29a3abd468c41a4210f53a0554004ce",
   "doc_link_id": "DLID-5vrs9fnet7de",
   "keywords": [
-    "review mechanism",
     "review_id",
     "round_number",
     "finding_id",
-    "exit value",
-    "disposition",
-    "retains_context",
-    "request JSON",
     "evaluation",
-    "common contract"
+    "disposition",
+    "exit value",
+    "retains_context",
+    "review request",
+    "common contract",
+    "severity"
   ],
   "path": "docs/specs/review/requirements/REQ-029_review_exchange.md",
-  "purpose": "Common contract of the review mechanism: round flow, handoff between body and agents, finding_id numbering, write and exit values, body duties, and data structures, so findings and evaluations arrive intact.",
+  "purpose": "Common contract of the review mechanism: round flow, hand-off by review_id and round_number, finding_id numbering, exit values, the review body duties, and the JSON data structures.",
   "summary": [
-    "Terms recognized by the review body, such as review_id, round_number, finding, evaluation, disposition",
-    "Review flow sequence with reviewer, evaluator and body per round",
-    "Definitions carry script usage and field handling (FNC-314)",
-    "Handoff only by review_id and round_number; scripts build and publish inputs; values pass unaltered (FNC-302 to FNC-305, FNC-317)",
-    "finding_id numbering by script as one sequence shared by reviewer and evaluator (FNC-313)",
-    "Write after decisions are finalized; exit value string expresses success or error (FNC-310, FNC-311, FNC-203)",
-    "Body duties: progress rounds, branch on retains_context, termination conditions, final decision authority (FNC-312, FNC-316, FNC-318)",
-    "flawed_premise is excluded from auto-fix (FNC-204)",
-    "Data models: request, result, finding, evaluation, and absolute path and location notation (DM-301 to DM-305, DM-201)"
+    "Review flow: body drives rounds with reviewer then evaluator until termination, then deletes retained items",
+    "FNC-302 to FNC-305: hand-off by identifiers only, scripts assemble input, values unchanged, request immutable during review",
+    "FNC-317: request carries no target type; the receiving side determines it",
+    "FNC-313: finding_id is numbered by script as one sequence per review shared by reviewer and evaluator",
+    "FNC-310 and FNC-311: write after judgments are fixed; exit value as string with closed error set; abnormal ends detected by missing value",
+    "FNC-203: every finding_id must be referenced by some evaluation, guaranteed at write time",
+    "FNC-312, FNC-316, FNC-318: body duties, retains_context branching, termination conditions, final decision by the body",
+    "FNC-204: flawed_premise is never auto-fixed",
+    "DM-301 to DM-305: request, result, finding, evaluation structures, disposition, severity, confidence, and absolute path and location notation"
   ],
   "tasks": [
-    "Implementing or modifying the review skill body",
-    "Modifying reviewer or evaluator agent exchange scripts",
-    "Designing finding_id numbering",
-    "Defining exit values and error handling for agents",
-    "Changing request or result JSON structures",
-    "Deciding round termination conditions",
-    "Reviewing requirement documents on the review mechanism"
+    "Implementing or changing the review skill body",
+    "Writing reviewer or evaluator agent definitions",
+    "Implementing review exchange scripts for requests and results",
+    "Changing JSON structures of request, finding or evaluation",
+    "Reviewing review mechanism requirements",
+    "Designing termination or round progression of reviews",
+    "Handling agent error or abnormal termination in review"
   ],
   "title": "REQ-029 review 機構の共通契約 要件定義書"
 }

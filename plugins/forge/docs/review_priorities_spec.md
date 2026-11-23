@@ -250,6 +250,6 @@ evaluator は finding が以下の **3 条件をすべて満たす場合のみ**
 - グレーゾーン判定 (`false positive に注意` 形式の警告ブロック)
 - 「保守性」「堅牢性」「アーキテクチャ整合性」等の品質特性をレビュー独自観点として記述する箇所
 
-[document-style-guide]: document_style_guide.md "69dee42932c2 DLID-c59znr7b8f56"
+[document-style-guide]: document_style_guide.md "335c3c0eb320 DLID-c59znr7b8f56"
 [scope-proportionality-spec]: scope_proportionality_spec.md "be634f5152a6 DLID-s1dhhaprgf1r"
-[adr-usage-spec]: adr_usage_spec.md "253f59c3f26d DLID-m77gjek2tw2b"
+[adr-usage-spec]: adr_usage_spec.md "b87fce46708e DLID-m77gjek2tw2b"

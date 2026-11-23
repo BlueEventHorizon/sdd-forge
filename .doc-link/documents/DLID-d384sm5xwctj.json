@@ -1,33 +1,33 @@
 {
-  "content_hash": "4925fe0a5d6eaf27d1783599266bea2ba7dae01c37d0e722c5614b1260b7f009",
+  "content_hash": "c78f488a3ced7040680ebeb4ad8a5bbbf2688f943c7cead7ccea180a52ce9b15",
   "doc_link_id": "DLID-d384sm5xwctj",
   "keywords": [
+    "invocation routes",
     "context: fork",
     "subagent_type",
+    "built-in Agent",
     "custom Agent",
     "Bash subprocess",
-    "Claude Code issues",
     "AskUserQuestion",
     "ScheduleWakeup",
-    "plugin namespace"
+    "provenance",
+    "Claude Code reference"
   ],
   "path": "docs/rules/plugin_claude_code_reference.md",
-  "purpose": "Reference of Claude Code facts and shared vocabulary for building plugins from SKILLs and Agents, including invocation paths, fork bugs, subagent_type values, and launch observations.",
+  "purpose": "Collects facts about Claude Code mechanisms relied on when building plugins from SKILLs and Agents, plus the vocabulary this document set defines, with provenance notes.",
   "summary": [
-    "How to cite sources for Claude Code behavior",
-    "Five invocation paths with short names and their properties table",
-    "Known issues with context: fork and Anthropic responses",
-    "Valid values for subagent_type including built-in and plugin-namespaced Agents",
-    "Observations on Agent launch: background execution and missing AskUserQuestion",
-    "ScheduleWakeup is for /loop dynamic mode only",
-    "Facts carry source lines with date, version, and origin"
+    "How to record sources: survey date, version, official/observed/issue",
+    "Five invocation routes and their short names with context and output behavior",
+    "Known context: fork defects table with upstream issue status",
+    "Valid subagent_type values: built-in Agents and plugin-namespaced custom Agents",
+    "Observations on Agent launching: background-only, no AskUserQuestion, ScheduleWakeup scope"
   ],
   "tasks": [
-    "Choosing an invocation path for a SKILL or Agent",
-    "Deciding whether to use fork-type SKILL",
-    "Specifying subagent_type in an Agent call",
-    "Documenting Claude Code behavior with sources",
-    "Debugging background Agent behavior"
+    "Choosing between SKILL and Agent invocation routes",
+    "Deciding whether to adopt fork-type SKILLs",
+    "Writing subagent_type values in prompts",
+    "Recording provenance for Claude Code behavior facts",
+    "Designing background Agent workflows"
   ],
   "title": "Claude Code リファレンス（SKILL / プラグイン / Agent）"
 }

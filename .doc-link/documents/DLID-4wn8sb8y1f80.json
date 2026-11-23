@@ -1,39 +1,38 @@
 {
-  "content_hash": "3810426fdc1ba38be6c96d7d61bbcba3e23f49876cc3cdbdbe1959b7f90f6c4d",
+  "content_hash": "1fe6b5d5aa31d206017882f91f88c0199edeb83eb421b911f86e1bd367c72985",
   "doc_link_id": "DLID-4wn8sb8y1f80",
   "keywords": [
     "error handling",
     "silent fallback",
     "except Exception",
-    "exception propagation",
-    "external-cause error",
+    "exception catching",
     "internal bug",
+    "external-cause error",
     "pure function",
     "error reporting",
-    "bug hiding",
-    "exception policy"
+    "propagate exceptions",
+    "Python scripts"
   ],
   "path": "docs/specs/common/requirements/COMMON-REQ-002_error_handling_policy.md",
-  "purpose": "Defines the error handling policy that prevents hiding bugs by forbidding silent fallbacks and allowing only external-cause errors to be caught, for early problem detection and easier debugging.",
+  "purpose": "Defines the error handling policy that forbids silent fallbacks hiding internal bugs and permits catching only external-cause errors with specific exception types.",
   "summary": [
-    "Overview: prohibit silent fallback and catch only external-cause errors",
-    "Scope: all Python scripts and SKILL.md in the project, with background commits",
-    "Glossary: external-cause error, internal bug, silent fallback",
-    "FR-01 exception catching principle: no broad except, specific types only, propagate bugs",
-    "FR-02 allowed catches: file I/O, network, type conversion, HTTP server handlers",
-    "FR-03 error reporting: deliver error info to caller in format set by script error output rules",
-    "FR-04 pure functions: exceptions are bugs, no rollback, guarantee via tests",
-    "Correct and forbidden code patterns with examples",
-    "Decision flowchart for handling an exception",
-    "Table of applied locations by version"
+    "Overview and scope: applies to all Python scripts and SKILL.md files",
+    "Terminology: external-cause error, internal bug, silent fallback",
+    "FR-01: catch only external-cause errors; ban bare except and except Exception; propagate internal bugs",
+    "FR-02: allowed catches for file I/O, network errors, type conversion, and HTTP server request handling",
+    "FR-03: caught errors must be reported to the caller; format defined by the script error output rules",
+    "FR-04: pure functions must not use try/except rollback; guarantee behavior with tests",
+    "Design patterns with correct and forbidden Python code examples",
+    "Decision flowchart for handling a raised exception",
+    "Table of versions and places where the policy was already applied"
   ],
   "tasks": [
-    "Writing Python scripts with try/except",
-    "Reviewing code for silent fallback or broad except",
-    "Designing script error reporting",
-    "Writing pure functions such as migrations",
-    "Writing SKILL.md error handling instructions",
-    "Fixing bugs hidden by exception handling"
+    "Writing or modifying Python scripts that handle exceptions",
+    "Reviewing code for silent fallback or broad except clauses",
+    "Writing SKILL.md instructions involving error handling",
+    "Designing error reporting in plugin scripts",
+    "Implementing pure functions such as migrations",
+    "Writing tests for error handling behavior"
   ],
   "title": "COMMON-REQ-002: エラーハンドリングポリシー要件定義書"
 }

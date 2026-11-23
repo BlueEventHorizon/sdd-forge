@@ -120,6 +120,6 @@ grep による代替検索は行わない）。書き込み・コミット・自
 - `lint/lint_index_maintenance_boundary.py` — 索引整備の wrapper が `update-db-*` にだけあることを検査する（lint）。
 - `tests/forge/{query,update}-db-{rules,specs}/` — SKILL 固有 wrapper の透過性を検証する。
 
-[authoring-guide]: ../../../rules/plugin_claude_code_authoring_guide.md "1b4400f836cd DLID-pvwk8en5c2rq"
-[authoring-policy]: ../../../rules/forge_claude_code_authoring_policy.md "c9c071f11416 DLID-33rp07ycsdym"
-[des-057]: ../../doc-db/design/DES-057_doc_db_backend_selection_design.md "918f9c8343c0 DLID-5k6jt9qvf60d"
+[authoring-guide]: ../../../rules/plugin_claude_code_authoring_guide.md "65302c63b0e1 DLID-pvwk8en5c2rq"
+[authoring-policy]: ../../../rules/forge_claude_code_authoring_policy.md "70c36432428c DLID-33rp07ycsdym"
+[des-057]: ../../doc-db/design/DES-057_doc_db_backend_selection_design.md "1eaeab0e978b DLID-5k6jt9qvf60d"

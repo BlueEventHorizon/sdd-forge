@@ -1,38 +1,39 @@
 {
-  "content_hash": "69dee42932c29e93c7a78ba905536f16f98d58f293d59a03c8a735c8ea2ab167",
+  "content_hash": "335c3c0eb3204a74b41569a7cbffc4f72d38b5e16679f251cb9fbca0272e6501",
   "doc_link_id": "DLID-c59znr7b8f56",
   "keywords": [
     "document style guide",
     "MANDATORY tag",
-    "heading level",
+    "heading levels",
     "reference link",
-    "document reference notation",
+    "glossary term",
     "GFM alert",
-    "terminology",
-    "glossary",
-    "no revision history",
-    "long vowel omission"
+    "long vowel JIS Z 8301",
+    "no history section",
+    "related documents section",
+    "placeholder naming"
   ],
   "path": "plugins/forge/docs/document_style_guide.md",
-  "purpose": "Generic writing style guide for documents the plugin generates, updates, and reviews: tag usage, heading levels, emphasis, document reference notation, terminology, and bans on history and related-document sections.",
+  "purpose": "General writing style guide for documents the plugin generates, updates and reviews: tags, headings, emphasis, structured elements, reference notation, example naming, no history sections, and terminology.",
   "summary": [
-    "Tag usage rules for MANDATORY, CRITICAL, and IMPORTANT, with placement and scarcity criteria",
+    "Tag usage: three tag kinds, placement at heading end, and criteria A-E for MANDATORY with demotion order",
     "Heading levels limited to four tiers",
-    "Emphasis phrases, long-vowel omission rule (JIS Z 8301), and GFM alerts",
-    "Structured elements: code blocks with language, lists, and tables with limits",
-    "Document reference notation in three systems, using reference-style links with definitions at the end",
-    "Abstract example naming with placeholders instead of real names",
-    "No historical records or revision history sections in documents",
-    "No related-documents list sections, with exceptions for external URLs",
-    "Terminology rules: what a term is, naming principles, bracket notation, glossary files"
+    "Emphasis and notation: English emphasis phrases, long-vowel omission per JIS Z 8301, bold/code/GFM alerts, no italics",
+    "Structured elements: code block language tags, list nesting, table column limits",
+    "Document reference notation for three systems, using reference-style links only, with path rules",
+    "Abstract example naming with placeholders instead of real names or concrete domains",
+    "Ban on history sections and historical narration; history belongs in CHANGELOG, git and ADR",
+    "Ban on related-documents sections, with exceptions for external URLs",
+    "Terminology: definition of a term, naming principles, bracket notation in body text, glossary rules"
   ],
   "tasks": [
-    "Writing requirements documents, design documents, or plans",
+    "Writing or updating requirements, design documents and plans",
     "Reviewing documents for style compliance",
-    "Editing documents that reference other documents",
-    "Adding or placing priority tags on headings",
-    "Defining terms and glossaries in documents",
-    "Writing rule or guideline documents with examples"
+    "Deciding whether to attach MANDATORY/CRITICAL/IMPORTANT tags",
+    "Writing cross-document references and reference links",
+    "Defining and using glossary terms in documents",
+    "Writing example snippets and rule documents",
+    "Authoring SKILL.md or agent documents that reference docs"
   ],
   "title": "文書スタイル指針"
 }

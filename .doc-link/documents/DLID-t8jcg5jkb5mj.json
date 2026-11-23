@@ -1,9 +1,9 @@
 {
-  "content_hash": "122ed8c0e2c204415b769da5fcc1c745339b2a4c8ac0db7dda3dad870536612a",
+  "content_hash": "33e1e8046cdc7b1dc973a2e621797599b9b860e9f0c6a1510f073457dc9b4994",
   "doc_link_id": "DLID-t8jcg5jkb5mj",
   "keywords": [
     "plan",
-    "task",
+    "tasks",
     "traceability",
     "required_reading",
     "task group",
@@ -14,27 +14,27 @@
     "unit test"
   ],
   "path": "plugins/forge/docs/plan_principles_spec.md",
-  "purpose": "General principles for authoring plan documents when no project-specific rules exist: structure, task design, dependencies, acceptance criteria, tests, traceability, and severity catalog.",
+  "purpose": "General principles for writing plan documents (JSON plans): structure, task granularity, groups, dependencies, acceptance criteria, tests, traceability, and a severity catalog for violations.",
   "summary": [
-    "Plan definition: responsibility, lifetime, and JSON format of the plan file",
-    "Task ID prefixes and priority ranges",
-    "Plan structure: only requirements_traceability, design_traceability and tasks; mandatory requirement_ids",
-    "Task granularity and the rule against copying implementation details from design documents",
-    "required_reading field specification, including strategy documents and glossaries",
-    "Task groups, build_check values, and the ban on temporary compatibility code",
+    "Plan definition: responsibility, lifetime, and JSON format",
+    "Task IDs and priority ranges",
+    "Three-section plan structure and traceability arrays with mandatory requirement_ids",
+    "Task granularity and what-to-do description principles",
+    "required_reading field spec including strategy document and glossaries",
+    "Task groups, build_check values, and ban on temporary compatibility code",
     "Dependency management and implicit dependency patterns",
     "Acceptance criteria and test norms",
-    "Traceability norms, with no exemption for requirements lacking tasks",
-    "Severity catalog mapping violations to severities"
+    "Traceability norms and gray-zone tolerances",
+    "Severity catalog mapping violation patterns to severities"
   ],
   "tasks": [
     "Creating a plan document",
     "Reviewing a plan document",
     "Decomposing work into tasks",
-    "Defining task dependencies and groups",
-    "Writing acceptance criteria for tasks",
-    "Setting required_reading for tasks",
-    "Checking requirement traceability"
+    "Defining task groups and build checks",
+    "Setting task dependencies",
+    "Writing acceptance criteria",
+    "Determining severity of plan review findings"
   ],
   "title": "計画書 作成原則"
 }

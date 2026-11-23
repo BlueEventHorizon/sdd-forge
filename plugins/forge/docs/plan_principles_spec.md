@@ -356,6 +356,6 @@ doc_link_id: DLID-t8jcg5jkb5mj
 
 計画書には frontmatter を付与しない。追加 feature の計画書かどうかは、`requirements_traceability` が参照する要件定義書、または `design_traceability` が参照する設計書の、**いずれか**が `feature_type: temporary-feature` を持つかで判定する（[frontmatter_format.md][frontmatter-format] §1.3）。
 
-[document-style-guide]: document_style_guide.md "69dee42932c2 DLID-c59znr7b8f56"
-[frontmatter-format]: frontmatter_format.md "19cf661699b0 DLID-jtc4qnjwbdxf"
-[additive-development-spec]: additive_development_spec.md "307dc53425f0 DLID-cyrk9xr8vcap"
+[document-style-guide]: document_style_guide.md "335c3c0eb320 DLID-c59znr7b8f56"
+[frontmatter-format]: frontmatter_format.md "867507803b4a DLID-jtc4qnjwbdxf"
+[additive-development-spec]: additive_development_spec.md "3be39e634c1c DLID-cyrk9xr8vcap"

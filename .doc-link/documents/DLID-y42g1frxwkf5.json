@@ -1,5 +1,5 @@
 {
-  "content_hash": "d1f79607a42d8d248ea238937b800a2bf0d80c41e49e9afa75f8916eb154dcf5",
+  "content_hash": "36bb4e693dd264882bdf365d105a1c732d80dc4b59f06f37ffa27ab8d508e20d",
   "doc_link_id": "DLID-y42g1frxwkf5",
   "keywords": [
     "reviewer",
@@ -7,31 +7,31 @@
     "review criteria",
     "findings",
     "target_unreadable",
-    "base_branch",
-    "diff",
+    "doc_structure",
+    "paths base_branch diff",
     "criteria documents",
-    "review mechanism"
+    "uxui"
   ],
   "path": "docs/specs/review/requirements/REQ-027_reviewer.md",
-  "purpose": "Requirements for the reviewer agent in the review mechanism: how it reads targets, determines target type, which documents it uses per type, and what findings and error values it returns.",
+  "purpose": "Requirements defining the reviewer behavior: how it reads targets, determines target type, which documents it uses per type, what findings it returns, and its single error value.",
   "summary": [
-    "Reviewer reads targets and applies review perspectives to return findings",
-    "Defines target type, review perspective, and perspective document terms",
-    "Reviewer definition contents specific to the reviewer (FNC-301)",
-    "Reading targets by targets shape: paths, base_branch, diff, including deletions and renames (FNC-306)",
-    "Target type determination among code, requirement, design, plan, uxui using config and file content (FNC-307)",
-    "Per-target-type documents: common set plus type-specific criteria, norms, project rules and cross-check targets (FNC-308)",
-    "Findings output: none means zero findings; reviewers are interchangeable (FNC-309)",
-    "Only error value is target_unreadable (FNC-315)",
-    "Secret detection is out of scope; shared contract is delegated to REQ-029"
+    "Reviewer purpose: find errors without omission using norms suited to the target",
+    "Scope: reviewer-specific behavior; common exchange contract is delegated; secret detection is out of scope",
+    "FNC-301: contents of the reviewer definition, including script usage and request item handling",
+    "FNC-306: reading targets by shape (paths, base_branch, diff), including deletions and renames",
+    "FNC-307: target type determination into code, requirement, design, plan, uxui via doc structure config then file reading",
+    "FNC-308: documents per target type, common set plus type-specific criteria, norms, project rules and cross-check targets",
+    "FNC-309: findings are returned only when present; zero findings means normal completion",
+    "FNC-315: the only error value is target_unreadable; unreadable documents get no error value",
+    "Undetermined target type is reviewed with common documents only, not an error"
   ],
   "tasks": [
-    "Reviewing or modifying the reviewer agent definition",
-    "Implementing target type determination",
-    "Changing review criteria documents or norm mapping per target type",
-    "Defining reviewer error values",
-    "Reviewing requirement documents on the review mechanism",
-    "Changing resolve_doc_structure script for type resolution"
+    "Writing or revising the reviewer agent definition",
+    "Reviewing the reviewer requirements document",
+    "Changing the mapping of target types to criteria documents",
+    "Implementing target type resolution in resolve_doc_structure",
+    "Adding or changing review criteria documents",
+    "Handling reviewer error values and unreadable targets"
   ],
   "title": "REQ-027 reviewer の入力・作業・出力の契約 要件定義書"
 }

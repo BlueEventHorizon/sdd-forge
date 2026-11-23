@@ -109,5 +109,5 @@ Markdown は表現力が高いが、AI によるパースが不確実（テー�
 | start-design / start-plan / start-requirements | 済み               | 文書検索は query スキルの検索結果（パスの一覧）。agent を起動する工程は agent の return value（`start-plan` の実装戦略の策定は、識別値で渡し、script が成否を判定する） |
 | start-implement                                | 済み               | タスクコンテキストは識別値で渡し（script が書いた JSON を executor agent が読む）、結果は executor agent が return value の JSON で返す                                 |
 
-[req-034]: ../../start-implement/requirements/REQ-034_start_implement_spec.md "addaea4651bb DLID-ypd7r1j5ga4n"
-[forge-agent-data-exchange-rules]: ../../../rules/forge_agent_data_exchange_rules.md "ad12d06f3966 DLID-7zh3q09p2acs"
+[req-034]: ../../start-implement/requirements/REQ-034_start_implement_spec.md "8c2f9a2476da DLID-ypd7r1j5ga4n"
+[forge-agent-data-exchange-rules]: ../../../rules/forge_agent_data_exchange_rules.md "d359747d755f DLID-7zh3q09p2acs"

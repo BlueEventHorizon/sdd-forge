@@ -17,10 +17,6 @@
       "doc_link_id": "DLID-ct64b13ee182"
     },
     {
-      "applied_hash": "1eaeab0e978b195b244ff01224f7dc94ae23b92fbd3282f9a3d76cce4bb325f1",
-      "doc_link_id": "DLID-5k6jt9qvf60d"
-    },
-    {
       "applied_hash": "1fe6b5d5aa31d206017882f91f88c0199edeb83eb421b911f86e1bd367c72985",
       "doc_link_id": "DLID-4wn8sb8y1f80"
     },
@@ -47,6 +43,10 @@
     {
       "applied_hash": "2f1bdcf996ea83075c637fc0c1f8d94aa7907852ac641ac980ac6b9670bcd424",
       "doc_link_id": "DLID-42wh7646hjhq"
+    },
+    {
+      "applied_hash": "3185b65d2c91992bd0a830185f6ac6de508cff3b69856bfa2a75aa1fed1c2d0a",
+      "doc_link_id": "DLID-d9fpywv4txra"
     },
     {
       "applied_hash": "36bb4e693dd264882bdf365d105a1c732d80dc4b59f06f37ffa27ab8d508e20d",
@@ -129,6 +129,10 @@
       "doc_link_id": "DLID-2becz9x7x407"
     },
     {
+      "applied_hash": "b765007682aa366b66241fda4f21fa84c88913ae8420b604c6d3d97764b01f76",
+      "doc_link_id": "DLID-5k6jt9qvf60d"
+    },
+    {
       "applied_hash": "b7f54a0eaeefd3ffedc5e1b3af5247437a7f766b4a2d6eb43ea1936ccb805138",
       "doc_link_id": "DLID-hme4nqx9d5gs"
     },
@@ -147,10 +151,6 @@
     {
       "applied_hash": "dcf01b441a6b777a7e36909bf2036de43e696a4fae4786dc222d4606a60d97bd",
       "doc_link_id": "DLID-1585cw3yt8pa"
-    },
-    {
-      "applied_hash": "e9c5870933bc4a31bf5df951a9d222c00a88b997f84c406f59ba5669e30417e8",
-      "doc_link_id": "DLID-d9fpywv4txra"
     },
     {
       "applied_hash": "ef29f0fe68973f0743326f44d09e6375761a76cf96833a499f05fabb210a218c",
@@ -175,217 +175,217 @@
   ],
   "last_checks": [
     {
-      "checked_at": "2026-11-23T14:12:08+00:00",
+      "checked_at": "2026-11-23T14:44:54+00:00",
       "doc_link_id": "DLID-0868m80sm7hy",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-23T14:12:08+00:00",
+      "checked_at": "2026-11-23T14:44:54+00:00",
       "doc_link_id": "DLID-0nfgax46wehg",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-23T14:12:08+00:00",
+      "checked_at": "2026-11-23T14:44:54+00:00",
       "doc_link_id": "DLID-1585cw3yt8pa",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-23T14:12:08+00:00",
+      "checked_at": "2026-11-23T14:44:54+00:00",
       "doc_link_id": "DLID-1vfqj6r96sr4",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-23T14:12:08+00:00",
+      "checked_at": "2026-11-23T14:44:54+00:00",
       "doc_link_id": "DLID-2becz9x7x407",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-23T14:12:08+00:00",
+      "checked_at": "2026-11-23T14:44:54+00:00",
       "doc_link_id": "DLID-3bmft1apetsm",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-23T14:12:08+00:00",
+      "checked_at": "2026-11-23T14:44:54+00:00",
       "doc_link_id": "DLID-3c038need73s",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-23T14:12:08+00:00",
+      "checked_at": "2026-11-23T14:44:54+00:00",
       "doc_link_id": "DLID-42wh7646hjhq",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-23T14:12:08+00:00",
+      "checked_at": "2026-11-23T14:44:54+00:00",
       "doc_link_id": "DLID-433459yse70c",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-23T14:12:08+00:00",
+      "checked_at": "2026-11-23T14:44:54+00:00",
       "doc_link_id": "DLID-4wn8sb8y1f80",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-23T14:12:08+00:00",
+      "checked_at": "2026-11-23T14:44:54+00:00",
       "doc_link_id": "DLID-5h7wqxcknyha",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-23T14:12:08+00:00",
+      "checked_at": "2026-11-23T14:44:54+00:00",
       "doc_link_id": "DLID-5k6jt9qvf60d",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-23T14:12:08+00:00",
+      "checked_at": "2026-11-23T14:44:54+00:00",
       "doc_link_id": "DLID-5vrs9fnet7de",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-23T14:12:08+00:00",
+      "checked_at": "2026-11-23T14:44:54+00:00",
       "doc_link_id": "DLID-6m16v4qqxjf4",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-23T14:12:08+00:00",
+      "checked_at": "2026-11-23T14:44:54+00:00",
       "doc_link_id": "DLID-7gyjj06rtab7",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-23T14:12:08+00:00",
+      "checked_at": "2026-11-23T14:44:54+00:00",
       "doc_link_id": "DLID-8aaxgj88j28q",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-23T14:12:08+00:00",
+      "checked_at": "2026-11-23T14:44:54+00:00",
       "doc_link_id": "DLID-8s8p9ah1hyry",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-23T14:12:08+00:00",
+      "checked_at": "2026-11-23T14:44:54+00:00",
       "doc_link_id": "DLID-bgxgcq0pvkm7",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-23T14:12:08+00:00",
+      "checked_at": "2026-11-23T14:44:54+00:00",
       "doc_link_id": "DLID-ckbysbfdrsv5",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-23T14:12:08+00:00",
+      "checked_at": "2026-11-23T14:44:54+00:00",
       "doc_link_id": "DLID-ct64b13ee182",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-23T14:12:08+00:00",
+      "checked_at": "2026-11-23T14:44:54+00:00",
       "doc_link_id": "DLID-d9fpywv4txra",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-23T14:12:08+00:00",
+      "checked_at": "2026-11-23T14:44:54+00:00",
       "doc_link_id": "DLID-dqkf6wa1z2cp",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-23T14:12:08+00:00",
+      "checked_at": "2026-11-23T14:44:54+00:00",
       "doc_link_id": "DLID-f8gem0wa3ac4",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-23T14:12:08+00:00",
+      "checked_at": "2026-11-23T14:44:54+00:00",
       "doc_link_id": "DLID-fpfqhpad552k",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-23T14:12:08+00:00",
+      "checked_at": "2026-11-23T14:44:54+00:00",
       "doc_link_id": "DLID-fs55bq3pe0nd",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-23T14:12:08+00:00",
+      "checked_at": "2026-11-23T14:44:54+00:00",
       "doc_link_id": "DLID-hme4nqx9d5gs",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-23T14:12:08+00:00",
+      "checked_at": "2026-11-23T14:44:54+00:00",
       "doc_link_id": "DLID-hsj370z603x4",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-23T14:12:08+00:00",
+      "checked_at": "2026-11-23T14:44:54+00:00",
       "doc_link_id": "DLID-j50s0xwkwx00",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-23T14:12:08+00:00",
+      "checked_at": "2026-11-23T14:44:54+00:00",
       "doc_link_id": "DLID-mzeyx39mfryw",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-23T14:12:08+00:00",
+      "checked_at": "2026-11-23T14:44:54+00:00",
       "doc_link_id": "DLID-n11844q5g8qn",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-23T14:12:08+00:00",
+      "checked_at": "2026-11-23T14:44:54+00:00",
       "doc_link_id": "DLID-p1v5z5mme4tw",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-23T14:12:08+00:00",
+      "checked_at": "2026-11-23T14:44:54+00:00",
       "doc_link_id": "DLID-pcket5v36c0g",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-23T14:12:08+00:00",
+      "checked_at": "2026-11-23T14:44:54+00:00",
       "doc_link_id": "DLID-rzp2zxe38068",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-23T14:12:08+00:00",
+      "checked_at": "2026-11-23T14:44:54+00:00",
       "doc_link_id": "DLID-s1ds8dcyfn7p",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-23T14:12:08+00:00",
+      "checked_at": "2026-11-23T14:44:54+00:00",
       "doc_link_id": "DLID-s3cjh3q3c0vc",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-23T14:12:08+00:00",
+      "checked_at": "2026-11-23T14:44:54+00:00",
       "doc_link_id": "DLID-vfdedgq63evv",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-23T14:12:08+00:00",
+      "checked_at": "2026-11-23T14:44:54+00:00",
       "doc_link_id": "DLID-vyz6fzhdfk3a",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-23T14:12:08+00:00",
+      "checked_at": "2026-11-23T14:44:54+00:00",
       "doc_link_id": "DLID-vzcznbpypja0",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-23T14:12:08+00:00",
+      "checked_at": "2026-11-23T14:44:54+00:00",
       "doc_link_id": "DLID-y42g1frxwkf5",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-23T14:12:08+00:00",
+      "checked_at": "2026-11-23T14:44:54+00:00",
       "doc_link_id": "DLID-yg0c67zs3zky",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-23T14:12:08+00:00",
+      "checked_at": "2026-11-23T14:44:54+00:00",
       "doc_link_id": "DLID-ypd7r1j5ga4n",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-23T14:12:08+00:00",
+      "checked_at": "2026-11-23T14:44:54+00:00",
       "doc_link_id": "DLID-zehb6ge71vgb",
       "result": "success"
     },
     {
-      "checked_at": "2026-11-23T14:12:08+00:00",
+      "checked_at": "2026-11-23T14:44:54+00:00",
       "doc_link_id": "DLID-zfh5q9h29c8y",
       "result": "success"
     }
@@ -393,14 +393,14 @@
   "references": [
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "docs/rules/forge_agent_data_exchange_rules.md",
         "result": "match",
         "scope": "docs/rules"
       },
       "kind": "document",
       "position": 1,
-      "recorded_content_hash": "ad12d06f3966",
+      "recorded_content_hash": "d359747d755f",
       "recorded_path": "../../../rules/forge_agent_data_exchange_rules.md",
       "source_doc_id": "DLID-5h7wqxcknyha",
       "source_section_id": null,
@@ -409,14 +409,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "docs/rules/forge_agent_data_exchange_rules.md",
         "result": "match",
         "scope": "docs/rules"
       },
       "kind": "document",
       "position": 1,
-      "recorded_content_hash": "ad12d06f3966",
+      "recorded_content_hash": "d359747d755f",
       "recorded_path": "../../../rules/forge_agent_data_exchange_rules.md",
       "source_doc_id": "DLID-ct64b13ee182",
       "source_section_id": null,
@@ -425,14 +425,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "docs/rules/forge_agent_data_exchange_rules.md",
         "result": "match",
         "scope": "docs/rules"
       },
       "kind": "document",
       "position": 1,
-      "recorded_content_hash": "ad12d06f3966",
+      "recorded_content_hash": "d359747d755f",
       "recorded_path": "../../../rules/forge_agent_data_exchange_rules.md",
       "source_doc_id": "DLID-f8gem0wa3ac4",
       "source_section_id": null,
@@ -441,14 +441,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "docs/rules/forge_agent_data_exchange_rules.md",
         "result": "match",
         "scope": "docs/rules"
       },
       "kind": "document",
       "position": 2,
-      "recorded_content_hash": "ad12d06f3966",
+      "recorded_content_hash": "d359747d755f",
       "recorded_path": "../../../rules/forge_agent_data_exchange_rules.md",
       "source_doc_id": "DLID-1585cw3yt8pa",
       "source_section_id": null,
@@ -457,14 +457,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "docs/rules/forge_agent_data_exchange_rules.md",
         "result": "match",
         "scope": "docs/rules"
       },
       "kind": "document",
       "position": 2,
-      "recorded_content_hash": "ad12d06f3966",
+      "recorded_content_hash": "d359747d755f",
       "recorded_path": "../../../rules/forge_agent_data_exchange_rules.md",
       "source_doc_id": "DLID-5vrs9fnet7de",
       "source_section_id": null,
@@ -473,14 +473,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "docs/rules/forge_claude_code_authoring_policy.md",
         "result": "match",
         "scope": "docs/rules"
       },
       "kind": "document",
       "position": 1,
-      "recorded_content_hash": "c9c071f11416",
+      "recorded_content_hash": "70c36432428c",
       "recorded_path": "../../../rules/forge_claude_code_authoring_policy.md",
       "source_doc_id": "DLID-d9fpywv4txra",
       "source_section_id": null,
@@ -489,14 +489,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "docs/rules/forge_doc_access_principle.md",
         "result": "match",
         "scope": "docs/rules"
       },
       "kind": "document",
       "position": 4,
-      "recorded_content_hash": "0dffb8776564",
+      "recorded_content_hash": "2f044acb76b2",
       "recorded_path": "../../../rules/forge_doc_access_principle.md",
       "source_doc_id": "DLID-j50s0xwkwx00",
       "source_section_id": null,
@@ -505,7 +505,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "docs/rules/forge_document_type_roles.md",
         "result": "match",
         "scope": "docs/rules"
@@ -521,14 +521,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "docs/rules/plugin_claude_code_authoring_guide.md",
         "result": "match",
         "scope": "docs/rules"
       },
       "kind": "document",
       "position": 0,
-      "recorded_content_hash": "1b4400f836cd",
+      "recorded_content_hash": "65302c63b0e1",
       "recorded_path": "../../../rules/plugin_claude_code_authoring_guide.md",
       "source_doc_id": "DLID-5h7wqxcknyha",
       "source_section_id": null,
@@ -537,14 +537,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "docs/rules/plugin_claude_code_authoring_guide.md",
         "result": "match",
         "scope": "docs/rules"
       },
       "kind": "document",
       "position": 0,
-      "recorded_content_hash": "1b4400f836cd",
+      "recorded_content_hash": "65302c63b0e1",
       "recorded_path": "../../../rules/plugin_claude_code_authoring_guide.md",
       "source_doc_id": "DLID-5k6jt9qvf60d",
       "source_section_id": null,
@@ -553,14 +553,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "docs/rules/plugin_claude_code_authoring_guide.md",
         "result": "match",
         "scope": "docs/rules"
       },
       "kind": "document",
       "position": 0,
-      "recorded_content_hash": "1b4400f836cd",
+      "recorded_content_hash": "65302c63b0e1",
       "recorded_path": "../../../rules/plugin_claude_code_authoring_guide.md",
       "source_doc_id": "DLID-d9fpywv4txra",
       "source_section_id": null,
@@ -569,14 +569,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "docs/rules/plugin_claude_code_authoring_guide.md",
         "result": "match",
         "scope": "docs/rules"
       },
       "kind": "document",
       "position": 1,
-      "recorded_content_hash": "1b4400f836cd",
+      "recorded_content_hash": "65302c63b0e1",
       "recorded_path": "../../../rules/plugin_claude_code_authoring_guide.md",
       "source_doc_id": "DLID-pcket5v36c0g",
       "source_section_id": null,
@@ -585,14 +585,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "docs/rules/plugin_claude_code_authoring_guide.md",
         "result": "match",
         "scope": "docs/rules"
       },
       "kind": "document",
       "position": 2,
-      "recorded_content_hash": "1b4400f836cd",
+      "recorded_content_hash": "65302c63b0e1",
       "recorded_path": "../../../rules/plugin_claude_code_authoring_guide.md",
       "source_doc_id": "DLID-f8gem0wa3ac4",
       "source_section_id": null,
@@ -601,14 +601,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "docs/rules/plugin_claude_code_reference.md",
         "result": "match",
         "scope": "docs/rules"
       },
       "kind": "document",
       "position": 0,
-      "recorded_content_hash": "4925fe0a5d6e",
+      "recorded_content_hash": "c78f488a3ced",
       "recorded_path": "../../../rules/plugin_claude_code_reference.md",
       "source_doc_id": "DLID-pcket5v36c0g",
       "source_section_id": null,
@@ -617,7 +617,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "docs/rules/plugin_implementation_guidelines.md",
         "result": "match",
         "scope": "docs/rules"
@@ -633,7 +633,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "docs/rules/plugin_implementation_guidelines.md",
         "result": "match",
         "scope": "docs/rules"
@@ -649,7 +649,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "docs/rules/plugin_script_error_output_rules.md",
         "result": "match",
         "scope": "docs/rules"
@@ -665,7 +665,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "docs/rules/plugin_script_error_output_rules.md",
         "result": "match",
         "scope": "docs/rules"
@@ -681,7 +681,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "docs/rules/plugin_script_error_output_rules.md",
         "result": "match",
         "scope": "docs/rules"
@@ -697,7 +697,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "docs/rules/plugin_script_error_output_rules.md",
         "result": "match",
         "scope": "docs/rules"
@@ -713,14 +713,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "docs/specs/adr-writer/requirements/REQ-030_adr_writer.md",
         "result": "match",
         "scope": "docs/specs/adr-writer/requirements"
       },
       "kind": "document",
       "position": 2,
-      "recorded_content_hash": "e5233def35da",
+      "recorded_content_hash": "5145154553b8",
       "recorded_path": "../requirements/REQ-030_adr_writer.md",
       "source_doc_id": "DLID-pcket5v36c0g",
       "source_section_id": null,
@@ -729,7 +729,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "docs/specs/common/requirements/COMMON-REQ-001_versioned_migration.md",
         "result": "match",
         "scope": "docs/specs/common/requirements"
@@ -745,14 +745,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "docs/specs/common/requirements/COMMON-REQ-002_error_handling_policy.md",
         "result": "match",
         "scope": "docs/specs/common/requirements"
       },
       "kind": "document",
       "position": 6,
-      "recorded_content_hash": "3810426fdc1b",
+      "recorded_content_hash": "1fe6b5d5aa31",
       "recorded_path": "../../common/requirements/COMMON-REQ-002_error_handling_policy.md",
       "source_doc_id": "DLID-pcket5v36c0g",
       "source_section_id": null,
@@ -761,14 +761,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "docs/specs/consult/agenda/design/DES-075_agenda_mechanism_design.md",
         "result": "match",
         "scope": "docs/specs/consult/agenda/design"
       },
       "kind": "document",
       "position": 0,
-      "recorded_content_hash": "84e8b637dc1d",
+      "recorded_content_hash": "4d29f17e5566",
       "recorded_path": "DES-075_agenda_mechanism_design.md",
       "source_doc_id": "DLID-8s8p9ah1hyry",
       "source_section_id": null,
@@ -777,14 +777,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "docs/specs/consult/agenda/design/DES-075_agenda_mechanism_design.md",
         "result": "match",
         "scope": "docs/specs/consult/agenda/design"
       },
       "kind": "document",
       "position": 2,
-      "recorded_content_hash": "84e8b637dc1d",
+      "recorded_content_hash": "4d29f17e5566",
       "recorded_path": "../design/DES-075_agenda_mechanism_design.md",
       "source_doc_id": "DLID-0868m80sm7hy",
       "source_section_id": null,
@@ -793,14 +793,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "docs/specs/consult/agenda/design/DES-077_agenda_display_design.md",
         "result": "match",
         "scope": "docs/specs/consult/agenda/design"
       },
       "kind": "document",
       "position": 2,
-      "recorded_content_hash": "98bf338f755f",
+      "recorded_content_hash": "2782ba223e7b",
       "recorded_path": "../design/DES-077_agenda_display_design.md",
       "source_doc_id": "DLID-hsj370z603x4",
       "source_section_id": null,
@@ -809,14 +809,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "docs/specs/consult/agenda/design/DES-077_agenda_display_design.md",
         "result": "match",
         "scope": "docs/specs/consult/agenda/design"
       },
       "kind": "document",
       "position": 2,
-      "recorded_content_hash": "98bf338f755f",
+      "recorded_content_hash": "2782ba223e7b",
       "recorded_path": "DES-077_agenda_display_design.md",
       "source_doc_id": "DLID-vyz6fzhdfk3a",
       "source_section_id": null,
@@ -825,7 +825,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "docs/specs/consult/agenda/design/NOTES_open_design_questions.md",
         "result": "match",
         "scope": "docs/specs/consult/agenda/design"
@@ -841,7 +841,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "docs/specs/consult/agenda/design/NOTES_open_design_questions.md",
         "result": "match",
         "scope": "docs/specs/consult/agenda/design"
@@ -857,14 +857,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "docs/specs/consult/agenda/requirements/REQ-019_agenda_record.md",
         "result": "match",
         "scope": "docs/specs/consult/agenda/requirements"
       },
       "kind": "document",
       "position": 0,
-      "recorded_content_hash": "6730e8414d1c",
+      "recorded_content_hash": "fcdbb11a3887",
       "recorded_path": "REQ-019_agenda_record.md",
       "source_doc_id": "DLID-hsj370z603x4",
       "source_section_id": null,
@@ -873,14 +873,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "docs/specs/consult/agenda/requirements/REQ-021_agenda_display.md",
         "result": "match",
         "scope": "docs/specs/consult/agenda/requirements"
       },
       "kind": "document",
       "position": 1,
-      "recorded_content_hash": "7cdb81e6c4a1",
+      "recorded_content_hash": "592ff7537fe8",
       "recorded_path": "REQ-021_agenda_display.md",
       "source_doc_id": "DLID-0868m80sm7hy",
       "source_section_id": null,
@@ -889,7 +889,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "docs/specs/consult/design/DES-078_consult_dialogue_flow_design.md",
         "result": "match",
         "scope": "docs/specs/consult/design"
@@ -905,7 +905,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "docs/specs/consult/design/DES-078_consult_dialogue_flow_design.md",
         "result": "match",
         "scope": "docs/specs/consult/design"
@@ -921,14 +921,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "docs/specs/consult/requirements/REQ-017_consult_skill.md",
         "result": "match",
         "scope": "docs/specs/consult/requirements"
       },
       "kind": "document",
       "position": 0,
-      "recorded_content_hash": "8d2adba82a1b",
+      "recorded_content_hash": "0a96a70a0d71",
       "recorded_path": "../../requirements/REQ-017_consult_skill.md",
       "source_doc_id": "DLID-vyz6fzhdfk3a",
       "source_section_id": null,
@@ -937,14 +937,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "docs/specs/consult/requirements/REQ-017_consult_skill.md",
         "result": "match",
         "scope": "docs/specs/consult/requirements"
       },
       "kind": "document",
       "position": 1,
-      "recorded_content_hash": "8d2adba82a1b",
+      "recorded_content_hash": "0a96a70a0d71",
       "recorded_path": "../../requirements/REQ-017_consult_skill.md",
       "source_doc_id": "DLID-8s8p9ah1hyry",
       "source_section_id": null,
@@ -953,14 +953,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "docs/specs/consult/requirements/REQ-017_consult_skill.md",
         "result": "match",
         "scope": "docs/specs/consult/requirements"
       },
       "kind": "document",
       "position": 2,
-      "recorded_content_hash": "8d2adba82a1b",
+      "recorded_content_hash": "0a96a70a0d71",
       "recorded_path": "../../consult/requirements/REQ-017_consult_skill.md",
       "source_doc_id": "DLID-2becz9x7x407",
       "source_section_id": null,
@@ -969,14 +969,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "docs/specs/doc-db/design/DES-057_doc_db_backend_selection_design.md",
         "result": "match",
         "scope": "docs/specs/doc-db/design"
       },
       "kind": "document",
       "position": 2,
-      "recorded_content_hash": "918f9c8343c0",
+      "recorded_content_hash": "1eaeab0e978b",
       "recorded_path": "../../doc-db/design/DES-057_doc_db_backend_selection_design.md",
       "source_doc_id": "DLID-d9fpywv4txra",
       "source_section_id": null,
@@ -985,14 +985,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "docs/specs/forge/design/DES-010_create_skills_orchestrator_design.md",
         "result": "match",
         "scope": "docs/specs/forge/design"
       },
       "kind": "document",
       "position": 0,
-      "recorded_content_hash": "c93dadeb6dc4",
+      "recorded_content_hash": "2129dbe03f23",
       "recorded_path": "DES-010_create_skills_orchestrator_design.md",
       "source_doc_id": "DLID-1585cw3yt8pa",
       "source_section_id": null,
@@ -1001,14 +1001,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "docs/specs/forge/design/DES-010_create_skills_orchestrator_design.md",
         "result": "match",
         "scope": "docs/specs/forge/design"
       },
       "kind": "document",
       "position": 0,
-      "recorded_content_hash": "c93dadeb6dc4",
+      "recorded_content_hash": "2129dbe03f23",
       "recorded_path": "DES-010_create_skills_orchestrator_design.md",
       "source_doc_id": "DLID-1vfqj6r96sr4",
       "source_section_id": null,
@@ -1017,14 +1017,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "docs/specs/forge/design/DES-010_create_skills_orchestrator_design.md",
         "result": "match",
         "scope": "docs/specs/forge/design"
       },
       "kind": "document",
       "position": 0,
-      "recorded_content_hash": "c93dadeb6dc4",
+      "recorded_content_hash": "2129dbe03f23",
       "recorded_path": "DES-010_create_skills_orchestrator_design.md",
       "source_doc_id": "DLID-zfh5q9h29c8y",
       "source_section_id": null,
@@ -1033,14 +1033,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "docs/specs/forge/design/DES-010_create_skills_orchestrator_design.md",
         "result": "match",
         "scope": "docs/specs/forge/design"
       },
       "kind": "document",
       "position": 2,
-      "recorded_content_hash": "c93dadeb6dc4",
+      "recorded_content_hash": "2129dbe03f23",
       "recorded_path": "DES-010_create_skills_orchestrator_design.md",
       "source_doc_id": "DLID-5h7wqxcknyha",
       "source_section_id": null,
@@ -1049,14 +1049,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "docs/specs/forge/design/DES-017_create_requirements_workflow_design.md",
         "result": "match",
         "scope": "docs/specs/forge/design"
       },
       "kind": "document",
       "position": 1,
-      "recorded_content_hash": "7052a1614b27",
+      "recorded_content_hash": "53ad6002f211",
       "recorded_path": "DES-017_create_requirements_workflow_design.md",
       "source_doc_id": "DLID-s1ds8dcyfn7p",
       "source_section_id": null,
@@ -1065,14 +1065,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "docs/specs/forge/design/DES-018_create_design_workflow_design.md",
         "result": "match",
         "scope": "docs/specs/forge/design"
       },
       "kind": "document",
       "position": 0,
-      "recorded_content_hash": "8999c4488a91",
+      "recorded_content_hash": "cac86d74fa8a",
       "recorded_path": "DES-018_create_design_workflow_design.md",
       "source_doc_id": "DLID-s1ds8dcyfn7p",
       "source_section_id": null,
@@ -1081,14 +1081,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "docs/specs/forge/design/DES-019_create_plan_workflow_design.md",
         "result": "match",
         "scope": "docs/specs/forge/design"
       },
       "kind": "document",
       "position": 3,
-      "recorded_content_hash": "7f8da9d31c1f",
+      "recorded_content_hash": "dcf01b441a6b",
       "recorded_path": "../../forge/design/DES-019_create_plan_workflow_design.md",
       "source_doc_id": "DLID-pcket5v36c0g",
       "source_section_id": null,
@@ -1097,14 +1097,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "docs/specs/forge/design/DES-022_parallel_agent_output_contract_design.md",
         "result": "match",
         "scope": "docs/specs/forge/design"
       },
       "kind": "document",
       "position": 5,
-      "recorded_content_hash": "55060c313fdc",
+      "recorded_content_hash": "02eb53006efc",
       "recorded_path": "../../forge/design/DES-022_parallel_agent_output_contract_design.md",
       "source_doc_id": "DLID-pcket5v36c0g",
       "source_section_id": null,
@@ -1113,14 +1113,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "docs/specs/forge/design/DES-024_skill_script_layout_design.md",
         "result": "match",
         "scope": "docs/specs/forge/design"
       },
       "kind": "document",
       "position": 1,
-      "recorded_content_hash": "d8aa531bdbaf",
+      "recorded_content_hash": "2646153bc1d2",
       "recorded_path": "../../forge/design/DES-024_skill_script_layout_design.md",
       "source_doc_id": "DLID-5k6jt9qvf60d",
       "source_section_id": null,
@@ -1129,7 +1129,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "docs/specs/forge/design/DES-061_forge_settings_file_design.md",
         "result": "match",
         "scope": "docs/specs/forge/design"
@@ -1145,14 +1145,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "docs/specs/forge/design/DES-066_review_body_design.md",
         "result": "match",
         "scope": "docs/specs/forge/design"
       },
       "kind": "document",
       "position": 1,
-      "recorded_content_hash": "1b1163d33767",
+      "recorded_content_hash": "b582bc5a8f96",
       "recorded_path": "../../../forge/design/DES-066_review_body_design.md",
       "source_doc_id": "DLID-vyz6fzhdfk3a",
       "source_section_id": null,
@@ -1161,14 +1161,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "docs/specs/forge/design/DES-074_plan_format_design.md",
         "result": "match",
         "scope": "docs/specs/forge/design"
       },
       "kind": "document",
       "position": 4,
-      "recorded_content_hash": "b6a1775c9364",
+      "recorded_content_hash": "2f1bdcf996ea",
       "recorded_path": "../../forge/design/DES-074_plan_format_design.md",
       "source_doc_id": "DLID-f8gem0wa3ac4",
       "source_section_id": null,
@@ -1177,14 +1177,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "docs/specs/forge/design/DES-074_plan_format_design.md",
         "result": "match",
         "scope": "docs/specs/forge/design"
       },
       "kind": "document",
       "position": 5,
-      "recorded_content_hash": "b6a1775c9364",
+      "recorded_content_hash": "2f1bdcf996ea",
       "recorded_path": "DES-074_plan_format_design.md",
       "source_doc_id": "DLID-1585cw3yt8pa",
       "source_section_id": null,
@@ -1193,14 +1193,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "docs/specs/forge/design/DES-074_plan_format_design.md",
         "result": "match",
         "scope": "docs/specs/forge/design"
       },
       "kind": "document",
       "position": 6,
-      "recorded_content_hash": "b6a1775c9364",
+      "recorded_content_hash": "2f1bdcf996ea",
       "recorded_path": "../../forge/design/DES-074_plan_format_design.md",
       "source_doc_id": "DLID-ypd7r1j5ga4n",
       "source_section_id": null,
@@ -1209,14 +1209,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "docs/specs/forge/requirements/REQ-001_orchestrator_pattern.md",
         "result": "match",
         "scope": "docs/specs/forge/requirements"
       },
       "kind": "document",
       "position": 1,
-      "recorded_content_hash": "8954ef4d1f67",
+      "recorded_content_hash": "16677411b761",
       "recorded_path": "../../forge/requirements/REQ-001_orchestrator_pattern.md",
       "source_doc_id": "DLID-ypd7r1j5ga4n",
       "source_section_id": null,
@@ -1225,14 +1225,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "docs/specs/forge/requirements/REQ-001_orchestrator_pattern.md",
         "result": "match",
         "scope": "docs/specs/forge/requirements"
       },
       "kind": "document",
       "position": 1,
-      "recorded_content_hash": "8954ef4d1f67",
+      "recorded_content_hash": "16677411b761",
       "recorded_path": "REQ-001_orchestrator_pattern.md",
       "source_doc_id": "DLID-zehb6ge71vgb",
       "source_section_id": null,
@@ -1241,7 +1241,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "docs/specs/forge/requirements/REQ-003_skill_script_separation.md",
         "result": "match",
         "scope": "docs/specs/forge/requirements"
@@ -1257,7 +1257,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "docs/specs/forge/requirements/REQ-003_skill_script_separation.md",
         "result": "match",
         "scope": "docs/specs/forge/requirements"
@@ -1273,14 +1273,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "docs/specs/forge/requirements/REQ-013_review_policy.md",
         "result": "match",
         "scope": "docs/specs/forge/requirements"
       },
       "kind": "document",
       "position": 0,
-      "recorded_content_hash": "66dc0707bf12",
+      "recorded_content_hash": "8447df198f9e",
       "recorded_path": "../../forge/requirements/REQ-013_review_policy.md",
       "source_doc_id": "DLID-3bmft1apetsm",
       "source_section_id": null,
@@ -1289,14 +1289,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "docs/specs/forge/requirements/REQ-013_review_policy.md",
         "result": "match",
         "scope": "docs/specs/forge/requirements"
       },
       "kind": "document",
       "position": 4,
-      "recorded_content_hash": "66dc0707bf12",
+      "recorded_content_hash": "8447df198f9e",
       "recorded_path": "../../forge/requirements/REQ-013_review_policy.md",
       "source_doc_id": "DLID-ypd7r1j5ga4n",
       "source_section_id": null,
@@ -1305,14 +1305,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "docs/specs/forge/requirements/REQ-024_implementation_plan_spec.md",
         "result": "match",
         "scope": "docs/specs/forge/requirements"
       },
       "kind": "document",
       "position": 0,
-      "recorded_content_hash": "0304d66b6d45",
+      "recorded_content_hash": "f1c15e9bfe0d",
       "recorded_path": "../../forge/requirements/REQ-024_implementation_plan_spec.md",
       "source_doc_id": "DLID-ypd7r1j5ga4n",
       "source_section_id": null,
@@ -1321,14 +1321,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "docs/specs/forge/requirements/REQ-024_implementation_plan_spec.md",
         "result": "match",
         "scope": "docs/specs/forge/requirements"
       },
       "kind": "document",
       "position": 2,
-      "recorded_content_hash": "0304d66b6d45",
+      "recorded_content_hash": "f1c15e9bfe0d",
       "recorded_path": "../requirements/REQ-024_implementation_plan_spec.md",
       "source_doc_id": "DLID-42wh7646hjhq",
       "source_section_id": null,
@@ -1337,14 +1337,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "docs/specs/forge/requirements/REQ-025_additive_development_spec.md",
         "result": "match",
         "scope": "docs/specs/forge/requirements"
       },
       "kind": "document",
       "position": 2,
-      "recorded_content_hash": "1d8889eae72e",
+      "recorded_content_hash": "a78dcb08e87b",
       "recorded_path": "REQ-025_additive_development_spec.md",
       "source_doc_id": "DLID-zehb6ge71vgb",
       "source_section_id": null,
@@ -1353,14 +1353,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "docs/specs/forge/requirements/REQ-025_additive_development_spec.md",
         "result": "match",
         "scope": "docs/specs/forge/requirements"
       },
       "kind": "document",
       "position": 5,
-      "recorded_content_hash": "1d8889eae72e",
+      "recorded_content_hash": "a78dcb08e87b",
       "recorded_path": "../../forge/requirements/REQ-025_additive_development_spec.md",
       "source_doc_id": "DLID-ypd7r1j5ga4n",
       "source_section_id": null,
@@ -1369,14 +1369,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "docs/specs/forge/requirements/REQ-025_additive_development_spec.md",
         "result": "match",
         "scope": "docs/specs/forge/requirements"
       },
       "kind": "document",
       "position": 5,
-      "recorded_content_hash": "1d8889eae72e",
+      "recorded_content_hash": "a78dcb08e87b",
       "recorded_path": "../requirements/REQ-025_additive_development_spec.md",
       "source_doc_id": "DLID-42wh7646hjhq",
       "source_section_id": null,
@@ -1385,7 +1385,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "docs/specs/forge/requirements/REQ-028_document_system.md",
         "result": "match",
         "scope": "docs/specs/forge/requirements"
@@ -1401,14 +1401,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "docs/specs/review/design/DES-083_evaluator_perspective_design.md",
         "result": "match",
         "scope": "docs/specs/review/design"
       },
       "kind": "document",
       "position": 1,
-      "recorded_content_hash": "79c19317db1a",
+      "recorded_content_hash": "7f23e0705a84",
       "recorded_path": "../../review/design/DES-083_evaluator_perspective_design.md",
       "source_doc_id": "DLID-2becz9x7x407",
       "source_section_id": null,
@@ -1417,14 +1417,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "docs/specs/review/design/DES-083_evaluator_perspective_design.md",
         "result": "match",
         "scope": "docs/specs/review/design"
       },
       "kind": "document",
       "position": 2,
-      "recorded_content_hash": "79c19317db1a",
+      "recorded_content_hash": "7f23e0705a84",
       "recorded_path": "DES-083_evaluator_perspective_design.md",
       "source_doc_id": "DLID-j50s0xwkwx00",
       "source_section_id": null,
@@ -1433,14 +1433,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "docs/specs/review/design/DES-084_reviewer_design.md",
         "result": "match",
         "scope": "docs/specs/review/design"
       },
       "kind": "document",
       "position": 0,
-      "recorded_content_hash": "0e741f0a00db",
+      "recorded_content_hash": "90cd46356caa",
       "recorded_path": "../../review/design/DES-084_reviewer_design.md",
       "source_doc_id": "DLID-2becz9x7x407",
       "source_section_id": null,
@@ -1449,14 +1449,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "docs/specs/review/design/DES-084_reviewer_design.md",
         "result": "match",
         "scope": "docs/specs/review/design"
       },
       "kind": "document",
       "position": 0,
-      "recorded_content_hash": "0e741f0a00db",
+      "recorded_content_hash": "90cd46356caa",
       "recorded_path": "../../review/design/DES-084_reviewer_design.md",
       "source_doc_id": "DLID-rzp2zxe38068",
       "source_section_id": null,
@@ -1465,14 +1465,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "docs/specs/review/design/DES-084_reviewer_design.md",
         "result": "match",
         "scope": "docs/specs/review/design"
       },
       "kind": "document",
       "position": 2,
-      "recorded_content_hash": "0e741f0a00db",
+      "recorded_content_hash": "90cd46356caa",
       "recorded_path": "DES-084_reviewer_design.md",
       "source_doc_id": "DLID-mzeyx39mfryw",
       "source_section_id": null,
@@ -1481,14 +1481,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "docs/specs/review/requirements/REQ-026_evaluator_perspective.md",
         "result": "match",
         "scope": "docs/specs/review/requirements"
       },
       "kind": "document",
       "position": 0,
-      "recorded_content_hash": "856185c37ce2",
+      "recorded_content_hash": "0e3cb74cccc6",
       "recorded_path": "../requirements/REQ-026_evaluator_perspective.md",
       "source_doc_id": "DLID-mzeyx39mfryw",
       "source_section_id": null,
@@ -1497,14 +1497,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "docs/specs/review/requirements/REQ-027_reviewer.md",
         "result": "match",
         "scope": "docs/specs/review/requirements"
       },
       "kind": "document",
       "position": 1,
-      "recorded_content_hash": "d1f79607a42d",
+      "recorded_content_hash": "36bb4e693dd2",
       "recorded_path": "../requirements/REQ-027_reviewer.md",
       "source_doc_id": "DLID-j50s0xwkwx00",
       "source_section_id": null,
@@ -1513,14 +1513,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "docs/specs/review/requirements/REQ-027_reviewer.md",
         "result": "match",
         "scope": "docs/specs/review/requirements"
       },
       "kind": "document",
       "position": 2,
-      "recorded_content_hash": "d1f79607a42d",
+      "recorded_content_hash": "36bb4e693dd2",
       "recorded_path": "REQ-027_reviewer.md",
       "source_doc_id": "DLID-p1v5z5mme4tw",
       "source_section_id": null,
@@ -1529,14 +1529,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "docs/specs/review/requirements/REQ-029_review_exchange.md",
         "result": "match",
         "scope": "docs/specs/review/requirements"
       },
       "kind": "document",
       "position": 0,
-      "recorded_content_hash": "4e7fe6918eec",
+      "recorded_content_hash": "d635cdb8307b",
       "recorded_path": "../../review/requirements/REQ-029_review_exchange.md",
       "source_doc_id": "DLID-yg0c67zs3zky",
       "source_section_id": null,
@@ -1545,14 +1545,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "docs/specs/review/requirements/REQ-029_review_exchange.md",
         "result": "match",
         "scope": "docs/specs/review/requirements"
       },
       "kind": "document",
       "position": 0,
-      "recorded_content_hash": "4e7fe6918eec",
+      "recorded_content_hash": "d635cdb8307b",
       "recorded_path": "../requirements/REQ-029_review_exchange.md",
       "source_doc_id": "DLID-j50s0xwkwx00",
       "source_section_id": null,
@@ -1561,14 +1561,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "docs/specs/review/requirements/REQ-029_review_exchange.md",
         "result": "match",
         "scope": "docs/specs/review/requirements"
       },
       "kind": "document",
       "position": 0,
-      "recorded_content_hash": "4e7fe6918eec",
+      "recorded_content_hash": "d635cdb8307b",
       "recorded_path": "REQ-029_review_exchange.md",
       "source_doc_id": "DLID-p1v5z5mme4tw",
       "source_section_id": null,
@@ -1577,14 +1577,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "docs/specs/review/requirements/REQ-029_review_exchange.md",
         "result": "match",
         "scope": "docs/specs/review/requirements"
       },
       "kind": "document",
       "position": 1,
-      "recorded_content_hash": "4e7fe6918eec",
+      "recorded_content_hash": "d635cdb8307b",
       "recorded_path": "../../review/requirements/REQ-029_review_exchange.md",
       "source_doc_id": "DLID-3bmft1apetsm",
       "source_section_id": null,
@@ -1593,14 +1593,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "docs/specs/review/requirements/REQ-029_review_exchange.md",
         "result": "match",
         "scope": "docs/specs/review/requirements"
       },
       "kind": "document",
       "position": 1,
-      "recorded_content_hash": "4e7fe6918eec",
+      "recorded_content_hash": "d635cdb8307b",
       "recorded_path": "../../review/requirements/REQ-029_review_exchange.md",
       "source_doc_id": "DLID-rzp2zxe38068",
       "source_section_id": null,
@@ -1609,14 +1609,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "docs/specs/review/requirements/REQ-029_review_exchange.md",
         "result": "match",
         "scope": "docs/specs/review/requirements"
       },
       "kind": "document",
       "position": 1,
-      "recorded_content_hash": "4e7fe6918eec",
+      "recorded_content_hash": "d635cdb8307b",
       "recorded_path": "../requirements/REQ-029_review_exchange.md",
       "source_doc_id": "DLID-mzeyx39mfryw",
       "source_section_id": null,
@@ -1625,14 +1625,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "docs/specs/review/requirements/REQ-029_review_exchange.md",
         "result": "match",
         "scope": "docs/specs/review/requirements"
       },
       "kind": "document",
       "position": 1,
-      "recorded_content_hash": "4e7fe6918eec",
+      "recorded_content_hash": "d635cdb8307b",
       "recorded_path": "REQ-029_review_exchange.md",
       "source_doc_id": "DLID-y42g1frxwkf5",
       "source_section_id": null,
@@ -1641,14 +1641,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "docs/specs/start-implement/design/DES-088_start_implement_design.md",
         "result": "match",
         "scope": "docs/specs/start-implement/design"
       },
       "kind": "document",
       "position": 1,
-      "recorded_content_hash": "5b20e32ba921",
+      "recorded_content_hash": "59241ebe17cb",
       "recorded_path": "../../start-implement/design/DES-088_start_implement_design.md",
       "source_doc_id": "DLID-1vfqj6r96sr4",
       "source_section_id": null,
@@ -1657,14 +1657,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "docs/specs/start-implement/design/DES-088_start_implement_design.md",
         "result": "match",
         "scope": "docs/specs/start-implement/design"
       },
       "kind": "document",
       "position": 1,
-      "recorded_content_hash": "5b20e32ba921",
+      "recorded_content_hash": "59241ebe17cb",
       "recorded_path": "../../start-implement/design/DES-088_start_implement_design.md",
       "source_doc_id": "DLID-42wh7646hjhq",
       "source_section_id": null,
@@ -1673,14 +1673,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "docs/specs/start-implement/requirements/REQ-034_start_implement_spec.md",
         "result": "match",
         "scope": "docs/specs/start-implement/requirements"
       },
       "kind": "document",
       "position": 0,
-      "recorded_content_hash": "addaea4651bb",
+      "recorded_content_hash": "8c2f9a2476da",
       "recorded_path": "../../start-implement/requirements/REQ-034_start_implement_spec.md",
       "source_doc_id": "DLID-ct64b13ee182",
       "source_section_id": null,
@@ -1689,14 +1689,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "docs/specs/start-implement/requirements/REQ-034_start_implement_spec.md",
         "result": "match",
         "scope": "docs/specs/start-implement/requirements"
       },
       "kind": "document",
       "position": 0,
-      "recorded_content_hash": "addaea4651bb",
+      "recorded_content_hash": "8c2f9a2476da",
       "recorded_path": "../requirements/REQ-034_start_implement_spec.md",
       "source_doc_id": "DLID-f8gem0wa3ac4",
       "source_section_id": null,
@@ -1705,14 +1705,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "plugins/forge/docs/additive_development_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
       },
       "kind": "document",
       "position": 1,
-      "recorded_content_hash": "307dc53425f0",
+      "recorded_content_hash": "3be39e634c1c",
       "recorded_path": "../../../../plugins/forge/docs/additive_development_spec.md",
       "source_doc_id": "DLID-1585cw3yt8pa",
       "source_section_id": null,
@@ -1721,14 +1721,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "plugins/forge/docs/additive_development_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
       },
       "kind": "document",
       "position": 4,
-      "recorded_content_hash": "307dc53425f0",
+      "recorded_content_hash": "3be39e634c1c",
       "recorded_path": "../../../../plugins/forge/docs/additive_development_spec.md",
       "source_doc_id": "DLID-42wh7646hjhq",
       "source_section_id": null,
@@ -1737,14 +1737,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "plugins/forge/docs/adr_principles_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
       },
       "kind": "document",
       "position": 1,
-      "recorded_content_hash": "3ae4e3bfdd65",
+      "recorded_content_hash": "1fb15e199859",
       "recorded_path": "../../../../plugins/forge/docs/adr_principles_spec.md",
       "source_doc_id": "DLID-7gyjj06rtab7",
       "source_section_id": null,
@@ -1753,14 +1753,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "plugins/forge/docs/design_principles_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
       },
       "kind": "document",
       "position": 2,
-      "recorded_content_hash": "169ae99c4eed",
+      "recorded_content_hash": "e590554be385",
       "recorded_path": "../../../../../plugins/forge/docs/design_principles_spec.md",
       "source_doc_id": "DLID-8s8p9ah1hyry",
       "source_section_id": null,
@@ -1769,7 +1769,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "plugins/forge/docs/deterministic_generation_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -1785,7 +1785,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "plugins/forge/docs/deterministic_generation_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -1801,7 +1801,7 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "plugins/forge/docs/deterministic_generation_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
@@ -1817,14 +1817,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "plugins/forge/docs/doc_structure_format.md",
         "result": "match",
         "scope": "plugins/forge/docs"
       },
       "kind": "document",
       "position": 1,
-      "recorded_content_hash": "50a324934bb2",
+      "recorded_content_hash": "776f3c99a799",
       "recorded_path": "../../../../plugins/forge/docs/doc_structure_format.md",
       "source_doc_id": "DLID-vfdedgq63evv",
       "source_section_id": null,
@@ -1833,14 +1833,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "plugins/forge/docs/error_classification_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
       },
       "kind": "document",
       "position": 0,
-      "recorded_content_hash": "04397ae80f5c",
+      "recorded_content_hash": "94496cc6d044",
       "recorded_path": "../../../../plugins/forge/docs/error_classification_spec.md",
       "source_doc_id": "DLID-0nfgax46wehg",
       "source_section_id": null,
@@ -1849,14 +1849,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "plugins/forge/docs/error_classification_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
       },
       "kind": "document",
       "position": 3,
-      "recorded_content_hash": "04397ae80f5c",
+      "recorded_content_hash": "94496cc6d044",
       "recorded_path": "../../../../plugins/forge/docs/error_classification_spec.md",
       "source_doc_id": "DLID-5k6jt9qvf60d",
       "source_section_id": null,
@@ -1865,14 +1865,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "plugins/forge/docs/error_classification_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
       },
       "kind": "document",
       "position": 3,
-      "recorded_content_hash": "04397ae80f5c",
+      "recorded_content_hash": "94496cc6d044",
       "recorded_path": "../../../../plugins/forge/docs/error_classification_spec.md",
       "source_doc_id": "DLID-p1v5z5mme4tw",
       "source_section_id": null,
@@ -1881,14 +1881,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "plugins/forge/docs/error_classification_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
       },
       "kind": "document",
       "position": 3,
-      "recorded_content_hash": "04397ae80f5c",
+      "recorded_content_hash": "94496cc6d044",
       "recorded_path": "../../../../plugins/forge/docs/error_classification_spec.md",
       "source_doc_id": "DLID-ypd7r1j5ga4n",
       "source_section_id": null,
@@ -1897,14 +1897,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "plugins/forge/docs/error_classification_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
       },
       "kind": "document",
       "position": 4,
-      "recorded_content_hash": "04397ae80f5c",
+      "recorded_content_hash": "94496cc6d044",
       "recorded_path": "../../../../plugins/forge/docs/error_classification_spec.md",
       "source_doc_id": "DLID-5vrs9fnet7de",
       "source_section_id": null,
@@ -1913,14 +1913,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "plugins/forge/docs/error_classification_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
       },
       "kind": "document",
       "position": 4,
-      "recorded_content_hash": "04397ae80f5c",
+      "recorded_content_hash": "94496cc6d044",
       "recorded_path": "../../../../plugins/forge/docs/error_classification_spec.md",
       "source_doc_id": "DLID-y42g1frxwkf5",
       "source_section_id": null,
@@ -1929,14 +1929,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "plugins/forge/docs/frontmatter_format.md",
         "result": "match",
         "scope": "plugins/forge/docs"
       },
       "kind": "document",
       "position": 3,
-      "recorded_content_hash": "19cf661699b0",
+      "recorded_content_hash": "867507803b4a",
       "recorded_path": "../../../../plugins/forge/docs/frontmatter_format.md",
       "source_doc_id": "DLID-42wh7646hjhq",
       "source_section_id": null,
@@ -1945,14 +1945,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "plugins/forge/docs/plan_principles_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
       },
       "kind": "document",
       "position": 0,
-      "recorded_content_hash": "122ed8c0e2c2",
+      "recorded_content_hash": "33e1e8046cdc",
       "recorded_path": "../../../../plugins/forge/docs/plan_principles_spec.md",
       "source_doc_id": "DLID-42wh7646hjhq",
       "source_section_id": null,
@@ -1961,14 +1961,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "plugins/forge/docs/plan_principles_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
       },
       "kind": "document",
       "position": 3,
-      "recorded_content_hash": "122ed8c0e2c2",
+      "recorded_content_hash": "33e1e8046cdc",
       "recorded_path": "../../../../plugins/forge/docs/plan_principles_spec.md",
       "source_doc_id": "DLID-1585cw3yt8pa",
       "source_section_id": null,
@@ -1977,14 +1977,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "plugins/forge/docs/requirement_format.md",
         "result": "match",
         "scope": "plugins/forge/docs"
       },
       "kind": "document",
       "position": 0,
-      "recorded_content_hash": "1abf0122bdeb",
+      "recorded_content_hash": "c05edc5d1de7",
       "recorded_path": "../../../../plugins/forge/docs/requirement_format.md",
       "source_doc_id": "DLID-vzcznbpypja0",
       "source_section_id": null,
@@ -1993,14 +1993,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "plugins/forge/docs/review_priorities_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
       },
       "kind": "document",
       "position": 3,
-      "recorded_content_hash": "dc0c7761adf3",
+      "recorded_content_hash": "458b42b8deb4",
       "recorded_path": "../../../../plugins/forge/docs/review_priorities_spec.md",
       "source_doc_id": "DLID-mzeyx39mfryw",
       "source_section_id": null,
@@ -2009,14 +2009,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "plugins/forge/docs/review_priorities_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
       },
       "kind": "document",
       "position": 5,
-      "recorded_content_hash": "dc0c7761adf3",
+      "recorded_content_hash": "458b42b8deb4",
       "recorded_path": "../../../../plugins/forge/docs/review_priorities_spec.md",
       "source_doc_id": "DLID-5vrs9fnet7de",
       "source_section_id": null,
@@ -2025,14 +2025,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "plugins/forge/docs/spec_design_boundary_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
       },
       "kind": "document",
       "position": 0,
-      "recorded_content_hash": "4e2a4cd68a8a",
+      "recorded_content_hash": "e0d1a83f7e47",
       "recorded_path": "../../../../plugins/forge/docs/spec_design_boundary_spec.md",
       "source_doc_id": "DLID-5vrs9fnet7de",
       "source_section_id": null,
@@ -2041,14 +2041,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "plugins/forge/docs/spec_design_boundary_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
       },
       "kind": "document",
       "position": 0,
-      "recorded_content_hash": "4e2a4cd68a8a",
+      "recorded_content_hash": "e0d1a83f7e47",
       "recorded_path": "../../../../plugins/forge/docs/spec_design_boundary_spec.md",
       "source_doc_id": "DLID-y42g1frxwkf5",
       "source_section_id": null,
@@ -2057,14 +2057,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "plugins/forge/docs/spec_priorities_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
       },
       "kind": "document",
       "position": 0,
-      "recorded_content_hash": "f8233c87c564",
+      "recorded_content_hash": "b68b930cec1d",
       "recorded_path": "../../../../../plugins/forge/docs/spec_priorities_spec.md",
       "source_doc_id": "DLID-0868m80sm7hy",
       "source_section_id": null,
@@ -2073,14 +2073,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "plugins/forge/docs/spec_priorities_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
       },
       "kind": "document",
       "position": 0,
-      "recorded_content_hash": "f8233c87c564",
+      "recorded_content_hash": "b68b930cec1d",
       "recorded_path": "../../../../plugins/forge/docs/spec_priorities_spec.md",
       "source_doc_id": "DLID-433459yse70c",
       "source_section_id": null,
@@ -2089,14 +2089,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "plugins/forge/docs/spec_priorities_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
       },
       "kind": "document",
       "position": 0,
-      "recorded_content_hash": "f8233c87c564",
+      "recorded_content_hash": "b68b930cec1d",
       "recorded_path": "../../../../plugins/forge/docs/spec_priorities_spec.md",
       "source_doc_id": "DLID-7gyjj06rtab7",
       "source_section_id": null,
@@ -2105,14 +2105,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "plugins/forge/docs/spec_priorities_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
       },
       "kind": "document",
       "position": 0,
-      "recorded_content_hash": "f8233c87c564",
+      "recorded_content_hash": "b68b930cec1d",
       "recorded_path": "../../../../plugins/forge/docs/spec_priorities_spec.md",
       "source_doc_id": "DLID-8aaxgj88j28q",
       "source_section_id": null,
@@ -2121,14 +2121,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "plugins/forge/docs/spec_priorities_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
       },
       "kind": "document",
       "position": 0,
-      "recorded_content_hash": "f8233c87c564",
+      "recorded_content_hash": "b68b930cec1d",
       "recorded_path": "../../../../plugins/forge/docs/spec_priorities_spec.md",
       "source_doc_id": "DLID-zehb6ge71vgb",
       "source_section_id": null,
@@ -2137,14 +2137,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "plugins/forge/docs/spec_priorities_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
       },
       "kind": "document",
       "position": 1,
-      "recorded_content_hash": "f8233c87c564",
+      "recorded_content_hash": "b68b930cec1d",
       "recorded_path": "../../../../../plugins/forge/docs/spec_priorities_spec.md",
       "source_doc_id": "DLID-hsj370z603x4",
       "source_section_id": null,
@@ -2153,14 +2153,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "plugins/forge/docs/spec_priorities_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
       },
       "kind": "document",
       "position": 1,
-      "recorded_content_hash": "f8233c87c564",
+      "recorded_content_hash": "b68b930cec1d",
       "recorded_path": "../../../../plugins/forge/docs/spec_priorities_spec.md",
       "source_doc_id": "DLID-5vrs9fnet7de",
       "source_section_id": null,
@@ -2169,14 +2169,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "plugins/forge/docs/spec_priorities_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
       },
       "kind": "document",
       "position": 1,
-      "recorded_content_hash": "f8233c87c564",
+      "recorded_content_hash": "b68b930cec1d",
       "recorded_path": "../../../../plugins/forge/docs/spec_priorities_spec.md",
       "source_doc_id": "DLID-p1v5z5mme4tw",
       "source_section_id": null,
@@ -2185,14 +2185,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "plugins/forge/docs/spec_priorities_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
       },
       "kind": "document",
       "position": 2,
-      "recorded_content_hash": "f8233c87c564",
+      "recorded_content_hash": "b68b930cec1d",
       "recorded_path": "../../../../plugins/forge/docs/spec_priorities_spec.md",
       "source_doc_id": "DLID-y42g1frxwkf5",
       "source_section_id": null,
@@ -2201,14 +2201,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "plugins/forge/docs/spec_priorities_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
       },
       "kind": "document",
       "position": 2,
-      "recorded_content_hash": "f8233c87c564",
+      "recorded_content_hash": "b68b930cec1d",
       "recorded_path": "../../../../plugins/forge/docs/spec_priorities_spec.md",
       "source_doc_id": "DLID-ypd7r1j5ga4n",
       "source_section_id": null,
@@ -2217,14 +2217,14 @@
     },
     {
       "check": {
-        "checked_at": "2026-11-23T14:12:08+00:00",
+        "checked_at": "2026-11-23T14:44:54+00:00",
         "found_path": "plugins/forge/docs/strategy_principles_spec.md",
         "result": "match",
         "scope": "plugins/forge/docs"
       },
       "kind": "document",
       "position": 4,
-      "recorded_content_hash": "e1b25ede799d",
+      "recorded_content_hash": "3f63be26ad5c",
       "recorded_path": "../../../../plugins/forge/docs/strategy_principles_spec.md",
       "source_doc_id": "DLID-1585cw3yt8pa",
       "source_section_id": null,
@@ -3066,13 +3066,6 @@
       "section_id": "DLID-jxjwdg9a5ba8"
     },
     {
-      "content_hash": "0510c24fbee44e5997e34ca26ef91bacd63195050d6dc39b7cd3f47276c8c32c",
-      "doc_link_id": "DLID-d9fpywv4txra",
-      "heading": "DES-001 文書検索ラッパー（forge → 文書検索 backend）設計書",
-      "position": 0,
-      "section_id": "DLID-7gy2qvdh449y"
-    },
-    {
       "content_hash": "0514c4d14a5e766dccba6a37fa8c87f8bde9f8eb419d01a84e3b13277ac4f0bd",
       "doc_link_id": "DLID-vfdedgq63evv",
       "heading": "v1 形式の構造",
@@ -3491,13 +3484,6 @@
       "heading": "5. 使用する既存コンポーネント",
       "position": 24,
       "section_id": "DLID-1b971y195s0m"
-    },
-    {
-      "content_hash": "16b76d17e48e9d0afbd2758afd55dcc8aa57764294481ada8849810a9c583108",
-      "doc_link_id": "DLID-5k6jt9qvf60d",
-      "heading": "5. doc-link 処理設計",
-      "position": 26,
-      "section_id": "DLID-9f7yjc4dktjy"
     },
     {
       "content_hash": "17873ac1c525cef4d6e90b8b25a5abb2a2164cd6ecc9ba73fd2f13dc2b4dae19",
@@ -4081,13 +4067,6 @@
       "section_id": "DLID-ah9s3fxqrs21"
     },
     {
-      "content_hash": "2d54390fff19d845964947b8b411a46b4a82372a003a1fd6ef4fab4304d68b43",
-      "doc_link_id": "DLID-5k6jt9qvf60d",
-      "heading": "DES-057 doc-db バックエンド選択 設計書",
-      "position": 0,
-      "section_id": "DLID-vm42nep5js51"
-    },
-    {
       "content_hash": "2df93af7a1b0fa16f934bd44f5bf8161694e721f6a6c811b1ac145a3d404b99e",
       "doc_link_id": "DLID-1585cw3yt8pa",
       "heading": "3. フェーズ詳細",
@@ -4429,13 +4408,6 @@
       "heading": "1. 作業",
       "position": 7,
       "section_id": "DLID-400vabqahndv"
-    },
-    {
-      "content_hash": "3be2f5b339b3a89f05480a8a942eeb7ebce5cb0718ee0a56fbdc34cdad6a5bad",
-      "doc_link_id": "DLID-5k6jt9qvf60d",
-      "heading": "5.1 query",
-      "position": 27,
-      "section_id": "DLID-0sn6xmd1v741"
     },
     {
       "content_hash": "3be9c2a561204f899b5c25b7fab84e47daca13cfac6a22091a41cb70e59abd9c",
@@ -5971,13 +5943,6 @@
       "section_id": "DLID-t4aqg7pynjpc"
     },
     {
-      "content_hash": "819f4e9f23b5168b09793b308907c58bfc80c83a87f49982d5ce9fb5d1f842e4",
-      "doc_link_id": "DLID-d9fpywv4txra",
-      "heading": "2. スキル一覧",
-      "position": 2,
-      "section_id": "DLID-pjt0tkpp21dn"
-    },
-    {
       "content_hash": "81b36850328d0d358e2f5b90d4134f0569b7d221f31d4759eedc68c23a77b3f3",
       "doc_link_id": "DLID-vyz6fzhdfk3a",
       "heading": "2. アーキテクチャ概要",
@@ -6249,6 +6214,13 @@
       "heading": "3. スキル別タスク適用マトリクス",
       "position": 3,
       "section_id": "DLID-r3707pgmaj3v"
+    },
+    {
+      "content_hash": "8d23bc797d3319c923e983a2f38de4efd748678254426c19c392fa1a11d63253",
+      "doc_link_id": "DLID-5k6jt9qvf60d",
+      "heading": "DES-057 doc-db バックエンド選択 設計書",
+      "position": 0,
+      "section_id": "DLID-vm42nep5js51"
     },
     {
       "content_hash": "8d8ef6928e9fbb670cdc9e86bf9e380f1b39ef5183fa8b55dea3ff20ffbf9339",
@@ -7819,6 +7791,13 @@
       "section_id": "DLID-0drhsb4j2nsj"
     },
     {
+      "content_hash": "cb073b0f828ef89fdf4359d13f24cc6a3a341651850df7a48863ac43584c3065",
+      "doc_link_id": "DLID-d9fpywv4txra",
+      "heading": "2. スキル一覧",
+      "position": 2,
+      "section_id": "DLID-pjt0tkpp21dn"
+    },
+    {
       "content_hash": "cb110036569570b0fa72b511dc204957bd5522e8a684c8fbbae7ca167e210bbf",
       "doc_link_id": "DLID-j50s0xwkwx00",
       "heading": "5.4 終了の値と成否",
@@ -8132,6 +8111,13 @@
       "heading": "FNC-001: 依頼の受付",
       "position": 6,
       "section_id": "DLID-ar8p74szay64"
+    },
+    {
+      "content_hash": "d7f89e797a4a603041b69cc90550adbf3b0d3bd74743b10b856ea81428afa484",
+      "doc_link_id": "DLID-5k6jt9qvf60d",
+      "heading": "5.1 query",
+      "position": 27,
+      "section_id": "DLID-0sn6xmd1v741"
     },
     {
       "content_hash": "d823681e315111eb9596971c14e5a50f6a3150f1864c83cc0d810551a9a9abd7",
@@ -8454,6 +8440,13 @@
       "heading": "3.1 クラス定義",
       "position": 4,
       "section_id": "DLID-gaksjsvs0k82"
+    },
+    {
+      "content_hash": "e481bd94ef995b59bfea38918c5b20009d2c8f810714cde477c76f25a0aeb85f",
+      "doc_link_id": "DLID-d9fpywv4txra",
+      "heading": "DES-001 文書検索ラッパー（forge → 文書検索 backend）設計書",
+      "position": 0,
+      "section_id": "DLID-7gy2qvdh449y"
     },
     {
       "content_hash": "e4f99a547d62ff84684c846074447164cc2af7f8bf6bbd776366a5d3bcfae5ec",
@@ -8911,6 +8904,13 @@
       "section_id": "DLID-6p5tttv2ejmx"
     },
     {
+      "content_hash": "f544bb509efcaf513bbd35ffa72229a0e378963bc32c211a83b5fc54520b0505",
+      "doc_link_id": "DLID-5k6jt9qvf60d",
+      "heading": "5. doc-link 処理設計",
+      "position": 26,
+      "section_id": "DLID-9f7yjc4dktjy"
+    },
+    {
       "content_hash": "f58b3c02f669cd71d5a3a77868fbd67d62e90b540dc944b8cd6b9e949f113b47",
       "doc_link_id": "DLID-zfh5q9h29c8y",
       "heading": "Phase 3: 既存の実装・設計パターンとの照合と再設計",
@@ -9228,5 +9228,5 @@
     "paths": []
   },
   "toc_key": "specs",
-  "version": 19
+  "version": 20
 }

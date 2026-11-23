@@ -558,7 +558,7 @@ doc-db 側の安定契約であり、将来もエラー化しない**（series �
 
 ### 5.1 query DLID-0sn6xmd1v741
 
-query は `doc-link:query-docs` を 1 回呼ぶ。渡すのは索引の識別キー（category）と検索のタスクだけである。
+query は `doc-link:query-docs` を 1 回呼ぶ。渡すのは ToC 識別キー（category）と検索のタスクだけである。
 対象指定は渡さない。doc-link は、索引を構築したときの対象指定を保存しており、それを使う。
 
 **query wrapper は索引を整備する手順を持たない**（REQ-014 FNC-002）。索引の維持は `update-db-*`（§5.2）の責務である。

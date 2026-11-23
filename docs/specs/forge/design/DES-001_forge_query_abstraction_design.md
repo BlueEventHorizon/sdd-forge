@@ -28,7 +28,7 @@ backend の選択、可用性判定、各 backend の経路の処理は [DES-057
 | `/forge:update-db-rules` | ルール文書の検索インデックスを最新化する | rules    | true           |
 | `/forge:update-db-specs` | 仕様文書の検索インデックスを最新化する   | specs    | true           |
 
-各 SKILL は category を固定する。category は、doc-link 経路では索引の識別キーに、doc-db 経路では
+各 SKILL は category を固定する。category は、doc-link 経路では ToC 識別キーに、doc-db 経路では
 KEY の一部になる（DES-057 §4.1・§5）。
 
 4 SKILL とも `user-invocable: true`。ユーザーが直接 `/forge:query-db-rules` 等を起動する運用も許容しつつ、forge の他 SKILL（review / start-* /
@@ -122,4 +122,4 @@ grep による代替検索は行わない）。書き込み・コミット・自
 
 [authoring-guide]: ../../../rules/plugin_claude_code_authoring_guide.md "65302c63b0e1 DLID-pvwk8en5c2rq"
 [authoring-policy]: ../../../rules/forge_claude_code_authoring_policy.md "70c36432428c DLID-33rp07ycsdym"
-[des-057]: ../../doc-db/design/DES-057_doc_db_backend_selection_design.md "1eaeab0e978b DLID-5k6jt9qvf60d"
+[des-057]: ../../doc-db/design/DES-057_doc_db_backend_selection_design.md "b765007682aa DLID-5k6jt9qvf60d"

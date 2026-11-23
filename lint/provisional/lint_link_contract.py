@@ -25,7 +25,7 @@ from lint import REPO_ROOT
 
 _SKILLS_DIR = REPO_ROOT / "plugins" / "forge" / "skills"
 
-# query 系 SKILL: category → SKILL.md（category は doc-link の索引の識別キー）
+# query 系 SKILL: category → SKILL.md（category は doc-link の ToC 識別キー）
 QUERY_SKILLS = {
     "rules": _SKILLS_DIR / "query-db-rules" / "SKILL.md",
     "specs": _SKILLS_DIR / "query-db-specs" / "SKILL.md",

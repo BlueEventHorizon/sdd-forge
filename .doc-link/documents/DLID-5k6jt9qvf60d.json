@@ -1,40 +1,40 @@
 {
-  "content_hash": "1eaeab0e978b195b244ff01224f7dc94ae23b92fbd3282f9a3d76cce4bb325f1",
+  "content_hash": "b765007682aa366b66241fda4f21fa84c88913ae8420b604c6d3d97764b01f76",
   "doc_link_id": "DLID-5k6jt9qvf60d",
   "keywords": [
+    "backend selection",
     "doc-db",
     "doc-link",
-    "backend selection",
     "doc_backend.prefer",
-    "resolve_backend_order",
-    "series",
-    "index_missing",
     "query-db",
     "update-db",
-    "Streamable HTTP"
+    "MCP Streamable HTTP",
+    "index_missing",
+    "series branch",
+    "availability check"
   ],
   "path": "docs/specs/doc-db/design/DES-057_doc_db_backend_selection_design.md",
-  "purpose": "Design for selecting a document search backend (doc-db or doc-link) from an ordered preference list in the four query/update wrapper SKILLs, covering availability checks, delegation, and error handling.",
+  "purpose": "Design for ordered doc-link/doc-db backend selection in the four doc-search wrappers, covering availability checks, HTTP direct client, on-demand startup, index preparation, delegation, errors and tests.",
   "summary": [
-    "Backend selection boundary: doc-db results (success, unavailable, operation failure) and the not-yet-indexed state",
-    "Preferred backend setting doc_backend.prefer in .claude/.forge.yaml and resolve_backend_order.py with settings_invalid handling",
-    "doc-db direct Streamable HTTP client, on-demand startup, and port, timeout and probe constants",
-    "doc-link availability check by available-skills and uv, with a rule against using version as a condition",
-    "Component architecture, module list, and one-way dependency direction among SKILLs, wrappers and shared scripts",
-    "doc-db query and update design: project key, series, path existence check, index preparation approval, and sync start/status polling",
-    "doc-db MCP tool contract snapshot, KEY state behavior, and exit codes 0/10/20/30",
-    "doc-link query, update (DLID embedding, indexing), and delegation from query to update-db-* with an explicit backend",
-    "Use case sequences, error handling and notification table, existing components used",
-    "Test design (unit, wrapper, integration, doc-link contract) and completeness check against REQ-014"
+    "Ordered backend selection via .claude/.forge.yaml doc_backend.prefer, default doc-link first",
+    "Responsibility split: selector (SKILL) owns order, each backend owns availability checks",
+    "doc-db stdlib Streamable HTTP client, on-demand startup, exit codes 0/10/20/30",
+    "doc-db query with branch series, path existence check, missing-index approval and sync",
+    "doc-db update via desired-state sync with --start/--status polling by SKILL",
+    "doc-link query-docs, embed-dlid, index-docs flow; freshness check left to doc-link",
+    "Query-to-update delegation with explicit backend specification",
+    "Use case sequences, error handling table, user notifications",
+    "Existing components reused, unit/wrapper/integration/contract test design",
+    "Completeness check against REQ-014 and doc-db MCP contract snapshot"
   ],
   "tasks": [
-    "Implementing or modifying query-db-* and update-db-* SKILLs",
-    "Implementing doc_backend scripts such as query_docdb.py, sync_docdb.py, resolve_backend_order.py",
-    "Designing or changing backend selection and fallback behavior",
-    "Handling unindexed state with user approval and delegation to update",
-    "Reviewing design against REQ-014 requirements",
-    "Writing tests for doc-db HTTP client, wrappers, and doc-link contract checks",
-    "Diagnosing doc-db or doc-link unavailability and error reporting"
+    "Implementing or modifying query-db-rules/specs and update-db-rules/specs SKILLs",
+    "Changing backend selection order or the doc_backend settings schema",
+    "Modifying doc_backend scripts (query_docdb, sync_docdb, docdb_runtime, docdb_client)",
+    "Designing or reviewing doc-link integration and availability judgment",
+    "Writing tests or lint for wrappers and doc-db contract",
+    "Handling doc-db contract changes such as KEY_NOT_FOUND errors",
+    "Reviewing error handling and notification behavior of document search"
   ],
   "title": "DES-057 doc-db バックエンド選択 設計書"
 }

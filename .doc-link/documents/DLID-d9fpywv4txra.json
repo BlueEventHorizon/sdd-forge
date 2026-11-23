@@ -1,39 +1,39 @@
 {
-  "content_hash": "e9c5870933bc4a31bf5df951a9d222c00a88b997f84c406f59ba5669e30417e8",
+  "content_hash": "3185b65d2c91992bd0a830185f6ac6de508cff3b69856bfa2a75aa1fed1c2d0a",
   "doc_link_id": "DLID-d9fpywv4txra",
   "keywords": [
-    "document search wrapper",
+    "document search",
     "query-db-rules",
     "query-db-specs",
     "update-db-rules",
     "update-db-specs",
+    "backend selection",
     "doc-link",
     "doc-db",
-    "backend selection",
-    "inherited SKILL",
-    "output contract"
+    "output contract",
+    "inherited SKILL"
   ],
   "path": "docs/specs/forge/design/DES-001_forge_query_abstraction_design.md",
-  "purpose": "Design of the four forge wrapper SKILLs (query/update for rules/specs) that delegate document search and index updates to external backends, defining skills, arguments, output contract and SKILL contract.",
+  "purpose": "Design of the abstraction layer for forge document search: defines the four wrapper SKILLs, their arguments, output contract and SKILL contract, delegating to doc-link or doc-db backends.",
   "summary": [
-    "Overview: forge delegates document search and index updating to doc-link or doc-db backends via wrapper SKILLs",
-    "Skill list with fixed category and user-invocable settings for query-db-rules/specs and update-db-rules/specs",
-    "Query SKILL argument {task} and execution flow with backend order resolution and availability check",
-    "Query does not maintain indexes; delegates to update SKILLs with a confirmed backend after approval",
-    "Error when no backend is available; no grep fallback",
+    "Overview: forge delegates document search and index updates to external backends via wrapper SKILLs",
+    "Skill list: query-db-rules, query-db-specs, update-db-rules, update-db-specs with fixed categories",
+    "Query skills: {task} argument and execution flow with backend order resolution",
+    "Query skills never build indexes; they delegate to update skills only with approval and a fixed backend",
+    "No grep fallback: explicit error when no backend is available",
     "Output contract: Required documents path list built by script, common across backends",
-    "SKILL contract: inherited-type search SKILL without context fork, allowed-tools, args limited to keywords and short task text",
-    "Update SKILLs flow with --backend override and desired-state semantics based on .doc_structure.yaml",
-    "Preconditions: at least one backend available, judged by capability not version",
-    "Tests and lints covering the wrappers, backend selection, worker roles and index maintenance boundary"
+    "SKILL contract: inherited-type search SKILL, no context fork, allowed-tools, args limited to keywords",
+    "Update skills: --backend override, order resolution, backend-specific update paths",
+    "Desired-state semantics: .doc_structure.yaml is the source of truth for the target set",
+    "Prerequisites and test/lint coverage list"
   ],
   "tasks": [
     "Modifying query-db-rules or query-db-specs SKILL",
     "Modifying update-db-rules or update-db-specs SKILL",
-    "Designing backend selection or fallback behavior for document search",
-    "Calling document search SKILLs from other forge SKILLs",
-    "Reviewing the SKILL contract for inherited search SKILLs",
-    "Adding tests or lints for document search wrappers"
+    "Designing or changing document search backend selection",
+    "Calling query skills from other forge skills",
+    "Reviewing the document search wrapper design",
+    "Writing tests or lint for wrapper SKILLs"
   ],
   "title": "DES-001 文書検索ラッパー（forge → 文書検索 backend）設計書"
 }

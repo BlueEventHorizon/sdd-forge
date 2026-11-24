@@ -274,4 +274,4 @@ major = get_major_version(content)  # 3
 ```
 
 [common-req-001-versioned-migration]: ../../common/requirements/COMMON-REQ-001_versioned_migration.md "857319588069 DLID-dqkf6wa1z2cp"
-[doc-structure-format]: ../../../../plugins/forge/docs/doc_structure_format.md "50a324934bb2 DLID-cbr02jpbxfcs"
+[doc-structure-format]: ../../../../plugins/forge/docs/doc_structure_format.md "776f3c99a799 DLID-cbr02jpbxfcs"

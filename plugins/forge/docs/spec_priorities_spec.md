@@ -208,4 +208,4 @@ AI が未確定の定量値を推測して、要件・設計に書いてはな�
 
 critical 適用範囲であっても、当該カテゴリと無関係である理由が明文化されている場合は許容 (例: 「読み取り専用の社内ツールのため可用性 SLA 不要」を明記)。major 適用範囲では、除外理由の都度明記は不要 (前段のスコープ判定で吸収する)。
 
-[spec-design-boundary-spec]: spec_design_boundary_spec.md "4e2a4cd68a8a DLID-h9h90g9wcy8f"
+[spec-design-boundary-spec]: spec_design_boundary_spec.md "e0d1a83f7e47 DLID-h9h90g9wcy8f"

@@ -353,11 +353,11 @@ sequenceDiagram
 
 該当なし。
 
-[reference]: ../../../rules/plugin_claude_code_reference.md "4925fe0a5d6e DLID-d384sm5xwctj"
-[authoring-guide]: ../../../rules/plugin_claude_code_authoring_guide.md "1b4400f836cd DLID-pvwk8en5c2rq"
-[req-030]: ../requirements/REQ-030_adr_writer.md "e5233def35da DLID-7gyjj06rtab7"
-[des-019]: ../../forge/design/DES-019_create_plan_workflow_design.md "7f8da9d31c1f DLID-1585cw3yt8pa"
+[reference]: ../../../rules/plugin_claude_code_reference.md "c78f488a3ced DLID-d384sm5xwctj"
+[authoring-guide]: ../../../rules/plugin_claude_code_authoring_guide.md "65302c63b0e1 DLID-pvwk8en5c2rq"
+[req-030]: ../requirements/REQ-030_adr_writer.md "5145154553b8 DLID-7gyjj06rtab7"
+[des-019]: ../../forge/design/DES-019_create_plan_workflow_design.md "dcf01b441a6b DLID-1585cw3yt8pa"
 [deterministic-generation-spec]: ../../../../plugins/forge/docs/deterministic_generation_spec.md "75383cc8c6d8 DLID-tm2m7nv23dqd"
-[des-022]: ../../forge/design/DES-022_parallel_agent_output_contract_design.md "55060c313fdc DLID-5h7wqxcknyha"
-[common-req-002-error-handling-policy]: ../../common/requirements/COMMON-REQ-002_error_handling_policy.md "3810426fdc1b DLID-4wn8sb8y1f80"
-[req-003]: ../../forge/requirements/REQ-003_skill_script_separation.md "323aaf2b05f6 DLID-bgxgcq0pvkm7"
+[des-022]: ../../forge/design/DES-022_parallel_agent_output_contract_design.md "02eb53006efc DLID-5h7wqxcknyha"
+[common-req-002-error-handling-policy]: ../../common/requirements/COMMON-REQ-002_error_handling_policy.md "1fe6b5d5aa31 DLID-4wn8sb8y1f80"
+[req-003]: ../../forge/requirements/REQ-003_skill_script_separation.md "3b1c5409fe80 DLID-bgxgcq0pvkm7"

@@ -1,41 +1,40 @@
 {
-  "content_hash": "e5233def35da6382f8c642fa0772ffc61f6dd8a6399fe87bc10a01f02e636f53",
+  "content_hash": "5145154553b89165d93d3a647e30a3b183789efddf13c274213bc616f79eca49",
   "doc_link_id": "DLID-7gyjj06rtab7",
   "keywords": [
+    "ADR",
     "ADR writer",
     "architecture decision record",
     "approval record",
     "judgment record",
     "verdict",
-    "rejection criteria",
-    "ADR file",
-    "isolated context",
+    "context isolation",
+    "adr directory",
     "start-design",
-    "REQ-030"
+    "rejected alternatives"
   ],
   "path": "docs/specs/adr-writer/requirements/REQ-030_adr_writer.md",
-  "purpose": "Requirements for the ADR writer, an isolated agent that judges, rejects, repairs and records architecture decision records separately from the design flow, with verdicts of created, rejected or insufficient.",
+  "purpose": "Defines the requirements for the ADR writer, an isolated agent that judges, corrects, and records ADRs from requests, returning a create, reject, or insufficient verdict.",
   "summary": [
-    "Overview and scope of the ADR writer as an isolated subject that examines and records ADRs",
-    "Glossary: request types (approval record, judgment record, update) and verdicts (created, rejected, insufficient)",
-    "Request intake rules with required content per request type",
-    "Rejection criteria for judgment records and repair rules for malformed ADRs",
-    "Handling of insufficient information: return what is missing instead of inventing",
-    "Approval records are never rejected, only checked for completeness",
-    "Updating existing decisions by rewriting the same section, moving rejected ideas to alternatives",
-    "Verdict return contract and treating incomplete runs as failures",
-    "Output location: one ADR file per feature, ADR-{NNN}_{feature}.md, write scope limited to ADR files",
-    "Invocation path, start-design decoupling, single source of norms, isolation and failure visibility requirements"
+    "Overview: an isolated ADR writer separates ADR judgment and writing from the design context",
+    "Terminology: request types (approval record, judgment record, update) and verdicts (create, reject, insufficient)",
+    "FNC-001/002: accepting typed requests and rejecting judgment records that do not merit an ADR",
+    "FNC-003/004: fixing malformed content before writing, and returning what is missing instead of inventing facts",
+    "FNC-005: approval records are never rejected; checked only for a valid reason and a verbatim user approval quote",
+    "FNC-006: updating a rejected decision by rewriting the same section and moving the old option into alternatives",
+    "FNC-007: returning a verdict value that callers can branch on, with reasons only for reject and insufficient",
+    "FNC-008/009: one ADR file per feature under adr/, numbered once, with writes limited to the ADR file",
+    "FNC-010/011/012: single entry point, start-design holds no ADR norms, norms centralized in one document",
+    "NFR: context isolation and visible failure when the writer cannot finish"
   ],
   "tasks": [
-    "Designing or implementing the ADR writer agent or skill",
-    "Writing or updating ADR files",
-    "Requesting an ADR from start-design or other skills",
-    "Recording user approval for designs not covered by requirements",
-    "Reviewing ADR-related documents for requirement conformance",
-    "Deciding whether a decision deserves an ADR",
-    "Updating or retracting an existing ADR decision",
-    "Handling ADR writer verdicts in a calling skill"
+    "Implementing or modifying the ADR writer agent or its entry skill",
+    "Designing the ADR writer in a design document",
+    "Reviewing ADR-related requirements and designs",
+    "Requesting an approval record from start-design",
+    "Deciding whether a decision should be recorded as an ADR",
+    "Updating or overturning an existing ADR decision",
+    "Determining ADR file placement and numbering"
   ],
   "title": "REQ-030 ADR ライター 要件定義書"
 }

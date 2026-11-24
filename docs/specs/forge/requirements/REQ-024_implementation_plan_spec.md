@@ -86,6 +86,6 @@ forge プラグイン内部の文書運用であり、外部公開・本番運�
 
 該当なし。
 
-[spec-priorities-spec]: ../../../../plugins/forge/docs/spec_priorities_spec.md "f8233c87c564 DLID-f9ny9e932trv"
-[req-001]: REQ-001_orchestrator_pattern.md "8954ef4d1f67 DLID-ct64b13ee182"
-[req-025]: REQ-025_additive_development_spec.md "1d8889eae72e DLID-8aaxgj88j28q"
+[spec-priorities-spec]: ../../../../plugins/forge/docs/spec_priorities_spec.md "b68b930cec1d DLID-f9ny9e932trv"
+[req-001]: REQ-001_orchestrator_pattern.md "16677411b761 DLID-ct64b13ee182"
+[req-025]: REQ-025_additive_development_spec.md "a78dcb08e87b DLID-8aaxgj88j28q"

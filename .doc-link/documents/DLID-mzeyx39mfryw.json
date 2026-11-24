@@ -1,5 +1,5 @@
 {
-  "content_hash": "79c19317db1affaa332f04803be4855ca175bad2c5f7c6b39c993d533005baa4",
+  "content_hash": "7f23e0705a84e555f9ff2ff99660e8763a7160cd2b63a60e26934c953f7cf212",
   "doc_link_id": "DLID-mzeyx39mfryw",
   "keywords": [
     "evaluator",
@@ -7,34 +7,33 @@
     "evaluation",
     "disposition",
     "finding_id",
-    "evaluate_result.json",
-    "count_actionable",
-    "advance_round",
     "flawed_premise",
-    "review round"
+    "review round",
+    "count_actionable",
+    "consult",
+    "evaluate_result.json"
   ],
   "path": "docs/specs/review/design/DES-083_evaluator_perspective_design.md",
-  "purpose": "Design for the evaluator independent assessment and meta-perspectives: how the evaluator judges reviewer findings, how the main body scrutinizes them and advances rounds, plus evaluation scripts and JSON.",
+  "purpose": "Design for how the evaluator independently judges reviewer findings with meta-perspectives, and how the main body examines findings and evaluations, advances rounds and cleans up.",
   "summary": [
-    "Evaluator works like the reviewer but starts from findings and outputs evaluations that redefine problems",
-    "Sequence S10-S20: evaluator run, body reading findings and evaluations, round advance, deletion",
-    "Class diagram of body, evaluator, shared scripts, and JSON files",
-    "Five meta-perspectives expressed in evaluation results, not self-reported",
-    "Disposition values, severity copied from rule catalogs, confidence and fix_confident",
-    "New findings via --new with script-assigned finding_id and mandatory location",
-    "Body as final decider: scrutinizes evaluations, presents per evaluation, terminal judgment",
-    "Evaluation JSON structure and script guarantees on finding-evaluation relations",
-    "Scripts: evaluator wrappers, append/seal evaluations, count_actionable, advance_round, delete_review",
-    "Consult interim measure without agenda, test design, and open TBD"
+    "Sequence S10-S20 covering evaluator, main body, round advance and review deletion",
+    "Class diagram of main body, evaluator, shared and body-only scripts, and JSON files",
+    "Evaluator definition: finding-first reading, five meta-perspectives reflected in evaluations, new findings via --new",
+    "Evaluation reason rules, severity from rule catalog, confidence and fix_confident semantics",
+    "Main body duties: examine evaluations rather than obey values, per-evaluation presentation, termination judgment, 4-round limit",
+    "Temporary consult measure: no agenda, state kept in conversation context, unhandled finding sources",
+    "evaluate_result.json structure, guarantees by script, and finding_id numbering shared with reviewer",
+    "Script specs: evaluator wrappers, append/seal for evaluations, resolve_review_path, count_actionable, advance_round, delete_review",
+    "Test design covering unit, contract, lint and integration cases, plus TBD on meta-perspective verification"
   ],
   "tasks": [
-    "Implementing or modifying the evaluator agent definition",
-    "Implementing evaluation-related review scripts",
-    "Editing the review SKILL body flow for findings and evaluations",
-    "Designing or reviewing finding_id numbering",
-    "Writing tests for evaluator scripts and contracts",
-    "Reviewing design documents of the review feature",
-    "Changing consult presentation behavior"
+    "Implementing evaluator.md and evaluator wrapper scripts",
+    "Implementing the review SKILL main body after evaluator launch",
+    "Implementing append_result, seal_result and resolve_review_path for evaluations",
+    "Implementing count_actionable, advance_round and delete_review scripts",
+    "Reviewing or revising the evaluator and meta-perspective design",
+    "Designing tests and lint for evaluator and review body definitions",
+    "Changing consult behavior during the temporary measure period"
   ],
   "title": "DES-083 evaluator の独立評価とメタ観点 設計書"
 }

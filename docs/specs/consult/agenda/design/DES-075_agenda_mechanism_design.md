@@ -383,8 +383,8 @@ agenda:REQ-019 FNC-004（記録の維持に AI が使う出力量・読み取り
 
 再利用しない判断: `update_triage.py` 相当の永続化スクリプトは本リポジトリに実在しない（review 側の仕分けは会話内で完結していたため）。したがって置き換え対象は `consult` の自前 Markdown 実装のみである。
 
-[req-017]: ../../requirements/REQ-017_consult_skill.md "8d2adba82a1b DLID-433459yse70c"
-[des-066]: ../../../forge/design/DES-066_review_body_design.md "1b1163d33767 DLID-2becz9x7x407"
-[des-077]: DES-077_agenda_display_design.md "98bf338f755f DLID-8s8p9ah1hyry"
-[des-078]: ../../design/DES-078_consult_dialogue_flow_design.md "6a371cd09123 DLID-s3cjh3q3c0vc"
+[req-017]: ../../requirements/REQ-017_consult_skill.md "0a96a70a0d71 DLID-433459yse70c"
+[des-066]: ../../../forge/design/DES-066_review_body_design.md "b582bc5a8f96 DLID-2becz9x7x407"
+[des-077]: DES-077_agenda_display_design.md "2782ba223e7b DLID-8s8p9ah1hyry"
+[des-078]: ../../design/DES-078_consult_dialogue_flow_design.md "259a88a9ae6e DLID-s3cjh3q3c0vc"
 [notes-open-design-questions]: NOTES_open_design_questions.md "5800bff02e73 DLID-n11844q5g8qn"

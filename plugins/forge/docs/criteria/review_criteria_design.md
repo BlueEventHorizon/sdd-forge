@@ -60,14 +60,14 @@ P1 で照合すべき委譲先文書一覧。各文書は「規範本体 + 重�
 
 3 条件のいずれかが不成立の場合は `recommendation: skip` (skip_reason に該当条件不成立の理由を記載) とする。
 
-[review-priorities-spec]: ../review_priorities_spec.md "dc0c7761adf3 DLID-dcec6pr177c9"
-[spec-design-boundary-spec]: ../spec_design_boundary_spec.md "4e2a4cd68a8a DLID-h9h90g9wcy8f"
-[design-principles-spec]: ../design_principles_spec.md "169ae99c4eed DLID-061pwjejh6yc"
+[review-priorities-spec]: ../review_priorities_spec.md "458b42b8deb4 DLID-dcec6pr177c9"
+[spec-design-boundary-spec]: ../spec_design_boundary_spec.md "e0d1a83f7e47 DLID-h9h90g9wcy8f"
+[design-principles-spec]: ../design_principles_spec.md "e590554be385 DLID-061pwjejh6yc"
 [design-method]: ../design_method.md "157820b1afb7 DLID-pdvdjb49qpr4"
-[additive-development-spec]: ../additive_development_spec.md "307dc53425f0 DLID-cyrk9xr8vcap"
-[frontmatter-format]: ../frontmatter_format.md "19cf661699b0 DLID-jtc4qnjwbdxf"
-[adr-format]: ../adr_format.md "0dc06fb958c8 DLID-ns59za8fens1"
-[adr-principles-spec]: ../adr_principles_spec.md "3ae4e3bfdd65 DLID-45wzpggz1set"
-[document-style-guide]: ../document_style_guide.md "69dee42932c2 DLID-c59znr7b8f56"
+[additive-development-spec]: ../additive_development_spec.md "3be39e634c1c DLID-cyrk9xr8vcap"
+[frontmatter-format]: ../frontmatter_format.md "867507803b4a DLID-jtc4qnjwbdxf"
+[adr-format]: ../adr_format.md "3a31a2d6bfe3 DLID-ns59za8fens1"
+[adr-principles-spec]: ../adr_principles_spec.md "1fb15e199859 DLID-45wzpggz1set"
+[document-style-guide]: ../document_style_guide.md "335c3c0eb320 DLID-c59znr7b8f56"
 [deterministic-generation-spec]: ../deterministic_generation_spec.md "75383cc8c6d8 DLID-tm2m7nv23dqd"
-[spec-priorities-spec]: ../spec_priorities_spec.md "f8233c87c564 DLID-f9ny9e932trv"
+[spec-priorities-spec]: ../spec_priorities_spec.md "b68b930cec1d DLID-f9ny9e932trv"

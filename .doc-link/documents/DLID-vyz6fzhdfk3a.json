@@ -1,5 +1,5 @@
 {
-  "content_hash": "84e8b637dc1d6d2a4f66d36413917cef2589689e456de36bca52d47fff7164f4",
+  "content_hash": "4d29f17e55662e52e1245181b9339e7e217840b1a7da6291eb5e2ea084882e5e",
   "doc_link_id": "DLID-vyz6fzhdfk3a",
   "keywords": [
     "agenda",
@@ -7,31 +7,33 @@
     "agenda_store",
     "agenda_wrapper",
     "structural judgment",
-    "state transition",
-    "content_version",
-    "consult",
     "decision",
-    "last_changed_fields"
+    "content_version",
+    "last_changed_fields",
+    "consult",
+    "state transition"
   ],
   "path": "docs/specs/consult/agenda/design/DES-075_agenda_mechanism_design.md",
-  "purpose": "Design of the agenda mechanism: a shared storage layer that records agenda items (review findings, discussion points), judges state transitions, and triggers display generation for consult.",
+  "purpose": "Design of the agenda mechanism: JSON-based recording, state transition rules, and automatic display regeneration for items (review findings, discussion points) handled by consult.",
   "summary": [
-    "Overview and one-way architecture: consult, agenda_wrapper, agenda_store, agenda_render",
-    "Module list and class diagram of the agenda.json data structure",
-    "JSON schema fields: content_version, config, structural_judgment, items, decision, last_changed_fields",
-    "State expressed by the three decision values being non-empty, with no separate status vocabulary",
-    "Transition conditions in agenda_schema and structural judgment re-required when adding items",
-    "Input CLI design via agenda_wrapper: start, record one value per call, next, pending, finish",
-    "Location, count and lifetime of records per origin (review, consult)",
+    "Architecture: consult calls agenda_wrapper, which calls agenda_store, which auto-invokes agenda_render",
+    "Module list and responsibilities for wrapper, store, render, schema",
+    "Data schema of agenda.json: content_version, config, structural_judgment, items, decision",
+    "State representation without status field: settled when decision by/outcome/reason are all non-empty",
+    "last_changed_fields uniqueness: only the latest write is marked across the record",
+    "Transition prerequisites and structural judgment re-requirement when adding new items",
+    "CLI input interface: start, record (one value per call), next, pending, finish",
+    "Storage location, count, and lifetime per origin (review, consult)",
     "Automatic re-render trigger after writes and failure handling",
-    "Test design and measurement method for FNC-004",
-    "Existing components reused"
+    "Test design and FNC-004 measurement method"
   ],
   "tasks": [
-    "Implementing or modifying agenda_store, agenda_wrapper or agenda_schema",
-    "Changing the agenda.json schema",
-    "Integrating consult with the agenda mechanism",
-    "Writing tests for the agenda mechanism",
+    "Implementing agenda_wrapper, agenda_store, agenda_schema",
+    "Modifying the agenda.json schema",
+    "Changing state transition or settlement rules",
+    "Adding record forms or CLI commands",
+    "Writing tests for the agenda store",
+    "Designing consult integration with agenda",
     "Reviewing agenda design documents"
   ],
   "title": "DES-075 agenda 機構 設計書"

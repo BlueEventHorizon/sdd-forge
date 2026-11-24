@@ -83,6 +83,6 @@ AI が状態を知るために、人間向けの提示物を読む必要がな�
 | ------- | ---------------------------- | --------------------------------------------------------------------------------------------------- |
 | TBD-001 | 提示の具体的な形式・生成方式 | **決着**: HTML を採用する。生成方式の詳細（実装パターン）は [agenda:DES-077][des-077] §2.1 が定める |
 
-[req-019]: REQ-019_agenda_record.md "6730e8414d1c DLID-0868m80sm7hy"
-[spec-priorities-spec]: ../../../../../plugins/forge/docs/spec_priorities_spec.md "f8233c87c564 DLID-f9ny9e932trv"
-[des-077]: ../design/DES-077_agenda_display_design.md "98bf338f755f DLID-8s8p9ah1hyry"
+[req-019]: REQ-019_agenda_record.md "fcdbb11a3887 DLID-0868m80sm7hy"
+[spec-priorities-spec]: ../../../../../plugins/forge/docs/spec_priorities_spec.md "b68b930cec1d DLID-f9ny9e932trv"
+[des-077]: ../design/DES-077_agenda_display_design.md "2782ba223e7b DLID-8s8p9ah1hyry"

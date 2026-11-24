@@ -188,9 +188,9 @@ ADR には**設計そのものを転記しない**。決定を理解するのに
 
 詳細なトレーサビリティ規約 (要件 ID とタスクの対応等) は計画書側 (`plan_principles_spec.md`) で扱う。
 
-[requirement-principles-spec]: requirement_principles_spec.md "c1cb19da9ad5 DLID-8y2jh2y06761"
-[design-principles-spec]: design_principles_spec.md "169ae99c4eed DLID-061pwjejh6yc"
-[adr-principles-spec]: adr_principles_spec.md "3ae4e3bfdd65 DLID-45wzpggz1set"
-[adr-usage-spec]: adr_usage_spec.md "253f59c3f26d DLID-m77gjek2tw2b"
-[spec-priorities-spec]: spec_priorities_spec.md "f8233c87c564 DLID-f9ny9e932trv"
-[additive-development-spec]: additive_development_spec.md "307dc53425f0 DLID-cyrk9xr8vcap"
+[requirement-principles-spec]: requirement_principles_spec.md "8c5971b68aaf DLID-8y2jh2y06761"
+[design-principles-spec]: design_principles_spec.md "e590554be385 DLID-061pwjejh6yc"
+[adr-principles-spec]: adr_principles_spec.md "1fb15e199859 DLID-45wzpggz1set"
+[adr-usage-spec]: adr_usage_spec.md "b87fce46708e DLID-m77gjek2tw2b"
+[spec-priorities-spec]: spec_priorities_spec.md "b68b930cec1d DLID-f9ny9e932trv"
+[additive-development-spec]: additive_development_spec.md "3be39e634c1c DLID-cyrk9xr8vcap"

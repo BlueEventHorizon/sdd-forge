@@ -192,7 +192,7 @@ AI が「次に何をすべきか」を、**自分で数えたり探したりせ
 
 > 保存形式の選定（旧 TBD-001）・FNC-004 の測定方法（旧 TBD-002）は HOW（設計判断）のため要件定義書から削除し、[design/NOTES_open_design_questions.md][notes-open-design-questions] へ引き継いだ。派生課題の切り出し可否（旧 TBD-005・決着: 別Issueへ）は本文書の外の決定であり、削除した。
 
-[spec-priorities-spec]: ../../../../../plugins/forge/docs/spec_priorities_spec.md "f8233c87c564 DLID-f9ny9e932trv"
-[req-021]: REQ-021_agenda_display.md "7cdb81e6c4a1 DLID-hsj370z603x4"
-[des-075]: ../design/DES-075_agenda_mechanism_design.md "84e8b637dc1d DLID-vyz6fzhdfk3a"
+[spec-priorities-spec]: ../../../../../plugins/forge/docs/spec_priorities_spec.md "b68b930cec1d DLID-f9ny9e932trv"
+[req-021]: REQ-021_agenda_display.md "592ff7537fe8 DLID-hsj370z603x4"
+[des-075]: ../design/DES-075_agenda_mechanism_design.md "4d29f17e5566 DLID-vyz6fzhdfk3a"
 [notes-open-design-questions]: ../design/NOTES_open_design_questions.md "5800bff02e73 DLID-n11844q5g8qn"

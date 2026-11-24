@@ -1,5 +1,5 @@
 {
-  "content_hash": "048d9ed163fc7a158641e4d9ed2db4189886745e99ba4cb4c1977ce7bc7a184d",
+  "content_hash": "a7ceb082eeaf2fc01a25b780782c10f4b5859351a4c129478374ed4c7a1dfc3a",
   "doc_link_id": "DLID-spgw9f5y6thy",
   "keywords": [
     "code review",
@@ -8,28 +8,30 @@
     "priority P1 P2 P3",
     "create_issue",
     "recommendation",
+    "severity catalog",
+    "query-db-rules",
     "anti-patterns",
-    "deterministic generation",
-    "design consistency"
+    "deterministic generation"
   ],
   "path": "plugins/forge/docs/criteria/review_criteria_code.md",
-  "purpose": "Review criteria for code review: lists the delegated SSOT documents to check by priority, the check order, and the rules for choosing fix, create_issue or skip.",
+  "purpose": "Defines the code review criteria: which delegated SSOT documents to check by priority, the check order, and the rules for choosing fix, create_issue or skip recommendations.",
   "summary": [
-    "Delegates severity and gray-zone judgment to principles documents; holds no judgment itself",
-    "P1 SSOT table: project-specific rules, related design docs, deterministic generation spec",
-    "P2 consistency check between design docs and target files",
-    "P3 unnecessary complexity check via anti-patterns document",
-    "Check order: P1 rule match, P2 contradiction, P3 complexity",
-    "Recommendation rules: fix, create_issue, skip with adoption conditions",
-    "Three conditions for create_issue: no applicable rule, recurrence or objectivity, codifiable granularity",
-    "Fallback to built-in rules when project rules are missing"
+    "Header stating the SoT is the review priorities spec and that severity comes from delegated principles",
+    "SSOT reference table listing P1/P2/P3 delegated documents for code review",
+    "P1 sources: project rules via query-db-rules, related design docs, deterministic generation spec",
+    "P2 consistency check between design docs and target code",
+    "P3 unnecessary complexity check via the anti-patterns document",
+    "Check order for P1 rule match, P2 contradictions, P3 complexity",
+    "Judgment rules table for fix, create_issue and skip recommendations",
+    "Three conditions required for create_issue: no existing rule, recurrence or objectivity, writable granularity",
+    "Fallback to built-in rules when delegated rules are missing"
   ],
   "tasks": [
-    "Reviewing source code against project rules",
+    "Reviewing code against project rules and design documents",
     "Building a review packet for code review",
-    "Judging fix, create_issue or skip for code findings",
-    "Checking code against related design documents",
-    "Authoring or updating review criteria"
+    "Deciding the recommendation (fix, create_issue, skip) for a code review finding",
+    "Deciding whether a finding qualifies for an issue",
+    "Editing or maintaining the code review criteria"
   ],
   "title": "code レビュー基準"
 }

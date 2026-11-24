@@ -781,9 +781,9 @@ REQ-034 の各要件を満たす設計要素を示す。設計要素が 1 つも
 | 5.2 タスクコンテキスト    | SC-08         | 4.2           | CX-01〜03                                    | タスクコンテキスト、6.2                                                          |
 | 5.3 executor agent の結果 | SC-09         | 4.2           | EX-01、RS-01                                 | executor agent の結果、6.2、6.3 結果検査                                         |
 
-[req-034]: ../requirements/REQ-034_start_implement_spec.md "addaea4651bb DLID-ypd7r1j5ga4n"
-[forge-agent-data-exchange-rules]: ../../../rules/forge_agent_data_exchange_rules.md "ad12d06f3966 DLID-7zh3q09p2acs"
-[plugin-claude-code-authoring-guide]: ../../../rules/plugin_claude_code_authoring_guide.md "1b4400f836cd DLID-pvwk8en5c2rq"
+[req-034]: ../requirements/REQ-034_start_implement_spec.md "8c2f9a2476da DLID-ypd7r1j5ga4n"
+[forge-agent-data-exchange-rules]: ../../../rules/forge_agent_data_exchange_rules.md "d359747d755f DLID-7zh3q09p2acs"
+[plugin-claude-code-authoring-guide]: ../../../rules/plugin_claude_code_authoring_guide.md "65302c63b0e1 DLID-pvwk8en5c2rq"
 [plugin-script-error-output-rules]: ../../../rules/plugin_script_error_output_rules.md "f1c5b6752ce7 DLID-fz66nns8q521"
-[des-074]: ../../forge/design/DES-074_plan_format_design.md "b6a1775c9364 DLID-42wh7646hjhq"
+[des-074]: ../../forge/design/DES-074_plan_format_design.md "2f1bdcf996ea DLID-42wh7646hjhq"
 [plugin-implementation-guidelines]: ../../../rules/plugin_implementation_guidelines.md "231d1a822305 DLID-jzs5n6cre1jh"

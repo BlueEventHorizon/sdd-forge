@@ -100,5 +100,5 @@ reviewer が書く依頼・所見・評価は、本体が管理する保持物�
 
 なし。
 
-[des-084]: ../../review/design/DES-084_reviewer_design.md "daa286494b24 DLID-j50s0xwkwx00"
-[req-029]: ../../review/requirements/REQ-029_review_exchange.md "4e7fe6918eec DLID-5vrs9fnet7de"
+[des-084]: ../../review/design/DES-084_reviewer_design.md "90cd46356caa DLID-j50s0xwkwx00"
+[req-029]: ../../review/requirements/REQ-029_review_exchange.md "d635cdb8307b DLID-5vrs9fnet7de"

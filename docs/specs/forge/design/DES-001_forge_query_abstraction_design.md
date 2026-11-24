@@ -28,7 +28,7 @@ backend の選択、可用性判定、各 backend の経路の処理は [DES-057
 | `/forge:update-db-rules` | ルール文書の検索インデックスを最新化する | rules    | true           |
 | `/forge:update-db-specs` | 仕様文書の検索インデックスを最新化する   | specs    | true           |
 
-各 SKILL は category を固定する。category は、doc-link 経路では索引の識別キーに、doc-db 経路では
+各 SKILL は category を固定する。category は、doc-link 経路では ToC 識別キーに、doc-db 経路では
 KEY の一部になる（DES-057 §4.1・§5）。
 
 4 SKILL とも `user-invocable: true`。ユーザーが直接 `/forge:query-db-rules` 等を起動する運用も許容しつつ、forge の他 SKILL（review / start-* /
@@ -111,7 +111,8 @@ grep による代替検索は行わない）。書き込み・コミット・自
   `tools` が read-only であることを検査する（lint）。
 - `ai_lint/checks/query_worker_role.json`・`ai_lint/checks/query_dispatcher_role.json` — 同じ対象が、
   ルール文書の求める Role 制約（worker は書き込みの禁止・親の作業を引き継がないこと・起動 prompt を
-  実装指示として解釈しないこと、dispatcher は親の作業を引き継がないこと）を述べているかを、
+  実装指示として解釈しないこと、dispatcher は親の作業を引き継がないこと・引数を実装指示として
+  解釈しないこと）を述べているかを、
   判定モデルに問うて検査する（AI-Linter。ローカルで実行する）。
 - `tests/forge/doc_backend/` — backend 選択（順序リスト・settings_invalid）、doc-db 経路の低レベル CLI を検証する。
 - `lint/provisional/lint_link_contract.py` — wrapper の SKILL.md の記述が doc-link の契約に沿うことを検査する
@@ -119,6 +120,6 @@ grep による代替検索は行わない）。書き込み・コミット・自
 - `lint/lint_index_maintenance_boundary.py` — 索引整備の wrapper が `update-db-*` にだけあることを検査する（lint）。
 - `tests/forge/{query,update}-db-{rules,specs}/` — SKILL 固有 wrapper の透過性を検証する。
 
-[authoring-guide]: ../../../rules/plugin_claude_code_authoring_guide.md "1b4400f836cd DLID-pvwk8en5c2rq"
-[authoring-policy]: ../../../rules/forge_claude_code_authoring_policy.md "41e67eb507c7 DLID-33rp07ycsdym"
-[des-057]: ../../doc-db/design/DES-057_doc_db_backend_selection_design.md "a70040e559ab DLID-5k6jt9qvf60d"
+[authoring-guide]: ../../../rules/plugin_claude_code_authoring_guide.md "65302c63b0e1 DLID-pvwk8en5c2rq"
+[authoring-policy]: ../../../rules/forge_claude_code_authoring_policy.md "70c36432428c DLID-33rp07ycsdym"
+[des-057]: ../../doc-db/design/DES-057_doc_db_backend_selection_design.md "b765007682aa DLID-5k6jt9qvf60d"

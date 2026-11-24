@@ -1,35 +1,34 @@
 {
-  "content_hash": "727c5b42f32361aa00dcefeee0cb76cc4e9280b9fd1c5e4985f5a4ec4b008f7f",
+  "content_hash": "90aabf3f4899a9621282af3236d68f9ff7e3c923a52af974e093dfd2c91364f7",
   "doc_link_id": "DLID-4zxqtf2m3x6t",
   "keywords": [
     "requirement review",
     "review criteria",
-    "SSOT reference",
-    "What/How boundary",
+    "SSOT delegation",
+    "P1 P2 P3 check order",
     "additive feature",
     "doc_status",
     "feature_type",
     "create_issue",
-    "contradiction detection"
+    "What/How boundary"
   ],
   "path": "plugins/forge/docs/criteria/review_criteria_requirement.md",
-  "purpose": "Review criteria for requirement documents: lists the delegated SSOT documents, check order (P1 rule match, P2 contradiction, P3 needless complexity) and recommendation rules.",
+  "purpose": "Defines the review criteria for requirement documents: which delegated SSOT documents to check, in what order, and how to decide recommendations.",
   "summary": [
-    "Delegated SSOT reference table for requirement review with priorities P1 to P3",
-    "P1 check order: requirement principles, What/How boundary, format, priorities, project rules",
-    "Mandatory feature_type frontmatter check for additive feature requirements",
-    "Document reference notation check against the style guide",
-    "P2 contradiction detection among requirements and related designs",
-    "Additive feature exclusion rule for old-spec contradictions",
-    "doc_status exclusion rule for not_implemented and draft documents",
-    "P3 needless complexity judgment",
-    "Recommendation rules and three conditions for create_issue"
+    "Lists delegated SSOT documents for P1 rule matching including principles, formats, and project rules",
+    "Defines the check order across P1 rule conformance, P2 contradiction, and P3 needless complexity",
+    "Requires the additive-feature frontmatter check with false-positive exclusions for initial or minor edits",
+    "Covers document reference notation checks against the style guide",
+    "Describes the additive-feature exclusion rule for P2 contradictions",
+    "Describes the doc_status exclusion rule for not_implemented and draft documents",
+    "Defines recommendation values fix, create_issue, and skip with adoption conditions",
+    "States the three conditions required for create_issue"
   ],
   "tasks": [
     "Reviewing a requirements document",
-    "Writing review perspectives for requirements",
-    "Judging severity and recommendation of requirement review findings",
-    "Reviewing an additive feature requirements document"
+    "Authoring or revising requirement review criteria",
+    "Deciding the recommendation for a review finding on a requirement",
+    "Judging additive-feature frontmatter and doc_status handling in reviews"
   ],
   "title": "requirement レビュー基準"
 }

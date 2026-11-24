@@ -211,4 +211,4 @@ SKILL.md への参照・戻りは不要。
 | `plugins/forge/docs/requirement_format.md`                                                  | 要件定義書テンプレート         |
 | `plugins/forge/docs/spec_design_boundary_spec.md`                                           | 要件/設計の境界ガイド          |
 
-[requirement-format]: ../../../../plugins/forge/docs/requirement_format.md "1abf0122bdeb DLID-c13gr4qbk4vm"
+[requirement-format]: ../../../../plugins/forge/docs/requirement_format.md "c05edc5d1de7 DLID-c13gr4qbk4vm"

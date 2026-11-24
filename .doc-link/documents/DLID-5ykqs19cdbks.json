@@ -1,37 +1,38 @@
 {
-  "content_hash": "04397ae80f5c88f54034424e6acf90884593e390faa1976a3a5186cce3cdcfb2",
+  "content_hash": "94496cc6d044cdcf1f68aaa0c48abfb62cc088d16f78637067870ea2e43c9ce8",
   "doc_link_id": "DLID-5ykqs19cdbks",
   "keywords": [
     "error classification",
-    "recoverable",
+    "recoverable error",
     "fatal error",
     "error cause",
-    "bug",
     "exit code",
+    "bug vs failure",
+    "swallowed error",
     "severity catalog",
-    "error definition",
     "retry",
-    "swallowing errors"
+    "error value"
   ],
   "path": "plugins/forge/docs/error_classification_spec.md",
-  "purpose": "Defines what an error is, how to classify it, and how to treat causes, plus criteria for adding values that distinguish errors, applicable to exit codes, agent return values, error cases, and API codes.",
+  "purpose": "Defines what an error is, how to classify it, how to treat causes, and the criteria for adding values that distinguish errors, across exit codes, agent return values, requirement error cases and API codes.",
   "summary": [
-    "Purpose: stop unbounded growth of error values that do not change receiver behavior",
-    "Definition of an error as an event where processing departs from the intended flow",
-    "Judgeable outcomes are not errors and should be decided first",
+    "Purpose: stop unbounded growth of error values that do not change the receiver behavior",
+    "Definition of an error as an event that stops the intended flow, separate from its cause",
+    "Non-errors: things that can be judged are decisions, not errors",
     "Classification into recoverable and unrecoverable (fatal) errors",
-    "Recovery means are not always retries; unrecoverable errors stop and report",
+    "Recovery means are not limited to retry; failure to recover must be reported",
     "Causes: bug, failure, user input or environment, with responsible parties",
-    "Bugs must not occur at runtime and get no dedicated values or recovery paths",
+    "Bugs must not occur at runtime; no dedicated values or recovery paths per cause",
     "Questions to ask before adding an error value",
     "Severity catalog of violation patterns"
   ],
   "tasks": [
-    "Designing error handling for scripts or agents",
-    "Adding exit codes or return values that distinguish errors",
-    "Writing error case sections in requirements documents",
-    "Reviewing code or documents for error handling violations",
-    "Deciding whether a failure should be an error or a judgment"
+    "Designing error handling and exit codes for scripts",
+    "Defining agent return values",
+    "Writing error case sections in requirements",
+    "Designing API response codes",
+    "Reviewing error handling for swallowed errors or needless values",
+    "Deciding whether to add a new error value or classification"
   ],
   "title": "エラーの定義・分類・原因"
 }

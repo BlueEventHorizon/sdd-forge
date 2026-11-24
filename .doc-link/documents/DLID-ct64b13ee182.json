@@ -1,39 +1,39 @@
 {
-  "content_hash": "8954ef4d1f67e80eda38388335884dae380043ed46514c0bb66afad17a1da05c",
+  "content_hash": "16677411b761ad79d6aa76e7fd0c2463b2474085bab4eb79b0011d861806f7db",
   "doc_link_id": "DLID-ct64b13ee182",
   "keywords": [
     "orchestrator",
     "delegation",
     "God-Skill",
-    "return value",
-    "query skill",
     "parallel execution",
-    "completion flow",
+    "return value",
+    "self-contained documents",
     "document format",
-    "argument interpretation",
-    "self-contained reference"
+    "completion flow",
+    "query skill",
+    "argument interpretation"
   ],
   "path": "docs/specs/forge/requirements/REQ-001_orchestrator_pattern.md",
-  "purpose": "Requirements for designing forge user-invocable skills as orchestrators that delegate detailed work, to avoid God-Skill problems and define data hand-off and completion flow.",
+  "purpose": "Defines requirements for the orchestrator pattern in forge skills: delegation to skills and agents, self-contained reference docs, parallel execution, data exchange, document formats, and completion flow.",
   "summary": [
-    "Background: God-Skill problems of single-context execution (context use, accuracy, no parallelism, loss)",
-    "Target skills using orchestrator plus delegation (start-design, start-plan, start-implement, start-requirements, review)",
-    "FNC-001: orchestrators manage flow and dialogue; delegate details; call query skills directly without an Agent in between",
-    "FNC-003: reference documents given to agents must be self-contained, placed in plugins/forge/docs",
-    "FNC-004: independent steps run in parallel; results passed by return value; minimal prompt data",
-    "FNC-005: format choice, JSON for machine-processed plans, Markdown for requirements and designs",
-    "FNC-006: common completion flow of review, ToC update and commit for document-generating skills",
+    "Background: God-Skill problems (context consumption, reduced instruction following, no parallelism, loss on compression)",
+    "Target skills using orchestrator plus delegation: start-design, start-plan, start-implement, start-requirements, review",
+    "FNC-001: user-invocable skills are orchestrators; document search goes directly to query skills without an intermediate Agent",
+    "FNC-003: reference documents given to agents must be self-contained and placed in plugins/forge/docs/",
+    "FNC-004: independent work runs in parallel; agents return results as return values; data exchange by identifiers and script-written JSON",
+    "FNC-005: document format selection, JSON for machine-processed plans and Markdown for requirements and designs",
+    "FNC-006: common completion flow of review with --auto, ToC update, and commit",
     "FNC-007: user input interpretation is done by AI, not by argument-parsing scripts",
-    "Table of data hand-off methods per skill"
+    "Applicability table of data exchange methods per skill"
   ],
   "tasks": [
-    "Designing a new user-invocable forge skill",
-    "Deciding what an orchestrator delegates to agents or skills",
-    "Designing data exchange between agents",
-    "Writing reference documents for agents",
-    "Choosing JSON or Markdown for a managed document",
+    "Designing or modifying a forge orchestrator skill",
+    "Writing SKILL.md delegation instructions",
+    "Designing agent data exchange between orchestrator and agents",
+    "Creating reference documents for agents",
+    "Choosing a document format for forge artifacts",
     "Implementing completion processing of document-generating skills",
-    "Handling command argument interpretation in skills"
+    "Reviewing skills for argument parsing policy"
   ],
   "title": "REQ-001 オーケストレータパターン要件"
 }

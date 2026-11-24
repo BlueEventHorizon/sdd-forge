@@ -1,40 +1,40 @@
 {
-  "content_hash": "f8233c87c5642511792eda5229fecdaa5df34d6d678cbd321bbd762f99a3b230",
+  "content_hash": "b68b930cec1d85974b997e3fb6f3c39f89c72216228fab1e73a13a51e078e6f2",
   "doc_link_id": "DLID-f9ny9e932trv",
   "keywords": [
-    "requirements",
-    "design",
+    "spec priorities",
     "responsibility split",
-    "boundary",
+    "boundary setting",
     "dependency direction",
     "Goodhart",
-    "severity catalog",
+    "quantification prohibited",
     "TBD",
+    "severity catalog",
     "non-functional requirements",
-    "review perspectives"
+    "review perspectives P1 P2 P3"
   ],
   "path": "plugins/forge/docs/spec_priorities_spec.md",
-  "purpose": "Defines the values to prioritize and the aims to avoid when writing or reviewing requirements and design documents, plus review severity routing.",
+  "purpose": "Defines the values to prioritize and the aims to avoid when writing or reviewing requirements and design documents, with severity catalog, gray-zone tolerances, and per-perspective review routing.",
   "summary": [
-    "Structural design principles to prioritize: responsibility split, boundary definition, dependency direction",
-    "Document-level dependency direction across requirements, design, and plan documents",
-    "Quality attributes treated as outcomes, never as direct numeric targets (Goodhart's law)",
-    "Prohibited primary aims: quantifying structural quality, KPIs, fabricated unconfirmed numbers",
-    "Typical inverted patterns and self-check questions for judgment",
-    "Routing of quantitative targets to the spec/design boundary document",
-    "Perspective routing of this document for review perspectives P1, P2, and P3",
+    "Priority structural principles: responsibility split, boundary setting, dependency direction",
+    "Dependency direction among generated documents: requirements, design, plan",
+    "Quality characteristics as byproducts that must not become numeric targets (Goodhart)",
+    "Prohibited primary aims: quantifying structural quality, KPIs, fabricating undecided values",
+    "Catalog of typical perverse patterns observed in past work",
+    "Self-check questions for judging goals and metrics",
+    "Routing of P1/P2/P3 review perspectives to this document",
     "Severity catalog mapping each norm violation to critical or major",
-    "Gray-zone tolerance table for numeric targets, TBD handling, and coverage goals",
-    "Non-functional requirement category coverage with severity scoping and exclusion rationale"
+    "Gray-zone tolerance table for numeric targets, placement, TBD handling, coverage",
+    "Non-functional requirement category coverage with severity scoping"
   ],
   "tasks": [
     "Writing requirements documents",
     "Writing design documents",
-    "Reviewing requirements documents",
-    "Reviewing design documents",
-    "Judging severity of review findings",
-    "Deciding whether to set numeric targets",
-    "Checking dependency direction between generated documents"
+    "Reviewing requirements",
+    "Reviewing designs",
+    "Determining review severity",
+    "Deciding how to handle unconfirmed quantitative targets",
+    "Checking dependency direction among generated documents"
   ],
   "title": "要件定義書・設計書で優先すること"
 }

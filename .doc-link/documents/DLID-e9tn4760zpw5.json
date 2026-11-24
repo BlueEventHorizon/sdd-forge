@@ -1,32 +1,30 @@
 {
-  "content_hash": "c84b92682539e1ad4eb92ac762aeb3fb1f727013478e4a64d6265d6d554cbdd1",
+  "content_hash": "f2e598645f127472ebb803524fba4e01d9a859d7bc0a4cb78fc80cb1b2efccb6",
   "doc_link_id": "DLID-e9tn4760zpw5",
   "keywords": [
     "uxui review",
     "review criteria",
     "Apple HIG",
     "design system",
-    "SSOT reference",
+    "SSOT delegation",
+    "P1 P2 P3 check order",
     "fallback",
-    "create_issue",
-    "contradiction detection"
+    "create_issue"
   ],
   "path": "plugins/forge/docs/criteria/review_criteria_uxui.md",
-  "purpose": "Review criteria for UX/UI documents: lists the delegated SSOT documents, check order (P1 rule match, P2 contradiction, P3 needless complexity) and recommendation rules.",
+  "purpose": "Defines the review criteria for UX/UI documents: which delegated SSOT documents to check, in what order, and how to decide recommendations.",
   "summary": [
-    "Delegated SSOT reference table for UX/UI review with priorities P1 to P3",
-    "Provisional fallback to the document style guide and project rules while UX/UI principles are missing",
-    "P1 check order: Apple HIG, project design system rules, style guide",
-    "P2 contradiction detection for tokens, components, screens and interactions",
-    "P3 needless complexity judgment on tokens, components and variations",
-    "Recommendation rules: fix, create_issue, skip",
-    "Three conditions required for create_issue"
+    "Notes that UX/UI principles are not yet established and the style guide serves as a fallback",
+    "Lists delegated SSOT documents including Apple HIG, project design-system rules, and the style guide",
+    "Defines the check order across P1 rule conformance, P2 contradiction, and P3 needless complexity",
+    "Covers target documents such as THEME, CMP, SCR, UXEVAL, and UI design within design docs",
+    "Defines recommendation values fix, create_issue, and skip with adoption conditions",
+    "States the three conditions required for create_issue"
   ],
   "tasks": [
     "Reviewing UX/UI documents",
-    "Reviewing theme, component, screen or UX evaluation documents",
-    "Writing review perspectives for UX/UI design",
-    "Judging severity and recommendation of UX/UI review findings"
+    "Authoring or revising UX/UI review criteria",
+    "Deciding the recommendation for a review finding on a UX/UI document"
   ],
   "title": "uxui レビュー基準"
 }

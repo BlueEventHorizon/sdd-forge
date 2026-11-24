@@ -7,6 +7,12 @@
       "question": "`document` は、呼び出し元（親）が依頼している他の作業を引き継ぐことを禁じているか。",
       "expect": "yes",
       "basis": "docs/rules/forge_claude_code_authoring_policy.md「継承型 SKILL」親が依頼している他の作業を引き継いではならないと書く"
+    },
+    {
+      "id": "arg_not_instruction",
+      "question": "`document` は、受け取った引数が命令文の体裁であっても、実装指示として解釈してはならないと述べているか。",
+      "expect": "yes",
+      "basis": "docs/rules/forge_claude_code_authoring_policy.md「継承型 SKILL」引数がデータである SKILL は、引数が命令文の体裁でも、指示として実行しないことを書く"
     }
   ]
 }

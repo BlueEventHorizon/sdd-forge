@@ -179,6 +179,6 @@ stateDiagram-v2
 | 討議ファイルテンプレート | `plugins/forge/skills/consult/assets/discussion_file_template.md` | 表示テンプレートへリライトして転用（移行手順は実装戦略書が持つ。[DES-075][des-075] §1） |
 | HTML エスケープパターン  | `.claude/skills/prepare-figma/scripts/json_to_html.py`            | `agenda_render.py` の `html.escape()` 使用箇所の参考                                    |
 
-[des-075]: DES-075_agenda_mechanism_design.md "84e8b637dc1d DLID-vyz6fzhdfk3a"
-[req-017]: ../../requirements/REQ-017_consult_skill.md "8d2adba82a1b DLID-433459yse70c"
-[design-principles-spec]: ../../../../../plugins/forge/docs/design_principles_spec.md "169ae99c4eed DLID-061pwjejh6yc"
+[des-075]: DES-075_agenda_mechanism_design.md "4d29f17e5566 DLID-vyz6fzhdfk3a"
+[req-017]: ../../requirements/REQ-017_consult_skill.md "0a96a70a0d71 DLID-433459yse70c"
+[design-principles-spec]: ../../../../../plugins/forge/docs/design_principles_spec.md "e590554be385 DLID-061pwjejh6yc"

@@ -597,7 +597,7 @@ evaluator は、次のラッパーを通して基本の script を呼ぶ。`--ki
 | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------ |
 | TBD-001 | FNC-201 の 5 つのメタ観点を evaluator が実際に働かせられるかは未検証（[REQ-026][req-026] TBD-001 を継承）。§4.1 の「評価に現れる形」が実際に観測できるかで検証する | 実装後 |
 
-[req-026]: ../requirements/REQ-026_evaluator_perspective.md "856185c37ce2 DLID-p1v5z5mme4tw"
-[req-029]: ../requirements/REQ-029_review_exchange.md "4e7fe6918eec DLID-5vrs9fnet7de"
-[des-084]: DES-084_reviewer_design.md "daa286494b24 DLID-j50s0xwkwx00"
-[review-priorities-spec]: ../../../../plugins/forge/docs/review_priorities_spec.md "2822ed686d56 DLID-dcec6pr177c9"
+[req-026]: ../requirements/REQ-026_evaluator_perspective.md "0e3cb74cccc6 DLID-p1v5z5mme4tw"
+[req-029]: ../requirements/REQ-029_review_exchange.md "d635cdb8307b DLID-5vrs9fnet7de"
+[des-084]: DES-084_reviewer_design.md "90cd46356caa DLID-j50s0xwkwx00"
+[review-priorities-spec]: ../../../../plugins/forge/docs/review_priorities_spec.md "458b42b8deb4 DLID-dcec6pr177c9"

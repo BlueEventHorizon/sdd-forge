@@ -229,11 +229,11 @@ flowchart TD
 | [DES-074][des-074]                                                                  | 計画書 script 実装契約（`write_plan.py` 等） |
 | [plan_principles_spec.md][plan-principles-spec]                                     | 計画書作成原則ガイド                         |
 
-[des-010]: DES-010_create_skills_orchestrator_design.md "c93dadeb6dc4 DLID-s1ds8dcyfn7p"
-[additive-development-spec]: ../../../../plugins/forge/docs/additive_development_spec.md "307dc53425f0 DLID-cyrk9xr8vcap"
-[forge-agent-data-exchange-rules]: ../../../rules/forge_agent_data_exchange_rules.md "ad12d06f3966 DLID-7zh3q09p2acs"
-[plan-principles-spec]: ../../../../plugins/forge/docs/plan_principles_spec.md "122ed8c0e2c2 DLID-t8jcg5jkb5mj"
+[des-010]: DES-010_create_skills_orchestrator_design.md "2129dbe03f23 DLID-s1ds8dcyfn7p"
+[additive-development-spec]: ../../../../plugins/forge/docs/additive_development_spec.md "3be39e634c1c DLID-cyrk9xr8vcap"
+[forge-agent-data-exchange-rules]: ../../../rules/forge_agent_data_exchange_rules.md "d359747d755f DLID-7zh3q09p2acs"
+[plan-principles-spec]: ../../../../plugins/forge/docs/plan_principles_spec.md "33e1e8046cdc DLID-t8jcg5jkb5mj"
 [start-plan-skill]: ../../../../plugins/forge/skills/start-plan/SKILL.md
 [plan-strategist]: ../../../../plugins/forge/agents/plan-strategist.md
-[strategy-principles-spec]: ../../../../plugins/forge/docs/strategy_principles_spec.md "e1b25ede799d DLID-540ak6kxrsxp"
-[des-074]: DES-074_plan_format_design.md "b6a1775c9364 DLID-42wh7646hjhq"
+[strategy-principles-spec]: ../../../../plugins/forge/docs/strategy_principles_spec.md "3f63be26ad5c DLID-540ak6kxrsxp"
+[des-074]: DES-074_plan_format_design.md "2f1bdcf996ea DLID-42wh7646hjhq"

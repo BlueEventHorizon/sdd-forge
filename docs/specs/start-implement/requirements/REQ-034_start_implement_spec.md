@@ -277,10 +277,10 @@ executor agent は、次を守ること。
 
 理由: 成功として扱われた結果は、完了の根拠になる。契約に反する結果が通ると、検査が無いのと同じになる。
 
-[req-024]: ../../forge/requirements/REQ-024_implementation_plan_spec.md "0304d66b6d45 DLID-zehb6ge71vgb"
-[req-001]: ../../forge/requirements/REQ-001_orchestrator_pattern.md "8954ef4d1f67 DLID-ct64b13ee182"
-[spec-priorities-spec]: ../../../../plugins/forge/docs/spec_priorities_spec.md "f8233c87c564 DLID-f9ny9e932trv"
-[error-classification-spec]: ../../../../plugins/forge/docs/error_classification_spec.md "04397ae80f5c DLID-5ykqs19cdbks"
-[req-013]: ../../forge/requirements/REQ-013_review_policy.md "66dc0707bf12 DLID-yg0c67zs3zky"
-[req-025]: ../../forge/requirements/REQ-025_additive_development_spec.md "1d8889eae72e DLID-8aaxgj88j28q"
-[des-074]: ../../forge/design/DES-074_plan_format_design.md "b6a1775c9364 DLID-42wh7646hjhq"
+[req-024]: ../../forge/requirements/REQ-024_implementation_plan_spec.md "f1c15e9bfe0d DLID-zehb6ge71vgb"
+[req-001]: ../../forge/requirements/REQ-001_orchestrator_pattern.md "16677411b761 DLID-ct64b13ee182"
+[spec-priorities-spec]: ../../../../plugins/forge/docs/spec_priorities_spec.md "b68b930cec1d DLID-f9ny9e932trv"
+[error-classification-spec]: ../../../../plugins/forge/docs/error_classification_spec.md "94496cc6d044 DLID-5ykqs19cdbks"
+[req-013]: ../../forge/requirements/REQ-013_review_policy.md "8447df198f9e DLID-yg0c67zs3zky"
+[req-025]: ../../forge/requirements/REQ-025_additive_development_spec.md "a78dcb08e87b DLID-8aaxgj88j28q"
+[des-074]: ../../forge/design/DES-074_plan_format_design.md "2f1bdcf996ea DLID-42wh7646hjhq"

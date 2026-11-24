@@ -186,7 +186,7 @@ doc-link は、DLID（文書 ID とセクション ID）の無い文書を索引
 ## Notes
 
 - **desired-state**: 対象一覧は `.doc_structure.yaml` の rules 設定が正である。doc-db 経路では
-  一覧全体が当該 series の、doc-link 経路では `--dirs-json` / `--exclude-json` が索引の識別キー `rules` の
+  一覧全体が当該 series の、doc-link 経路では `--dirs-json` / `--exclude-json` が ToC 識別キー `rules` の
   完全な desired state となり、含まれない文書は索引から切り離される。
 - doc-db の key は `{project_name}-rules`、series は現在の git branch。検索（query）と同一の series を更新する。
 - dprint の適用は doc-link 経路の準備 CLI（Step 4.2）に含まれる。doc-db 経路は対象文書の現在内容を

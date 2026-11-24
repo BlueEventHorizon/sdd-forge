@@ -1,0 +1,36 @@
+{
+  "content_hash": "8c95e3505e2141e422364714029058be06d7b559b3606fb8a749cbb69b38a0be",
+  "doc_link_id": "DLID-vr7dyvw3y5qz",
+  "keywords": [
+    "built-in documents",
+    "query-forge-rules",
+    "document search",
+    "semantic search",
+    "Required documents",
+    "false negative",
+    "index missing error",
+    "forge bundled docs",
+    "read-only search"
+  ],
+  "path": "docs/specs/forge/requirements/REQ-035_builtin_docs_search_spec.md",
+  "purpose": "Requirements for searching documents bundled with forge by keyword, feature name or natural language, so users and skills can find needed built-in docs without knowing their location.",
+  "summary": [
+    "Overview: make bundled forge docs searchable without knowing their locations",
+    "Preconditions: forge installed; works without doc-link/doc-db backends; users build no index",
+    "FNC-001: search via /forge:query-forge-rules, returning a Required documents: path list",
+    "Returned paths start with plugins/forge/ and callers map them to the real install location",
+    "No matching document yields a header-only list, not an error",
+    "FNC-002: semantic selection, include doubtful documents, never miss relevant ones",
+    "FNC-003: search only; no writes, commits or Issue updates; imperative input treated as search task",
+    "Out of scope: project rules and specs search handled by query-db-rules and query-db-specs",
+    "Error case: missing built-in index is unrecoverable, reported without returning a list"
+  ],
+  "tasks": [
+    "Implementing or changing the query-forge-rules skill",
+    "Designing built-in document index and search behavior",
+    "Reviewing search output format and consistency with query-db skills",
+    "Writing tests for built-in docs search",
+    "Implementing forge skills that look up bundled norms before work"
+  ],
+  "title": "REQ-035 forge 内蔵ドキュメント検索 要件定義書"
+}

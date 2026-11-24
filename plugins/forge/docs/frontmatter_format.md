@@ -84,4 +84,4 @@ doc_status: not_implemented
 
 frontmatter は、forge 以外のツール（文書検索など）も自分のキーを書き込む。キー名を `feature_type` / `feature_note` とするのは、`type` / `notes` のような汎用の名前が、他のツールのキーと衝突するためである。
 
-[additive-development-spec]: additive_development_spec.md "307dc53425f0 DLID-cyrk9xr8vcap"
+[additive-development-spec]: additive_development_spec.md "3be39e634c1c DLID-cyrk9xr8vcap"

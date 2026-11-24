@@ -126,8 +126,8 @@ evaluator は依頼と、reviewer が返した所見を読む。専用の入力�
 | ------- | ---------------------------------------------------------------------------------------------------- | ------ |
 | TBD-001 | メタ観点 5 項目（FNC-201）のうち、evaluator が実際に実行できるかは未検証。実効性の検証は実装後に行う | 実装後 |
 
-[req-029]: REQ-029_review_exchange.md "4e7fe6918eec DLID-5vrs9fnet7de"
+[req-029]: REQ-029_review_exchange.md "d635cdb8307b DLID-5vrs9fnet7de"
 [evaluator]: ../../../../plugins/forge/agents/evaluator.md
-[spec-priorities-spec]: ../../../../plugins/forge/docs/spec_priorities_spec.md "f8233c87c564 DLID-f9ny9e932trv"
-[req-027]: REQ-027_reviewer.md "d1f79607a42d DLID-y42g1frxwkf5"
-[error-classification-spec]: ../../../../plugins/forge/docs/error_classification_spec.md "04397ae80f5c DLID-5ykqs19cdbks"
+[spec-priorities-spec]: ../../../../plugins/forge/docs/spec_priorities_spec.md "b68b930cec1d DLID-f9ny9e932trv"
+[req-027]: REQ-027_reviewer.md "36bb4e693dd2 DLID-y42g1frxwkf5"
+[error-classification-spec]: ../../../../plugins/forge/docs/error_classification_spec.md "94496cc6d044 DLID-5ykqs19cdbks"

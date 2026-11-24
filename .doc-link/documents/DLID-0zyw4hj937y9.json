@@ -1,5 +1,5 @@
 {
-  "content_hash": "69bd620fe0b7dc5906416e94c689eebf5439e32652fc996bcb6196a25591ebdd",
+  "content_hash": "0b7187e6bfc6c8dae89442228afcc5830f70a26dd362b7bf41b4a00c6642db2f",
   "doc_link_id": "DLID-0zyw4hj937y9",
   "keywords": [
     "design review",
@@ -8,30 +8,31 @@
     "ADR",
     "temporary-feature",
     "doc_status",
-    "What/How boundary",
     "frontmatter",
-    "create_issue"
+    "additive development",
+    "create_issue",
+    "What/How boundary"
   ],
   "path": "plugins/forge/docs/criteria/review_criteria_design.md",
-  "purpose": "Review criteria for design documents: lists the delegated SSOT documents, check order, special exclusions for additive features and doc_status, and rules for fix, create_issue or skip.",
+  "purpose": "Defines the design review criteria: delegated SSOT documents by priority, the check order including frontmatter, ADR and exclusion rules, and the rules for fix, create_issue or skip recommendations.",
   "summary": [
-    "Delegates severity and gray-zone judgment to principles documents; holds no judgment itself",
-    "P1 SSOT table: spec-design boundary, design principles, design method, additive development, frontmatter, ADR, style guide, deterministic generation, project rules",
-    "P2 contradiction check inside target and against related requirements",
-    "P3 unnecessary complexity check via spec priorities spec",
-    "Check order with additive feature frontmatter requirement",
-    "Document reference and ADR operation checks",
-    "Exclusion rules for temporary-feature and doc_status not_implemented or draft",
-    "Recommendation rules: fix, create_issue, skip",
-    "Three conditions for create_issue"
+    "Header stating the SoT is the review priorities spec and that severity comes from delegated principles",
+    "SSOT reference table of P1/P2/P3 delegated documents for design review",
+    "P1 sources: requirement/design boundary, design principles, design method, additive development, frontmatter, ADR, style guide",
+    "Check for temporary-feature frontmatter on additive feature design documents",
+    "Document reference notation and ADR format and operation checks",
+    "P2 contradiction check within the target and against requirements",
+    "Exclusion rules for temporary-feature documents and doc_status values",
+    "P3 unnecessary complexity check via the spec priorities spec",
+    "Judgment rules table and three conditions for create_issue"
   ],
   "tasks": [
     "Reviewing design documents",
-    "Reviewing ADR files",
-    "Building a review packet for design review",
-    "Judging contradictions in additive feature designs",
-    "Checking What/How boundary in design documents",
-    "Authoring or updating review criteria"
+    "Reviewing ADR files for format and operation",
+    "Checking temporary-feature frontmatter on additive design documents",
+    "Judging contradictions against requirements while honoring doc_status exclusions",
+    "Deciding the recommendation (fix, create_issue, skip) for a design review finding",
+    "Editing or maintaining the design review criteria"
   ],
   "title": "design レビュー基準"
 }

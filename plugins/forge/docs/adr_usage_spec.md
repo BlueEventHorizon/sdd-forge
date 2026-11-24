@@ -33,5 +33,5 @@ ADR に書いたことが提案時に必ず読まれる保証はない。到達�
 | -------------------------------------------------------------- | -------------- | -------------------------------------------------------------- |
 | ADR を根拠に提案・所見を見送ったのに、ADR の番号を添えていない | 🟢 minor       | 見送りの根拠が追跡できず、棄却理由が失効していた場合に遡れない |
 
-[adr-principles-spec]: adr_principles_spec.md "3ae4e3bfdd65 DLID-45wzpggz1set"
-[adr-format]: adr_format.md "0dc06fb958c8 DLID-ns59za8fens1"
+[adr-principles-spec]: adr_principles_spec.md "1fb15e199859 DLID-45wzpggz1set"
+[adr-format]: adr_format.md "3a31a2d6bfe3 DLID-ns59za8fens1"

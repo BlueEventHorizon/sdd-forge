@@ -1,41 +1,34 @@
 {
-  "content_hash": "dc0c7761adf36084fcf0a199342dbb5e4f15a300a21695a4f4fba17a1f15846b",
+  "content_hash": "458b42b8deb4b784a99ac4f1569c913b01f75480e6e290d9dd8fc71d18a1f405",
   "doc_link_id": "DLID-dcec6pr177c9",
   "keywords": [
-    "review priority",
+    "review priorities",
     "P1 P2 P3",
     "severity",
-    "severity catalog",
     "review_criteria",
     "create_issue",
     "gray zone",
-    "SSOT reference",
-    "ADR rejection reason",
-    "forge review"
+    "severity catalog",
+    "SSOT"
   ],
   "path": "plugins/forge/docs/review_priorities_spec.md",
-  "purpose": "Defines the review priority system (P1/P2/P3), the relation between priority and severity, where severity and gray-zone judgments live, and the fixed structure of review criteria files.",
+  "purpose": "Defines the review priority system (P1/P2/P3), the priority-severity relationship, severity catalogs, exclusions, create_issue conditions, and the fixed three-section structure of review criteria files.",
   "summary": [
-    "Definitions of review priorities P1 rule conformance, P2 contradiction, P3 unnecessary complexity",
-    "Priority and severity as independent axes, with severity SoT delegated to principles",
-    "Severity catalog for document reference violations",
-    "Severity catalog for terminology (glossary) violations",
-    "Exclusion rules: P2/P3 scope limits, no custom perspectives, no severity or gray-zone judgment in criteria",
-    "Proportionality check before fix decisions",
-    "Handling of findings based on invalidated ADR rejection reasons",
+    "P1 rule conformance, P2 contradiction, P3 unnecessary complexity definitions",
+    "Priority and severity are independent axes; severity source of truth is delegated principles",
+    "Severity catalogs for document references and terminology violations",
+    "Exclusions: no omission detection in P2, no subjective P3, no extra perspectives",
+    "Proportionality check for fix decisions and handling of expired ADR rejection reasons",
     "Three conditions for recommendation create_issue",
-    "Fixed three-section structure and template of review_criteria files",
-    "Priority order among multiple SoTs and deprecated sections"
+    "Fixed three-section structure and template for review_criteria files",
+    "Criteria hold no severity or gray-zone judgments; priority among multiple SoTs"
   ],
   "tasks": [
-    "Writing or revising review_criteria files",
-    "Running document or code review",
-    "Evaluating findings and deciding fix, create_issue, skip, or needs_review",
+    "Authoring review_criteria files",
+    "Running or evaluating a review",
     "Assigning severity to findings",
-    "Reviewing document reference notation",
-    "Reviewing glossary term usage",
-    "Deciding whether to open an issue for a missing rule",
-    "Dropping findings based on an ADR"
+    "Deciding fix, create_issue, skip, or needs_review",
+    "Reviewing document references and terminology"
   ],
   "title": "レビュー優先度仕様"
 }

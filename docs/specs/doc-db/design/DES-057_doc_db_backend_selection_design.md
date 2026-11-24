@@ -558,7 +558,7 @@ doc-db 側の安定契約であり、将来もエラー化しない**（series �
 
 ### 5.1 query DLID-0sn6xmd1v741
 
-query は `doc-link:query-docs` を 1 回呼ぶ。渡すのは索引の識別キー（category）と検索のタスクだけである。
+query は `doc-link:query-docs` を 1 回呼ぶ。渡すのは ToC 識別キー（category）と検索のタスクだけである。
 対象指定は渡さない。doc-link は、索引を構築したときの対象指定を保存しており、それを使う。
 
 **query wrapper は索引を整備する手順を持たない**（REQ-014 FNC-002）。索引の維持は `update-db-*`（§5.2）の責務である。
@@ -1007,7 +1007,7 @@ forge のテストは doc-link の内部判断に依存させない。**索引�
 - 外部依存: doc-db の参考実装 SKILL は検索の既定を series 指定とする（0.3.2 以降）。切り離された削除済み文書の混入という理由を §4.1 に、series 未登録検証と `sync-start` / `sync-status` の対応を §4.5 に反映した。
 - REQ-014 BL-004 / BL-005: 未整備（承認を得て整備し継続）と障害（切り替えず失敗）の区別、および検索結果のパス実在確認を §2.1・§4.1・§4.2・§6.2・§7・§9 に反映した。
 
-[authoring-guide]: ../../../rules/plugin_claude_code_authoring_guide.md "1b4400f836cd DLID-pvwk8en5c2rq"
-[des-024]: ../../forge/design/DES-024_skill_script_layout_design.md "d8aa531bdbaf DLID-ckbysbfdrsv5"
+[authoring-guide]: ../../../rules/plugin_claude_code_authoring_guide.md "65302c63b0e1 DLID-pvwk8en5c2rq"
+[des-024]: ../../forge/design/DES-024_skill_script_layout_design.md "2646153bc1d2 DLID-ckbysbfdrsv5"
 [des-061]: ../../forge/design/DES-061_forge_settings_file_design.md "a90619ea16a5 DLID-6m16v4qqxjf4"
-[error-classification-spec]: ../../../../plugins/forge/docs/error_classification_spec.md "04397ae80f5c DLID-5ykqs19cdbks"
+[error-classification-spec]: ../../../../plugins/forge/docs/error_classification_spec.md "94496cc6d044 DLID-5ykqs19cdbks"

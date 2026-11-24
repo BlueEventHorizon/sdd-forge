@@ -1,41 +1,38 @@
 {
-  "content_hash": "0304d66b6d45af45b3f2cf8c5d62fb793e4f31c330030ca439599b856fa312ba",
+  "content_hash": "f1c15e9bfe0dfb26ceaaf03f1d027222638fcc1b0cfe11dd89701f0f20e4e83b",
   "doc_link_id": "DLID-zehb6ge71vgb",
   "keywords": [
     "implementation plan",
     "task",
     "dependency",
     "priority",
-    "progress state",
     "task group",
     "traceability",
+    "progress state",
     "executor agent",
     "start-plan",
     "start-implement"
   ],
   "path": "docs/specs/forge/requirements/REQ-024_implementation_plan_spec.md",
-  "purpose": "Defines the requirements for the implementation plan document: the information a plan must hold to order, track and trace tasks extracted from design documents, produced by start-plan and consumed by start-implement.",
+  "purpose": "Defines what an implementation plan must hold: tasks, dependencies, deterministic next-task selection, traceability, task granularity, document paths, transience, and task groups.",
   "summary": [
-    "Overview of the implementation plan as an artifact holding tasks, order and progress state",
-    "Premise that the plan file format is JSON",
-    "FNC-001: task identifier, priority and dependency on other tasks",
-    "FNC-002: deterministic selection of the next executable task using progress states (not started, running, implemented, done, failed)",
-    "FNC-003: traceability among requirements, designs and tasks, with detection of missing tasks",
-    "FNC-004: task granularity executable by a single executor agent without waiting",
-    "FNC-005: each task holds paths of documents required for implementation",
-    "FNC-006: plan is a temporary working file that may be discarded",
-    "FNC-007: plan holds no additive feature identifier; derived via referenced requirements",
-    "FNC-008: task groups as the unit of selection, build check and review"
+    "Overview: plan created by start-plan and consumed by start-implement; JSON format; scope of the target system",
+    "FNC-001: tasks have unique identifiers, priorities, and dependencies",
+    "FNC-002: next executable task is uniquely determined; progress states including implemented and failed",
+    "FNC-003: traceability among requirements, designs, and tasks, with detection of missing tasks",
+    "FNC-004: task granularity executable by a single executor agent",
+    "FNC-005: each task holds paths of documents needed for implementation",
+    "FNC-006: plan is a transient working file that may be discarded",
+    "FNC-007: plan holds no differential feature identifier",
+    "FNC-008: task groups as units of selection, build check, and review"
   ],
   "tasks": [
     "Creating an implementation plan with start-plan",
-    "Implementing tasks from a plan with start-implement",
-    "Designing or changing the plan JSON schema",
-    "Defining task dependencies and priorities",
-    "Implementing next-executable-task selection logic",
-    "Checking traceability between requirements, designs and tasks",
-    "Grouping tasks into task groups and reviewing them",
-    "Reviewing plan-related requirements or designs"
+    "Implementing tasks with start-implement",
+    "Designing the plan JSON schema",
+    "Reviewing an implementation plan",
+    "Selecting the next executable task",
+    "Checking traceability of requirements to tasks"
   ],
   "title": "REQ-024 実装計画書 要件定義書"
 }

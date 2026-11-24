@@ -75,4 +75,4 @@ doc_link_id: DLID-540ak6kxrsxp
 | §3.1 この制約は実装を縛らない   | 旧実装を残してよいのは、本 feature の外が依存していて同時に壊せない場合だけ。残すなら依存が解消された時点で削除する |
 | §4 merge タイミングと手順       | merge は文書の齟齬を解消する作業であり、コードの後始末を含まない。旧実装の削除時期を merge に紐づけない             |
 
-[additive-development-spec]: additive_development_spec.md "307dc53425f0 DLID-cyrk9xr8vcap"
+[additive-development-spec]: additive_development_spec.md "3be39e634c1c DLID-cyrk9xr8vcap"

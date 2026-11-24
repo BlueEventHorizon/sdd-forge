@@ -1,36 +1,36 @@
 {
-  "content_hash": "0dc06fb958c8f3ca5b99e3fb8ffb40799e16d2211e84245917320dbf5fab143a",
+  "content_hash": "3a31a2d6bfe3ab3f1feb09b33218f0b3a9e852fa320c284cb17040e3522db4b9",
   "doc_link_id": "DLID-ns59za8fens1",
   "keywords": [
     "ADR",
     "architecture decision record",
-    "ADR format",
+    "format",
     "template",
-    "file naming",
     "scope box",
     "alternatives considered",
     "section numbering",
-    "rejected decision",
-    "default format"
+    "file naming",
+    "rejection reason"
   ],
   "path": "plugins/forge/docs/adr_format.md",
-  "purpose": "Defines the default notation for ADR files: file naming, file structure, optional scope box, how to rewrite rejected decisions, and the template, used when a project has no ADR format of its own.",
+  "purpose": "Provides the default ADR format used when a project has no ADR format of its own: file naming, structure, optional scope box, how to rewrite rejected decisions, and a template.",
   "summary": [
-    "File naming rule ADR-{NNN}_{feature}.md with one ADR file per feature and a fixed number",
-    "File structure: single H1 title, numbered decision sections, fixed four subsections (context, decision, alternatives, impact)",
-    "Section numbers are never renumbered because external references depend on them",
-    "Optional scope box placed after the H1 with paired \"defines\" and \"does not define\" items",
-    "How to handle a rejected decision by rewriting the same section and moving the old option to the alternatives table",
-    "Template with guidance for writing alternatives rejection reasons and evidence-based impact",
-    "No metadata table, status history, or concrete file path listing in impact",
-    "Links to the ADR principles spec for operation, triggers and severity"
+    "File naming rule ADR-NNN_feature.md, one file per feature, number fixed at creation",
+    "File structure: single H1, numbered decision sections with four fixed subsections",
+    "Section numbers must never change",
+    "Optional scope box with paired defined and not-defined items",
+    "How to record a rejected decision: rewrite the same section, move old option to alternatives",
+    "Template with context, decision, alternatives, and impact subsections",
+    "Guidance for writing rejection reasons with explicit premises",
+    "Impact must be evidence-based, not speculative",
+    "No metadata tables or status history sections"
   ],
   "tasks": [
-    "Creating a new ADR file",
-    "Adding a decision section to an existing ADR",
-    "Rewriting a rejected or revised ADR decision",
+    "Writing or updating an ADR",
     "Reviewing an ADR for format compliance",
-    "Writing ADRs when no project-specific ADR format exists"
+    "Naming and numbering an ADR file",
+    "Rewriting a rejected or reversed decision",
+    "Deciding whether to add a scope box"
   ],
   "title": "ADR（アーキテクチャ決定記録）デフォルトフォーマット"
 }

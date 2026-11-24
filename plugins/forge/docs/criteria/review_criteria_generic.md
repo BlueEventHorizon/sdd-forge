@@ -50,7 +50,7 @@ P1 で照合すべき委譲先文書一覧。各文書は「規範本体 + 重�
 
 3 条件のいずれかが不成立の場合は `recommendation: skip` (skip_reason に該当条件不成立の理由を記載) とする。
 
-[review-priorities-spec]: ../review_priorities_spec.md "dc0c7761adf3 DLID-dcec6pr177c9"
-[document-style-guide]: ../document_style_guide.md "69dee42932c2 DLID-c59znr7b8f56"
-[error-classification-spec]: ../error_classification_spec.md "04397ae80f5c DLID-5ykqs19cdbks"
-[spec-priorities-spec]: ../spec_priorities_spec.md "f8233c87c564 DLID-f9ny9e932trv"
+[review-priorities-spec]: ../review_priorities_spec.md "458b42b8deb4 DLID-dcec6pr177c9"
+[document-style-guide]: ../document_style_guide.md "335c3c0eb320 DLID-c59znr7b8f56"
+[error-classification-spec]: ../error_classification_spec.md "94496cc6d044 DLID-5ykqs19cdbks"
+[spec-priorities-spec]: ../spec_priorities_spec.md "b68b930cec1d DLID-f9ny9e932trv"

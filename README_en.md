@@ -2,7 +2,7 @@
 
 Claude Code plugins for **Spec-Driven Development** — write specs first, then let AI implement and review with full context.
 
-**Marketplace version: 0.1.3**
+**Marketplace version: 0.1.4**
 
 The marketplace ships the **forge** plugin. forge's search skills use an external document-search backend. For the available backends, how to install them, and how to switch, see [Installing and switching forge backends][switch-forge-backend].
 
@@ -38,7 +38,7 @@ flowchart LR
 
 | Plugin    | Version | Description                                                                                              |
 | --------- | ------- | -------------------------------------------------------------------------------------------------------- |
-| **forge** | 0.1.3   | AI-powered document lifecycle tool. Create, review, and auto-fix requirements/design/plan docs and code. |
+| **forge** | 0.1.4   | AI-powered document lifecycle tool. Create, review, and auto-fix requirements/design/plan docs and code. |
 
 > **The document-search backends are external dependencies**: they are not part of forge. For the available backends and how to install them, see [Installing and switching forge backends][switch-forge-backend].
 

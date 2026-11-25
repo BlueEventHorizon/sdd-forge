@@ -1,4 +1,5 @@
 {
+  "applied_hash": "94496cc6d044cdcf1f68aaa0c48abfb62cc088d16f78637067870ea2e43c9ce8",
   "content_hash": "94496cc6d044cdcf1f68aaa0c48abfb62cc088d16f78637067870ea2e43c9ce8",
   "doc_link_id": "DLID-5ykqs19cdbks",
   "keywords": [
@@ -13,8 +14,85 @@
     "retry",
     "error value"
   ],
+  "last_check": {
+    "checked_at": "2026-11-25T03:43:00+00:00",
+    "result": "success"
+  },
   "path": "plugins/forge/docs/error_classification_spec.md",
   "purpose": "Defines what an error is, how to classify it, how to treat causes, and the criteria for adding values that distinguish errors, across exit codes, agent return values, requirement error cases and API codes.",
+  "references": [
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/scope_proportionality_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 0,
+      "recorded_content_hash": "be634f5152a6",
+      "recorded_path": "scope_proportionality_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-s1dhhaprgf1r",
+      "target_section_id": null
+    }
+  ],
+  "sections": [
+    {
+      "content_hash": "0b68837a2270a58772b48abdb3e22496ef2303478c828e7707b0c37832bf6d9f",
+      "heading": "3. 分類",
+      "position": 4,
+      "section_id": "DLID-6xpqvaspw0tv"
+    },
+    {
+      "content_hash": "631c905a8086aaf9a39ff1e5bbb94a7d121aec1279032585c23c1badc6057972",
+      "heading": "6. 重大度カタログ",
+      "position": 8,
+      "section_id": "DLID-24jm5h2279w9"
+    },
+    {
+      "content_hash": "64f59e5d086a3ca3493d5d4bcb4958a0356b4f91d2dd9f7dbe65512ae7ffb53e",
+      "heading": "1. 目的",
+      "position": 1,
+      "section_id": "DLID-ryzrg0r8bhah"
+    },
+    {
+      "content_hash": "7be4657f49091d3183211a56b11a9a12d1801b994e4376e33230c1a7c58316e7",
+      "heading": "4. 原因",
+      "position": 6,
+      "section_id": "DLID-y2v68yz00rhw"
+    },
+    {
+      "content_hash": "879f1710c36e3b37de2ff4f50c92aa2ad2fa10f00821b93fe02b05b7d3dd4189",
+      "heading": "エラーの定義・分類・原因",
+      "position": 0,
+      "section_id": "DLID-xgwskmwyrwc8"
+    },
+    {
+      "content_hash": "c5e8f59f025de14d2090a9200979f442f85a79e4f93b2fe017d5deb6e145c6be",
+      "heading": "2.1 エラーではないもの: 判定できるもの",
+      "position": 3,
+      "section_id": "DLID-1evp4g4x9qr1"
+    },
+    {
+      "content_hash": "ca03ab85b8d0695e8db39033fc8972132c6bed7cba765d2c78842b4020109b59",
+      "heading": "2. エラーとは何か",
+      "position": 2,
+      "section_id": "DLID-2sqfsh3m2b0r"
+    },
+    {
+      "content_hash": "d0604ce767aa92e6011d3c921518af8529be54de8dbe0b22ebf7d98bc3af7f07",
+      "heading": "5. 値を足すときの問い",
+      "position": 7,
+      "section_id": "DLID-nz2dafpnaf34"
+    },
+    {
+      "content_hash": "dc50c211438773ee6acbaf9a46c135a42c09342a0b50a8c8b82fe7f3d6df1d1e",
+      "heading": "3.1 回復の手段",
+      "position": 5,
+      "section_id": "DLID-sj5h69q7936w"
+    }
+  ],
   "summary": [
     "Purpose: stop unbounded growth of error values that do not change the receiver behavior",
     "Definition of an error as an event that stops the intended flow, separate from its cause",

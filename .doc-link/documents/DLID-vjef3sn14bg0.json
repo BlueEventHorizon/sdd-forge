@@ -1,4 +1,5 @@
 {
+  "applied_hash": "fdc452f8441fed5079394ff085d6515e1fcdbd224701a4916ccfcb30826b8ca1",
   "content_hash": "fdc452f8441fed5079394ff085d6515e1fcdbd224701a4916ccfcb30826b8ca1",
   "doc_link_id": "DLID-vjef3sn14bg0",
   "keywords": [
@@ -13,8 +14,213 @@
     "feature extraction",
     "workflow"
   ],
+  "last_check": {
+    "checked_at": "2026-11-25T03:43:00+00:00",
+    "result": "success"
+  },
   "path": "plugins/forge/skills/start-requirements/docs/requirements_reverse_engineering_workflow.md",
   "purpose": "Workflow for reverse-engineering requirement documents from the source code of an existing application, keeping functionality while allowing the design to be renewed.",
+  "references": [],
+  "sections": [
+    {
+      "content_hash": "032aa6e45b926d1a56244dcac402ce3fa74102dac94fe15ce337fa8f59c76fd8",
+      "heading": "3.2 機能抽出の実践手順",
+      "position": 15,
+      "section_id": "DLID-pkva5535xaby"
+    },
+    {
+      "content_hash": "0335ae762028b2645b44532f0451b2dd17e8425d8b155a48e9b5da1feb76338d",
+      "heading": "2.3 デザイン要素の扱い",
+      "position": 12,
+      "section_id": "DLID-qncqrwz1k0gm"
+    },
+    {
+      "content_hash": "089905bb170d5d11a38652762490305f8c35f5b7d8e5fac5b507492bf7a8f69a",
+      "heading": "条件分岐の要件化",
+      "position": 17,
+      "section_id": "DLID-7wv0t8303f6h"
+    },
+    {
+      "content_hash": "0ff8632a2578e334249624e36487202d464d6cfe8ae83dee1c24d7aaf74b6311",
+      "heading": "1.1 ユーザーへの確認",
+      "position": 5,
+      "section_id": "DLID-29pn25275wxf"
+    },
+    {
+      "content_hash": "1897716dd2ff8dbfe8a6f6dfcaa164937b01ee05bca0a5ff0b6681d5cba31778",
+      "heading": "Phase 3: 要件抽出",
+      "position": 13,
+      "section_id": "DLID-9jtt11pf7whs"
+    },
+    {
+      "content_hash": "1e2cbdd9a1257dc17df61dd5490057fddb0cb337e65d691fc292dbaebf3ddfe1",
+      "heading": "Phase 4: 要件定義書作成",
+      "position": 21,
+      "section_id": "DLID-m7ks0tz3kjgz"
+    },
+    {
+      "content_hash": "23bf659dbc69e6c9464e5df9cdeec159fbd8aaea44075e87c8fe99a9eeb09264",
+      "heading": "3.1 要件抽出の優先順位",
+      "position": 14,
+      "section_id": "DLID-dz5wqqyqgwxr"
+    },
+    {
+      "content_hash": "2d42549330a8cac02c3977e6916b116ed1aba4e76b86e26694a40a736dd46c08",
+      "heading": "1.2 ルール文書・既存仕様の取得",
+      "position": 6,
+      "section_id": "DLID-ppw83kk2wfa3"
+    },
+    {
+      "content_hash": "2fbdb378009cc44884012b83870345a546960cf698571249f7d6ce1a1293e727",
+      "heading": "5.5 commit/push 確認",
+      "position": 31,
+      "section_id": "DLID-1fghx1f2h9qg"
+    },
+    {
+      "content_hash": "40518bc9f7669e366544509945f8fba8e2410d09a7b6beac9d590cd5528b4ed8",
+      "heading": "2.2 画面・コンポーネントの解析",
+      "position": 11,
+      "section_id": "DLID-d7p17zf8mnss"
+    },
+    {
+      "content_hash": "49870aac60911855b635cd6166e740d0926fdd8a90c95314403fdb8ec15e0acb",
+      "heading": "1.3 既存コード収集 agent の起動",
+      "position": 7,
+      "section_id": "DLID-v8jypevg155y"
+    },
+    {
+      "content_hash": "51c5f1fd103afd793eca0a7f067e448f1679c6f414d8ad10c646d9af274db2c9",
+      "heading": "5.3 参照の実在性検査",
+      "position": 29,
+      "section_id": "DLID-td2eycsxka34"
+    },
+    {
+      "content_hash": "6cf67bd0bc5c3596f8a31ad1c7019a0c875c3d670035ce6ab35adcfa5e1f9c39",
+      "heading": "Phase 5: 品質確認・完了処理",
+      "position": 26,
+      "section_id": "DLID-9jr0061khqwk"
+    },
+    {
+      "content_hash": "71d0903717b35b11d64c22cdea0fbed0cf0b715f751795c5a95b75efef2150c8",
+      "heading": "5.1 品質チェック",
+      "position": 27,
+      "section_id": "DLID-yxn3bs8zhg58"
+    },
+    {
+      "content_hash": "7dfc710d502792326069fd4a8fb1ffacd0990afd35a26d4d18cbc13e4c06fe65",
+      "heading": "1.4 収集結果の確認",
+      "position": 8,
+      "section_id": "DLID-x7gq60kkg789"
+    },
+    {
+      "content_hash": "82adbd8e1fb411046cd53f7ebbdfb00d10614e2626f4879e2d4ac9d88c9f120b",
+      "heading": "2.1 プロジェクト構造の把握",
+      "position": 10,
+      "section_id": "DLID-q8yx9g8m22hb"
+    },
+    {
+      "content_hash": "8374cb726038a33d24746bfefeee513b0fda9928d4a3f99d2ce95f31d7b30951",
+      "heading": "データ永続化の特定",
+      "position": 18,
+      "section_id": "DLID-44hdjj8dnhvm"
+    },
+    {
+      "content_hash": "858288192b9365d10cb9320e601927d64fe92dac077792bec3ff5ec89939e228",
+      "heading": "5.4 specs ToC 更新",
+      "position": 30,
+      "section_id": "DLID-8vg3s8zztdvy"
+    },
+    {
+      "content_hash": "8c9f5ab9742ecd1ee55a808ab6bf8b65f3e26bf42ea46eb2bd795acb10392df3",
+      "heading": "ユーザーアクションの特定",
+      "position": 16,
+      "section_id": "DLID-eq8q3fp4s490"
+    },
+    {
+      "content_hash": "8deb73b7e92d249edde635d657bab705b412cba9a28589465210d5437894bd70",
+      "heading": "エラーハンドリングの抽出",
+      "position": 19,
+      "section_id": "DLID-kt5jqamtc64h"
+    },
+    {
+      "content_hash": "8e10658b7abfe97542c8cebd6c1e7a94a7ae5b3bea71d0ef0bff45dfec13348d",
+      "heading": "Phase 2: ソースコード解析",
+      "position": 9,
+      "section_id": "DLID-676f289jefvv"
+    },
+    {
+      "content_hash": "998713c9e26d49d3d26fe3f3b71a49635b21587fa16e33c49cc184811786b877",
+      "heading": "目的",
+      "position": 2,
+      "section_id": "DLID-bm6v3f5n2kk7"
+    },
+    {
+      "content_hash": "a944d3f5f1865738f6fa25bf5a365d3385b4e444347ff3ca71891d34e7fd5a96",
+      "heading": "5.2 AI レビュー実施",
+      "position": 28,
+      "section_id": "DLID-xy762qjf53wn"
+    },
+    {
+      "content_hash": "b804608e72ba615b926f3688425700464c5ed8ddcbbb93138a05fb7eb2932941",
+      "heading": "4.2 作成順序",
+      "position": 23,
+      "section_id": "DLID-t8vv5af68gr4"
+    },
+    {
+      "content_hash": "ba1e7bd43815312ad0449808929cf3a4dd44d0455adffdf3990bb315036a7eb2",
+      "heading": "4.4 グロッサリー作成",
+      "position": 25,
+      "section_id": "DLID-rv59n0nr6px0"
+    },
+    {
+      "content_hash": "c914eb65246b45a32f60b1c00b69988cfe84bd1fde944fa22c23ad24371ebd42",
+      "heading": "4.3 記載原則",
+      "position": 24,
+      "section_id": "DLID-z84wq8rqhcb6"
+    },
+    {
+      "content_hash": "cdc3157b68499bc4c34de84ba7b40a49d2ddfb7a627ea501822b1d951fa30095",
+      "heading": "3.3 機能抽出チェックリスト",
+      "position": 20,
+      "section_id": "DLID-mh9j0pm2330q"
+    },
+    {
+      "content_hash": "d42d822093f9ff1a3737507915055702961ddb7817c041e67409cdac943a2078",
+      "heading": "要件定義書作成ワークフロー（既存アプリ解析版）",
+      "position": 0,
+      "section_id": "DLID-9ht6x2qngyt3"
+    },
+    {
+      "content_hash": "d46e3636e63ee7c628ef42eaec12540f60ea253506319023112385c8b011460c",
+      "heading": "Phase 1: 事前準備",
+      "position": 4,
+      "section_id": "DLID-ryp40jq7yszm"
+    },
+    {
+      "content_hash": "e36db11e95a8223c2e0f6494629102beea900d0b6d46156668dcbbaa36d74bff",
+      "heading": "必須文書",
+      "position": 1,
+      "section_id": "DLID-22paceet1m5n"
+    },
+    {
+      "content_hash": "e4e0603dad80a721b07616fd80da26e986cf5aae16b4837914720cdda903dfe8",
+      "heading": "5.6 完了案内",
+      "position": 32,
+      "section_id": "DLID-prjjwpcgwwfx"
+    },
+    {
+      "content_hash": "ee7b5a4c29ccdf1ba73bd60af7cdf4f2924f99b350d88aba0798c04c6d9591ea",
+      "heading": "実行フロー概要",
+      "position": 3,
+      "section_id": "DLID-4vp8x2hzrgpr"
+    },
+    {
+      "content_hash": "f80e0ad5cf184dd069f9328b7c65f8ef57e0a70c75dae58eb4d8f06c1d1fcdba",
+      "heading": "4.1 置き場の決定と ID 採番",
+      "position": 22,
+      "section_id": "DLID-2nwaprqangzw"
+    }
+  ],
   "summary": [
     "Required reading list of requirement principles, format, error classification, and style guides",
     "Purpose: extract requirements from existing source code, keep features, renew design",

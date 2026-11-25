@@ -1,4 +1,5 @@
 {
+  "applied_hash": "3f63be26ad5cc2477082172edfe79bb25c5a8f96577f20aae3acaee2c28e091a",
   "content_hash": "3f63be26ad5cc2477082172edfe79bb25c5a8f96577f20aae3acaee2c28e091a",
   "doc_link_id": "DLID-540ak6kxrsxp",
   "keywords": [
@@ -12,8 +13,73 @@
     "temporary document",
     "strategy principles"
   ],
+  "last_check": {
+    "checked_at": "2026-11-25T03:43:00+00:00",
+    "result": "success"
+  },
   "path": "plugins/forge/docs/strategy_principles_spec.md",
   "purpose": "Defines the implementation strategy document and its general principles, for use when no project-specific rules exist, covering its responsibility, boundary with plans, and handling of additive development.",
+  "references": [
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/additive_development_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 0,
+      "recorded_content_hash": "3be39e634c1c",
+      "recorded_path": "additive_development_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-cyrk9xr8vcap",
+      "target_section_id": null
+    }
+  ],
+  "sections": [
+    {
+      "content_hash": "08c5fb6657f1f22fabee23258ca43cf1d79468d9ad9c59749a4af23bf61d9ae7",
+      "heading": "差分開発で最も難しいこと",
+      "position": 3,
+      "section_id": "DLID-jzfkn19jkack"
+    },
+    {
+      "content_hash": "1bad6db5169c516c422eb30edfd0896040f99e451bd2c1169f532a72bc8b3e70",
+      "heading": "追加開発ワークフローとの関係",
+      "position": 6,
+      "section_id": "DLID-x4sk8dy3bxgq"
+    },
+    {
+      "content_hash": "55c1a47f526f387de8dd90092c9b8bff238d0008ba642392db5e2461abd8eb03",
+      "heading": "実装戦略書の定義",
+      "position": 1,
+      "section_id": "DLID-1q1x4fbdgmf6"
+    },
+    {
+      "content_hash": "5bf16765e3cc2cdb4fd25dfa34399f21f3099adeebc10ee3c583feaacb7ffe2c",
+      "heading": "手順で縛らない",
+      "position": 4,
+      "section_id": "DLID-xqv8kaw9twzn"
+    },
+    {
+      "content_hash": "dd51c573e0588d5c91c6c96ced07751c1307098d54ba3f91ea9fdabdadaeb5f1",
+      "heading": "実装戦略書 作成原則",
+      "position": 0,
+      "section_id": "DLID-fwyy5a0yrjzb"
+    },
+    {
+      "content_hash": "e654ffe295515ec1deb017bf61528ab9b2e6b621a41e1b6b9b10aa70674a0ea6",
+      "heading": "計画書との線引き",
+      "position": 2,
+      "section_id": "DLID-9vrrxypvrb4q"
+    },
+    {
+      "content_hash": "edab2f4d801b8617966be25345e0475e83a5463fd975af5279d5e82dcef18bb3",
+      "heading": "対象は実装であって旧仕様の文書ではない",
+      "position": 5,
+      "section_id": "DLID-0g84f9zw6dkw"
+    }
+  ],
   "summary": [
     "Definition of the implementation strategy document: responsibility, lifespan, file name",
     "Dependence of strategy on design: existing-code handling follows from the design",

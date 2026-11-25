@@ -1,4 +1,5 @@
 {
+  "applied_hash": "8c5971b68aaf33b618cf6c35a00c0ec23490d1e1a118f1f343443bdec3b118b3",
   "content_hash": "8c5971b68aaf33b618cf6c35a00c0ec23490d1e1a118f1f343443bdec3b118b3",
   "doc_link_id": "DLID-8y2jh2y06761",
   "keywords": [
@@ -10,8 +11,73 @@
     "stakeholders",
     "lifetime"
   ],
+  "last_check": {
+    "checked_at": "2026-11-25T03:43:00+00:00",
+    "result": "success"
+  },
   "path": "plugins/forge/docs/requirement_principles_spec.md",
   "purpose": "Generic principles for writing requirements documents when no project-specific rules exist: defines what a requirements document is, its responsibility, lifetime, and revision via additive development.",
+  "references": [
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/additive_development_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 2,
+      "recorded_content_hash": "3be39e634c1c",
+      "recorded_path": "additive_development_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-cyrk9xr8vcap",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/requirement_format.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 0,
+      "recorded_content_hash": "c05edc5d1de7",
+      "recorded_path": "requirement_format.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-c13gr4qbk4vm",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/spec_design_boundary_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 1,
+      "recorded_content_hash": "e0d1a83f7e47",
+      "recorded_path": "spec_design_boundary_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-h9h90g9wcy8f",
+      "target_section_id": null
+    }
+  ],
+  "sections": [
+    {
+      "content_hash": "6d1bd16f636443b599f54061bd5d87d1c7c40392e2db9da060f7d47cd788d53a",
+      "heading": "要件定義書 作成原則",
+      "position": 0,
+      "section_id": "DLID-ayakhapp41gd"
+    },
+    {
+      "content_hash": "ef7ad51f1cb4c534531c232dc574801ce2d7a29d6f40ec73fb92de27a79ea8ae",
+      "heading": "要件定義書の定義",
+      "position": 1,
+      "section_id": "DLID-msg9bk6n4fcy"
+    }
+  ],
   "summary": [
     "Declares the principles as generic fallback; project-specific rules take precedence",
     "Points to the requirement format template and the spec/design boundary guide",

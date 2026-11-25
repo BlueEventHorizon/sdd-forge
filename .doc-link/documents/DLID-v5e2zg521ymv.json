@@ -1,4 +1,5 @@
 {
+  "applied_hash": "c84efeb1c2c4316c976d8c52a29f23b4a49c0206e1b33b4c2b726b4bd736e837",
   "content_hash": "c84efeb1c2c4316c976d8c52a29f23b4a49c0206e1b33b4c2b726b4bd736e837",
   "doc_link_id": "DLID-v5e2zg521ymv",
   "keywords": [
@@ -12,8 +13,87 @@
     "bulk fix",
     "adoption decision"
   ],
+  "last_check": {
+    "checked_at": "2026-11-25T03:43:00+00:00",
+    "result": "success"
+  },
   "path": "plugins/forge/skills/consult/docs/review_handling.md",
   "purpose": "Defines how the consult skill behaves when delegated from the review skill, covering received findings, display format, bulk-fix offer, brief recording via script, and the result returned to review.",
+  "references": [],
+  "sections": [
+    {
+      "content_hash": "111cbcc218b11e3124455fedc5e5f40a9e958ab895535dc4efafefc602d8d139",
+      "heading": "2.4 コンソールの書き方",
+      "position": 8,
+      "section_id": "DLID-mp4bqgeb2g7g"
+    },
+    {
+      "content_hash": "28af9f673eba8cb38b0e69745aef7642c7266cfc78ca35615c49d3d715167d5f",
+      "heading": "2.2 横の表（すべての項目）",
+      "position": 6,
+      "section_id": "DLID-tq1ja75qej31"
+    },
+    {
+      "content_hash": "3006621911ba88797ae93a2744d6d4f39b4d515772819823ab414cce604fff7a",
+      "heading": "4. 記録",
+      "position": 10,
+      "section_id": "DLID-q0ad05qjm2kv"
+    },
+    {
+      "content_hash": "3c2ae79059e8d8139d6e5fbf2e27a9f4f57a279bdf41640a22772889f54c9aa9",
+      "heading": "2.3 いまの論点（いま扱っている consult topic）",
+      "position": 7,
+      "section_id": "DLID-7fymb089r3a2"
+    },
+    {
+      "content_hash": "66590d5e1c9eb6fe3d6c5005b7c01998bcad2d082657a662add511ed92ab8605",
+      "heading": "1. 受け取る評価の扱い",
+      "position": 1,
+      "section_id": "DLID-h84pd114k512"
+    },
+    {
+      "content_hash": "69fc1df6053a447b478d6f2a34b8e0846b31a40448c9465d8de7605418b124c1",
+      "heading": "2. 表示形式",
+      "position": 4,
+      "section_id": "DLID-2t4fx42z65bw"
+    },
+    {
+      "content_hash": "6e9258198dbf0c1112ef03ec5a9d5c13ffd1d6b31e1894987807b03747bf7866",
+      "heading": "2.1 全体の状況（2 行）",
+      "position": 5,
+      "section_id": "DLID-2ggrkeqwf034"
+    },
+    {
+      "content_hash": "73a193f1fbf7f59a3fb9973d019da2835ebff78bf16b17cacb92e0a1710e8e49",
+      "heading": "1.1 提示状態の置き場",
+      "position": 2,
+      "section_id": "DLID-jmyjp59xafs7"
+    },
+    {
+      "content_hash": "b3c4d0fff74c1a4d1e43517834d790c4d99ac05f416521cda1ae215dd66f5f9b",
+      "heading": "1.2 実行",
+      "position": 3,
+      "section_id": "DLID-wbqwpvza2d6j"
+    },
+    {
+      "content_hash": "d6d05f18a113df3a24ff4e7418bfff951c904740dccf3c649fb02b665781bb06",
+      "heading": "5. 結果の返し方",
+      "position": 11,
+      "section_id": "DLID-srfbd4pz856e"
+    },
+    {
+      "content_hash": "dcdd76833d265397279f9bfe234e0aebc6b921054f621716f983e0aac018f9bc",
+      "heading": "3. まとめて直す申し出",
+      "position": 9,
+      "section_id": "DLID-zfhg6jvv5bcb"
+    },
+    {
+      "content_hash": "e1adeff0f86828fb5a24a52edfe696e86650710a4837fbfa36f29fb946a9e85a",
+      "heading": "review から委譲されたときの手順",
+      "position": 0,
+      "section_id": "DLID-wfwaycv3snna"
+    }
+  ],
   "summary": [
     "Handling of received findings: topics needing user decision versus report-only items",
     "Order by evaluator severity: critical, major, minor",

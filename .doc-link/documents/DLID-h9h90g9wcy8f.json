@@ -1,4 +1,5 @@
 {
+  "applied_hash": "e0d1a83f7e47d93c77bb7a26107dcb00b310149e00ffc8db4fbcdc7c6555670e",
   "content_hash": "e0d1a83f7e47d93c77bb7a26107dcb00b310149e00ffc8db4fbcdc7c6555670e",
   "doc_link_id": "DLID-h9h90g9wcy8f",
   "keywords": [
@@ -11,8 +12,226 @@
     "traceability",
     "ADR"
   ],
+  "last_check": {
+    "checked_at": "2026-11-25T03:43:00+00:00",
+    "result": "success"
+  },
   "path": "plugins/forge/docs/spec_design_boundary_spec.md",
   "purpose": "Clarifies the boundary between requirements (What) and design (How) documents and supports deciding where content belongs, with severity catalog, gray-zone allowances, and traceability rules.",
+  "references": [
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/additive_development_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 5,
+      "recorded_content_hash": "3be39e634c1c",
+      "recorded_path": "additive_development_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-cyrk9xr8vcap",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/adr_principles_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 2,
+      "recorded_content_hash": "1fb15e199859",
+      "recorded_path": "adr_principles_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-45wzpggz1set",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/adr_usage_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 3,
+      "recorded_content_hash": "b87fce46708e",
+      "recorded_path": "adr_usage_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-m77gjek2tw2b",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/design_principles_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 1,
+      "recorded_content_hash": "e590554be385",
+      "recorded_path": "design_principles_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-061pwjejh6yc",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/requirement_principles_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 0,
+      "recorded_content_hash": "8c5971b68aaf",
+      "recorded_path": "requirement_principles_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-8y2jh2y06761",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/spec_priorities_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 4,
+      "recorded_content_hash": "b68b930cec1d",
+      "recorded_path": "spec_priorities_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-f9ny9e932trv",
+      "target_section_id": null
+    }
+  ],
+  "sections": [
+    {
+      "content_hash": "02794e43357c8a1ebbf0123456496166bf3ef794421f09ea59d6a6cce0281407",
+      "heading": "5.1 G.1 データモデルの型",
+      "position": 16,
+      "section_id": "DLID-te6sqxgqrtc1"
+    },
+    {
+      "content_hash": "062bf1e36acd711edaac544633d951d199969a3bed76605784159e5cd6fef4aa",
+      "heading": "主要な判断基準",
+      "position": 7,
+      "section_id": "DLID-arva4v6250kj"
+    },
+    {
+      "content_hash": "0c7be4df263d0cfe8371f8dd3ea65eb9acfbae8ff94b145324e459e6fa446f26",
+      "heading": "4.1 What/How 境界違反",
+      "position": 13,
+      "section_id": "DLID-39y9thpan8nn"
+    },
+    {
+      "content_hash": "1cb00f3b01d243741d34fb30a730edd7d2dcca6fb7785f5b092f54cad3a9f900",
+      "heading": "3.1 定量目標関連",
+      "position": 10,
+      "section_id": "DLID-w0t9mqnn3e2z"
+    },
+    {
+      "content_hash": "1fcbe57336ebea9dda0ccd0319dc115139a7974cefe8bbda45dc88767fba12d0",
+      "heading": "5.2 G.2 図表",
+      "position": 17,
+      "section_id": "DLID-wydaetq75vfe"
+    },
+    {
+      "content_hash": "8b91197b39e850bc0fc8924617eb9a3c31cf1d1ecea13619c559767af3860eab",
+      "heading": "4.2 グレーゾーン (型 / 図表)",
+      "position": 14,
+      "section_id": "DLID-0b9szkhp1szc"
+    },
+    {
+      "content_hash": "8cbc4dcdd6dc947c141bcb5b53b46d437f7af61af45181e22a7f692ba99e906a",
+      "heading": "3.2 機能の存在理由・価値",
+      "position": 11,
+      "section_id": "DLID-rcmn4zsrqf2s"
+    },
+    {
+      "content_hash": "98071b342143fc4672129a536d65e7a66d18dce6f23c6f1d6c7998859fbfe30b",
+      "heading": "要件定義書と設計書の境界ガイド",
+      "position": 0,
+      "section_id": "DLID-dmnfe7cxwbte"
+    },
+    {
+      "content_hash": "994f41ac2931a4732ed9badd3e198d91218e30cd7d3d1b12c71292ae4e4e5ba6",
+      "heading": "ADR との関係",
+      "position": 4,
+      "section_id": "DLID-0pep42ecx2x5"
+    },
+    {
+      "content_hash": "a6d9027af025445fa46774bb454d4867719c8a27f0c488d27bc6672f4ec074af",
+      "heading": "5.3 G.3 定量目標",
+      "position": 18,
+      "section_id": "DLID-b3mf8e29hnt0"
+    },
+    {
+      "content_hash": "a6fd9b590f2febe8b360647cb571b7f79ad406fb1572e48098f3acb0189cb920",
+      "heading": "2. 判断基準",
+      "position": 5,
+      "section_id": "DLID-a6s8swg9v5g4"
+    },
+    {
+      "content_hash": "a71020b627b22dedd8a408ed9583c45a624f6cdd1722d00f19aee4e5cbb06c3a",
+      "heading": "1. 基本原則",
+      "position": 1,
+      "section_id": "DLID-fhj2eqfvy44a"
+    },
+    {
+      "content_hash": "accacafc9e956308972745b2e3b474312e59f541a63e3e2ea7f7bf58c5a79881",
+      "heading": "設計書（How）",
+      "position": 3,
+      "section_id": "DLID-c1npt1fq7xe1"
+    },
+    {
+      "content_hash": "b22ddb5599a1193cb805eeeebc852c7a2165ff4120b5694b50b0b57665fe2e70",
+      "heading": "5. グレーゾーン許容範囲",
+      "position": 15,
+      "section_id": "DLID-vnhcmf5afb17"
+    },
+    {
+      "content_hash": "b6dc0bfcfe6c4e0e4a6b13d2778c45c7f425b4441ebeea9ab11d1cb3c05cc4dd",
+      "heading": "3. カテゴリ別ガイド",
+      "position": 9,
+      "section_id": "DLID-hfsjyr16jnhr"
+    },
+    {
+      "content_hash": "c6cfde025f9def1ac4f3c39712e8e7648ea6959315dc247f3efa819f70051872",
+      "heading": "最初の判断基準",
+      "position": 6,
+      "section_id": "DLID-r4561w4nxfz7"
+    },
+    {
+      "content_hash": "cd20b0c5c92ecb7c20291eb9415808a9454f387b8e12f143dd7c11c1d61343cc",
+      "heading": "4. 重大度カタログ",
+      "position": 12,
+      "section_id": "DLID-sr157cgyrkgv"
+    },
+    {
+      "content_hash": "d14655ff873be83856c60d26837f0c3950e559710ee0be21c392c1fa242c7fc9",
+      "heading": "要件定義書（What）",
+      "position": 2,
+      "section_id": "DLID-v37p341eczq8"
+    },
+    {
+      "content_hash": "dd75d06c51b585b656ecc9788a994d05a987e5cdeb1ef67b15aef62e749f3456",
+      "heading": "6. トレーサビリティ規範 (軽量版)",
+      "position": 19,
+      "section_id": "DLID-erf6ew4vws5y"
+    },
+    {
+      "content_hash": "f27c51f18dec6f044ef14b3bea3e3dafc1eedc4e681487eddd6baaf6861dd8a4",
+      "heading": "判断基準に掛けないもの",
+      "position": 8,
+      "section_id": "DLID-11m2q18577s7"
+    }
+  ],
   "summary": [
     "Basic principles contrasting requirements and design documents, and relation to ADRs",
     "Decision criteria: already-decided first, then whether the user manual would cover it",

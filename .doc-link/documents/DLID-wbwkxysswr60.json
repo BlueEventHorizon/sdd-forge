@@ -1,4 +1,5 @@
 {
+  "applied_hash": "c928ae0546c6c37363cb698627afb207e006af83d9e1401b33a1965b4dadf2f2",
   "content_hash": "c928ae0546c6c37363cb698627afb207e006af83d9e1401b33a1965b4dadf2f2",
   "doc_link_id": "DLID-wbwkxysswr60",
   "keywords": [
@@ -12,8 +13,267 @@
     "8pt grid",
     "UX evaluation checklist"
   ],
+  "last_check": {
+    "checked_at": "2026-11-25T03:43:00+00:00",
+    "result": "success"
+  },
   "path": "plugins/forge/skills/start-uxui-design/docs/apple_design_principles.md",
   "purpose": "Knowledge base of Apple platform UX/UI design philosophy that an AI consults during design analysis, covering HIG principles, usability heuristics, accessibility, and an evaluation checklist.",
+  "references": [],
+  "sections": [
+    {
+      "content_hash": "02f68d275eaeb54873a8177f28da7d2817bd95bba7d23fe5092da53c9238a2c8",
+      "heading": "1.2 Deference（従属性）",
+      "position": 3,
+      "section_id": "DLID-wpwsc0knnqpq"
+    },
+    {
+      "content_hash": "0342edef51c6b898f620b6ab7eae3f1d696d0ade28c3e2d67cf6586ef7033349",
+      "heading": "アクセシビリティ",
+      "position": 41,
+      "section_id": "DLID-qd7j5d1f9wmp"
+    },
+    {
+      "content_hash": "0d8e386543303aac2408abb0f8689666044310dd4bd85ce7b009b23bcc1de751",
+      "heading": "4. セマンティックカラーシステム",
+      "position": 10,
+      "section_id": "DLID-85c7tj9gwxyc"
+    },
+    {
+      "content_hash": "116763bbd3b92b11f41c7f4e8d0d54aaadca897bf32817db8df2f4ea3d1729ad",
+      "heading": "6.4 連続の法則（Continuity）",
+      "position": 28,
+      "section_id": "DLID-ptkz118m25kw"
+    },
+    {
+      "content_hash": "1b40b1c6f26324aaca701e0043934580ce41537c14f3810b7b11175fb61859a0",
+      "heading": "Apple デザイン原則 & UX/UI 哲学知識ベース",
+      "position": 0,
+      "section_id": "DLID-41bg47cyczym"
+    },
+    {
+      "content_hash": "1ef314258f376de4c026e2da2e85a54b6b382da3b2801ce4062a63757a36a80f",
+      "heading": "7.1 視覚アクセシビリティ",
+      "position": 33,
+      "section_id": "DLID-m03yg57bqb5b"
+    },
+    {
+      "content_hash": "25b098ee0c23cb136d5632b16b65cfadb6749b9ce3a2534c907ef68732e0c6ef",
+      "heading": "カラーの役割",
+      "position": 11,
+      "section_id": "DLID-9gpnp0k84pjs"
+    },
+    {
+      "content_hash": "28541896c2c9d6ed34c16d1ed6d58ac0c94c6043bad40816ddeda1ed8df7d8d1",
+      "heading": "ヒューリスティクス",
+      "position": 39,
+      "section_id": "DLID-rer8w18bbd0q"
+    },
+    {
+      "content_hash": "329d8d44fcbaf94bdd43059a3de10137a21c8b4928e0147295818e6d79b076db",
+      "heading": "H5: エラー防止",
+      "position": 18,
+      "section_id": "DLID-yzzt0dcfywtx"
+    },
+    {
+      "content_hash": "3557b860fc8e291303b3bfb56cf129ddb63179f9b8cf1e8e58c7eda519d8e42b",
+      "heading": "Light / Dark モード対応",
+      "position": 12,
+      "section_id": "DLID-crrr7rgcrqrj"
+    },
+    {
+      "content_hash": "36b141ea8d0e315e27278f88c91b9afe7bb3bd523bb170e1976a4d139c7dcbc5",
+      "heading": "H3: ユーザーの制御と自由",
+      "position": 16,
+      "section_id": "DLID-g9j17kz86xh7"
+    },
+    {
+      "content_hash": "3d530cf53b99b0ba63979ec7a653293ba1a4dcae99aa1a3fc5684377b7a06309",
+      "heading": "6.7 対称の法則（Symmetry）",
+      "position": 31,
+      "section_id": "DLID-8pqaf83jj662"
+    },
+    {
+      "content_hash": "42e7c8e83fdd98f1c72bd96484fd03f6076e607c7e802575ff80f9b98c1a22f6",
+      "heading": "テキストスタイル階層",
+      "position": 9,
+      "section_id": "DLID-pspd1c57r156"
+    },
+    {
+      "content_hash": "54e3b171fe19db0ad8aed5867ce03880cef4d3bc4012818883c65e2033f4ab49",
+      "heading": "2. Liquid Glass（2025-2026）",
+      "position": 6,
+      "section_id": "DLID-2fwynpxm9gdh"
+    },
+    {
+      "content_hash": "5641420866da80639258a10e461140af5d964af2ebefe3923f088bcf8a6b9c85",
+      "heading": "7.2 操作アクセシビリティ",
+      "position": 34,
+      "section_id": "DLID-c4hqmqshsq4w"
+    },
+    {
+      "content_hash": "5675619fd447fbfea76cd0da1e6676a6233a9a0f316ea6a4ad070106102770ae",
+      "heading": "H2: システムと現実世界の一致",
+      "position": 15,
+      "section_id": "DLID-7yc5b79tqekq"
+    },
+    {
+      "content_hash": "58aa4eb7c0bb848105e37607c6916367562b1fb5cf4422745926fcc96c52c695",
+      "heading": "H9: エラーからの回復支援",
+      "position": 22,
+      "section_id": "DLID-zs8e8rf6encg"
+    },
+    {
+      "content_hash": "744bbac8ffeca66bf3dbf76bfd52d7f3ba25d5e34cbf151c4747da7fc030ad1b",
+      "heading": "H7: 柔軟性と効率性",
+      "position": 20,
+      "section_id": "DLID-sxc63f077m9s"
+    },
+    {
+      "content_hash": "74777cc0b2267871149f073a36d6ed871eef9fc660fb7e348d900b2be8d7f9ab",
+      "heading": "8. 8pt グリッドシステム",
+      "position": 36,
+      "section_id": "DLID-k2ttsc5za2gd"
+    },
+    {
+      "content_hash": "7ccb4d0712cb47c3afd1ecac8550e10e478aa81c9b031b5d351e6eb9d04d011a",
+      "heading": "フォントファミリー",
+      "position": 8,
+      "section_id": "DLID-z901c5dqzcz5"
+    },
+    {
+      "content_hash": "8064f8268f5f9dd3a3922550783e74bda31b216229d5a44e87eaed5c2a5b63da",
+      "heading": "9. デザイン評価チェックリスト",
+      "position": 37,
+      "section_id": "DLID-6z3kgtnz9ann"
+    },
+    {
+      "content_hash": "8785b03e262ef97c0b2a67b37f4bcfd2a72bb49898cee162e1bbe5af374b6aac",
+      "heading": "1.4 Consistency（一貫性）",
+      "position": 5,
+      "section_id": "DLID-vyx9exjvvvqp"
+    },
+    {
+      "content_hash": "88771a6834bcb4d3daa41098698a590b3816f60918e0455b84d21dec8de590e1",
+      "heading": "ゲシュタルト",
+      "position": 40,
+      "section_id": "DLID-tt6w0a5dq10k"
+    },
+    {
+      "content_hash": "8a51a6cd31129751535e4766fcb50b8bf93f0e30233489d9f65234753c5adea9",
+      "heading": "H6: 記憶よりも認識",
+      "position": 19,
+      "section_id": "DLID-47eq71nveg83"
+    },
+    {
+      "content_hash": "8e6fb07efb74ceee90221ad4ee5bc4b73d638e373dffce4f3be6d639cc7283c4",
+      "heading": "7.3 認知アクセシビリティ",
+      "position": 35,
+      "section_id": "DLID-eswj4wp3wwjj"
+    },
+    {
+      "content_hash": "8f51064b9c2281da7fd6c6608be4a5adb8f597ae0b07a40f186248a4eadd2079",
+      "heading": "3. SF フォント体系",
+      "position": 7,
+      "section_id": "DLID-0pbrtv4f56eg"
+    },
+    {
+      "content_hash": "95165bb68beb43a27863bc15bc20cecc7c1e0ea4313b42beb99b9671d7e29265",
+      "heading": "H8: 美的でミニマルなデザイン",
+      "position": 21,
+      "section_id": "DLID-jq5x26v2rx6x"
+    },
+    {
+      "content_hash": "96a7abf9a15091dc7ff98d91fc1165e33b0508eccee1259da999c9e21ab24aaa",
+      "heading": "6.3 図と地の法則（Figure/Ground）",
+      "position": 27,
+      "section_id": "DLID-sv45dv9nnrqp"
+    },
+    {
+      "content_hash": "9bae7a137c28bf908605727883426a14f242bf38feb288ecf04018b85facc73a",
+      "heading": "H1: システム状態の可視性",
+      "position": 14,
+      "section_id": "DLID-xbsfehdfbza5"
+    },
+    {
+      "content_hash": "a75555ae8d2ec7b4204ac563887a7f0292fb1bc3d969621b5bad4ed4dcf6e06c",
+      "heading": "7. アクセシビリティ（Apple 共通）",
+      "position": 32,
+      "section_id": "DLID-hrpzc9ga2swy"
+    },
+    {
+      "content_hash": "b77852997f23432f76dd23d24693b13be3d0d43b6537f304fc0857f135fe45c8",
+      "heading": "5. Nielsen の 10 ユーザビリティヒューリスティクス",
+      "position": 13,
+      "section_id": "DLID-vbdvefaa7p6t"
+    },
+    {
+      "content_hash": "b978c3272d2b8f6ee6e663bfa4dcaec6118e45f10d6966c49c271f844038e95c",
+      "heading": "6.5 閉合の法則（Closure）",
+      "position": 29,
+      "section_id": "DLID-g3bm908b3pg7"
+    },
+    {
+      "content_hash": "c1ac2a2245b063126327655248aefe444e296e1fba4cace2260f14ab41d99f03",
+      "heading": "1.1 Clarity（明瞭性）",
+      "position": 2,
+      "section_id": "DLID-wrnp0p5nh4zd"
+    },
+    {
+      "content_hash": "cc64d1a7562520fb71356b4d8da04039868098dcb3b72205291c83000e8cb07e",
+      "heading": "6.6 共通領域の法則（Common Region）",
+      "position": 30,
+      "section_id": "DLID-wj7r1wa0fy5z"
+    },
+    {
+      "content_hash": "d387674c2fe87e59f59025b507fc3256bd8d89a7af72b97d1e9ff0c667826b69",
+      "heading": "1. Apple HIG 4 原則",
+      "position": 1,
+      "section_id": "DLID-8qpvkrr0yk15"
+    },
+    {
+      "content_hash": "d52c859b46b36ecec6f5581508b2cbbb3632dbefe84e0336a78c8a6d3dc21c38",
+      "heading": "6.1 近接の法則（Proximity）",
+      "position": 25,
+      "section_id": "DLID-7xpk7qy0xsj9"
+    },
+    {
+      "content_hash": "d637dfdd305ee113cc293c8ac358a323c45632cb1d66b26796dc4afb018920a3",
+      "heading": "1.3 Depth（深度）",
+      "position": 4,
+      "section_id": "DLID-hxhk033fzgrc"
+    },
+    {
+      "content_hash": "da19ff54f461db293e4641683df45d705571f14737ac0f20c2f025001ee29112",
+      "heading": "H10: ヘルプとドキュメント",
+      "position": 23,
+      "section_id": "DLID-k76rp2ghwm8k"
+    },
+    {
+      "content_hash": "dcb21c9423b8718997f3654f773364a6e04fd4e9fda768b412384dd1ad45aea7",
+      "heading": "6.2 類似の法則（Similarity）",
+      "position": 26,
+      "section_id": "DLID-adc5ysmj1e5w"
+    },
+    {
+      "content_hash": "e1335a74bccc47eedaae42594c560ec8900746cac57a1c199fa318afc3fcf13f",
+      "heading": "HIG 原則準拠度",
+      "position": 38,
+      "section_id": "DLID-tjv5z4ndrgzk"
+    },
+    {
+      "content_hash": "eb806246445c341f8bd6f49fe14da9bde317940640f6525ac46deae33e245abb",
+      "heading": "H4: 一貫性と標準",
+      "position": 17,
+      "section_id": "DLID-znjr49596qtz"
+    },
+    {
+      "content_hash": "f90018a79b6209afee330110565948b88483f3ac38612835d4911f0b70d2310f",
+      "heading": "6. ゲシュタルト原則",
+      "position": 24,
+      "section_id": "DLID-86z88z5y70gz"
+    }
+  ],
   "summary": [
     "Four Apple HIG principles: Clarity, Deference, Depth, Consistency",
     "Liquid Glass design language of 2025-2026",

@@ -1,4 +1,5 @@
 {
+  "applied_hash": "eebfb17cd1c2dcc47f839faf898f930ba27f2d32e424e48d3768194e68a372c0",
   "content_hash": "eebfb17cd1c2dcc47f839faf898f930ba27f2d32e424e48d3768194e68a372c0",
   "doc_link_id": "DLID-3x673x4r3h83",
   "keywords": [
@@ -13,8 +14,21 @@
     "UX notes",
     "Design Intent"
   ],
+  "last_check": {
+    "checked_at": "2026-11-25T03:43:00+00:00",
+    "result": "success"
+  },
   "path": "plugins/forge/skills/start-uxui-design/docs/design_token_template.md",
   "purpose": "Output template for generating a design token document with UX notes, covering colors, typography, spacing, radius, shadows and an overall UX evaluation.",
+  "references": [],
+  "sections": [
+    {
+      "content_hash": "20c710d47216b1f7e2b89aef0059e5cb3df189dc3a1950e15c51f15de68c698b",
+      "heading": "デザイントークンテンプレート",
+      "position": 0,
+      "section_id": "DLID-tz4yc8w71g3n"
+    }
+  ],
   "summary": [
     "Design direction table with provocation and brand tension",
     "Creative direction section transcribed from Design Intent (concept, anti-goals)",

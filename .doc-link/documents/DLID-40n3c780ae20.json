@@ -1,4 +1,5 @@
 {
+  "applied_hash": "5207edeee42ee4bc2ef5263d4703448ab26cec5e0f3b6d1d9474aa8f29b516d4",
   "content_hash": "5207edeee42ee4bc2ef5263d4703448ab26cec5e0f3b6d1d9474aa8f29b516d4",
   "doc_link_id": "DLID-40n3c780ae20",
   "keywords": [
@@ -13,8 +14,99 @@
     "Open-Closed principle",
     "doc_structure"
   ],
+  "last_check": {
+    "checked_at": "2026-11-25T03:43:00+00:00",
+    "result": "success"
+  },
   "path": "plugins/forge/docs/version_migration_spec.md",
   "purpose": "Specification for implementing stepwise migration of versioned data formats, defining the pipeline principle, function conventions, error handling, version detection, extension steps, and test requirements.",
+  "references": [],
+  "sections": [
+    {
+      "content_hash": "16453db23a9b6308e5422c3f66e9322752d4a5048418bc6e4c5060d6a5c29a15",
+      "heading": "エラーハンドリング",
+      "position": 4,
+      "section_id": "DLID-zgkbhw6v0ty8"
+    },
+    {
+      "content_hash": "2d72ae29b56d1661681015b81864a4e2c09c24eba2eb219509b789b9e2a9e6cb",
+      "heading": "バージョン検出",
+      "position": 10,
+      "section_id": "DLID-5nv98cmd3dss"
+    },
+    {
+      "content_hash": "56cdeea5a729d79f300cf7ef5c3ba082ed7ec6231bb0d8b7b547ee4aefded6aa",
+      "heading": "テキスト操作の場合",
+      "position": 9,
+      "section_id": "DLID-jvneyw6as2ak"
+    },
+    {
+      "content_hash": "6041a2694678ae54b311e95a22cbcf988a79cb57355c48d98693ec12e4815a29",
+      "heading": "マイグレーション関数の例",
+      "position": 8,
+      "section_id": "DLID-s1efhzpq4281"
+    },
+    {
+      "content_hash": "69e46fc10529a660945e58ef5686b239b10a938f36695d3090ec384ae4f28774",
+      "heading": "実装例",
+      "position": 13,
+      "section_id": "DLID-gsbag2863hg6"
+    },
+    {
+      "content_hash": "93d9dd76fec3184531992d4fd1bc2653fe89ec4b413a083dc9b2db584ace192b",
+      "heading": "実装パターン",
+      "position": 5,
+      "section_id": "DLID-qxjgb9e7vers"
+    },
+    {
+      "content_hash": "a2e9b8f540d73e90b49266f8abdd99fcaf88a91d1df3c3994019c845ea2e4ab0",
+      "heading": "基本原則",
+      "position": 1,
+      "section_id": "DLID-ttpgw3tfxbpw"
+    },
+    {
+      "content_hash": "a38ba62623647fad9fe22b7776c13db782ba37e9c88f5d15eb10d2dd3d5b7cea",
+      "heading": "パイプライン原則",
+      "position": 2,
+      "section_id": "DLID-dr4naegzybrd"
+    },
+    {
+      "content_hash": "b660dfd2e8f3426e9ce12cf5ddc62727aa60396751c128e51713d9c0e687c097",
+      "heading": "テスト要件",
+      "position": 12,
+      "section_id": "DLID-efsbsbj6rwx1"
+    },
+    {
+      "content_hash": "b9a96d44f26fc0e13919adb77358960525b0c24255a59235efe8c557cef2fbc0",
+      "heading": "コアロジック",
+      "position": 7,
+      "section_id": "DLID-xkcz09xccnkd"
+    },
+    {
+      "content_hash": "c56f7a04c990f336b6f8e53327dae052380068a25fdd1f8a4c98dbc70ef2aeca",
+      "heading": "定数とレジストリ",
+      "position": 6,
+      "section_id": "DLID-rvxmz6pegzmz"
+    },
+    {
+      "content_hash": "d594fe2f6d75f6eed64f8416f660ed600f89a6049e17574c9e948d735b9ea26b",
+      "heading": "新バージョン追加手順",
+      "position": 11,
+      "section_id": "DLID-0e0p9n8f3qn5"
+    },
+    {
+      "content_hash": "d6b69a217d71241d18f78aa6560272dadb68eeb8e73080d488d2ad74a93ff476",
+      "heading": "バージョンマイグレーション実装仕様",
+      "position": 0,
+      "section_id": "DLID-8r9zbf3bdtc3"
+    },
+    {
+      "content_hash": "e399ede05d4419abc29e31a0be0401202b0cfbb8cc4ada19ec3d604c4367fe05",
+      "heading": "マイグレーション関数の規約",
+      "position": 3,
+      "section_id": "DLID-qwhjxfedqz47"
+    }
+  ],
   "summary": [
     "Pipeline principle: each migration takes the previous step output, even when skipping versions",
     "Migration function conventions: one input one output, idempotent, no side effects, non-destructive",

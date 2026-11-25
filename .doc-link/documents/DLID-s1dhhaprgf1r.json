@@ -1,4 +1,5 @@
 {
+  "applied_hash": "be634f5152a6857cbedf3d345cf3ac28bc9cc9fdddd8ac9164c6eb8a6399b2f8",
   "content_hash": "be634f5152a6857cbedf3d345cf3ac28bc9cc9fdddd8ac9164c6eb8a6399b2f8",
   "doc_link_id": "DLID-s1dhhaprgf1r",
   "keywords": [
@@ -12,8 +13,57 @@
     "safety net",
     "scope"
   ],
+  "last_check": {
+    "checked_at": "2026-11-25T03:43:00+00:00",
+    "result": "success"
+  },
   "path": "plugins/forge/docs/scope_proportionality_spec.md",
   "purpose": "General principle against over-engineering: a gate limiting when speculative or catastrophic-failure defenses, or unfounded improvements, may be adopted, using a three-point check.",
+  "references": [],
+  "sections": [
+    {
+      "content_hash": "34b09a3260848327844e71370d22101b2dfa3b40eb933328882b35ee48bbc1b0",
+      "heading": "比例性の原則（過剰設計の抑止）",
+      "position": 0,
+      "section_id": "DLID-kt20g5g42csp"
+    },
+    {
+      "content_hash": "6bae9b54eafb2136902167909bfca03c0165274712c3ba351c61996b81110c57",
+      "heading": "1. 目的",
+      "position": 1,
+      "section_id": "DLID-m6fxr3vrrkw2"
+    },
+    {
+      "content_hash": "790f3e05689067ecb32ae86fdc9f621472aedd997015e9ffd8a73d343f6fbb88",
+      "heading": "3. スコープ外の明示: 通常運用と異常事態の区別",
+      "position": 4,
+      "section_id": "DLID-6e37eh3q93g4"
+    },
+    {
+      "content_hash": "a8b6d9afd0d4d6c5c0c9cbe2952b237e41dbf6377471582c355c77d9fd185646",
+      "heading": "2.1 3点チェックを適用してはならない指摘",
+      "position": 3,
+      "section_id": "DLID-3j4sgqw8ts9b"
+    },
+    {
+      "content_hash": "c89180304f70385ef3517751723e8349b005a786d54ea24d6e079934396b2e0a",
+      "heading": "5. 判定に迷う場合",
+      "position": 6,
+      "section_id": "DLID-gs9bqq4f8z4y"
+    },
+    {
+      "content_hash": "cda5f5fe6ceb655c7dbf0e34f820e2a979b430ef663a9618ffd146c420f0e6c8",
+      "heading": "2. 適用対象の限定",
+      "position": 2,
+      "section_id": "DLID-1aj260jem13f"
+    },
+    {
+      "content_hash": "f8ce4ef532f06170490754424820193371bd2d8bca9bf5e46c0a4f9673fe27b5",
+      "heading": "4. 3点チェック",
+      "position": 5,
+      "section_id": "DLID-pnek4x1wd2zz"
+    }
+  ],
   "summary": [
     "Purpose: unbounded defensive measures bloat systems and hide real errors",
     "Gate applies only to three types of findings, not to fix decisions in general",

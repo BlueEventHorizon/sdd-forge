@@ -1,4 +1,5 @@
 {
+  "applied_hash": "084894e5104bd1ba6ad5b40935743427970faca2aede89af6b6a92832036a475",
   "content_hash": "084894e5104bd1ba6ad5b40935743427970faca2aede89af6b6a92832036a475",
   "doc_link_id": "DLID-5c0nw4er6es2",
   "keywords": [
@@ -12,8 +13,351 @@
     "anti-patterns",
     "start-requirements"
   ],
+  "last_check": {
+    "checked_at": "2026-11-25T03:43:00+00:00",
+    "result": "success"
+  },
   "path": "plugins/forge/skills/start-requirements/docs/requirements_interactive_workflow.md",
   "purpose": "Interactive requirements workflow that drafts a requirements document first and refines it through dialogue with the user when no Figma or screen design exists, for new apps or feature additions.",
+  "references": [],
+  "sections": [
+    {
+      "content_hash": "0075e02daa65d558ab62583f6aad4cb9325d4dd42b214f4d5f614547105c5b7f",
+      "heading": "Phase 4: ドラフトを前提とした議論と仕上げ",
+      "position": 17,
+      "section_id": "DLID-3m8yprq31gww"
+    },
+    {
+      "content_hash": "0295d8024a7e45c0750ba6f6853229aba541fe9478025e76f8b92516fabfb551",
+      "heading": "質問テンプレート集",
+      "position": 51,
+      "section_id": "DLID-0s5fvd743jx4"
+    },
+    {
+      "content_hash": "08afd2df21c17e367cf802b668de17a58d11e33fbec2b009aed4a1f6e2d09199",
+      "heading": "Phase 1: ルール・既存資産の取得",
+      "position": 7,
+      "section_id": "DLID-b77n03b8e93v"
+    },
+    {
+      "content_hash": "12e8a9b50480da700933d339d463b1ed9119e22ad5b92cfd43d88be9d76e6479",
+      "heading": "4.2 詳細仕様の掘り下げ",
+      "position": 22,
+      "section_id": "DLID-t41eha5hvhpp"
+    },
+    {
+      "content_hash": "133a5ab613025ecd603dbd86aa12eeec303517e1d1729ce45fc5fcbc1720ddb0",
+      "heading": "5.6 commit/push 確認",
+      "position": 36,
+      "section_id": "DLID-qp0w6qgesjrx"
+    },
+    {
+      "content_hash": "18f62f25ceea94509db757380d17c89e636581a7aee87d1d682b2b5bfece1120",
+      "heading": "実行フロー概要",
+      "position": 3,
+      "section_id": "DLID-ksq2k8hwbhdz"
+    },
+    {
+      "content_hash": "190a2d90af2ebbcb81373f3a517166176ccc8a5f820460500798109ffaa8e2bc",
+      "heading": "Phase 2: ビジョン・価値・スコープの確認",
+      "position": 11,
+      "section_id": "DLID-0q6p9a87zbs5"
+    },
+    {
+      "content_hash": "190ff2f02bd81732cdbd34050aa09b1d7f1ed81b7180d8f55330f7b1aa4ef56c",
+      "heading": "Phase 0: 事前確認",
+      "position": 4,
+      "section_id": "DLID-27p01p4h9p07"
+    },
+    {
+      "content_hash": "1e4f1bce2b4a7c000d6a7aaafd0ff1abc8c714db0fd4d641d1377ff754b13e8e",
+      "heading": "成果物一覧",
+      "position": 55,
+      "section_id": "DLID-p3hfs4w6qbpd"
+    },
+    {
+      "content_hash": "1ef61754975936639161b60b5dfbac30b368dfd0ac80f02ac9ab37fb8fd67714",
+      "heading": "1. 視覚的確認",
+      "position": 39,
+      "section_id": "DLID-by6ahc27rq15"
+    },
+    {
+      "content_hash": "236cc19c088543168e4cd0758e512649e8cc5a55383704655be62bb53e13b7e8",
+      "heading": "4.1 体験フロー・構成",
+      "position": 18,
+      "section_id": "DLID-k0zd2p3g2rz4"
+    },
+    {
+      "content_hash": "23bba4b5fac0f01edc43755bf56a18e4c9fc34e68275d551550958863fb16aee",
+      "heading": "Phase 4: 体験フロー・詳細",
+      "position": 54,
+      "section_id": "DLID-sj6w9e9t0s1m"
+    },
+    {
+      "content_hash": "2705cab6fc99f62a890fdaca5c225dd059071f17c6443a987b41220bc956e362",
+      "heading": "1. 未確定事項（曖昧表現の代替）",
+      "position": 49,
+      "section_id": "DLID-nc67gt3sk2yx"
+    },
+    {
+      "content_hash": "30bcf30eaf4b9f58a312601aa5f4caa62a9e284df4b5a31ea2c9da02e43e8812",
+      "heading": "型の再判定",
+      "position": 28,
+      "section_id": "DLID-ewaj5yp1rht4"
+    },
+    {
+      "content_hash": "32eadfb0782a51c26fc58b1e86534964695bee564a1bc551f69abbf29ecd0b74",
+      "heading": "用語の定義と共有（グロッサリー）",
+      "position": 23,
+      "section_id": "DLID-ack1n1njbert"
+    },
+    {
+      "content_hash": "35f456afa650c6d75dc6522ed3b505dd5fac804e40cf8287c28617df2406cd39",
+      "heading": "画面/インターフェース一覧の作成",
+      "position": 20,
+      "section_id": "DLID-apftqnr1gmh3"
+    },
+    {
+      "content_hash": "3ab8baa50ac12db05f5fc646870b5d60c6090b531b295eebdf5c9ad07b318a93",
+      "heading": "目的",
+      "position": 2,
+      "section_id": "DLID-by829hnqz7b3"
+    },
+    {
+      "content_hash": "3b52ac91f9b044e0669106e800f7ca0f2043ac0d7be0dc28f473a51fafc564a2",
+      "heading": "2. レビュー時の適用",
+      "position": 50,
+      "section_id": "DLID-fh147cxck7f6"
+    },
+    {
+      "content_hash": "4307223b4114807a84ac6e88f22e9725c2a48ea22b660d3fd2b70f26fa7b1177",
+      "heading": "Phase 3: 型の判定と承認・置き場の決定・ドラフトの作成",
+      "position": 12,
+      "section_id": "DLID-0w5q8e2j6az6"
+    },
+    {
+      "content_hash": "49b5d812097128aafd4ef5a9e5dab07909911c62b3e8960ee6c2544511a7dd64",
+      "heading": "5.2 未確定事項の整理",
+      "position": 32,
+      "section_id": "DLID-z295c6f4av0n"
+    },
+    {
+      "content_hash": "50b5902bb2ab4b6dfa5badcd782132930509f28bf666a19352c0c1408f114b4b",
+      "heading": "ID 採番",
+      "position": 15,
+      "section_id": "DLID-m3cf6hs7k9aw"
+    },
+    {
+      "content_hash": "530c7e7534a10fa728a234c74ef15a893937e76f3ae39bdbe7ddac721bba20d0",
+      "heading": "システム的 feature の場合: 探索順を厳守",
+      "position": 24,
+      "section_id": "DLID-pcsskvz2vnr9"
+    },
+    {
+      "content_hash": "5dd1e68c60668eb359d8528fb6f475334052275c0e459267ce7e22ffa68cb551",
+      "heading": "一時マーカーの付与",
+      "position": 29,
+      "section_id": "DLID-yt29b0spt2qe"
+    },
+    {
+      "content_hash": "635b22ffd867b351fe0c32653e82676137290a9f343742fda3075593bb8f6263",
+      "heading": "主要シナリオの確認",
+      "position": 19,
+      "section_id": "DLID-f1dcbd4ne1st"
+    },
+    {
+      "content_hash": "66274fbca773397a79ae88abb7a3aa9909d93247625f02b711ea65c37f008a56",
+      "heading": "0.2 完全新規かどうかの判定",
+      "position": 6,
+      "section_id": "DLID-g3tbjvjqsbcf"
+    },
+    {
+      "content_hash": "7118c700739411fe43b4d891842c35eb101074e6a7cd8b312528537c610c3f3b",
+      "heading": "3. 「What」に集中",
+      "position": 41,
+      "section_id": "DLID-0t9vj1em3p20"
+    },
+    {
+      "content_hash": "714e8a5981469d4a62e563e484e884cb8d5c9186043a23ac5b3455456fe882d3",
+      "heading": "3.2 置き場の決定とドラフトの ID 採番",
+      "position": 14,
+      "section_id": "DLID-8j157nadhq0y"
+    },
+    {
+      "content_hash": "756bd0e98e4e3b2f4ec71bf09e6f30658fbaa9bb6ba9adddfdaa185b090fba33",
+      "heading": "3.3 ドラフトの作成",
+      "position": 16,
+      "section_id": "DLID-fyw7e33xntwv"
+    },
+    {
+      "content_hash": "7781706b274a89bddb1b67e5be315ccc08e0e93da1935b7c56dfb9f88445ddf4",
+      "heading": "Phase 0: 事前確認",
+      "position": 52,
+      "section_id": "DLID-hw1fw5zh4kv7"
+    },
+    {
+      "content_hash": "7882d5dd33ca5e81dba85b3e2fefecc096ac78aa145903848c2774a11aa5e7ae",
+      "heading": "5.3 AI レビュー実施",
+      "position": 33,
+      "section_id": "DLID-gh2xhsyzw9w7"
+    },
+    {
+      "content_hash": "7f33f1589221726dd9a3c9363e5334ac2f4aec9baa8c7da260d6b7e7d4aa231c",
+      "heading": "1.1 ルール文書の特定（共通）",
+      "position": 8,
+      "section_id": "DLID-xb7et5drwwam"
+    },
+    {
+      "content_hash": "8172ebcae3a45213f15695a1ba0a5b29c7e55ca3c0e1c2dc159d1bfe51cfd70f",
+      "heading": "4.3 要件の作成",
+      "position": 26,
+      "section_id": "DLID-w7epj6n99cke"
+    },
+    {
+      "content_hash": "8a775b4367d2abe1bd600e7a6346f46e73547774c9fac99a464a3cd4c3710161",
+      "heading": "0.1 壁打ちの内容の確認",
+      "position": 5,
+      "section_id": "DLID-jnqe95bckn7e"
+    },
+    {
+      "content_hash": "9686ba91beaee84ff6307fe9958415406e3a8dbd586c95ebebee26ee800f9f50",
+      "heading": "対話型要件定義ワークフロー",
+      "position": 0,
+      "section_id": "DLID-msjbaxge7bb9"
+    },
+    {
+      "content_hash": "9b635521c8b5580f7175ff574067252838c8c08e7d99ade0e4af5baf99bbc264",
+      "heading": "5. スコープ管理",
+      "position": 43,
+      "section_id": "DLID-bnrwkjhdahtb"
+    },
+    {
+      "content_hash": "9bb5c59bc328e590242efd3d54ccad43e5944c1ffef21464037b9686e080b233",
+      "heading": "1.3 外部情報の調査（必要に応じて）",
+      "position": 10,
+      "section_id": "DLID-74ra5mt2e27k"
+    },
+    {
+      "content_hash": "9d169728530c09545ba768345e762eda24ed2bc090254dff72c91ff3e1d6bffa",
+      "heading": "特例ルール [対話型要件定義固有]",
+      "position": 48,
+      "section_id": "DLID-12qksm7zeerp"
+    },
+    {
+      "content_hash": "aa054e11793fb3f605861aa9780881d3202d5b6d3598155d72c6fa4e110cf6fd",
+      "heading": "6. 歴史的記録を文書に残さない",
+      "position": 44,
+      "section_id": "DLID-xb6aeskf2gd4"
+    },
+    {
+      "content_hash": "b2dc97535266a791686223505a2642eb9b176b0ed596c8cedf0f8d64c4f12ed1",
+      "heading": "Phase 2: ビジョン・価値・スコープ",
+      "position": 53,
+      "section_id": "DLID-a46z0hh1b8dk"
+    },
+    {
+      "content_hash": "b81750bc53421ab0531b654809509e61289cf95114e9d3da3a7151ad74b63b6d",
+      "heading": "7. 反映後の自己整合チェック",
+      "position": 45,
+      "section_id": "DLID-dtc2392m4h7c"
+    },
+    {
+      "content_hash": "ba47739750a7ae84525be0f10405ecfb105af2cb0ec3c9d7aeaee874285b56e1",
+      "heading": "5.1 品質チェック",
+      "position": 31,
+      "section_id": "DLID-733yjc2vxmfk"
+    },
+    {
+      "content_hash": "bd89e7930f8ce5a36608056866e8c73bbd94a0f2b6edeeca0970daed112ee8bc",
+      "heading": "シーケンスによる認識共有",
+      "position": 25,
+      "section_id": "DLID-j6gk41jjr03k"
+    },
+    {
+      "content_hash": "bf56e79065912bcbb772444ad53ea76684a8cb3b9746e7359fd4de1f70ef0034",
+      "heading": "アンチパターン",
+      "position": 47,
+      "section_id": "DLID-y3r3w0p2x4xr"
+    },
+    {
+      "content_hash": "ce2e85003e6efd92f48d9da4837c2f05dc89f3fbcff12a9ddf6550591f381ef4",
+      "heading": "2. 未確定の許容",
+      "position": 40,
+      "section_id": "DLID-aa92gf8kc041"
+    },
+    {
+      "content_hash": "d2c1b5d760a4a673af1eda29dbf3fc4a2deeeac9b0a344af9b0bcfadfbbb557b",
+      "heading": "4. 段階的な文書提示",
+      "position": 42,
+      "section_id": "DLID-wp0et4w96q5a"
+    },
+    {
+      "content_hash": "d3dde940de1432980f192e74d3dc2735e9ed089bd49051eb4326ec475e8f2a45",
+      "heading": "8. 探索の積み上げ順 [MANDATORY for システム系 feature]",
+      "position": 46,
+      "section_id": "DLID-6rjb3148m7yh"
+    },
+    {
+      "content_hash": "d6ea6b59ef4e73f804c8bdb95e8e46e2965f5bc2c13d938306954d030a6fb922",
+      "heading": "必須文書",
+      "position": 1,
+      "section_id": "DLID-ma4kxhc0esn4"
+    },
+    {
+      "content_hash": "e408f145882046a56dff15c9799f7a45a14e9fecd880d76cad7f776451e2cf58",
+      "heading": "ナビゲーション/フロー構造の確認",
+      "position": 21,
+      "section_id": "DLID-j7514364qx9h"
+    },
+    {
+      "content_hash": "e45f7ee46af8506d644ca83a32d851320941e0051108932359e23969d4030710",
+      "heading": "5.4 参照の実在性検査",
+      "position": 34,
+      "section_id": "DLID-523jma960ssc"
+    },
+    {
+      "content_hash": "e5b5afc8c736e7c1c4063fdd0f26c79ed08f9f06bbe82a1ffb5b628b25e83d2f",
+      "heading": "3.1 型の判定と承認（完全新規でない場合のみ）",
+      "position": 13,
+      "section_id": "DLID-748ey4exkgyp"
+    },
+    {
+      "content_hash": "e7388ed926be73acbe1bbcf86f47d8b86e5990d30442dac646c05b89a1705e2b",
+      "heading": "5.5 specs ToC 更新",
+      "position": 35,
+      "section_id": "DLID-vmk2sc54qevq"
+    },
+    {
+      "content_hash": "e73ef51b3dc85b17f3971b3913c6da86288f9830ca4b894ddf1077352f231579",
+      "heading": "Phase 5: 統合・品質確認・完了処理",
+      "position": 30,
+      "section_id": "DLID-aywafe8zghjm"
+    },
+    {
+      "content_hash": "f4d86b7a8729d028dd9f7be0b39a4250dd160f59b04e53759aa988537459098d",
+      "heading": "4.4 型の再判定と一時マーカーの付与",
+      "position": 27,
+      "section_id": "DLID-5rqytx6dabv1"
+    },
+    {
+      "content_hash": "f536e6d9061d0c386b7059cb024974a7fecb89d4042f30c40e081fe6723f6201",
+      "heading": "5.7 完了案内",
+      "position": 37,
+      "section_id": "DLID-y63zy0q8qw6v"
+    },
+    {
+      "content_hash": "f558a87110a95379cb689c06a05da64b9cf3f2a823c6bc9e8508288869024bed",
+      "heading": "対話の基本原則",
+      "position": 38,
+      "section_id": "DLID-5903ec056294"
+    },
+    {
+      "content_hash": "f5f4fbe098a8275aaa8cdb7b148c0196d1e16667cee19234ce4f01b79f621085",
+      "heading": "1.2 既存資産の確認（完全新規でない場合のみ）",
+      "position": 9,
+      "section_id": "DLID-bb83ht7ta7zy"
+    }
+  ],
   "summary": [
     "Required reading list including additive development spec, frontmatter format, requirement format and error classification",
     "Phase 0: confirm what is known from prior conversation and decide whether the work is entirely new",

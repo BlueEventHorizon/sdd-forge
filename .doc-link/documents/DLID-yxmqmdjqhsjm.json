@@ -1,4 +1,5 @@
 {
+  "applied_hash": "644193dcc8fec831dee55850bfce5f38a1c6bef00b8567a4165b186eaffc1a43",
   "content_hash": "644193dcc8fec831dee55850bfce5f38a1c6bef00b8567a4165b186eaffc1a43",
   "doc_link_id": "DLID-yxmqmdjqhsjm",
   "keywords": [
@@ -13,8 +14,141 @@
     "What vs How",
     "feature index"
   ],
+  "last_check": {
+    "checked_at": "2026-11-25T03:43:00+00:00",
+    "result": "success"
+  },
   "path": "plugins/forge/skills/start-requirements/docs/app_overview_writing_standard.md",
   "purpose": "Defines the items, purposes, and writing guidelines that the application overview requirements document (APP-001) must contain, applicable to any project type.",
+  "references": [],
+  "sections": [
+    {
+      "content_hash": "0415f03d9fd54ee80f378d63b2fe3bd96ad09b9ac7273582c2fd5bc45cc30363",
+      "heading": "14. 制約事項",
+      "position": 16,
+      "section_id": "DLID-r9k7hbebybcw"
+    },
+    {
+      "content_hash": "0884f2a41ed0fafee6fa155ca1d1deac19ec1bc5cb71ccd69973ff1e0bcc7596",
+      "heading": "本文書の位置づけ",
+      "position": 1,
+      "section_id": "DLID-rjafxrk7erwr"
+    },
+    {
+      "content_hash": "0cb4d6c19d750f64e8a1ab55f39f4c4eef62703d5125b1bde22205f5db9b4efc",
+      "heading": "12. 主要機能一覧",
+      "position": 14,
+      "section_id": "DLID-f7r0r8n9q436"
+    },
+    {
+      "content_hash": "0e682797dfab79d613c268de12418a4e152fb3e6a8144c0a8bd2b48f0e8098df",
+      "heading": "3. 解決する問題",
+      "position": 5,
+      "section_id": "DLID-4mvd27s0jtzb"
+    },
+    {
+      "content_hash": "1c2de4fda8ee95bc852e558b6c8c9e63d39c1765a87179cc350df3b29f7639e3",
+      "heading": "15. 既知のリスク",
+      "position": 17,
+      "section_id": "DLID-vp5kph6er8ee"
+    },
+    {
+      "content_hash": "217c3d08319eaf30ccdfbfad4a51e8f7b6771987883016b8d2b5bf6e0a65fbf2",
+      "heading": "5. 成功基準",
+      "position": 7,
+      "section_id": "DLID-ar6sy3b685bx"
+    },
+    {
+      "content_hash": "2926f43bfb7d9f1c79adda92f55be4c385e9298dec00b6d6d4c32931790166cf",
+      "heading": "10. 環境構成",
+      "position": 12,
+      "section_id": "DLID-mbx86vq2f26t"
+    },
+    {
+      "content_hash": "2c17b5ad9f59fa1b7918827ad3b033c0993b32e1b7d6a7a35659d3f4f482a1c2",
+      "heading": "記載上の注意",
+      "position": 20,
+      "section_id": "DLID-m20cx45tap4f"
+    },
+    {
+      "content_hash": "32909e7d8c64253e6740d210d86b151c8c6bd67073b50e75a408e8318ce30031",
+      "heading": "6. スコープ",
+      "position": 8,
+      "section_id": "DLID-bnnc696bcxad"
+    },
+    {
+      "content_hash": "4edcc1499156b3451dd6ed7fcb5aa194f9bec72894d7421b5506dec09bc795e7",
+      "heading": "16. 用語定義",
+      "position": 18,
+      "section_id": "DLID-8azgb1zywh78"
+    },
+    {
+      "content_hash": "65bd7bb0aff7277ce22c34fdcc636fa44d0edeb87d20be4dfd3e6689e2530e26",
+      "heading": "2. 背景・動機",
+      "position": 4,
+      "section_id": "DLID-bpkt7emy375c"
+    },
+    {
+      "content_hash": "6f49c5cbc01d516036e36f8fa357d5aa781a6151b24dac6d2abcdd22bfce265f",
+      "heading": "APP概要要件定義書 記載基準",
+      "position": 0,
+      "section_id": "DLID-pahx2nvky076"
+    },
+    {
+      "content_hash": "6f8131202bd4ccdafaaf1032eb68a33c9215a001d84d2550fb01a8fcd3391000",
+      "heading": "4. プロジェクトの目的",
+      "position": 6,
+      "section_id": "DLID-3wq4g0b465v1"
+    },
+    {
+      "content_hash": "7d43ce28f513347710cd77c3ba8dad7de80239d5ed0eb689e3fcafcfa3bd70c9",
+      "heading": "7. 対象ユーザー",
+      "position": 9,
+      "section_id": "DLID-af5fwwc34fn3"
+    },
+    {
+      "content_hash": "8a9f365be68b9a308a21a2fbd0b01cf9c6aefb6bf2b55b8ea095fd68fa8fb11d",
+      "heading": "9. 前提条件",
+      "position": 11,
+      "section_id": "DLID-2xfjcj0casan"
+    },
+    {
+      "content_hash": "8d7c96d9c3b47932bcc99dab792b3c127ea2354c043fd4c1133fa90af65ebe1c",
+      "heading": "13. 外部依存",
+      "position": 15,
+      "section_id": "DLID-gcba7fv5r9rh"
+    },
+    {
+      "content_hash": "8ed88589fe4a3e844d9f901761c5da75eaccf9ed67ee8d536e0e07423b046489",
+      "heading": "1. 概要",
+      "position": 3,
+      "section_id": "DLID-q0ek70bfq4gx"
+    },
+    {
+      "content_hash": "9344ea4803cc61024bfbfede27c236c26523eab016a4ee67d556f3a870ec5ffe",
+      "heading": "11. 利用シナリオ",
+      "position": 13,
+      "section_id": "DLID-0knebtkz8tj5"
+    },
+    {
+      "content_hash": "ab656e47b4a2356040b297def462511ab2cc73537021ecd810540182323cae4d",
+      "heading": "8. 対応プラットフォーム",
+      "position": 10,
+      "section_id": "DLID-gsxe4pz8zgw2"
+    },
+    {
+      "content_hash": "d0c5e60a1d413ebe4f197cca30a1fb18c24a525431d5458d20f89bbb18aa0492",
+      "heading": "17. 関連文書",
+      "position": 19,
+      "section_id": "DLID-apd6hry7q9sv"
+    },
+    {
+      "content_hash": "d5b07e693039086e941fc29cd701d7f60edd28e1e2849aedbe7c4fe726b0fe93",
+      "heading": "記載項目一覧",
+      "position": 2,
+      "section_id": "DLID-cbv6ah3ysh8e"
+    }
+  ],
   "summary": [
     "Positions APP-001 as the project compass answering why, what, for whom, how used, and how to verify",
     "Lists 17 items from overview, background, and problems to terms and related documents",

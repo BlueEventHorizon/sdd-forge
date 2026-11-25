@@ -1,4 +1,5 @@
 {
+  "applied_hash": "776f3c99a799ed4ae4e251af404916659dc9da62b38581262ac05849faf71567",
   "content_hash": "776f3c99a799ed4ae4e251af404916659dc9da62b38581262ac05849faf71567",
   "doc_link_id": "DLID-cbr02jpbxfcs",
   "keywords": [
@@ -13,8 +14,169 @@
     "feature-based structure",
     "plan exclusion"
   ],
+  "last_check": {
+    "checked_at": "2026-11-25T03:43:00+00:00",
+    "result": "success"
+  },
   "path": "plugins/forge/docs/doc_structure_format.md",
   "purpose": "Specifies the .doc_structure.yaml format that declares document locations and types, used by forge to resolve paths for creation, review, feature detection, and search index targets.",
+  "references": [
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/glossary_format.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 0,
+      "recorded_content_hash": "1252d41a14b3",
+      "recorded_path": "glossary_format.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-z571pg6rda7f",
+      "target_section_id": null
+    }
+  ],
+  "sections": [
+    {
+      "content_hash": "06c03c26baa9f43698c94e8f55091231b4b64edfe46c4cdc2eff427d0f9409a9",
+      "heading": "doc_types_map",
+      "position": 6,
+      "section_id": "DLID-t5ty8qa46p6f"
+    },
+    {
+      "content_hash": "1285509177b0af2d475e4564a9b212eaf6aff8ed02004a01de90ab9d9845d538",
+      "heading": ".doc_structure.yaml フォーマット仕様",
+      "position": 0,
+      "section_id": "DLID-y0y5cv8m4p0g"
+    },
+    {
+      "content_hash": "1b0fdfa5cfafe4d64313ec00fccf61db1c33030fc5ab9ac7dcdb50574261b6f4",
+      "heading": "Feature-Based Structure（複数 Feature）",
+      "position": 16,
+      "section_id": "DLID-4m0ppgxq8c5m"
+    },
+    {
+      "content_hash": "2d0ee4e55595ea2d7e2052b6c520a88aae1cbab89d0db08eb8ec141b8331a108",
+      "heading": "サンプル",
+      "position": 14,
+      "section_id": "DLID-nc92gm4esv2r"
+    },
+    {
+      "content_hash": "34e2cc9be8d2ac971e69d469d7a7797a847e191f1a7fdc5a7fc30d1882cbd6ff",
+      "heading": "ファイル配置",
+      "position": 2,
+      "section_id": "DLID-zba6b53kn0pq"
+    },
+    {
+      "content_hash": "422bb8eee40b49b46a503a46ed5f30dd9c754198b0a4a9609885e7293fecaec8",
+      "heading": "plan の除外",
+      "position": 12,
+      "section_id": "DLID-aa07qc727c6f"
+    },
+    {
+      "content_hash": "453782b423a59843828e485268dbc1b2e977ecc1927980c4fc559949ce264aeb",
+      "heading": "rules カテゴリ",
+      "position": 9,
+      "section_id": "DLID-jg0wvn3grtym"
+    },
+    {
+      "content_hash": "496be789b635297c61d041d180931948a803d6ff9744301e8f71be1ebfbc20e3",
+      "heading": "forge が置き場を解決する doc_type",
+      "position": 10,
+      "section_id": "DLID-1gakr343fzwt"
+    },
+    {
+      "content_hash": "59855204ca9c0a916b42e9c65182fd06dbc688c5cb3b1d1dd0a408194010a8eb",
+      "heading": "forge スキルから（推奨）",
+      "position": 20,
+      "section_id": "DLID-gkkecvdp3q2q"
+    },
+    {
+      "content_hash": "64b05bee4e299cc7b325d4b1df1bb7e85e19bfc3ce67dc205d6230570013be7a",
+      "heading": "specs カテゴリ",
+      "position": 8,
+      "section_id": "DLID-ma7jpmd3d3xd"
+    },
+    {
+      "content_hash": "67e780ecf26c9245313bf58f9aa6b8e6d7d3fe93c4cbbfe32411f4fc2ec089a6",
+      "heading": "root_dirs",
+      "position": 5,
+      "section_id": "DLID-s5qxr6dp0y7z"
+    },
+    {
+      "content_hash": "6b813b74ca72797a07dbe90867fffff2e0b45abc13036163b28b45cab4a4cd11",
+      "heading": "Flat Structure（単一プロジェクト）",
+      "position": 15,
+      "section_id": "DLID-hxhzhn8gvhkq"
+    },
+    {
+      "content_hash": "81290009cff9d06f4a4b1d8db1e605a28a44a108faf0fc62dc15ff3031bad727",
+      "heading": "forge が使用するフィールド",
+      "position": 4,
+      "section_id": "DLID-b519xwk0eefz"
+    },
+    {
+      "content_hash": "869ec7fc122c02d0159798f142b19d59a5be2239164118c78fd033e1e95fbac7",
+      "heading": "スキーマ",
+      "position": 3,
+      "section_id": "DLID-xdd2pp0nse4v"
+    },
+    {
+      "content_hash": "9f7c128956602a8f0d52cbd3beeebeb3e13fbb7bd9ed316f7fea704cc9402046",
+      "heading": "Feature-Based with Exclude",
+      "position": 18,
+      "section_id": "DLID-q9wb655581st"
+    },
+    {
+      "content_hash": "a7371968bd263d4ec994c021576f09b31fc698dae28343a4ca642305d0b88b48",
+      "heading": "Nested Feature-Based Structure（サブ Feature あり）",
+      "position": 17,
+      "section_id": "DLID-74md712p1wwt"
+    },
+    {
+      "content_hash": "b5f9eb9bc88fe2a99dda4f19775a713ab3bb7e89c32d8275560557897c215ebe",
+      "heading": "patterns.exclude",
+      "position": 11,
+      "section_id": "DLID-vq3vs9v8jmwa"
+    },
+    {
+      "content_hash": "e76253585717510918933c1ddae76bc5d46ba8c6c8592c7845ba30c8584fd6cc",
+      "heading": "バージョン管理",
+      "position": 13,
+      "section_id": "DLID-36d6ya7swz9w"
+    },
+    {
+      "content_hash": "f0cc17ab41d058b5d70c9abb7746a7ddb4957e8fa047ba2d1c4e1593675ec9e4",
+      "heading": "概要",
+      "position": 1,
+      "section_id": "DLID-r1d1j7a74adn"
+    },
+    {
+      "content_hash": "f0f6f0310ffd6d26a446b2e6874a0badbc19733702a4ee11481c32eda845e9bd",
+      "heading": "文書検索の索引へのパス受け渡し",
+      "position": 22,
+      "section_id": "DLID-a2jsgd6g86yg"
+    },
+    {
+      "content_hash": "f3da231fb23ef2c2051f790522ddce7c60bf061780f32bcf60ce23bc9aa3b09c",
+      "heading": "Consumer Guide",
+      "position": 19,
+      "section_id": "DLID-b5t2hmm6gsgs"
+    },
+    {
+      "content_hash": "f699c9b6370a7fccc261a9036b07883386d0fac7a57163ab2b5cb879fafdacea",
+      "heading": "Python スクリプトから（同一プラグイン内）",
+      "position": 21,
+      "section_id": "DLID-kdg37p8d3cxj"
+    },
+    {
+      "content_hash": "f84467f7bd2ec022b630e18fdb2795151407661df70086cb7dcb0a46879cf9b4",
+      "heading": "推奨 doc_type 名",
+      "position": 7,
+      "section_id": "DLID-xc43eza03rkn"
+    }
+  ],
   "summary": [
     "Overview and file placement at the project root",
     "Schema with rules and specs categories and fields forge uses",

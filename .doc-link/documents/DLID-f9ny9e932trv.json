@@ -1,4 +1,5 @@
 {
+  "applied_hash": "b68b930cec1d85974b997e3fb6f3c39f89c72216228fab1e73a13a51e078e6f2",
   "content_hash": "b68b930cec1d85974b997e3fb6f3c39f89c72216228fab1e73a13a51e078e6f2",
   "doc_link_id": "DLID-f9ny9e932trv",
   "keywords": [
@@ -13,8 +14,139 @@
     "non-functional requirements",
     "review perspectives P1 P2 P3"
   ],
+  "last_check": {
+    "checked_at": "2026-11-25T03:43:00+00:00",
+    "result": "success"
+  },
   "path": "plugins/forge/docs/spec_priorities_spec.md",
   "purpose": "Defines the values to prioritize and the aims to avoid when writing or reviewing requirements and design documents, with severity catalog, gray-zone tolerances, and per-perspective review routing.",
+  "references": [
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/spec_design_boundary_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 0,
+      "recorded_content_hash": "e0d1a83f7e47",
+      "recorded_path": "spec_design_boundary_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-h9h90g9wcy8f",
+      "target_section_id": null
+    }
+  ],
+  "sections": [
+    {
+      "content_hash": "0b30c2a0cfcb208485d25e1a19105b37a7aabefb1a1285f5757502c4996f7e44",
+      "heading": "3. 主目的にしてはいけないもの [CRITICAL]",
+      "position": 4,
+      "section_id": "DLID-2sm20c4wkebx"
+    },
+    {
+      "content_hash": "120289ce94fab4ca222415a253f64aeb771456079a53f13c0be227df81de5e34",
+      "heading": "5. 判断基準",
+      "position": 10,
+      "section_id": "DLID-e3hh6n6zwzxx"
+    },
+    {
+      "content_hash": "2245a10fc7368ced0728d6805a9deddbaf487f5e94e22e946804676ae8f24fe9",
+      "heading": "8. 重大度カタログ",
+      "position": 13,
+      "section_id": "DLID-hx44sczxqdw7"
+    },
+    {
+      "content_hash": "3ee5efe0ab03f75f2926078d0501550be204e737a5522a2f5c952fe14f57f7d0",
+      "heading": "3.1 構造品質の定量化",
+      "position": 5,
+      "section_id": "DLID-zfx9spfb5wad"
+    },
+    {
+      "content_hash": "40e8511468644594b6505bb1b8f38b1411e7c0dc45ee7cc309e089af960b9108",
+      "heading": "3.2 品質特性の直接数値化",
+      "position": 6,
+      "section_id": "DLID-zh4af8vpp7fv"
+    },
+    {
+      "content_hash": "440b553b6fbab9fee04c2df048c4601d39be479877704e3bda8a743b081e9bd0",
+      "heading": "10. 非機能要件カテゴリ網羅性",
+      "position": 15,
+      "section_id": "DLID-nqy4h59s3abq"
+    },
+    {
+      "content_hash": "551da1d43f8a513b987e27b01310b4eb9f530b7f399f1b445eb7adbd10fb16c3",
+      "heading": "2. 結果として得られる品質特性（直接の目標指標にしない）",
+      "position": 3,
+      "section_id": "DLID-9q5mh13gphqx"
+    },
+    {
+      "content_hash": "5805a50b19a766f6d1184aafacff50eff736c43b1d86ae0c101897ede55f11e9",
+      "heading": "6. 定量目標そのものの要件/設計への振り分け",
+      "position": 11,
+      "section_id": "DLID-1tsfg2en7s15"
+    },
+    {
+      "content_hash": "5e58546ca873e2587ce8dd129ea98344c70f923593f70c4a5ee41f5f97eeef13",
+      "heading": "3.4 未確定定量値の捏造",
+      "position": 8,
+      "section_id": "DLID-54wtgy4v71th"
+    },
+    {
+      "content_hash": "863788fb1c9075e01f49622b8bca598e642e8c53763d9fd7a3ed6baffb700687",
+      "heading": "1. 優先するもの（構造的設計原則）",
+      "position": 1,
+      "section_id": "DLID-nzqq0p96zpx6"
+    },
+    {
+      "content_hash": "abd7aa1e581be66c88543135b7205eb91a7677d135ceb7ce5fa6f3164b6d2e8b",
+      "heading": "10.1 重大度スコープ",
+      "position": 16,
+      "section_id": "DLID-r645syjzxag1"
+    },
+    {
+      "content_hash": "b0dc600c4cba8923ef22c7c91888c13126e4026aed42ceba5784c6d734bf72e5",
+      "heading": "3.3 進捗管理 KPI・達成率・評価表の見栄え",
+      "position": 7,
+      "section_id": "DLID-8sshsy7b619r"
+    },
+    {
+      "content_hash": "b146626451ff71e795e33222d5ee61df8a0f4e3be781f0fdb0963473a38d4e8c",
+      "heading": "7. 観点別の利用ガイド (P1/P2/P3 ルーティング)",
+      "position": 12,
+      "section_id": "DLID-mp4gp2bhmw14"
+    },
+    {
+      "content_hash": "b7d3a8ea6fcdc116f041df6a6089742a4c091382dd3d34ca4b007aa4ed692fe7",
+      "heading": "4. 典型的な倒錯パターン",
+      "position": 9,
+      "section_id": "DLID-5qwy79z8q3p1"
+    },
+    {
+      "content_hash": "c4622e4cda761ff05cda12c5c964c2b49e50b72fbdda5d7c58ae4165b0713b85",
+      "heading": "10.2 除外理由の明示",
+      "position": 17,
+      "section_id": "DLID-mq15p9q5d071"
+    },
+    {
+      "content_hash": "d720a6b53c1e73549eb9800e970d39d7b11942c6b703b97e2ab61d3bdf22d617",
+      "heading": "要件定義書・設計書で優先すること",
+      "position": 0,
+      "section_id": "DLID-03hk8vasbrh7"
+    },
+    {
+      "content_hash": "d8b024f00d7b8f0ddc6eafda2567c85cefd16917be469a5d5e263314dfed6cb8",
+      "heading": "9. グレーゾーン許容範囲",
+      "position": 14,
+      "section_id": "DLID-c6xnwdy1pzk8"
+    },
+    {
+      "content_hash": "f17873f60865f869c2b0450423bbb583518a107b39896bd11bc42a271adbdd16",
+      "heading": "文書間の依存方向 (forge の文書生成自体に適用)",
+      "position": 2,
+      "section_id": "DLID-hqfw8we4xx08"
+    }
+  ],
   "summary": [
     "Priority structural principles: responsibility split, boundary setting, dependency direction",
     "Dependency direction among generated documents: requirements, design, plan",

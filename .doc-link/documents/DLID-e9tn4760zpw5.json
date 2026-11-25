@@ -1,4 +1,5 @@
 {
+  "applied_hash": "f2e598645f127472ebb803524fba4e01d9a859d7bc0a4cb78fc80cb1b2efccb6",
   "content_hash": "f2e598645f127472ebb803524fba4e01d9a859d7bc0a4cb78fc80cb1b2efccb6",
   "doc_link_id": "DLID-e9tn4760zpw5",
   "keywords": [
@@ -11,8 +12,91 @@
     "fallback",
     "create_issue"
   ],
+  "last_check": {
+    "checked_at": "2026-11-25T03:43:00+00:00",
+    "result": "success"
+  },
   "path": "plugins/forge/docs/criteria/review_criteria_uxui.md",
   "purpose": "Defines the review criteria for UX/UI documents: which delegated SSOT documents to check, in what order, and how to decide recommendations.",
+  "references": [
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/document_style_guide.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 1,
+      "recorded_content_hash": "335c3c0eb320",
+      "recorded_path": "../document_style_guide.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-c59znr7b8f56",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/review_priorities_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 0,
+      "recorded_content_hash": "458b42b8deb4",
+      "recorded_path": "../review_priorities_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-dcec6pr177c9",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/spec_priorities_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 2,
+      "recorded_content_hash": "b68b930cec1d",
+      "recorded_path": "../spec_priorities_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-f9ny9e932trv",
+      "target_section_id": null
+    }
+  ],
+  "sections": [
+    {
+      "content_hash": "0010f574741cf090a5ea40a134c5dc769c0b7d7cefec6e3560201dd1c5f10d3b",
+      "heading": "uxui レビュー基準",
+      "position": 0,
+      "section_id": "DLID-j336y8qdsy3k"
+    },
+    {
+      "content_hash": "15fbb389c9c1bbe9b86067d89715883b920c01371ae699c927eed1d0c2843bd9",
+      "heading": "`recommendation: create_issue` の 3 条件",
+      "position": 4,
+      "section_id": "DLID-g55zarnetzfj"
+    },
+    {
+      "content_hash": "1740ac91ce693fbeb2752d88d6621755af8c2c625201f151be5f32e845561ae7",
+      "heading": "2. チェック順",
+      "position": 2,
+      "section_id": "DLID-vymdmf5grfz6"
+    },
+    {
+      "content_hash": "58a8b47b327742d46a55ecc79e46315b6e3e34b6949f4f5b6e898981f42ba136",
+      "heading": "3. 判定ルール",
+      "position": 3,
+      "section_id": "DLID-9vhfq2kspkkw"
+    },
+    {
+      "content_hash": "c00e93e1fb44d962e63c2915f583b11a63f96985bbde25ba35a60591e684b0c3",
+      "heading": "1. SSOT参照",
+      "position": 1,
+      "section_id": "DLID-h91yy7cte039"
+    }
+  ],
   "summary": [
     "Notes that UX/UI principles are not yet established and the style guide serves as a fallback",
     "Lists delegated SSOT documents including Apple HIG, project design-system rules, and the style guide",

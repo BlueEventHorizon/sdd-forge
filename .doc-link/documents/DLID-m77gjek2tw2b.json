@@ -1,4 +1,5 @@
 {
+  "applied_hash": "b87fce46708efb1b1dab38437f30f67dc634adcad92fc22803aa4ce4fdb0c4fd",
   "content_hash": "b87fce46708efb1b1dab38437f30f67dc634adcad92fc22803aa4ce4fdb0c4fd",
   "doc_link_id": "DLID-m77gjek2tw2b",
   "keywords": [
@@ -11,8 +12,76 @@
     "severity catalog",
     "reader obligation"
   ],
+  "last_check": {
+    "checked_at": "2026-11-25T03:43:00+00:00",
+    "result": "success"
+  },
   "path": "plugins/forge/docs/adr_usage_spec.md",
   "purpose": "Defines obligations of readers who rely on an ADR to decline a proposal or finding: ADRs are non-binding, rejection premises must be rechecked, and the ADR number must be cited.",
+  "references": [
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/adr_format.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 1,
+      "recorded_content_hash": "3a31a2d6bfe3",
+      "recorded_path": "adr_format.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-ns59za8fens1",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/adr_principles_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 0,
+      "recorded_content_hash": "1fb15e199859",
+      "recorded_path": "adr_principles_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-45wzpggz1set",
+      "target_section_id": null
+    }
+  ],
+  "sections": [
+    {
+      "content_hash": "0c08304137744fd47ecd063f1d4a2ea8070d22df29a221b7abab8a5a50d83e11",
+      "heading": "ADR 利用規範",
+      "position": 0,
+      "section_id": "DLID-gdb2e7ddxswr"
+    },
+    {
+      "content_hash": "8ad33d4dd6ae0d06eae98f752cc9a3b17d03839bab629c5853381267e4465862",
+      "heading": "拘束力を持たない",
+      "position": 1,
+      "section_id": "DLID-fbyfqcx53g2w"
+    },
+    {
+      "content_hash": "94eab11e7ff6187f01bed5c42dc21479c04d1ab371497940db40eb9730a2005d",
+      "heading": "読み手の義務",
+      "position": 2,
+      "section_id": "DLID-rwtjkexdnjv0"
+    },
+    {
+      "content_hash": "e6887438a48f27aac39de83057fb4d00c8244eeea32a842d8c032f98108fa816",
+      "heading": "抑止の到達率は上げない",
+      "position": 3,
+      "section_id": "DLID-s760w4me34ch"
+    },
+    {
+      "content_hash": "fef33ab551c7d44a05278e5c8a641b47959cabb9aa638eff00aef87da6111d25",
+      "heading": "重大度カタログ",
+      "position": 4,
+      "section_id": "DLID-0551wvn8eny7"
+    }
+  ],
   "summary": [
     "ADRs are awareness, not instructions; a proposal may be made if still judged correct",
     "Reader must verify the premises of the rejection still hold",

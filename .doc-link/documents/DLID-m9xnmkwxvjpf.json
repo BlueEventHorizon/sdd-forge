@@ -1,4 +1,5 @@
 {
+  "applied_hash": "50265bb6a0233856b27e455dd28f4e63d0de3024f72ead3e11867fdfed0505fe",
   "content_hash": "50265bb6a0233856b27e455dd28f4e63d0de3024f72ead3e11867fdfed0505fe",
   "doc_link_id": "DLID-m9xnmkwxvjpf",
   "keywords": [
@@ -12,8 +13,63 @@
     "consult brief",
     "requirements"
   ],
+  "last_check": {
+    "checked_at": "2026-11-25T03:43:00+00:00",
+    "result": "success"
+  },
   "path": "plugins/forge/skills/consult/docs/creation_handling.md",
   "purpose": "Defines how the consult skill is used for new creation dialogues (brainstorming, drafting, new requirements), including handling of decisions, display, recording, and the final document result.",
+  "references": [],
+  "sections": [
+    {
+      "content_hash": "081612d9c7943fa32d436a4f7e7cbd475246a922758da94b35845e303f323fae",
+      "heading": "4. 論点が 1 つのとき",
+      "position": 4,
+      "section_id": "DLID-vn8c5v1pt8ps"
+    },
+    {
+      "content_hash": "17c8846dc2e8d5e05278fe3433c58a2037ad348e488da1211bcdc20ecaeebd99",
+      "heading": "6. 記録",
+      "position": 6,
+      "section_id": "DLID-3b7rcjets16c"
+    },
+    {
+      "content_hash": "2e5d1d18eddfd3acd56d4bb71a6dabbf036ee5c67a5bd809e18fb6826c008812",
+      "heading": "3. 表示",
+      "position": 3,
+      "section_id": "DLID-fd891a23dzj3"
+    },
+    {
+      "content_hash": "560c17cf65de8bd845989e2c9ad2b3ae471035fe4a81b53406d6cd40119356da",
+      "heading": "5. 提示状態の置き場",
+      "position": 5,
+      "section_id": "DLID-x20dtx6veq59"
+    },
+    {
+      "content_hash": "c2ebcf11ef997a6b05069ed46556f0736b2877c96c30e098ce1bb1d18a4d1e61",
+      "heading": "1. 入力と完成物",
+      "position": 1,
+      "section_id": "DLID-w18xd8htn8w5"
+    },
+    {
+      "content_hash": "caa43a48e3658638b580597ae147a1a1859c8c25940d5dcf3717eedf109a449e",
+      "heading": "7. 終了と結果",
+      "position": 7,
+      "section_id": "DLID-yy10wbm1qhqk"
+    },
+    {
+      "content_hash": "dab93ebe87f0bd5e17cef708a513e518149f06e6088c3b99a1216fc674e3097a",
+      "heading": "2. 決まったことの扱い",
+      "position": 2,
+      "section_id": "DLID-0f9kjzbq00ss"
+    },
+    {
+      "content_hash": "dbdcf05eb48dc4dda5b71e627a529c393261df0934ae372fc4ede5dd64d25388",
+      "heading": "新規作成の手順",
+      "position": 0,
+      "section_id": "DLID-ag48h6awdpqa"
+    }
+  ],
   "summary": [
     "Input is the conversation context and the deliverable is a document",
     "Decisions are not reflected per topic; the document is written only on user instruction",

@@ -1,4 +1,5 @@
 {
+  "applied_hash": "90aabf3f4899a9621282af3236d68f9ff7e3c923a52af974e093dfd2c91364f7",
   "content_hash": "90aabf3f4899a9621282af3236d68f9ff7e3c923a52af974e093dfd2c91364f7",
   "doc_link_id": "DLID-4zxqtf2m3x6t",
   "keywords": [
@@ -12,8 +13,166 @@
     "create_issue",
     "What/How boundary"
   ],
+  "last_check": {
+    "checked_at": "2026-11-25T03:43:00+00:00",
+    "result": "success"
+  },
   "path": "plugins/forge/docs/criteria/review_criteria_requirement.md",
   "purpose": "Defines the review criteria for requirement documents: which delegated SSOT documents to check, in what order, and how to decide recommendations.",
+  "references": [
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/additive_development_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 5,
+      "recorded_content_hash": "3be39e634c1c",
+      "recorded_path": "../additive_development_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-cyrk9xr8vcap",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/document_style_guide.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 7,
+      "recorded_content_hash": "335c3c0eb320",
+      "recorded_path": "../document_style_guide.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-c59znr7b8f56",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/frontmatter_format.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 6,
+      "recorded_content_hash": "867507803b4a",
+      "recorded_path": "../frontmatter_format.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-jtc4qnjwbdxf",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/requirement_format.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 3,
+      "recorded_content_hash": "c05edc5d1de7",
+      "recorded_path": "../requirement_format.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-c13gr4qbk4vm",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/requirement_principles_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 1,
+      "recorded_content_hash": "8c5971b68aaf",
+      "recorded_path": "../requirement_principles_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-8y2jh2y06761",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/review_priorities_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 0,
+      "recorded_content_hash": "458b42b8deb4",
+      "recorded_path": "../review_priorities_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-dcec6pr177c9",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/spec_design_boundary_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 2,
+      "recorded_content_hash": "e0d1a83f7e47",
+      "recorded_path": "../spec_design_boundary_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-h9h90g9wcy8f",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/spec_priorities_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 4,
+      "recorded_content_hash": "b68b930cec1d",
+      "recorded_path": "../spec_priorities_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-f9ny9e932trv",
+      "target_section_id": null
+    }
+  ],
+  "sections": [
+    {
+      "content_hash": "14d19f0a1ef7634662bf5a072ba1d4f726bbc4a5a5a19c67e5fedb70361ea949",
+      "heading": "1. SSOT参照",
+      "position": 1,
+      "section_id": "DLID-9m3kxp12y06x"
+    },
+    {
+      "content_hash": "26644b1b10bec8e629fcc2623aed00f4fd438e025882f5cd7de4c750b2015b30",
+      "heading": "`recommendation: create_issue` の 3 条件",
+      "position": 4,
+      "section_id": "DLID-psxtsf0zwksq"
+    },
+    {
+      "content_hash": "2ad52cebc73119839b4f32a286e6c1ed6b61b4189a82d4c7f238fb5dd04520b8",
+      "heading": "requirement レビュー基準",
+      "position": 0,
+      "section_id": "DLID-xc41w976xdae"
+    },
+    {
+      "content_hash": "8e48878b3b49992af91e9f8be0a425dc64cf41b6377d97bf111e5c9af46078d0",
+      "heading": "3. 判定ルール",
+      "position": 3,
+      "section_id": "DLID-rq073b3srn5w"
+    },
+    {
+      "content_hash": "d29998cda120923a6af739dd3c632be669dee91b7fc34782d8c98ca8356cdf87",
+      "heading": "2. チェック順",
+      "position": 2,
+      "section_id": "DLID-ng6dkkh60wr1"
+    }
+  ],
   "summary": [
     "Lists delegated SSOT documents for P1 rule matching including principles, formats, and project rules",
     "Defines the check order across P1 rule conformance, P2 contradiction, and P3 needless complexity",

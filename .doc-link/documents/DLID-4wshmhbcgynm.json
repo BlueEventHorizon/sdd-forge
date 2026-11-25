@@ -1,4 +1,5 @@
 {
+  "applied_hash": "8a9331ce5ff313a81befdc8c41f815037374e4765ba96d0aa5f9069b09300bfc",
   "content_hash": "8a9331ce5ff313a81befdc8c41f815037374e4765ba96d0aa5f9069b09300bfc",
   "doc_link_id": "DLID-4wshmhbcgynm",
   "keywords": [
@@ -13,8 +14,433 @@
     "plan",
     "uxui"
   ],
+  "last_check": {
+    "checked_at": "2026-11-25T03:43:00+00:00",
+    "result": "success"
+  },
   "path": "plugins/forge/docs/criteria/review_target_types.md",
   "purpose": "Lets a reviewer determine the target type (code, requirement, design, plan, uxui) of each review target and select which documents to read for that type.",
+  "references": [
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/additive_development_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 12,
+      "recorded_content_hash": "3be39e634c1c",
+      "recorded_path": "../additive_development_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-cyrk9xr8vcap",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/adr_format.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 18,
+      "recorded_content_hash": "3a31a2d6bfe3",
+      "recorded_path": "../adr_format.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-ns59za8fens1",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/adr_principles_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 19,
+      "recorded_content_hash": "1fb15e199859",
+      "recorded_path": "../adr_principles_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-45wzpggz1set",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/criteria/review_criteria_code.md",
+        "result": "match",
+        "scope": "plugins/forge/docs/criteria"
+      },
+      "kind": "document",
+      "position": 4,
+      "recorded_content_hash": "a7ceb082eeaf",
+      "recorded_path": "review_criteria_code.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-spgw9f5y6thy",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/criteria/review_criteria_design.md",
+        "result": "match",
+        "scope": "plugins/forge/docs/criteria"
+      },
+      "kind": "document",
+      "position": 15,
+      "recorded_content_hash": "0b7187e6bfc6",
+      "recorded_path": "review_criteria_design.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-0zyw4hj937y9",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/criteria/review_criteria_generic.md",
+        "result": "match",
+        "scope": "plugins/forge/docs/criteria"
+      },
+      "kind": "document",
+      "position": 0,
+      "recorded_content_hash": "0aaf2e1f0413",
+      "recorded_path": "review_criteria_generic.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-wm7t1emetwbx",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/criteria/review_criteria_plan.md",
+        "result": "match",
+        "scope": "plugins/forge/docs/criteria"
+      },
+      "kind": "document",
+      "position": 20,
+      "recorded_content_hash": "fa4854482b2e",
+      "recorded_path": "review_criteria_plan.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-31c3mp46a5p2",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/criteria/review_criteria_requirement.md",
+        "result": "match",
+        "scope": "plugins/forge/docs/criteria"
+      },
+      "kind": "document",
+      "position": 7,
+      "recorded_content_hash": "90aabf3f4899",
+      "recorded_path": "review_criteria_requirement.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-4zxqtf2m3x6t",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/criteria/review_criteria_uxui.md",
+        "result": "match",
+        "scope": "plugins/forge/docs/criteria"
+      },
+      "kind": "document",
+      "position": 22,
+      "recorded_content_hash": "f2e598645f12",
+      "recorded_path": "review_criteria_uxui.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-e9tn4760zpw5",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/design_method.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 17,
+      "recorded_content_hash": "157820b1afb7",
+      "recorded_path": "../design_method.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-pdvdjb49qpr4",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/design_principles_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 16,
+      "recorded_content_hash": "e590554be385",
+      "recorded_path": "../design_principles_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-061pwjejh6yc",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/deterministic_generation_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 5,
+      "recorded_content_hash": "75383cc8c6d8",
+      "recorded_path": "../deterministic_generation_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-tm2m7nv23dqd",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/document_style_guide.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 14,
+      "recorded_content_hash": "335c3c0eb320",
+      "recorded_path": "../document_style_guide.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-c59znr7b8f56",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/error_classification_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 3,
+      "recorded_content_hash": "94496cc6d044",
+      "recorded_path": "../error_classification_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-5ykqs19cdbks",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/forge_anti_patterns.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 6,
+      "recorded_content_hash": "0e4a099e332f",
+      "recorded_path": "../forge_anti_patterns.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-wkh7nt1wrds7",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/frontmatter_format.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 13,
+      "recorded_content_hash": "867507803b4a",
+      "recorded_path": "../frontmatter_format.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-jtc4qnjwbdxf",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/plan_principles_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 21,
+      "recorded_content_hash": "33e1e8046cdc",
+      "recorded_path": "../plan_principles_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-t8jcg5jkb5mj",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/requirement_format.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 9,
+      "recorded_content_hash": "c05edc5d1de7",
+      "recorded_path": "../requirement_format.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-c13gr4qbk4vm",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/requirement_principles_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 8,
+      "recorded_content_hash": "8c5971b68aaf",
+      "recorded_path": "../requirement_principles_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-8y2jh2y06761",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/review_priorities_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 1,
+      "recorded_content_hash": "458b42b8deb4",
+      "recorded_path": "../review_priorities_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-dcec6pr177c9",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/scope_proportionality_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 2,
+      "recorded_content_hash": "be634f5152a6",
+      "recorded_path": "../scope_proportionality_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-s1dhhaprgf1r",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/spec_design_boundary_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 10,
+      "recorded_content_hash": "e0d1a83f7e47",
+      "recorded_path": "../spec_design_boundary_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-h9h90g9wcy8f",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/spec_priorities_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 11,
+      "recorded_content_hash": "b68b930cec1d",
+      "recorded_path": "../spec_priorities_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-f9ny9e932trv",
+      "target_section_id": null
+    }
+  ],
+  "sections": [
+    {
+      "content_hash": "0f4e09ab080e40407461c70465949063bdc70f0541dd6d0187f032c9d3eb3c46",
+      "heading": "1.1 設定を引く",
+      "position": 2,
+      "section_id": "DLID-fd8jqdv4tr8y"
+    },
+    {
+      "content_hash": "4c9745b8b9f9e1db645b581265b271d6636ca77e82e7aa0bd2f29d6432a12e48",
+      "heading": "3.5 uxui（UI / UX に関わる文書）",
+      "position": 11,
+      "section_id": "DLID-enyjmb2hb2rm"
+    },
+    {
+      "content_hash": "59d671be47a8f0a93c361a934035272271f2867d6b5e1cfdc22a71265127586e",
+      "heading": "2. 全 target 種別に共通の文書",
+      "position": 5,
+      "section_id": "DLID-66jzrce09d5t"
+    },
+    {
+      "content_hash": "5f1d85a55ef7faf30887627200d3d784919875f83f033bf0d8d1d5841d4d7f30",
+      "heading": "3.4 plan（計画書）",
+      "position": 10,
+      "section_id": "DLID-0vayzdt2agj4"
+    },
+    {
+      "content_hash": "7b40ea08afb5e9954f5f6a4630f8387d4ada6b456d17dcbfacdb8deaece3b46a",
+      "heading": "1.3 決まらない対象",
+      "position": 4,
+      "section_id": "DLID-633angt31hds"
+    },
+    {
+      "content_hash": "7c6ae234bdd82c979b0f0bfb6f36b85cd51f1b2f6745f39e80704ba537c03005",
+      "heading": "3.2 requirement（要件定義書）",
+      "position": 8,
+      "section_id": "DLID-j1pxx7pwvpa0"
+    },
+    {
+      "content_hash": "8917d2052979f4c8f3e4ee3d8939c783e4af5f024fc0523be75b5b84e9a96f03",
+      "heading": "3.1 code（ソースコード）",
+      "position": 7,
+      "section_id": "DLID-8vpdyxy3p22b"
+    },
+    {
+      "content_hash": "91224b0badbf9b22a75045f4cb6da82c7f6f597bf6c20d662a8e91acf2030333",
+      "heading": "3. 種別ごとに上乗せする文書",
+      "position": 6,
+      "section_id": "DLID-y7ny461sst3j"
+    },
+    {
+      "content_hash": "970337e569bf3ff7db10370a9490262cdc60f42774c34238d8ef4cab18434c8e",
+      "heading": "1.2 返った値から種別を決める",
+      "position": 3,
+      "section_id": "DLID-ntdb48nbbkf3"
+    },
+    {
+      "content_hash": "a474c395d17b82acf1e2f0fd58471fff1b396ed1d6a555765e6ca527b0f44db4",
+      "heading": "3.3 design（設計書・ADR）",
+      "position": 9,
+      "section_id": "DLID-7c120qp5qtwx"
+    },
+    {
+      "content_hash": "e729f6f7837e755cea66beba53679a0723e4c694988188f6498659a25af9390c",
+      "heading": "レビュー対象の種別と読む文書",
+      "position": 0,
+      "section_id": "DLID-a3nc5ac2jq91"
+    },
+    {
+      "content_hash": "f831de1af5db6a0db49d9cad7cb9fa74cc986fe45cb060e13f037f50ba1536da",
+      "heading": "1. 種別の判定",
+      "position": 1,
+      "section_id": "DLID-btd757hrjq12"
+    }
+  ],
   "summary": [
     "Defines five target types: code, requirement, design, plan, uxui; ADR is treated as design",
     "Procedure for determining type by querying the doc structure configuration via a resolver script",

@@ -1,4 +1,5 @@
 {
+  "applied_hash": "996752510a5f18418735be23db1272658c5a64115b1251331ebb8b8cc45bc3ef",
   "content_hash": "996752510a5f18418735be23db1272658c5a64115b1251331ebb8b8cc45bc3ef",
   "doc_link_id": "DLID-rx0jy7wbtg59",
   "keywords": [
@@ -13,8 +14,417 @@
     "HIG",
     "start-uxui-design"
   ],
+  "last_check": {
+    "checked_at": "2026-11-25T03:43:00+00:00",
+    "result": "success"
+  },
   "path": "plugins/forge/skills/start-uxui-design/docs/uxui_analysis_workflow.md",
   "purpose": "Defines the six-phase workflow that turns a requirements document into UX/UI design outputs: design tokens, component visual specs and a UX evaluation, driven by a Design Intent.",
+  "references": [],
+  "sections": [
+    {
+      "content_hash": "04ce97e30a8e15d1bbd0acfac2992bc22d9e615da714e58966108bd5c3add345",
+      "heading": "基本指標（Design Intent を参照して判定）",
+      "position": 51,
+      "section_id": "DLID-d1e0kc46h6ey"
+    },
+    {
+      "content_hash": "0983a3c6aad9e2277eb3ffb133119fb2c2f42c7dcc64ae0b8e51e311c980aee5",
+      "heading": "常駐（SKILL.md で読み込み済み — 全 Phase で参照）",
+      "position": 3,
+      "section_id": "DLID-ysyetw9k29ny"
+    },
+    {
+      "content_hash": "1090311862ab2c4005e7d9650eabc2116fcd56cd68d00a7386bfaaabea52cb27",
+      "heading": "1.3 参考デザインの収集（任意）",
+      "position": 10,
+      "section_id": "DLID-t1sz06mz7kmd"
+    },
+    {
+      "content_hash": "10ccb87671b79d871cec43350df51bf66ba76f590dc69bf0cebfde0ec26c1294",
+      "heading": "Base Colors",
+      "position": 27,
+      "section_id": "DLID-mbfk1avzg8dx"
+    },
+    {
+      "content_hash": "10ec4f1edbb9b069c086baee23bcb862abf35c1fee38f22bf8c8309232fc251d",
+      "heading": "Design Intent 駆動の分岐",
+      "position": 6,
+      "section_id": "DLID-3eh7eyabpzqy"
+    },
+    {
+      "content_hash": "1119785fe17d6ae5390a76269a8d2794ba76f572ee54997ad8f95811fbaed34f",
+      "heading": "3.5 署名ルールのトークン化",
+      "position": 33,
+      "section_id": "DLID-qw1wbsw9ehsc"
+    },
+    {
+      "content_hash": "1169e3d8910033085a12c15f6ed7f37491a7e6e8183a2e0844ec91538cc95bd3",
+      "heading": "4. 凡庸な既定値への後退禁止",
+      "position": 65,
+      "section_id": "DLID-npevcbwgchsh"
+    },
+    {
+      "content_hash": "11e5d66dbedea174aa611de2f962d4e78a1f9e5cb8d673726263a3e7d268a0c6",
+      "heading": "4.3 状態・プロパティの定義",
+      "position": 40,
+      "section_id": "DLID-rxgy09kt0se6"
+    },
+    {
+      "content_hash": "12733c89ee3fbd0b2e43fde13d9439fbee881d91debe12ae3d0f3894234137c7",
+      "heading": "6.3 参照の実在性検査",
+      "position": 57,
+      "section_id": "DLID-1jj39emhmvsq"
+    },
+    {
+      "content_hash": "16587f7c5e9e7b0d22271e4360fdec5fe1849444deaf8b0023a718592f7aab15",
+      "heading": "Phase 6: 文書生成・品質確認",
+      "position": 54,
+      "section_id": "DLID-rxkkx2rtxyxs"
+    },
+    {
+      "content_hash": "1c221bbc22cca55ee74014d77cc1881c99f4e44f0370e402fe63824bcc2471de",
+      "heading": "Phase 5: UX 自己評価",
+      "position": 46,
+      "section_id": "DLID-ckx7m1jqnmhk"
+    },
+    {
+      "content_hash": "21ee73bce41e2ae6b1fac22ab5e0a201f972a54efef621764911b3579298ff00",
+      "heading": "6.6 完了案内",
+      "position": 60,
+      "section_id": "DLID-3h4rd9h8p2j6"
+    },
+    {
+      "content_hash": "22444292c3d25dcee6cc308da8819ad603723d1d3aa9b2a33e5eb6f541aed633",
+      "heading": "Phase 2: デザイン方向性の決定",
+      "position": 18,
+      "section_id": "DLID-hywyja6mxbdc"
+    },
+    {
+      "content_hash": "22c2795f5f3a367928cd9e5cbd62c65084346aee5003e8a182dd3422477e92d2",
+      "heading": "UX/UI デザイン創造ワークフロー",
+      "position": 0,
+      "section_id": "DLID-am88frpvnh5j"
+    },
+    {
+      "content_hash": "23c55144417b9a5b3cbd9639fce2771ff505ec88397d8345b40c1ac4a988a880",
+      "heading": "6.4 specs ToC 更新",
+      "position": 58,
+      "section_id": "DLID-eashsr7j455k"
+    },
+    {
+      "content_hash": "2a579bc7bb692e008f0e95553ef8b2b5186d7e6119bbcbffb0ce2cd85f34f8af",
+      "heading": "2.3 参照文化の収集",
+      "position": 21,
+      "section_id": "DLID-2xt4ecc4kv26"
+    },
+    {
+      "content_hash": "3261f7fecc74c82d879c481d55b26d73836ef85ceb3816d552375da2e3b2bff5",
+      "heading": "Phase 3: デザイントークン創造",
+      "position": 25,
+      "section_id": "DLID-5dyepk3gj9zh"
+    },
+    {
+      "content_hash": "3b6b003f66ce27e344107900a3c348fb51ec6b9ca55f365191edffdf0955edf3",
+      "heading": "4.2 コンポーネントの命名",
+      "position": 39,
+      "section_id": "DLID-qygqa9rc3asf"
+    },
+    {
+      "content_hash": "416ef6281e23087cebf4c28ad555512ebd948e4540f1dcaff1148576dec119ea",
+      "heading": "対話の基本原則",
+      "position": 61,
+      "section_id": "DLID-1p0vnbmtygdj"
+    },
+    {
+      "content_hash": "42f973c9dbd16dd12b3e29dfd0546fcd4d505d609e6f0e5a556b478848658f73",
+      "heading": "1.4 ルール文書の取得",
+      "position": 11,
+      "section_id": "DLID-3xpk52fkcphn"
+    },
+    {
+      "content_hash": "4324f7a0dc6255d0ef047307e243761a21e504e56233f9e33a99152fe14de02d",
+      "heading": "1.2 要件からの情報整理",
+      "position": 9,
+      "section_id": "DLID-hd4jgxex9cnq"
+    },
+    {
+      "content_hash": "44da935555fb6be1d48cbf361110ae93b0bb90d2ae774a6714e80a2dfeafc90a",
+      "heading": "2.2 ブランドの緊張軸を定義",
+      "position": 20,
+      "section_id": "DLID-n04katf247gn"
+    },
+    {
+      "content_hash": "471768a6f4ba385583743964f86eef42f1b615802d24b0f3e76648e07114c3eb",
+      "heading": "アンチパターン",
+      "position": 66,
+      "section_id": "DLID-tnw91zfwsn8k"
+    },
+    {
+      "content_hash": "4777e1b172194a7521e87ab0cf15012b7d963f8fa55deed45eea4290514dcb0c",
+      "heading": "2.1 アプリの性格分析",
+      "position": 19,
+      "section_id": "DLID-7jef1f27j4qr"
+    },
+    {
+      "content_hash": "4a6c5225cb8459eaab5068d3d0c937a95dd61038ed7e42a5b869e1f966c73613",
+      "heading": "2.0.4 確定結果の保持",
+      "position": 16,
+      "section_id": "DLID-6kjadrnext23"
+    },
+    {
+      "content_hash": "5b6e64293322f1f8ed3d56f79e2c0f55757043965ab5099df9d029709b8a1047",
+      "heading": "Phase 別の知識取得（query-forge-rules 経由）",
+      "position": 4,
+      "section_id": "DLID-and90t5gyj7d"
+    },
+    {
+      "content_hash": "5ccb3fe602405641357ed9bcc661260d4a3df7dff96df3be5c26b27eb9451d5b",
+      "heading": "4.6 ユーザー確認",
+      "position": 45,
+      "section_id": "DLID-1jkcxqrf0rjs"
+    },
+    {
+      "content_hash": "63da2b60885533a27cb71d0274fe462ca0d2f3dc4943e0c3e1eb677db25383db",
+      "heading": "5.2 Dieter Rams チェック",
+      "position": 48,
+      "section_id": "DLID-z0n35rm2mv86"
+    },
+    {
+      "content_hash": "66411f17b9a0f4934437d649b297933676f634225610194f65f8d1a148de359f",
+      "heading": "3. 段階的な提示",
+      "position": 64,
+      "section_id": "DLID-vjy8yh8rahn3"
+    },
+    {
+      "content_hash": "6c3202126283048abf374536ac3810b545593cdb9036c1659c52136f2c168a16",
+      "heading": "本スキルの位置づけ",
+      "position": 1,
+      "section_id": "DLID-wrfa3wqcmz0n"
+    },
+    {
+      "content_hash": "6d46884999f9f4b54d39947ae638b8989868c1c28390227026329354246ac0c8",
+      "heading": "6.1 文書ファイルの生成",
+      "position": 55,
+      "section_id": "DLID-y8hd8ej6717k"
+    },
+    {
+      "content_hash": "72e1419c1012cbd1cf21f30433e845fd329b5a8bc5b3c3b7ab70d03445b8350a",
+      "heading": "3.4 角丸・シャドウの設計",
+      "position": 32,
+      "section_id": "DLID-b6wbf37cy9rw"
+    },
+    {
+      "content_hash": "74cf395d130ff3f8ddc4149d21f27d3c6b42323b9e25520414cf9313cde244f4",
+      "heading": "コンテキスト管理",
+      "position": 2,
+      "section_id": "DLID-bzjch8rw131d"
+    },
+    {
+      "content_hash": "779f7863680363a5b82727c1dfbe97e4da0a2eff56ab491217f558e00d49a6bc",
+      "heading": "変換例",
+      "position": 38,
+      "section_id": "DLID-er4hevpz2v0t"
+    },
+    {
+      "content_hash": "82baed982c1d39f33c528c4f652a5ca2309d183ce3cee3f244de6393ca8da5c2",
+      "heading": "1. 視覚的な提示",
+      "position": 62,
+      "section_id": "DLID-7r01eb6tgqf2"
+    },
+    {
+      "content_hash": "83bc16ca9083a603915da5fedf0708f3966024ace9e25d9cb9c49c7dc0e3bb2c",
+      "heading": "2. 設計根拠の明示",
+      "position": 63,
+      "section_id": "DLID-8qz6xzhfpj49"
+    },
+    {
+      "content_hash": "8babcb501934ab72e67a01ea1041bcb0e469f9598555d39f6a2669ed3afa335e",
+      "heading": "1.1 要件定義書の取得",
+      "position": 8,
+      "section_id": "DLID-shx9ntm77tvc"
+    },
+    {
+      "content_hash": "91a1cacd638695677deb7a96fd88ab378570409f060bd60c3673eb6be450fcb5",
+      "heading": "3.6 トークン品質検証",
+      "position": 34,
+      "section_id": "DLID-23dhc8nd7rmd"
+    },
+    {
+      "content_hash": "92e403fbe5fa8ddf77c0084b50b279d38067367627931aaa4368e4a604b043ae",
+      "heading": "3.3 スペーシングの設計",
+      "position": 31,
+      "section_id": "DLID-6qdarc86t2g1"
+    },
+    {
+      "content_hash": "9465c0be6ed2530259d8e59867f237bcce12f3a1d622186e9eaf667790900de7",
+      "heading": "Phase 2.0: Design Intent の取得",
+      "position": 12,
+      "section_id": "DLID-b90ngwvshbgk"
+    },
+    {
+      "content_hash": "9490ca8368e0252939279dd8cd1a3c73a668da2f9ea6493051e95925a585870f",
+      "heading": "4.5 署名要素の配置確認",
+      "position": 44,
+      "section_id": "DLID-wpz0292grfzd"
+    },
+    {
+      "content_hash": "953cab3f45714a04c75036b57d7c8e1eefe66a721250a7f2590ea4d077607292",
+      "heading": "2.0.2 取得する構造",
+      "position": 14,
+      "section_id": "DLID-00d0zzv6v8nm"
+    },
+    {
+      "content_hash": "9e1f1d321ed7963a7a2b423d628e392fbff32f4b1e99794999f0544b131fa510",
+      "heading": "Phase 1: 要件の読み込み",
+      "position": 7,
+      "section_id": "DLID-r41ek9c27snr"
+    },
+    {
+      "content_hash": "a0ee0878759c3ca2c4b178858c6278e3b12f2f6032e985f0d0b0e5906197dce0",
+      "heading": "Light / Dark Mode",
+      "position": 29,
+      "section_id": "DLID-57sqyjndqcn5"
+    },
+    {
+      "content_hash": "a980de23a0de6b7baacdf11fdf080880810daa6a89b165aeeea7f466c22f2b96",
+      "heading": "2.0.5 参照画像ディレクトリの扱い（任意）",
+      "position": 17,
+      "section_id": "DLID-nqpfb5n785v3"
+    },
+    {
+      "content_hash": "b341a0ab1a7d846eb22287a13d3769c96ecda59ee6d8058d4215fab536349dce",
+      "heading": "5.5 評価サマリーの提示",
+      "position": 53,
+      "section_id": "DLID-2786ymxnszj1"
+    },
+    {
+      "content_hash": "b5c0899c0eeb181d2e761032ffb6b91ee0880bb51097cb41303ab911810642b0",
+      "heading": "2.6 方向性の確定",
+      "position": 24,
+      "section_id": "DLID-mcvey4gr67sj"
+    },
+    {
+      "content_hash": "b7de439980eeb2f136ac46702932901de1a837e49a8cb6697417279f42a94d3c",
+      "heading": "6.5 commit/push 確認",
+      "position": 59,
+      "section_id": "DLID-2qs967p4jnxr"
+    },
+    {
+      "content_hash": "b83104698b180c60b4503f9734c69d9f121ce462c6080b6fc9529274e58f3871",
+      "heading": "3.1 カラーパレットの設計",
+      "position": 26,
+      "section_id": "DLID-a3x0ectvfbwz"
+    },
+    {
+      "content_hash": "bb01424345a5bc774d0234ffe5de4b0168da168a734f18153714825730ad1e1f",
+      "heading": "2.0.3 ユーザー確認",
+      "position": 15,
+      "section_id": "DLID-tke8fb0xzez4"
+    },
+    {
+      "content_hash": "c4564c3844d230ffce3a7778783ca3ca070fffd7ef6548a4bbd97bc86beff173",
+      "heading": "6.2 AI レビュー実施",
+      "position": 56,
+      "section_id": "DLID-ndckerr4v995"
+    },
+    {
+      "content_hash": "c52cd343aac056e8e712aa8990dd4426f7bc367a69658a12f1376ce7910d6ba0",
+      "heading": "5.3 HIG / Nielsen / Gestalt チェック",
+      "position": 49,
+      "section_id": "DLID-19gyw1bbzast"
+    },
+    {
+      "content_hash": "c7ef4cd61027e6bf6d3ef9f3b2e4d5c65993b010bb9b43821d809a63a145213c",
+      "heading": "5.4 Distinctiveness / Memorability チェック",
+      "position": 50,
+      "section_id": "DLID-6t6q0anqzhfx"
+    },
+    {
+      "content_hash": "c856e0176703ba50daaa8db8f7256de9abdf562a27e901e3825f8183e91bd62d",
+      "heading": "2.0.1 取得優先順",
+      "position": 13,
+      "section_id": "DLID-eggc7g6db33h"
+    },
+    {
+      "content_hash": "ca723178cfba2a63506df1edeb44e5205c35af8c5b9ac6d7aab6ce153b2ed3d5",
+      "heading": "Semantic Colors",
+      "position": 28,
+      "section_id": "DLID-vrqargp5xyy9"
+    },
+    {
+      "content_hash": "cd1c60203395884691533169dd96b22b9267e59c1207e9bed1cf0cbabf4a4a2d",
+      "heading": "3.7 ユーザー確認",
+      "position": 35,
+      "section_id": "DLID-wg0wtagpm463"
+    },
+    {
+      "content_hash": "d94d85409c2170de515dabbca856d76fc05fa6b7b3f8de29d25355f90998c23e",
+      "heading": "実行フロー概要",
+      "position": 5,
+      "section_id": "DLID-q58rxytsssrp"
+    },
+    {
+      "content_hash": "d9dd057bbca1b04f342b4bd2f4368d7b1ab7ee4154070b553100159ebf413c62",
+      "heading": "2.5 デザイン方向性の提案",
+      "position": 23,
+      "section_id": "DLID-azt7m8cfmazq"
+    },
+    {
+      "content_hash": "dbcfbdd7c87545b5b7adf9f69788d76f93e05c6a77de95a1821aa25fb73ca87a",
+      "heading": "macOS 固有の状態",
+      "position": 42,
+      "section_id": "DLID-wpncw3kepsba"
+    },
+    {
+      "content_hash": "df248b5266dd7eed40444f1100498e09450e244e55b2579983a5625ce8afe631",
+      "heading": "拡張指標（参照画像ディレクトリが存在する時のみ）",
+      "position": 52,
+      "section_id": "DLID-s5frmq45jv2j"
+    },
+    {
+      "content_hash": "e16cd1894d5d11803a6222da19eadddf25c9a5bb8ea6f8e56ea4d53515c2007d",
+      "heading": "5.1 Don Norman 3 層チェック",
+      "position": 47,
+      "section_id": "DLID-pwqcf9secd1s"
+    },
+    {
+      "content_hash": "e3b575c851e81221f82b202a609d7264eca776323dc236a614e70159884e4cfa",
+      "heading": "iOS 固有の状態",
+      "position": 41,
+      "section_id": "DLID-5vd18j1r81c8"
+    },
+    {
+      "content_hash": "e742c96eb57b65e62ada76b2be7a65f7b92ad72457c39cefdc3ed829399284ba",
+      "heading": "2.4 デザイン provocation の生成",
+      "position": 22,
+      "section_id": "DLID-mg9c7gt44q1v"
+    },
+    {
+      "content_hash": "f4ccb4195ac28b5195d17d75ca235ba916141da8d1d82d99d0b355d0a971b0b1",
+      "heading": "Phase 4: コンポーネント視覚設計",
+      "position": 36,
+      "section_id": "DLID-s4qgbzr91494"
+    },
+    {
+      "content_hash": "fa3dc89c695be7474a00c603e39badf119889928625a36d89a4fca0a642b2151",
+      "heading": "3.2 タイポグラフィの設計",
+      "position": 30,
+      "section_id": "DLID-6cqc2nwvsedd"
+    },
+    {
+      "content_hash": "fad18b74cd57fa99e56fbe0253a5c99bec2286a63c84c85b68931f3362a3efc8",
+      "heading": "4.4 UX ノートの付与",
+      "position": 43,
+      "section_id": "DLID-zpr041e7ez66"
+    },
+    {
+      "content_hash": "fd08bea92b8b25e9bc22a9ce5aa05f0c926ddad9943253e08d3c67d4665b7c7a",
+      "heading": "4.1 ASCII アートからの変換",
+      "position": 37,
+      "section_id": "DLID-683sa8jzmthw"
+    }
+  ],
   "summary": [
     "Positioning of the skill between requirements and technical design, with inputs (requirements with ASCII screen specs) and outputs (THEME, CMP, UXEVAL documents)",
     "Context management: per-phase knowledge retrieval via rules query, resident design philosophy, no agent isolation",

@@ -1,4 +1,5 @@
 {
+  "applied_hash": "0b7187e6bfc6c8dae89442228afcc5830f70a26dd362b7bf41b4a00c6642db2f",
   "content_hash": "0b7187e6bfc6c8dae89442228afcc5830f70a26dd362b7bf41b4a00c6642db2f",
   "doc_link_id": "DLID-0zyw4hj937y9",
   "keywords": [
@@ -13,8 +14,211 @@
     "create_issue",
     "What/How boundary"
   ],
+  "last_check": {
+    "checked_at": "2026-11-25T03:43:00+00:00",
+    "result": "success"
+  },
   "path": "plugins/forge/docs/criteria/review_criteria_design.md",
   "purpose": "Defines the design review criteria: delegated SSOT documents by priority, the check order including frontmatter, ADR and exclusion rules, and the rules for fix, create_issue or skip recommendations.",
+  "references": [
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/additive_development_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 4,
+      "recorded_content_hash": "3be39e634c1c",
+      "recorded_path": "../additive_development_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-cyrk9xr8vcap",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/adr_format.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 6,
+      "recorded_content_hash": "3a31a2d6bfe3",
+      "recorded_path": "../adr_format.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-ns59za8fens1",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/adr_principles_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 7,
+      "recorded_content_hash": "1fb15e199859",
+      "recorded_path": "../adr_principles_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-45wzpggz1set",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/design_method.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 3,
+      "recorded_content_hash": "157820b1afb7",
+      "recorded_path": "../design_method.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-pdvdjb49qpr4",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/design_principles_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 2,
+      "recorded_content_hash": "e590554be385",
+      "recorded_path": "../design_principles_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-061pwjejh6yc",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/deterministic_generation_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 9,
+      "recorded_content_hash": "75383cc8c6d8",
+      "recorded_path": "../deterministic_generation_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-tm2m7nv23dqd",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/document_style_guide.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 8,
+      "recorded_content_hash": "335c3c0eb320",
+      "recorded_path": "../document_style_guide.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-c59znr7b8f56",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/frontmatter_format.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 5,
+      "recorded_content_hash": "867507803b4a",
+      "recorded_path": "../frontmatter_format.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-jtc4qnjwbdxf",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/review_priorities_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 0,
+      "recorded_content_hash": "458b42b8deb4",
+      "recorded_path": "../review_priorities_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-dcec6pr177c9",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/spec_design_boundary_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 1,
+      "recorded_content_hash": "e0d1a83f7e47",
+      "recorded_path": "../spec_design_boundary_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-h9h90g9wcy8f",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/spec_priorities_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 10,
+      "recorded_content_hash": "b68b930cec1d",
+      "recorded_path": "../spec_priorities_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-f9ny9e932trv",
+      "target_section_id": null
+    }
+  ],
+  "sections": [
+    {
+      "content_hash": "249e7e4d462929a281fd0cd3c41ef06067cd3777f034211fa3e179a9e548fb53",
+      "heading": "`recommendation: create_issue` の 3 条件",
+      "position": 4,
+      "section_id": "DLID-4zngvb3407g1"
+    },
+    {
+      "content_hash": "3a701b51af3583bd0d8cfcd059a3a74bce82036e49e76678eb1727f43493062c",
+      "heading": "3. 判定ルール",
+      "position": 3,
+      "section_id": "DLID-e7ps4egzqzbe"
+    },
+    {
+      "content_hash": "3edd1d83e35721b2af7574a4cd145b11f8e6ab3e7d037643d85de8ba84b792be",
+      "heading": "2. チェック順",
+      "position": 2,
+      "section_id": "DLID-m1g06w2rhhgp"
+    },
+    {
+      "content_hash": "480e6ba29ab8c69c3feeff5d1c8c04c05fac183ae3027d55e1b79c0b03ef1c85",
+      "heading": "design レビュー基準",
+      "position": 0,
+      "section_id": "DLID-nn6q8w6wjj17"
+    },
+    {
+      "content_hash": "d0b0d8116187f70310b33f2a1da9aa96b48f93edb28d56c004c8d55ab9ae5792",
+      "heading": "1. SSOT参照",
+      "position": 1,
+      "section_id": "DLID-ewtb84tz9xk9"
+    }
+  ],
   "summary": [
     "Header stating the SoT is the review priorities spec and that severity comes from delegated principles",
     "SSOT reference table of P1/P2/P3 delegated documents for design review",

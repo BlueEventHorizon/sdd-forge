@@ -1,4 +1,5 @@
 {
+  "applied_hash": "d88087d2cf223f44533f61ddcdeb2648c8f532769fc88cbc1bc8451a097546c8",
   "content_hash": "d88087d2cf223f44533f61ddcdeb2648c8f532769fc88cbc1bc8451a097546c8",
   "doc_link_id": "DLID-2ftdsh6ppjsj",
   "keywords": [
@@ -12,8 +13,81 @@
     "location path line",
     "execution"
   ],
+  "last_check": {
+    "checked_at": "2026-11-25T03:43:00+00:00",
+    "result": "success"
+  },
   "path": "plugins/forge/skills/consult/docs/dialogue_revision_handling.md",
   "purpose": "Defines how the consult skill is used for dialogue-based revision, where decisions are applied on the spot, including console and HTML display, list format, current-topic format, recording, and execution.",
+  "references": [],
+  "sections": [
+    {
+      "content_hash": "090a8d8a9a6297bd45270328edda444f997c2474c4b3978c55443b875a1dc248",
+      "heading": "2. 表示の手段",
+      "position": 2,
+      "section_id": "DLID-nexj3bdavtay"
+    },
+    {
+      "content_hash": "18b71c69415b971ecf0350003ae78dae2b3201682e8e9bf4c7f9e275ac7f4448",
+      "heading": "4. 論点が 1 つのとき",
+      "position": 7,
+      "section_id": "DLID-8jw7mdqe8rfc"
+    },
+    {
+      "content_hash": "3ab3bdc6462b00ad8758eea766cf88408afb008d5153747499a3c2cd0c7393e4",
+      "heading": "5. 提示状態の置き場",
+      "position": 8,
+      "section_id": "DLID-8hvgcdvndqxe"
+    },
+    {
+      "content_hash": "4c040f312d70a1ce72d6151c8b7291fed5b36a9fd7a69a719b4d02f5c8f7708c",
+      "heading": "6. 記録",
+      "position": 9,
+      "section_id": "DLID-xq37t0t0r1b5"
+    },
+    {
+      "content_hash": "4e0918c8df347596e6f579a20876334d15f3124ae35f653b4f7f583a66f1fce2",
+      "heading": "1. 入力",
+      "position": 1,
+      "section_id": "DLID-4rkdzdb32qpg"
+    },
+    {
+      "content_hash": "864a4249edaccec8c22e67bc2e2be9049d1d9e4462d76e495ef7a4b2dde86526",
+      "heading": "3.3 その他",
+      "position": 6,
+      "section_id": "DLID-7f8h9pe606ad"
+    },
+    {
+      "content_hash": "b38235e5158313d6305ac1e9ed881f5536e2331e9ed6d597ac0476bad96648bf",
+      "heading": "対話による修正の手順",
+      "position": 0,
+      "section_id": "DLID-r6w459a7wy5h"
+    },
+    {
+      "content_hash": "bf93bda70edca5c57c694bf05281eff89aaa517285e76e2b69ee890b7b21edf1",
+      "heading": "3.1 一覧",
+      "position": 4,
+      "section_id": "DLID-m03zw0bhtzav"
+    },
+    {
+      "content_hash": "d4bd1c7dcd461089db59a7a296631e24a8e17370643492e68d263c1aa38ec0b6",
+      "heading": "3.2 いまの論点",
+      "position": 5,
+      "section_id": "DLID-2gpt4ccz6gg6"
+    },
+    {
+      "content_hash": "df5418fb3d5bc686938b451ebbda5f2bb4aadbcd534b5c9d7900576fc16a9900",
+      "heading": "7. 実行と結果",
+      "position": 10,
+      "section_id": "DLID-ma8sdtwqm0va"
+    },
+    {
+      "content_hash": "e5c18d005d86371785279a457af14ce4a2f9c4bfb1549e385a39980522d7c403",
+      "heading": "3. コンソールの書き方",
+      "position": 3,
+      "section_id": "DLID-xtk6kf099y6v"
+    }
+  ],
   "summary": [
     "Input is the conversation context; consult extracts topics from it",
     "Display roles split between console (overview) and HTML (details); the HTML script does not exist yet",

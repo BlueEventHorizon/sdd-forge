@@ -1,4 +1,5 @@
 {
+  "applied_hash": "fa4854482b2e98e5e2926d17f59a294a773757b6ed3526e9181aba338ec65dec",
   "content_hash": "fa4854482b2e98e5e2926d17f59a294a773757b6ed3526e9181aba338ec65dec",
   "doc_link_id": "DLID-31c3mp46a5p2",
   "keywords": [
@@ -12,8 +13,121 @@
     "recommendation",
     "plan.json"
   ],
+  "last_check": {
+    "checked_at": "2026-11-25T03:43:00+00:00",
+    "result": "success"
+  },
   "path": "plugins/forge/docs/criteria/review_criteria_plan.md",
   "purpose": "Defines the review criteria for plan documents (plan.json): which delegated SSOT documents to check, in what order, and how to decide recommendations.",
+  "references": [
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/additive_development_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 2,
+      "recorded_content_hash": "3be39e634c1c",
+      "recorded_path": "../additive_development_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-cyrk9xr8vcap",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/frontmatter_format.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 3,
+      "recorded_content_hash": "867507803b4a",
+      "recorded_path": "../frontmatter_format.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-jtc4qnjwbdxf",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/plan_principles_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 1,
+      "recorded_content_hash": "33e1e8046cdc",
+      "recorded_path": "../plan_principles_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-t8jcg5jkb5mj",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/review_priorities_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 0,
+      "recorded_content_hash": "458b42b8deb4",
+      "recorded_path": "../review_priorities_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-dcec6pr177c9",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/spec_priorities_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 4,
+      "recorded_content_hash": "b68b930cec1d",
+      "recorded_path": "../spec_priorities_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-f9ny9e932trv",
+      "target_section_id": null
+    }
+  ],
+  "sections": [
+    {
+      "content_hash": "1ecdfba368ade0be84f6deb27fe4c91e188a172cb8e90a3af14ae23d80d3b96c",
+      "heading": "plan レビュー基準",
+      "position": 0,
+      "section_id": "DLID-yk277h9z9t3b"
+    },
+    {
+      "content_hash": "2676bc28ddaf91de8ca29bd7bd1094b3819e9e2721961bb51d9584dceac38b35",
+      "heading": "`recommendation: create_issue` の 3 条件",
+      "position": 4,
+      "section_id": "DLID-8ey9p7zpj0m8"
+    },
+    {
+      "content_hash": "3dfc4c2bb287e1399798ef15bf4d950919edd0053281bd3d69bd2886bda70cdb",
+      "heading": "3. 判定ルール",
+      "position": 3,
+      "section_id": "DLID-8yw9833k97tn"
+    },
+    {
+      "content_hash": "9be1ca525b9040b9d7495f71dc7c2cf9220b0463d4a4fce68a67ab3011e2febe",
+      "heading": "1. SSOT参照",
+      "position": 1,
+      "section_id": "DLID-n3jvsdm4v0j1"
+    },
+    {
+      "content_hash": "d6226fb9ec32c9f12f94c70befb62fb9579d1bdb5c21bec08085ae968dd45c61",
+      "heading": "2. チェック順",
+      "position": 2,
+      "section_id": "DLID-a05t66c2p4ec"
+    }
+  ],
   "summary": [
     "Lists delegated SSOT documents for P1 rule matching with priorities and roles",
     "Defines the check order across P1 rule conformance, P2 contradiction, and P3 needless complexity",

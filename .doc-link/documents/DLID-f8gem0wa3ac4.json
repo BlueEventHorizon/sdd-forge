@@ -1,4 +1,5 @@
 {
+  "applied_hash": "59241ebe17cb669fbd04970e15648e8a55a1c3847350a51814f14f614f9ac67f",
   "content_hash": "59241ebe17cb669fbd04970e15648e8a55a1c3847350a51814f14f614f9ac67f",
   "doc_link_id": "DLID-f8gem0wa3ac4",
   "keywords": [
@@ -13,8 +14,430 @@
     "result inspection",
     "REQ-034"
   ],
+  "last_check": {
+    "checked_at": "2026-11-25T02:44:01+00:00",
+    "result": "success"
+  },
   "path": "docs/specs/start-implement/design/DES-088_start_implement_design.md",
   "purpose": "Design document for the start-implement skill: defines responsibilities, behaviors, contracts and algorithms that realize REQ-034 for orchestrating task implementation, review, state transitions and error handling.",
+  "references": [
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/rules/forge_agent_data_exchange_rules.md",
+        "result": "match",
+        "scope": "docs/rules"
+      },
+      "kind": "document",
+      "position": 1,
+      "recorded_content_hash": "d359747d755f",
+      "recorded_path": "../../../rules/forge_agent_data_exchange_rules.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-7zh3q09p2acs",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/rules/plugin_claude_code_authoring_guide.md",
+        "result": "match",
+        "scope": "docs/rules"
+      },
+      "kind": "document",
+      "position": 2,
+      "recorded_content_hash": "65302c63b0e1",
+      "recorded_path": "../../../rules/plugin_claude_code_authoring_guide.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-pvwk8en5c2rq",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/rules/plugin_implementation_guidelines.md",
+        "result": "match",
+        "scope": "docs/rules"
+      },
+      "kind": "document",
+      "position": 5,
+      "recorded_content_hash": "231d1a822305",
+      "recorded_path": "../../../rules/plugin_implementation_guidelines.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-jzs5n6cre1jh",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/rules/plugin_script_error_output_rules.md",
+        "result": "match",
+        "scope": "docs/rules"
+      },
+      "kind": "document",
+      "position": 3,
+      "recorded_content_hash": "f1c5b6752ce7",
+      "recorded_path": "../../../rules/plugin_script_error_output_rules.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-fz66nns8q521",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/specs/forge/design/DES-074_plan_format_design.md",
+        "result": "match",
+        "scope": "docs/specs/forge/design"
+      },
+      "kind": "document",
+      "position": 4,
+      "recorded_content_hash": "2f1bdcf996ea",
+      "recorded_path": "../../forge/design/DES-074_plan_format_design.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-42wh7646hjhq",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/specs/start-implement/requirements/REQ-034_start_implement_spec.md",
+        "result": "match",
+        "scope": "docs/specs/start-implement/requirements"
+      },
+      "kind": "document",
+      "position": 0,
+      "recorded_content_hash": "8c2f9a2476da",
+      "recorded_path": "../requirements/REQ-034_start_implement_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-ypd7r1j5ga4n",
+      "target_section_id": null
+    }
+  ],
+  "sections": [
+    {
+      "content_hash": "0c59d05c3cd3b34b8fb5aa9062bff3bb1cdd12ef380054c4d3d718d1a7b7359c",
+      "heading": "並行文書判定（種別: Script）",
+      "position": 28,
+      "section_id": "DLID-9c3ejst78wra"
+    },
+    {
+      "content_hash": "10959415a17e7f07c44d48e9c634611504a141b8617a3f032eb50a701b2a724f",
+      "heading": "4.7 計画書の検査（SC-25）",
+      "position": 13,
+      "section_id": "DLID-hra0za8q8gek"
+    },
+    {
+      "content_hash": "22bc6b55c664272d59e91ebab0e89d46b446f3af4ca8356eedd614671c6a44ff",
+      "heading": "2. シナリオ表",
+      "position": 2,
+      "section_id": "DLID-37kff0mb98wh"
+    },
+    {
+      "content_hash": "2371ed73d5ca7287703ac893164407cb1970c82b9c1bcc1883543a090ae2bf28",
+      "heading": "並列実行の独立の確認（オーケストレータ）",
+      "position": 47,
+      "section_id": "DLID-tr2nstfh0phm"
+    },
+    {
+      "content_hash": "24500e220474ed67c87380f64bdaf03db0de19e423817b7de847cd995e4b4c9a",
+      "heading": "結果検査（種別: Script）",
+      "position": 26,
+      "section_id": "DLID-pshz3rxz9rth"
+    },
+    {
+      "content_hash": "27f2d1b35114312c1d97fe90c45b6af109162789add2f86b65d461138bf5c89f",
+      "heading": "レビュー依頼（種別: SKILL。`/forge:review` を起動する）",
+      "position": 27,
+      "section_id": "DLID-9drd652j7kn3"
+    },
+    {
+      "content_hash": "2f00ef39203b753da394b38091994771f104499abf944707238853094863d149",
+      "heading": "3.1 クラス定義",
+      "position": 4,
+      "section_id": "DLID-nkcyzm5c8jmg"
+    },
+    {
+      "content_hash": "2fe075f9173984a53cc345410912143717fb1923779ecc7445b2e32bca08e1a5",
+      "heading": "executor agent（種別: AI）",
+      "position": 25,
+      "section_id": "DLID-vvaktvb6jjx6"
+    },
+    {
+      "content_hash": "3519a87515723d8de248da3375a8b36a278090c2f5f31ae5e8bdfa7e028038bf",
+      "heading": "6.5 動作の原理",
+      "position": 49,
+      "section_id": "DLID-jp159vc8bqkb"
+    },
+    {
+      "content_hash": "3631e9d6e9eeea3a575bc98f78d45d65065337b0d84b8effb977de886926535f",
+      "heading": "4.6 完了後（SC-24）",
+      "position": 12,
+      "section_id": "DLID-kvk757yk9gc9"
+    },
+    {
+      "content_hash": "39a6ad187adddb008edfe850240fbc1ea350837f10e967d45c1b0123974dd560",
+      "heading": "計画書検査（種別: Script。呼び出し元: `/forge:start-plan`）",
+      "position": 21,
+      "section_id": "DLID-x0emvmhj5e6w"
+    },
+    {
+      "content_hash": "3a656dec528aa522620999b8ce5ddf8bbf916a9cca6790bac96d5187219eec4d",
+      "heading": "4.5 エラーと再実行（SC-11・13・15・16・23）",
+      "position": 11,
+      "section_id": "DLID-r5hre426j119"
+    },
+    {
+      "content_hash": "412f29f739f06bb2100876e1a213fd64da024f99eb1027170b55cd7869797ebf",
+      "heading": "4.2 準備と実装（SC-07〜11）",
+      "position": 8,
+      "section_id": "DLID-sfvdq4httb6b"
+    },
+    {
+      "content_hash": "41b34ffb480c53bb31466d0929ebb9402550edc96712a1cbdbcb00a040dc017a",
+      "heading": "範囲導出（種別: AI と Script の併用）",
+      "position": 23,
+      "section_id": "DLID-2fjsc14r9qws"
+    },
+    {
+      "content_hash": "4324e993ed6cb59bffb772f619c486f71d86b13d613e8071987f4e525f09049d",
+      "heading": "3. 責務",
+      "position": 3,
+      "section_id": "DLID-0ptcrsakz8r0"
+    },
+    {
+      "content_hash": "4ff80efe9dfc544f7ded84954f6c86089c2fb0144ebcc90c2a7c9644bcbec682",
+      "heading": "文脈作成（種別: Script）",
+      "position": 24,
+      "section_id": "DLID-6mfv9nqph098"
+    },
+    {
+      "content_hash": "51c3a0fe47a86e5e50fa0c518ab95de84a49cf5837d4b42f75e6cff75bee6e4f",
+      "heading": "状態遷移",
+      "position": 41,
+      "section_id": "DLID-7xn6scmact7n"
+    },
+    {
+      "content_hash": "526b9c0c8a888f50be3023459c68505509c30e227a884b259aefd7657ad6661e",
+      "heading": "タスク選択（種別: Script）",
+      "position": 19,
+      "section_id": "DLID-vq1k331dghzn"
+    },
+    {
+      "content_hash": "557598af9eb05c016054833310df617abef6228c327efa278ec8d66006e3656f",
+      "heading": "必読収集の土台",
+      "position": 42,
+      "section_id": "DLID-216c95kf63wz"
+    },
+    {
+      "content_hash": "663664f1913643ae0ea3e7ec6af84037ce70b42600600a961cf08ac72d76380c",
+      "heading": "5.2 モジュール表",
+      "position": 16,
+      "section_id": "DLID-frtgdfbp7q7f"
+    },
+    {
+      "content_hash": "6ac1e7fc00cfa4fee3f509cb843bda4eccbc21e1584ae3dd7ac82cb5152ec218",
+      "heading": "6.3 アルゴリズム",
+      "position": 38,
+      "section_id": "DLID-d84vr5bqpr5c"
+    },
+    {
+      "content_hash": "7007f21fea9a18e5f6f0608dca6eea29317f4fa88f6a5a2a77ab9b9a6c5a0e1c",
+      "heading": "6. 詳細設計",
+      "position": 30,
+      "section_id": "DLID-phzkga11f0m6"
+    },
+    {
+      "content_hash": "75f93ac57c4d731c4c734e5a1a210052a3229c672a2270be41d67b1434dc531b",
+      "heading": "DES-088 start-implement 設計書",
+      "position": 0,
+      "section_id": "DLID-k8em0s5qymnt"
+    },
+    {
+      "content_hash": "78c74ba49f29406fbf47829cfee436a3f20f2d875eb2f0b8b8d65491e67b5dd6",
+      "heading": "6.2 データの具体構造",
+      "position": 32,
+      "section_id": "DLID-k4h1tma5w48x"
+    },
+    {
+      "content_hash": "8339329a019f94e88a6abc991825e9f593cb15f82e56722780071c9040e6670b",
+      "heading": "最終確認（オーケストレータ）",
+      "position": 46,
+      "section_id": "DLID-5qtgc7rv7qxw"
+    },
+    {
+      "content_hash": "8e875c8abecca2b04933b6f84f458c3bf2e53d1313254aee8b13442b1270b864",
+      "heading": "6.4 AI で実現する処理の出力スキーマ",
+      "position": 48,
+      "section_id": "DLID-ksjrty2q94h6"
+    },
+    {
+      "content_hash": "8ed49862bb199455ab1fda31e6e4ce2f77638ea3d586b88619add253ce4bd627",
+      "heading": "4.3 グループに属さないタスクの完了（SC-12・13・18〜20）",
+      "position": 9,
+      "section_id": "DLID-m11z81yht912"
+    },
+    {
+      "content_hash": "934b8ad6e5d5e87ed1babf0a7ce52d1a9be1e9c3360050b048b56945b798dc30",
+      "heading": "5.3 AI で実現する処理の約束",
+      "position": 29,
+      "section_id": "DLID-12n3jdgd9s25"
+    },
+    {
+      "content_hash": "9b782ffda35a96153c01ccdc0accbec11146cb26393aeaa662332f994d117862",
+      "heading": "1. 設計の範囲と前提",
+      "position": 1,
+      "section_id": "DLID-1zcdfh1xkhbh"
+    },
+    {
+      "content_hash": "a0b382d25aefe9019eb2819e3665028e7df4d18339c85b4a42515a4120ed437d",
+      "heading": "4.1 起動と選択（SC-01〜07・SC-17・SC-21・SC-27）",
+      "position": 7,
+      "section_id": "DLID-wc1fhxcbc029"
+    },
+    {
+      "content_hash": "aa88791ef46d7cbe132689ab99778189de6f48f9fff1be4bc3005f3e50c52370",
+      "heading": "5. 契約",
+      "position": 14,
+      "section_id": "DLID-qtmtm50gcdkc"
+    },
+    {
+      "content_hash": "b16604caeab7d12d897f0b5b59cdc537aacc1a64a6e6e75dd05bd0896f78e132",
+      "heading": "結果検査",
+      "position": 44,
+      "section_id": "DLID-wtspgge2ev8d"
+    },
+    {
+      "content_hash": "b3328dee29087958c718ccc32288a0b6a8e1e412b9bd8b6204aa82eec8b23d87",
+      "heading": "状態遷移（種別: Script。計画書を書く唯一の処理）",
+      "position": 20,
+      "section_id": "DLID-gkg33z3gpwfa"
+    },
+    {
+      "content_hash": "b422f576270a105b8c3e71f4a57d4310c7569dbd173d3fb34d7f7519bbbb8da0",
+      "heading": "7. 追跡表",
+      "position": 53,
+      "section_id": "DLID-4cv6anzkgrxz"
+    },
+    {
+      "content_hash": "b54dcb6fa149382b28d56e033f31d1ef931c355c09ace760fb8097f1337e98e9",
+      "heading": "起動確認（種別: Script）",
+      "position": 18,
+      "section_id": "DLID-jbxpvjqfr49c"
+    },
+    {
+      "content_hash": "b908eb3e2d6e8655b7d1c9580a2fa1c4fe66d49b5fa9d04b0888916481d29d05",
+      "heading": "計画書",
+      "position": 33,
+      "section_id": "DLID-cta65efx5p4j"
+    },
+    {
+      "content_hash": "b933d5d87e6da594bed858380ebdb871ad6c1f0b39d07f45724969440e37cfda",
+      "heading": "executor agent の結果",
+      "position": 35,
+      "section_id": "DLID-e5ns8gf34cgb"
+    },
+    {
+      "content_hash": "bc0784eb1997963919f451ce83d593b02c72fa61197ff0fcfd0df7fcb6d12364",
+      "heading": "3.2 クラス図",
+      "position": 5,
+      "section_id": "DLID-dfpc9vcxyenj"
+    },
+    {
+      "content_hash": "c2f632d7030a7c620a5a2ad299b3d9c873f8fa0ecf236acbf7c588e6bc174aa1",
+      "heading": "6.6 利用ライブラリ",
+      "position": 50,
+      "section_id": "DLID-64hzhrfc1ryn"
+    },
+    {
+      "content_hash": "c3b724b2104208885ce34cc862de1b41b9ec1bdf203b504fc613c7322e1bc1cb",
+      "heading": "6.8 テスト",
+      "position": 52,
+      "section_id": "DLID-mvnktxf6qvm0"
+    },
+    {
+      "content_hash": "c5bb6b17249f32ec8e61f734336053588306b6d00a47b6b0563b02332f22ba1d",
+      "heading": "5.1 共有データ定義",
+      "position": 15,
+      "section_id": "DLID-xc8cx9awebhb"
+    },
+    {
+      "content_hash": "cdcadffa95c7e795a6bdf6b6f3aeec0da758f007ada68b6952aa76f8e8b3df8e",
+      "heading": "必読収集（種別: Script と検索の併用）",
+      "position": 22,
+      "section_id": "DLID-3s48qnqhv2xf"
+    },
+    {
+      "content_hash": "d8517f3fb4c86bf39e982bc4117d2344793347f036f6028391d5730c3baee24c",
+      "heading": "レビュー依頼",
+      "position": 45,
+      "section_id": "DLID-g9wet62w432m"
+    },
+    {
+      "content_hash": "daafe003d20d6f0cc5ea7f407170766924c132ab491020730622f66f2e6faf64",
+      "heading": "タスク選択",
+      "position": 40,
+      "section_id": "DLID-q1msdqnm74tq"
+    },
+    {
+      "content_hash": "de5565a7f2381e59a605afc4be8d52e3a00749faa748ca52f1fc82f04d52ce19",
+      "heading": "状態の遷移",
+      "position": 39,
+      "section_id": "DLID-bppfx3g8070s"
+    },
+    {
+      "content_hash": "df96dfed1cf15c5615ea1399f68c18b785048a191438b4340875e187c5f2c435",
+      "heading": "起動の状態",
+      "position": 37,
+      "section_id": "DLID-dgz6g7b6g1wd"
+    },
+    {
+      "content_hash": "edca07cf1829e6e988c8196e69a0ad803d915c225371c55c8a25344f77de1d7d",
+      "heading": "選択結果",
+      "position": 36,
+      "section_id": "DLID-ga1nerfvy17e"
+    },
+    {
+      "content_hash": "eea13701980a16f24732ae911ae2d3ed4a2b8ead0a702956c5768fb762e70ecd",
+      "heading": "範囲導出",
+      "position": 43,
+      "section_id": "DLID-se79wabf6zes"
+    },
+    {
+      "content_hash": "ef3fabeac5de1b27da21a335d7e412abc8a3e7f94abcfcc40ac9b2a9773008db",
+      "heading": "オーケストレータ（種別: AI。`/forge:start-implement` の SKILL.md が手順を持つ）",
+      "position": 17,
+      "section_id": "DLID-6reeafejf62y"
+    },
+    {
+      "content_hash": "f061c8c30508aeb5c5598b5aa13a3c8386d522a4156aa9cdb5995cd36cdd5422",
+      "heading": "タスクコンテキスト",
+      "position": 34,
+      "section_id": "DLID-8xh5hbmgewyg"
+    },
+    {
+      "content_hash": "f72b31d50166cf61908922c98cc10372a31fbcf391c0102cdefd9ad669869efb",
+      "heading": "6.1 手段と配置",
+      "position": 31,
+      "section_id": "DLID-x9kmdwcnrtk1"
+    },
+    {
+      "content_hash": "f8100576d1a04faa960a072d052ca7b7f38c4bbc1651fa991e1f6738b0795931",
+      "heading": "6.7 executor agent の編集範囲",
+      "position": 51,
+      "section_id": "DLID-tdx9smapjdqm"
+    },
+    {
+      "content_hash": "fd4763e7a41899c7c7a9103a9710fb35f536fbff3e81c6c98c2eb0b3ef5ebec0",
+      "heading": "4.4 タスクグループの完了（SC-14）",
+      "position": 10,
+      "section_id": "DLID-ac7dd2cp8jz7"
+    },
+    {
+      "content_hash": "fd71c4c069b4e8a6d15117a557f96ec8e5f3681fd4d0b37c00b5ab88853bfbda",
+      "heading": "4. 振る舞い",
+      "position": 6,
+      "section_id": "DLID-mh9z7mc5dfyf"
+    }
+  ],
   "summary": [
     "Scope and premises: realizes REQ-034 requirements, defines task execution unit",
     "Scenario table SC-01 to SC-27 covering startup, selection, execution, review, failure and completion",

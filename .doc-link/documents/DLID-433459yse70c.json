@@ -1,4 +1,5 @@
 {
+  "applied_hash": "0a96a70a0d71d01ed7729e9eb502b6afb07d6eb11463264f89af54fb8c346220",
   "content_hash": "0a96a70a0d71d01ed7729e9eb502b6afb07d6eb11463264f89af54fb8c346220",
   "doc_link_id": "DLID-433459yse70c",
   "keywords": [
@@ -13,8 +14,211 @@
     "presentation state",
     "requirements"
   ],
+  "last_check": {
+    "checked_at": "2026-11-25T02:44:01+00:00",
+    "result": "success"
+  },
   "path": "docs/specs/consult/requirements/REQ-017_consult_skill.md",
   "purpose": "Requirements for the consult skill: dialogue facilitation that conveys topics clearly to users, presents briefs with recommendations and confidence, tracks progress, and obtains user decisions.",
+  "references": [
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "plugins/forge/docs/spec_priorities_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 0,
+      "recorded_content_hash": "b68b930cec1d",
+      "recorded_path": "../../../../plugins/forge/docs/spec_priorities_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-f9ny9e932trv",
+      "target_section_id": null
+    }
+  ],
+  "sections": [
+    {
+      "content_hash": "00f337ded6cce1fe557776ceed98fa4df501157c02a2d1fc34383acab2554b4d",
+      "heading": "FNC-001: consult topic の受領と検証 [MANDATORY]",
+      "position": 9,
+      "section_id": "DLID-1k6rwj364nkv"
+    },
+    {
+      "content_hash": "0793381fbf5e63acf977add58fb9cb42333aee72dec25bc15f3a7187db46e12c",
+      "heading": "1. 概要",
+      "position": 1,
+      "section_id": "DLID-pq7a5hmw6n7r"
+    },
+    {
+      "content_hash": "10e33409304da1dac4b426c20e795a79865a4c0b65b3a4755cf369c037291be0",
+      "heading": "3.2 対象外",
+      "position": 6,
+      "section_id": "DLID-ek8844c3jjc6"
+    },
+    {
+      "content_hash": "1259250248f6a5a25436ebf64805d8849e64c468b23747dba43ea5610b3b42d6",
+      "heading": "1.1 対象システムの性質",
+      "position": 2,
+      "section_id": "DLID-80pbxdczgwkm"
+    },
+    {
+      "content_hash": "15a88aa3994714c2fd6d7ba75bd5c38d6244e7de89c14985e1f196a40aeb59e5",
+      "heading": "FNC-014: consult brief の要旨と推奨案を、consult topic ごとの独立した値として記録する",
+      "position": 21,
+      "section_id": "DLID-kypk9cbr71yt"
+    },
+    {
+      "content_hash": "3596c796f7f9dd044ee70804521903a497dcfde303e55cd9309aa0303708f89c",
+      "heading": "FNC-003: consult brief は、要旨と推奨案の 2 欄とする [MANDATORY]",
+      "position": 11,
+      "section_id": "DLID-je896wq267ex"
+    },
+    {
+      "content_hash": "3688305703678f37ff6133518b0965d27f19c053167f15eaa13bda88ae188d41",
+      "heading": "5. 機能要件",
+      "position": 8,
+      "section_id": "DLID-jzx5j8847av4"
+    },
+    {
+      "content_hash": "46bf6a3ce44d01772b8000f07bdf45d586e4dd43ce196bec12dcf322ec0be519",
+      "heading": "FNC-013: 各 consult topic の直前に consult brief を作り終えてから話しかける [MANDATORY]",
+      "position": 20,
+      "section_id": "DLID-bb5zgbwt1518"
+    },
+    {
+      "content_hash": "4ad8053507867f39d68d38a651e2048ed76ada872a368c85aabeb9542a408afd",
+      "heading": "FNC-007: 質疑応答 [MANDATORY]",
+      "position": 15,
+      "section_id": "DLID-wc6j9x6q1zhs"
+    },
+    {
+      "content_hash": "4bd3d42bbbd134258c552f1da009275d0f83cb8bddd404a1289bc70a1727c46d",
+      "heading": "7. 未確定事項",
+      "position": 29,
+      "section_id": "DLID-yynrjazhvb1x"
+    },
+    {
+      "content_hash": "55c698118785cf9d9dbb4e1f1864141692e6715dc9dc0ffa64d9104713a27245",
+      "heading": "BL-001: 利用者が決めていないことを実行しない [MANDATORY]",
+      "position": 22,
+      "section_id": "DLID-3yrjjddg89ps"
+    },
+    {
+      "content_hash": "59cb6dd02294b74cecdd5279a409cf9fc3592e2befe8d0b7574e23f7d113c37b",
+      "heading": "BL-002: 提示の忠実性 [MANDATORY]",
+      "position": 23,
+      "section_id": "DLID-pzjtfk4cqhjs"
+    },
+    {
+      "content_hash": "674b2e64fe83a6bc8152095edb3bfe81a11e56a518c6286bab8732d7fa91f46b",
+      "heading": "NFR-002: 用途非依存、および review に固有の処理の分離 [MANDATORY]",
+      "position": 26,
+      "section_id": "DLID-rdzfsgbfkw52"
+    },
+    {
+      "content_hash": "81ccdcd346c2d8ca20e9f9a6cccf5f16b236c05baa6bf68167a829bfac315d5b",
+      "heading": "NFR-005: 失敗の可視性",
+      "position": 28,
+      "section_id": "DLID-xks5x9pa6mgc"
+    },
+    {
+      "content_hash": "841f0b0381afe57e96a2d84da940b014381c2aed6bd428c3c6390c957b33aa28",
+      "heading": "NFR-004: 機密情報の非提示 [MANDATORY]",
+      "position": 27,
+      "section_id": "DLID-mcg2thayy8d5"
+    },
+    {
+      "content_hash": "947872665da868a8c31c962dd7f084121997401f3086f28483929204851289ec",
+      "heading": "2. 用語",
+      "position": 3,
+      "section_id": "DLID-xs89h7sy9e8e"
+    },
+    {
+      "content_hash": "9acd6e6d1f9090323b221a57b563fc4e23d45d2108ee3c4112fc4cb4195a4f67",
+      "heading": "3.1 対象",
+      "position": 5,
+      "section_id": "DLID-78hfdwnrctem"
+    },
+    {
+      "content_hash": "9df40e2cbeaf873d12013a30d65a0191d095634da4c9b250d163de05c2325ae6",
+      "heading": "FNC-009: 中断・保留・対象外 [MANDATORY]",
+      "position": 17,
+      "section_id": "DLID-np97d3xgtxjp"
+    },
+    {
+      "content_hash": "a62e1ee7bf979c8a91a11eedaa391937002052eb03ecd6f75c7783ea11821ce2",
+      "heading": "FNC-004: 確信度の明示 [MANDATORY]",
+      "position": 12,
+      "section_id": "DLID-qfn8m7scj7jw"
+    },
+    {
+      "content_hash": "a6debdf484cad7ad30308f994c7ce56c27b9842d94d62630a8656f9f331b0a7f",
+      "heading": "3. スコープ",
+      "position": 4,
+      "section_id": "DLID-sfvy0b0qs8w6"
+    },
+    {
+      "content_hash": "b5d1a8c7c58a35e4c6408a51f5b084af23882f3ea38bfcc35303f3709c8c2f2e",
+      "heading": "NFR-001: 提示状態の置き場は用途ごとに 1 つとする [MANDATORY]",
+      "position": 25,
+      "section_id": "DLID-3h0cxhatz7w5"
+    },
+    {
+      "content_hash": "c08ef7523e6b419c50e6e0d0350f15fcb75e47a9a530b570bada4451d42cef92",
+      "heading": "REQ-017 consult 対話進行スキル要件定義書",
+      "position": 0,
+      "section_id": "DLID-znfqrspp37d6"
+    },
+    {
+      "content_hash": "c366a31243de2decb9c5545d736bc57527d6639c2a1d3a379a01354ae4a0a076",
+      "heading": "FNC-008: 判断の取得 [MANDATORY]",
+      "position": 16,
+      "section_id": "DLID-yjhztv8cbfgk"
+    },
+    {
+      "content_hash": "c491ce9dc3803efecfdc77d7a79cba8e6d2bddf9d5a4931cedef90e807cc6359",
+      "heading": "4. 前提条件",
+      "position": 7,
+      "section_id": "DLID-hk45708dm0w8"
+    },
+    {
+      "content_hash": "d5ce40434ab8e84944972bd90e462327a22b28d446f12caac9727b6ac3fd4888",
+      "heading": "FNC-012: consult brief はメインの claude が作る [MANDATORY]",
+      "position": 19,
+      "section_id": "DLID-jepbam5b5rpm"
+    },
+    {
+      "content_hash": "d95aea29bca85707ab348e18d8dd45da8f1cde9dd868fcaba9d789c0ae3f00c2",
+      "heading": "FNC-010: 決着の主体は利用者 [MANDATORY]",
+      "position": 18,
+      "section_id": "DLID-z9yax57g2wdd"
+    },
+    {
+      "content_hash": "e36ed19661226b6f5cd329c0e3469a708342a6cc1eb23a727f9521a26f02ceb7",
+      "heading": "FNC-005: 文脈の再掲 [MANDATORY]",
+      "position": 13,
+      "section_id": "DLID-92hnb6qb0wme"
+    },
+    {
+      "content_hash": "e8f4a9a20d902bda51a59404947d2b44ba9b6896f723a6e964a244ed579fe05f",
+      "heading": "FNC-002: 複数 consult topic の進行管理 [MANDATORY]",
+      "position": 10,
+      "section_id": "DLID-re14qnpddq46"
+    },
+    {
+      "content_hash": "f15bdbdb373433054b85fee989b1a719f6559cb84985829f5512555858d00ea1",
+      "heading": "FNC-006: consult brief は簡潔にする [MANDATORY]",
+      "position": 14,
+      "section_id": "DLID-md1rgx15594v"
+    },
+    {
+      "content_hash": "fd39a41c4548549ee50f7f551f5028a2b3538f81600b93164bac2c8afb2f6f10",
+      "heading": "6. 非機能要件",
+      "position": 24,
+      "section_id": "DLID-y7h1e1jmbans"
+    }
+  ],
   "summary": [
     "Overview of consult responsibilities and three uses: review, dialogue-based revision, new creation",
     "Glossary: evaluation, consult topic, consult brief, presentation state",

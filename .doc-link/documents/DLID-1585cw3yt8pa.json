@@ -1,4 +1,5 @@
 {
+  "applied_hash": "dcf01b441a6b777a7e36909bf2036de43e696a4fae4786dc222d4606a60d97bd",
   "content_hash": "dcf01b441a6b777a7e36909bf2036de43e696a4fae4786dc222d4606a60d97bd",
   "doc_link_id": "DLID-1585cw3yt8pa",
   "keywords": [
@@ -13,8 +14,220 @@
     "write_plan",
     "additive development"
   ],
+  "last_check": {
+    "checked_at": "2026-11-25T02:44:01+00:00",
+    "result": "success"
+  },
   "path": "docs/specs/forge/design/DES-019_create_plan_workflow_design.md",
   "purpose": "Design of the start-plan orchestrator workflow that derives an implementation strategy from design docs, extracts tasks, and creates a plan document, including the agent data exchange.",
+  "references": [
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/rules/forge_agent_data_exchange_rules.md",
+        "result": "match",
+        "scope": "docs/rules"
+      },
+      "kind": "document",
+      "position": 2,
+      "recorded_content_hash": "d359747d755f",
+      "recorded_path": "../../../rules/forge_agent_data_exchange_rules.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-7zh3q09p2acs",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/specs/forge/design/DES-010_create_skills_orchestrator_design.md",
+        "result": "match",
+        "scope": "docs/specs/forge/design"
+      },
+      "kind": "document",
+      "position": 0,
+      "recorded_content_hash": "2129dbe03f23",
+      "recorded_path": "DES-010_create_skills_orchestrator_design.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-s1ds8dcyfn7p",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/specs/forge/design/DES-074_plan_format_design.md",
+        "result": "match",
+        "scope": "docs/specs/forge/design"
+      },
+      "kind": "document",
+      "position": 5,
+      "recorded_content_hash": "2f1bdcf996ea",
+      "recorded_path": "DES-074_plan_format_design.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-42wh7646hjhq",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "plugins/forge/docs/additive_development_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 1,
+      "recorded_content_hash": "3be39e634c1c",
+      "recorded_path": "../../../../plugins/forge/docs/additive_development_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-cyrk9xr8vcap",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "plugins/forge/docs/plan_principles_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 3,
+      "recorded_content_hash": "33e1e8046cdc",
+      "recorded_path": "../../../../plugins/forge/docs/plan_principles_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-t8jcg5jkb5mj",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "plugins/forge/docs/strategy_principles_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 4,
+      "recorded_content_hash": "3f63be26ad5c",
+      "recorded_path": "../../../../plugins/forge/docs/strategy_principles_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-540ak6kxrsxp",
+      "target_section_id": null
+    }
+  ],
+  "sections": [
+    {
+      "content_hash": "10957d00b8bb16a3077cdc52cbf9e2425df5f965e35ba48fb5e9f9d5b7489fb2",
+      "heading": "トレーサビリティの確保",
+      "position": 15,
+      "section_id": "DLID-n1z5h3gz1z56"
+    },
+    {
+      "content_hash": "17873ac1c525cef4d6e90b8b25a5abb2a2164cd6ecc9ba73fd2f13dc2b4dae19",
+      "heading": "Agent への委譲",
+      "position": 2,
+      "section_id": "DLID-97wpyk7t2vmk"
+    },
+    {
+      "content_hash": "2df93af7a1b0fa16f934bd44f5bf8161694e721f6a6c811b1ac145a3d404b99e",
+      "heading": "3. フェーズ詳細",
+      "position": 5,
+      "section_id": "DLID-ak08wk3hkraz"
+    },
+    {
+      "content_hash": "3f0d098ca3429e847a5a1d93f0a934a1bb7c908a1abe9412a067c7cdb0d81473",
+      "heading": "Agent との受け渡し",
+      "position": 3,
+      "section_id": "DLID-mzg8wps2vabt"
+    },
+    {
+      "content_hash": "4433a7de592cb4fc156370fb7a0b1542d0894486ce32ba22d7f4afcb20f7df61",
+      "heading": "完了処理",
+      "position": 12,
+      "section_id": "DLID-xmhexjqw18ha"
+    },
+    {
+      "content_hash": "4ee72b76c56c719329617279695d8e8ef74adad0fc1cb5aaff02fb30bcbd3277",
+      "heading": "Phase 5: AIレビュー",
+      "position": 11,
+      "section_id": "DLID-fpja9extqv6d"
+    },
+    {
+      "content_hash": "57ca57a40fcc5a8237f91d3135ddfddf86218468bb20fe6e4d2777bb9a396f52",
+      "heading": "Phase 4: 計画書の作成・更新",
+      "position": 10,
+      "section_id": "DLID-9gebcqqx39a4"
+    },
+    {
+      "content_hash": "5874e67b0187cc10fe79e3b10f4bb7dda98b1b1738275cc482f03a18104c0447",
+      "heading": "6. 関連ファイル",
+      "position": 18,
+      "section_id": "DLID-n1396f9y4n1k"
+    },
+    {
+      "content_hash": "8158aff8740845a4b01e6abcc6a635b875908bb017acd27a5faa863aed3e3beb",
+      "heading": "1. 概要",
+      "position": 1,
+      "section_id": "DLID-10n4ke3bkt22"
+    },
+    {
+      "content_hash": "9edc5d6fa60952bd525a2fac8aed041c4c846ef4a9ba7a7ea945545bf340a005",
+      "heading": "Phase 3: 実装戦略の策定 [MANDATORY]",
+      "position": 9,
+      "section_id": "DLID-dnrsdv26yzjb"
+    },
+    {
+      "content_hash": "9ef3c0443a447b0cb1e86005a174e9e9f18e606e76dc1e811c7fd63fe96afc6f",
+      "heading": "4. 設計原則",
+      "position": 13,
+      "section_id": "DLID-bzn0chka2s5q"
+    },
+    {
+      "content_hash": "b09b2ae1ecfc871186339b3a8bdbd24a05aa6090402551b8994c1cb4f40d7261",
+      "heading": "前提確認フェーズ [MANDATORY]",
+      "position": 6,
+      "section_id": "DLID-x1errzwrs1rq"
+    },
+    {
+      "content_hash": "b87a22247fc2c527a3515234cc36314f94fda0a1cc521a1f191c89958a8eabf8",
+      "heading": "更新モードの既存資産確認",
+      "position": 16,
+      "section_id": "DLID-mv6wm17gsrvy"
+    },
+    {
+      "content_hash": "ba69d14899dfcdb2977332ec32c2f4dec498cbe91c1c82b66d91e285ae94a9ed",
+      "heading": "Phase 2: 文書の読み込み",
+      "position": 8,
+      "section_id": "DLID-6haar131n8qv"
+    },
+    {
+      "content_hash": "bd3f55ef9b272fe1aa897f276ec75a29ecc2257fb8085deeccae370bd802f5e0",
+      "heading": "DES-019 forge 計画書作成ワークフロー 設計書",
+      "position": 0,
+      "section_id": "DLID-5jfwvf0xktz2"
+    },
+    {
+      "content_hash": "ea7efe0932c91f3663a7419c87533b16efc854f5fc398a754be9dcb4b791e2a3",
+      "heading": "Phase 1: コンテキスト収集 [MANDATORY]",
+      "position": 7,
+      "section_id": "DLID-hj1350cj4mab"
+    },
+    {
+      "content_hash": "ecf9ab9bdadbfa47dc912230f6e067432592517882aae10a09f7506f70ec560b",
+      "heading": "2. フローチャート",
+      "position": 4,
+      "section_id": "DLID-yk1afykxtqtw"
+    },
+    {
+      "content_hash": "f4f18438de6ebe5f1fd8e0a07035b75a4dd5ed140eaf1618890a946b388866d9",
+      "heading": "タスクは Agent 実行単位で分割 [MANDATORY]",
+      "position": 14,
+      "section_id": "DLID-6p5tttv2ejmx"
+    },
+    {
+      "content_hash": "f94eb88079000afb23044d8a9970127aad1920be1f8161b6f84e22a68168a6c8",
+      "heading": "5. 次ステップの案内",
+      "position": 17,
+      "section_id": "DLID-5w7dw564h4ar"
+    }
+  ],
   "summary": [
     "Orchestrator overview and delegation of strategy drafting to the plan-strategist custom Agent",
     "Agent data exchange via request JSON, strategy file and exit value, with identifiers output_dir and feature",

@@ -1,4 +1,5 @@
 {
+  "applied_hash": "f157e5df4b973ca7fa5195be6d93fa181642eb43a268f3ceb5b30307326ee98f",
   "content_hash": "f157e5df4b973ca7fa5195be6d93fa181642eb43a268f3ceb5b30307326ee98f",
   "doc_link_id": "DLID-3bmft1apetsm",
   "keywords": [
@@ -13,8 +14,142 @@
     "custom Agent",
     "review_id"
   ],
+  "last_check": {
+    "checked_at": "2026-11-25T02:44:01+00:00",
+    "result": "success"
+  },
   "path": "docs/specs/agent-review/requirements/REQ-016_agent_review_backend.md",
   "purpose": "Requirements for the dependency-free agent-review backend, which runs reviews via a read-only custom Agent reviewer, one Agent per round, with availability checks and no persistence.",
+  "references": [
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/specs/forge/requirements/REQ-013_review_policy.md",
+        "result": "match",
+        "scope": "docs/specs/forge/requirements"
+      },
+      "kind": "document",
+      "position": 0,
+      "recorded_content_hash": "8447df198f9e",
+      "recorded_path": "../../forge/requirements/REQ-013_review_policy.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-yg0c67zs3zky",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/specs/review/requirements/REQ-029_review_exchange.md",
+        "result": "match",
+        "scope": "docs/specs/review/requirements"
+      },
+      "kind": "document",
+      "position": 1,
+      "recorded_content_hash": "d635cdb8307b",
+      "recorded_path": "../../review/requirements/REQ-029_review_exchange.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-5vrs9fnet7de",
+      "target_section_id": null
+    }
+  ],
+  "sections": [
+    {
+      "content_hash": "0140ded4e8f0e88c805854e1f26566323ad41b7ef04840a477a378672175d5e2",
+      "heading": "1. 背景と目的",
+      "position": 1,
+      "section_id": "DLID-qcs4gh1gyp7n"
+    },
+    {
+      "content_hash": "0f9f5666d0da0e28659241fbdf948f0517412c8cb3a5341047f79de5c1bcbbbb",
+      "heading": "3. 機能要件",
+      "position": 5,
+      "section_id": "DLID-ty0msghbet5x"
+    },
+    {
+      "content_hash": "486f7278df660d26337d4592b53e155100d20f70b8810bcedd4632ecf965ed99",
+      "heading": "FNC-1604 可用性検査 [MANDATORY]",
+      "position": 8,
+      "section_id": "DLID-mq7ej90kpf23"
+    },
+    {
+      "content_hash": "49e75bc025274e3de4d1105f7b1c63f67ff939b070b2a10ffe5268291eaab7ff",
+      "heading": "6. 未確定事項",
+      "position": 15,
+      "section_id": "DLID-60fwetem8kfn"
+    },
+    {
+      "content_hash": "5c5cc6fa29945db9625f87f934ae6e16a9127e4a25d1d717a0618f0346939673",
+      "heading": "REQ-016 agent-review バックエンド",
+      "position": 0,
+      "section_id": "DLID-5jcxtvv9k65q"
+    },
+    {
+      "content_hash": "6f4c34c51c0cfdc6a8a87471fd1a036826f125ef58356b9cf39a38fdae98f8e1",
+      "heading": "NFR-1601 非永続性 [CRITICAL]",
+      "position": 11,
+      "section_id": "DLID-8drr6mxazr7n"
+    },
+    {
+      "content_hash": "80ce93352d68694e8cd29c0f849d54fd82c942555f00cef4032a33571f53c235",
+      "heading": "FNC-1601 read-only レビュア [MANDATORY]",
+      "position": 6,
+      "section_id": "DLID-mgtyz9cxn57a"
+    },
+    {
+      "content_hash": "a3b11469a42c0eadfbd5d547c3ed50ab82b616ca6190e5a59e91093532365902",
+      "heading": "FNC-1606 履歴非対応 [CRITICAL]",
+      "position": 9,
+      "section_id": "DLID-dqwr8a58ab1k"
+    },
+    {
+      "content_hash": "a3dc511cf620dbfbf03e37231251cf4e7a5c1b8f2b3fcd2b4db8d287eaa8d474",
+      "heading": "FNC-1602 1 ラウンド 1 Agent [CRITICAL]",
+      "position": 7,
+      "section_id": "DLID-mh9ffqf4s4fx"
+    },
+    {
+      "content_hash": "a7a6e3150b062b605be785d94db77494264bd8ff37e827f5651271ad50205848",
+      "heading": "対象",
+      "position": 3,
+      "section_id": "DLID-9b8a30w44dmn"
+    },
+    {
+      "content_hash": "ad5ed5225424574a972afbec19ea968cafa83b42cb981839c4a25203c30c095b",
+      "heading": "4. 非機能要件",
+      "position": 10,
+      "section_id": "DLID-98tgf3rv1bwy"
+    },
+    {
+      "content_hash": "bd48967ec712062ec2a18225e0e1b03c62217ced73503928d82f8bc5538b2429",
+      "heading": "対象外",
+      "position": 4,
+      "section_id": "DLID-31vdqj9fys9h"
+    },
+    {
+      "content_hash": "cb02c32cc3de67c085ff10365695450aa3a151cc98cd3ce6a5fb7a10f84ae717",
+      "heading": "NFR-1603 fail closed [MANDATORY]",
+      "position": 13,
+      "section_id": "DLID-0drhsb4j2nsj"
+    },
+    {
+      "content_hash": "d361ab8f9068d15526de83828eb27e61ca7d9e1a174c33f94d79e26c6c9f6784",
+      "heading": "2. スコープ",
+      "position": 2,
+      "section_id": "DLID-24t8hs6x4ez5"
+    },
+    {
+      "content_hash": "d9aa898b27a9442ff171732dc4776aac5e59285402dec93bd8720b8934d967a6",
+      "heading": "5. 受け入れ基準",
+      "position": 14,
+      "section_id": "DLID-7h61zq90ga5t"
+    },
+    {
+      "content_hash": "ebf7c39a83afa89db4f87590b78549ae381e793c90269e68a5ccce6b25cd4145",
+      "heading": "NFR-1602 外部依存の排除 [CRITICAL]",
+      "position": 12,
+      "section_id": "DLID-79xpgntmyf5k"
+    }
+  ],
   "summary": [
     "Background: default review should work without external tools, message DBs, or resident sessions",
     "Scope: availability check, read-only reviewer Agent, retains_context declared false",

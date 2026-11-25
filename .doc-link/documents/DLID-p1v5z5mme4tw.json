@@ -1,4 +1,5 @@
 {
+  "applied_hash": "0e3cb74cccc60f4126f7965597aadbf04ccfb38dbb5f463c75cd85bbeb12b249",
   "content_hash": "0e3cb74cccc60f4126f7965597aadbf04ccfb38dbb5f463c75cd85bbeb12b249",
   "doc_link_id": "DLID-p1v5z5mme4tw",
   "keywords": [
@@ -12,8 +13,172 @@
     "exit value",
     "reason"
   ],
+  "last_check": {
+    "checked_at": "2026-11-25T02:44:01+00:00",
+    "result": "success"
+  },
   "path": "docs/specs/review/requirements/REQ-026_evaluator_perspective.md",
   "purpose": "Requirements defining how the evaluator independently judges reviewer findings using meta-perspectives, creates new findings, and what it returns as evaluations, with no error values.",
+  "references": [
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/specs/review/requirements/REQ-027_reviewer.md",
+        "result": "match",
+        "scope": "docs/specs/review/requirements"
+      },
+      "kind": "document",
+      "position": 2,
+      "recorded_content_hash": "36bb4e693dd2",
+      "recorded_path": "REQ-027_reviewer.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-y42g1frxwkf5",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/specs/review/requirements/REQ-029_review_exchange.md",
+        "result": "match",
+        "scope": "docs/specs/review/requirements"
+      },
+      "kind": "document",
+      "position": 0,
+      "recorded_content_hash": "d635cdb8307b",
+      "recorded_path": "REQ-029_review_exchange.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-5vrs9fnet7de",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "plugins/forge/docs/error_classification_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 3,
+      "recorded_content_hash": "94496cc6d044",
+      "recorded_path": "../../../../plugins/forge/docs/error_classification_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-5ykqs19cdbks",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "plugins/forge/docs/spec_priorities_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 1,
+      "recorded_content_hash": "b68b930cec1d",
+      "recorded_path": "../../../../plugins/forge/docs/spec_priorities_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-f9ny9e932trv",
+      "target_section_id": null
+    }
+  ],
+  "sections": [
+    {
+      "content_hash": "0098ba4b041fc548da49d5d5ccc8b1f3684f87145dcf7d3bb5c28c61a22d63e8",
+      "heading": "0. evaluator の定義が持つもの",
+      "position": 5,
+      "section_id": "DLID-dtpfs3mwd46p"
+    },
+    {
+      "content_hash": "02596ec7d489650e39cae74d8c2f4defd23c39d0a4f03a96064df5b743027ed7",
+      "heading": "2. 出力",
+      "position": 10,
+      "section_id": "DLID-jbp0nefgh62m"
+    },
+    {
+      "content_hash": "27ce22ac99184038a5c7dc1379e8997e5b5c42f1ed8e0ea0242e9a13de880305",
+      "heading": "対象システムの性質",
+      "position": 2,
+      "section_id": "DLID-gshdfxp6b0fm"
+    },
+    {
+      "content_hash": "2abaa8872614ed34f49c5ef06e553a5a13706c8fe8d4aa72a4639c50a3e9ba42",
+      "heading": "用語",
+      "position": 3,
+      "section_id": "DLID-edczn12sms00"
+    },
+    {
+      "content_hash": "340cfce7772a04de69e19935cb1d237a86ed032c31b714105dcfd2bcc2c86fbf",
+      "heading": "DM-202: evaluator の入力",
+      "position": 14,
+      "section_id": "DLID-bgse98q4gaj3"
+    },
+    {
+      "content_hash": "3bcccee6c8aba8b4a514a1c0d394fb63c33e4303ec87a143ef57d0dea6140ed0",
+      "heading": "1. 作業",
+      "position": 7,
+      "section_id": "DLID-400vabqahndv"
+    },
+    {
+      "content_hash": "59f7cfecac59a4ded43632debed033f1b6e2ee83576c07a9ead41d93b498b938",
+      "heading": "FNC-206: evaluator は reviewer の見落としを新規に指摘できる",
+      "position": 9,
+      "section_id": "DLID-ydyn01vdpd85"
+    },
+    {
+      "content_hash": "741231b0d3a244d0bb3fe0474995db94f3a27652658a26defef02f2f5a057cf5",
+      "heading": "REQ-026 evaluator の独立評価とメタ観点 要件定義書",
+      "position": 0,
+      "section_id": "DLID-a6y12p85xfsn"
+    },
+    {
+      "content_hash": "ad98a348f484c349098bff12ba5d027ae09b2d499355d7db27e9d6c0d6c78b1e",
+      "heading": "データモデル",
+      "position": 13,
+      "section_id": "DLID-p4cd48fr9qby"
+    },
+    {
+      "content_hash": "b211ab6670e81b5e84da06c839b36d0f50fb3c266b0a545783523827fafaabee",
+      "heading": "要件一覧",
+      "position": 4,
+      "section_id": "DLID-f2pg54enw9nt"
+    },
+    {
+      "content_hash": "ce58b480d42c295ccc563237aa45885fb27067ed839c8c7f489382d9a4c1a219",
+      "heading": "FNC-201: evaluator は指摘の奥にある本質・対象情報を疑う",
+      "position": 8,
+      "section_id": "DLID-yx9mk48pma60"
+    },
+    {
+      "content_hash": "dc194d881c226abeb01d9f023c232fb21aab93396f6b73c2df5d4519f8b788a4",
+      "heading": "FNC-208: evaluator の定義が持つ中身",
+      "position": 6,
+      "section_id": "DLID-047nk4rzb4gn"
+    },
+    {
+      "content_hash": "e9b6463383f756098fff5bf44cc7ef28c44648080ee78561bb989ba044721ef1",
+      "heading": "未確定事項",
+      "position": 15,
+      "section_id": "DLID-wm4hb98xb73k"
+    },
+    {
+      "content_hash": "eb8d4af59da41a823fd5d42fd5d7c0a7acf13b5e237e7d385cb51d4551912235",
+      "heading": "FNC-209: evaluator が評価として返すもの",
+      "position": 11,
+      "section_id": "DLID-4cwy5kqnhnv0"
+    },
+    {
+      "content_hash": "fb32b46184ee505b187e05cfb1e052808470af00f6436c062b8d8dbfc72e98e2",
+      "heading": "FNC-319: evaluator はエラー値を持たない",
+      "position": 12,
+      "section_id": "DLID-rsk8xcyqgs2d"
+    },
+    {
+      "content_hash": "fd4daf1b68d87028715571fd0c27516dac587f8063a2b9fdce928a51d3640581",
+      "heading": "概要",
+      "position": 1,
+      "section_id": "DLID-h7z4zvbt8y7e"
+    }
+  ],
   "summary": [
     "Evaluator purpose: independently verify findings, reject wrong ones, and show the true cause",
     "Scope: evaluator-specific behavior only; exchange, numbering, exit values and data structures are delegated to the common review contract",

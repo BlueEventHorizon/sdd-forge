@@ -1,36 +1,99 @@
 {
-  "content_hash": "8c95e3505e2141e422364714029058be06d7b559b3606fb8a749cbb69b38a0be",
+  "applied_hash": "25b40d946c4cbf84097f4cbe67f6e0eed310c0d2bbb6bf5fa62b3fcf83a50909",
+  "content_hash": "25b40d946c4cbf84097f4cbe67f6e0eed310c0d2bbb6bf5fa62b3fcf83a50909",
   "doc_link_id": "DLID-vr7dyvw3y5qz",
   "keywords": [
     "built-in documents",
+    "search",
     "query-forge-rules",
-    "document search",
-    "semantic search",
     "Required documents",
+    "semantic search",
     "false negative",
-    "index missing error",
-    "forge bundled docs",
-    "read-only search"
+    "read-only",
+    "plugins/forge",
+    "index missing",
+    "forge"
   ],
+  "last_check": {
+    "checked_at": "2026-11-25T02:44:01+00:00",
+    "result": "success"
+  },
   "path": "docs/specs/forge/requirements/REQ-035_builtin_docs_search_spec.md",
-  "purpose": "Requirements for searching documents bundled with forge by keyword, feature name or natural language, so users and skills can find needed built-in docs without knowing their location.",
+  "purpose": "Requirements for searching documents bundled with forge so users and skills can find needed norms without knowing their locations and without missing any.",
+  "references": [],
+  "sections": [
+    {
+      "content_hash": "193b401b1b424e729e01ad4eda94a0d7a071231af6416cba6e896ee0f07870fa",
+      "heading": "FNC-001: 内蔵ドキュメントを検索する",
+      "position": 4,
+      "section_id": "DLID-m61wn68wf8he"
+    },
+    {
+      "content_hash": "523b79eaa469e400f57301072b47367f85bc0f5d8d28805497132eb54778b8b6",
+      "heading": "前提条件",
+      "position": 2,
+      "section_id": "DLID-g6pazmh9vqtq"
+    },
+    {
+      "content_hash": "5a676b3c84b3766f6734eb48cee09aa5960e6c055827c4a6c6534e2ecb306122",
+      "heading": "FNC-002: 意味で選び、取りこぼさない",
+      "position": 5,
+      "section_id": "DLID-pwga59xkvyd6"
+    },
+    {
+      "content_hash": "90a656f5ed5f7fb3702aae81396df64ec0cf8b1f1687fcff87998c62fad5127e",
+      "heading": "要件一覧",
+      "position": 3,
+      "section_id": "DLID-5nrpm3tpekkq"
+    },
+    {
+      "content_hash": "9fa8f31b7874d8457a36642c35203dfd3238f2ca8c67b2e76d559c03555bbac2",
+      "heading": "対象外",
+      "position": 7,
+      "section_id": "DLID-6ahw6xcz1q2r"
+    },
+    {
+      "content_hash": "a17e5e9bffefdd829895edf577038bb0d8453a57701f0c482be93fd0be39b5c1",
+      "heading": "エラーケース",
+      "position": 8,
+      "section_id": "DLID-9p8ra93kdqth"
+    },
+    {
+      "content_hash": "b75e80296157387cfba64fb0b3bbbc92b51d5bb5f0427a981e69061f02897e88",
+      "heading": "REQ-035 forge 内蔵ドキュメント検索 要件定義書",
+      "position": 0,
+      "section_id": "DLID-vbnhkkz19dmr"
+    },
+    {
+      "content_hash": "ca8c2028e7e7a79955ef62332c15015a230d86c85bb09c2a9adacc9e852f0f35",
+      "heading": "FNC-003: 検索以外の作業を行わない",
+      "position": 6,
+      "section_id": "DLID-nv968pf281p5"
+    },
+    {
+      "content_hash": "d02fef67fa99299a7fc8f688ff52811cc7d0795ec0bc9768b082f41c73352bb1",
+      "heading": "概要",
+      "position": 1,
+      "section_id": "DLID-nc82awcareq6"
+    }
+  ],
   "summary": [
-    "Overview: make bundled forge docs searchable without knowing their locations",
-    "Preconditions: forge installed; works without doc-link/doc-db backends; users build no index",
-    "FNC-001: search via /forge:query-forge-rules, returning a Required documents: path list",
-    "Returned paths start with plugins/forge/ and callers map them to the real install location",
-    "No matching document yields a header-only list, not an error",
-    "FNC-002: semantic selection, include doubtful documents, never miss relevant ones",
-    "FNC-003: search only; no writes, commits or Issue updates; imperative input treated as search task",
-    "Out of scope: project rules and specs search handled by query-db-rules and query-db-specs",
-    "Error case: missing built-in index is unrecoverable, reported without returning a list"
+    "Overview of built-in documents search in forge",
+    "Preconditions: works without doc-link or doc-db backends",
+    "FNC-001: query-forge-rules entry point returning a Required documents list of plugins/forge paths",
+    "Empty list instead of an error when nothing matches",
+    "FNC-002: semantic selection that includes doubtful documents and avoids omissions",
+    "FNC-003: search only, no writes, commits or Issue updates, and imperative inputs treated as search tasks",
+    "Out of scope: project rule and spec document search",
+    "Error cases: missing index or incomplete search reported with no list returned"
   ],
   "tasks": [
-    "Implementing or changing the query-forge-rules skill",
-    "Designing built-in document index and search behavior",
-    "Reviewing search output format and consistency with query-db skills",
-    "Writing tests for built-in docs search",
-    "Implementing forge skills that look up bundled norms before work"
+    "Implementing the query-forge-rules skill",
+    "Designing built-in documents search",
+    "Writing or reviewing tests for the search behavior",
+    "Calling the search from other forge skills",
+    "Defining error handling for missing index or failed search",
+    "Reviewing requirements for built-in docs search"
   ],
   "title": "REQ-035 forge 内蔵ドキュメント検索 要件定義書"
 }

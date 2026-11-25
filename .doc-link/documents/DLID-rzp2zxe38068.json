@@ -1,4 +1,5 @@
 {
+  "applied_hash": "ef29f0fe68973f0743326f44d09e6375761a76cf96833a499f05fabb210a218c",
   "content_hash": "ef29f0fe68973f0743326f44d09e6375761a76cf96833a499f05fabb210a218c",
   "doc_link_id": "DLID-rzp2zxe38068",
   "keywords": [
@@ -13,8 +14,100 @@
     "stateless",
     "resolve_review_backend"
   ],
+  "last_check": {
+    "checked_at": "2026-11-25T02:44:01+00:00",
+    "result": "success"
+  },
   "path": "docs/specs/agent-review/design/DES-072_agent_review_backend_design.md",
   "purpose": "Design of the agent-review backend: a read-only reviewer custom Agent, an availability-check-only SKILL, its constraints, stateless operation, and test design.",
+  "references": [
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/specs/review/design/DES-084_reviewer_design.md",
+        "result": "match",
+        "scope": "docs/specs/review/design"
+      },
+      "kind": "document",
+      "position": 0,
+      "recorded_content_hash": "90cd46356caa",
+      "recorded_path": "../../review/design/DES-084_reviewer_design.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-j50s0xwkwx00",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/specs/review/requirements/REQ-029_review_exchange.md",
+        "result": "match",
+        "scope": "docs/specs/review/requirements"
+      },
+      "kind": "document",
+      "position": 1,
+      "recorded_content_hash": "d635cdb8307b",
+      "recorded_path": "../../review/requirements/REQ-029_review_exchange.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-5vrs9fnet7de",
+      "target_section_id": null
+    }
+  ],
+  "sections": [
+    {
+      "content_hash": "104a4f9acde26839ed27781c069c2c725d8fc879b97951cf30a5117713b5cddc",
+      "heading": "2.2 Agent 定義",
+      "position": 4,
+      "section_id": "DLID-82ad5ghtp1b3"
+    },
+    {
+      "content_hash": "13b7ea2dfb668b2df728b12affecd7817e902ee4b1c76f5de4fdee001b60c046",
+      "heading": "4. 状態と資源",
+      "position": 6,
+      "section_id": "DLID-2pnw1jwfgczr"
+    },
+    {
+      "content_hash": "234f45fc97d49f7b5ff165687f7df772fd04ab850d7ede72c869b9db80c9d29e",
+      "heading": "2.1 コンポーネント",
+      "position": 3,
+      "section_id": "DLID-x7dezwckz2wf"
+    },
+    {
+      "content_hash": "26753161d302f6fffe9433a60dc9543e6e46a228c8c1d2fafa122e3ad42a3893",
+      "heading": "DES-072 agent-review バックエンド設計",
+      "position": 0,
+      "section_id": "DLID-rzvsae6xtwn4"
+    },
+    {
+      "content_hash": "2ff45e4e8a5a38643740b2555909dea90d42a3bc930d372697b1a2dffec04077",
+      "heading": "2. アーキテクチャ",
+      "position": 2,
+      "section_id": "DLID-t6ybwc54kjbd"
+    },
+    {
+      "content_hash": "4c1b2d61b328caf88cb920e14fceaf7617f89d98156e481524feb015359c4959",
+      "heading": "3. 可用性検査",
+      "position": 5,
+      "section_id": "DLID-4cx7ghbfm5vh"
+    },
+    {
+      "content_hash": "572212c5a48d89efa1053863de425d9357d1c08c94477f9debe7928b08ff5013",
+      "heading": "1. 概要",
+      "position": 1,
+      "section_id": "DLID-wma6qrxsg898"
+    },
+    {
+      "content_hash": "75c072c3c8d97c92a2419fe86c51c2105eee86fb809f8702afe01b0a95451147",
+      "heading": "6. 未確定事項",
+      "position": 8,
+      "section_id": "DLID-0bwzvms367gn"
+    },
+    {
+      "content_hash": "8ed93e92b994816ef51cb15cb71fbbad6febdf92f523240d0f647293fd00a7e6",
+      "heading": "5. テスト設計",
+      "position": 7,
+      "section_id": "DLID-jpyr5zkgvxzj"
+    }
+  ],
   "summary": [
     "Overview: agent-review SKILL only performs availability checks; /forge:review launches reviewer directly",
     "Architecture and component responsibilities of the SKILL, reviewer Agent, and review body",

@@ -1,4 +1,5 @@
 {
+  "applied_hash": "a78dcb08e87b611a60bd26be987c376863771bf5dcd5d69bf5091caef1170c1b",
   "content_hash": "a78dcb08e87b611a60bd26be987c376863771bf5dcd5d69bf5091caef1170c1b",
   "doc_link_id": "DLID-8aaxgj88j28q",
   "keywords": [
@@ -13,8 +14,121 @@
     "review",
     "implementer"
   ],
+  "last_check": {
+    "checked_at": "2026-11-25T02:44:01+00:00",
+    "result": "success"
+  },
   "path": "docs/specs/forge/requirements/REQ-025_additive_development_spec.md",
   "purpose": "Requirements for additive development: mechanically identifying documents in a parallel state, where old and new specs coexist, and conveying that status to spec consumers so old specs are not used as basis.",
+  "references": [
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "plugins/forge/docs/spec_priorities_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 0,
+      "recorded_content_hash": "b68b930cec1d",
+      "recorded_path": "../../../../plugins/forge/docs/spec_priorities_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-f9ny9e932trv",
+      "target_section_id": null
+    }
+  ],
+  "sections": [
+    {
+      "content_hash": "66702c7cfabc2db0db0138ec07800bb3c6a3159c354c8f6143670fc9e48365ed",
+      "heading": "4. 機能要件",
+      "position": 8,
+      "section_id": "DLID-7h71m3dck6n6"
+    },
+    {
+      "content_hash": "6919640550321d2c61beb6616744a8d6776110a831288d3e2c572fc039f869f7",
+      "heading": "1.2 対象システムの性質",
+      "position": 3,
+      "section_id": "DLID-acmwf5b2jbvc"
+    },
+    {
+      "content_hash": "75b7959d61a672b4ee76c75a1f946bbd54d097d1cddc0b0b445473bc962a0dc3",
+      "heading": "1.1 なぜ機構が要るのか",
+      "position": 2,
+      "section_id": "DLID-trxcyjafh33t"
+    },
+    {
+      "content_hash": "a373ba6075184411af5f8fe1e0a3fa7731b3e485ad1eefa9c45cdc6110d7b833",
+      "heading": "3. スコープ",
+      "position": 5,
+      "section_id": "DLID-64wz627rpww6"
+    },
+    {
+      "content_hash": "a990cc7a5f64eac3fc94793f93858b257b4039b668978068da8afa1836126043",
+      "heading": "FNC-004: 旧仕様の記述の扱い",
+      "position": 12,
+      "section_id": "DLID-f9fyez9hyp1e"
+    },
+    {
+      "content_hash": "b1808bde8e0d50f133c8461de709b8b925a32d6bb13aa6c6d7b519e14d8c3723",
+      "heading": "1. 概要",
+      "position": 1,
+      "section_id": "DLID-m8j34mtfhp19"
+    },
+    {
+      "content_hash": "b6e6be706f5a1dee3db27d2cfaf9667c2f1be14b84c0989ac9c1a297e4c6f0b4",
+      "heading": "FNC-003: 仕様の適用者への伝達",
+      "position": 11,
+      "section_id": "DLID-d6svge2n3372"
+    },
+    {
+      "content_hash": "b72a91230ee21327a46336152c2e996751fa476a11451273bd8c61e79b5e724e",
+      "heading": "FNC-005: 識別できない場合の扱い",
+      "position": 13,
+      "section_id": "DLID-en3j2psrybjm"
+    },
+    {
+      "content_hash": "bae4ebb4d1a902ca1ba2e1026ab28f4bb9b828d06b7ca50582821aef90dacb0e",
+      "heading": "REQ-025 差分開発の仕組み 要件定義書",
+      "position": 0,
+      "section_id": "DLID-bamh1tbmy9yp"
+    },
+    {
+      "content_hash": "c2dd32ed0f05d6616cd47e40135c6a8f48b9a1450c1bd452326cc6ac35acae03",
+      "heading": "5. 未確定事項",
+      "position": 14,
+      "section_id": "DLID-80qxtftzben7"
+    },
+    {
+      "content_hash": "d3187bd298bd224c74bdfd76337f0babbc64815f76129547c768e88b018135ae",
+      "heading": "3.1 対象",
+      "position": 6,
+      "section_id": "DLID-69djf0tn15cv"
+    },
+    {
+      "content_hash": "d673e24cbf92149de0c36e39cd6ac6be07d9d5124d9d807145aeebe81221a09e",
+      "heading": "3.2 対象外（別途対応）",
+      "position": 7,
+      "section_id": "DLID-gx315g3rj5nc"
+    },
+    {
+      "content_hash": "e00bc07adcb2355e656dd798b4a91f89631404ebeb81c0deec3b94d365977874",
+      "heading": "FNC-002: 識別結果は状態だけを運ぶ",
+      "position": 10,
+      "section_id": "DLID-f1y4jm02t7e7"
+    },
+    {
+      "content_hash": "f729d3ee200400854be1a7f5397d1ac65bf3508cd02a56835ba0671bb3fe3ca0",
+      "heading": "2. 用語",
+      "position": 4,
+      "section_id": "DLID-9c38kemxsvrr"
+    },
+    {
+      "content_hash": "fd576658eaef4f10f274a18d2aa164f553542601a0e24a0a07ae0e6cae6ab368",
+      "heading": "FNC-001: 並行状態の機械的な識別",
+      "position": 9,
+      "section_id": "DLID-p6k9tmr74b91"
+    }
+  ],
   "summary": [
     "Rationale: old specs are not rewritten until implementation completes, so old and new specs coexist",
     "Why a mechanism is needed: parallel state cannot be inferred from content or location, and consumers cannot tell \"not passed\" from \"none exist\"",

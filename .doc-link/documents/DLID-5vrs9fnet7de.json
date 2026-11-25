@@ -1,4 +1,5 @@
 {
+  "applied_hash": "d635cdb8307bd7344382ae884057c4b1a29a3abd468c41a4210f53a0554004ce",
   "content_hash": "d635cdb8307bd7344382ae884057c4b1a29a3abd468c41a4210f53a0554004ce",
   "doc_link_id": "DLID-5vrs9fnet7de",
   "keywords": [
@@ -13,8 +14,292 @@
     "common contract",
     "severity"
   ],
+  "last_check": {
+    "checked_at": "2026-11-25T02:44:01+00:00",
+    "result": "success"
+  },
   "path": "docs/specs/review/requirements/REQ-029_review_exchange.md",
   "purpose": "Common contract of the review mechanism: round flow, hand-off by review_id and round_number, finding_id numbering, exit values, the review body duties, and the JSON data structures.",
+  "references": [
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/rules/forge_agent_data_exchange_rules.md",
+        "result": "match",
+        "scope": "docs/rules"
+      },
+      "kind": "document",
+      "position": 2,
+      "recorded_content_hash": "d359747d755f",
+      "recorded_path": "../../../rules/forge_agent_data_exchange_rules.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-7zh3q09p2acs",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "plugins/forge/docs/deterministic_generation_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 3,
+      "recorded_content_hash": "75383cc8c6d8",
+      "recorded_path": "../../../../plugins/forge/docs/deterministic_generation_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-tm2m7nv23dqd",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "plugins/forge/docs/error_classification_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 4,
+      "recorded_content_hash": "94496cc6d044",
+      "recorded_path": "../../../../plugins/forge/docs/error_classification_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-5ykqs19cdbks",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "plugins/forge/docs/review_priorities_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 5,
+      "recorded_content_hash": "458b42b8deb4",
+      "recorded_path": "../../../../plugins/forge/docs/review_priorities_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-dcec6pr177c9",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "plugins/forge/docs/spec_design_boundary_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 0,
+      "recorded_content_hash": "e0d1a83f7e47",
+      "recorded_path": "../../../../plugins/forge/docs/spec_design_boundary_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-h9h90g9wcy8f",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "plugins/forge/docs/spec_priorities_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 1,
+      "recorded_content_hash": "b68b930cec1d",
+      "recorded_path": "../../../../plugins/forge/docs/spec_priorities_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-f9ny9e932trv",
+      "target_section_id": null
+    }
+  ],
+  "sections": [
+    {
+      "content_hash": "12551215c820ba7d4dcf322549475d75a81d48d661cbc5edcd31a0a3aaa01e99",
+      "heading": "DM-304: パスと位置の表記",
+      "position": 30,
+      "section_id": "DLID-q588mmgw86pw"
+    },
+    {
+      "content_hash": "160c24cd1ce8642567eeb7862afe2ace207b2ee85b813eb36666240cd54563de",
+      "heading": "FNC-316: 本体は `retains_context` を得て分岐する",
+      "position": 22,
+      "section_id": "DLID-ev812da28dh4"
+    },
+    {
+      "content_hash": "1ae5ca2b9e8e0f90eae9a41e1a2f21b6131cc1c6df1ff91efa00b982f37817f7",
+      "heading": "FNC-311: 終了の値で結果の成否を表す [MANDATORY]",
+      "position": 18,
+      "section_id": "DLID-54wxyg89kwrs"
+    },
+    {
+      "content_hash": "20f244845cf638ae1db382edc3d933248c138b2aa7a064057bf198eb4dd6852e",
+      "heading": "概要",
+      "position": 1,
+      "section_id": "DLID-tkjxapv996w1"
+    },
+    {
+      "content_hash": "2787e3466c9c2c496204c7ae51f5b1897940057dfb8ddf3a55f7882c1372ecee",
+      "heading": "FNC-204: flawed_premise は自動修正の対象にしない",
+      "position": 24,
+      "section_id": "DLID-11vx93r04apm"
+    },
+    {
+      "content_hash": "2a21a8bab185ab2949ee89c138c40ddc217daf254d434e0f5991058f67e78253",
+      "heading": "FNC-302: 入力は `review_id` と `round_number` で受け渡す [MANDATORY]",
+      "position": 9,
+      "section_id": "DLID-tgyfygv11b5m"
+    },
+    {
+      "content_hash": "2eb7540c785490004aeee9f77315607d43813b89f4d32d026f26b1b8a904c799",
+      "heading": "FNC-203: 全 finding_id はいずれかの evaluation に紐づく",
+      "position": 19,
+      "section_id": "DLID-e1znbm6339cf"
+    },
+    {
+      "content_hash": "40549f310a7bc44d9ef0a21a3d2bc128e00bb3165f5cb7340c90a677483e3cc5",
+      "heading": "FNC-317: 依頼は対象の種別を載せない",
+      "position": 13,
+      "section_id": "DLID-yf6ggq88393d"
+    },
+    {
+      "content_hash": "42bacf5e133075f5133418d5984c8a525b1b7bfd66efe492523cd9c7e5e3cd24",
+      "heading": "3. 書き出しと終了の値",
+      "position": 16,
+      "section_id": "DLID-1f11wadwnwkb"
+    },
+    {
+      "content_hash": "44ce2d0451e99ef9be748656a5dfbddb48136c97ebf5d440080d8a151797c145",
+      "heading": "FNC-318: レビューは対応を要するものが尽きるか、利用者が終えると決めたときに終わる",
+      "position": 23,
+      "section_id": "DLID-985bfy86h0pz"
+    },
+    {
+      "content_hash": "5d53053e6439ce61309221893259ef5834336d5e968d1738ed46acd2d6b3a768",
+      "heading": "FNC-314: 扱いと呼び方はそれぞれの定義が持つ",
+      "position": 7,
+      "section_id": "DLID-h9m7w3pfay3q"
+    },
+    {
+      "content_hash": "6acbca453dbf064acac8c99cae04ff04e6c97b6cfb6b805fd17419d5d5605ada",
+      "heading": "0. 定義が持つもの",
+      "position": 6,
+      "section_id": "DLID-8fz168dsk8jm"
+    },
+    {
+      "content_hash": "803bad65c77596bf471cddf7b9b0501babe7b7abc3afa92aea943d768e45778c",
+      "heading": "FNC-305: 依頼はレビューの間変えない",
+      "position": 12,
+      "section_id": "DLID-exx76kevyb9g"
+    },
+    {
+      "content_hash": "886cd2c743177c84d9727ce3cb441c2ee7534c88eaf49a990b77c1d36faf7bf2",
+      "heading": "DM-301: 依頼の構成",
+      "position": 26,
+      "section_id": "DLID-vkhhnwm47d31"
+    },
+    {
+      "content_hash": "8c40109908ba88eaa87b508cf250019bfe396d74f99a63bb6b71b5b1b1a82c94",
+      "heading": "データモデル",
+      "position": 25,
+      "section_id": "DLID-4bn3zqs16hnp"
+    },
+    {
+      "content_hash": "9ab12d56107a75b5604ebcf7012ec4867672ff6149edb33fbef4fef3da2714fe",
+      "heading": "対象システムの性質",
+      "position": 2,
+      "section_id": "DLID-yq15sa6f1djc"
+    },
+    {
+      "content_hash": "9c05552ab65666d6326e66cd899575cd4f9b67825811dc29d05e2e137840ada3",
+      "heading": "FNC-304: 値は変形せずに受け渡される",
+      "position": 11,
+      "section_id": "DLID-q0ssnejpxx6r"
+    },
+    {
+      "content_hash": "9d62915a28b0c8489c28493aa6457105c6ccf5f730db87e8158a54e62ba41c69",
+      "heading": "1. 受け渡し",
+      "position": 8,
+      "section_id": "DLID-n6haqpvdkytg"
+    },
+    {
+      "content_hash": "9eb83dba5067dae75108ca7bd61d089f5f79d426324d5bc6234a5d2d58144d93",
+      "heading": "FNC-303: 入力は script が組み立てる [MANDATORY]",
+      "position": 10,
+      "section_id": "DLID-h1phx6rya2yd"
+    },
+    {
+      "content_hash": "b052e7ed2f5850f76f7faf64acea845a0859efa21548befb977716d90b509053",
+      "heading": "DM-305: 結果の構成",
+      "position": 27,
+      "section_id": "DLID-egkqafq162sq"
+    },
+    {
+      "content_hash": "b89e9b14fa85596148e288b4a5873e4e843f6a54112b64381faad06bee79e4fd",
+      "heading": "DM-302: finding の構成",
+      "position": 28,
+      "section_id": "DLID-ef3qz6ph0ewg"
+    },
+    {
+      "content_hash": "c0b042ce67a207ddf2dc6cdb7950eceb9f307530a24f0964211cc30969818589",
+      "heading": "DM-201: evaluation の構成",
+      "position": 29,
+      "section_id": "DLID-a2ppgaywcmds"
+    },
+    {
+      "content_hash": "c2873f7bd3e5fe7e24f3c810beabcbd5054130d526a4ebffe679f8c8ec798ff0",
+      "heading": "FNC-312: 本体はレビューを進行させる",
+      "position": 21,
+      "section_id": "DLID-yet8ka1bmhgx"
+    },
+    {
+      "content_hash": "c6a4d5a453e299b975a4a481d79af92d825e1a4c9671e7464bbf46ef97ad4595",
+      "heading": "4. 本体の仕事",
+      "position": 20,
+      "section_id": "DLID-yaqtzsk3d8v7"
+    },
+    {
+      "content_hash": "d7b063c8cf406fdf6126fb8853458f9334d6c49605371263ba51536cfb944900",
+      "heading": "FNC-310: 書き出しは判断を確定させた後に行う",
+      "position": 17,
+      "section_id": "DLID-x4jjtafe7tcd"
+    },
+    {
+      "content_hash": "e6ae40d03813ad724b22c63d9608a53d4753405499bc34ff369ea3c51874a942",
+      "heading": "FNC-313: finding_id は script が採番する",
+      "position": 15,
+      "section_id": "DLID-q8epb0ynrd23"
+    },
+    {
+      "content_hash": "e835dc15edc302116221cc0e04f197af86543ca94f5e3f7e25efe7c9242f1c74",
+      "heading": "2. 採番",
+      "position": 14,
+      "section_id": "DLID-fq7jtv062np6"
+    },
+    {
+      "content_hash": "ea60e3ba22b8af1b7c2867ad34d4924ffc547b3465a1faf2e05dfb02a0541a82",
+      "heading": "REQ-029 review 機構の共通契約 要件定義書",
+      "position": 0,
+      "section_id": "DLID-r9r06hcqrvy2"
+    },
+    {
+      "content_hash": "f6cfe03c5864b447322f6633a665689bdf9137a4b20c7faf1a4662ad89e1e7e6",
+      "heading": "用語",
+      "position": 3,
+      "section_id": "DLID-gn3j29xp8rdv"
+    },
+    {
+      "content_hash": "fb1854e519e1708307c28f6ede81131ff4631cfaf5ec6b4694051e14f31daac0",
+      "heading": "レビューの進み方",
+      "position": 4,
+      "section_id": "DLID-gymsjr1k016b"
+    },
+    {
+      "content_hash": "fb66942545645f1b19d794b42994e33071ef15174435dbaa88a073db55b2b074",
+      "heading": "要件一覧",
+      "position": 5,
+      "section_id": "DLID-nvp0wwnk9qay"
+    }
+  ],
   "summary": [
     "Review flow: body drives rounds with reviewer then evaluator until termination, then deletes retained items",
     "FNC-302 to FNC-305: hand-off by identifiers only, scripts assemble input, values unchanged, request immutable during review",

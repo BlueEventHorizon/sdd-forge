@@ -1,4 +1,5 @@
 {
+  "applied_hash": "8447df198f9e2bc861864f5d8d4dfda3c48c253594a3f599ba4b6631f7d64492",
   "content_hash": "8447df198f9e2bc861864f5d8d4dfda3c48c253594a3f599ba4b6631f7d64492",
   "doc_link_id": "DLID-yg0c67zs3zky",
   "keywords": [
@@ -13,8 +14,217 @@
     "focus and scope",
     "finding verification"
   ],
+  "last_check": {
+    "checked_at": "2026-11-25T02:44:01+00:00",
+    "result": "success"
+  },
   "path": "docs/specs/forge/requirements/REQ-013_review_policy.md",
   "purpose": "Defines the review policy requirements for forge: document-centered review priorities, review as observations not instructions, CLI axes, confidence-based auto-fix, backends, and finding verification.",
+  "references": [
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/specs/review/requirements/REQ-029_review_exchange.md",
+        "result": "match",
+        "scope": "docs/specs/review/requirements"
+      },
+      "kind": "document",
+      "position": 0,
+      "recorded_content_hash": "d635cdb8307b",
+      "recorded_path": "../../review/requirements/REQ-029_review_exchange.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-5vrs9fnet7de",
+      "target_section_id": null
+    }
+  ],
+  "sections": [
+    {
+      "content_hash": "08af188a42155826bced5f0facffd8168370c62fc48479ad6531a38f3aa45791",
+      "heading": "FNC-1310: AI が誤判定しにくい CLI 構造",
+      "position": 27,
+      "section_id": "DLID-j9rnhfn8fnkz"
+    },
+    {
+      "content_hash": "1474beb23963dd25ec73a9534da52e698bf533c5299fe531e0a7eb3dbfdfe0d8",
+      "heading": "バックエンドの解決順 [MANDATORY]",
+      "position": 15,
+      "section_id": "DLID-48jhzzh2p007"
+    },
+    {
+      "content_hash": "2831e4ffdcfd23a9cb8299e30634eae40985bd28398dc2dc24a99c1bce5deac3",
+      "heading": "確信が自動修正の可否を決める [MANDATORY]",
+      "position": 12,
+      "section_id": "DLID-xetkzas7c28z"
+    },
+    {
+      "content_hash": "2c6ddf015a2c8e4bf13d236212d871327736e828869e26f6c0a1c0f497b95934",
+      "heading": "1.2 設計時点での情報完全性 [CRITICAL]",
+      "position": 3,
+      "section_id": "DLID-ah9s3fxqrs21"
+    },
+    {
+      "content_hash": "319bd413c90ad7df39b1853dc09169a7c2bea8a91ba1e99fe1edd87dac94bb7a",
+      "heading": "FNC-1306: ルール抜け落ち発見時の Issue 化",
+      "position": 23,
+      "section_id": "DLID-yt8pafsnntw9"
+    },
+    {
+      "content_hash": "40814c38df6a6b831924951b0dbf19a43e8ef7b4c022321cd13e074e5c226451",
+      "heading": "1. 背景",
+      "position": 1,
+      "section_id": "DLID-9f72b9c2xprr"
+    },
+    {
+      "content_hash": "46842c4928ae9df7def3c1703db9baf367ddd9d62795db6831e945da570111cd",
+      "heading": "2. 要件",
+      "position": 6,
+      "section_id": "DLID-6watdvxznggt"
+    },
+    {
+      "content_hash": "46bbd2f3de540dc8f7f9dfd79d26f4c17d9d9cc12862d7ebd5a1c194e8fba700",
+      "heading": "FNC-1301: レビュー観点の優先度体系",
+      "position": 7,
+      "section_id": "DLID-m5czk07a4bs5"
+    },
+    {
+      "content_hash": "4a6064a860817219b8465e360ecb69517a6834a4add92dc68cc239bf3975f57f",
+      "heading": "FNC-1311: principles 拡充（重大度カタログ化 + グレーゾーン許容範囲明示化）",
+      "position": 28,
+      "section_id": "DLID-rzhfmwn43h2m"
+    },
+    {
+      "content_hash": "5328c977b229f8a2e59c335ba825a22373e20c460f8c94ca5e0dc85d3cb0009c",
+      "heading": "1.4 レビューの位置づけ [CRITICAL]",
+      "position": 5,
+      "section_id": "DLID-k7qh170y65d3"
+    },
+    {
+      "content_hash": "5b9990a31a4306a1a76b0f8f40c7f7a65f142d2b2bb676c025b6a39dae2d2d63",
+      "heading": "FNC-1314: 文書参照の恒久観点化",
+      "position": 21,
+      "section_id": "DLID-m83167k8pae9"
+    },
+    {
+      "content_hash": "6a4384abded14dba4aafc3f58d991523635a165f589e8f043ba50d5b26d12d0b",
+      "heading": "入出力契約 [CRITICAL]",
+      "position": 16,
+      "section_id": "DLID-qh457m7rp5gt"
+    },
+    {
+      "content_hash": "6b0b94b8333eef9c90912be64981a6c17a091b23037d56d556cda9f1077fbe5c",
+      "heading": "FNC-1302: criteria は固有 perspective と判断を持たない",
+      "position": 8,
+      "section_id": "DLID-zqzjjznzrcm6"
+    },
+    {
+      "content_hash": "75349a2d1ad558e28b573e167e469058356d7c0d84010229bb1b509b20bce940",
+      "heading": "1.1 思想転換 — ドキュメント主義への純化",
+      "position": 2,
+      "section_id": "DLID-xzacd9rakfpz"
+    },
+    {
+      "content_hash": "7a8b7dbf4010f0e23c9218f660c2be76701d7d378b0007f9b9fd5152c57d3687",
+      "heading": "4. 未確定事項",
+      "position": 30,
+      "section_id": "DLID-v7j94vn4p00z"
+    },
+    {
+      "content_hash": "8aa75e9b70b47449de2dfff473ad217c23800a1d258022fb239e070fa0bf31cf",
+      "heading": "FNC-1303: 対象指定（対象軸）",
+      "position": 9,
+      "section_id": "DLID-vqtmmp15h1py"
+    },
+    {
+      "content_hash": "922d982b9de78080f98ec159b1e0fa11db7688078c06d90271fa11420f91d018",
+      "heading": "FNC-1312: 対象指定の粒度保存 [MANDATORY]",
+      "position": 10,
+      "section_id": "DLID-gnajrnjxg8a2"
+    },
+    {
+      "content_hash": "98fb64ce28294102e950cc12c30bf82c139ac51d5408860401bb02eb43d69b1c",
+      "heading": "FNC-1307: デフォルト挙動の明示",
+      "position": 25,
+      "section_id": "DLID-fktvvgbgsrcx"
+    },
+    {
+      "content_hash": "9a509c115040c04cd99dea90a64e5fd88e3621114c6da2d33a78da3c4a59df04",
+      "heading": "FNC-1313: 重点観点（focus）",
+      "position": 13,
+      "section_id": "DLID-xfyh1r4gprc1"
+    },
+    {
+      "content_hash": "9f38d2f6dac176854d2b0951bb520f6810a467911d61e5b971ed88148bb799f4",
+      "heading": "FNC-1319: 到達目標（scope）",
+      "position": 17,
+      "section_id": "DLID-ae2bp46ra1hh"
+    },
+    {
+      "content_hash": "9fe3b1763e158bbd38a78da303c97c5065d8ac18ee36132c17b7b41ad64a8509",
+      "heading": "FNC-1305: forge 内蔵ルールのフォールバック",
+      "position": 22,
+      "section_id": "DLID-bdafadn70vtb"
+    },
+    {
+      "content_hash": "a67cd0150318b4baa90b279f124be6480348f067ed32a04831805ccca9fa3db4",
+      "heading": "1.3 前提 — レビュー入力は呼び出し元が整える",
+      "position": 4,
+      "section_id": "DLID-5npderh0vzee"
+    },
+    {
+      "content_hash": "ac3bb5c56079c600fecfcf781f64477127d01f750bc7b0fff68bfc810a7c550a",
+      "heading": "REQ-013 レビューポリシー要件",
+      "position": 0,
+      "section_id": "DLID-g9zybdhxpjnd"
+    },
+    {
+      "content_hash": "bebbf417538f9a7f1e5af335175abaacdd979dfd26fb815eb3859307b27e5766",
+      "heading": "FNC-1304: 介入軸（interaction）",
+      "position": 11,
+      "section_id": "DLID-kxa86gd4s3hd"
+    },
+    {
+      "content_hash": "cb5d5e445587899100565ee3271e957943e8b2e00b311e0fd1020bcdd67a1550",
+      "heading": "FNC-1318: レビューバックエンド軸（backend）",
+      "position": 14,
+      "section_id": "DLID-rg6pyvdzt9z1"
+    },
+    {
+      "content_hash": "ceeaf134cb6935c1992272cf3461a85b42145cbc85b4ae5f485649625e229329",
+      "heading": "3. 適用対象",
+      "position": 29,
+      "section_id": "DLID-wg15jjn9pgcq"
+    },
+    {
+      "content_hash": "cf57d8010b7aea66f1f8dfa02bab0847ec9fefd1d3aa57e35e7778649551d9f6",
+      "heading": "FNC-1321: 全所見の自己検証",
+      "position": 19,
+      "section_id": "DLID-5b0xje4t2263"
+    },
+    {
+      "content_hash": "ddb835e2e3b151c6186f3f1cf30917bb2a5c9e959577043e8f8863e7be1072c6",
+      "heading": "FNC-1322: 所見評価の独立検証と、全所見が評価に紐づくことの機械的な保証",
+      "position": 20,
+      "section_id": "DLID-hawzjn9swphd"
+    },
+    {
+      "content_hash": "e1a8af73ab06a4e300bc958bf294d24b5cb6d3d66f612436af746d3ca529774d",
+      "heading": "判定 3 条件 [CRITICAL]",
+      "position": 24,
+      "section_id": "DLID-kx3d3k1qzxcr"
+    },
+    {
+      "content_hash": "e2f04af75418c2c0a112a22a13f3333fd97f9717ffde5cf9b07461aef2529c8e",
+      "heading": "FNC-1309: criteria の固定 3 セクション構造",
+      "position": 26,
+      "section_id": "DLID-gr748jvn5yc7"
+    },
+    {
+      "content_hash": "ee67e06c9fdbec782ed82ad7939f6095b327a3f4c2aa12db3be572b07c2ae0d7",
+      "heading": "FNC-1320: 規範の持ち込み",
+      "position": 18,
+      "section_id": "DLID-brb6j4xfwzr3"
+    }
+  ],
   "summary": [
     "Background and philosophy: review purified into document matching, with complete information available at design time",
     "Review position: findings are observations, and the main body decides adoption; severity does not decide adoption",

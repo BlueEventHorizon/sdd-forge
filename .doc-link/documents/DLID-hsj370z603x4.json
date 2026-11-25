@@ -1,4 +1,5 @@
 {
+  "applied_hash": "592ff7537fe8b61ddd6211e24421b315e96ae7f2df5cbe0fa0966379399ad30d",
   "content_hash": "592ff7537fe8b61ddd6211e24421b315e96ae7f2df5cbe0fa0966379399ad30d",
   "doc_link_id": "DLID-hsj370z603x4",
   "keywords": [
@@ -13,8 +14,157 @@
     "item identifier",
     "requirements"
   ],
+  "last_check": {
+    "checked_at": "2026-11-25T02:44:01+00:00",
+    "result": "success"
+  },
   "path": "docs/specs/consult/agenda/requirements/REQ-021_agenda_display.md",
   "purpose": "Requirements for the agenda display layer that generates human-readable presentations from the agenda record, giving overview, change visibility, and consistency with the record.",
+  "references": [
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/specs/consult/agenda/design/DES-077_agenda_display_design.md",
+        "result": "match",
+        "scope": "docs/specs/consult/agenda/design"
+      },
+      "kind": "document",
+      "position": 2,
+      "recorded_content_hash": "2782ba223e7b",
+      "recorded_path": "../design/DES-077_agenda_display_design.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-8s8p9ah1hyry",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/specs/consult/agenda/requirements/REQ-019_agenda_record.md",
+        "result": "match",
+        "scope": "docs/specs/consult/agenda/requirements"
+      },
+      "kind": "document",
+      "position": 0,
+      "recorded_content_hash": "fcdbb11a3887",
+      "recorded_path": "REQ-019_agenda_record.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-0868m80sm7hy",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "plugins/forge/docs/spec_priorities_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 1,
+      "recorded_content_hash": "b68b930cec1d",
+      "recorded_path": "../../../../../plugins/forge/docs/spec_priorities_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-f9ny9e932trv",
+      "target_section_id": null
+    }
+  ],
+  "sections": [
+    {
+      "content_hash": "016f9d2c3085c3cb8ddcb298cdb9e5dca8b91c74b36672c571dd05803f0f241c",
+      "heading": "REQ-021 agenda 表示層 要件定義書",
+      "position": 0,
+      "section_id": "DLID-nb1h0s06p0nd"
+    },
+    {
+      "content_hash": "0f9cfeab354346a83d8e3947c6d3c8ea5a3a0efe9e5efc52fdb6d4faf47007e9",
+      "heading": "2.1 対象",
+      "position": 5,
+      "section_id": "DLID-x9v6z51p5nq0"
+    },
+    {
+      "content_hash": "3d1e17ce4a8f9b63308e523d38fac06d1d9e797e7fda6d373276c6b87c602aad",
+      "heading": "1.1 対象システムの性質",
+      "position": 2,
+      "section_id": "DLID-g22r7ashxvjs"
+    },
+    {
+      "content_hash": "490ab9357686acbde3d9f043ccb0565797adeb92b1e0a0ae694e39faf893556b",
+      "heading": "1.2 用語",
+      "position": 3,
+      "section_id": "DLID-yvvtp14pscfz"
+    },
+    {
+      "content_hash": "55d8f7520a552a3c52f75db7d1cccfe3762dcd4007349b49365ac9de8a3c7fa3",
+      "heading": "NFR-001: 提示は生成物であると読み取れる",
+      "position": 14,
+      "section_id": "DLID-esgfvdc3qqdb"
+    },
+    {
+      "content_hash": "807f663fef47518510efa335c59c3b7764b8ad5e4f125ab96ebc9ebf3daa81b4",
+      "heading": "3. 機能要件",
+      "position": 7,
+      "section_id": "DLID-n5xnh9ta6c48"
+    },
+    {
+      "content_hash": "84690813efb0737e14afb41f177cc6e0739f739df8768f73c6f2f368e0dff047",
+      "heading": "FNC-001: 俯瞰可能性",
+      "position": 8,
+      "section_id": "DLID-ccxz0c24ryz8"
+    },
+    {
+      "content_hash": "8b6c34eb13908a396c665ae54e04078564097eaeef8849cd30796134c0d065a5",
+      "heading": "FNC-005: 識別子からの直接到達",
+      "position": 12,
+      "section_id": "DLID-wfxec5hcjrpq"
+    },
+    {
+      "content_hash": "a277452e4d6143b8900dd94ca24ee8f48c393ca6be61a102bf69658c510fe7dc",
+      "heading": "FNC-002: 変更箇所の可視化",
+      "position": 9,
+      "section_id": "DLID-8tpfwph5wzfj"
+    },
+    {
+      "content_hash": "a8de2db7970e3da1eefc00ca2c7e492553c59bc05fd7bd247a3d2c9ed378383d",
+      "heading": "2.2 対象外",
+      "position": 6,
+      "section_id": "DLID-qpq27hwr6hys"
+    },
+    {
+      "content_hash": "ac2a0ee9357e4c5598c48203d6ec62f387a1757e87c1930deb580e0ecac90a89",
+      "heading": "FNC-004: AI は人間向けの提示物を読まない",
+      "position": 11,
+      "section_id": "DLID-kz9f21jfcs5e"
+    },
+    {
+      "content_hash": "ad706ed069c84e5226385eb697b82fb9fcfd0711e25782fd5fab8eaaf745bfea",
+      "heading": "1. 概要",
+      "position": 1,
+      "section_id": "DLID-7e30hh9s68g4"
+    },
+    {
+      "content_hash": "e89e80c1c53d2b6bf01ff5eee7fec457ac94a04254ff6d0cc2c80a647c463dfa",
+      "heading": "4. 非機能要件",
+      "position": 13,
+      "section_id": "DLID-dz00mz8vwn1x"
+    },
+    {
+      "content_hash": "ec64b44aeac4661023f7e365079568865f36f3089e431c032ec76dd5849ee7f6",
+      "heading": "FNC-003: 提示と記録の一致",
+      "position": 10,
+      "section_id": "DLID-kr6q98nabe64"
+    },
+    {
+      "content_hash": "ef15cf348e36770acb2c9eb344c7cbee7e5b5c328964e273f7b44f3ec2b31feb",
+      "heading": "5. 未確定事項",
+      "position": 15,
+      "section_id": "DLID-g93e2ykran8s"
+    },
+    {
+      "content_hash": "fabecf0ccf661023d6c247fdf2c4f607565ae74bf938d3a929f331b754539710",
+      "heading": "2. スコープ",
+      "position": 4,
+      "section_id": "DLID-ydrnv3rj1wpx"
+    }
+  ],
   "summary": [
     "Overview: separating display from storage to avoid boundary collisions in human text",
     "Terminology follows the agenda record requirements; no new terms",

@@ -1,4 +1,5 @@
 {
+  "applied_hash": "16677411b761ad79d6aa76e7fd0c2463b2474085bab4eb79b0011d861806f7db",
   "content_hash": "16677411b761ad79d6aa76e7fd0c2463b2474085bab4eb79b0011d861806f7db",
   "doc_link_id": "DLID-ct64b13ee182",
   "keywords": [
@@ -13,8 +14,112 @@
     "query skill",
     "argument interpretation"
   ],
+  "last_check": {
+    "checked_at": "2026-11-25T02:44:01+00:00",
+    "result": "success"
+  },
   "path": "docs/specs/forge/requirements/REQ-001_orchestrator_pattern.md",
   "purpose": "Defines requirements for the orchestrator pattern in forge skills: delegation to skills and agents, self-contained reference docs, parallel execution, data exchange, document formats, and completion flow.",
+  "references": [
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/rules/forge_agent_data_exchange_rules.md",
+        "result": "match",
+        "scope": "docs/rules"
+      },
+      "kind": "document",
+      "position": 1,
+      "recorded_content_hash": "d359747d755f",
+      "recorded_path": "../../../rules/forge_agent_data_exchange_rules.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-7zh3q09p2acs",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/specs/start-implement/requirements/REQ-034_start_implement_spec.md",
+        "result": "match",
+        "scope": "docs/specs/start-implement/requirements"
+      },
+      "kind": "document",
+      "position": 0,
+      "recorded_content_hash": "8c2f9a2476da",
+      "recorded_path": "../../start-implement/requirements/REQ-034_start_implement_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-ypd7r1j5ga4n",
+      "target_section_id": null
+    }
+  ],
+  "sections": [
+    {
+      "content_hash": "1b626b6a2e54b15d493165bc0e5d187fc1d107199393de0f82619868af234d10",
+      "heading": "FNC-007: ユーザー入力の解釈は AI が行う",
+      "position": 9,
+      "section_id": "DLID-tadfv5fhkz3d"
+    },
+    {
+      "content_hash": "3e8ed4df016fa2fbcc9f4f4d5e24b6a051530c7234f19967c88ee45b3d56085d",
+      "heading": "FNC-003: 参照文書の自己完結性",
+      "position": 5,
+      "section_id": "DLID-svjw8ytshy64"
+    },
+    {
+      "content_hash": "4bfbc7fca1bdb28f767554ed4d052be2e2f6292853fd4c24f48c44c0bc7baee2",
+      "heading": "適用対象",
+      "position": 2,
+      "section_id": "DLID-cf9v4hahqs5p"
+    },
+    {
+      "content_hash": "4f2e5e949a4b585822f95431d89f1743955b6a33c27875379bb506171460794b",
+      "heading": "FNC-004: 並列実行可能な構造とデータの受け渡し",
+      "position": 6,
+      "section_id": "DLID-1t4eyat3jpvp"
+    },
+    {
+      "content_hash": "6c5a51d08510863f04177249a39885a2e022ae68e3a7ef646921c51ea8f2d751",
+      "heading": "REQ-001 オーケストレータパターン要件",
+      "position": 0,
+      "section_id": "DLID-199njmm1vmsn"
+    },
+    {
+      "content_hash": "8042609c3fc853a9537c37bd4902d911be5542269229d55600e527de427d08c6",
+      "heading": "3. 適用対象",
+      "position": 10,
+      "section_id": "DLID-0wz5a4q3pg07"
+    },
+    {
+      "content_hash": "9020a20c0e91b889a1d740c766192a064bfb8fcf3875b8e12311066d6e617c7e",
+      "heading": "2. 要件",
+      "position": 3,
+      "section_id": "DLID-ytz307nbp2t6"
+    },
+    {
+      "content_hash": "a9361767ffc5a28fc2eccb49f1e9c198287c7ecc439c560bb675024ce40cc75d",
+      "heading": "FNC-001: オーケストレータ設計",
+      "position": 4,
+      "section_id": "DLID-z95x19p40s6p"
+    },
+    {
+      "content_hash": "ad6eba9b9a2ead719b7a80a909b0822bbf65a3e4f2cddcdee09b12a850290dcb",
+      "heading": "1. 背景",
+      "position": 1,
+      "section_id": "DLID-6wbsjebtgzdz"
+    },
+    {
+      "content_hash": "aef35eedf15a60e1ecf9fae66b62bcd205c317eb864d2fd0e9b144b1e8c4675d",
+      "heading": "FNC-005: 文書フォーマットの選定基準",
+      "position": 7,
+      "section_id": "DLID-47mx8a943xcd"
+    },
+    {
+      "content_hash": "ba896065508cb64e450ed00194d85ef25b82b76280ed397ad7623f9e4ed824cd",
+      "heading": "FNC-006: 共通完了処理フロー",
+      "position": 8,
+      "section_id": "DLID-cebcwgcfajye"
+    }
+  ],
   "summary": [
     "Background: God-Skill problems (context consumption, reduced instruction following, no parallelism, loss on compression)",
     "Target skills using orchestrator plus delegation: start-design, start-plan, start-implement, start-requirements, review",

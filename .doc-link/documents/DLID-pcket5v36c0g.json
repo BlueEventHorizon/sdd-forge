@@ -1,4 +1,5 @@
 {
+  "applied_hash": "232b86ee78dcbb7d1bbeb6794db127e9247752bfa520bbb542c9b51ca6ebbd98",
   "content_hash": "232b86ee78dcbb7d1bbeb6794db127e9247752bfa520bbb542c9b51ca6ebbd98",
   "doc_link_id": "DLID-pcket5v36c0g",
   "keywords": [
@@ -13,8 +14,310 @@
     "one ADR file per feature",
     "REQ-030"
   ],
+  "last_check": {
+    "checked_at": "2026-11-25T02:44:01+00:00",
+    "result": "success"
+  },
   "path": "docs/specs/adr-writer/design/DES-085_adr_writer_design.md",
   "purpose": "Defines the design (How) of the ADR writer feature: a write-adr entry SKILL, an isolated adr-writer custom Agent, and an adr_exchange.py handoff script, implementing the requirements of REQ-030.",
+  "references": [
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/rules/plugin_claude_code_authoring_guide.md",
+        "result": "match",
+        "scope": "docs/rules"
+      },
+      "kind": "document",
+      "position": 1,
+      "recorded_content_hash": "65302c63b0e1",
+      "recorded_path": "../../../rules/plugin_claude_code_authoring_guide.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-pvwk8en5c2rq",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/rules/plugin_claude_code_reference.md",
+        "result": "match",
+        "scope": "docs/rules"
+      },
+      "kind": "document",
+      "position": 0,
+      "recorded_content_hash": "c78f488a3ced",
+      "recorded_path": "../../../rules/plugin_claude_code_reference.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-d384sm5xwctj",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/specs/adr-writer/requirements/REQ-030_adr_writer.md",
+        "result": "match",
+        "scope": "docs/specs/adr-writer/requirements"
+      },
+      "kind": "document",
+      "position": 2,
+      "recorded_content_hash": "5145154553b8",
+      "recorded_path": "../requirements/REQ-030_adr_writer.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-7gyjj06rtab7",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/specs/common/requirements/COMMON-REQ-002_error_handling_policy.md",
+        "result": "match",
+        "scope": "docs/specs/common/requirements"
+      },
+      "kind": "document",
+      "position": 6,
+      "recorded_content_hash": "1fe6b5d5aa31",
+      "recorded_path": "../../common/requirements/COMMON-REQ-002_error_handling_policy.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-4wn8sb8y1f80",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/specs/forge/design/DES-019_create_plan_workflow_design.md",
+        "result": "match",
+        "scope": "docs/specs/forge/design"
+      },
+      "kind": "document",
+      "position": 3,
+      "recorded_content_hash": "dcf01b441a6b",
+      "recorded_path": "../../forge/design/DES-019_create_plan_workflow_design.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-1585cw3yt8pa",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/specs/forge/design/DES-022_parallel_agent_output_contract_design.md",
+        "result": "match",
+        "scope": "docs/specs/forge/design"
+      },
+      "kind": "document",
+      "position": 5,
+      "recorded_content_hash": "02eb53006efc",
+      "recorded_path": "../../forge/design/DES-022_parallel_agent_output_contract_design.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-5h7wqxcknyha",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/specs/forge/requirements/REQ-003_skill_script_separation.md",
+        "result": "match",
+        "scope": "docs/specs/forge/requirements"
+      },
+      "kind": "document",
+      "position": 7,
+      "recorded_content_hash": "3b1c5409fe80",
+      "recorded_path": "../../forge/requirements/REQ-003_skill_script_separation.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-bgxgcq0pvkm7",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "plugins/forge/docs/deterministic_generation_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 4,
+      "recorded_content_hash": "75383cc8c6d8",
+      "recorded_path": "../../../../plugins/forge/docs/deterministic_generation_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-tm2m7nv23dqd",
+      "target_section_id": null
+    }
+  ],
+  "sections": [
+    {
+      "content_hash": "08b52a800fef6322162335bfb7261d5656f5be69731202eb0ee4f5da00ab319f",
+      "heading": "3.4 `write-adr` SKILL",
+      "position": 21,
+      "section_id": "DLID-q099rj29v2kh"
+    },
+    {
+      "content_hash": "0bd7a19fd379fefd30f6d9702e977abce31369346822f79dfd0f046a3d462e77",
+      "heading": "検査",
+      "position": 18,
+      "section_id": "DLID-c569e10kaqyw"
+    },
+    {
+      "content_hash": "188fa2cf3ec85f830c82aee666ca1ecf207a74f8798e3f939a36c3fa485c3a81",
+      "heading": "`open` の入力",
+      "position": 17,
+      "section_id": "DLID-fppevddrxwt2"
+    },
+    {
+      "content_hash": "22f8fe97ac3b4938c9d09837c2416ce8d6908d9e25abf712fa948259713b7db4",
+      "heading": "3. モジュール設計",
+      "position": 10,
+      "section_id": "DLID-gmfmpyeh6gcc"
+    },
+    {
+      "content_hash": "2767d6dc7fc3f2164ec3e268120e657bf13e829eb13e88184b73b0ef82a1675c",
+      "heading": "3.1 モジュール一覧",
+      "position": 11,
+      "section_id": "DLID-7gr81gb15tz4"
+    },
+    {
+      "content_hash": "3bb15c50dd6476e2cf139e338d95c004d6004f5128c63052bbf54784b34d96bf",
+      "heading": "4.1 ユースケース一覧",
+      "position": 24,
+      "section_id": "DLID-506m30wbwkpe"
+    },
+    {
+      "content_hash": "4576102f284dcc8df35014219671d2ff2674ba1324217e924ba1ef4fe76dca2e",
+      "heading": "2. アーキテクチャ",
+      "position": 2,
+      "section_id": "DLID-3c8ddx1ay951"
+    },
+    {
+      "content_hash": "49f922e59dc6b112f540019459414a78400363aeaeb3f2c18b101022063734ff",
+      "heading": "3.3 `adr-writer` Agent",
+      "position": 20,
+      "section_id": "DLID-20trhab84r93"
+    },
+    {
+      "content_hash": "4f0596e52942a2d060cc1787270a79bf1d3a0e236ac98536843f478c606605ae",
+      "heading": "サブコマンド",
+      "position": 15,
+      "section_id": "DLID-yctkbv77yrp2"
+    },
+    {
+      "content_hash": "68aae39ebe6598ee1ffc155e0968f9c53bea669f7f754704e5e4442491334996",
+      "heading": "4.2 シーケンス図",
+      "position": 25,
+      "section_id": "DLID-0rxmr20nbm4m"
+    },
+    {
+      "content_hash": "6baa7fefc4c4bf1db8c36a52b5ef9a57a86ffb668d717e40990fb6cd0ddef55d",
+      "heading": "依頼のフィールド",
+      "position": 16,
+      "section_id": "DLID-afdnjpjctb81"
+    },
+    {
+      "content_hash": "7c08ad1097f0973ab2b8384ba7c33bc4a15b65708f9b6443e48b96cad263f44c",
+      "heading": "2.2 設計判断",
+      "position": 4,
+      "section_id": "DLID-bjr6bz0fjtwp"
+    },
+    {
+      "content_hash": "87bd516f7d8b13522b060f677fd4ab98120c7c9b2b7eb1cfdae3e30d0172eb65",
+      "heading": "Agent にする理由",
+      "position": 5,
+      "section_id": "DLID-c3rab2dbaja6"
+    },
+    {
+      "content_hash": "8ab0d53342f0ed556f11d274f530b272ee74bb651594135419499cff0c2ee882",
+      "heading": "識別値と置き場",
+      "position": 13,
+      "section_id": "DLID-4aq4vdrgqs81"
+    },
+    {
+      "content_hash": "929cddb61bb5ba893448b3a776c8f3303ea7249a76e96515d20d87897a863c59",
+      "heading": "feature ごとに 1 つの ADR ファイルへ書く",
+      "position": 7,
+      "section_id": "DLID-j8ws7xdq02yy"
+    },
+    {
+      "content_hash": "9704a0ddd92b2313261a52f5cb983e07c02a7954cdef83696d515bd0a46fc8c8",
+      "heading": "6. テスト設計",
+      "position": 27,
+      "section_id": "DLID-t44kffx8ndn2"
+    },
+    {
+      "content_hash": "ad82cf013735b67bd8390d5428f25dd7bdc90b2d2886134da619ceb5e0688e2b",
+      "heading": "4. ユースケース設計",
+      "position": 23,
+      "section_id": "DLID-z4q6tnfdh8y3"
+    },
+    {
+      "content_hash": "ada100d06454739bef49305a3ab2465d9449d1690de387e37cb8af1fda016809",
+      "heading": "返すのは判定だけにする",
+      "position": 9,
+      "section_id": "DLID-h20h4aefv57b"
+    },
+    {
+      "content_hash": "ae6c4a16662fcb66f75f468ba3b87b2c7246f745f8a213b6ee40dc4b98648fc5",
+      "heading": "3.5 規範文書",
+      "position": 22,
+      "section_id": "DLID-83k0wa2c0p2y"
+    },
+    {
+      "content_hash": "aeeae85143e07f4eee5cdf17f3cae7579c3db47a76d7becfbff7af19f519869c",
+      "heading": "記載先の決定",
+      "position": 14,
+      "section_id": "DLID-9nem5z72v6wt"
+    },
+    {
+      "content_hash": "be2622b116bc9541afaab6c56b12f25d6c7710b592151068b0e24ea1b4e16d71",
+      "heading": "2.1 責務",
+      "position": 3,
+      "section_id": "DLID-83xxh6bb41br"
+    },
+    {
+      "content_hash": "ca2c46964053de86c0dceb27bc26461b60ce9b1c4cc606f033b5f0d2bbbf557c",
+      "heading": "5. 使用する既存コンポーネント",
+      "position": 26,
+      "section_id": "DLID-c38fbs9k94gk"
+    },
+    {
+      "content_hash": "d5ee93e1ac4ad8e0804e7c47e594af66384a89b2cea1a7a0bba32d31305f4437",
+      "heading": "1. 概要",
+      "position": 1,
+      "section_id": "DLID-a4ca7y4rr10y"
+    },
+    {
+      "content_hash": "d8dca6f58aebced4cb52795612f7db16a138620e294f107e696c637e11b63eac",
+      "heading": "ADR の本文は Agent が直接書く",
+      "position": 8,
+      "section_id": "DLID-vv2cn0yss8w4"
+    },
+    {
+      "content_hash": "db42b91482ccb779e7cc86c896f0212957b23e1921999097d56ee44adf2fc52a",
+      "heading": "3.2 `adr_exchange.py`",
+      "position": 12,
+      "section_id": "DLID-0c5xt8c0hd3v"
+    },
+    {
+      "content_hash": "e11d3e729f4788890478e9fa85e986637bad405433a43c8773865d397444aa66",
+      "heading": "DES-085 ADR ライター 設計書",
+      "position": 0,
+      "section_id": "DLID-6v2tm05rfrxk"
+    },
+    {
+      "content_hash": "e1505abc0140e210974da015de4f5ea6b6639b67e668ef7bd46644cf46a24201",
+      "heading": "終了コードと出力",
+      "position": 19,
+      "section_id": "DLID-tpejtgtgt8fd"
+    },
+    {
+      "content_hash": "f5bea44bdb53def1923b433c442f0482735e1bd49cb1da443d450e41690f7f3c",
+      "heading": "7. 未確定事項",
+      "position": 28,
+      "section_id": "DLID-v1bpcwfejxzq"
+    },
+    {
+      "content_hash": "fac85401e45ea67c4ceee273701c3b96a8a9ea86cf818a673adc6bf06ff79775",
+      "heading": "入口を SKILL にする理由",
+      "position": 6,
+      "section_id": "DLID-k7bvbds56vfg"
+    }
+  ],
   "summary": [
     "Overview of three components: write-adr inheriting SKILL, adr-writer custom Agent, adr_exchange.py script",
     "Architecture diagram and responsibilities of each component and its write targets",

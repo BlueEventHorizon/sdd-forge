@@ -1,4 +1,5 @@
 {
+  "applied_hash": "f1c15e9bfe0dfb26ceaaf03f1d027222638fcc1b0cfe11dd89701f0f20e4e83b",
   "content_hash": "f1c15e9bfe0dfb26ceaaf03f1d027222638fcc1b0cfe11dd89701f0f20e4e83b",
   "doc_link_id": "DLID-zehb6ge71vgb",
   "keywords": [
@@ -13,8 +14,145 @@
     "start-plan",
     "start-implement"
   ],
+  "last_check": {
+    "checked_at": "2026-11-25T02:44:01+00:00",
+    "result": "success"
+  },
   "path": "docs/specs/forge/requirements/REQ-024_implementation_plan_spec.md",
   "purpose": "Defines what an implementation plan must hold: tasks, dependencies, deterministic next-task selection, traceability, task granularity, document paths, transience, and task groups.",
+  "references": [
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/specs/forge/requirements/REQ-001_orchestrator_pattern.md",
+        "result": "match",
+        "scope": "docs/specs/forge/requirements"
+      },
+      "kind": "document",
+      "position": 1,
+      "recorded_content_hash": "16677411b761",
+      "recorded_path": "REQ-001_orchestrator_pattern.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-ct64b13ee182",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/specs/forge/requirements/REQ-025_additive_development_spec.md",
+        "result": "match",
+        "scope": "docs/specs/forge/requirements"
+      },
+      "kind": "document",
+      "position": 2,
+      "recorded_content_hash": "a78dcb08e87b",
+      "recorded_path": "REQ-025_additive_development_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-8aaxgj88j28q",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "plugins/forge/docs/spec_priorities_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 0,
+      "recorded_content_hash": "b68b930cec1d",
+      "recorded_path": "../../../../plugins/forge/docs/spec_priorities_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-f9ny9e932trv",
+      "target_section_id": null
+    }
+  ],
+  "sections": [
+    {
+      "content_hash": "12af7704d0dd00eccdbae6bc59677c2018aeaa8504ee0e15db04fd6fc7e994a3",
+      "heading": "FNC-001: タスクの識別と順序付け",
+      "position": 5,
+      "section_id": "DLID-nm82ax96h21w"
+    },
+    {
+      "content_hash": "17a05137b7b2794ba39504cdb2e1933258d43358d1bc35960e6a9c244d85810d",
+      "heading": "REQ-024 実装計画書 要件定義書",
+      "position": 0,
+      "section_id": "DLID-d7vyj47j9crf"
+    },
+    {
+      "content_hash": "2abfff5f12587b0aa525564646e37e5a630965b2a1017ad74edd077e7d1af794",
+      "heading": "FNC-006: 計画書の一時性",
+      "position": 10,
+      "section_id": "DLID-jkqvwxc9njpw"
+    },
+    {
+      "content_hash": "31612339fceba539c1e44a7324c6323f3961a5f035d270ea94a5bde77836e351",
+      "heading": "FNC-003: トレーサビリティの保持",
+      "position": 7,
+      "section_id": "DLID-psw6bs9prnas"
+    },
+    {
+      "content_hash": "4c5d17acf33d016c7f0fc7069922fcd5bc951cf3af12ffe5c564c97c44dd1a84",
+      "heading": "4. 未確定事項",
+      "position": 13,
+      "section_id": "DLID-2xc0dk2tkthy"
+    },
+    {
+      "content_hash": "4e8b92ad4005773bbbef023a21a647fb8380e9e71ca47bb9ba943f098630c70c",
+      "heading": "1. 概要",
+      "position": 1,
+      "section_id": "DLID-5b46t1ygzs7b"
+    },
+    {
+      "content_hash": "648a3f422b76c4f662ee7236efa0f866267287d9d86721c788ce836d02ff4868",
+      "heading": "FNC-008: タスクグループ",
+      "position": 12,
+      "section_id": "DLID-xbe5cg11v3b0"
+    },
+    {
+      "content_hash": "6b73514b1835608395cf0437a3e9fa5a52da8c53d6a6ec020091fa8f5726d762",
+      "heading": "2. 前提条件",
+      "position": 3,
+      "section_id": "DLID-pe4jmfx4589a"
+    },
+    {
+      "content_hash": "6f954a2fc8bbd8c7c855eb9bf3a1480f155c682f7f88bbe2f8ce6844b4052525",
+      "heading": "3. 機能要件",
+      "position": 4,
+      "section_id": "DLID-e576kkv3zcpq"
+    },
+    {
+      "content_hash": "a6ebe0f1a575fe5cfb64fa13394054cece3688a8d6afe1c13d4fe190dec6085a",
+      "heading": "1.1 対象システムの性質",
+      "position": 2,
+      "section_id": "DLID-x7vaf58m3c5w"
+    },
+    {
+      "content_hash": "c583b8f95cbd2780ecbc36864d7b26aef53d35ddba94859cf7f254cd24023409",
+      "heading": "FNC-005: 実装に必要な文書の指定",
+      "position": 9,
+      "section_id": "DLID-kzaq593wnrbw"
+    },
+    {
+      "content_hash": "dc22576c1fc9b7649b901a8140d525ec7ee3360226d26e9c92015e6826f33c95",
+      "heading": "FNC-007: 差分 feature の識別子を持たない",
+      "position": 11,
+      "section_id": "DLID-38kgmvzsazpq"
+    },
+    {
+      "content_hash": "e6c89ec08559ea258f2eaaec72e5c159aeedc6c78fb710667d0f62876b2f8542",
+      "heading": "FNC-004: タスクの粒度",
+      "position": 8,
+      "section_id": "DLID-scen8h18by0s"
+    },
+    {
+      "content_hash": "f0150b25d9f480e68760e08e6e1739419198327d7e58e495f103d6ec6bff3aca",
+      "heading": "FNC-002: 実行可能タスクの一意な決定",
+      "position": 6,
+      "section_id": "DLID-150tzdrybmq1"
+    }
+  ],
   "summary": [
     "Overview: plan created by start-plan and consumed by start-implement; JSON format; scope of the target system",
     "FNC-001: tasks have unique identifiers, priorities, and dependencies",

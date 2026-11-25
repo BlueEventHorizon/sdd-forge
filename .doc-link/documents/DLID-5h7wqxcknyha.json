@@ -1,4 +1,5 @@
 {
+  "applied_hash": "02eb53006efc9e453e76d1e717dbd2dde0d5104bb18d46ed158905170815783b",
   "content_hash": "02eb53006efc9e453e76d1e717dbd2dde0d5104bb18d46ed158905170815783b",
   "doc_link_id": "DLID-5h7wqxcknyha",
   "keywords": [
@@ -13,8 +14,175 @@
     "file lock",
     "anti-pattern"
   ],
+  "last_check": {
+    "checked_at": "2026-11-25T02:44:01+00:00",
+    "result": "success"
+  },
   "path": "docs/specs/forge/design/DES-022_parallel_agent_output_contract_design.md",
   "purpose": "Defines the output contract for parallel agents so results return via return values rather than shared files, eliminating write race conditions by design.",
+  "references": [
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/rules/forge_agent_data_exchange_rules.md",
+        "result": "match",
+        "scope": "docs/rules"
+      },
+      "kind": "document",
+      "position": 1,
+      "recorded_content_hash": "d359747d755f",
+      "recorded_path": "../../../rules/forge_agent_data_exchange_rules.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-7zh3q09p2acs",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/rules/plugin_claude_code_authoring_guide.md",
+        "result": "match",
+        "scope": "docs/rules"
+      },
+      "kind": "document",
+      "position": 0,
+      "recorded_content_hash": "65302c63b0e1",
+      "recorded_path": "../../../rules/plugin_claude_code_authoring_guide.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-pvwk8en5c2rq",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/specs/forge/design/DES-010_create_skills_orchestrator_design.md",
+        "result": "match",
+        "scope": "docs/specs/forge/design"
+      },
+      "kind": "document",
+      "position": 2,
+      "recorded_content_hash": "2129dbe03f23",
+      "recorded_path": "DES-010_create_skills_orchestrator_design.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-s1ds8dcyfn7p",
+      "target_section_id": null
+    }
+  ],
+  "sections": [
+    {
+      "content_hash": "0260262d330bd709fab8b5f75efcfdc0cb4e59e29a0a14a3aec0b9f8cc6e18bd",
+      "heading": "6. 新しい並列 agent を設計する際のチェックリスト",
+      "position": 18,
+      "section_id": "DLID-5b466jpth8re"
+    },
+    {
+      "content_hash": "04c3dd72fafa5dc389b837b0f0fd3c073cf2e44bff05c22cdee8fc555b3251f6",
+      "heading": "2.1 並列書き込み競合",
+      "position": 3,
+      "section_id": "DLID-jxjwdg9a5ba8"
+    },
+    {
+      "content_hash": "19fd24cc4615424eb8329872526322e3171c5268b8c9b4abfa4b5957bab1f2ac",
+      "heading": "2.2 Claude Code 環境での制約",
+      "position": 4,
+      "section_id": "DLID-7cnp1afdy2g7"
+    },
+    {
+      "content_hash": "21ca342b881e1ee644b63ac654040ff4f20e0c3f166a44320b65d8d3bdab58f3",
+      "heading": "5.3 ファイルロックによる排他制御",
+      "position": 16,
+      "section_id": "DLID-d61yw5m36gmx"
+    },
+    {
+      "content_hash": "293768df8402e69e7c484235ce196d976d2f9561300af038d07648be43704c8c",
+      "heading": "5. アンチパターン",
+      "position": 13,
+      "section_id": "DLID-c9cvqtnbfsrh"
+    },
+    {
+      "content_hash": "2b75ce0a9164c24efcbe94e34792e424b31eb0938b44aecb5ab002ddc0e5bb4f",
+      "heading": "3.2 結果受け渡しのための中間ファイルを作らない [MANDATORY]",
+      "position": 8,
+      "section_id": "DLID-cbgtsrsztgb8"
+    },
+    {
+      "content_hash": "47359e333d0f36ca7c5da14ecb5661e630e306f14a7bd8efaf75ba181efaab8c",
+      "heading": "5.2 agent 内での Read-Modify-Write",
+      "position": 15,
+      "section_id": "DLID-2s5kacka2gyp"
+    },
+    {
+      "content_hash": "6cf6c9581a78679f3df964131a72fa81357022fc9ca7e9042ae83068f8db5af1",
+      "heading": "5.1 共有ファイルへの直接書き込み [MANDATORY]",
+      "position": 14,
+      "section_id": "DLID-2xjdh8ghyp3g"
+    },
+    {
+      "content_hash": "7bad4b5384cf6bbcfa7f6667f82f32ee96dc59b99f9fcbce7970e78c53d4e7f4",
+      "heading": "2. 問題",
+      "position": 2,
+      "section_id": "DLID-7srxm5s8qnbh"
+    },
+    {
+      "content_hash": "7dddda29d2295a85576c85703ec4d76cf3170b2b090d238da3f02c951165c0b3",
+      "heading": "1. 概要",
+      "position": 1,
+      "section_id": "DLID-9dg78zsk76d6"
+    },
+    {
+      "content_hash": "87dde0ef6a338b6f5dd075e559f8897ab60fc046666bd0c52d54d572281c68ba",
+      "heading": "5.4 結果受け渡しのための中間ファイル",
+      "position": 17,
+      "section_id": "DLID-a03ccdh394em"
+    },
+    {
+      "content_hash": "8f0d0b9a65b7eb64fa96d71f31a01fbec3b65113c23f4fdfc78756c4028510c3",
+      "heading": "4.1 既存コードの収集（start-requirements の reverse-engineering）",
+      "position": 12,
+      "section_id": "DLID-fserqd5yahdj"
+    },
+    {
+      "content_hash": "bd8c3f694777be11f1ee0d718e4e670d5ab95aa3522b87280f5d131ad10446d8",
+      "heading": "3.4 orchestrator の責務",
+      "position": 10,
+      "section_id": "DLID-t76fgnjg74rc"
+    },
+    {
+      "content_hash": "ce453db61a111483c50278fcc812db5a7320d4a01fe82175448463b3b9e803a3",
+      "heading": "3.0 適用範囲",
+      "position": 6,
+      "section_id": "DLID-gh3xbgge1agm"
+    },
+    {
+      "content_hash": "d0e290b24486ed0a1f8e4d2bd81f0c78cd480f6a2a1e7651670c4fffac9da632",
+      "heading": "DES-022 並列 agent 出力契約パターン 設計書",
+      "position": 0,
+      "section_id": "DLID-wca6306e5f7v"
+    },
+    {
+      "content_hash": "d1aae1feb50e6631b5dd8c6cdb0a74cb60dd1ad65b2beee1aafd6aeedf0b2c02",
+      "heading": "4. 適用例",
+      "position": 11,
+      "section_id": "DLID-w2n511gwsg50"
+    },
+    {
+      "content_hash": "d618549d81e2b30939cf90defcb2a6da833767048349db7b857d884d243ec528",
+      "heading": "3.3 agent の責務",
+      "position": 9,
+      "section_id": "DLID-6hcgvv2gh3x1"
+    },
+    {
+      "content_hash": "e68e645d17630862cfe77c0ab41c73897690adce485b18f2cf404b403e994e0a",
+      "heading": "3.1 基本原則",
+      "position": 7,
+      "section_id": "DLID-vqfns5n02w3z"
+    },
+    {
+      "content_hash": "f81a42b027a7eef60c7b8dd8a49f7e541ecbe8db5bfe6779f6507c063b5cd38a",
+      "heading": "3. 出力契約 [MANDATORY]",
+      "position": 5,
+      "section_id": "DLID-cxm356kf6bpe"
+    }
+  ],
   "summary": [
     "Problem of concurrent writes to shared files by parallel agents with no locking support",
     "Scope of the contract: result handoff to the orchestrator, not write-type agents editing their own scope",

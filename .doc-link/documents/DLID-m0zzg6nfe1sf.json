@@ -1,0 +1,356 @@
+{
+  "applied_hash": "ecbe6c8ae7b14617522dbe2d26b2cd92472ae4d2617d6ec32ea87219e5f5316d",
+  "content_hash": "ecbe6c8ae7b14617522dbe2d26b2cd92472ae4d2617d6ec32ea87219e5f5316d",
+  "doc_link_id": "DLID-m0zzg6nfe1sf",
+  "keywords": [
+    "built-in docs search",
+    "query-forge-rules",
+    "rules-query-worker",
+    "query_exchange.py",
+    "handoff script",
+    "relevance selector",
+    "built-in index",
+    "Required documents",
+    "REQ-035",
+    "agent data exchange"
+  ],
+  "last_check": {
+    "checked_at": "2026-11-25T02:44:01+00:00",
+    "result": "success"
+  },
+  "path": "docs/specs/forge/design/DES-090_builtin_docs_search_design.md",
+  "purpose": "Design document for forge built-in documentation search (REQ-035): defines responsibilities, contracts, and detailed design of a search entry point, a relevance selector agent, and a handoff script.",
+  "references": [
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/rules/forge_agent_data_exchange_rules.md",
+        "result": "match",
+        "scope": "docs/rules"
+      },
+      "kind": "document",
+      "position": 0,
+      "recorded_content_hash": "d359747d755f",
+      "recorded_path": "../../../rules/forge_agent_data_exchange_rules.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-7zh3q09p2acs",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/rules/plugin_implementation_guidelines.md",
+        "result": "match",
+        "scope": "docs/rules"
+      },
+      "kind": "document",
+      "position": 4,
+      "recorded_content_hash": "231d1a822305",
+      "recorded_path": "../../../rules/plugin_implementation_guidelines.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-jzs5n6cre1jh",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/specs/agent-review/design/DES-072_agent_review_backend_design.md",
+        "result": "match",
+        "scope": "docs/specs/agent-review/design"
+      },
+      "kind": "document",
+      "position": 3,
+      "recorded_content_hash": "ef29f0fe6897",
+      "recorded_path": "../../agent-review/design/DES-072_agent_review_backend_design.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-rzp2zxe38068",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/specs/forge/adr/ADR-091_forge.md",
+        "result": "match",
+        "scope": "docs/specs/forge/adr"
+      },
+      "kind": "document",
+      "position": 5,
+      "recorded_content_hash": "d318c7706d7a",
+      "recorded_path": "../adr/ADR-091_forge.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-9byg0qbksas5",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/specs/forge/design/DES-001_forge_query_abstraction_design.md",
+        "result": "match",
+        "scope": "docs/specs/forge/design"
+      },
+      "kind": "document",
+      "position": 1,
+      "recorded_content_hash": "3185b65d2c91",
+      "recorded_path": "DES-001_forge_query_abstraction_design.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-d9fpywv4txra",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/specs/forge/design/DES-024_skill_script_layout_design.md",
+        "result": "match",
+        "scope": "docs/specs/forge/design"
+      },
+      "kind": "document",
+      "position": 2,
+      "recorded_content_hash": "2646153bc1d2",
+      "recorded_path": "DES-024_skill_script_layout_design.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-ckbysbfdrsv5",
+      "target_section_id": null
+    }
+  ],
+  "sections": [
+    {
+      "content_hash": "01d8428e53c17facb1d1a836fbbf65a871e27de89adc6072f564a9e15ac92b1d",
+      "heading": "データの構造",
+      "position": 20,
+      "section_id": "DLID-tbxxgs7bemrv"
+    },
+    {
+      "content_hash": "07f625769784f35d68d458804c149efd561428e86de6c113e0b40ff22f94cb37",
+      "heading": "5. 契約",
+      "position": 7,
+      "section_id": "DLID-hdgz5pqanh5w"
+    },
+    {
+      "content_hash": "0808dabda01688c081c2f859727d9b91f1b820078511db4b25a152d1744a99bf",
+      "heading": "8.6 利用ライブラリ",
+      "position": 32,
+      "section_id": "DLID-8gnk5hp8cq5c"
+    },
+    {
+      "content_hash": "083b3c0ae4353f4eeae33ecef0057ad8f07ad339aaa985c92144a6489c31c04b",
+      "heading": "3. 責務",
+      "position": 3,
+      "section_id": "DLID-8g32ybe65g33"
+    },
+    {
+      "content_hash": "0d5069256049422a1971b26e02034a5edc92d245fe9a12ff631593a251080d8e",
+      "heading": "8.1 手段の決定",
+      "position": 16,
+      "section_id": "DLID-9g690w12yxgb"
+    },
+    {
+      "content_hash": "13b7c322e3630620f2ec265d099779078dc8f0e916fb68697d7504a90b9656e2",
+      "heading": "3.2 クラス図",
+      "position": 5,
+      "section_id": "DLID-t3f9pmk9w0dv"
+    },
+    {
+      "content_hash": "2b9b95bb4cf840ac4b6cc038f722c698cef726e59ce455218b7ad0e62638434a",
+      "heading": "6. 防御の層",
+      "position": 13,
+      "section_id": "DLID-34vb5yrh9bj8"
+    },
+    {
+      "content_hash": "31d81183faa1e8ddc6f2ef48651aa01448e0e335f8a1e1949eee20121995c9f1",
+      "heading": "受け渡し係",
+      "position": 11,
+      "section_id": "DLID-rs5mbth89vew"
+    },
+    {
+      "content_hash": "32af669f315ac0845032aae0a86ff0315704a1224a0d5cc6fd06bdb0595f7466",
+      "heading": "手順",
+      "position": 27,
+      "section_id": "DLID-kj32txneww2a"
+    },
+    {
+      "content_hash": "32bbd64ea5325c0fa8b6ac40d286ca096e24e7240863c0409438656f13a85176",
+      "heading": "1. 概要",
+      "position": 1,
+      "section_id": "DLID-xnyttz6x35je"
+    },
+    {
+      "content_hash": "5491edd971bd11cd4a2f89a1e668d30c80d17f4b81337c405cf285a2c011e411",
+      "heading": "7. 追跡表",
+      "position": 14,
+      "section_id": "DLID-9kaggp9819z6"
+    },
+    {
+      "content_hash": "5e6452a8c30f2b4db987f388be736e8801dde53c7ae86fd390bb72150a11774a",
+      "heading": "DES-090 forge 内蔵ドキュメント検索 設計書",
+      "position": 0,
+      "section_id": "DLID-dt21sybwphhc"
+    },
+    {
+      "content_hash": "752ccba28a85a35b530b6ffda71874704a352f49d5972c04d5ec5bed92519d71",
+      "heading": "script の呼び方",
+      "position": 26,
+      "section_id": "DLID-0wzj5sy8tvyj"
+    },
+    {
+      "content_hash": "7614994210e5d307433e538025167b97e5724aa23fe2b933fdf9efc9b10f4cc6",
+      "heading": "8.3 関連選定係（カスタム Agent の定義）",
+      "position": 23,
+      "section_id": "DLID-pnx71va38ndg"
+    },
+    {
+      "content_hash": "7e7f87242303dccaa7a42d80a06a6b2c40cab53b6c1fc8c7f4b7aabe7a5c96a4",
+      "heading": "8.8 上流の設計との対応",
+      "position": 34,
+      "section_id": "DLID-bc69sn6qt6ep"
+    },
+    {
+      "content_hash": "83ea45a9a607f0f6ab49fdab5f072c0cf45ba2911e542d1ae0fc9a129b49bd8e",
+      "heading": "AI の出力の契約",
+      "position": 28,
+      "section_id": "DLID-axh65e29cx6v"
+    },
+    {
+      "content_hash": "85d904957eb14a0bcddf1834c994ce9ee3ef00b423d1471180fe05d33d883461",
+      "heading": "8.9 旧設計書との関係",
+      "position": 35,
+      "section_id": "DLID-enxqx6yrwa65"
+    },
+    {
+      "content_hash": "8ba44f73baf3e3b9bbcba2db7a5dd5079fe5eaca4604340750df6a31a97216b7",
+      "heading": "8. 詳細設計",
+      "position": 15,
+      "section_id": "DLID-204bp15rrbrr"
+    },
+    {
+      "content_hash": "8c32a7d9864a4914966ee624c9cb0467d2239d41a5b8ece332ebe94251fc16bc",
+      "heading": "4. 振る舞い",
+      "position": 6,
+      "section_id": "DLID-tx2vd5b2pws6"
+    },
+    {
+      "content_hash": "8c718c67dcb1c6fcaa47ed4eaffa758473ae28af1ad669ccdd3c42282001efd9",
+      "heading": "検索窓口",
+      "position": 10,
+      "section_id": "DLID-zhfymfernpfq"
+    },
+    {
+      "content_hash": "8ece2987184f91837322dc1da7dca07acf7328d4ebb926ee01c20896700a0e61",
+      "heading": "操作",
+      "position": 18,
+      "section_id": "DLID-8727rfzdbzz5"
+    },
+    {
+      "content_hash": "933d624a616da74a299b1c0bc81933a55afb0c6d5cd19171724d85fe8ecfc81b",
+      "heading": "関連選定係",
+      "position": 12,
+      "section_id": "DLID-26mqzteajczn"
+    },
+    {
+      "content_hash": "9b6e4c3354a806c4c8b73e59247edb481f1f422d99aa169114b44aece579e365",
+      "heading": "5.2 モジュール表",
+      "position": 9,
+      "section_id": "DLID-cebwjajkgqjp"
+    },
+    {
+      "content_hash": "9f1fb95e512330a6e04c908863add4b1d01643878d3e6dfe33d23a990328e254",
+      "heading": "終了コード",
+      "position": 19,
+      "section_id": "DLID-2j34qfmxgqv5"
+    },
+    {
+      "content_hash": "aba438365c68b268e517d0412bf2644087b419cbd0def021ec31946055a4b5a8",
+      "heading": "手順",
+      "position": 30,
+      "section_id": "DLID-952h6rvy7hrv"
+    },
+    {
+      "content_hash": "ad5c3c1de835cab0e60960549d9196336a25481fa2d039742bbacae5fa12950e",
+      "heading": "制約（Role に否定形で書く）",
+      "position": 25,
+      "section_id": "DLID-da434ewwtgj6"
+    },
+    {
+      "content_hash": "b1f5f51bc8fdcbe595166a9b29e1b3b5fbbd6b2f904972c73d48bcefe864e98d",
+      "heading": "2. シナリオ",
+      "position": 2,
+      "section_id": "DLID-v2n6e35mfgqx"
+    },
+    {
+      "content_hash": "b447946a8f19d625ec439ff69c362c2af3b3e0179e6d298443daa56a16614407",
+      "heading": "8.4 検索窓口（SKILL の定義）",
+      "position": 29,
+      "section_id": "DLID-745wwkyxgs0y"
+    },
+    {
+      "content_hash": "c1927f47ab1bd2220e938c5fe87a2fa7ba5d070418072bd1a96d7be9925f2ebb",
+      "heading": "5.1 共有データ定義",
+      "position": 8,
+      "section_id": "DLID-356z0p31g9km"
+    },
+    {
+      "content_hash": "cbe9830fc358ded237b3789a2cc9607a1b291c88bf02086d8c78da8cb6c8ecf7",
+      "heading": "8.7 テストと検査",
+      "position": 33,
+      "section_id": "DLID-2w6mb9cknyp2"
+    },
+    {
+      "content_hash": "ce9ac123886623d6a87fabc7e66b0a96d9ef9276de799aee7078ca34ed634f2c",
+      "heading": "動作の原理",
+      "position": 22,
+      "section_id": "DLID-v47gs2xq9djp"
+    },
+    {
+      "content_hash": "d1f1fec1f6514d35848873a186f0c99c0ba0443de22cd1f32eefcd00b333d2c2",
+      "heading": "3.1 クラス定義",
+      "position": 4,
+      "section_id": "DLID-tf7w1nrsr9v2"
+    },
+    {
+      "content_hash": "d20f092d580ec87526853e375001e9c499548cbe083ca156a2c3c63b84b25861",
+      "heading": "8.2 受け渡し係（`query_exchange.py`）",
+      "position": 17,
+      "section_id": "DLID-6757j2rebv41"
+    },
+    {
+      "content_hash": "e49e2183c89a4355808b22d013ec1da981d4359283770cf5eb8f642c5de46293",
+      "heading": "処理の手順",
+      "position": 21,
+      "section_id": "DLID-4q0cz58b6qmc"
+    },
+    {
+      "content_hash": "f94e6954383e04429c059dad63a5380956dcf4cbc2df168f1421495292924ad0",
+      "heading": "frontmatter",
+      "position": 24,
+      "section_id": "DLID-2ssagzv1we8e"
+    },
+    {
+      "content_hash": "f9a34a662ccda42c727177fcfe8fd68dcbf88230373efb9a735aa633d2f80269",
+      "heading": "8.5 内蔵索引",
+      "position": 31,
+      "section_id": "DLID-7z9t5z10k4dv"
+    }
+  ],
+  "summary": [
+    "Overview of three responsibilities: search entry (SKILL), relevance selector (isolated agent), handoff script",
+    "Scenarios S1-S8 derived from REQ-035, including error cases for missing index and incomplete search",
+    "Class definitions and class diagram of search window, handoff, selector, and built-in index",
+    "Sequence diagram of search behavior with open, request-path, finish, and check operations",
+    "Contracts: shared data definitions and module tables M-01 to M-07 with pre/postconditions and failure handling",
+    "Defense layers for the no-other-work constraint (agent boundary, role constraints, tool allowlist) and rationale for Bash in the selector",
+    "Detailed design of query_exchange.py: operations, exit codes, data layout, procedure, atomic publishing",
+    "Selector agent rules-query-worker frontmatter, constraints, procedure, and AI output contract",
+    "Search window SKILL definition, built-in index reuse, standard-library-only policy, tests and lint plan",
+    "Relationship to the older DES-001 design and traceability table from requirements"
+  ],
+  "tasks": [
+    "Implementing query-forge-rules built-in docs search",
+    "Implementing query_exchange.py handoff script",
+    "Modifying the rules-query-worker agent definition",
+    "Writing tests for query_exchange.py",
+    "Writing lint checks for agent and SKILL frontmatter",
+    "Reviewing the design of built-in docs search",
+    "Merging this design into DES-001 after implementation",
+    "Designing agent data exchange via scripts"
+  ],
+  "title": "DES-090 forge 内蔵ドキュメント検索 設計書"
+}

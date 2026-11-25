@@ -1,4 +1,5 @@
 {
+  "applied_hash": "4976d725a8a511e8d17628cd86d0181d908a4dca201ab3eaba1ebf5808d1ce0a",
   "content_hash": "4976d725a8a511e8d17628cd86d0181d908a4dca201ab3eaba1ebf5808d1ce0a",
   "doc_link_id": "DLID-0nfgax46wehg",
   "keywords": [
@@ -13,8 +14,205 @@
     "DLID",
     "fallback"
   ],
+  "last_check": {
+    "checked_at": "2026-11-25T02:44:01+00:00",
+    "result": "success"
+  },
   "path": "docs/specs/doc-db/requirements/REQ-014_doc_db_backend_selection_spec.md",
   "purpose": "Requirements for automatic selection between document search backends (doc-link, doc-db) in the query-db and update-db wrappers, including availability, freshness, unprepared index handling and failure rules.",
+  "references": [
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "plugins/forge/docs/error_classification_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 0,
+      "recorded_content_hash": "94496cc6d044",
+      "recorded_path": "../../../../plugins/forge/docs/error_classification_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-5ykqs19cdbks",
+      "target_section_id": null
+    }
+  ],
+  "sections": [
+    {
+      "content_hash": "113c333b383ea8f3a98374f83dd10394b4bc1f7f01f8de3e9804c95b32d0ec1b",
+      "heading": "エラーケース",
+      "position": 27,
+      "section_id": "DLID-0x7ctvcz9c21"
+    },
+    {
+      "content_hash": "145cceca7c48a1105481587fdebcd39340b1055ca3db3b57229e601f32c33193",
+      "heading": "FNC-001 backend の自動選択",
+      "position": 9,
+      "section_id": "DLID-jswk0gs8ev2g"
+    },
+    {
+      "content_hash": "21ba022e482e7e31d03d08adf07eb8ea450c91635b0bbb890fd1bf1ea18e1c40",
+      "heading": "BL-002 索引の鮮度",
+      "position": 15,
+      "section_id": "DLID-701je9qbn2zx"
+    },
+    {
+      "content_hash": "39efea41c4278c47cd4de354ae2c16071620d2af26308c54f3ead072393f3659",
+      "heading": "概要",
+      "position": 1,
+      "section_id": "DLID-vhbj1dfy86ps"
+    },
+    {
+      "content_hash": "424e3982424a596f1d10449c89ac66c03cdb268759f66e88e4a4a5d8ec71eb8b",
+      "heading": "用語",
+      "position": 6,
+      "section_id": "DLID-dz5fayf2y37a"
+    },
+    {
+      "content_hash": "44031d32e03e51211a895fd0ed52b0a6bea9ff08d871be196aabc9f3c7b25586",
+      "heading": "NFR-003 応答性",
+      "position": 24,
+      "section_id": "DLID-rdxabwsf7tyy"
+    },
+    {
+      "content_hash": "450083093712c07bd03ced21c0912260482de96bf0af9e25ffc0448ebf6909b6",
+      "heading": "前提条件",
+      "position": 5,
+      "section_id": "DLID-s8mcp451h7nq"
+    },
+    {
+      "content_hash": "59214af96821fe30c6bf563e06dbb49ea1256b6c5deba5953716aff136db703e",
+      "heading": "スコープ",
+      "position": 2,
+      "section_id": "DLID-nqd6vh2jdpf0"
+    },
+    {
+      "content_hash": "6d3d3fff8bd5d4c7eb02a0ab1bc39ec6b2311c76eb9d44d7f810862079296d35",
+      "heading": "NFR-001 可観測性",
+      "position": 22,
+      "section_id": "DLID-dpxn2mmw9dmn"
+    },
+    {
+      "content_hash": "6e2e4813a16fa4007f37bbd83f5d070c038b473878b2db08967ca262469f5e5e",
+      "heading": "NFR-004 可用性",
+      "position": 25,
+      "section_id": "DLID-rfmq49qyapbj"
+    },
+    {
+      "content_hash": "7f2c7e755e0858a8e8d74a2d261d82ba22dbb568f1e13279dbd5026bd7b59e50",
+      "heading": "BL-004 未整備と障害の区別",
+      "position": 17,
+      "section_id": "DLID-p3pedf93jhjc"
+    },
+    {
+      "content_hash": "9366e2ee2d44fe59d8628a7e2e36b16ed9aaf10c372520c93aa7a6ddea235a4f",
+      "heading": "BL-006 backend の指定（選択との違い）",
+      "position": 19,
+      "section_id": "DLID-p8qvwsrsk5h2"
+    },
+    {
+      "content_hash": "93be5411d108e879e1aecd4714a4791d44a46e4652e22846f9b5035093b19360",
+      "heading": "REQ-014 doc-db バックエンド選択 要件定義書",
+      "position": 0,
+      "section_id": "DLID-z9yga6cpvgxa"
+    },
+    {
+      "content_hash": "94dbb09781e8589e4350aa9b93e1a4a466bb68cd966da46a261ad7e8ac64f12f",
+      "heading": "BL-007 索引母集団の所有",
+      "position": 20,
+      "section_id": "DLID-t7m7qr2w7a83"
+    },
+    {
+      "content_hash": "96808eb4346192fe5ea31ca9ee918e3a3f436a5cc512761ca298645831118258",
+      "heading": "FNC-002 query の実行",
+      "position": 10,
+      "section_id": "DLID-zcabn558tc9a"
+    },
+    {
+      "content_hash": "9c769c91af30e1f7ef899ea8bebaf4c46e17d7a7d39bfc226abdede32456c95c",
+      "heading": "非機能要件",
+      "position": 21,
+      "section_id": "DLID-nehc193y5xw6"
+    },
+    {
+      "content_hash": "9e53f909560565ccf559474192d136475754cf196a6c175d789a838443ffd849",
+      "heading": "FNC-003 update の実行",
+      "position": 11,
+      "section_id": "DLID-a2hynwrjbk54"
+    },
+    {
+      "content_hash": "a6e3364c593e8000e81c727e076a9769282d6425fc0f4493763470a352f89dc8",
+      "heading": "利用フロー",
+      "position": 7,
+      "section_id": "DLID-ed0y3kc2kvnd"
+    },
+    {
+      "content_hash": "ad308bb8235a9c29335a6ac50eed27e9ed6699a4c8f999da3429dd5e98929f38",
+      "heading": "対象",
+      "position": 3,
+      "section_id": "DLID-5t9j3qxt1m0r"
+    },
+    {
+      "content_hash": "bf889724742263368b4664136712142a84576093eef221b61e8655de682f63d3",
+      "heading": "BL-005 検索対象の series と結果のパス",
+      "position": 18,
+      "section_id": "DLID-796nz6mywq37"
+    },
+    {
+      "content_hash": "c2e89656b28f311b3c193e1e7d424fd706f6e91ac807cf98a4cf6e291602cb05",
+      "heading": "対象外",
+      "position": 4,
+      "section_id": "DLID-0qg3egw75wyw"
+    },
+    {
+      "content_hash": "c377b3ec875efbc98a4678614ed8e9296dc6efec546932b31aaca66395fd0381",
+      "heading": "BL-001 backend 選択順序",
+      "position": 14,
+      "section_id": "DLID-a3zzcg8sqmb7"
+    },
+    {
+      "content_hash": "c82aee4c776455974afdc815046b35fc95ae5a68a43e7f6ab6ec7757cc809715",
+      "heading": "NFR-005 情報保護",
+      "position": 26,
+      "section_id": "DLID-tey506v5np42"
+    },
+    {
+      "content_hash": "d2f3a396428d43c7479c8288f038025a1e3be859e8783458c89f6a693d75dfcb",
+      "heading": "FNC-004 実行経路の通知",
+      "position": 12,
+      "section_id": "DLID-75trhq3ejy8q"
+    },
+    {
+      "content_hash": "d43dad03f1cb7462da1e73cf7a75e09270610bffe9f1cea34579cf8b2571a91f",
+      "heading": "BL-003 成功と失敗",
+      "position": 16,
+      "section_id": "DLID-nes1qhz8fw42"
+    },
+    {
+      "content_hash": "e6b3e1a9a7a86f48b5765aa8babebf40e9a26e816f6beef78ddb3dcf8b533e83",
+      "heading": "未確定事項",
+      "position": 28,
+      "section_id": "DLID-436sex9d3fvk"
+    },
+    {
+      "content_hash": "edd5ed4ca6a958cd69cd5fb2b722bdb7742b6064fab03de58aac9902abc5b227",
+      "heading": "業務ルール",
+      "position": 13,
+      "section_id": "DLID-4tw3rk84qhdj"
+    },
+    {
+      "content_hash": "f20b59b98ff6f9cbce3530309dc23121226087b5aa2afb8c1b060d12dff46f16",
+      "heading": "機能要件",
+      "position": 8,
+      "section_id": "DLID-q6te0ab4d73a"
+    },
+    {
+      "content_hash": "f62b0969c974e29ab9a96da50f4784820e827d16f93e20fcba0ef01ea0cb5ae2",
+      "heading": "NFR-002 後方互換性",
+      "position": 23,
+      "section_id": "DLID-zed7gg33wky5"
+    }
+  ],
   "summary": [
     "Overview and scope of the four query-db-*/update-db-* wrappers and backend selection",
     "Preconditions defining usable doc-link and the doc-db status identifier requirement",

@@ -1,0 +1,156 @@
+{
+  "applied_hash": "d318c7706d7a3ec17b875e24b6cfd6bcd5c75d545b34e22668e328dec5829907",
+  "content_hash": "d318c7706d7a3ec17b875e24b6cfd6bcd5c75d545b34e22668e328dec5829907",
+  "doc_link_id": "DLID-9byg0qbksas5",
+  "keywords": [
+    "relevance selector",
+    "built-in docs search",
+    "Bash tool",
+    "read-only agent",
+    "agent data exchange",
+    "JSON via script",
+    "exit value",
+    "rules-query-worker",
+    "ADR",
+    "DES-090"
+  ],
+  "last_check": {
+    "checked_at": "2026-11-25T02:44:01+00:00",
+    "result": "success"
+  },
+  "path": "docs/specs/forge/adr/ADR-091_forge.md",
+  "purpose": "Records the decision to change the built-in docs search relevance selector from a read-only agent returning results by value to one holding Bash and exchanging JSON results via a script.",
+  "references": [
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/rules/forge_agent_data_exchange_rules.md",
+        "result": "match",
+        "scope": "docs/rules"
+      },
+      "kind": "document",
+      "position": 0,
+      "recorded_content_hash": "d359747d755f",
+      "recorded_path": "../../../rules/forge_agent_data_exchange_rules.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-7zh3q09p2acs",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/specs/agent-review/design/DES-072_agent_review_backend_design.md",
+        "result": "match",
+        "scope": "docs/specs/agent-review/design"
+      },
+      "kind": "document",
+      "position": 2,
+      "recorded_content_hash": "ef29f0fe6897",
+      "recorded_path": "../../agent-review/design/DES-072_agent_review_backend_design.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-rzp2zxe38068",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/specs/forge/design/DES-022_parallel_agent_output_contract_design.md",
+        "result": "match",
+        "scope": "docs/specs/forge/design"
+      },
+      "kind": "document",
+      "position": 1,
+      "recorded_content_hash": "02eb53006efc",
+      "recorded_path": "../design/DES-022_parallel_agent_output_contract_design.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-5h7wqxcknyha",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/specs/forge/design/DES-090_builtin_docs_search_design.md",
+        "result": "match",
+        "scope": "docs/specs/forge/design"
+      },
+      "kind": "document",
+      "position": 3,
+      "recorded_content_hash": "ecbe6c8ae7b1",
+      "recorded_path": "../design/DES-090_builtin_docs_search_design.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-m0zzg6nfe1sf",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/specs/forge/requirements/REQ-035_builtin_docs_search_spec.md",
+        "result": "match",
+        "scope": "docs/specs/forge/requirements"
+      },
+      "kind": "document",
+      "position": 4,
+      "recorded_content_hash": "25b40d946c4c",
+      "recorded_path": "../requirements/REQ-035_builtin_docs_search_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-vr7dyvw3y5qz",
+      "target_section_id": null
+    }
+  ],
+  "sections": [
+    {
+      "content_hash": "320e141ab7c392c27397aa3570646a93b5b419b444768cdb42751157daa87c10",
+      "heading": "1.3 検討した代替案",
+      "position": 4,
+      "section_id": "DLID-kt22z81n4t27"
+    },
+    {
+      "content_hash": "3efa1e9ced3ae08f671ffd96d60251342b3e83c6c55364fe0759024ab9e40b45",
+      "heading": "1.4 影響",
+      "position": 5,
+      "section_id": "DLID-4rm0pqtv0j81"
+    },
+    {
+      "content_hash": "41dc20ed01dc5b9dd5dbea00259cbae96c5de2a70409b8f2189b0b0ddd5bb38e",
+      "heading": "ADR-091 forge の決定記録",
+      "position": 0,
+      "section_id": "DLID-nw62e7j4zbar"
+    },
+    {
+      "content_hash": "84aef3ca7f320e3a26284e50097eda688f3f3449cb45bbcb388d45f0294a78c2",
+      "heading": "1.1 コンテキスト",
+      "position": 2,
+      "section_id": "DLID-4d5ynpb3kd0m"
+    },
+    {
+      "content_hash": "86e8e15385670cae00872ef2f56ccd429680cb299e3414e292d6ffe077e4b7f8",
+      "heading": "1.2 決定",
+      "position": 3,
+      "section_id": "DLID-xpjcrcmwf6aj"
+    },
+    {
+      "content_hash": "ad397c98f9f3beb37568d5e5893202a1f295f30c56e96c36b27d7217b885d848",
+      "heading": "1. 内蔵ドキュメント検索の関連選定係を、Bash を持ち script 経由で結果を渡す構成にする",
+      "position": 1,
+      "section_id": "DLID-wjpj3mxgggen"
+    }
+  ],
+  "summary": [
+    "Context: the old read-only selector design conflicted with the agent data exchange rule requiring script-written JSON",
+    "Why the decision lives in a design doc rather than going back to requirements, with the user approval quoted",
+    "Decision: give the selector Bash and pass results through a script as JSON with an exit value",
+    "Write prohibition is enforced by Role constraints and the handoff script checking paths against the built-in index",
+    "Configuration matches the DES-072 reviewer, a read-only custom agent with Bash",
+    "Rejected alternative: keep read-only with return values as an exception to the exchange rule, and why it was rejected",
+    "Impacts: the exchange pattern now matches other agents, and write safety no longer relies on tool permissions",
+    "Links to DES-090 sections 6, 8.3, 8.9 and to REQ-035"
+  ],
+  "tasks": [
+    "Designing or changing the built-in docs search relevance selector agent",
+    "Reviewing proposals to return the selector to read-only with return-value results",
+    "Designing agents that exchange data through scripts and JSON",
+    "Deciding the tools configuration (Bash or not) for read-only agents",
+    "Writing or reviewing DES-090 and REQ-035 related changes"
+  ],
+  "title": "ADR-091 forge の決定記録"
+}

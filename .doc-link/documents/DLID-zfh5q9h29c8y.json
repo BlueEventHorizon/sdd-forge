@@ -1,4 +1,5 @@
 {
+  "applied_hash": "cac86d74fa8a4def8fd42323ec2442db3b257101b28bcaf668458a7fd6d342fa",
   "content_hash": "cac86d74fa8a4def8fd42323ec2442db3b257101b28bcaf668458a7fd6d342fa",
   "doc_link_id": "DLID-zfh5q9h29c8y",
   "keywords": [
@@ -13,8 +14,151 @@
     "ADR approval record",
     "orchestrator"
   ],
+  "last_check": {
+    "checked_at": "2026-11-25T02:44:01+00:00",
+    "result": "success"
+  },
   "path": "docs/specs/forge/design/DES-018_create_design_workflow_design.md",
   "purpose": "Design of the start-design orchestrator skill: building a design document from requirements, matching existing implementations, detailed design, consistency check, review and commit.",
+  "references": [
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/specs/forge/design/DES-010_create_skills_orchestrator_design.md",
+        "result": "match",
+        "scope": "docs/specs/forge/design"
+      },
+      "kind": "document",
+      "position": 0,
+      "recorded_content_hash": "2129dbe03f23",
+      "recorded_path": "DES-010_create_skills_orchestrator_design.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-s1ds8dcyfn7p",
+      "target_section_id": null
+    }
+  ],
+  "sections": [
+    {
+      "content_hash": "118091235c9680b1290e18685a140b9484a074bbaead7e3dde169850d8fc8019",
+      "heading": "1. 概要",
+      "position": 1,
+      "section_id": "DLID-cscqnnsf7aaq"
+    },
+    {
+      "content_hash": "14bb7d7fe8d98fcfa60ab4b063a5b9f1114f0c4eec74d79819c0709f326fc004",
+      "heading": "要件定義書の全件反映",
+      "position": 16,
+      "section_id": "DLID-g8vxzay95hab"
+    },
+    {
+      "content_hash": "259df83e259cf21ac49b635d3c4ee15655afd688332793f6601ef8d8e5c15d89",
+      "heading": "4. 設計原則",
+      "position": 13,
+      "section_id": "DLID-cpaed3xhcpp7"
+    },
+    {
+      "content_hash": "396574e0cbfef8a6222c25de708bceacf35e3a210f316a714696fcb3fefa7618",
+      "heading": "Phase 1: 入力の収集",
+      "position": 5,
+      "section_id": "DLID-f0z1e8ngeqnj"
+    },
+    {
+      "content_hash": "4233bd00f0028a2b4530ecb3853811e0221fd22a60e8a82880f23411875b2d50",
+      "heading": "What/How の境界",
+      "position": 17,
+      "section_id": "DLID-m62s7zaxsvmh"
+    },
+    {
+      "content_hash": "44e098becffbf57bf4002fa538494b996941fa34b559828eef570f016eaf31a2",
+      "heading": "完了処理",
+      "position": 12,
+      "section_id": "DLID-75bswzd73q1q"
+    },
+    {
+      "content_hash": "4d00f837a5bfd546d3c4178e820e25ef4e61f793d191712044de057a932f4f9e",
+      "heading": "Phase 5: 整合性の確認",
+      "position": 9,
+      "section_id": "DLID-15encjhkfnbk"
+    },
+    {
+      "content_hash": "5c5c5bf41ab6b9323bc8d7083b4ff3e9b5a7599aab19885eb9ee725f1887e9de",
+      "heading": "6. 関連ファイル",
+      "position": 19,
+      "section_id": "DLID-ymwb51h4fgs7"
+    },
+    {
+      "content_hash": "766fc28ab3a39294915d38ce42926d9cf6d329f5ac90eca772be151e4b936e63",
+      "heading": "Phase 4: 詳細設計",
+      "position": 8,
+      "section_id": "DLID-skyfbcp2hcf4"
+    },
+    {
+      "content_hash": "7edd65310f308ecd223f8bc6ee5143d96f27e4b917406541dc9751329f98973b",
+      "heading": "5. 次ステップの案内",
+      "position": 18,
+      "section_id": "DLID-8kpc3embk43n"
+    },
+    {
+      "content_hash": "84522806092fddf8524b2f140b9d56642505b1b428ca7f149e3be9ae63b4f017",
+      "heading": "Phase 2: 上流の設計（要件だけで）",
+      "position": 6,
+      "section_id": "DLID-m69z230xjq0m"
+    },
+    {
+      "content_hash": "8868cedb5575d01a8d87acc03c871e4fac17d1232fa188601f18fa6c323944c6",
+      "heading": "既存の実装・設計パターンの活用 [MANDATORY]",
+      "position": 15,
+      "section_id": "DLID-0yks7kkbwzw2"
+    },
+    {
+      "content_hash": "9fdc63f185e4f667182a4445ed5fd08bf2f801b95e389570ab1f26f125301558",
+      "heading": "Phase 6: AI レビューとユーザーレビュー",
+      "position": 10,
+      "section_id": "DLID-ne34jaxpqn0q"
+    },
+    {
+      "content_hash": "bbbd66388b77e40450245b4bbded6f4a376d1929f79847e262a48894afaf008d",
+      "heading": "2. フローチャート",
+      "position": 2,
+      "section_id": "DLID-kepqj61zsz7e"
+    },
+    {
+      "content_hash": "bc73e1b9842848c163b22fa7de5b89b933dda336e5cbebffe77677daa45b9314",
+      "heading": "3. フェーズ詳細",
+      "position": 3,
+      "section_id": "DLID-9gr40fe33k3q"
+    },
+    {
+      "content_hash": "be6080734c9a7aa1c0afa624bb4137a9098370a4f9b8169994230f2da2056856",
+      "heading": "DES-018 forge 設計書作成ワークフロー 設計書",
+      "position": 0,
+      "section_id": "DLID-p687k8559rm5"
+    },
+    {
+      "content_hash": "c20e84dae5a0d29097e69a2d9b280b2d10782304451d1f19739ca3a2c1e48fab",
+      "heading": "要件定義書に無い設計が必要になった場合（全 Phase 共通）",
+      "position": 11,
+      "section_id": "DLID-ja755kw1rp0x"
+    },
+    {
+      "content_hash": "c997d6e436e9d24af2faac5170837b097ed3674b7820ef8a1df935d9743d28ac",
+      "heading": "要件から組み立てる [MANDATORY]",
+      "position": 14,
+      "section_id": "DLID-j81rapws0gk5"
+    },
+    {
+      "content_hash": "e09c5d1875cf9fa7500e3ee1f3a08f603077c75094ff18bf6c89284ceb6b9c5f",
+      "heading": "事前準備 [MANDATORY]",
+      "position": 4,
+      "section_id": "DLID-pzrr8hvm8rzf"
+    },
+    {
+      "content_hash": "f58b3c02f669cd71d5a3a77868fbd67d62e90b540dc944b8cd6b9e949f113b47",
+      "heading": "Phase 3: 既存の実装・設計パターンとの照合と再設計",
+      "position": 7,
+      "section_id": "DLID-s04c2xfmj5wg"
+    }
+  ],
   "summary": [
     "Overview: upstream design from requirements only, then matching existing patterns",
     "Flowchart of preparation and Phases 1 to 6 with a redesign loop",

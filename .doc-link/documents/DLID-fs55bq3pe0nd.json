@@ -1,4 +1,5 @@
 {
+  "applied_hash": "7536a7e3b826d041b1d8f9d6d040463feb79ad8b8d82becc4bc9c46a25ea8167",
   "content_hash": "7536a7e3b826d041b1d8f9d6d040463feb79ad8b8d82becc4bc9c46a25ea8167",
   "doc_link_id": "DLID-fs55bq3pe0nd",
   "keywords": [
@@ -13,8 +14,81 @@
     "lockfile",
     "ADR-089"
   ],
+  "last_check": {
+    "checked_at": "2026-11-25T02:44:01+00:00",
+    "result": "success"
+  },
   "path": "docs/specs/common/adr/ADR-089_common.md",
   "purpose": "Records decisions to keep the inherited-SKILL responsibility declaration norm and to declare uv exclude-newer in metadata rather than command options, with context, rationale and rejected alternatives.",
+  "references": [],
+  "sections": [
+    {
+      "content_hash": "12d2ca5fdf755b419d7a891cfb7241b309a3a3cd84f646b72f8c58f9caf052c2",
+      "heading": "ADR-089 common の決定記録",
+      "position": 0,
+      "section_id": "DLID-nv2zmf60frbp"
+    },
+    {
+      "content_hash": "14c019efe5ea01e967b6ff5a43e963fe9914deef8c82a496f04401ea0168f463",
+      "heading": "1.2 決定",
+      "position": 3,
+      "section_id": "DLID-47kp2a5bfhp8"
+    },
+    {
+      "content_hash": "213b714564202a32b56487f202b2fa17e28f1923f5280b68f17b5948f718186c",
+      "heading": "1.4 影響",
+      "position": 5,
+      "section_id": "DLID-pd72g3f1feaf"
+    },
+    {
+      "content_hash": "4913eb20d2bec8f6be492985358c75679f08c9e596bad6f130bc2d9112123b6b",
+      "heading": "1. 継承型 SKILL の責務宣言の規範を、現在問題が起きていなくても残す",
+      "position": 1,
+      "section_id": "DLID-4n8je0rkr4ks"
+    },
+    {
+      "content_hash": "624310adaa1d36d3d3ede1ce40bb6358e97bbfe31084eb446c147ebd1c8ae789",
+      "heading": "1.1 コンテキスト",
+      "position": 2,
+      "section_id": "DLID-04rr1fx6gpxy"
+    },
+    {
+      "content_hash": "7a2f87269a0e2598204075b6c5e1ca28ae85fd57ab98c67edd3a9e89791343b9",
+      "heading": "2.3 検討した代替案",
+      "position": 9,
+      "section_id": "DLID-xq1fpzsf3r9g"
+    },
+    {
+      "content_hash": "7aed51fdba69e3eca4719d125a512e1597192e54b25422c43e822f60d5591cde",
+      "heading": "1.3 検討した代替案",
+      "position": 4,
+      "section_id": "DLID-ma8b6egrge4f"
+    },
+    {
+      "content_hash": "7f9813a87804d7997df23afaab9e5ddc78848f9c107e24e7d27d67da5e156727",
+      "heading": "2. 公開直後の版を取り込まない設定を、コマンドのオプションではなくメタデータに宣言する",
+      "position": 6,
+      "section_id": "DLID-75yc09hr0yy9"
+    },
+    {
+      "content_hash": "96f60e5c98d24c922df20e3dc40c9092ffe5a4127a818a42fa10eecf3f28b3ec",
+      "heading": "2.2 決定",
+      "position": 8,
+      "section_id": "DLID-1945g45w79dz"
+    },
+    {
+      "content_hash": "c49cf6e9dae07a7f03d837aae1fbb172a7eda29a2cccae6457b3ecd0a9aded8c",
+      "heading": "2.1 コンテキスト",
+      "position": 7,
+      "section_id": "DLID-fd0g69jwt6m5"
+    },
+    {
+      "content_hash": "c8df267b88648676c85c2f60831490b590a327740482b506d90baf45ea2d5a4a",
+      "heading": "2.4 影響",
+      "position": 10,
+      "section_id": "DLID-1rkmq4twnf1g"
+    }
+  ],
   "summary": [
     "ADR collecting decisions for the common area",
     "Decision 1: keep the responsibility declaration norm at the top of inherited-type SKILLs even though no problem currently occurs",

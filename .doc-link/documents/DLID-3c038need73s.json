@@ -1,4 +1,5 @@
 {
+  "applied_hash": "5f3e63bd9cc378806cfc9ced206071858b56e2fd029afd1b20a99f24504395f8",
   "content_hash": "5f3e63bd9cc378806cfc9ced206071858b56e2fd029afd1b20a99f24504395f8",
   "doc_link_id": "DLID-3c038need73s",
   "keywords": [
@@ -11,8 +12,69 @@
     "cross-component spec",
     "ID collision"
   ],
+  "last_check": {
+    "checked_at": "2026-11-25T02:44:01+00:00",
+    "result": "success"
+  },
   "path": "docs/specs/forge/requirements/REQ-028_document_system.md",
   "purpose": "Requirements defining the document system: kinds of documents, how they are identified, where they are placed, and how they are referenced, to prevent duplication, ID collisions and unfindable documents.",
+  "references": [],
+  "sections": [
+    {
+      "content_hash": "10b1c690bf99c6d1fdf784fc31f4e6889f894d650448c0a18e05e50b7980996e",
+      "heading": "FNC-002: 横断仕様の識別",
+      "position": 6,
+      "section_id": "DLID-71nad8shfq0h"
+    },
+    {
+      "content_hash": "1398ed41f520dcb298d0e01a888177d3f4d1c0f3a05dd1b478afcfa74131fe8e",
+      "heading": "2. 前提条件",
+      "position": 3,
+      "section_id": "DLID-4xfd23b7215j"
+    },
+    {
+      "content_hash": "18b09d39f225903ba9c7789d921a3ae3f23b4a701cadc8d086b2bcd300977c5b",
+      "heading": "3. 機能要件",
+      "position": 4,
+      "section_id": "DLID-eb2r31mf04h3"
+    },
+    {
+      "content_hash": "2f54213d950c285a8f0d75e6674af272df730aab20e4b19594216fa98dc8b4d9",
+      "heading": "FNC-003: 識別子の採番",
+      "position": 7,
+      "section_id": "DLID-fvz7rvqb0sac"
+    },
+    {
+      "content_hash": "3aceb4588b755221f6bf847121f9115b0d66807d7397b0c7cce308e074772f6d",
+      "heading": "1.1 対象システムの性質",
+      "position": 2,
+      "section_id": "DLID-zfqat7gsef2h"
+    },
+    {
+      "content_hash": "52acc6c12d7a4c83a63b4601004f5ca657a2abd0e4a52783ff121d5bbd4f2db6",
+      "heading": "1. 概要",
+      "position": 1,
+      "section_id": "DLID-fwpfhdk9wthe"
+    },
+    {
+      "content_hash": "a9f4793c63fe8bae9d9f7bd0e8bcdc694a0cac06aa4ecadf73703cf3bf931019",
+      "heading": "FNC-001: 文書識別子",
+      "position": 5,
+      "section_id": "DLID-enjjhqzg4xdq"
+    },
+    {
+      "content_hash": "ae026f0198bfd44cb7f7ae76fbb680f59f04d1b220e300e046a479ffe28a0a95",
+      "heading": "REQ-028 文書体系 要件定義書",
+      "position": 0,
+      "section_id": "DLID-dvawqe4s1g87"
+    },
+    {
+      "content_hash": "c3352a610922d1f2dd66d169dc39633c84c02fa3b3a51c02914b09826df9bb1e",
+      "heading": "4. 未確定事項",
+      "position": 8,
+      "section_id": "DLID-5rbge5sv006h"
+    }
+  ],
   "summary": [
     "Overview of why a document system is needed",
     "Target system nature: internal development support scope",

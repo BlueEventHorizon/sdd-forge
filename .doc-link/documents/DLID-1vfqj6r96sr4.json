@@ -1,4 +1,5 @@
 {
+  "applied_hash": "f37213e3711eb69d0401b0aaf1484563800b32c8328f8a011f9004544a530f81",
   "content_hash": "f37213e3711eb69d0401b0aaf1484563800b32c8328f8a011f9004544a530f81",
   "doc_link_id": "DLID-1vfqj6r96sr4",
   "keywords": [
@@ -11,8 +12,76 @@
     "query-db-rules",
     "task list"
   ],
+  "last_check": {
+    "checked_at": "2026-11-25T02:44:01+00:00",
+    "result": "success"
+  },
   "path": "docs/specs/forge/design/DES-013_context_gathering_design.md",
   "purpose": "Specification of context gathering tasks used by forge create-* skills: task list, agent instruction format, and how document search and code exploration are handled.",
+  "references": [
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/specs/forge/design/DES-010_create_skills_orchestrator_design.md",
+        "result": "match",
+        "scope": "docs/specs/forge/design"
+      },
+      "kind": "document",
+      "position": 0,
+      "recorded_content_hash": "2129dbe03f23",
+      "recorded_path": "DES-010_create_skills_orchestrator_design.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-s1ds8dcyfn7p",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/specs/start-implement/design/DES-088_start_implement_design.md",
+        "result": "match",
+        "scope": "docs/specs/start-implement/design"
+      },
+      "kind": "document",
+      "position": 1,
+      "recorded_content_hash": "59241ebe17cb",
+      "recorded_path": "../../start-implement/design/DES-088_start_implement_design.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-f8gem0wa3ac4",
+      "target_section_id": null
+    }
+  ],
+  "sections": [
+    {
+      "content_hash": "09f369126b62dde07d2222bcc1e8f798e5faf129fb42bbfc02e0a1fefd175cc5",
+      "heading": "2. タスク一覧",
+      "position": 2,
+      "section_id": "DLID-jh3wrycz00ap"
+    },
+    {
+      "content_hash": "39542071c030908e0f198538b7b1dc1b77f3e3a66872f2b9b79dfa4aba38824f",
+      "heading": "DES-013 コンテキスト収集タスク仕様",
+      "position": 0,
+      "section_id": "DLID-mq8v1rvrpd30"
+    },
+    {
+      "content_hash": "5f87c526ec13cdd6800c3737aa838e1b08b7bd57fad2a5f7c8e5f7fdf591006b",
+      "heading": "4. agent への指示",
+      "position": 4,
+      "section_id": "DLID-rq3pqqvfszw5"
+    },
+    {
+      "content_hash": "8d19cef965bbf1b19f11448806b35cf358d43390c76aacbd2ec46ed8345c8850",
+      "heading": "3. スキル別タスク適用マトリクス",
+      "position": 3,
+      "section_id": "DLID-r3707pgmaj3v"
+    },
+    {
+      "content_hash": "e00260d07f564ba5a09b2e83f2bcbc43721997c233381d34c234d36b6f3e3fd1",
+      "heading": "1. 概要",
+      "position": 1,
+      "section_id": "DLID-d17p2rv2vwvs"
+    }
+  ],
   "summary": [
     "Overview: two kinds of context gathering, document search via Skill tool and code exploration via general agent",
     "Document search does not go through an agent",

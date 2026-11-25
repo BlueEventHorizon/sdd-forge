@@ -1,4 +1,5 @@
 {
+  "applied_hash": "75383cc8c6d823206f420e0966ac5a7a358d619349b855c87ce4dd54e3cea1d3",
   "content_hash": "75383cc8c6d823206f420e0966ac5a7a358d619349b855c87ce4dd54e3cea1d3",
   "doc_link_id": "DLID-tm2m7nv23dqd",
   "keywords": [
@@ -12,8 +13,75 @@
     "severity catalog",
     "ID numbering"
   ],
+  "last_check": {
+    "checked_at": "2026-11-25T03:43:00+00:00",
+    "result": "success"
+  },
   "path": "plugins/forge/docs/deterministic_generation_spec.md",
   "purpose": "Defines the principle that deterministic artifacts are produced by a deterministic executor rather than AI, what checks become unnecessary, and where validation belongs.",
+  "references": [],
+  "sections": [
+    {
+      "content_hash": "24ab3a1dfb81e0091e2678576fdbf46a01ce0c7c11eef0b4afa7e985502885ad",
+      "heading": "3. なぜそうするか",
+      "position": 3,
+      "section_id": "DLID-q5wf7n9qb0da"
+    },
+    {
+      "content_hash": "37315ee2df616ee80f5e90b785a77d5335308c1e143866d4fdd2071909280282",
+      "heading": "1. 目的",
+      "position": 1,
+      "section_id": "DLID-qffbfp625f89"
+    },
+    {
+      "content_hash": "4a5da8ec11677f900e4a0aa0a445b241fafaadc3fa7457ff20559f84c828bbff",
+      "heading": "5. 適用範囲",
+      "position": 5,
+      "section_id": "DLID-7qnb25crwrge"
+    },
+    {
+      "content_hash": "5cd29929992dde82d3c3ad936b3ee70ad8bc6b3bc333529ee1cf1e0e1e338de8",
+      "heading": "決定論的な生成物は AI が作らない",
+      "position": 0,
+      "section_id": "DLID-5dqemhj02wdq"
+    },
+    {
+      "content_hash": "96d389b1a8725f2494d7a1a13eef0e875fca27924c039793fd6b46033b0a8f8a",
+      "heading": "8. 重大度カタログ",
+      "position": 9,
+      "section_id": "DLID-axndvsqatjb8"
+    },
+    {
+      "content_hash": "b54f16873a9cc07463159ace0f94e97d05e7bead465bc575f10c78e2cedbd37b",
+      "heading": "6.1 AI の応答そのものを構造化データとして受け取る場合",
+      "position": 7,
+      "section_id": "DLID-x1rbs1ywygee"
+    },
+    {
+      "content_hash": "b5cb161bc0512d45aba5a22436ac5264809053a0402cc41ac2227ecac1a8f0b7",
+      "heading": "6. 適用しない場面",
+      "position": 6,
+      "section_id": "DLID-pehqhke91kkt"
+    },
+    {
+      "content_hash": "c9ce7d48fd6167e9d4bf4c18a8cde442c25a0b4d0534186ae70088dcc8c3be8c",
+      "heading": "7. 検査を置く場所",
+      "position": 8,
+      "section_id": "DLID-dcw6gexmdcpv"
+    },
+    {
+      "content_hash": "cbfec230df0cca2fb310ad5ec66fa7428cdd90c10d025b850dd622c2424c4b29",
+      "heading": "2. 原則",
+      "position": 2,
+      "section_id": "DLID-aepyphqh5fc4"
+    },
+    {
+      "content_hash": "d2e3ec804e520bdd2557efe15313f457073ffc3c364407c3a8b5cc3bc12ff17e",
+      "heading": "4. 何が不要になるか",
+      "position": 4,
+      "section_id": "DLID-54txj0tqvzmt"
+    }
+  ],
   "summary": [
     "Purpose: break the chain where AI-built artifacts require checks that silently drop items",
     "Principle: deterministic executor builds the artifact; AI only decides content",

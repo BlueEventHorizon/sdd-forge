@@ -333,5 +333,5 @@ stderr 契約 (失敗時のみ stderr 先頭行に付与):
 | 低レベル引数を `*sys.argv[1:]` で無条件に透過する                 | 低レベルの将来追加がローカル公開契約へ自動的に漏れる                                  |
 | 単一 wrapper に判断を伴う複合操作を畳み込む                       | §2.4 の決定論的連鎖という制約を侵す                                                   |
 
-[req-003]: ../requirements/REQ-003_skill_script_separation.md "323aaf2b05f6 DLID-bgxgcq0pvkm7"
+[req-003]: ../requirements/REQ-003_skill_script_separation.md "3b1c5409fe80 DLID-bgxgcq0pvkm7"
 [script-error-output]: ../../../rules/plugin_script_error_output_rules.md "f1c5b6752ce7 DLID-fz66nns8q521"

@@ -1,41 +1,229 @@
 {
-  "content_hash": "307dc53425f033da6a5ac1a7ddfdbd9456453b316a3b50d1ef4aa8f725af6ee5",
+  "applied_hash": "3be39e634c1c7c530c866982d67df159eaa0bf7251fa8cc7b23f2324f1926cba",
+  "content_hash": "3be39e634c1c7c530c866982d67df159eaa0bf7251fa8cc7b23f2324f1926cba",
   "doc_link_id": "DLID-cyrk9xr8vcap",
   "keywords": [
     "additive development",
-    "feature namespace",
     "differential feature",
+    "feature namespace",
     "temporary-feature",
     "merge",
     "old spec replacement",
     "pure addition",
-    "brand-new",
+    "brand new",
     "worktree isolation",
-    "scope judgment"
+    "spec meaning change"
   ],
+  "last_check": {
+    "checked_at": "2026-11-25T03:43:00+00:00",
+    "result": "success"
+  },
   "path": "plugins/forge/docs/additive_development_spec.md",
-  "purpose": "Defines the criteria and procedure for the additive development workflow used when adding features to an existing project, including feature namespaces, replacement of old specs, and merge.",
+  "purpose": "Defines criteria and procedures for the additive development workflow: when to use a feature namespace, how old and new specs are replaced, what not to rewrite, and how to merge.",
+  "references": [
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/frontmatter_format.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 0,
+      "recorded_content_hash": "867507803b4a",
+      "recorded_path": "frontmatter_format.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-jtc4qnjwbdxf",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/strategy_principles_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 1,
+      "recorded_content_hash": "3f63be26ad5c",
+      "recorded_path": "strategy_principles_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-540ak6kxrsxp",
+      "target_section_id": null
+    }
+  ],
+  "sections": [
+    {
+      "content_hash": "06678eb7cdefe2699f549ce15932ca670d94e567686a33820e6d59607169b994",
+      "heading": "4.1 merge の定義 [MANDATORY]",
+      "position": 21,
+      "section_id": "DLID-p2kpvz8mvd0p"
+    },
+    {
+      "content_hash": "08b33a8f9bf9188648998897daccb17451bec6e56e2352a4c1e3d02f3a6ebdb7",
+      "heading": "0. フィーチャーの概念定義",
+      "position": 1,
+      "section_id": "DLID-p13gsmchs01j"
+    },
+    {
+      "content_hash": "1da5a89089f4d9686b70456433b37fafededf132999cde10bf2d0d47edd7dca7",
+      "heading": "どの文書が並行状態にあるかは読み手に探させない",
+      "position": 15,
+      "section_id": "DLID-jb8m379bgkq6"
+    },
+    {
+      "content_hash": "283777ffc802e1723cf374c604ef4acdf56de4da60f53ab0d7e47940067bcaa4",
+      "heading": "4.2 何を移し、何を分離したまま残すか",
+      "position": 22,
+      "section_id": "DLID-c2pjtn741zmy"
+    },
+    {
+      "content_hash": "3373b9eb4343b163c9c75afdbb19efc7823b7147fdcb9315b5d5738962003ccf",
+      "heading": "基盤要件のフィーチャー名",
+      "position": 7,
+      "section_id": "DLID-kxmx61r9qszx"
+    },
+    {
+      "content_hash": "40a08286844ca7d86354aab13b8790a8c3c03b9249fc5dc5930389ee905d0c78",
+      "heading": "3.1 この制約は実装を縛らない",
+      "position": 18,
+      "section_id": "DLID-hqaw0262vj18"
+    },
+    {
+      "content_hash": "421f9c2cb4ab0510fe9671473f15bc7043ab5b2e362fb026f5cf2e42cf3614fc",
+      "heading": "AI による置き換え禁止 [MANDATORY]",
+      "position": 8,
+      "section_id": "DLID-cayw8yhz7hdp"
+    },
+    {
+      "content_hash": "5750cbe3b027b3edf5e5c2b568a7dc736de0688fb3e4b4e5f8260f38088ae455",
+      "heading": "3. 実装期間中に書き換えないもの",
+      "position": 17,
+      "section_id": "DLID-hx0y9yd753zt"
+    },
+    {
+      "content_hash": "5c3a518d37d44d701128112be117de24f3d0a930e124889db71f536580819e0e",
+      "heading": "既存仕様との関係による 3 つの型",
+      "position": 2,
+      "section_id": "DLID-3e1hkfwvymsa"
+    },
+    {
+      "content_hash": "65e64fdbaccc70836128f5728b8c2db5c9f31450875febdbd63e53bb7ce88470",
+      "heading": "ディレクトリ例",
+      "position": 9,
+      "section_id": "DLID-2y9hrtkv94w5"
+    },
+    {
+      "content_hash": "68bf234d50ad47457a106888a7993b64b41814a12ab3f2d2dcd035583fd5053c",
+      "heading": "4. merge タイミングと手順",
+      "position": 20,
+      "section_id": "DLID-skde8863xdvt"
+    },
+    {
+      "content_hash": "6fe6066f2e9f031f3cd25c974ec4e5f79ead90e004746cda2824ac1adfe627bb",
+      "heading": "feature 不要の除外条件（両方を満たす場合のみ）",
+      "position": 12,
+      "section_id": "DLID-ewqgt5b9d55w"
+    },
+    {
+      "content_hash": "709befbd4c714e20d78b2e86651c2ffcdff3afbefb464ca101cfe5e0071b337b",
+      "heading": "1. 適用条件（いつ差分開発として feature を使うか）",
+      "position": 10,
+      "section_id": "DLID-7mman45bq4r2"
+    },
+    {
+      "content_hash": "7e02540cad744654edcbed36c2be2de4ba87f046da6a3cf2595ad480cc58042f",
+      "heading": "2. 実装期間中の旧仕様の置き換え",
+      "position": 13,
+      "section_id": "DLID-rx6fnkscmxnf"
+    },
+    {
+      "content_hash": "9b35a9d0db2bfeb6a92c8215754252869d98cffb139cab14f4956eb19b8de8da",
+      "heading": "設計は要件から組み立てる",
+      "position": 16,
+      "section_id": "DLID-mxvyhbfn7544"
+    },
+    {
+      "content_hash": "a1fe0bc3e4080ccba22874f34ad94f68f490a90fab69fda7728895a9a9dfde32",
+      "heading": "4.3 手順",
+      "position": 23,
+      "section_id": "DLID-dqe4jyp24cvs"
+    },
+    {
+      "content_hash": "b3c6daae3ee13da0e3438dfb328ec547a381639bf1eacd350fa4111c9038aebc",
+      "heading": "文書操作の形式は判定条件ではない [MANDATORY]",
+      "position": 11,
+      "section_id": "DLID-fqtmavm010wj"
+    },
+    {
+      "content_hash": "b8cdef80d0647a7f5f2497c2d066916b2713d254684f8fbba1bd737a8739acfd",
+      "heading": "差分開発型が時間軸を持つ理由",
+      "position": 4,
+      "section_id": "DLID-7zrx276v96m9"
+    },
+    {
+      "content_hash": "bbae89dcbd9cebeb45eff60dff355419913cbd53ab0f64e99ea43ce17e2a98bb",
+      "heading": "3.2 実装は本流から隔離した作業コピーで行う",
+      "position": 19,
+      "section_id": "DLID-2326hh69ht5r"
+    },
+    {
+      "content_hash": "bc044a7f3112733dad685d65f6da012250fb102f0b2a27f4fb0c80bcc8731a78",
+      "heading": "6. frontmatter 定義",
+      "position": 24,
+      "section_id": "DLID-5afnnzgbm4dn"
+    },
+    {
+      "content_hash": "cca9661ba1bac2fe477401edaec317b0b95ff26fc2ab7927bf6304321016ef8f",
+      "heading": "要件定義と設計で型は一致するとは限らない",
+      "position": 3,
+      "section_id": "DLID-dzprz7k4m6nh"
+    },
+    {
+      "content_hash": "cf2fbd23b899183f19b7bd61536749abbd143619f778a36c35f17a2378d81d27",
+      "heading": "置き換えに条件を付けない [MANDATORY]",
+      "position": 14,
+      "section_id": "DLID-11q9sbq92398"
+    },
+    {
+      "content_hash": "d8f999cb4fc534e3fc917aa158f797546d885dbcffcf8bd69aa5bf2fecf8a6eb",
+      "heading": "フィーチャー名が必要な場合",
+      "position": 6,
+      "section_id": "DLID-dtrrak28t13r"
+    },
+    {
+      "content_hash": "dc8240613ac7652af55ab4fadbe52f73bf1cf7d76dae4e5c50306dc4d7395e41",
+      "heading": "追加開発ワークフロー仕様",
+      "position": 0,
+      "section_id": "DLID-gaykhs6rgh9b"
+    },
+    {
+      "content_hash": "e71e38658a9fcbd94715db8e6fa6b509687649c1404480ea5087aff86d48cbbe",
+      "heading": "フィーチャー名が不要な場合",
+      "position": 5,
+      "section_id": "DLID-wmgtzjnwjb82"
+    }
+  ],
   "summary": [
-    "Concept of a feature as a namespace and the three types: brand-new, purely additive, differential",
-    "Requirements and design types are judged per document and may differ",
-    "When feature namespaces are needed or unnecessary, and the ban on AI renaming feature names",
+    "Feature as a namespace and three types: brand new, purely additive, differential",
+    "Requirements and design types are judged separately and may differ",
+    "When feature names are needed or unnecessary, and the ban on AI renaming them",
     "Applicability: judged by whether spec meaning changes, not by document operation form or change label",
-    "Bug fixes are not additive development; exclusion conditions for small changes and red flags",
-    "During implementation the additive docs are the current spec; old spec is replaced unconditionally",
-    "Design is built from requirements, not bent to existing implementation",
-    "Old spec documents are not rewritten during implementation; implementation is not constrained; isolated worktree",
-    "Merge definition, scope-based decision of what to move or keep separate, and merge procedure",
-    "Frontmatter definition delegated to frontmatter_format as single source of truth"
+    "Exclusion conditions for small changes and qualitative red flags",
+    "Unconditional replacement of old specs by additive documents during implementation",
+    "Do not rewrite old spec documents during implementation; implementation code is not constrained",
+    "Isolated working copy (worktree) for implementation",
+    "Merge definition, scope-based decision on what to move or keep separate, and merge steps",
+    "Frontmatter definition delegated to frontmatter_format"
   ],
   "tasks": [
-    "Creating requirements documents for an existing project",
-    "Creating design documents that change existing designs",
     "Deciding whether a change needs a differential feature",
-    "Choosing feature names and document placement",
-    "Implementing against a temporary-feature spec",
-    "Merging additive documents into old specs after implementation",
-    "Reviewing documents for additive development compliance",
-    "Classifying a defect versus a spec change"
+    "Creating requirements or design documents for an existing project",
+    "Choosing feature namespace names and directory layout",
+    "Implementing against additive documents with old specs present",
+    "Merging additive documents into old specifications after implementation",
+    "Reviewing documents marked temporary-feature",
+    "Classifying a fix as bug fix versus spec change"
   ],
   "title": "追加開発ワークフロー仕様"
 }

@@ -1,5 +1,6 @@
 {
-  "content_hash": "84e8b637dc1d6d2a4f66d36413917cef2589689e456de36bca52d47fff7164f4",
+  "applied_hash": "4d29f17e55662e52e1245181b9339e7e217840b1a7da6291eb5e2ea084882e5e",
+  "content_hash": "4d29f17e55662e52e1245181b9339e7e217840b1a7da6291eb5e2ea084882e5e",
   "doc_link_id": "DLID-vyz6fzhdfk3a",
   "keywords": [
     "agenda",
@@ -7,31 +8,260 @@
     "agenda_store",
     "agenda_wrapper",
     "structural judgment",
-    "state transition",
-    "content_version",
-    "consult",
     "decision",
-    "last_changed_fields"
+    "content_version",
+    "last_changed_fields",
+    "consult",
+    "state transition"
   ],
+  "last_check": {
+    "checked_at": "2026-11-25T02:44:01+00:00",
+    "result": "success"
+  },
   "path": "docs/specs/consult/agenda/design/DES-075_agenda_mechanism_design.md",
-  "purpose": "Design of the agenda mechanism: a shared storage layer that records agenda items (review findings, discussion points), judges state transitions, and triggers display generation for consult.",
+  "purpose": "Design of the agenda mechanism: JSON-based recording, state transition rules, and automatic display regeneration for items (review findings, discussion points) handled by consult.",
+  "references": [
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/specs/consult/agenda/design/DES-077_agenda_display_design.md",
+        "result": "match",
+        "scope": "docs/specs/consult/agenda/design"
+      },
+      "kind": "document",
+      "position": 2,
+      "recorded_content_hash": "2782ba223e7b",
+      "recorded_path": "DES-077_agenda_display_design.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-8s8p9ah1hyry",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/specs/consult/agenda/design/NOTES_open_design_questions.md",
+        "result": "match",
+        "scope": "docs/specs/consult/agenda/design"
+      },
+      "kind": "document",
+      "position": 4,
+      "recorded_content_hash": "5800bff02e73",
+      "recorded_path": "NOTES_open_design_questions.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-n11844q5g8qn",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/specs/consult/design/DES-078_consult_dialogue_flow_design.md",
+        "result": "match",
+        "scope": "docs/specs/consult/design"
+      },
+      "kind": "document",
+      "position": 3,
+      "recorded_content_hash": "259a88a9ae6e",
+      "recorded_path": "../../design/DES-078_consult_dialogue_flow_design.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-s3cjh3q3c0vc",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/specs/consult/requirements/REQ-017_consult_skill.md",
+        "result": "match",
+        "scope": "docs/specs/consult/requirements"
+      },
+      "kind": "document",
+      "position": 0,
+      "recorded_content_hash": "0a96a70a0d71",
+      "recorded_path": "../../requirements/REQ-017_consult_skill.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-433459yse70c",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/specs/forge/design/DES-066_review_body_design.md",
+        "result": "match",
+        "scope": "docs/specs/forge/design"
+      },
+      "kind": "document",
+      "position": 1,
+      "recorded_content_hash": "b582bc5a8f96",
+      "recorded_path": "../../../forge/design/DES-066_review_body_design.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-2becz9x7x407",
+      "target_section_id": null
+    }
+  ],
+  "sections": [
+    {
+      "content_hash": "01a89552cee4f249febf5426856a0d7d6be169994dde50dd1bc836f4768f6fd2",
+      "heading": "4.1 機密情報の扱い（NFR-005）",
+      "position": 9,
+      "section_id": "DLID-g086ebx0z4sr"
+    },
+    {
+      "content_hash": "05c7ac0083e3c94e88cd671a56a5eb47aab3427e25f5e45278ea817223c1799e",
+      "heading": "個数を 1 つに置く理由（`consult` 起点）",
+      "position": 18,
+      "section_id": "DLID-7enywg1cby7d"
+    },
+    {
+      "content_hash": "0c43b6ae005474919c39e2eba5a946782af3842672fc45292d1bb71d24755df5",
+      "heading": "7. 置き場・個数・寿命設計（NFR-003）",
+      "position": 17,
+      "section_id": "DLID-9j1zv12z3263"
+    },
+    {
+      "content_hash": "1a2db8e8451ff3b39d1c3737bc222a6686772cdf344e1deb9f881a2811b288e0",
+      "heading": "直前の更新の一意性（`last_changed_fields`）",
+      "position": 7,
+      "section_id": "DLID-2zcdhf2gg9tx"
+    },
+    {
+      "content_hash": "1b4676399179814ba85a6d04e2a50e4c30218ca114625591cfe24d4429d1a017",
+      "heading": "8.1 再描画のトリガー（呼び出し側から独立させる）",
+      "position": 20,
+      "section_id": "DLID-f8rj3w7wjrzr"
+    },
+    {
+      "content_hash": "1caff4d03947543d14ee93ddbf02d1bd332c8b85eba0ffb8b84c84771a6e030a",
+      "heading": "9. テスト設計",
+      "position": 21,
+      "section_id": "DLID-nv5b7c2xgds6"
+    },
+    {
+      "content_hash": "23dd0a7c90fb821938e263dda4963057c02ad4a9d6578a0161f9b83cf72b46c0",
+      "heading": "5. 状態遷移設計",
+      "position": 10,
+      "section_id": "DLID-x5ctrr7x5rx0"
+    },
+    {
+      "content_hash": "2c2453a25e972c38f437760f172ff1f8c5b1329db479dbbee76724bdf5b05732",
+      "heading": "11. 使用する既存コンポーネント",
+      "position": 23,
+      "section_id": "DLID-jc0mdvna3ek6"
+    },
+    {
+      "content_hash": "3f378ffec9f7cde0d29ba0e2b044d57e7a15b7e8f41f00997b2f92115103e890",
+      "heading": "DES-075 agenda 機構 設計書",
+      "position": 0,
+      "section_id": "DLID-3zd2m1y0wq5m"
+    },
+    {
+      "content_hash": "46920136cdc207aa84ac6057b2bd39d057b758a184c1abd5a7a2b3e09a6a98ed",
+      "heading": "5.1a 新規項目の追加に伴う構造判定の再要求（FNC-012）",
+      "position": 12,
+      "section_id": "DLID-jh4wwxwmr12b"
+    },
+    {
+      "content_hash": "4b35d105d231cd96b7dfe23a8753b923a27fc3898c0035622428f884ad5033ff",
+      "heading": "3.1 モジュール一覧",
+      "position": 4,
+      "section_id": "DLID-64pxgpdexpzh"
+    },
+    {
+      "content_hash": "4f05657568789305fc3cd819e4e342aa16559fa9ae25f9cda2bffb5364daee8a",
+      "heading": "10. FNC-004 充足の測定方法",
+      "position": 22,
+      "section_id": "DLID-as3acm82nvgv"
+    },
+    {
+      "content_hash": "5c44b92b4179fd7e20517721421b2d1dab23d93ff6cf1e458c7161aeaa7a9b04",
+      "heading": "5.2 構造判定（FNC-012）の単位",
+      "position": 13,
+      "section_id": "DLID-a46n73dhbfp7"
+    },
+    {
+      "content_hash": "81b36850328d0d358e2f5b90d4134f0569b7d221f31d4759eedc68c23a77b3f3",
+      "heading": "2. アーキテクチャ概要",
+      "position": 2,
+      "section_id": "DLID-t0rx0x4p1spy"
+    },
+    {
+      "content_hash": "891db8ab797c525388bf1c6b0c69c7fb066f8262f433efdd12e1745a8a43b741",
+      "heading": "6.2 正常系のコマンド・関数呼び出し順序",
+      "position": 16,
+      "section_id": "DLID-b5kphwpnwtty"
+    },
+    {
+      "content_hash": "8e75d418dd0f0211640fd3df5e7544071ff85bc063a2d19e59d2ffc968871a2f",
+      "heading": "8. 表示生成設計（agenda:REQ-021）",
+      "position": 19,
+      "section_id": "DLID-jqxg5zgkyk5y"
+    },
+    {
+      "content_hash": "92409b59dec8237e53b3a687d081ae24f9cc0755650b9b8b57b581185717bc54",
+      "heading": "1. 概要",
+      "position": 1,
+      "section_id": "DLID-asm2r76v348f"
+    },
+    {
+      "content_hash": "9dc75cbf984a4ab2c5205fa5b0f6c0893f3cb9038685ca3b05e160c02d537fb9",
+      "heading": "状態の表現（独立した状態語彙を持たない）",
+      "position": 8,
+      "section_id": "DLID-dqgzt9xagwxw"
+    },
+    {
+      "content_hash": "a1aea596984ee291d2de62a0a4444ecfa89cf47f97442b812140c334892c3d04",
+      "heading": "4. データ設計（スキーマ）",
+      "position": 6,
+      "section_id": "DLID-k0e7merjnkkq"
+    },
+    {
+      "content_hash": "a90921987994f87adb18a00a36f2521780f9abe35d3ccd9e49c271953b406f6c",
+      "heading": "5.1 遷移の必要条件（FNC-008）",
+      "position": 11,
+      "section_id": "DLID-58fjknx8x76s"
+    },
+    {
+      "content_hash": "ad6ec68309613f7e506cce21eebc82011e841ac5e0bfae5ba1e2e61329a26d51",
+      "heading": "3.2 クラス図",
+      "position": 5,
+      "section_id": "DLID-c9ves6s5g96q"
+    },
+    {
+      "content_hash": "ecdef080b50edb68f07735087a85534546cf6342eb76cd589d18288396293dcd",
+      "heading": "3. モジュール設計",
+      "position": 3,
+      "section_id": "DLID-ce5w7w9xbz9p"
+    },
+    {
+      "content_hash": "f011f27f39a5ddd72af645de6d589c8724b27b4f490c75ab6b5379149b25091b",
+      "heading": "6.1 `record`のセマンティクス（1 回 1 値）",
+      "position": 15,
+      "section_id": "DLID-vfmbeh1t5xvj"
+    },
+    {
+      "content_hash": "fc93db934a4a3ba9d50eaf85f59216892f25ffafcd730980a0ec236bc559cf7f",
+      "heading": "6. 入力インターフェース設計（FNC-005・NFR-006）",
+      "position": 14,
+      "section_id": "DLID-qfhrzrrmv0w9"
+    }
+  ],
   "summary": [
-    "Overview and one-way architecture: consult, agenda_wrapper, agenda_store, agenda_render",
-    "Module list and class diagram of the agenda.json data structure",
-    "JSON schema fields: content_version, config, structural_judgment, items, decision, last_changed_fields",
-    "State expressed by the three decision values being non-empty, with no separate status vocabulary",
-    "Transition conditions in agenda_schema and structural judgment re-required when adding items",
-    "Input CLI design via agenda_wrapper: start, record one value per call, next, pending, finish",
-    "Location, count and lifetime of records per origin (review, consult)",
+    "Architecture: consult calls agenda_wrapper, which calls agenda_store, which auto-invokes agenda_render",
+    "Module list and responsibilities for wrapper, store, render, schema",
+    "Data schema of agenda.json: content_version, config, structural_judgment, items, decision",
+    "State representation without status field: settled when decision by/outcome/reason are all non-empty",
+    "last_changed_fields uniqueness: only the latest write is marked across the record",
+    "Transition prerequisites and structural judgment re-requirement when adding new items",
+    "CLI input interface: start, record (one value per call), next, pending, finish",
+    "Storage location, count, and lifetime per origin (review, consult)",
     "Automatic re-render trigger after writes and failure handling",
-    "Test design and measurement method for FNC-004",
-    "Existing components reused"
+    "Test design and FNC-004 measurement method"
   ],
   "tasks": [
-    "Implementing or modifying agenda_store, agenda_wrapper or agenda_schema",
-    "Changing the agenda.json schema",
-    "Integrating consult with the agenda mechanism",
-    "Writing tests for the agenda mechanism",
+    "Implementing agenda_wrapper, agenda_store, agenda_schema",
+    "Modifying the agenda.json schema",
+    "Changing state transition or settlement rules",
+    "Adding record forms or CLI commands",
+    "Writing tests for the agenda store",
+    "Designing consult integration with agenda",
     "Reviewing agenda design documents"
   ],
   "title": "DES-075 agenda 機構 設計書"

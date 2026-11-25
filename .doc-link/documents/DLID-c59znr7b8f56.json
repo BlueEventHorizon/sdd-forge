@@ -1,38 +1,234 @@
 {
-  "content_hash": "69dee42932c29e93c7a78ba905536f16f98d58f293d59a03c8a735c8ea2ab167",
+  "applied_hash": "335c3c0eb3204a74b41569a7cbffc4f72d38b5e16679f251cb9fbca0272e6501",
+  "content_hash": "335c3c0eb3204a74b41569a7cbffc4f72d38b5e16679f251cb9fbca0272e6501",
   "doc_link_id": "DLID-c59znr7b8f56",
   "keywords": [
     "document style guide",
     "MANDATORY tag",
-    "heading level",
+    "heading levels",
     "reference link",
-    "document reference notation",
+    "glossary term",
     "GFM alert",
-    "terminology",
-    "glossary",
-    "no revision history",
-    "long vowel omission"
+    "long vowel JIS Z 8301",
+    "no history section",
+    "related documents section",
+    "placeholder naming"
   ],
+  "last_check": {
+    "checked_at": "2026-11-25T03:43:00+00:00",
+    "result": "success"
+  },
   "path": "plugins/forge/docs/document_style_guide.md",
-  "purpose": "Generic writing style guide for documents the plugin generates, updates, and reviews: tag usage, heading levels, emphasis, document reference notation, terminology, and bans on history and related-document sections.",
+  "purpose": "General writing style guide for documents the plugin generates, updates and reviews: tags, headings, emphasis, structured elements, reference notation, example naming, no history sections, and terminology.",
+  "references": [
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/adr_principles_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 0,
+      "recorded_content_hash": "1fb15e199859",
+      "recorded_path": "adr_principles_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-45wzpggz1set",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/glossary_format.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 1,
+      "recorded_content_hash": "1252d41a14b3",
+      "recorded_path": "glossary_format.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-z571pg6rda7f",
+      "target_section_id": null
+    }
+  ],
+  "sections": [
+    {
+      "content_hash": "122a9f122a6b183560d3558d5203956b0ef84c74c0c73cb05ff11eb786202058",
+      "heading": "5.1 パス表記",
+      "position": 15,
+      "section_id": "DLID-8e3fnkg4dw54"
+    },
+    {
+      "content_hash": "259e9bbee958b2d10ccc421122fe98db589025c32ba98a5ea2ce07e409c2e2ce",
+      "heading": "9.1 用語とは",
+      "position": 22,
+      "section_id": "DLID-6jtfwsjstsxn"
+    },
+    {
+      "content_hash": "3505aa591e3d33b4d250391598e4cea3d345f141bf1e29e91c0d298f93b27583",
+      "heading": "3.1 強調フレーズ",
+      "position": 6,
+      "section_id": "DLID-j34am6fw96jb"
+    },
+    {
+      "content_hash": "4234acf7962e45c4cd0f554c0d95c3edc44848c8f637199ef1c816adbb0f472d",
+      "heading": "8. 関連文書セクションを置かない",
+      "position": 19,
+      "section_id": "DLID-01xd440jn190"
+    },
+    {
+      "content_hash": "512af8b9fe894a1fda424178b131c0aaed847b971e194476d0f177f8c09a11c8",
+      "heading": "1.2 信号価値の維持",
+      "position": 3,
+      "section_id": "DLID-qk1cxk4k700g"
+    },
+    {
+      "content_hash": "68622fb774150bc5324371f7674069c31070e73c860a49c93df9f32a8ef1cbc9",
+      "heading": "8.1 例外",
+      "position": 20,
+      "section_id": "DLID-5c3b2pj2wgh5"
+    },
+    {
+      "content_hash": "68a325fb427d43b3125edea01bbd4a7bf373dcb90a667eb7ef0091fb96c3596d",
+      "heading": "4.1 コードブロック",
+      "position": 11,
+      "section_id": "DLID-y64hg9vcsf6p"
+    },
+    {
+      "content_hash": "7705d489685e832b426699134a78d71a1f7673e3af1037d12cd6b680213f6227",
+      "heading": "9.3 本文での表記",
+      "position": 24,
+      "section_id": "DLID-0gzkyaxt9ppf"
+    },
+    {
+      "content_hash": "781cc29a5121df7d4797ab8d4fe5d7495e83f85ecb2629fd7b2df389e4ec0b9b",
+      "heading": "2. 見出しレベル",
+      "position": 4,
+      "section_id": "DLID-91nvkw8ns148"
+    },
+    {
+      "content_hash": "80ebf8e5f7f12b2398744723c4fe04a1708e0261ff84bb64ae7f1b813c79db13",
+      "heading": "6. 抽象例の命名",
+      "position": 17,
+      "section_id": "DLID-x6kmfz365pv2"
+    },
+    {
+      "content_hash": "8133f0facb067ce0c82276f0f98f33ae38fb10bc99ece8134bcbaeb5f8885b73",
+      "heading": "1.1 種類と配置",
+      "position": 2,
+      "section_id": "DLID-qd4e64cxrzqy"
+    },
+    {
+      "content_hash": "82259377057f117db899615625031391fe0b9182dc3494baf34a5f70bd45ec88",
+      "heading": "3.2 長音ルール",
+      "position": 7,
+      "section_id": "DLID-106jvm1tbc61"
+    },
+    {
+      "content_hash": "8e188ab327fe7a0d8a3373bbb6dde7a2526d95814850e0afce8a7669bee3e856",
+      "heading": "1. タグの使い方",
+      "position": 1,
+      "section_id": "DLID-3men7fms3r7s"
+    },
+    {
+      "content_hash": "a27a1eadf19227671c41229000de6fe9f3d6593a2d653e5ed87c5f3c8b642fc0",
+      "heading": "7. 歴史的記録を置かない",
+      "position": 18,
+      "section_id": "DLID-xqbx08m9fhrn"
+    },
+    {
+      "content_hash": "bfb9010175416714a03de69b07f7807d6651b0501ec35c62a0a86be6d9553783",
+      "heading": "5.2 例",
+      "position": 16,
+      "section_id": "DLID-xtzwrbeh39b2"
+    },
+    {
+      "content_hash": "c258e9bfc711287d012dd012566a7f5c9650194104d73e138b826c55ef8f786f",
+      "heading": "3.3 強調記法の使い分け",
+      "position": 8,
+      "section_id": "DLID-s634tp80a069"
+    },
+    {
+      "content_hash": "d0c35bc02f6cb2a0f969ad410a227be1034b0bffc9ed22b264a02d934383f3ba",
+      "heading": "3.4 GFM アラート",
+      "position": 9,
+      "section_id": "DLID-xxspvhzcwkpp"
+    },
+    {
+      "content_hash": "d1a1bbeeecca632603cfa25aa60c394d15e5f94fa8270b8f72420ec002aad9ac",
+      "heading": "4.3 表",
+      "position": 13,
+      "section_id": "DLID-nrh9a0gy26m4"
+    },
+    {
+      "content_hash": "da76e19317c87882b6a63d38a9ed8e7ebb325eb878e823a9c270eb4ce579171b",
+      "heading": "9.2 命名の考え方",
+      "position": 23,
+      "section_id": "DLID-2m0mmw13d0t9"
+    },
+    {
+      "content_hash": "db43a1766a89d93c04a8f340e083b9c4710a42e4d6bb8ab22ebf599839371bd2",
+      "heading": "4.2 リスト",
+      "position": 12,
+      "section_id": "DLID-k2qwddmw27yy"
+    },
+    {
+      "content_hash": "e8544de44776c6eb83378cd17ddbeb5f7002914546bfa10b8a5114c4fbc5bb34",
+      "heading": "5. 文書参照記法 [MANDATORY]",
+      "position": 14,
+      "section_id": "DLID-66d72jzybx1j"
+    },
+    {
+      "content_hash": "ec1885bab7ac33239402392c53906e2b373a5c28e35ed00ea0988e5d78e44773",
+      "heading": "4. 構造化要素",
+      "position": 10,
+      "section_id": "DLID-ssctmdw5vez6"
+    },
+    {
+      "content_hash": "ecf96fbd2afad83a0b1c926b41bfa8cd98e738cf439103a768b604ff4f4243c2",
+      "heading": "3. 強調・表記",
+      "position": 5,
+      "section_id": "DLID-nae23ygjj1ae"
+    },
+    {
+      "content_hash": "f259c7a44c6cb8070c6ee58a98ccd40e9e9b9575fde899efa3f5706e8303931b",
+      "heading": "9.4 用語集",
+      "position": 25,
+      "section_id": "DLID-k0v2ycby4pbv"
+    },
+    {
+      "content_hash": "fa61d0714f9e28772446e72ef37f6478cc476525564ba0ef231d2e85fde1a5f8",
+      "heading": "9. 用語",
+      "position": 21,
+      "section_id": "DLID-dgkks0jxv46c"
+    },
+    {
+      "content_hash": "fb97e1027bec8fbaf743d44a6371e10913da7fe234a88dedd6f145b7d148be77",
+      "heading": "文書スタイル指針",
+      "position": 0,
+      "section_id": "DLID-k579tbm0ny8c"
+    }
+  ],
   "summary": [
-    "Tag usage rules for MANDATORY, CRITICAL, and IMPORTANT, with placement and scarcity criteria",
+    "Tag usage: three tag kinds, placement at heading end, and criteria A-E for MANDATORY with demotion order",
     "Heading levels limited to four tiers",
-    "Emphasis phrases, long-vowel omission rule (JIS Z 8301), and GFM alerts",
-    "Structured elements: code blocks with language, lists, and tables with limits",
-    "Document reference notation in three systems, using reference-style links with definitions at the end",
-    "Abstract example naming with placeholders instead of real names",
-    "No historical records or revision history sections in documents",
-    "No related-documents list sections, with exceptions for external URLs",
-    "Terminology rules: what a term is, naming principles, bracket notation, glossary files"
+    "Emphasis and notation: English emphasis phrases, long-vowel omission per JIS Z 8301, bold/code/GFM alerts, no italics",
+    "Structured elements: code block language tags, list nesting, table column limits",
+    "Document reference notation for three systems, using reference-style links only, with path rules",
+    "Abstract example naming with placeholders instead of real names or concrete domains",
+    "Ban on history sections and historical narration; history belongs in CHANGELOG, git and ADR",
+    "Ban on related-documents sections, with exceptions for external URLs",
+    "Terminology: definition of a term, naming principles, bracket notation in body text, glossary rules"
   ],
   "tasks": [
-    "Writing requirements documents, design documents, or plans",
+    "Writing or updating requirements, design documents and plans",
     "Reviewing documents for style compliance",
-    "Editing documents that reference other documents",
-    "Adding or placing priority tags on headings",
-    "Defining terms and glossaries in documents",
-    "Writing rule or guideline documents with examples"
+    "Deciding whether to attach MANDATORY/CRITICAL/IMPORTANT tags",
+    "Writing cross-document references and reference links",
+    "Defining and using glossary terms in documents",
+    "Writing example snippets and rule documents",
+    "Authoring SKILL.md or agent documents that reference docs"
   ],
   "title": "文書スタイル指針"
 }

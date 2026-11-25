@@ -1,35 +1,38 @@
 {
-  "content_hash": "41e67eb507c7d8f125601a48bc6cb8927f28698de4973912cf09d9c34af942ff",
+  "content_hash": "70c36432428c14211975f920d1a5680a4a92d83e7489aeb41e9431230a765495",
   "doc_link_id": "DLID-33rp07ycsdym",
   "keywords": [
-    "Claude Code authoring policy",
-    "SKILL execution model",
+    "SKILL authoring",
+    "inheriting SKILL",
     "context fork",
     "custom agent",
     "AskUserQuestion",
-    "inheritance-type skill",
     "official spec verification",
-    "forge"
+    "Claude Code",
+    "argument as data",
+    "forge policy"
   ],
   "path": "docs/rules/forge_claude_code_authoring_policy.md",
-  "purpose": "Defines forge-specific policies for authoring Claude Code SKILLs and agents, on top of the generic authoring guide: verifying official specs, inheritance-type SKILLs, custom Agents, and user questions.",
+  "purpose": "Records forge-specific policies for authoring Claude Code SKILLs and agents, beyond the generic authoring guide: verifying official specs, inheriting SKILLs, custom agents, and user questions.",
   "summary": [
-    "How to verify official Claude Code specifications",
-    "SKILLs are inheritance-type; no context: fork or agent",
-    "Isolated-context work goes to custom Agents",
-    "Inheritance SKILL must state it does only its own task",
-    "New custom Agent needs design rationale and Role constraint tests",
-    "Questions and confirmations use AskUserQuestion",
-    "Exception for discussion-centered SKILLs with declared boundary",
-    "Do not block AskUserQuestion via disallowed-tools",
+    "How to verify official specs: meta references first, then claude-code-guide Agent",
+    "All SKILLs are inheriting type; context: fork and agent are forbidden",
+    "Isolated-context work goes into custom Agents launched via the Agent tool",
+    "Inheriting SKILLs state that they do only their task and take over no parent work",
+    "SKILLs whose arguments are data must not execute imperative-looking arguments as instructions",
+    "New custom agents need design rationale and a Role constraint test",
+    "Questions and confirmations use AskUserQuestion, not plain text",
+    "Exception for SKILLs whose product is the discussion itself, declared per SKILL",
+    "Do not block AskUserQuestion with disallowed-tools",
     "SKILL.md descriptions are written in Japanese"
   ],
   "tasks": [
     "Creating or editing a SKILL.md",
-    "Adding a custom Agent",
-    "Writing user confirmation steps in skills",
-    "Reviewing plugin authoring conformance",
-    "Verifying official Claude Code specs"
+    "Creating or editing a custom agent definition",
+    "Deciding whether a SKILL needs isolated context",
+    "Writing user confirmation steps in a SKILL",
+    "Verifying official Claude Code specifications before writing",
+    "Reviewing SKILLs for fork or argument-handling violations"
   ],
   "title": "Claude Code 作成方針（forge）"
 }

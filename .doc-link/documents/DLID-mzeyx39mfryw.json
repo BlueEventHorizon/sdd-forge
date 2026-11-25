@@ -1,38 +1,300 @@
 {
-  "content_hash": "04c49729cad34e2b9b6fe6fb6e4d7623120a8e50c8a5b567c153cc75c15f8188",
+  "applied_hash": "7f23e0705a84e555f9ff2ff99660e8763a7160cd2b63a60e26934c953f7cf212",
+  "content_hash": "7f23e0705a84e555f9ff2ff99660e8763a7160cd2b63a60e26934c953f7cf212",
   "doc_link_id": "DLID-mzeyx39mfryw",
   "keywords": [
     "evaluator",
+    "meta-perspective",
     "evaluation",
-    "meta-perspectives",
     "disposition",
     "finding_id",
     "flawed_premise",
-    "evaluate_result.json",
     "review round",
     "count_actionable",
-    "consult"
+    "consult",
+    "evaluate_result.json"
   ],
+  "last_check": {
+    "checked_at": "2026-11-25T02:44:01+00:00",
+    "result": "success"
+  },
   "path": "docs/specs/review/design/DES-083_evaluator_perspective_design.md",
-  "purpose": "Design for how the evaluator independently judges reviewer findings and applies meta-perspectives, and how the main body examines evaluations, advances rounds and cleans up, including the supporting scripts and JSON.",
+  "purpose": "Design for how the evaluator independently judges reviewer findings with meta-perspectives, and how the main body examines findings and evaluations, advances rounds and cleans up.",
+  "references": [
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/specs/review/design/DES-084_reviewer_design.md",
+        "result": "match",
+        "scope": "docs/specs/review/design"
+      },
+      "kind": "document",
+      "position": 2,
+      "recorded_content_hash": "90cd46356caa",
+      "recorded_path": "DES-084_reviewer_design.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-j50s0xwkwx00",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/specs/review/requirements/REQ-026_evaluator_perspective.md",
+        "result": "match",
+        "scope": "docs/specs/review/requirements"
+      },
+      "kind": "document",
+      "position": 0,
+      "recorded_content_hash": "0e3cb74cccc6",
+      "recorded_path": "../requirements/REQ-026_evaluator_perspective.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-p1v5z5mme4tw",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/specs/review/requirements/REQ-029_review_exchange.md",
+        "result": "match",
+        "scope": "docs/specs/review/requirements"
+      },
+      "kind": "document",
+      "position": 1,
+      "recorded_content_hash": "d635cdb8307b",
+      "recorded_path": "../requirements/REQ-029_review_exchange.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-5vrs9fnet7de",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "plugins/forge/docs/review_priorities_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 3,
+      "recorded_content_hash": "458b42b8deb4",
+      "recorded_path": "../../../../plugins/forge/docs/review_priorities_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-dcec6pr177c9",
+      "target_section_id": null
+    }
+  ],
+  "sections": [
+    {
+      "content_hash": "0463f240fc51d39261617447788d53c494fcdb816cabe80b9f26d37d6eb7f017",
+      "heading": "6.2 `append_result.py --kind evaluations`",
+      "position": 23,
+      "section_id": "DLID-q2aynsbvajgz"
+    },
+    {
+      "content_hash": "051afae2fa6ee6bdddece96dc35e6b43fac5edcd1117e534798eac9a95853a9e",
+      "heading": "1. 概要",
+      "position": 1,
+      "section_id": "DLID-wrd992367ze4"
+    },
+    {
+      "content_hash": "0522f8c38daaf1af7504ed2f6aad30d175903f29dd6b9d4a9b51ba62a9544036",
+      "heading": "5. JSON",
+      "position": 18,
+      "section_id": "DLID-j96wrjmt5338"
+    },
+    {
+      "content_hash": "186c2e80bcf8210b9fd284a783c25e31507f43740989a0c67ece291ac6a3b54f",
+      "heading": "7. テスト設計",
+      "position": 30,
+      "section_id": "DLID-hdjjeyq8ds5g"
+    },
+    {
+      "content_hash": "1e05a004509a750ac587ca4ee40c13064283440ee782c99439068d19ae78280b",
+      "heading": "5.1 評価の結果（`evaluate_result.json`）",
+      "position": 19,
+      "section_id": "DLID-t7m65wsdcyk3"
+    },
+    {
+      "content_hash": "1edbec7da4040277a15f2ac1869779b421080c9083f32e84fe737793a3f4195a",
+      "heading": "定義が持つもの",
+      "position": 7,
+      "section_id": "DLID-2xace76s1zd9"
+    },
+    {
+      "content_hash": "227cafd4e4cc0b843c35cfd19047c1fc2e9c5f63d5aa7055c2d594dbfeeb1447",
+      "heading": "4.3 consult（暫定措置）",
+      "position": 14,
+      "section_id": "DLID-g58822ngf943"
+    },
+    {
+      "content_hash": "2b4a510ee20293b5733024d66e853e259300b6e7e398c6206ac9fecadaaab459",
+      "heading": "DES-083 evaluator の独立評価とメタ観点 設計書",
+      "position": 0,
+      "section_id": "DLID-rt77bkre5p2e"
+    },
+    {
+      "content_hash": "3351354aeba08bc0ca949eb2c45a76db7859f6229d7acf6ec68c758e5188da0c",
+      "heading": "4. スキル・エージェント",
+      "position": 4,
+      "section_id": "DLID-fpecg9brak42"
+    },
+    {
+      "content_hash": "36f12da81834fc0878a56be23c9c65758c5287d3e38abde33a5debe604dff84e",
+      "heading": "6.3 `seal_result.py --kind evaluations`",
+      "position": 24,
+      "section_id": "DLID-k2tbafyrt5gs"
+    },
+    {
+      "content_hash": "37c312721ed5dd7502b8eab5fe44cf668bda2be4aa839b41b847ddfb4c110b91",
+      "heading": "6.7 `delete_review.py`",
+      "position": 28,
+      "section_id": "DLID-4569ng0csypw"
+    },
+    {
+      "content_hash": "486207374a2a09c39ba03374e2d163692d363c7c2ff20a65cd87bec612ee89c3",
+      "heading": "6.5 `count_actionable.py`",
+      "position": 26,
+      "section_id": "DLID-qepxgn1maj4a"
+    },
+    {
+      "content_hash": "65cd1f0b479022ce1fc02a4c27a29881e58b8d857b55e5d2dd8f37eeba7525a3",
+      "heading": "未対応所見の出所",
+      "position": 17,
+      "section_id": "DLID-7a6z3swnsr5g"
+    },
+    {
+      "content_hash": "6e5820458e69e038ae4cc0adce94999d6a8807a36f9b06862e85730d4b6e32f0",
+      "heading": "判断の内容",
+      "position": 13,
+      "section_id": "DLID-3cf79dd0r25n"
+    },
+    {
+      "content_hash": "6ea5e49e0fa1fa7c2a825ed66b83526539fdee38ed5e45993da3cd5c9633daff",
+      "heading": "入力",
+      "position": 8,
+      "section_id": "DLID-30nn9x13zbcg"
+    },
+    {
+      "content_hash": "8434b88b829ceca1f5ce54f01e46824f195903b09668f0b5aa040635716bf4e3",
+      "heading": "作業",
+      "position": 9,
+      "section_id": "DLID-h6n4xeth6xyk"
+    },
+    {
+      "content_hash": "930a22d0141c77b268d4e784c55fbb9242c84a792b61b7f4ccd14840ce4345c7",
+      "heading": "本体の仕事",
+      "position": 12,
+      "section_id": "DLID-m5q4tvtex5ks"
+    },
+    {
+      "content_hash": "944d5632a47179a2c2b484a8d9aa0025c8e80bf9373f3420759a538922076763",
+      "heading": "3. クラス図",
+      "position": 3,
+      "section_id": "DLID-ybezw5b732bv"
+    },
+    {
+      "content_hash": "9f0a4a1b613e5b1d4ed66c71ce237e14f4b79d135f403d5536282554c715fd0f",
+      "heading": "6.8 本体のラッパー",
+      "position": 29,
+      "section_id": "DLID-1h4vmt5g3v6b"
+    },
+    {
+      "content_hash": "9f189abf25e2b11f7f1c989ba0ae25fde34a3b793763c88eb5e42df596ec0917",
+      "heading": "8. 未確定事項",
+      "position": 31,
+      "section_id": "DLID-hcwa97m6ggyb"
+    },
+    {
+      "content_hash": "a6c8ec72d99261e52eb32c1be30c4ec239dce7199465904265d791d393212e32",
+      "heading": "5.2 `finding_id`",
+      "position": 20,
+      "section_id": "DLID-0nzwadmve3yg"
+    },
+    {
+      "content_hash": "ab62c7abc6a5d5df5b5e172d00cef0edd15a729424180b19d7d5b9d372f4c1a8",
+      "heading": "6.6 `advance_round.py`",
+      "position": 27,
+      "section_id": "DLID-qns12fv2jh9n"
+    },
+    {
+      "content_hash": "b4ae90a2234bf1db1079bd87409bae0b116c38553a1d66bdbf6ee02b76368855",
+      "heading": "agenda を使わない",
+      "position": 15,
+      "section_id": "DLID-67etbx0gtyts"
+    },
+    {
+      "content_hash": "b9f0b52d2972d696a7d293abbd42153955a82b407f89cc65f39d529e147f6bd1",
+      "heading": "4.2 本体（所見と評価を扱う仕事）",
+      "position": 10,
+      "section_id": "DLID-dd5jby3vryxp"
+    },
+    {
+      "content_hash": "ce5f357ad9f7a1bd8eb2208596ddc2fd2229c165647cadb81792134f8082ebf5",
+      "heading": "6. script",
+      "position": 21,
+      "section_id": "DLID-kt9rd7s3hd19"
+    },
+    {
+      "content_hash": "df2aa3bfe960bc2ce3197793b6c9321edd2f4e0496ba3c1f73a5ff865407f96a",
+      "heading": "状態はコンテキストに持つ",
+      "position": 16,
+      "section_id": "DLID-h7wytm06em9a"
+    },
+    {
+      "content_hash": "e4f99a547d62ff84684c846074447164cc2af7f8bf6bbd776366a5d3bcfae5ec",
+      "heading": "2. シーケンス",
+      "position": 2,
+      "section_id": "DLID-k8330d17mc44"
+    },
+    {
+      "content_hash": "eb001c0291094aa1b646423a6bcc44e831f37513b35a83a487f523efdb41f7de",
+      "heading": "4.1 evaluator",
+      "position": 5,
+      "section_id": "DLID-rt8ccytg75p2"
+    },
+    {
+      "content_hash": "ecea696786f1251575eb433766780126dbb5a7a59f48c7359762aaba07bf2a3d",
+      "heading": "reviewer と同じ部分",
+      "position": 6,
+      "section_id": "DLID-xsc3vryxmzhv"
+    },
+    {
+      "content_hash": "fc2f15eca03be949e1fa2d670065b079cfb0de3cab2275e22d21065c05c1cd7f",
+      "heading": "6.4 `resolve_review_path.py --kind inputs|evaluations`",
+      "position": 25,
+      "section_id": "DLID-xyfegq9hetkz"
+    },
+    {
+      "content_hash": "fd5feb52800f5780a8ba967ae1acdd952682da3f7629f7117018cf8fa599c2d5",
+      "heading": "定義が持つもの",
+      "position": 11,
+      "section_id": "DLID-6emfnrknq5j0"
+    },
+    {
+      "content_hash": "ffa33df171bca10f821b7c9f54a812dbf6d1e3d1f781d9f739124c80369a724a",
+      "heading": "6.1 evaluator のラッパー",
+      "position": 22,
+      "section_id": "DLID-433ysk0pt19v"
+    }
+  ],
   "summary": [
-    "Overview: evaluator works like reviewer but starts from findings, and outputs evaluations that redefine problems (one evaluation may bundle several findings)",
-    "Sequence S10-S20: evaluator run, body reading findings/evaluations, counting actionable items, round advance and deletion",
-    "Class diagram of body, evaluator, shared and body-only scripts, and JSON files",
-    "Evaluator definition: inputs, finding-first reading, five meta-perspectives reflected in evaluation shape, new findings via --new, reason writing, severity and confidence rules",
-    "Body responsibilities: critical examination of evaluations, presentation per evaluation, termination judgment, round limit, deletion after reporting",
-    "Interim consult measures: no agenda recording, state kept in conversation context, sources of unhandled findings",
-    "Evaluation result JSON (evaluate_result.json) structure and guarantees enforced by scripts; finding_id numbering shared with reviewer",
-    "Script specs: evaluator wrappers, append_result/seal_result for evaluations, resolve_review_path, count_actionable, advance_round, delete_review, body wrappers",
-    "Test design (unit, contract, integration) and open item TBD-001 on whether meta-perspectives actually work"
+    "Sequence S10-S20 covering evaluator, main body, round advance and review deletion",
+    "Class diagram of main body, evaluator, shared and body-only scripts, and JSON files",
+    "Evaluator definition: finding-first reading, five meta-perspectives reflected in evaluations, new findings via --new",
+    "Evaluation reason rules, severity from rule catalog, confidence and fix_confident semantics",
+    "Main body duties: examine evaluations rather than obey values, per-evaluation presentation, termination judgment, 4-round limit",
+    "Temporary consult measure: no agenda, state kept in conversation context, unhandled finding sources",
+    "evaluate_result.json structure, guarantees by script, and finding_id numbering shared with reviewer",
+    "Script specs: evaluator wrappers, append/seal for evaluations, resolve_review_path, count_actionable, advance_round, delete_review",
+    "Test design covering unit, contract, lint and integration cases, plus TBD on meta-perspective verification"
   ],
   "tasks": [
-    "Implementing or modifying the evaluator agent definition",
-    "Implementing evaluation-related review scripts (append_result, seal_result, count_actionable, advance_round, delete_review)",
-    "Editing the review skill body steps S10-S20",
-    "Reviewing or revising evaluator and evaluation design",
-    "Writing tests for evaluator, evaluation JSON and wrappers",
-    "Adjusting consult behavior during agenda refresh"
+    "Implementing evaluator.md and evaluator wrapper scripts",
+    "Implementing the review SKILL main body after evaluator launch",
+    "Implementing append_result, seal_result and resolve_review_path for evaluations",
+    "Implementing count_actionable, advance_round and delete_review scripts",
+    "Reviewing or revising the evaluator and meta-perspective design",
+    "Designing tests and lint for evaluator and review body definitions",
+    "Changing consult behavior during the temporary measure period"
   ],
   "title": "DES-083 evaluator の独立評価とメタ観点 設計書"
 }

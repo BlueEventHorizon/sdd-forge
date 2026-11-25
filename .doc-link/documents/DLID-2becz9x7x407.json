@@ -1,39 +1,271 @@
 {
-  "content_hash": "1b1163d33767a363017d4aee72a111847026b7407f8fbc5f0d6b654b953754d8",
+  "applied_hash": "b582bc5a8f966c63ebbbf985ccd0ff5891b1d81d5aa73d2de4613413e4388d3f",
+  "content_hash": "b582bc5a8f966c63ebbbf985ccd0ff5891b1d81d5aa73d2de4613413e4388d3f",
   "doc_link_id": "DLID-2becz9x7x407",
   "keywords": [
-    "forge review",
-    "review backend",
+    "review body",
+    "backend resolution",
     "fail closed",
     "retains_context",
+    "terminal exit",
     "allowlist",
-    "termination",
-    "reviewer",
-    "evaluator",
+    "split_by_location",
+    "fix_confident",
     "staged presentation",
-    "fix_confident"
+    "consult"
   ],
+  "last_check": {
+    "checked_at": "2026-11-25T02:44:01+00:00",
+    "result": "success"
+  },
   "path": "docs/specs/forge/design/DES-066_review_body_design.md",
-  "purpose": "Design of the backend-independent part of the /forge:review skill: backend resolution, targets and allowlist, fix safety verification, location-based split, termination, and staged presentation.",
+  "purpose": "Design for the backend-independent body of /forge:review: backend resolution, targets and allowlist, fix safety checks, location-based splitting, staged presentation and the single terminal exit.",
+  "references": [
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/specs/consult/design/DES-078_consult_dialogue_flow_design.md",
+        "result": "match",
+        "scope": "docs/specs/consult/design"
+      },
+      "kind": "document",
+      "position": 3,
+      "recorded_content_hash": "259a88a9ae6e",
+      "recorded_path": "../../consult/design/DES-078_consult_dialogue_flow_design.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-s3cjh3q3c0vc",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/specs/consult/requirements/REQ-017_consult_skill.md",
+        "result": "match",
+        "scope": "docs/specs/consult/requirements"
+      },
+      "kind": "document",
+      "position": 2,
+      "recorded_content_hash": "0a96a70a0d71",
+      "recorded_path": "../../consult/requirements/REQ-017_consult_skill.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-433459yse70c",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/specs/review/design/DES-083_evaluator_perspective_design.md",
+        "result": "match",
+        "scope": "docs/specs/review/design"
+      },
+      "kind": "document",
+      "position": 1,
+      "recorded_content_hash": "7f23e0705a84",
+      "recorded_path": "../../review/design/DES-083_evaluator_perspective_design.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-mzeyx39mfryw",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/specs/review/design/DES-084_reviewer_design.md",
+        "result": "match",
+        "scope": "docs/specs/review/design"
+      },
+      "kind": "document",
+      "position": 0,
+      "recorded_content_hash": "90cd46356caa",
+      "recorded_path": "../../review/design/DES-084_reviewer_design.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-j50s0xwkwx00",
+      "target_section_id": null
+    }
+  ],
+  "sections": [
+    {
+      "content_hash": "0bf9126c18cc6b39ec883e12ee3ef89659106f14352fc930bc498d068ea12f3e",
+      "heading": "3.10a 所見と評価の対応付け（REQ-013 FNC-1322）",
+      "position": 21,
+      "section_id": "DLID-n54qfp6qq1te"
+    },
+    {
+      "content_hash": "168ef7123d26d3b0bac07e69ab6ea686f97d0283c9824b87a11708226a497c07",
+      "heading": "5. 使用する既存コンポーネント",
+      "position": 24,
+      "section_id": "DLID-1b971y195s0m"
+    },
+    {
+      "content_hash": "1f0f2c66c5c88dea232c642f07903d11f6ad783ca311cc8b3cfdf5ec1b24ec39",
+      "heading": "2.2 `.claude/.forge.yaml` の `review` セクション",
+      "position": 6,
+      "section_id": "DLID-m2mj5nbts8d5"
+    },
+    {
+      "content_hash": "2f1a84e9738ec5d4af3e838f33e62e3a981480bb192ad343a2587ffd683fcb56",
+      "heading": "確信は 2 つに分かれる [CRITICAL]",
+      "position": 20,
+      "section_id": "DLID-jx92t6xpe44h"
+    },
+    {
+      "content_hash": "332debeaa4157011ea7b14ea29f624af786eeb420e8f47e61943e4edcafc5e06",
+      "heading": "3.8 中断したレビューを再開しない",
+      "position": 17,
+      "section_id": "DLID-yct4xhx63c30"
+    },
+    {
+      "content_hash": "3466a03c3536c76e4e44fffd669a6179ed10e3f8ed2d2f2869d372c9771d3cbb",
+      "heading": "3.1.1 base ブランチの受け渡し [CRITICAL]",
+      "position": 10,
+      "section_id": "DLID-scgn267vyecg"
+    },
+    {
+      "content_hash": "3dac96a22335008922e0025687bf599969f7b92b71549756fdc4a1ef36e4f4ff",
+      "heading": "3.3 reviewer と evaluator の結果の扱い",
+      "position": 12,
+      "section_id": "DLID-zg5qf3snjzjn"
+    },
+    {
+      "content_hash": "48aad9c012de21079dcea8383f12a6ef4890752d5b546e0afc4bb01d83b45614",
+      "heading": "3.10 位置による振り分けと 2 つの確信",
+      "position": 19,
+      "section_id": "DLID-zhwtd2gd01sm"
+    },
+    {
+      "content_hash": "566b3964069eaf18ecefc7bfdd5044a98ba8e0264bf7109cc0eb3cbc257af221",
+      "heading": "3.6 規範の持ち込み（FNC-1320）",
+      "position": 15,
+      "section_id": "DLID-qfxtd2h1zdd5"
+    },
+    {
+      "content_hash": "610223d5259b4fa5a629e17de03c79b0595d99699436c657e30e704fb2bec5d0",
+      "heading": "7. 未確定事項",
+      "position": 26,
+      "section_id": "DLID-yp2ztckzznyz"
+    },
+    {
+      "content_hash": "7d75e6b1fd677d98509e0f11ee6b6eb1372385a8344d0d53108dd42bdd181909",
+      "heading": "3.7 修正の安全検証",
+      "position": 16,
+      "section_id": "DLID-rzf87y840crn"
+    },
+    {
+      "content_hash": "853bc982798f66cdf99d76a42052ea78d153ffaeb07380b04aac3515c17c1c02",
+      "heading": "既定の候補順 [CRITICAL]",
+      "position": 5,
+      "section_id": "DLID-h3q1r0yjyyj6"
+    },
+    {
+      "content_hash": "8dae6ff9aa9e9cec6da5e8fcbe8bd6a6da767b14c6252944aae11028fb1e1f3d",
+      "heading": "1. 概要",
+      "position": 1,
+      "section_id": "DLID-9pjrcgdmq9az"
+    },
+    {
+      "content_hash": "98fe5d8178657b037f744c5cccbb41dc1f56ca225f99b44dfcc974a6a95f63f9",
+      "heading": "3.1 モジュール一覧",
+      "position": 9,
+      "section_id": "DLID-54tvd1k8rpcv"
+    },
+    {
+      "content_hash": "a507409f21d91094f3e10a5aa67cf07d2748048ced6a2467dabe4833b21fdc6d",
+      "heading": "6. テスト設計",
+      "position": 25,
+      "section_id": "DLID-6cwf3ek56baa"
+    },
+    {
+      "content_hash": "a62e2acb60baab5247846e62b1b7f141d609b90143cfeb20429cfd0f058cdf14",
+      "heading": "2. アーキテクチャ概要",
+      "position": 2,
+      "section_id": "DLID-4315gh92dj84"
+    },
+    {
+      "content_hash": "a852cd4866753934541f9caad268ace2e5315c958c448b4cd78e3422a8b5bb46",
+      "heading": "3.4 対象指定の粒度保存 [CRITICAL]",
+      "position": 13,
+      "section_id": "DLID-gqsp73zkpe1s"
+    },
+    {
+      "content_hash": "aa5e05ea86d2a033ea0655541bd1aab9634ee360e7d1416f50d837e33b86171e",
+      "heading": "DES-066 `/forge:review` 本体（バックエンド非依存部）設計書",
+      "position": 0,
+      "section_id": "DLID-6ptq8wszkzc1"
+    },
+    {
+      "content_hash": "ad77bd936a1795ea6221fb0756a8aad4bbf2b014905de50e0b6ade9c8987373b",
+      "heading": "3.9 依頼はレビューの間変えない [MANDATORY]",
+      "position": 18,
+      "section_id": "DLID-9hehr7v5gymc"
+    },
+    {
+      "content_hash": "bd1ae8662a5ce8f35f426ef2fca3876f7d77f938d1257af453abd541d5a9cdd2",
+      "heading": "2.1 バックエンドの解決 [MANDATORY]",
+      "position": 3,
+      "section_id": "DLID-64cgctfg1xh5"
+    },
+    {
+      "content_hash": "bf7c34031b0d965deeeec4990ceb05390d9d7577dacd3c4b4ddbad632fa38ffc",
+      "heading": "解決の手順",
+      "position": 4,
+      "section_id": "DLID-xmqbtc1xsfa0"
+    },
+    {
+      "content_hash": "cb62eb05574af0f4d86f5a8992e65bfdeb39ae9df55791e28e62ea355885c2a1",
+      "heading": "3.2 終端処理の単一出口 [MANDATORY]",
+      "position": 11,
+      "section_id": "DLID-jg72kdyjkt0w"
+    },
+    {
+      "content_hash": "cbbe78b99031cf0e77ef77f5066f53039fbadf285bc72e1ce70f509360aa0c48",
+      "heading": "候補順を設定へ出さない [CRITICAL]",
+      "position": 7,
+      "section_id": "DLID-v0aba3qs407x"
+    },
+    {
+      "content_hash": "d4ed4a8fbeaf2bdbd4d61b3d01ca29bdafc39ce6917a39c1bda42d8ee2116c70",
+      "heading": "3. モジュール設計",
+      "position": 8,
+      "section_id": "DLID-bfqf7jvptv5x"
+    },
+    {
+      "content_hash": "dbaff6d2d577ca0fb1e3df7cc67981b3e8295906059c712939f85f3b00b80fcb",
+      "heading": "3.5 依頼固有の情報を載せる 2 軸",
+      "position": 14,
+      "section_id": "DLID-3xy9rwpkdrkp"
+    },
+    {
+      "content_hash": "dcf94c15824fe7f90b492a02da6f18f478dd119cd8231bc2711162cd12e0b38e",
+      "heading": "3.11 段階的提示",
+      "position": 22,
+      "section_id": "DLID-p668xr30n7my"
+    },
+    {
+      "content_hash": "f901e67d6c8cdfdd175dfdd88e52ad2fc05729a93efce67f1eefa29eaf8357f7",
+      "heading": "4. ユースケース設計",
+      "position": 23,
+      "section_id": "DLID-a03tm0nee535"
+    }
+  ],
   "summary": [
-    "Architecture: SKILL orchestrates scripts, exchange scripts, reviewer and evaluator agents, backend SKILL and consult",
-    "Backend resolution by name to forge:<name> SKILL, explicit specification fails closed, default candidate order agent-review",
-    ".forge.yaml review section has only a backend key; candidate order is not configurable",
-    "Module list and base branch hand-off to resolve_targets for consistent allowlist",
-    "Single exit for termination across approved, halted_with_open_findings, failure and interrupted",
-    "Handling of reviewer and evaluator results, and preserving target granularity in requests",
-    "Request-specific focus and scope axes, and bringing in project rules and specs",
-    "Fix safety verification, immutable requests, and no resumption of interrupted reviews",
-    "Location-based split and two kinds of confidence (fix_confident and confidence), finding-evaluation mapping",
-    "Staged presentation delegated to consult, use cases, test design and open items"
+    "Overview of the review body orchestrating request publishing, reviewer and evaluator agents",
+    "Backend resolution by name to forge:<name> SKILL, fail closed on explicit specs, retains_context declaration",
+    "Default candidate order (agent-review only) and .forge.yaml review.backend as the only setting",
+    "Module list and responsibilities of body scripts and exchange scripts",
+    "Base branch handoff to resolve_targets.py and allowlist consistency",
+    "Single terminal exit with four paths: approved, halted_with_open_findings, failure, interrupted",
+    "Handling of reviewer and evaluator results, request immutability across rounds",
+    "Split by location and the two confidences (fix_confident vs confidence), --auto behavior",
+    "Staged presentation delegated to consult in the same context",
+    "Use cases, test design, and open item TBD-002"
   ],
   "tasks": [
     "Modifying the /forge:review SKILL or its scripts",
     "Adding a new review backend",
-    "Designing review termination and cleanup behavior",
-    "Changing auto-fix, safety verification or allowlist logic",
+    "Changing the terminal handling of a review",
+    "Designing fix safety verification",
+    "Reviewing design documents for the review feature",
     "Writing tests for review body scripts",
-    "Reviewing changes to staged presentation and consult delegation"
+    "Changing .forge.yaml review settings"
   ],
   "title": "DES-066 `/forge:review` 本体（バックエンド非依存部）設計書"
 }

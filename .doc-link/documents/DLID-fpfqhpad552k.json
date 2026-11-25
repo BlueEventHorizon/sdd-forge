@@ -1,4 +1,5 @@
 {
+  "applied_hash": "dacd3465164333d24b4a89b31a106bc2264610f83c64bfe5c08a2f859422b406",
   "content_hash": "dacd3465164333d24b4a89b31a106bc2264610f83c64bfe5c08a2f859422b406",
   "doc_link_id": "DLID-fpfqhpad552k",
   "keywords": [
@@ -13,8 +14,81 @@
     "syntax_unverified",
     "sequential fix"
   ],
+  "last_check": {
+    "checked_at": "2026-11-25T02:44:01+00:00",
+    "result": "success"
+  },
   "path": "docs/specs/forge/design/DES-047_fix_safety_guardrails_design.md",
   "purpose": "Defines the safety boundary the review body applies when executing confirmed_fix items: sequential per-finding application, file allowlist, syntax verification and independent end-of-round change check.",
+  "references": [],
+  "sections": [
+    {
+      "content_hash": "01677adc012a16c3b8830d942464b7389439ead63eb4abcd3c51c806a1ca6caf",
+      "heading": "DES-047 review 本体の修正安全ガードレール設計書",
+      "position": 0,
+      "section_id": "DLID-2p88hjdnrqmc"
+    },
+    {
+      "content_hash": "24d818576c9c5ff229fd0196ce813eeef407fc80080afb49ee74b45efd513b02",
+      "heading": "5. テスト設計",
+      "position": 9,
+      "section_id": "DLID-m5damxpsgbmg"
+    },
+    {
+      "content_hash": "2c02dd9846ebf2b24237d8a95bf625df9dcf2430ed54e4abdf02db3ad692a3ac",
+      "heading": "1. 概要",
+      "position": 1,
+      "section_id": "DLID-2r1t18257dv0"
+    },
+    {
+      "content_hash": "5f59b648853ac3dc74639ed531bbd66977e78f6af97aa061a64093f3b9323c25",
+      "heading": "2.2 所見単位の逐次適用",
+      "position": 4,
+      "section_id": "DLID-awr5bswac1ry"
+    },
+    {
+      "content_hash": "73589bdbafa14dc863d0d57d0a0000e38c8e8e29b6180a969659e3529ba89d56",
+      "heading": "4. 責務境界",
+      "position": 8,
+      "section_id": "DLID-w11w017gh44e"
+    },
+    {
+      "content_hash": "845c5d5772075d98705920a362ca4fcafaa008104fbc6e48a241dde9adf5e806",
+      "heading": "2.1 baseline",
+      "position": 3,
+      "section_id": "DLID-0my9q6ezh23z"
+    },
+    {
+      "content_hash": "871518ca6ccb96d651faf5afc638b3cc5519fe5a2d9b8e0921261fcb161aaee7",
+      "heading": "2.3 安全検証 CLI",
+      "position": 5,
+      "section_id": "DLID-czw3qeb4y368"
+    },
+    {
+      "content_hash": "8aee4a507eca4e7a8a24381df62ccf60026ee9b459f73005bfc13e4c11cf890f",
+      "heading": "2. 修正フロー",
+      "position": 2,
+      "section_id": "DLID-4frcfzcyfqs5"
+    },
+    {
+      "content_hash": "8f67cc4c5ee8590a7b6354975af70bbde151ed00d75a67154c86406dd05caa30",
+      "heading": "2.4 ラウンド終了時の独立検証",
+      "position": 6,
+      "section_id": "DLID-9ndks7wn78t8"
+    },
+    {
+      "content_hash": "e536800744a85494b0c262802f66a57f2649f85b468bab06432bc42b0c6d2f70",
+      "heading": "3. 出力と判断",
+      "position": 7,
+      "section_id": "DLID-c4tn6e2qda52"
+    },
+    {
+      "content_hash": "f7ac0543eadbc254017be46f200dac9b869c7224233ad74688bd1d6799ffd1f5",
+      "heading": "6. 未確定事項",
+      "position": 10,
+      "section_id": "DLID-5s3d3ywckrjz"
+    }
+  ],
   "summary": [
     "Review body owns fixing and safety verification; reviewer and evaluator only write findings",
     "Baseline capture of syntax and format violations before applying fixes",

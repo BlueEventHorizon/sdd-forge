@@ -1,40 +1,164 @@
 {
-  "content_hash": "7052a1614b27cf086b665ebf68aa18074365b4713f52ac8fac829426acbe8420",
+  "applied_hash": "53ad6002f2110e4425843de9ab6412cdd93ea120ad6c3e7fc058f7cfa23a829d",
+  "content_hash": "53ad6002f2110e4425843de9ab6412cdd93ea120ad6c3e7fc058f7cfa23a829d",
   "doc_link_id": "DLID-vzcznbpypja0",
   "keywords": [
     "start-requirements",
     "requirements workflow",
-    "interactive mode",
+    "interactive",
     "reverse-engineering",
     "from-figma",
     "dispatcher",
-    "draft-driven",
     "temporary-feature",
+    "draft",
     "orchestrator",
     "glossary"
   ],
+  "last_check": {
+    "checked_at": "2026-11-25T02:44:01+00:00",
+    "result": "success"
+  },
   "path": "docs/specs/forge/design/DES-017_create_requirements_workflow_design.md",
-  "purpose": "Design of the /forge:start-requirements dispatcher skill and its three mode workflows (interactive, reverse-engineering, from-figma) for creating requirements documents.",
+  "purpose": "Design of the start-requirements orchestrator skill: dispatching to interactive, reverse-engineering and from-figma workflows, shared pre-write decisions, and per-mode phases.",
+  "references": [
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "plugins/forge/docs/requirement_format.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 0,
+      "recorded_content_hash": "c05edc5d1de7",
+      "recorded_path": "../../../../plugins/forge/docs/requirement_format.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-c13gr4qbk4vm",
+      "target_section_id": null
+    }
+  ],
+  "sections": [
+    {
+      "content_hash": "016f215b6dcf79a584ecb6a4fd488f0ae4aca31d340b816c2622da14ae52cecd",
+      "heading": "全モード共通の規則: 要件定義書を書く直前の決定",
+      "position": 6,
+      "section_id": "DLID-h5g67a7v5s41"
+    },
+    {
+      "content_hash": "06832ea40c548e8b6275261fba5dd77bb31573e2edefe3321f27e5d2420c4de1",
+      "heading": "ワークフローの自己完結性",
+      "position": 14,
+      "section_id": "DLID-ytmg6ewt2ye5"
+    },
+    {
+      "content_hash": "0d1c33ea91765f68686c6511d849bc5b502a8b406472ac669fa780dedaf94bbd",
+      "heading": "3. フローチャート",
+      "position": 4,
+      "section_id": "DLID-bqpawv5raw0d"
+    },
+    {
+      "content_hash": "476cf41fdb7b13325089dbdbd0bf022d4c2e90312ab963967cb1088dcdf6536f",
+      "heading": "ID 体系の一貫性",
+      "position": 15,
+      "section_id": "DLID-fas5fps7jrk5"
+    },
+    {
+      "content_hash": "47d927aa99575e689b447c531ec0c19610ae7a8350e3bae50f22ea3807b88e06",
+      "heading": "2. ファイル構成",
+      "position": 3,
+      "section_id": "DLID-qny8c0ssq28r"
+    },
+    {
+      "content_hash": "51cc5420d884f07f90c67bd128fc099f971a065dfa7635a8107a28a310d9b0d5",
+      "heading": "6. 設計原則",
+      "position": 11,
+      "section_id": "DLID-zzx8h40tmksr"
+    },
+    {
+      "content_hash": "531f2fe87df2433573b0da45484dec045a68e1a62a33ce6fd6d38d9adf74ecac",
+      "heading": "DES-017 forge 要件定義書作成ワークフロー 設計書",
+      "position": 0,
+      "section_id": "DLID-pnpgkrxav1r0"
+    },
+    {
+      "content_hash": "6a0be2c3f00ac913d90c7e6165bbc0f7b5af5bf6359d8e2af54fe14ef23fe260",
+      "heading": "設計方針",
+      "position": 2,
+      "section_id": "DLID-8anaeyyzaqtt"
+    },
+    {
+      "content_hash": "7393ec6e06ea9c2744d696bae57289ba2d137ed70e17af72caeeb6c507b1202f",
+      "heading": "7. 関連ファイル",
+      "position": 16,
+      "section_id": "DLID-ptbwe8abdndr"
+    },
+    {
+      "content_hash": "7db917a5f7e2b08f05cf1f4bce5c21e3f405139c4aa66f9059cf9c0955dfdeeb",
+      "heading": "What に集中する [MANDATORY]",
+      "position": 12,
+      "section_id": "DLID-qj4c19xy9ecw"
+    },
+    {
+      "content_hash": "7f94315c48d02dde30836089126bcfb20a105fc1115a64e606975e7926748076",
+      "heading": "コンテキスト収集はモード別に最適化",
+      "position": 13,
+      "section_id": "DLID-pwbp5m0kmqzs"
+    },
+    {
+      "content_hash": "8c57542172fc6e307bc9d5daa01f3e502be62fc2c5d307ed692e03ef095d0093",
+      "heading": "interactive モード（対話型）",
+      "position": 8,
+      "section_id": "DLID-hxa1da4n9evs"
+    },
+    {
+      "content_hash": "928123a635cef64a35c0a8621da980fe362f5ba50c39efeda6742e503f33b0c2",
+      "heading": "reverse-engineering モード（ソース解析）",
+      "position": 9,
+      "section_id": "DLID-6dy52vz8qty2"
+    },
+    {
+      "content_hash": "9c3ad78df5cf14f5ded4eddb89d7948c384c382d59cef16088b35cad4ef18ba7",
+      "heading": "1. 概要",
+      "position": 1,
+      "section_id": "DLID-4kazj857n6p2"
+    },
+    {
+      "content_hash": "bff930c080f925c77273c8b85ca6ffd50dbb1142397f4b96c309042442b54e42",
+      "heading": "from-figma モード（Figma 取り込み）",
+      "position": 10,
+      "section_id": "DLID-g5t25ywp037n"
+    },
+    {
+      "content_hash": "fc412c73efb75fa96583821b4e92c253098444a1f97496e06fc8b750a4bff2ee",
+      "heading": "4. SKILL.md（ディスパッチャー）の責務",
+      "position": 5,
+      "section_id": "DLID-e7pgg49m7f7f"
+    },
+    {
+      "content_hash": "fe0ad43b13769b245c4bdfb78b1cf38572bbb5e0ba9e6ebbb2da9c0bb3794951",
+      "heading": "5. モード別ワークフロー",
+      "position": 7,
+      "section_id": "DLID-2egtpemde2xx"
+    }
+  ],
   "summary": [
-    "Overview of the dispatcher design: SKILL.md selects mode and delegates to self-contained workflow files",
-    "File layout of the start-requirements skill and its three workflow docs",
-    "Flowchart of mode selection and per-mode phases through review, ToC update and commit",
-    "Dispatcher responsibilities and the common rule for decisions made just before writing the requirements file",
-    "Decision order: completely-new check, additive vs differential type approval, feature, output directory, file name",
-    "Interactive mode: draft-driven, no up-front context collection, type judgment, temporary marker, glossary",
-    "Reverse-engineering mode: bulk context collection and source code analysis phases",
-    "From-figma mode: Figma MCP prerequisite, design tokens, SCR/CMP/FNC and static assets",
-    "Design principles: focus on What, per-mode context collection, workflow self-containment, ID consistency",
-    "Related files table for the skill, workflows and format docs"
+    "Dispatcher SKILL.md delegating to self-contained workflow files",
+    "File layout of the start-requirements skill and its workflow docs",
+    "Flowchart of mode selection and the three workflows",
+    "Shared rule for decisions before writing: new-vs-existing, type, feature, output dir, file name",
+    "Interactive mode phases, draft-driven approach, type judgment and temporary marker",
+    "Reverse-engineering mode phases with upfront context collection",
+    "From-figma mode phases: design tokens, SCR/CMP/FNC, static assets",
+    "Design principles: focus on What, per-mode context collection, workflow self-containment",
+    "Completion steps: review, ToC update, commit",
+    "Related files list"
   ],
   "tasks": [
-    "Modifying the start-requirements skill or its workflow files",
-    "Creating requirements documents in interactive mode",
-    "Deriving requirements from existing source code",
-    "Creating requirements from Figma designs",
-    "Deciding feature, output location and file name for a new requirements document",
-    "Judging additive versus differential development type",
-    "Reviewing requirements workflow design"
+    "Modifying the start-requirements skill or its workflows",
+    "Adding a new requirements creation mode",
+    "Reviewing requirements workflow design",
+    "Deciding feature type and output location for requirements",
+    "Working on Figma-based requirements import"
   ],
   "title": "DES-017 forge 要件定義書作成ワークフロー 設計書"
 }

@@ -1,38 +1,171 @@
 {
-  "content_hash": "de2d2a29ba9f0a0993518918ba5cee2fafb304ed284151f9403192cc09b630ba",
+  "applied_hash": "3185b65d2c91992bd0a830185f6ac6de508cff3b69856bfa2a75aa1fed1c2d0a",
+  "content_hash": "3185b65d2c91992bd0a830185f6ac6de508cff3b69856bfa2a75aa1fed1c2d0a",
   "doc_link_id": "DLID-d9fpywv4txra",
   "keywords": [
     "document search",
-    "wrapper skill",
+    "query-db-rules",
+    "query-db-specs",
+    "update-db-rules",
+    "update-db-specs",
+    "backend selection",
     "doc-link",
     "doc-db",
-    "backend selection",
-    "query-db-rules",
-    "update-db-specs",
-    "Required documents",
-    "desired state",
-    "inherited skill"
+    "output contract",
+    "inherited SKILL"
   ],
+  "last_check": {
+    "checked_at": "2026-11-25T02:44:01+00:00",
+    "result": "success"
+  },
   "path": "docs/specs/forge/design/DES-001_forge_query_abstraction_design.md",
-  "purpose": "Design document defining the abstraction of four forge wrapper skills that delegate document search and index updates to external backends (doc-link, doc-db).",
+  "purpose": "Design of the abstraction layer for forge document search: defines the four wrapper SKILLs, their arguments, output contract and SKILL contract, delegating to doc-link or doc-db backends.",
+  "references": [
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/rules/forge_claude_code_authoring_policy.md",
+        "result": "match",
+        "scope": "docs/rules"
+      },
+      "kind": "document",
+      "position": 1,
+      "recorded_content_hash": "70c36432428c",
+      "recorded_path": "../../../rules/forge_claude_code_authoring_policy.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-33rp07ycsdym",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/rules/plugin_claude_code_authoring_guide.md",
+        "result": "match",
+        "scope": "docs/rules"
+      },
+      "kind": "document",
+      "position": 0,
+      "recorded_content_hash": "65302c63b0e1",
+      "recorded_path": "../../../rules/plugin_claude_code_authoring_guide.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-pvwk8en5c2rq",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/specs/doc-db/design/DES-057_doc_db_backend_selection_design.md",
+        "result": "match",
+        "scope": "docs/specs/doc-db/design"
+      },
+      "kind": "document",
+      "position": 2,
+      "recorded_content_hash": "b765007682aa",
+      "recorded_path": "../../doc-db/design/DES-057_doc_db_backend_selection_design.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-5k6jt9qvf60d",
+      "target_section_id": null
+    }
+  ],
+  "sections": [
+    {
+      "content_hash": "0749e3d1001e8935685e89646b2aaa84ee9a6746a348724e6d0780302133a9c1",
+      "heading": "実行フロー",
+      "position": 5,
+      "section_id": "DLID-zz92w9m4ase9"
+    },
+    {
+      "content_hash": "2b20020656d72bcbf9d5b9c01d929b31c7874eab009d29dc8dddb5a324ac9ed8",
+      "heading": "6. テスト",
+      "position": 12,
+      "section_id": "DLID-4037xyweqrx7"
+    },
+    {
+      "content_hash": "58cfe3b19fb78feca1cf6e5b714f695012b032275e95476f59472e1efa704164",
+      "heading": "4. update 系（update-db-rules / update-db-specs）",
+      "position": 8,
+      "section_id": "DLID-rss6sm014v22"
+    },
+    {
+      "content_hash": "790bc13f352f22ec9d8a894554993411077bc486fc7c5cfd38f578b5a4d8eb98",
+      "heading": "出力契約",
+      "position": 6,
+      "section_id": "DLID-hd1qxqjh75zb"
+    },
+    {
+      "content_hash": "81256f3e2e7e055681a4e3fb8c906cc703a924a54bfc3ee4646ab11d5c8ae089",
+      "heading": "1. 概要",
+      "position": 1,
+      "section_id": "DLID-ydzpz760snsr"
+    },
+    {
+      "content_hash": "8179e3d18d4bbac47cbbdcd7b65d5aeaaf05dc84ce6a2f8ccbb84acfd9b4182d",
+      "heading": "SKILL 契約 [MANDATORY]",
+      "position": 7,
+      "section_id": "DLID-t4aqg7pynjpc"
+    },
+    {
+      "content_hash": "93b72a335a228c09bc1f797293d0eb8a7bdf761b48db5ee8e38e89c09f5021ba",
+      "heading": "3. query 系（query-db-rules / query-db-specs）",
+      "position": 3,
+      "section_id": "DLID-znnpebr7dff1"
+    },
+    {
+      "content_hash": "b05f79ef327d5ce5090385daad68a730e8e707db38f80fbee339b12fa9ea068c",
+      "heading": "実行フロー",
+      "position": 9,
+      "section_id": "DLID-96j4qec7pz12"
+    },
+    {
+      "content_hash": "cb073b0f828ef89fdf4359d13f24cc6a3a341651850df7a48863ac43584c3065",
+      "heading": "2. スキル一覧",
+      "position": 2,
+      "section_id": "DLID-pjt0tkpp21dn"
+    },
+    {
+      "content_hash": "dc66fada0bbbb43a3be08ee7fd1e79c7e3956c4f1c9baf408a0114a0d0f2faa8",
+      "heading": "5. 前提",
+      "position": 11,
+      "section_id": "DLID-ygc32kzymb13"
+    },
+    {
+      "content_hash": "e481bd94ef995b59bfea38918c5b20009d2c8f810714cde477c76f25a0aeb85f",
+      "heading": "DES-001 文書検索ラッパー（forge → 文書検索 backend）設計書",
+      "position": 0,
+      "section_id": "DLID-7gy2qvdh449y"
+    },
+    {
+      "content_hash": "eb3084224f67b551753b79804662c51fb4b6df789fdab7396346499752f8023e",
+      "heading": "desired-state",
+      "position": 10,
+      "section_id": "DLID-gxf4s9c3mwx4"
+    },
+    {
+      "content_hash": "f35601e80dd19cf6649bcd5960f3964de23fbab2c4e7c935224e35399e010a5d",
+      "heading": "引数",
+      "position": 4,
+      "section_id": "DLID-pp87841fj7g2"
+    }
+  ],
   "summary": [
-    "Overview: forge delegates search and indexing to doc-link or doc-db via four wrapper skills",
+    "Overview: forge delegates document search and index updates to external backends via wrapper SKILLs",
     "Skill list: query-db-rules, query-db-specs, update-db-rules, update-db-specs with fixed categories",
-    "Query flow: resolve backend order, pick first available backend, no grep fallback, explicit errors",
+    "Query skills: {task} argument and execution flow with backend order resolution",
+    "Query skills never build indexes; they delegate to update skills only with approval and a fixed backend",
+    "No grep fallback: explicit error when no backend is available",
     "Output contract: Required documents path list built by script, common across backends",
-    "Query skill contract: inherited-type skill, allowed tools, args limited to keywords and short task text",
-    "Update flow: explicit backend option overrides selection, no switching on unavailability",
-    "Desired state: .doc_structure.yaml is authoritative; paths not included are removed from the index",
-    "Prerequisites: at least one backend usable, judged by capability not version",
-    "Test layout covering doc structure resolution, backend selection, doc-link contract, wrapper transparency"
+    "SKILL contract: inherited-type search SKILL, no context fork, allowed-tools, args limited to keywords",
+    "Update skills: --backend override, order resolution, backend-specific update paths",
+    "Desired-state semantics: .doc_structure.yaml is the source of truth for the target set",
+    "Prerequisites and test/lint coverage list"
   ],
   "tasks": [
-    "Modifying the query-db or update-db wrapper skills",
-    "Designing or changing backend selection behavior",
-    "Reviewing the document search output contract",
-    "Writing or updating tests for doc backend wrappers",
-    "Implementing skills that call query or update skills",
-    "Updating the document index after spec or rule changes"
+    "Modifying query-db-rules or query-db-specs SKILL",
+    "Modifying update-db-rules or update-db-specs SKILL",
+    "Designing or changing document search backend selection",
+    "Calling query skills from other forge skills",
+    "Reviewing the document search wrapper design",
+    "Writing tests or lint for wrapper SKILLs"
   ],
   "title": "DES-001 文書検索ラッパー（forge → 文書検索 backend）設計書"
 }

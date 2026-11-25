@@ -1,33 +1,96 @@
 {
-  "content_hash": "c1cb19da9ad5aea76595c24d513076f5bacbf8111817d114ca1ceb049b0db5de",
+  "applied_hash": "8c5971b68aaf33b618cf6c35a00c0ec23490d1e1a118f1f343443bdec3b118b3",
+  "content_hash": "8c5971b68aaf33b618cf6c35a00c0ec23490d1e1a118f1f343443bdec3b118b3",
   "doc_link_id": "DLID-8y2jh2y06761",
   "keywords": [
     "requirements document",
     "principles",
+    "responsibility",
     "what vs how",
-    "stakeholders",
     "additive development",
-    "user viewpoint",
-    "decided matters"
+    "stakeholders",
+    "lifetime"
   ],
+  "last_check": {
+    "checked_at": "2026-11-25T03:43:00+00:00",
+    "result": "success"
+  },
   "path": "plugins/forge/docs/requirement_principles_spec.md",
-  "purpose": "Defines the generic principles for writing requirements documents: their responsibility, what to exclude, lifespan, and revision via additive development, used when no project-specific rules exist.",
+  "purpose": "Generic principles for writing requirements documents when no project-specific rules exist: defines what a requirements document is, its responsibility, lifetime, and revision via additive development.",
+  "references": [
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/additive_development_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 2,
+      "recorded_content_hash": "3be39e634c1c",
+      "recorded_path": "additive_development_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-cyrk9xr8vcap",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/requirement_format.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 0,
+      "recorded_content_hash": "c05edc5d1de7",
+      "recorded_path": "requirement_format.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-c13gr4qbk4vm",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/spec_design_boundary_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 1,
+      "recorded_content_hash": "e0d1a83f7e47",
+      "recorded_path": "spec_design_boundary_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-h9h90g9wcy8f",
+      "target_section_id": null
+    }
+  ],
+  "sections": [
+    {
+      "content_hash": "6d1bd16f636443b599f54061bd5d87d1c7c40392e2db9da060f7d47cd788d53a",
+      "heading": "要件定義書 作成原則",
+      "position": 0,
+      "section_id": "DLID-ayakhapp41gd"
+    },
+    {
+      "content_hash": "ef7ad51f1cb4c534531c232dc574801ce2d7a29d6f40ec73fb92de27a79ea8ae",
+      "heading": "要件定義書の定義",
+      "position": 1,
+      "section_id": "DLID-msg9bk6n4fcy"
+    }
+  ],
   "summary": [
-    "Generic fallback principles applied when no project-specific rules exist",
-    "Project-specific rules take priority over these principles",
-    "Requirements document responsibility: write what to build from the user viewpoint",
-    "Contents: needed features, data, rules, and the value they bring users",
-    "Readers are all stakeholders",
-    "Excluded: implementation methods, except already-decided matters with no room for choice",
-    "Lifespan is permanent but not immutable",
-    "Revision through additive development, with the old document rewritten only after merge",
-    "Pointers to the requirement format, spec/design boundary, and additive development specs"
+    "Declares the principles as generic fallback; project-specific rules take precedence",
+    "Points to the requirement format template and the spec/design boundary guide",
+    "Responsibility: write what to build from the user viewpoint, with value for stakeholders",
+    "Excludes implementation methods, except already-decided matters stated concretely",
+    "Lifetime is permanent but not immutable",
+    "Revision through additive development; old document not rewritten during implementation and merged afterward"
   ],
   "tasks": [
-    "Writing a new requirements document",
+    "Writing a requirements document",
     "Reviewing a requirements document",
-    "Revising requirements via additive development",
-    "Deciding what belongs in requirements versus design"
+    "Deciding what belongs in requirements",
+    "Revising requirements via additive development"
   ],
   "title": "要件定義書 作成原則"
 }

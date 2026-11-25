@@ -1,37 +1,269 @@
 {
-  "content_hash": "a7e0df95f12cdad8ce2115f6f5e436c770c827491214fa1cf8c7d2de806eb262",
+  "applied_hash": "b7f54a0eaeefd3ffedc5e1b3af5247437a7f766b4a2d6eb43ea1936ccb805138",
+  "content_hash": "b7f54a0eaeefd3ffedc5e1b3af5247437a7f766b4a2d6eb43ea1936ccb805138",
   "doc_link_id": "DLID-hme4nqx9d5gs",
   "keywords": [
     "version management",
     ".version-config.yaml",
     "update-version",
+    "setup-version-config",
     "sync_files",
+    "filter",
     "CHANGELOG",
-    "semver",
-    "version drift",
-    "git tag",
-    "filter"
+    "tag_format",
+    "VersionDriftError",
+    "semver bump"
   ],
+  "last_check": {
+    "checked_at": "2026-11-25T02:44:01+00:00",
+    "result": "success"
+  },
   "path": "docs/specs/forge/design/DES-023_version_management_workflow_design.md",
-  "purpose": "Design document for the version management workflow that updates versions across plugin.json, marketplace.json, README, and CHANGELOG from a central .version-config.yaml.",
+  "purpose": "Design of the version management workflow: .version-config.yaml schema, scripts, and update-version/setup-version-config procedures for synchronizing versions across files in multi-plugin repositories.",
+  "references": [],
+  "sections": [
+    {
+      "content_hash": "0f9da9db6baef085a0450d284b5f9bcebd3ceea3af98f6bf6f50cb1fd40a0583",
+      "heading": "4.2 update-version ワークフロー",
+      "position": 25,
+      "section_id": "DLID-bzpvbc1jezp4"
+    },
+    {
+      "content_hash": "10ec89d5c6d143954859fecfc06fd28dccca9959d98409f736e2b7ad8b82dbba",
+      "heading": "設計原則",
+      "position": 3,
+      "section_id": "DLID-wgc08vmgm7m3"
+    },
+    {
+      "content_hash": "1bdb9ec4826473c49147b58d3b7775cdf1e2e5524059e20aced935e9fe525237",
+      "heading": "フィールド定義",
+      "position": 7,
+      "section_id": "DLID-n8njkq8g9dxd"
+    },
+    {
+      "content_hash": "1f952a935a91152541b3d66c2d26a22607be9de02f47a71a434295ea19afc668",
+      "heading": "2.2 targets",
+      "position": 6,
+      "section_id": "DLID-zr34x2m00p1w"
+    },
+    {
+      "content_hash": "1fe42c0cb84c1f23820737e1a5d52c094ae4d9cbbac93d0c31c641dee4ca0aee",
+      "heading": "DES-023 バージョン管理ワークフロー設計書",
+      "position": 0,
+      "section_id": "DLID-g3n4wfswtwa0"
+    },
+    {
+      "content_hash": "22f8e970248a203b87a10d092eac2a2f0774b27cd54ddbd80366d87a0081452f",
+      "heading": "6. テスト",
+      "position": 32,
+      "section_id": "DLID-j86danyz76vr"
+    },
+    {
+      "content_hash": "29230f586cec736489937b1de6b3d450c01c508bef8cc73362e406b607ac5a87",
+      "heading": "filter が必要なケース [MANDATORY]",
+      "position": 18,
+      "section_id": "DLID-n68xx6m686vp"
+    },
+    {
+      "content_hash": "2f2f7b540f87dda5cc45a0e82191395ed823b5a31b28ab727423237807dc7aa9",
+      "heading": "2.1 全体構造",
+      "position": 5,
+      "section_id": "DLID-cn4d07dw5yr5"
+    },
+    {
+      "content_hash": "3012e89730a499550968adbe5bae904e25fdc3a521603f38396ca2bf02d75136",
+      "heading": "3.4 get_version_status.py",
+      "position": 21,
+      "section_id": "DLID-k05wvhrfeb0k"
+    },
+    {
+      "content_hash": "3854c99a82e5a7b3047ddc362823e9d3bc90faa450d23f2b4742cca0fb8be66e",
+      "heading": "2.3 changelog",
+      "position": 9,
+      "section_id": "DLID-t4ea2wg38cp2"
+    },
+    {
+      "content_hash": "3d79132393de9c5af290c90e1d02c1aaa7d3985a93ff3b974741c372f0db07d8",
+      "heading": "5.1 setup-version-config",
+      "position": 30,
+      "section_id": "DLID-1hrw0epcsqxj"
+    },
+    {
+      "content_hash": "3e281c6e9b4a55cebee52ca70473b992ded5114bce92ac985ecb0ee7e85252fb",
+      "heading": "5. エラーハンドリング",
+      "position": 29,
+      "section_id": "DLID-4gjc9chzfjxc"
+    },
+    {
+      "content_hash": "4af5e8a1d55d9f81ce72a980ed2c09338ab31c7fe7aa058022fdb44289a7c107",
+      "heading": "スキル構成",
+      "position": 2,
+      "section_id": "DLID-z689hqzcpf8z"
+    },
+    {
+      "content_hash": "516b10d8370f036bc2e3680327bff46575e39d87019e5682a4a67bd7bc761a05",
+      "heading": "設定草案の生成ルール",
+      "position": 24,
+      "section_id": "DLID-t79zbxctb43b"
+    },
+    {
+      "content_hash": "6031b9d78397aa9656701bb67f76f2d57d69003b0266cbb7f87aaa20d380281d",
+      "heading": "Step 7: CHANGELOG 挿入",
+      "position": 28,
+      "section_id": "DLID-a1gbdr384zmz"
+    },
+    {
+      "content_hash": "65ad33bfbca333b311f6490a60ef74e196605626e354b181ea0ceef945f41c84",
+      "heading": "filter モードの動作",
+      "position": 17,
+      "section_id": "DLID-y9y6rnv9h71k"
+    },
+    {
+      "content_hash": "67fb1dcab72fc8b96b471ec7f06f053e3f391c6272b85e1308c262d3635d92f2",
+      "heading": "3.1.1 version_ref_files の検出アルゴリズム",
+      "position": 13,
+      "section_id": "DLID-9c34h25aebg5"
+    },
+    {
+      "content_hash": "6f9432b2944d73b5b316794900f1e55ade172d3ec6b3d0b423f18b4a2b52a3b6",
+      "heading": "path モードの動作",
+      "position": 19,
+      "section_id": "DLID-10xrb19aa61n"
+    },
+    {
+      "content_hash": "74e3415e7e4357717e24c12dd31349f7d4b7b0e68c497e2f7bfc4c3c744677cf",
+      "heading": "3.1 scan_version_targets.py",
+      "position": 12,
+      "section_id": "DLID-pjsrw8psmap7"
+    },
+    {
+      "content_hash": "9061b189267382b88244f2179ead5df673008ff0af01195b574a70a9c12ec321",
+      "heading": "3.2 calculate_version.py",
+      "position": 14,
+      "section_id": "DLID-2bmmsccg5eb2"
+    },
+    {
+      "content_hash": "9dbd18c1d53f4df71bfe5353b121ce1d7f0f143ec2d5cdff8d5477356c718212",
+      "heading": "主要テストケース",
+      "position": 34,
+      "section_id": "DLID-htpchq3ba0vq"
+    },
+    {
+      "content_hash": "a471cf8ae834aa492d20e5b7f5b62d36d973c2d8ec7337c07a35456795f9949b",
+      "heading": "テストファイル一覧",
+      "position": 33,
+      "section_id": "DLID-znb5f240s751"
+    },
+    {
+      "content_hash": "a49fee08f4f274dfa812f223f61169ec733dcc5c534c1f982866d447a039c7d6",
+      "heading": "sync_files エントリ",
+      "position": 8,
+      "section_id": "DLID-555j3xdw87s9"
+    },
+    {
+      "content_hash": "ab819aa0963f0101ca27c0f8fca106b489632e8cefc5bcd066577f43a3b85717",
+      "heading": "5.2 update-version",
+      "position": 31,
+      "section_id": "DLID-0qwcwdnx4bdm"
+    },
+    {
+      "content_hash": "b433aef155571d6a3eca97e9748efd0f0bb613a4508db0ead493a00613459399",
+      "heading": "2. .version-config.yaml スキーマ",
+      "position": 4,
+      "section_id": "DLID-pppvtwx5mv6e"
+    },
+    {
+      "content_hash": "b66a980c7f6e1bbd5b2843ff522d646394c4b5978343b44b522c166574befb2c",
+      "heading": "7. 影響範囲",
+      "position": 36,
+      "section_id": "DLID-bat93ynk4m49"
+    },
+    {
+      "content_hash": "b8c61d1ef5c2c5b4d8465dfa8ed5a559b0a3640e4cd84afb9b1bfcda976a0bc2",
+      "heading": "4.1 setup-version-config ワークフロー",
+      "position": 23,
+      "section_id": "DLID-k0dh70epjye1"
+    },
+    {
+      "content_hash": "c24150aa5eee8c2841b97109a22d425e8095c93dae666650a7d62be3a8c96363",
+      "heading": "2.4 git",
+      "position": 10,
+      "section_id": "DLID-va9z2hv4bw7d"
+    },
+    {
+      "content_hash": "cac6a893bd9a2378e62bcb266667bca5bfadcc6cbede099249027d775a0f60d1",
+      "heading": "3.3 update_version_files.py",
+      "position": 15,
+      "section_id": "DLID-csq79ek72y16"
+    },
+    {
+      "content_hash": "d50ba303dbc8b05b5fa94216be475716a4e30a2c314d5cc529e18a924fe4d86e",
+      "heading": "3. スクリプト設計",
+      "position": 11,
+      "section_id": "DLID-j1abkjkv93qs"
+    },
+    {
+      "content_hash": "d8782a57f97f4c67b21d4ab6de1260416e48e2926fdf6533a985c16a586fc5a0",
+      "heading": "Step 6 の詳細",
+      "position": 27,
+      "section_id": "DLID-pq5y545fa42z"
+    },
+    {
+      "content_hash": "d8c90f547331a3fc426a4cff7553da0c51459aaafddbaba43daa75e2907b202d",
+      "heading": "3つの置換モード",
+      "position": 16,
+      "section_id": "DLID-vkjb6xdr8w6h"
+    },
+    {
+      "content_hash": "df8e0dd216f26e40448a410d307036590e9552d9b4dcc493433329c49b8bef89",
+      "heading": "changelog_header モードの動作",
+      "position": 20,
+      "section_id": "DLID-nc1wh6dnk1jr"
+    },
+    {
+      "content_hash": "dfa5f17240625191a62a0d014af869a352c33faed5d4553b8c7062d8b9b25abd",
+      "heading": "update_version_files.py",
+      "position": 35,
+      "section_id": "DLID-prmkhwzhx8nt"
+    },
+    {
+      "content_hash": "ecc5150d4b00a3d566392e8fdb22caaf71aaf21c00e4fe54e516104011ca2dce",
+      "heading": "Step 5: 変更内容の収集",
+      "position": 26,
+      "section_id": "DLID-w7rxt7pambsd"
+    },
+    {
+      "content_hash": "ed0ef35f738f40d208499844a4385c4eb4d1b9355563f36a417cc35893e89315",
+      "heading": "4. ワークフロー",
+      "position": 22,
+      "section_id": "DLID-92cdbh3ec6gm"
+    },
+    {
+      "content_hash": "f0c5fe835f58ad8733499ae2f9d3ab05080e55ae6471c417a01a353d9e9c82ad",
+      "heading": "1. 概要",
+      "position": 1,
+      "section_id": "DLID-bqzmhp0gw1cc"
+    }
+  ],
   "summary": [
-    "Skills setup-version-config and update-version and their design principles",
+    "Overview and design principles: non-destructive low-level script, text-based replacement, filter narrowing",
     ".version-config.yaml schema: targets, sync_files, changelog, git settings",
-    "Tag search rules using four candidate forms and tag_format semantics",
+    "Git tag search rules: four candidates by prefix and v presence, with search order",
     "scan_version_targets.py design and version_ref_files detection algorithm",
-    "calculate_version.py bump computation with v prefix tolerance",
-    "update_version_files.py replacement modes: filter, changelog_header, path, simple",
-    "Drift versus not-applicable error distinction and I/O adapter wrappers",
-    "get_version_status.py base branch comparison to prevent double bumps",
-    "Step-by-step update-version workflow, CHANGELOG insertion, error handling, and tests"
+    "calculate_version.py: bump specs, v prefix tolerance, warning on non-increasing versions",
+    "update_version_files.py: filter, changelog_header, path, simple modes and drift/not-found error separation",
+    "get_version_status.py: base branch comparison and version extraction",
+    "setup-version-config and update-version step-by-step workflows, CHANGELOG insertion",
+    "Error handling tables, test file list, and affected files"
   ],
   "tasks": [
-    "Modifying update-version or setup-version-config skills",
+    "Implementing or modifying update-version skill",
+    "Implementing or modifying setup-version-config skill",
     "Editing .version-config.yaml",
-    "Changing version update scripts",
-    "Releasing a new version",
-    "Generating CHANGELOG entries",
-    "Writing tests for version scripts"
+    "Changing update_version_files.py or its I/O adapters",
+    "Changing calculate_version.py or get_version_status.py",
+    "Generating CHANGELOG entries and git tags during release",
+    "Writing or reviewing tests for version scripts"
   ],
   "title": "DES-023 バージョン管理ワークフロー設計書"
 }

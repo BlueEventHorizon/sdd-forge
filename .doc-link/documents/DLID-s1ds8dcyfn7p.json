@@ -1,39 +1,216 @@
 {
-  "content_hash": "c93dadeb6dc40e0a246e717e442b966ea7bdb917b4d644cd07703843b2690357",
+  "applied_hash": "2129dbe03f23d3aed12585af39f75638df24cb9100d7ad0065a04a4cf85a05b8",
+  "content_hash": "2129dbe03f23d3aed12585af39f75638df24cb9100d7ad0065a04a4cf85a05b8",
   "doc_link_id": "DLID-s1ds8dcyfn7p",
   "keywords": [
     "orchestrator",
-    "create skills",
-    "context gathering",
     "start-design",
     "start-plan",
     "start-requirements",
+    "context gathering",
     "query-db-specs",
-    "query-db-rules",
-    "return value",
-    "failure handling"
+    "code collection agent",
+    "failure handling",
+    "session directory",
+    "progress reporting"
   ],
+  "last_check": {
+    "checked_at": "2026-11-25T02:44:01+00:00",
+    "result": "success"
+  },
   "path": "docs/specs/forge/design/DES-010_create_skills_orchestrator_design.md",
-  "purpose": "Design of the orchestrator pattern for start-design, start-plan and start-requirements skills, including the shared context-gathering framework, responsibility split, failure handling and per-skill collection matrices.",
+  "purpose": "Design of the orchestrator pattern for start-design, start-plan and start-requirements: responsibility split, context gathering, failure handling, and per-skill phases.",
+  "references": [
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/specs/forge/design/DES-017_create_requirements_workflow_design.md",
+        "result": "match",
+        "scope": "docs/specs/forge/design"
+      },
+      "kind": "document",
+      "position": 1,
+      "recorded_content_hash": "53ad6002f211",
+      "recorded_path": "DES-017_create_requirements_workflow_design.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-vzcznbpypja0",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/specs/forge/design/DES-018_create_design_workflow_design.md",
+        "result": "match",
+        "scope": "docs/specs/forge/design"
+      },
+      "kind": "document",
+      "position": 0,
+      "recorded_content_hash": "cac86d74fa8a",
+      "recorded_path": "DES-018_create_design_workflow_design.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-zfh5q9h29c8y",
+      "target_section_id": null
+    }
+  ],
+  "sections": [
+    {
+      "content_hash": "0f6d64b542c829e40f378bf996d24e6cb9983d647bca14fac64b7f093c9b831c",
+      "heading": "コンテキスト収集の適用マトリクス",
+      "position": 17,
+      "section_id": "DLID-cmphr8kzpzj3"
+    },
+    {
+      "content_hash": "1a4812b8d75515a63cd111d38b95709dfbc2c735444a44f90f1f2a2b595ea6eb",
+      "heading": "3. 共通コンテキスト収集フレームワーク",
+      "position": 5,
+      "section_id": "DLID-594p7wtejzgg"
+    },
+    {
+      "content_hash": "1b1754affc1919db5bc97fe23df7ee3e9118b89a2c4335c6676ab62d32e7206f",
+      "heading": "5. 使用する既存コンポーネント",
+      "position": 21,
+      "section_id": "DLID-q5rc0qam082w"
+    },
+    {
+      "content_hash": "1d2aba611183f91daa67f4bf7973658f46a225514f7826c7a05dbbcb260bc6cc",
+      "heading": "2.1 オーケストレータ構造",
+      "position": 3,
+      "section_id": "DLID-09t4dw1r0e2y"
+    },
+    {
+      "content_hash": "1e9aa7c867668f6027258e8dd3a4b0005ed01453c49d5368a9f53c4ab59dbbee",
+      "heading": "6. セッション不使用の設計判断",
+      "position": 22,
+      "section_id": "DLID-jr9egq4jdkb5"
+    },
+    {
+      "content_hash": "2a9a106d92fa2b429196a36a5700ace6410c6241a258a6414aafe509099700a4",
+      "heading": "reverse-engineering のコンテキスト収集シーケンス",
+      "position": 20,
+      "section_id": "DLID-57hsvrr9bw30"
+    },
+    {
+      "content_hash": "312d7ac298bf0f0e0a361625ee5401f577e36f71a6ac1355964fa515299c2745",
+      "heading": "2. アーキテクチャ概要",
+      "position": 2,
+      "section_id": "DLID-bt8tcf4e4pbr"
+    },
+    {
+      "content_hash": "31707e068ec6ac719b82551510146859d4c7763691b77c4ad1b6297479762455",
+      "heading": "3.2 収集結果の受け渡し",
+      "position": 7,
+      "section_id": "DLID-x938ggdm1j1v"
+    },
+    {
+      "content_hash": "3fdc112b07dd40bd4fa43a227ec44db0d7a7ceacbd12b85de7a7abebeb948e89",
+      "heading": "3.3 既存コード収集 agent の指示方式",
+      "position": 8,
+      "section_id": "DLID-xjfj833rxmmz"
+    },
+    {
+      "content_hash": "414636c864153b3b91485c0a8ee9c078f6038c6e5e8fb521e7b564316f3d8e14",
+      "heading": "3.1 概要",
+      "position": 6,
+      "section_id": "DLID-8k06jb24sm0m"
+    },
+    {
+      "content_hash": "4afdf669b2c6a553b27e299ff9eba4fe3efa71a038a7f0c4fdbe7762afb73d83",
+      "heading": "4. スキル別設計",
+      "position": 12,
+      "section_id": "DLID-jsc1res7bbed"
+    },
+    {
+      "content_hash": "514d1dc54d4e006aa30416e0c662b49857bebe5f52ec0e85fb02aaf2f33365a1",
+      "heading": "1. 概要",
+      "position": 1,
+      "section_id": "DLID-rv94hqqtj274"
+    },
+    {
+      "content_hash": "55a2c575f692a2e7315f18252bee7930ed8644d515196ff02f71171f05fe2fa6",
+      "heading": "3.5 失敗時の扱いと表示",
+      "position": 11,
+      "section_id": "DLID-ecx9m53ymvs3"
+    },
+    {
+      "content_hash": "8459f1a2db225f73c505cb4d2595086e9d804317c5d5304ed11ed1a612d7b56d",
+      "heading": "入力の収集",
+      "position": 14,
+      "section_id": "DLID-8q9m48m16szv"
+    },
+    {
+      "content_hash": "a2ab651eb0ce608382f0f986e0454f8f2bc55878ad21364b2f1af1941b0dc181",
+      "heading": "DES-010 create-* スキル オーケストレータ化設計書",
+      "position": 0,
+      "section_id": "DLID-dr1pscmyyp6b"
+    },
+    {
+      "content_hash": "ab696c992dcde8ec3544a2b38f622e23afd84a45793c08025a0373f5829380d4",
+      "heading": "3.4 収集の順序と統合",
+      "position": 10,
+      "section_id": "DLID-qttrvs40e53e"
+    },
+    {
+      "content_hash": "bf51b72f0803216b7d97e1d401cdbecd3a05b564f04c5d01de60ca64f37bd86a",
+      "heading": "2.2 責務分担",
+      "position": 4,
+      "section_id": "DLID-vw9r909jdsj7"
+    },
+    {
+      "content_hash": "c2ef6779ef9dee68749743f74e2a2206d8a336d745c8a77b40bacff29eb230da",
+      "heading": "フェーズ構成",
+      "position": 16,
+      "section_id": "DLID-0n5y4yb2nym8"
+    },
+    {
+      "content_hash": "d64528fb538771be36cd647e6e7bdcc41774ae2cf4fd52d36aae74c64c07374a",
+      "heading": "4.1 start-design",
+      "position": 13,
+      "section_id": "DLID-5t4zehyzcgv3"
+    },
+    {
+      "content_hash": "db0235cd63bd0ffe9b5e21171363228e74ad0898f7cf1274a1036882087eb74c",
+      "heading": "4.2 start-plan",
+      "position": 15,
+      "section_id": "DLID-7r2d232cbg8r"
+    },
+    {
+      "content_hash": "df343db782b965f69d246467da0b7a5e89d3b2f6626c21577ef0b74ba569ed75",
+      "heading": "既存コード収集 agent の適用マトリクス",
+      "position": 19,
+      "section_id": "DLID-a7qcmtpn4jjb"
+    },
+    {
+      "content_hash": "e541f81144802624f8349053c7043f08628f5f3f2e9e8e048b52faa28353d22b",
+      "heading": "インライン prompt による自己完結性の確保（FNC-003 準拠）",
+      "position": 9,
+      "section_id": "DLID-8hqa0500qbvd"
+    },
+    {
+      "content_hash": "f291aa78fe8f7c42f26e5588bafb87bd09bbc2bd79561773a3e3b764d049cd6f",
+      "heading": "4.3 start-requirements",
+      "position": 18,
+      "section_id": "DLID-nrgfa8zy309t"
+    }
+  ],
   "summary": [
-    "Overview of orchestrator-pattern construction for three create-style skills",
-    "Orchestrator structure diagram for start-design",
-    "Responsibility split between orchestrator, document search, code-collection agent, authoring, AI review and post-processing",
-    "Shared context-gathering framework: document search via query-db skills in main context, code exploration via general-purpose agent",
-    "Result handoff via return values without session directories, and inline prompt templates for agents",
-    "Collection order and integration sequence diagram",
-    "Failure handling: stop and report on search failure, not-performed search or agent error; zero results are valid",
-    "Per-skill design: start-design inputs, start-plan phases and matrix, start-requirements agent matrix and reverse-engineering sequence",
-    "Existing components reused by the design",
-    "Rationale for not using session directories"
+    "Overview: three create skills share an orchestrator structure with common context gathering",
+    "Architecture and responsibility table across orchestrator, document search, code-collecting agent, writing, review and post-processing",
+    "Design decision: document writing runs in main context because isolated agents cannot interact with the user",
+    "Context gathering: document search via Skill tool in main context, existing code exploration via general-purpose agent",
+    "Results held in main context as search output and agent return values; no session directory",
+    "Inline prompt template for code agent with purpose, search means and output contract",
+    "Failure handling: stop and report on search failure, skipped search or agent error; zero results is valid",
+    "start-design input collection: requirements doc from context, rules via query-db-rules",
+    "start-plan phase structure and gathering matrix",
+    "start-requirements agent matrix by mode and reverse-engineering sequence"
   ],
   "tasks": [
-    "Designing or modifying start-design, start-plan or start-requirements skills",
-    "Implementing context gathering in create-style skills",
-    "Deciding where document search versus code exploration runs",
-    "Defining agent prompt templates and return-value contracts",
-    "Handling collection failures in orchestrators",
-    "Reviewing orchestrator-pattern design documents"
+    "Modifying start-design, start-plan or start-requirements SKILL",
+    "Designing context gathering in create skills",
+    "Defining how orchestrators call document search SKILLs",
+    "Handling search or agent failures in orchestrated workflows",
+    "Writing prompt templates for code collection agents",
+    "Reviewing orchestrator design consistency"
   ],
   "title": "DES-010 create-* スキル オーケストレータ化設計書"
 }

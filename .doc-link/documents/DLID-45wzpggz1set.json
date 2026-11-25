@@ -1,39 +1,188 @@
 {
-  "content_hash": "3ae4e3bfdd65f2e76915ea719e8c2a1303e068d06a251d90480ffa15d4d6cb7a",
+  "applied_hash": "1fb15e199859ddffbd22f99b13017278aa493f8bfbdbb97fa536be4005283f05",
+  "content_hash": "1fb15e199859ddffbd22f99b13017278aa493f8bfbdbb97fa536be4005283f05",
   "doc_link_id": "DLID-45wzpggz1set",
   "keywords": [
     "ADR",
     "architecture decision record",
-    "operating principles",
     "screening criteria",
     "rejected alternatives",
+    "mutable document",
     "severity catalog",
-    "section renumbering",
     "ID numbering",
     "scope box",
-    "mutable document"
+    "decision reversal"
   ],
+  "last_check": {
+    "checked_at": "2026-11-25T03:43:00+00:00",
+    "result": "success"
+  },
   "path": "plugins/forge/docs/adr_principles_spec.md",
-  "purpose": "Defines the operating principles for creating and revising ADRs: what to record, how to screen content, mutability, rejection handling, placement and numbering, tolerance zones, and a severity catalog.",
+  "purpose": "Defines norms for creating and revising ADRs: what to record and not record, screening criteria, mutability, handling reversed decisions, placement and numbering, and severity of violations.",
+  "references": [
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/adr_format.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 0,
+      "recorded_content_hash": "3a31a2d6bfe3",
+      "recorded_path": "adr_format.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-ns59za8fens1",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/adr_usage_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 1,
+      "recorded_content_hash": "b87fce46708e",
+      "recorded_path": "adr_usage_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-m77gjek2tw2b",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/design_principles_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 2,
+      "recorded_content_hash": "e590554be385",
+      "recorded_path": "design_principles_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-061pwjejh6yc",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/document_style_guide.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 4,
+      "recorded_content_hash": "335c3c0eb320",
+      "recorded_path": "document_style_guide.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-c59znr7b8f56",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/spec_design_boundary_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 3,
+      "recorded_content_hash": "e0d1a83f7e47",
+      "recorded_path": "spec_design_boundary_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-h9h90g9wcy8f",
+      "target_section_id": null
+    }
+  ],
+  "sections": [
+    {
+      "content_hash": "1f454f1dc5f0b77be3aa6de43f9a532c194aa686d7bed287722a95d1967f221c",
+      "heading": "決定の否決：同じ節を書き直す",
+      "position": 7,
+      "section_id": "DLID-7sz8sjb88w6n"
+    },
+    {
+      "content_hash": "3ae729441c4fa0d9896676642db45f1fe8ceb23680e1b4c1d990a410889bf20f",
+      "heading": "ADR（アーキテクチャ決定記録）運用原則",
+      "position": 0,
+      "section_id": "DLID-baw3nkzf4q55"
+    },
+    {
+      "content_hash": "4f77395677847bdf1886225272dab9baadc26bcb900869fb5490ce4480dc4cb5",
+      "heading": "グレーゾーン許容範囲",
+      "position": 9,
+      "section_id": "DLID-fxyfcg28z1pw"
+    },
+    {
+      "content_hash": "5b1598879c114c36cf59141f1936a0c2af805c1835b36a0aa21490b5351c4dc0",
+      "heading": "重大度カタログ",
+      "position": 10,
+      "section_id": "DLID-cnjkzn06efrj"
+    },
+    {
+      "content_hash": "728984d6f6c5bb889cca2f770355a085498471cc83230b7fe3dea4eb4f993b56",
+      "heading": "ADR の定義",
+      "position": 1,
+      "section_id": "DLID-fzs3bawx79d4"
+    },
+    {
+      "content_hash": "7a05964de5206b430c391fbe9b60723d15c2fc15fdacb083da9c43f67df85043",
+      "heading": "受益者",
+      "position": 2,
+      "section_id": "DLID-43r8smkp3t4c"
+    },
+    {
+      "content_hash": "82641aa6fa61568213580946afccf45b937f39799f513ed67d7c5c7d565d781b",
+      "heading": "可変文書である",
+      "position": 6,
+      "section_id": "DLID-xtdmx1rvvkgq"
+    },
+    {
+      "content_hash": "971c933cd7b05ed8e1a27c5a8b01d13d3829abc3ac6348536e68aa7aa21b96c3",
+      "heading": "書く対象・書かない対象",
+      "position": 3,
+      "section_id": "DLID-1yeq7vcn25rx"
+    },
+    {
+      "content_hash": "c02bab79afcf1b64b56d8760b3acdc8c4099b6e03e560d16ee996711c977af8a",
+      "heading": "配置と ID 採番",
+      "position": 8,
+      "section_id": "DLID-c9w270mp2fc7"
+    },
+    {
+      "content_hash": "d40fc30f444f5441f4786d5e812a42ea0a51d7ff8bb0d1f9ba42bf48aa223f83",
+      "heading": "スコープ欄を書く条件",
+      "position": 4,
+      "section_id": "DLID-vj0jcfec1668"
+    },
+    {
+      "content_hash": "ec65baa21bae851671c217dca6fbfb8f8a6454716603e9570b155abe79438505",
+      "heading": "吟味の基準",
+      "position": 5,
+      "section_id": "DLID-4czb12r136fb"
+    }
+  ],
   "summary": [
-    "ADR definition: responsibility, what not to write, exception for approved designs, permanence and revision",
-    "Beneficiary is the AI about to propose alternatives, so rejection reasons must be thorough",
-    "Criteria for what to write: future plausible proposal and not answerable from code, rules or specs",
+    "ADR definition: responsibility, exceptions, lifetime, and revision approach",
+    "Primary beneficiary is an AI about to propose an alternative already considered",
+    "What to write: only when a plausible proposal is likely and its error is not evident elsewhere",
+    "Do not copy specs or rules into ADRs; link to them by reference",
     "Conditions for the optional scope box",
-    "Screening criteria table: reject, revise and record, or insufficient",
-    "ADR is mutable: rewrite sections, never renumber, no change-log section",
-    "Rejected decisions are folded into the same section, with old option moved to alternatives",
-    "Placement per feature, single file per feature, numbering via next-spec-id skill",
-    "Gray zone tolerance table of allowed and disallowed practices",
-    "Severity catalog of violation patterns"
+    "Screening criteria table: reject, fix and record, or insufficient",
+    "Mutable document: rewrite sections, keep numbers, no history sections",
+    "Reversed decisions rewrite the same section, never add a new ADR",
+    "Placement, one file per feature, and numbering via next-spec-id",
+    "Gray-zone tolerance table and severity catalog"
   ],
   "tasks": [
-    "Creating or updating an ADR",
     "Deciding whether content deserves an ADR",
-    "Reviewing an ADR or judging review findings",
-    "Handling a revoked or corrected decision",
-    "Assigning an ADR number and placing the file",
-    "Proposing an alternative design and checking whether it was already considered"
+    "Writing or updating an ADR",
+    "Reviewing an ADR for norm violations",
+    "Handling a reversed or corrected decision",
+    "Numbering and placing a new ADR file",
+    "Judging severity of ADR defects"
   ],
   "title": "ADR（アーキテクチャ決定記録）運用原則"
 }

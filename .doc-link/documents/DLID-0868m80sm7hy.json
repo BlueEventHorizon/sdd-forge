@@ -1,40 +1,250 @@
 {
-  "content_hash": "6730e8414d1c47fab8ab6295cf0e0c57ba0bc172741a0af974eb964ad06a3874",
+  "applied_hash": "fcdbb11a3887404bd4b43c9105e5c905dd66af3979db4fa8661dad77ba9a7d81",
+  "content_hash": "fcdbb11a3887404bd4b43c9105e5c905dd66af3979db4fa8661dad77ba9a7d81",
   "doc_link_id": "DLID-0868m80sm7hy",
   "keywords": [
     "agenda",
     "record",
-    "agenda item",
     "state transition",
-    "structural validity judgment",
     "consult",
-    "review",
+    "review findings",
+    "structured input",
     "storage format",
-    "requirements",
-    "single source of truth"
+    "single source of truth",
+    "structural validity",
+    "requirements"
   ],
+  "last_check": {
+    "checked_at": "2026-11-25T02:44:01+00:00",
+    "result": "success"
+  },
   "path": "docs/specs/consult/agenda/requirements/REQ-019_agenda_record.md",
-  "purpose": "Requirements for the agenda record layer that stores agenda items (review findings, discussion points) and their states as a single source of truth, so humans keep an overview while the AI spends less effort maintaining records.",
+  "purpose": "Requirements for the agenda record layer that stores discussion items and their states as a single source of truth, so humans keep an overview while AI spends minimal effort maintaining records.",
+  "references": [
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/specs/consult/agenda/design/DES-075_agenda_mechanism_design.md",
+        "result": "match",
+        "scope": "docs/specs/consult/agenda/design"
+      },
+      "kind": "document",
+      "position": 2,
+      "recorded_content_hash": "4d29f17e5566",
+      "recorded_path": "../design/DES-075_agenda_mechanism_design.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-vyz6fzhdfk3a",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/specs/consult/agenda/design/NOTES_open_design_questions.md",
+        "result": "match",
+        "scope": "docs/specs/consult/agenda/design"
+      },
+      "kind": "document",
+      "position": 3,
+      "recorded_content_hash": "5800bff02e73",
+      "recorded_path": "../design/NOTES_open_design_questions.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-n11844q5g8qn",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/specs/consult/agenda/requirements/REQ-021_agenda_display.md",
+        "result": "match",
+        "scope": "docs/specs/consult/agenda/requirements"
+      },
+      "kind": "document",
+      "position": 1,
+      "recorded_content_hash": "592ff7537fe8",
+      "recorded_path": "REQ-021_agenda_display.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-hsj370z603x4",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "plugins/forge/docs/spec_priorities_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 0,
+      "recorded_content_hash": "b68b930cec1d",
+      "recorded_path": "../../../../../plugins/forge/docs/spec_priorities_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-f9ny9e932trv",
+      "target_section_id": null
+    }
+  ],
+  "sections": [
+    {
+      "content_hash": "004cf5a08faba0ca7f6bf637efccf220f2e85ede4c95e0e48775a916347e27c6",
+      "heading": "FNC-012: 個別処理の前に構造の妥当性を判定する [MANDATORY]",
+      "position": 15,
+      "section_id": "DLID-5x3m6k1g1tct"
+    },
+    {
+      "content_hash": "1a491daed76c8c033d465c37bda30c64fb39b1465b2dc09bd040d14e95b20b82",
+      "heading": "2. 用語",
+      "position": 4,
+      "section_id": "DLID-f02tfrcmcj2z"
+    },
+    {
+      "content_hash": "22ff137c7e489391a6eb18da369054b6acbc2411b1ecccb5ee1a71d9fe69456b",
+      "heading": "REQ-019 議事記録機構 要件定義書",
+      "position": 0,
+      "section_id": "DLID-0fak8r53bb5k"
+    },
+    {
+      "content_hash": "28e8c859f6defc0b421a762492623f603c10cee56b0539afcd0b4fc5e34999af",
+      "heading": "NFR-003: 置き場・個数・寿命は導出根拠を持つ",
+      "position": 19,
+      "section_id": "DLID-9qsb2ca8mxkc"
+    },
+    {
+      "content_hash": "40175f68230beb390116360ef20582ce0bc766bc57920eb35599044c30cf151a",
+      "heading": "FNC-005: 入力は 1 回の構造化された受け渡し",
+      "position": 10,
+      "section_id": "DLID-0ezzkxkzbdrz"
+    },
+    {
+      "content_hash": "4044c2711f4a4558345c343b32557ffb4a9779185ed6f1e3a69f617ba3569266",
+      "heading": "FNC-013: 変更情報の保持",
+      "position": 16,
+      "section_id": "DLID-xztk84b3dz1y"
+    },
+    {
+      "content_hash": "45060e07d29f005824f609a2bde1c10153f17e25a4035bca1882bd2b23071575",
+      "heading": "3.1 対象",
+      "position": 6,
+      "section_id": "DLID-e3n6b1dggqag"
+    },
+    {
+      "content_hash": "5051a9064f7d983f6f3c0b7b4c3183516e95c4bfec1ece766f7665badf597315",
+      "heading": "1.1 なぜ機構が要るのか",
+      "position": 2,
+      "section_id": "DLID-8rs9a0e0fgdv"
+    },
+    {
+      "content_hash": "60eec4e4b8774b6bf47c1dbbc407d4ff1a786ac9da1bcf168c9b39bf9eb8fa02",
+      "heading": "FNC-006: 次の行動を数えずに得られる",
+      "position": 11,
+      "section_id": "DLID-stbrje0y3bn2"
+    },
+    {
+      "content_hash": "632221237f0eb5ce2b33ace689709faaf56077cb0d633f34e7afb266565ddd55",
+      "heading": "FNC-010: 既存記録の破棄",
+      "position": 14,
+      "section_id": "DLID-y6czm10qksc2"
+    },
+    {
+      "content_hash": "6407f62b294b9d324b928f7a130852ccb4b9ff775bceb847987f18cd7b6a9be4",
+      "heading": "4. 機能要件",
+      "position": 8,
+      "section_id": "DLID-pq91xamnasfx"
+    },
+    {
+      "content_hash": "79813a3dfa9ad49641c6a8697a37b24cc26ea74cf61114ecaf5bcebc76906ed2",
+      "heading": "FNC-004: AI が生成するのは判断の内容だけ",
+      "position": 9,
+      "section_id": "DLID-mpxqmkdqyk0g"
+    },
+    {
+      "content_hash": "8320601c64e2db77547ac20b435de7f4ecb47c682ac6411233d8ad8fa2e12a75",
+      "heading": "NFR-001: 保存形式は値の境界を形式自身が持つ [MANDATORY]",
+      "position": 18,
+      "section_id": "DLID-anc8xcrd30b5"
+    },
+    {
+      "content_hash": "93eabf5fba609291849dc6abb61f7bdd024ad46b7df10dfead56c0f93cbca782",
+      "heading": "6. 未確定事項",
+      "position": 23,
+      "section_id": "DLID-vsxb41v6bd30"
+    },
+    {
+      "content_hash": "969976c36ced1050bc22c284f4ecd0adb216df558cd4793f982c96cb709ab342",
+      "heading": "NFR-004: 検証可能性",
+      "position": 20,
+      "section_id": "DLID-0ez59rcybk15"
+    },
+    {
+      "content_hash": "9fb857e5959c91a78091a37753ea5f4111d7a865ad843cb8aa6ff0b229b3987d",
+      "heading": "5. 非機能要件",
+      "position": 17,
+      "section_id": "DLID-rtze9y3hej5z"
+    },
+    {
+      "content_hash": "a0266b4a8b136f83d0cb4423a6c3407060a22a7930ec8aa0a0142f8799589c16",
+      "heading": "1.2 対象システムの性質",
+      "position": 3,
+      "section_id": "DLID-vzn4nrqrqnb7"
+    },
+    {
+      "content_hash": "b7c01bfded686c129781bd5040e2e9679744782d7bd8c0b8b8ad8d923b61b2cd",
+      "heading": "FNC-008: 状態遷移の必要条件は機械可読な定義として持つ",
+      "position": 12,
+      "section_id": "DLID-xa1ts5q4hkhq"
+    },
+    {
+      "content_hash": "cbe710c342dd719ee2b48c42e03bfb3f0fe5785879b88621e4094e35dbb82a51",
+      "heading": "1. 概要",
+      "position": 1,
+      "section_id": "DLID-362c0rpm3fex"
+    },
+    {
+      "content_hash": "e07590d097f6e95f26d6cd043b4166b9c92f07b6171c684c5a603ecff1d5ac70",
+      "heading": "NFR-006: 失敗の可視性",
+      "position": 22,
+      "section_id": "DLID-y6qky6vadxwn"
+    },
+    {
+      "content_hash": "e699be3a04127b629ca74baaf335661976f3ecd143ae3963f06cb24d683c7e49",
+      "heading": "3. スコープ",
+      "position": 5,
+      "section_id": "DLID-szve0vvs95td"
+    },
+    {
+      "content_hash": "eb47a4d6f5b4e81773e70a1236a528c48b94937ad34c082703d1e26c5d9f8f16",
+      "heading": "FNC-009: 呼び出し側からの受け取り方",
+      "position": 13,
+      "section_id": "DLID-w1fwjdysx0yb"
+    },
+    {
+      "content_hash": "f5b352cd76a223b1106cab827ecf19e3c3852a45ceaf660b71f3e2a5791bc426",
+      "heading": "NFR-005: 機密情報の非記録",
+      "position": 21,
+      "section_id": "DLID-stghnyntygh4"
+    },
+    {
+      "content_hash": "ffbfae2a4f1afcc21498de797303ae7471e0bff8057d35f4ac6a08856bf424cd",
+      "heading": "3.2 対象外",
+      "position": 7,
+      "section_id": "DLID-qd6wksz3ts4y"
+    }
+  ],
   "summary": [
-    "Overview: a conversation tool keeping all agenda items and their states visible, justified only if it reduces AI output and reading effort for record upkeep",
+    "Purpose and rationale: reduce AI output and reading effort spent on record upkeep",
     "Terminology: agenda item, agenda, record, presentation, caller; the word triage is not used",
-    "Scope: record storage, state transitions, input and output with callers, location, count, lifetime, and discarding old records; presentation is out of scope",
-    "FNC-004 to FNC-006: AI generates only judgment content, input is one structured handoff with one value, and next actions are obtained without counting",
-    "FNC-008: transition preconditions are a machine-readable definition and invalid transitions are rejected with a discernible reason",
-    "FNC-009: callers supply record count, identification, lifetime, severity key name, and state vocabulary instead of fixed values",
-    "FNC-010 and FNC-013: discard of existing review and consult records, and retention of change information for the display layer",
-    "FNC-012: before any item transition, a structural validity judgment over the whole set must be recorded, including a no-error judgment with rationale",
-    "NFR-001 to NFR-006: storage format with its own value boundaries, derived location and lifetime, unit tests, no secret values, and visible failures",
-    "Open items TBD-003, TBD-004, TBD-006 with resolutions referencing the design document"
+    "Scope: record storage, state transition checks, input/output, location, count, lifetime, discarding old records",
+    "FNC-004/005: AI generates only judgment content; input is one structured handoff of a single value",
+    "FNC-006/008: operations returning next item, empty fields, remaining count; machine-readable transition preconditions",
+    "FNC-009: values received from callers (record count, identification, lifetime, severity key, state vocabulary)",
+    "FNC-010/012/013: discard legacy records; structural validity judgment before item transitions; change tracking",
+    "NFR: storage format with its own value boundaries, derived location/lifetime, testability, no secrets, visible failures",
+    "Open items TBD-003, TBD-004, TBD-006 with resolutions"
   ],
   "tasks": [
-    "Designing or implementing the agenda mechanism data storage layer",
-    "Implementing state transition checks and rejection reasons for agenda items",
-    "Integrating a caller such as consult or review with the agenda record",
-    "Choosing a storage format for work records",
-    "Reviewing agenda requirements and designs for consistency",
-    "Writing unit tests for the agenda record mechanism",
-    "Handling secrets in recorded review findings"
+    "Designing or implementing the agenda record mechanism",
+    "Reviewing agenda-related requirements and designs",
+    "Changing /forge:consult or /forge:review agenda handling",
+    "Defining record storage format or state transition rules",
+    "Writing unit tests for the agenda mechanism"
   ],
   "title": "REQ-019 議事記録機構 要件定義書"
 }

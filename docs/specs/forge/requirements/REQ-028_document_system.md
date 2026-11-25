@@ -16,7 +16,7 @@ forge プラグイン内部および本プロジェクトの文書運用であ�
 
 ## 2. 前提条件 DLID-4xfd23b7215j
 
-- 文書の配置は `.doc_structure.yaml` が宣言する（[REQ-001 オーケストレータパターン要件][req-001]）
+- 文書の配置は `.doc_structure.yaml` が宣言する
 - 文書 ID の採番は forge の `next-spec-id` スキルが行う
 
 ## 3. 機能要件 DLID-eb2r31mf04h3
@@ -45,5 +45,3 @@ ID を持つ文書は、プレフィックスと番号の組（`{PREFIX}-{NNN}`�
 ## 4. 未確定事項 DLID-5rbge5sv006h
 
 該当なし。
-
-[req-001]: REQ-001_orchestrator_pattern.md "8954ef4d1f67 DLID-ct64b13ee182"

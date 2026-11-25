@@ -160,5 +160,5 @@ Required documents:
 
 ## Notes
 
-- doc-link の索引の識別キーは `specs` である。`/forge:update-db-specs` が同じキーで索引を構築する。
+- doc-link の ToC 識別キーは `specs` である。`/forge:update-db-specs` が同じ ToC 識別キーで索引を構築する。
 - doc-db の key は `{project_name}-specs`、series は現在の git branch。`/forge:update-db-specs` と同一の series を検索する。

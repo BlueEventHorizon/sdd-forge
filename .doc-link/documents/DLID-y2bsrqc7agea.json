@@ -1,4 +1,5 @@
 {
+  "applied_hash": "17bb6ff90a292d9a24567cd9a45a50ef34b263c7d7da4bd3adda0748ad9283e7",
   "content_hash": "17bb6ff90a292d9a24567cd9a45a50ef34b263c7d7da4bd3adda0748ad9283e7",
   "doc_link_id": "DLID-y2bsrqc7agea",
   "keywords": [
@@ -13,8 +14,207 @@
     "static assets",
     "workflow"
   ],
+  "last_check": {
+    "checked_at": "2026-11-25T03:43:00+00:00",
+    "result": "success"
+  },
   "path": "plugins/forge/skills/start-requirements/docs/requirements_from_figma_workflow.md",
   "purpose": "Workflow for extracting requirements from Figma design files, building design tokens and a theme, and producing requirement documents for screens, components and functions.",
+  "references": [],
+  "sections": [
+    {
+      "content_hash": "06b16ba130b256228713d8cef8b486f24527f3b2829ffa7fabce653be3321566",
+      "heading": "1.2 ユーザーへの確認",
+      "position": 6,
+      "section_id": "DLID-p0j6arhc6tzm"
+    },
+    {
+      "content_hash": "120bc6587b6eddf5388fa67bba1a4f17fb887a8b8b3c1bdd0b73af9fadaf0cd4",
+      "heading": "2.2 再利用可能コンポーネントの特定",
+      "position": 12,
+      "section_id": "DLID-sg422vfhpt74"
+    },
+    {
+      "content_hash": "199dc683747a8f5ed28a6e4ea051be2cefb94c7f8cffe65fd3e724ef50894bb9",
+      "heading": "5.3 AI レビュー実施",
+      "position": 27,
+      "section_id": "DLID-ekjvz175mqep"
+    },
+    {
+      "content_hash": "21a56a320d9702f239bf418ddbced2e6087df3a1addb0e7d08f7540ac17c9f8b",
+      "heading": "3.3 機能要件（FNC-xxx）の抽出",
+      "position": 18,
+      "section_id": "DLID-nmqpzy77pgjx"
+    },
+    {
+      "content_hash": "233d366c56b9d1fee74def0daccda1e60bb4cd38b72b45d33020903bc3bf4d22",
+      "heading": "2.3 デザイントークン抽出手順",
+      "position": 13,
+      "section_id": "DLID-1mew0zmt2y0g"
+    },
+    {
+      "content_hash": "2bc181688181f485c88de91901e846e53be3fdc307d7baddce02042540371671",
+      "heading": "Phase 2: デザインシステム構築",
+      "position": 8,
+      "section_id": "DLID-r27q7xy0esp2"
+    },
+    {
+      "content_hash": "328e87cbfb5fcdbb3a5fef4805efa79ecd85ee264dfd5d5e02c402caa5e1b63a",
+      "heading": "第2層: テーマ（意味的定義）",
+      "position": 11,
+      "section_id": "DLID-e12e12twpp8d"
+    },
+    {
+      "content_hash": "332683a7f77004a51984b1a4c04ce6cd5d25c7290d8251302ffa8512139cf829",
+      "heading": "Phase 5: 品質確認・完了処理",
+      "position": 24,
+      "section_id": "DLID-73wdem49bsnv"
+    },
+    {
+      "content_hash": "34d271d62cedb69c7e640c8843894f179bbeca45aba375e59477a3b231333d5d",
+      "heading": "2.1 デザインシステム（2層構造）",
+      "position": 9,
+      "section_id": "DLID-zjhdrncb3zbe"
+    },
+    {
+      "content_hash": "37d1afdb8ce4f68e0427f4bf61e0e8f4b31e9a0bb8f97bb3b9ed62a05f8f20dc",
+      "heading": "第1層: デザイントークン（原子的な値）",
+      "position": 10,
+      "section_id": "DLID-2y2a6zjjwj1e"
+    },
+    {
+      "content_hash": "390325b4ab93f1c02e9aa544754771f9cc54d5387cfa225f7634c47de7b8c4c2",
+      "heading": "3.1 画面要件（SCR-xxx）の抽出",
+      "position": 16,
+      "section_id": "DLID-xv5tmrrjryj6"
+    },
+    {
+      "content_hash": "39858d216f3a1c60c102a73196fe33a1361fb42985f881ad4c66e203fa12cb42",
+      "heading": "3.5 グロッサリー作成",
+      "position": 20,
+      "section_id": "DLID-7brb6aec23dt"
+    },
+    {
+      "content_hash": "447d7a2b5c28874f9d045626ab6890e9d78b47d1f141698d3848c710e9e3609d",
+      "heading": "Phase 1: 事前準備",
+      "position": 4,
+      "section_id": "DLID-wkcv7z52j0g9"
+    },
+    {
+      "content_hash": "4bd46285f89d648f61a4927311183c36abcc956816278cda8de0dfede48a8e38",
+      "heading": "1.1 Figma MCP の利用可否確認",
+      "position": 5,
+      "section_id": "DLID-g0yvwb6wncj2"
+    },
+    {
+      "content_hash": "5ffd879bdd96938de14239a7170698e1f405be09d000f39907c16c0aacca761b",
+      "heading": "5.4 参照の実在性検査",
+      "position": 28,
+      "section_id": "DLID-f7jzry981285"
+    },
+    {
+      "content_hash": "6ac8de11033100164ad42c5f1b997164b941838c519f255abfa2e58a80b01595",
+      "heading": "5.5 specs ToC 更新",
+      "position": 29,
+      "section_id": "DLID-5a2syaga91c1"
+    },
+    {
+      "content_hash": "7666b1ba350ae64e546487f3bcfab83e01185b3767851b474768b5a2011c2e0e",
+      "heading": "3.0 置き場の決定と ID 採番",
+      "position": 15,
+      "section_id": "DLID-stsseyt9d18c"
+    },
+    {
+      "content_hash": "7aae237443d6f01f46779aca5e795cd348a96bcabf6c7c711223301a8670a891",
+      "heading": "5.6 commit/push 確認",
+      "position": 30,
+      "section_id": "DLID-apk7wqb0zy6g"
+    },
+    {
+      "content_hash": "80a91828c50af040eff1b6b32475517fe206775c8e4d56ec56b373252e82dce5",
+      "heading": "実行フロー概要",
+      "position": 3,
+      "section_id": "DLID-rpnvxqerw5j9"
+    },
+    {
+      "content_hash": "830a3792eadc9bbde2233353ae4f0d54d45d1e560ba5548aa89dcb0bf4591cf3",
+      "heading": "1.3 ルール文書・既存仕様の取得",
+      "position": 7,
+      "section_id": "DLID-wh7b94yz3q14"
+    },
+    {
+      "content_hash": "939ba39d061e32172672ef3ba9676f9515c170f775d0a5697eb85656670f11a7",
+      "heading": "5.1 デザイントークンの検証",
+      "position": 25,
+      "section_id": "DLID-egj04rw5qs2z"
+    },
+    {
+      "content_hash": "93b485484d6038b56cb5742f085429abd3cc0901d2ad1d328cc11a7d1f2e2523",
+      "heading": "Phase 3: 要件定義書作成",
+      "position": 14,
+      "section_id": "DLID-158c1nz8hr6x"
+    },
+    {
+      "content_hash": "95e543099ae849944fab5f46b5cfe63ae2fd0e3b816037b98ec31b6014bba4fb",
+      "heading": "3.2 UI コンポーネント（CMP-xxx）の抽出",
+      "position": 17,
+      "section_id": "DLID-kv98ft8z986v"
+    },
+    {
+      "content_hash": "a565ac06e1cd36db33516f9b1571674f4c20f971886e02c45501749539ef96d0",
+      "heading": "5.2 要件定義書の検証",
+      "position": 26,
+      "section_id": "DLID-s8gdrzx4xqwg"
+    },
+    {
+      "content_hash": "a6e18135e373de4bbaeab32638b85104ef2661e30edfa7e4d3055810efb159e6",
+      "heading": "4.2 アセット管理方針の記載",
+      "position": 23,
+      "section_id": "DLID-879pk2jp4260"
+    },
+    {
+      "content_hash": "aa31e225bb4edb9e9ae01021ffc9792a1e4700843a03d2571b689f82fbcdd196",
+      "heading": "5.7 完了案内",
+      "position": 31,
+      "section_id": "DLID-dv56gkm2w771"
+    },
+    {
+      "content_hash": "b8dfc6fe79e21621a8d1fb0cb717b22897138424ac07b0c9b03b498e499f624a",
+      "heading": "4.1 画像アセットの洗い出し",
+      "position": 22,
+      "section_id": "DLID-tcjwycnz40b8"
+    },
+    {
+      "content_hash": "be44031b3be9c13c3c7b9e8e926df586cf5a5df407657bbcc1e4861b113ae357",
+      "heading": "Phase 4: 静的アセット管理",
+      "position": 21,
+      "section_id": "DLID-84q67ed4ca46"
+    },
+    {
+      "content_hash": "bffa716bd4eaceefc1822042764b084bd2e37d0d7dc6fcf80bda4f8c8fe8b3b2",
+      "heading": "3.4 デザインにない要件の補完",
+      "position": 19,
+      "section_id": "DLID-qaddwwqf81qj"
+    },
+    {
+      "content_hash": "d4b0aa3e37beb53ebeaf954f3505717605a194eb03056cd500f41c1bcb4a94d3",
+      "heading": "Figma 要件定義書作成ワークフロー",
+      "position": 0,
+      "section_id": "DLID-78kh6rsk7vwc"
+    },
+    {
+      "content_hash": "e62e481d10bdc5608c3b270ccaf43ca853799d80f00fe06e843ab90b6635ffd2",
+      "heading": "必須文書",
+      "position": 1,
+      "section_id": "DLID-sa3k15bj8mh3"
+    },
+    {
+      "content_hash": "e644187fe20244725b6f734940c7ba5617c49cf8872dafd5f7bf2f5091f7740d",
+      "heading": "目的",
+      "position": 2,
+      "section_id": "DLID-40rwzr1tza7w"
+    }
+  ],
   "summary": [
     "Required reading list of requirement principles, format, error classification, and style guides",
     "Five-phase flow: preparation, design system, requirement writing, static assets, quality check",

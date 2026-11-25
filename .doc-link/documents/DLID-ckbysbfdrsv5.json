@@ -1,39 +1,234 @@
 {
-  "content_hash": "d8aa531bdbafb0faed72355aabdffbf2ecf4fea35c6de9d003649b40eec749c6",
+  "applied_hash": "2646153bc1d21ff1f51e16f68c1a6aac8f8134cdaf701d352df8986e4cba7734",
+  "content_hash": "2646153bc1d21ff1f51e16f68c1a6aac8f8134cdaf701d352df8986e4cba7734",
   "doc_link_id": "DLID-ckbysbfdrsv5",
   "keywords": [
     "wrapper",
     "SKILL.md",
+    "local entry point",
     "low-level script",
     "fixed-context adapter",
     "dependency direction",
-    "script placement",
-    "naming convention",
     "public contract",
-    "sys.argv passthrough",
-    "REQ-003"
+    "script layout",
+    "REQ-003",
+    "naming convention"
   ],
+  "last_check": {
+    "checked_at": "2026-11-25T02:44:01+00:00",
+    "result": "success"
+  },
   "path": "docs/specs/forge/design/DES-024_skill_script_layout_design.md",
-  "purpose": "Design defining the placement and contracts of SKILL.md, SKILL-local entry scripts and shared low-level scripts, with one-way dependency, wrapper criteria and naming rules.",
+  "purpose": "Defines placement, naming and contracts of SKILL-local script entry points versus shared low-level scripts, establishing a one-way dependency from SKILL.md to external files.",
+  "references": [
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/rules/plugin_script_error_output_rules.md",
+        "result": "match",
+        "scope": "docs/rules"
+      },
+      "kind": "document",
+      "position": 1,
+      "recorded_content_hash": "f1c5b6752ce7",
+      "recorded_path": "../../../rules/plugin_script_error_output_rules.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-fz66nns8q521",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/specs/forge/requirements/REQ-003_skill_script_separation.md",
+        "result": "match",
+        "scope": "docs/specs/forge/requirements"
+      },
+      "kind": "document",
+      "position": 0,
+      "recorded_content_hash": "3b1c5409fe80",
+      "recorded_path": "../requirements/REQ-003_skill_script_separation.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-bgxgcq0pvkm7",
+      "target_section_id": null
+    }
+  ],
+  "sections": [
+    {
+      "content_hash": "00a7c1a8fae77bca77e8485bc1d035943be2b8fb925f30b130e3e4ed553f300e",
+      "heading": "6.3 Yes/No 判定可能な性質",
+      "position": 18,
+      "section_id": "DLID-bzfx52xdyed5"
+    },
+    {
+      "content_hash": "06048a82783736db513b6c5576fc74fcbfa0d5c6435ff2a425b297d703c60ed3",
+      "heading": "DES-024 SKILL.md と script の配置・契約設計",
+      "position": 0,
+      "section_id": "DLID-8apgjbg4ne1q"
+    },
+    {
+      "content_hash": "0a1d5544aabf570386d522c4cbbdcfd315e514bd3099e3bc22ce4b90a8479b3d",
+      "heading": "8.1 適合レビューの契機",
+      "position": 24,
+      "section_id": "DLID-6dhmmv0s1t7z"
+    },
+    {
+      "content_hash": "1050731d7a9b9841895f36eeb2ddc9cd78223dd85825179f06cd3d4bb21b14bf",
+      "heading": "9. 非採用案",
+      "position": 25,
+      "section_id": "DLID-xq3c5wwxnjnn"
+    },
+    {
+      "content_hash": "2b34b7a697dbc621abaa0fc8849942c0d18cf1ee878f6625cf9822ea68daa0fe",
+      "heading": "2.6 意図的な重複の設計意図 [MANDATORY]",
+      "position": 8,
+      "section_id": "DLID-00vbhxbe2q55"
+    },
+    {
+      "content_hash": "4872ec1d8d4fac481a902fdf4dc86ce6eea7e22db023d8e2f52fddcae3b0725a",
+      "heading": "4. 命名規則",
+      "position": 13,
+      "section_id": "DLID-1h7bv6sywsb8"
+    },
+    {
+      "content_hash": "490c3d15d81f36f5143c4736b6d0bee82bca4d15d61d578c8647c4b13dcf5d5b",
+      "heading": "3. 配置基準",
+      "position": 9,
+      "section_id": "DLID-nv2mw41tdbhm"
+    },
+    {
+      "content_hash": "5e190a61aa4412128d690710b65825a311e6d4ba765b686b069f998ed3638609",
+      "heading": "3.1 script の配置",
+      "position": 10,
+      "section_id": "DLID-4e35kcws6dgt"
+    },
+    {
+      "content_hash": "7e7d80c66dd96020292048c5141b49d3edd8ea36527d885a0eedfa09785fd785",
+      "heading": "7.3 複合操作アダプタ",
+      "position": 22,
+      "section_id": "DLID-c8t8g4w81ymr"
+    },
+    {
+      "content_hash": "7fd647ef1809972d7630e565309c316893b6f2ec4f2917e9d3960ba52f6180fb",
+      "heading": "2.2 操作契約アダプタ",
+      "position": 4,
+      "section_id": "DLID-kkp4fjbdb71x"
+    },
+    {
+      "content_hash": "826847b98bd2348a7ed1b7b8abd1153bc5b77da0f4ae7aab2140c54c57cd97a3",
+      "heading": "7.1 固定文脈アダプタ",
+      "position": 20,
+      "section_id": "DLID-4b0r2kmq0v6x"
+    },
+    {
+      "content_hash": "843bb9fef9842b82657c1797a370b363f58b6da4ba908d32649a9b6550f9531e",
+      "heading": "2.3 I/O アダプタ",
+      "position": 5,
+      "section_id": "DLID-zcm6v6j0ad8x"
+    },
+    {
+      "content_hash": "8595a93053f7b287709c9aa94a303b589434d29876b01076f64bd6b93c83ad27",
+      "heading": "6.2 依存方向",
+      "position": 17,
+      "section_id": "DLID-a7fnn8q6pm8m"
+    },
+    {
+      "content_hash": "89b9733f055d50885c9b4fe9bdd127d992ab5b989d0b01aa0ec0deca0cf83e36",
+      "heading": "2.5 ラッパー化判断基準",
+      "position": 7,
+      "section_id": "DLID-ntkk973pe0yk"
+    },
+    {
+      "content_hash": "9480cc8fce16192020e54b12515e99835e8d67be3dffe14b99e4c80fa0341d10",
+      "heading": "1. 概要",
+      "position": 1,
+      "section_id": "DLID-q7n29w40cw5f"
+    },
+    {
+      "content_hash": "9aa10a94a8edd7b81f27013596b0d74c0606b67e9dde2802c807be724ff9e0c3",
+      "heading": "3.2 共有ラッパー層を作らない",
+      "position": 11,
+      "section_id": "DLID-5aebdxr6kv4h"
+    },
+    {
+      "content_hash": "a606963df52715c93ea950422640ca6d5c320653a64d4c7d666baef246577307",
+      "heading": "8. テスト原則",
+      "position": 23,
+      "section_id": "DLID-ca0k2pa0kw2y"
+    },
+    {
+      "content_hash": "b0ea646d988c88e187c2e81d557dc9e7ba69860933c1e375f37fab707e1ac086",
+      "heading": "6.1 層構造",
+      "position": 16,
+      "section_id": "DLID-cagm43r83j2q"
+    },
+    {
+      "content_hash": "b43fc7ceaa44d9785ec3f9e815bf64fadd7c4827106265829a57a29c8224ec6c",
+      "heading": "2.4 複合操作アダプタ",
+      "position": 6,
+      "section_id": "DLID-ktv8t16tyj0s"
+    },
+    {
+      "content_hash": "c81b7cf6d8d0a40a5e6d40393ab8f0b88a40a0ab1c850d248c567a6d82773d63",
+      "heading": "7. 実装テンプレート",
+      "position": 19,
+      "section_id": "DLID-6j9q9vrr78nc"
+    },
+    {
+      "content_hash": "d96b90b7d06557717a4ff2d7e1c381da9399932ff579b33e8019d26e7ed50268",
+      "heading": "3.3 公開契約を安定させる [MANDATORY]",
+      "position": 12,
+      "section_id": "DLID-ak9x6fr0752w"
+    },
+    {
+      "content_hash": "e065af7ab8540b19f52b76d12e856e4bcdf7e015353f2b3ca9c38f4258d38d8d",
+      "heading": "7.2 順序付き位相を持つ操作入口",
+      "position": 21,
+      "section_id": "DLID-zehbnfj9v155"
+    },
+    {
+      "content_hash": "edb3f680ed6116eb6c3d991770ccd61d48e9ccbbdba0ea694eeed5011cc400ad",
+      "heading": "5. SKILL.md 側の記述ルール",
+      "position": 14,
+      "section_id": "DLID-zs2n08bcxy43"
+    },
+    {
+      "content_hash": "efcfb83b0eb645c626a089497aac7efe28c88926a86051c9a9aa93ee9bb76d22",
+      "heading": "6. モジュール一覧と依存方向",
+      "position": 15,
+      "section_id": "DLID-wza8svy73scd"
+    },
+    {
+      "content_hash": "ff8296c74a15e9d947c3b4ec18ffde338cbe7580ab95cf09e5d7639424b99b69",
+      "heading": "2. SKILL ローカル操作入口の型",
+      "position": 2,
+      "section_id": "DLID-2tjek8814kq6"
+    },
+    {
+      "content_hash": "ffa11da86d043828f8ba8feae0bd57bd9b836cb621124290e2026432b8af38f7",
+      "heading": "2.1 固定文脈アダプタ",
+      "position": 3,
+      "section_id": "DLID-cgteh9v523ve"
+    }
+  ],
   "summary": [
-    "Overview: one-way dependency SKILL.md to local entry to shared low-level script to external files",
-    "Wrapper types: fixed-context, operation-contract, I/O and composite adapters",
+    "One-way dependency: SKILL.md, SKILL-local entry, shared low-level script, external file",
+    "Adapter types: fixed-context, operation-contract, I/O, and composite operation adapters",
     "Criteria for when to create or not create a wrapper",
-    "Intentional duplication of wrappers and its design rationale",
-    "Script placement: shared scripts vs SKILL-local scripts, no shared wrapper layer",
-    "Stable public contracts for local entry points",
+    "Rationale for intentional duplication of wrappers, which must not be removed for similarity",
+    "Placement rules, no shared wrapper layer, and keeping public contracts stable",
     "Naming rules using verb-based operation names",
-    "SKILL.md description rules and layer/dependency structure",
-    "Implementation templates and test principles with conformance review triggers",
-    "Rejected alternatives with reasons"
+    "Rules for describing script calls in SKILL.md, including inherited SKILL invocations",
+    "Layer structure and yes/no verifiable properties",
+    "Implementation templates and testing principles with review triggers",
+    "Rejected alternatives such as shared dispatcher and transparent argv passthrough"
   ],
   "tasks": [
-    "Adding or modifying a SKILL-local script",
+    "Adding or changing SKILL-local scripts",
+    "Writing SKILL.md calls to scripts or external skills",
     "Deciding whether to create a wrapper script",
-    "Editing SKILL.md calls to scripts",
     "Changing shared low-level CLI arguments",
-    "Writing wrapper tests",
-    "Reviewing conformance to script layout design"
+    "Writing tests for wrapper scripts",
+    "Reviewing conformance to script separation design"
   ],
   "title": "DES-024 SKILL.md と script の配置・契約設計"
 }

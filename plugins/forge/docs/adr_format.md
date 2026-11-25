@@ -109,5 +109,5 @@ H1 の直後、最初の決定の節の前に引用ブロックで置く。**任
 
 **メタデータ表・ステータス履歴節を持たない**。ADR の番号は H1 とファイル名にあり、決定日と状態の変遷は git 履歴が持ち、関連文書は本文中のリンクで足りる。文書単位の状態を持たないのは、置き換えが決定単位で起きるため、文書単位では部分的な変更を表せないからである。
 
-[adr-principles-spec]: adr_principles_spec.md "3ae4e3bfdd65 DLID-45wzpggz1set"
-[adr-usage-spec]: adr_usage_spec.md "253f59c3f26d DLID-m77gjek2tw2b"
+[adr-principles-spec]: adr_principles_spec.md "1fb15e199859 DLID-45wzpggz1set"
+[adr-usage-spec]: adr_usage_spec.md "b87fce46708e DLID-m77gjek2tw2b"

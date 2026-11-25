@@ -1,31 +1,156 @@
 {
-  "content_hash": "1abf0122bdeb0f4c39c78385bd4943cce5677d26fa34b21ea891cbf9eac2cd6c",
+  "applied_hash": "c05edc5d1de787391f8a2a74d5e4608fc9e03afd90a4df2f3f5f13e4e8d00f39",
+  "content_hash": "c05edc5d1de787391f8a2a74d5e4608fc9e03afd90a4df2f3f5f13e4e8d00f39",
   "doc_link_id": "DLID-c13gr4qbk4vm",
   "keywords": [
     "requirements document",
     "default format",
-    "requirement ID catalog",
+    "requirement ID",
     "temporary-feature",
     "frontmatter",
     "error cases",
-    "severity",
-    "open items",
+    "severity catalog",
     "template"
   ],
+  "last_check": {
+    "checked_at": "2026-11-25T03:43:00+00:00",
+    "result": "success"
+  },
   "path": "plugins/forge/docs/requirement_format.md",
-  "purpose": "Default requirements document format used when no project-specific format exists: frontmatter for additive features, requirement ID catalog, body template, error case rules, and severity catalog.",
+  "purpose": "Default format for requirements documents when no project-specific format exists: additive-feature frontmatter, requirement ID catalog, body template, error case rules, and severity catalog.",
+  "references": [
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/additive_development_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 2,
+      "recorded_content_hash": "3be39e634c1c",
+      "recorded_path": "additive_development_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-cyrk9xr8vcap",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/error_classification_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 4,
+      "recorded_content_hash": "94496cc6d044",
+      "recorded_path": "error_classification_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-5ykqs19cdbks",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/frontmatter_format.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 3,
+      "recorded_content_hash": "867507803b4a",
+      "recorded_path": "frontmatter_format.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-jtc4qnjwbdxf",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/spec_design_boundary_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 1,
+      "recorded_content_hash": "e0d1a83f7e47",
+      "recorded_path": "spec_design_boundary_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-h9h90g9wcy8f",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/spec_priorities_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 0,
+      "recorded_content_hash": "b68b930cec1d",
+      "recorded_path": "spec_priorities_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-f9ny9e932trv",
+      "target_section_id": null
+    }
+  ],
+  "sections": [
+    {
+      "content_hash": "09b5e5adf00c7c248c06809f9188d1b9ff1cba2094205068acc5a7cc94f05c17",
+      "heading": "追加 feature 用 frontmatter",
+      "position": 6,
+      "section_id": "DLID-29nvbbd9e3rm"
+    },
+    {
+      "content_hash": "4aaaf74e14610f9bf59444b96356a88b34e5e9080da6b329e897129c12c7ca09",
+      "heading": "重大度カタログ",
+      "position": 5,
+      "section_id": "DLID-6ygh93jm4py6"
+    },
+    {
+      "content_hash": "6309e294ce7371643e24983ffb9ee614e946ed401f0154ce73ceab1bc26cd45d",
+      "heading": "本体フォーマット",
+      "position": 3,
+      "section_id": "DLID-6qbgqbk1xcw9"
+    },
+    {
+      "content_hash": "6e539746c16ed843243601ee351debbcd190be9c079db5fd6e4c9e42b40b6b34",
+      "heading": "追加 feature 用 frontmatter",
+      "position": 1,
+      "section_id": "DLID-zxhcbgbna01e"
+    },
+    {
+      "content_hash": "921e0747149e4d66c88e289ae80122621c12069c6a0d2ac9577afaa7d3c76af0",
+      "heading": "要件定義書 デフォルトフォーマット",
+      "position": 0,
+      "section_id": "DLID-xce107ay8m4n"
+    },
+    {
+      "content_hash": "9c1719fb6a979d79dd44909a6de4527a1906e74ed9cb7c3ba9a09d486b7419b9",
+      "heading": "エラーケースの書き方",
+      "position": 4,
+      "section_id": "DLID-pzsvndgxcyfb"
+    },
+    {
+      "content_hash": "9e84dda02a9f18d4db25bb3bc24a974b4ccd895802d8513fa1efba8a31d11153",
+      "heading": "要件ID カタログ",
+      "position": 2,
+      "section_id": "DLID-j4h05z7z0r5x"
+    }
+  ],
   "summary": [
-    "Frontmatter required for additive (temporary-feature) requirement documents",
-    "Requirement ID prefix catalog such as FNC, NFR, SEC, ERR and GLS",
-    "Body template: title, glossary line, overview, preconditions, requirement list, error cases, open items",
+    "Additive feature frontmatter conditions (temporary-feature)",
+    "Requirement ID prefix catalog (APP, FNC, NFR, GLS, etc.)",
+    "Body template: overview, preconditions, requirements, error cases, TBD",
+    "Glossary reference line after the title",
     "Error case table with classification and recovery or reporting",
-    "Guidance on writing error cases following the error classification spec",
-    "Severity catalog for the additive feature frontmatter violation"
+    "Severity catalog for missing additive feature frontmatter"
   ],
   "tasks": [
     "Creating a requirements document",
     "Reviewing a requirements document",
-    "Choosing requirement IDs",
+    "Choosing requirement ID prefixes",
     "Writing error cases in requirements",
     "Deciding additive feature frontmatter"
   ],

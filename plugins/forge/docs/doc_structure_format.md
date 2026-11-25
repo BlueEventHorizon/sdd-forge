@@ -298,4 +298,4 @@ specs_files = resolve_files(config, "specs", project_root)
 forge の `/forge:update-db-rules` / `/forge:update-db-specs` が `resolve_doc_structure.py` で本ファイルから
 対象ディレクトリと除外を解決し、索引の更新に渡す。
 
-[glossary-format]: glossary_format.md "dae8698216c5 DLID-z571pg6rda7f"
+[glossary-format]: glossary_format.md "1252d41a14b3 DLID-z571pg6rda7f"

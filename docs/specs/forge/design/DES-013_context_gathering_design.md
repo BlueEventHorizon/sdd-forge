@@ -42,5 +42,5 @@ start-design / start-plan / start-requirements の適用マトリクス・agent 
 
 セッションディレクトリや外部仕様書パスは渡さない。agent は prompt だけで自己完結して動作する（REQ-001 FNC-003）。
 
-[des-010]: DES-010_create_skills_orchestrator_design.md "c93dadeb6dc4 DLID-s1ds8dcyfn7p"
-[des-088]: ../../start-implement/design/DES-088_start_implement_design.md "5b20e32ba921 DLID-f8gem0wa3ac4"
+[des-010]: DES-010_create_skills_orchestrator_design.md "2129dbe03f23 DLID-s1ds8dcyfn7p"
+[des-088]: ../../start-implement/design/DES-088_start_implement_design.md "59241ebe17cb DLID-f8gem0wa3ac4"

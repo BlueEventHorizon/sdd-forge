@@ -1,4 +1,5 @@
 {
+  "applied_hash": "7c226f3c93be416f43785057e1d70594da429ac3d2323872f776d4edc6731c55",
   "content_hash": "7c226f3c93be416f43785057e1d70594da429ac3d2323872f776d4edc6731c55",
   "doc_link_id": "DLID-4vzgex2efq8k",
   "keywords": [
@@ -12,8 +13,165 @@
     "wabi-sabi",
     "quality checklist"
   ],
+  "last_check": {
+    "checked_at": "2026-11-25T03:43:00+00:00",
+    "result": "success"
+  },
   "path": "plugins/forge/skills/start-uxui-design/docs/design_philosophy.md",
   "purpose": "Provides a three-layer framework that integrates conflicting design theories, explaining how to apply cognitive constraints, structural tools, and a chosen aesthetic direction in order.",
+  "references": [],
+  "sections": [
+    {
+      "content_hash": "1d00601be0ca644637122768d4995fcb5a7988484c4ba5e7ec27e7a87badab6c",
+      "heading": "第 1 層チェック（違反は致命的）",
+      "position": 22,
+      "section_id": "DLID-gwcm4s02njg0"
+    },
+    {
+      "content_hash": "1f2ec99a21a952388b13c63b771067959d131dde91dae4c6d6788edffb9081c3",
+      "heading": "方向性の選択ガイド",
+      "position": 20,
+      "section_id": "DLID-saww0pk1d9e5"
+    },
+    {
+      "content_hash": "3d337b90718cf7b0bf18610721d741e9afbce6b630ac835a3b6038303d870095",
+      "heading": "品質チェックリスト（3 層統合版）",
+      "position": 21,
+      "section_id": "DLID-evad0be6ycd2"
+    },
+    {
+      "content_hash": "3d8b4d46be0d90f82feaf5a380046aaa7a020a95454a223af328fa751be9c3a8",
+      "heading": "Edward Tufte — \"Above all else, show the data\"",
+      "position": 18,
+      "section_id": "DLID-rmf27mqb8gx8"
+    },
+    {
+      "content_hash": "3ed0d3473f84dee15e91be6413ad7bdaf9cb93d2f3ccb08a8a6b9036c3adf848",
+      "heading": "Hick の法則 — 選択肢のパラドックス",
+      "position": 5,
+      "section_id": "DLID-4j83md43h8bv"
+    },
+    {
+      "content_hash": "4174fe4981ed3e829e78189b72827bfc18face44ecc38fa38e03db0578542733",
+      "heading": "統合フレームワーク: 3 層モデル",
+      "position": 2,
+      "section_id": "DLID-psy8dx70map9"
+    },
+    {
+      "content_hash": "49a6c60d2cb632c4380c40b20654cda87c597b074f98825101369d65806452b7",
+      "heading": "Dieter Rams — \"Less, but Better\"",
+      "position": 16,
+      "section_id": "DLID-46x5m872rbtq"
+    },
+    {
+      "content_hash": "4bc3d23b1814d8adc5971f5db9876bb8ceec05df7da6f9bce35fcdc26f2781d1",
+      "heading": "なぜこの文書が存在するか",
+      "position": 1,
+      "section_id": "DLID-tz5vfpnswbjd"
+    },
+    {
+      "content_hash": "84f902a17fe33ff12e78aa2961d1ce752bda475eff74abc7fe98a2ad9559dbe5",
+      "heading": "わびさび — 不完全さの美",
+      "position": 19,
+      "section_id": "DLID-d9je0cf64ma7"
+    },
+    {
+      "content_hash": "8839329e37f370a802ff27e0ae7d46aac245bcf1bbda7cf38919b11f92a97799",
+      "heading": "構成の原理 — 配置の秩序",
+      "position": 13,
+      "section_id": "DLID-8tm15pezz8c1"
+    },
+    {
+      "content_hash": "89c7647033cc6215aeb520d4f6db1c325d301b22ad325d9586a4c2c68cbe230a",
+      "heading": "第 1 層: 認知の制約（従う）",
+      "position": 3,
+      "section_id": "DLID-msbx3x3fjqea"
+    },
+    {
+      "content_hash": "8bb69c7afa297af12ba90b5469a42d0150f066e6bfed7a5570ba92c090eaf07a",
+      "heading": "Miller の法則 — 短期記憶の限界",
+      "position": 6,
+      "section_id": "DLID-zc9xvgz9n5ec"
+    },
+    {
+      "content_hash": "90aedfa66430117fb75d061a8bf3bac393ba04d3223459b60066394c1f606475",
+      "heading": "8pt グリッド — 空間の秩序",
+      "position": 12,
+      "section_id": "DLID-kecdnfkn2a76"
+    },
+    {
+      "content_hash": "936c5cb9899eb26322008092f5858a70b22e9aaace9960cd38cc8aa39bac197c",
+      "heading": "第 2 層: 構造の道具（組み合わせる）",
+      "position": 8,
+      "section_id": "DLID-wbacp69yb4r3"
+    },
+    {
+      "content_hash": "a20adb7882687eba01fb54678574dff25f3275b4d26fafd90d79675a31835125",
+      "heading": "60-30-10 カラールール — 色の比率",
+      "position": 11,
+      "section_id": "DLID-wpdt4sw7e3ew"
+    },
+    {
+      "content_hash": "a743683712f55422cf9cc97f08d2a5327ea553fc973b17f96db1d3cbd904a693",
+      "heading": "曲線の心理効果",
+      "position": 14,
+      "section_id": "DLID-pfmwphjseeq5"
+    },
+    {
+      "content_hash": "b06efd7da2969978bc2fda73a7ee690e46bb52f63441a07e60c7a1e2a73bd55e",
+      "heading": "第 2 層チェック（構造の品質）",
+      "position": 23,
+      "section_id": "DLID-3htm8bbrq2vt"
+    },
+    {
+      "content_hash": "bdee6929e33b0f29767438cea5fb5b417485d1a0bd283d3b039d630d0493cb52",
+      "heading": "Fitts の法則 — 到達時間の物理学",
+      "position": 4,
+      "section_id": "DLID-tjx3v6vhjkst"
+    },
+    {
+      "content_hash": "c546ce4f9335516417c93fd52e325b1af1956f49f9a6fcd2c2c2afe9b74c11dd",
+      "heading": "モジュラースケール — サイズの調和",
+      "position": 9,
+      "section_id": "DLID-0s8se0tnbhqh"
+    },
+    {
+      "content_hash": "d2ba16447cebbadfc134f917da1375b53e638c14bcbcfee03a74b856c46c9e15",
+      "heading": "デザイン哲学 — 美しいデザインの統合的原理",
+      "position": 0,
+      "section_id": "DLID-4dwk6w388v6g"
+    },
+    {
+      "content_hash": "d95f879e2e8854463ab8215674ce1b72ea346abc7fce30ae00551b125468d645",
+      "heading": "コントラスト比 — 視認性の閾値",
+      "position": 7,
+      "section_id": "DLID-67cg5qn63b26"
+    },
+    {
+      "content_hash": "dd8351734e407fe58e5652d6e5e9263f11a4172257135acad842442aa2a2e185",
+      "heading": "Don Norman — 感情の 3 層",
+      "position": 17,
+      "section_id": "DLID-xv4b0vdr1bh2"
+    },
+    {
+      "content_hash": "e0c1a4c8e88e4331653bd4aa958dcca3b135e617690a950d605c7bd3159e2420",
+      "heading": "第 3 層チェック（方向性の一貫性）",
+      "position": 24,
+      "section_id": "DLID-4ent9pg7pya2"
+    },
+    {
+      "content_hash": "e3e461b657100af67aab15e9b5e9c56df1215d7097a234395877fef2fac87b74",
+      "heading": "第 3 層: 美の方向性（選択する）",
+      "position": 15,
+      "section_id": "DLID-gwrjg2ymptn6"
+    },
+    {
+      "content_hash": "f3ca7cd8f25ff185a633b20ac6da6fb379999e374117885e5cf3c87923605e93",
+      "heading": "色彩調和 — 色の秩序",
+      "position": 10,
+      "section_id": "DLID-1pwxbv78nng2"
+    }
+  ],
   "summary": [
     "Rationale: beauty improves perceived usability",
     "Three-layer model applied from the bottom up",

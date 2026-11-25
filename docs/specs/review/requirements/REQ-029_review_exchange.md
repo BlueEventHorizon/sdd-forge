@@ -473,12 +473,12 @@ evaluator の結果の `evaluations` の要素である（DM-305）。
 
 利用者への提示で長くなる点は、表示のときに短く出せば足りる。保持する値の問題ではない。
 
-[spec-design-boundary-spec]: ../../../../plugins/forge/docs/spec_design_boundary_spec.md "4e2a4cd68a8a DLID-h9h90g9wcy8f"
+[spec-design-boundary-spec]: ../../../../plugins/forge/docs/spec_design_boundary_spec.md "e0d1a83f7e47 DLID-h9h90g9wcy8f"
 [review-skill]: ../../../../plugins/forge/skills/review/SKILL.md
 [reviewer]: ../../../../plugins/forge/agents/reviewer.md
 [evaluator]: ../../../../plugins/forge/agents/evaluator.md
-[spec-priorities-spec]: ../../../../plugins/forge/docs/spec_priorities_spec.md "f8233c87c564 DLID-f9ny9e932trv"
-[forge-agent-data-exchange-rules]: ../../../rules/forge_agent_data_exchange_rules.md "ad12d06f3966 DLID-7zh3q09p2acs"
+[spec-priorities-spec]: ../../../../plugins/forge/docs/spec_priorities_spec.md "b68b930cec1d DLID-f9ny9e932trv"
+[forge-agent-data-exchange-rules]: ../../../rules/forge_agent_data_exchange_rules.md "d359747d755f DLID-7zh3q09p2acs"
 [deterministic-generation-spec]: ../../../../plugins/forge/docs/deterministic_generation_spec.md "75383cc8c6d8 DLID-tm2m7nv23dqd"
-[error-classification-spec]: ../../../../plugins/forge/docs/error_classification_spec.md "04397ae80f5c DLID-5ykqs19cdbks"
-[review-priorities-spec]: ../../../../plugins/forge/docs/review_priorities_spec.md "2822ed686d56 DLID-dcec6pr177c9"
+[error-classification-spec]: ../../../../plugins/forge/docs/error_classification_spec.md "94496cc6d044 DLID-5ykqs19cdbks"
+[review-priorities-spec]: ../../../../plugins/forge/docs/review_priorities_spec.md "458b42b8deb4 DLID-dcec6pr177c9"

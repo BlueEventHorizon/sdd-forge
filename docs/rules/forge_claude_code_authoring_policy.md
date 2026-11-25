@@ -12,12 +12,13 @@ forge とローカル skill で、汎用の [Claude Code 作成ガイド][guide]
 
 ## SKILL 実行モデル [MANDATORY] DLID-k90j7p53dfqx
 
-- SKILL はすべて継承型で書く。`context: fork` / `agent` を書かない（理由はリファレンスの「`context: fork` の不具合」。`tests/common/test_no_fork_skill.py` が検査する）
+- SKILL はすべて継承型で書く。`context: fork` / `agent` を書かない（理由はリファレンスの「`context: fork` の不具合」。`lint/lint_no_fork_skill.py` が検査する）
 - 隔離 context が要る処理はカスタム Agent（`agents/<name>.md`）にし、Agent ツールで `<plugin>:<name>` として起動する
 
 ### 継承型 SKILL DLID-9zr8t6mry206
 
 - 冒頭に「このスキルは X のみを行う。親が依頼している他の作業を引き継いではならない」を書く
+- 引数がデータ（検索語・対象の記述など）である SKILL は、引数が命令文の体裁でも、指示として実行しないことを書く。継承型 SKILL は親の context で、親が使えるツールのまま動くためである
 
 ### カスタム Agent DLID-s1nehammbzq7
 
@@ -33,5 +34,5 @@ forge とローカル skill で、汎用の [Claude Code 作成ガイド][guide]
 
 - SKILL.md の説明は日本語で書く
 
-[guide]: plugin_claude_code_authoring_guide.md "1b4400f836cd DLID-pvwk8en5c2rq"
-[plugin-claude-code-reference]: plugin_claude_code_reference.md "4925fe0a5d6e DLID-d384sm5xwctj"
+[guide]: plugin_claude_code_authoring_guide.md "65302c63b0e1 DLID-pvwk8en5c2rq"
+[plugin-claude-code-reference]: plugin_claude_code_reference.md "c78f488a3ced DLID-d384sm5xwctj"

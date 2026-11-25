@@ -1,4 +1,5 @@
 {
+  "applied_hash": "a90619ea16a555c6b077c3ba6a672ccd3b8e51f99872319d93aa23691d393aa9",
   "content_hash": "a90619ea16a555c6b077c3ba6a672ccd3b8e51f99872319d93aa23691d393aa9",
   "doc_link_id": "DLID-6m16v4qqxjf4",
   "keywords": [
@@ -13,8 +14,75 @@
     "configuration",
     "doc_backend"
   ],
+  "last_check": {
+    "checked_at": "2026-11-25T02:44:01+00:00",
+    "result": "success"
+  },
   "path": "docs/specs/forge/design/DES-061_forge_settings_file_design.md",
   "purpose": "Defines the container conventions (location, structure, reading, error handling) of the optional project settings file .claude/.forge.yaml for tuning forge behavior, not the individual setting values.",
+  "references": [],
+  "sections": [
+    {
+      "content_hash": "3b340a482b10a43772eaf9071539befcc5785c87f37cc9aa714fe5c210495986",
+      "heading": "DES-061 forge プロジェクト設定ファイル設計",
+      "position": 0,
+      "section_id": "DLID-1bdjs2zn211w"
+    },
+    {
+      "content_hash": "3e7113594483739a2dd5a6fcb5fd02bd69b57a235c5ac68ec0d70c2a6b15b19f",
+      "heading": "2.5 ファイルの作成経路",
+      "position": 8,
+      "section_id": "DLID-2fe4v24ryffr"
+    },
+    {
+      "content_hash": "51d8cb8ed520c2995b87aec9397804b74f9d067f337f31a66f43da8f7da5e0b7",
+      "heading": "既存設定ファイルとの関係",
+      "position": 2,
+      "section_id": "DLID-pswz4tkfnhxw"
+    },
+    {
+      "content_hash": "61182a6ff9e46978fae945544e66c9c52bc8b4c2d9d2a41f149096b669122a36",
+      "heading": "2.4 エラーの扱い",
+      "position": 7,
+      "section_id": "DLID-720ywm155e0z"
+    },
+    {
+      "content_hash": "824da374986ab0ce5443c1506c5bfb2d924bee781b9013ee38bfcd9a63dabd66",
+      "heading": "3. テスト設計",
+      "position": 9,
+      "section_id": "DLID-6xapy0n0hg2c"
+    },
+    {
+      "content_hash": "84881444ec4caedf079d73202bfcf1c7feaaf1688d119b534a616c4b9fef769c",
+      "heading": "2.3 読み取り境界",
+      "position": 6,
+      "section_id": "DLID-cp3v4ykjemxv"
+    },
+    {
+      "content_hash": "891a9a7913dca398ea1776322dcc1a5d64b82e8fa1a69032a4fd1cf9f3275afa",
+      "heading": "1. 概要",
+      "position": 1,
+      "section_id": "DLID-51xrkdgwbn4m"
+    },
+    {
+      "content_hash": "acc59316c8cb32aed97b7709cdf82e0b97c3f69a56f1918f4e6c2a57314346b3",
+      "heading": "2.2 スキーマの所有と衝突の回避",
+      "position": 5,
+      "section_id": "DLID-f40nzy2sq944"
+    },
+    {
+      "content_hash": "c47f072f0e6c6a2190bc221612ceb43cb4ca38c21cb7245e44549b71e4e70f79",
+      "heading": "2.1 ファイルの規約",
+      "position": 4,
+      "section_id": "DLID-ygxj6xfs0h2k"
+    },
+    {
+      "content_hash": "e6c7f46fffe88606909329526b3c035f3a3c22bd8878b747c4808294a58749c0",
+      "heading": "2. 設計方針",
+      "position": 3,
+      "section_id": "DLID-4ejt5h6mzeqc"
+    }
+  ],
   "summary": [
     "Overview of .claude/.forge.yaml and its relation to .doc_structure.yaml and .version-config.yaml",
     "File conventions: optional file, git-managed under .claude/, top-level sections per feature area",

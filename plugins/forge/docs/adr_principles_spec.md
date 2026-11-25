@@ -149,8 +149,8 @@ ADR は追記型ではない。**節の中身は更新してよい**。書き損
 | ID だけを書いた参照、変更対象ファイルの具体パスの列挙                      | 🟢 minor       | 参照先へ到達できない。後のファイル移動・分割で陳腐化する                 |
 | 他の決定の節を前提にしないと理解できない書き方をしている                   | 🟢 minor       | 1 つの節だけを引いた読み手が、決定を理解できない                         |
 
-[adr-format]: adr_format.md "0dc06fb958c8 DLID-ns59za8fens1"
-[adr-usage-spec]: adr_usage_spec.md "253f59c3f26d DLID-m77gjek2tw2b"
-[design-principles-spec]: design_principles_spec.md "169ae99c4eed DLID-061pwjejh6yc"
-[spec-design-boundary-spec]: spec_design_boundary_spec.md "4e2a4cd68a8a DLID-h9h90g9wcy8f"
-[document-style-guide]: document_style_guide.md "69dee42932c2 DLID-c59znr7b8f56"
+[adr-format]: adr_format.md "3a31a2d6bfe3 DLID-ns59za8fens1"
+[adr-usage-spec]: adr_usage_spec.md "b87fce46708e DLID-m77gjek2tw2b"
+[design-principles-spec]: design_principles_spec.md "e590554be385 DLID-061pwjejh6yc"
+[spec-design-boundary-spec]: spec_design_boundary_spec.md "e0d1a83f7e47 DLID-h9h90g9wcy8f"
+[document-style-guide]: document_style_guide.md "335c3c0eb320 DLID-c59znr7b8f56"

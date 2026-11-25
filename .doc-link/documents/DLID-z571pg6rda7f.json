@@ -1,34 +1,111 @@
 {
-  "content_hash": "dae8698216c58f8cce9be9887374de1a57f72da23d5b32e0261cc1bbcb3264f9",
+  "applied_hash": "1252d41a14b35e4ca51250cf8cc1eb373a34bd514246341ee1638381aede3caa",
+  "content_hash": "1252d41a14b35e4ca51250cf8cc1eb373a34bd514246341ee1638381aede3caa",
   "doc_link_id": "DLID-z571pg6rda7f",
   "keywords": [
     "glossary",
-    "terminology",
-    "glossary format",
-    "GLS",
     "term definition",
+    "glossary ID",
+    "GLS",
     "disallowed paraphrase",
-    "prerequisite terms",
-    "file naming",
-    "doc ID numbering"
+    "prerequisite term",
+    "naming convention",
+    "doc_type"
   ],
+  "last_check": {
+    "checked_at": "2026-11-25T03:43:00+00:00",
+    "result": "success"
+  },
   "path": "plugins/forge/docs/glossary_format.md",
-  "purpose": "Defines the default structure, ID scheme and naming of glossary files, including the glossary line at the top of requirement and design documents.",
+  "purpose": "Defines the structure, ID assignment, naming, and table format of glossary files used by requirements and design documents.",
+  "references": [
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/doc_structure_format.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 1,
+      "recorded_content_hash": "776f3c99a799",
+      "recorded_path": "doc_structure_format.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-cbr02jpbxfcs",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/document_style_guide.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 0,
+      "recorded_content_hash": "335c3c0eb320",
+      "recorded_path": "document_style_guide.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-c59znr7b8f56",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/requirement_format.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 2,
+      "recorded_content_hash": "c05edc5d1de7",
+      "recorded_path": "requirement_format.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-c13gr4qbk4vm",
+      "target_section_id": null
+    }
+  ],
+  "sections": [
+    {
+      "content_hash": "4f4327d25868044e663510f4cc3bfaf0a904e4f57508f9ffaa6ac972f7dbe084",
+      "heading": "文書冒頭の用語集の行",
+      "position": 2,
+      "section_id": "DLID-e67dws213kme"
+    },
+    {
+      "content_hash": "50c3f384c7725883082973f66e1f2b8b2726d0150e6db1f75caed97782adea75",
+      "heading": "用語集 デフォルトフォーマット",
+      "position": 0,
+      "section_id": "DLID-42d51easw9qm"
+    },
+    {
+      "content_hash": "cbae6d456d644ebf7300b8974606b2dfb2cd2358272d3c1675b7a11f21757074",
+      "heading": "配置と ID",
+      "position": 1,
+      "section_id": "DLID-wc2vmnt3a0w3"
+    },
+    {
+      "content_hash": "dd41a0257e3dca98eb7c289b94a809338408ffd996792db4ba1058cdb4e3c230",
+      "heading": "本体フォーマット",
+      "position": 3,
+      "section_id": "DLID-1dx3mwg7gq3g"
+    }
+  ],
   "summary": [
-    "Glossary doc_type, ID numbering via the next-spec-id skill, and file naming convention",
-    "Requirement-side glossaries use the requirement ID scheme, falling back to the GLS prefix",
-    "Design-side glossaries use the design ID scheme (default DES)",
-    "Glossary line placed right after the title of documents that use a glossary",
-    "Design documents list their own glossary IDs followed by those from the input requirements",
-    "Body table format with four columns: term, definition, prerequisite terms, disallowed paraphrases",
-    "Rules for what to write in each column and the none placeholder"
+    "Glossary doc_type, ID numbering via next-spec-id, and file naming rule",
+    "Requirement-side and design-side glossary ID systems (GLS prefix fallback)",
+    "One-line glossary reference placed right after the title of a document",
+    "Order of glossary IDs in design documents (design first, then input requirements)",
+    "Glossary body template: heading and four-column table",
+    "Column rules: term, definition, prerequisite terms, disallowed paraphrases",
+    "Disallowed paraphrases treated as term misuse when found in body text"
   ],
   "tasks": [
-    "Creating a glossary",
-    "Writing a requirements document that uses a glossary",
-    "Writing a design document that uses a glossary",
-    "Numbering a new glossary ID",
-    "Reviewing glossary structure and naming"
+    "Creating a glossary file",
+    "Numbering a glossary ID",
+    "Writing requirement documents that use a glossary",
+    "Writing design documents that use a glossary",
+    "Reviewing glossary format compliance"
   ],
   "title": "用語集 デフォルトフォーマット"
 }

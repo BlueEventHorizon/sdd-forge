@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file.
 
+## [forge 0.1.4] - 2026-11-26
+
+### forge
+
+- **feat**: 文章の意味を判定モデルに問う AI-Linter（`ai_lint/`）を加え、検索系 SKILL の文言検査を置き換えた (#14)
+- **fix**: 継承型 SKILL の引数の扱いを要件に足し、検索系 SKILL の出力の記述の重複と矛盾を直した。引数の扱いの記述は、汎用の作成ガイドから forge の作成方針へ移した (#14)
+- **fix**: `update-db-specs` が、文書の無い置き場を問題として報告しないようにした。あわせて仕様文書の記述の不具合 3 件を直した
+- **fix**: forge 内蔵の検索索引を生成する script が、doc-link 0.1.6 以降の索引の形式（`documents` が文書 ID の文字列）を読めない不具合を直し、テストを追加した
+- **refactor**: 文面だけを見る静的な検査を `tests/` から `lint/` へ移し、CI の別ゲートにした (#8)
+- **docs**: forge 内蔵ドキュメント検索の要件定義書（REQ-035）・設計書（DES-090）・ADR-091 を加えた。doc-link の索引の名前の呼び名を、doc-link の用語「ToC 識別キー」に揃えた (#14)
+- **chore**: doc-link の最新の形式に合わせて索引を再構築し、参照の記録を移行した。`dprint.jsonc` の整形対象外を見直した (#14)
+
+## [marketplace 0.1.4] - 2026-11-26
+
+### marketplace
+
+- **chore**: forge 0.1.4 のリリースに伴い marketplace バージョンをバンプ
+
 ## [forge 0.1.3] - 2026-11-20
 
 ### forge

@@ -1,5 +1,6 @@
 {
-  "content_hash": "19cf661699b088a13675ad64b26809971e63efff0a2ae6ea0d82ca018d4fe4ff",
+  "applied_hash": "867507803b4ad33a2c99cdb8b07550bd5bf4bb63a6f03fb3afa878a5f47bb9a7",
+  "content_hash": "867507803b4ad33a2c99cdb8b07550bd5bf4bb63a6f03fb3afa878a5f47bb9a7",
   "doc_link_id": "DLID-jtc4qnjwbdxf",
   "keywords": [
     "frontmatter",
@@ -13,25 +14,114 @@
     "merge",
     "key collision"
   ],
+  "last_check": {
+    "checked_at": "2026-11-25T03:43:00+00:00",
+    "result": "success"
+  },
   "path": "plugins/forge/docs/frontmatter_format.md",
-  "purpose": "Single source of truth for frontmatter keys attached to requirements and design documents in additive feature development: feature_type, feature_note, and doc_status, with notation and removal conditions.",
+  "purpose": "Single source of truth for frontmatter keys attached to requirement and design documents in additive feature development: feature_type, feature_note, and doc_status.",
+  "references": [
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/additive_development_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 0,
+      "recorded_content_hash": "3be39e634c1c",
+      "recorded_path": "additive_development_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-cyrk9xr8vcap",
+      "target_section_id": null
+    }
+  ],
+  "sections": [
+    {
+      "content_hash": "0a35bbcae78b3bf07fdad970c2231f6e82006b8f05dd3fd0abc4f05a10a013c1",
+      "heading": "追加 feature frontmatter 定義",
+      "position": 0,
+      "section_id": "DLID-mtbb2d3xdgax"
+    },
+    {
+      "content_hash": "1b694a810b3999e4e63da138e90c0aed14cae1a5b63978ac48bd4a18f7700add",
+      "heading": "2. doc_status（文書のライフサイクル状態マーカー）",
+      "position": 5,
+      "section_id": "DLID-t8x7fvx8m2b7"
+    },
+    {
+      "content_hash": "42b8926f1b3445be339a7b424e82626e142fb7dbd4dad21b1fc96b243c678fb9",
+      "heading": "2.4 解除条件",
+      "position": 9,
+      "section_id": "DLID-s3yffrn5eq6p"
+    },
+    {
+      "content_hash": "51402d71ea29d93742c1936c6375d2d2804e556285083c5151d9813365140c66",
+      "heading": "1.2 設計書（Markdown）",
+      "position": 3,
+      "section_id": "DLID-xs2z21epncd1"
+    },
+    {
+      "content_hash": "54eb22b1614929390dbafff2b6afe1c903afdebc4fa1fae9fb7f7e2d1a74662e",
+      "heading": "1. feature_type（差分 feature の一時マーカー）",
+      "position": 1,
+      "section_id": "DLID-64qm6d9a3mg5"
+    },
+    {
+      "content_hash": "594d3cdb147971279b3022c3f5a54ebaecb778d815a1b0f67c59d33164694bca",
+      "heading": "2.2 付与対象",
+      "position": 7,
+      "section_id": "DLID-gw3nypssq7t1"
+    },
+    {
+      "content_hash": "aaae920fa6acb956a5da1c5a8d9189baf285f31cebfe5b27f67e25bba8fbd7aa",
+      "heading": "2.1 値域",
+      "position": 6,
+      "section_id": "DLID-qj8xpwt6jyhb"
+    },
+    {
+      "content_hash": "b697fb074dbf74b2d61a16aaea665c92e73650503b57dbfbc5653bf7a0e7096f",
+      "heading": "1.1 要件定義書（Markdown）",
+      "position": 2,
+      "section_id": "DLID-k0zm5s43evq4"
+    },
+    {
+      "content_hash": "dcf11553e0947d14a528c1a64b5f092fb36ccb9e80ef2f0dae8a51621c60d5a7",
+      "heading": "2.3 記法",
+      "position": 8,
+      "section_id": "DLID-syzf2fybw615"
+    },
+    {
+      "content_hash": "e2c9c582cc615875ca174be30caca392220d254f883f5bba67b34d87a72d9aa0",
+      "heading": "3. 他のツールのキーとの衝突回避",
+      "position": 10,
+      "section_id": "DLID-bj3cgenw0m2f"
+    },
+    {
+      "content_hash": "e2fc1d86e4880319c37011286a7fa7bc8d3fa5e0245fbb7e7296f4ff60308879",
+      "heading": "1.3 計画書（frontmatter を付与しない）",
+      "position": 4,
+      "section_id": "DLID-zbs6pkr4ph7r"
+    }
+  ],
   "summary": [
-    "feature_type temporary-feature marker for additive features",
-    "Frontmatter templates for requirements documents and design documents",
-    "Plans carry no frontmatter; additive status is traced via referenced documents",
-    "doc_status key for lifecycle state with draft and not_implemented values",
-    "Omitted doc_status means complete and implemented",
-    "doc_status applies to requirements and design documents, not plans",
-    "Notation allowing coexistence with feature_type, key order irrelevant",
-    "Removal conditions for draft and not_implemented",
-    "Key naming avoids collisions with other tools frontmatter keys"
+    "Scope: key definitions only; criteria and merge procedure live elsewhere",
+    "feature_type temporary-feature marker and its judgment principle",
+    "feature_note templates for requirement documents",
+    "feature_note templates for design documents",
+    "Plans carry no frontmatter; their feature status is traced via requirement or design documents",
+    "doc_status key as an independent lifecycle marker",
+    "doc_status value domain: draft and not_implemented, omission meaning complete",
+    "doc_status targets, notation and removal conditions",
+    "Key naming to avoid collisions with other tools frontmatter keys"
   ],
   "tasks": [
-    "Creating additive feature requirements documents",
-    "Creating additive feature design documents",
-    "Marking a document as draft or not implemented",
-    "Removing doc_status after review or implementation",
-    "Judging whether a plan belongs to an additive feature"
+    "Creating or updating additive feature requirement documents",
+    "Creating or updating additive feature design documents",
+    "Setting or removing doc_status on documents",
+    "Judging whether a plan belongs to an additive feature",
+    "Reviewing document frontmatter"
   ],
   "title": "追加 feature frontmatter 定義"
 }

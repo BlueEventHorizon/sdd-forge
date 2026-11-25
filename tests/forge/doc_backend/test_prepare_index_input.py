@@ -12,7 +12,6 @@ import 委譲で使う。本リポジトリの設定・実 dprint には依存�
   python3 -m unittest tests.forge.doc_backend.test_prepare_index_input -v
 """
 
-import ast
 import importlib.util
 import json
 import os
@@ -411,37 +410,14 @@ class CliContractTest(_TempProject):
         self.assertIn("message", payload)
 
 
-# --- 二重実装の防止 --------------------------------------------------------------
+# --- resolver への委譲 ----------------------------------------------------------
 
 
-class NoYamlReimplementationTest(unittest.TestCase):
-    """`.doc_structure.yaml` の解釈を自前で持っていないこと（resolver へ委譲）。"""
+class ResolverDelegationTest(unittest.TestCase):
+    """`.doc_structure.yaml` の解釈を resolver へ委譲していること。
 
-    def test_no_yaml_parsing_is_reimplemented(self):
-        tree = ast.parse(_SCRIPT_PATH.read_text(encoding="utf-8"))
-        imported = set()
-        for node in ast.walk(tree):
-            if isinstance(node, ast.Import):
-                imported.update(alias.name.split(".")[0] for alias in node.names)
-            elif isinstance(node, ast.ImportFrom) and node.module:
-                imported.add(node.module.split(".")[0])
-        for forbidden in ("glob", "fnmatch", "yaml", "os"):
-            self.assertNotIn(
-                forbidden, imported, f"resolver の責務を再実装している: {forbidden}"
-            )
-
-        defined = {
-            node.name for node in ast.walk(tree) if isinstance(node, ast.FunctionDef)
-        }
-        for forbidden in (
-            "parse_config",
-            "expand_globs",
-            "collect_md_files",
-            "is_excluded",
-        ):
-            self.assertNotIn(
-                forbidden, defined, f"resolver の責務を再実装している: {forbidden}"
-            )
+    解釈を自前で持っていないことは、lint（`lint/lint_script_source.py`）が検査する。
+    """
 
     def test_resolver_script_path_points_at_doc_structure_resolver(self):
         self.assertTrue(prepare_index_input.RESOLVER_SCRIPT.is_file())

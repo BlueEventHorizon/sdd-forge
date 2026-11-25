@@ -1,4 +1,5 @@
 {
+  "applied_hash": "f97f5e879df904c9b65b2c2cbe61ae9fb1eda284cb175ac5427c3b12d9a5a7e3",
   "content_hash": "f97f5e879df904c9b65b2c2cbe61ae9fb1eda284cb175ac5427c3b12d9a5a7e3",
   "doc_link_id": "DLID-25mzdyrk3jdx",
   "keywords": [
@@ -13,8 +14,183 @@
     "gestures",
     "platform guide"
   ],
+  "last_check": {
+    "checked_at": "2026-11-25T03:43:00+00:00",
+    "result": "success"
+  },
   "path": "plugins/forge/skills/start-uxui-design/docs/ios_platform_guide.md",
   "purpose": "iOS-specific UX/UI design guide that consolidates Apple HIG guidance for iOS: touch input, navigation, layout, standard components, UX patterns and an evaluation checklist.",
+  "references": [],
+  "sections": [
+    {
+      "content_hash": "140464c0b66109c7d322d125c9114fa9597224ab32e41edf927a016b2c95f45d",
+      "heading": "スワイプアクション",
+      "position": 20,
+      "section_id": "DLID-ee0gy8vtrza1"
+    },
+    {
+      "content_hash": "24efc6aee28873ea9a2e21f04ae0e6b7337575f68ef2ff0583093c50a7f8d85a",
+      "heading": "Tab Bar（タブバー）",
+      "position": 6,
+      "section_id": "DLID-74mzt526xgfk"
+    },
+    {
+      "content_hash": "2da91643ebc320f8b3823170c85d263f7f60dc1f8646f83a56f4d104e4f7506d",
+      "heading": "画面サイズ対応",
+      "position": 12,
+      "section_id": "DLID-trnabes2eed6"
+    },
+    {
+      "content_hash": "2edb041e2670ce974bb1b941b25165b83c6daca4fdcbdaa18193bdfdae1e76b4",
+      "heading": "3. レイアウト",
+      "position": 10,
+      "section_id": "DLID-nmv5x3vk4kcm"
+    },
+    {
+      "content_hash": "3328f9a4805240c3c9f714a73cb91cce9af41880870c33de9a2010aba86b9b91",
+      "heading": "4. iOS 標準コンポーネント",
+      "position": 14,
+      "section_id": "DLID-szs1k570csq2"
+    },
+    {
+      "content_hash": "4777791192de0c534677131f7c7545b13632541319f44c2659e82c66f6f31176",
+      "heading": "6. iOS 評価チェックリスト",
+      "position": 23,
+      "section_id": "DLID-6p5tg0sp9wz0"
+    },
+    {
+      "content_hash": "541fa5ecbea8efe8888e1a385a3a2b80f3bf8a214808cfa58b7d8cda0ed1ba6c",
+      "heading": "スペーシング標準",
+      "position": 13,
+      "section_id": "DLID-aym8p2a40bns"
+    },
+    {
+      "content_hash": "5f1575d57baf38a462aadf63d6512be6ee658e531ff2df85291d587a80249cc9",
+      "heading": "Navigation Bar（ナビゲーションバー）",
+      "position": 7,
+      "section_id": "DLID-60ny5wy41npr"
+    },
+    {
+      "content_hash": "5f4cec3e54a4d7122b03759bc90356fa5f0fa55ad4bdc3d40446af2cadde3cb9",
+      "heading": "ジェスチャー",
+      "position": 3,
+      "section_id": "DLID-ks8nnf14bq5y"
+    },
+    {
+      "content_hash": "607771897a658c94875b19b028c77b6620738f1ad60e12a34a6eae16b651fe0c",
+      "heading": "レイアウト",
+      "position": 26,
+      "section_id": "DLID-rpkcdfvrcgd6"
+    },
+    {
+      "content_hash": "793ce044161ba2ece8f744d04310b0dac093b54098663dc1331e83e3422d4b94",
+      "heading": "Haptic Feedback（触覚フィードバック）",
+      "position": 22,
+      "section_id": "DLID-kn99pm5sty9w"
+    },
+    {
+      "content_hash": "7a2e5f7113afbad8923d5bc1670fb7fd1b49146c91a3ca08f4f6eb9e4698ac8b",
+      "heading": "1. 入力モデル: タッチ操作",
+      "position": 1,
+      "section_id": "DLID-9801692cswz5"
+    },
+    {
+      "content_hash": "7d85a2b012085c928d207ac80a6d1d0b527cf7487d66e431b100cb29894b883a",
+      "heading": "プルトゥリフレッシュ",
+      "position": 19,
+      "section_id": "DLID-q9b0hhzzt1sc"
+    },
+    {
+      "content_hash": "822b8792b9c8e0de5e57a9f3a5ec85e504433cf448b598bfb07cd119e2d448e5",
+      "heading": "画面遷移",
+      "position": 9,
+      "section_id": "DLID-5gvyqjam513y"
+    },
+    {
+      "content_hash": "8ac013d10aa53ebe343909f0195fbaab747b0b68f16d53e831bc1972325ba3b4",
+      "heading": "コントロール",
+      "position": 15,
+      "section_id": "DLID-4q5tfv8gd3ar"
+    },
+    {
+      "content_hash": "8bb66de2ef0c97057dfb3e4b2ff77d8383518fb7654f6cbd1b67d28a25330764",
+      "heading": "コンテンツ表示",
+      "position": 16,
+      "section_id": "DLID-hp4sbvaqegq9"
+    },
+    {
+      "content_hash": "a3854831894ccf67d2c0b37f07d0a2a7a19004bef917ff79adb771ed80899b04",
+      "heading": "Modal（モーダル）",
+      "position": 8,
+      "section_id": "DLID-38d6c95yt3ev"
+    },
+    {
+      "content_hash": "baa847e7f99658d2f201632cc780ea14fc89a238bc59273f5215ed2b0eb59ff3",
+      "heading": "iOS プラットフォームガイド",
+      "position": 0,
+      "section_id": "DLID-5wz395jdsw4y"
+    },
+    {
+      "content_hash": "bbd1b32f36d9f72fcfacdf29c774d53dc42aac0ca04cf0ed1b5d39177514e992",
+      "heading": "ナビゲーション",
+      "position": 17,
+      "section_id": "DLID-n70cgk2g8062"
+    },
+    {
+      "content_hash": "c0e48f2d3b60386661632569319ea6e44c7bff0854b15096968079c62a09e450",
+      "heading": "タッチ操作",
+      "position": 24,
+      "section_id": "DLID-501zw90kjctx"
+    },
+    {
+      "content_hash": "ccbec4fd8fe274abc00e923b14e80c1d0fb6f3875e3533f3395650b2c57a4be8",
+      "heading": "5. iOS 固有の UX パターン",
+      "position": 18,
+      "section_id": "DLID-04t1xj2s6z0t"
+    },
+    {
+      "content_hash": "d27c2a31d68661f4c8fa7e868531962fb3b5043a65b3ae12a0ed9a87cc0413a9",
+      "heading": "タッチターゲット",
+      "position": 2,
+      "section_id": "DLID-nb3t31twejtp"
+    },
+    {
+      "content_hash": "d7ae84fc60776e9f5a342031afcd13c31dd0b957970e64535dac4a4c28d00f46",
+      "heading": "Reachability（片手操作考慮）",
+      "position": 4,
+      "section_id": "DLID-t1q9fbvqnvzt"
+    },
+    {
+      "content_hash": "dcdbff43adcced470efab76df76ffd847039134c62ee0f04e8a161b00ae5109a",
+      "heading": "ナビゲーション",
+      "position": 25,
+      "section_id": "DLID-1f67enwwxhz1"
+    },
+    {
+      "content_hash": "e4c580cdb9eb41fd1842d3c6fb516764ff6d192d319ecfee917e71e14ea32f94",
+      "heading": "アクセシビリティ",
+      "position": 27,
+      "section_id": "DLID-6f5qvr3ww9qt"
+    },
+    {
+      "content_hash": "f517d4ba76b6c5e535fab45694354414f129d5139b073f20a6f461fa7d2e1239",
+      "heading": "Context Menu（コンテキストメニュー）",
+      "position": 21,
+      "section_id": "DLID-mf2fgxy3a2cs"
+    },
+    {
+      "content_hash": "f7dfa83c321632948024679c8536055f72d1db135508e6bc018d36d14ce3c46f",
+      "heading": "Safe Area",
+      "position": 11,
+      "section_id": "DLID-ysbdywk66w22"
+    },
+    {
+      "content_hash": "fb3910af33e9d8065765cc5260cbec50f6f8fde8b2aebac0e88737c0125f11fb",
+      "heading": "2. ナビゲーションパターン",
+      "position": 5,
+      "section_id": "DLID-91s8zjymwcbr"
+    }
+  ],
   "summary": [
     "Touch input model: target sizes, gestures, reachability",
     "Navigation patterns: tab bar, navigation bar, modal, transitions",

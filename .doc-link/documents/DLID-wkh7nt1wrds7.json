@@ -1,4 +1,5 @@
 {
+  "applied_hash": "0e4a099e332f8b2be143f85317143d2763d4bbe38e57f4a93497badd20c5ea42",
   "content_hash": "0e4a099e332f8b2be143f85317143d2763d4bbe38e57f4a93497badd20c5ea42",
   "doc_link_id": "DLID-wkh7nt1wrds7",
   "keywords": [
@@ -10,8 +11,57 @@
     "issue filing",
     "distributed template"
   ],
+  "last_check": {
+    "checked_at": "2026-11-25T03:43:00+00:00",
+    "result": "success"
+  },
   "path": "plugins/forge/docs/forge_anti_patterns.md",
   "purpose": "Skeleton of the base anti-pattern collection that the review skill uses as a fallback for rule-conformance checks when project rules are missing or insufficient.",
+  "references": [],
+  "sections": [
+    {
+      "content_hash": "0379935de716decbecaec6eb5e1955a2c61e5ef4b6dc55f8cf90e7f143c3636b",
+      "heading": "forge アンチパターン集",
+      "position": 0,
+      "section_id": "DLID-jwz7ktrdvkky"
+    },
+    {
+      "content_hash": "19724671686341de2192ee67afd1426a3270d7ec914e1faf60ea86af2b4c213f",
+      "heading": "文書",
+      "position": 6,
+      "section_id": "DLID-j44d6pmdggfc"
+    },
+    {
+      "content_hash": "5444b3d507de1a8e7f8937e1477e82bbf0cf9102905c88f68bf4b78a9b2969e3",
+      "heading": "計画",
+      "position": 5,
+      "section_id": "DLID-2cbmm0mxa2zx"
+    },
+    {
+      "content_hash": "56b4b212c12b54cf03a9b81b957474b595c3af53458e561aadb3331dd8615be1",
+      "heading": "カテゴリ別アンチパターン",
+      "position": 2,
+      "section_id": "DLID-bb7dc2rq8vfh"
+    },
+    {
+      "content_hash": "c7b5dc103be457f9ec54b59891263acdd95fb8444c32653cb46ba2d4c8b6245b",
+      "heading": "設計",
+      "position": 4,
+      "section_id": "DLID-fkk7fe0tema0"
+    },
+    {
+      "content_hash": "e23f66294702a282544156b5602d0fe9787ab4bead67848919dc297414ce2542",
+      "heading": "コード",
+      "position": 3,
+      "section_id": "DLID-mwzgw5p5w4jf"
+    },
+    {
+      "content_hash": "e5546184e92a19c7c06776c90fff3c5ece6555577fdc823d382fd7b845824578",
+      "heading": "AI 自動追記禁止方針 [MANDATORY]",
+      "position": 1,
+      "section_id": "DLID-8z7kgpp3ygb7"
+    }
+  ],
   "summary": [
     "Distributed template used as the P1 rule-conformance fallback during review",
     "Referenced when project-specific rules are not set up or insufficient, to check against industry-standard anti-patterns",

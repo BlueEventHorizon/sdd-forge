@@ -104,6 +104,6 @@ script が組み立てる以上、形が壊れるのはバグである。実行�
 - エラー値の集合
 - 受け渡し以外の振る舞い（採番・終端条件等）
 
-[forge-doc-access-principle]: forge_doc_access_principle.md "0dffb8776564 DLID-1t0vpykg6nq6"
+[forge-doc-access-principle]: forge_doc_access_principle.md "2f044acb76b2 DLID-1t0vpykg6nq6"
 [deterministic-generation-spec]: ../../plugins/forge/docs/deterministic_generation_spec.md "75383cc8c6d8 DLID-tm2m7nv23dqd"
-[error-classification-spec]: ../../plugins/forge/docs/error_classification_spec.md "04397ae80f5c DLID-5ykqs19cdbks"
+[error-classification-spec]: ../../plugins/forge/docs/error_classification_spec.md "94496cc6d044 DLID-5ykqs19cdbks"

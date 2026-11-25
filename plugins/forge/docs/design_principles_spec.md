@@ -275,12 +275,12 @@ Mermaid 構文リファレンス:
 | ------------------------------------------------------------------------ | -------------- | --------------------------------------------------------------------------------------- |
 | 追加 feature 設計書に `feature_type: temporary-feature` frontmatter 欠如 | 🟡 major       | 当該範囲の現在の設計であることと merge 予定が宣言されず、生成経路を問わず取りこぼされる |
 
-[document-style-guide]: document_style_guide.md "69dee42932c2 DLID-c59znr7b8f56"
+[document-style-guide]: document_style_guide.md "335c3c0eb320 DLID-c59znr7b8f56"
 [design-method]: design_method.md "157820b1afb7 DLID-pdvdjb49qpr4"
-[spec-design-boundary-spec]: spec_design_boundary_spec.md "4e2a4cd68a8a DLID-h9h90g9wcy8f"
-[additive-development-spec]: additive_development_spec.md "307dc53425f0 DLID-cyrk9xr8vcap"
-[spec-priorities-spec]: spec_priorities_spec.md "f8233c87c564 DLID-f9ny9e932trv"
-[adr-format]: adr_format.md "0dc06fb958c8 DLID-ns59za8fens1"
-[adr-principles-spec]: adr_principles_spec.md "3ae4e3bfdd65 DLID-45wzpggz1set"
-[error-classification-spec]: error_classification_spec.md "04397ae80f5c DLID-5ykqs19cdbks"
-[frontmatter-format]: frontmatter_format.md "19cf661699b0 DLID-jtc4qnjwbdxf"
+[spec-design-boundary-spec]: spec_design_boundary_spec.md "e0d1a83f7e47 DLID-h9h90g9wcy8f"
+[additive-development-spec]: additive_development_spec.md "3be39e634c1c DLID-cyrk9xr8vcap"
+[spec-priorities-spec]: spec_priorities_spec.md "b68b930cec1d DLID-f9ny9e932trv"
+[adr-format]: adr_format.md "3a31a2d6bfe3 DLID-ns59za8fens1"
+[adr-principles-spec]: adr_principles_spec.md "1fb15e199859 DLID-45wzpggz1set"
+[error-classification-spec]: error_classification_spec.md "94496cc6d044 DLID-5ykqs19cdbks"
+[frontmatter-format]: frontmatter_format.md "867507803b4a DLID-jtc4qnjwbdxf"

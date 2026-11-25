@@ -1,39 +1,119 @@
 {
-  "content_hash": "323aaf2b05f6afc5973d411abe79296306802fd57ac785132270f42fc59916a8",
+  "applied_hash": "3b1c5409fe801516b47da3e3448426dcdef62304626f00fd36fced2f3c9c7c16",
+  "content_hash": "3b1c5409fe801516b47da3e3448426dcdef62304626f00fd36fced2f3c9c7c16",
   "doc_link_id": "DLID-bgxgcq0pvkm7",
   "keywords": [
     "SKILL.md",
     "script separation",
+    "clean state",
     "wrapper",
     "fixed values",
-    "clean state",
-    "call contract",
-    "misuse defense",
-    "cognitive load",
-    "SKILL-local entry point",
-    "input responsibility"
+    "orchestrator",
+    "deterministic processing",
+    "misuse prevention",
+    "input responsibility",
+    "cognitive load"
   ],
+  "last_check": {
+    "checked_at": "2026-11-25T02:44:01+00:00",
+    "result": "success"
+  },
   "path": "docs/specs/forge/requirements/REQ-003_skill_script_separation.md",
-  "purpose": "Requirements separating responsibilities between SKILL.md (judgment, flow, dialogue) and scripts (deterministic processing), with SKILL-local wrapper entry points and misuse defense placement.",
+  "purpose": "Requirements separating SKILL.md (orchestration, judgment, user dialogue) from scripts (deterministic processing), defining clean-state rules, input responsibility, and SKILL-local wrapper boundaries.",
+  "references": [],
+  "sections": [
+    {
+      "content_hash": "18b9480721bc6b5fe1e2be1184ac7346f24083fac675d92c09b68c8567429e93",
+      "heading": "5. 非目標",
+      "position": 11,
+      "section_id": "DLID-vzfgxvx38nv7"
+    },
+    {
+      "content_hash": "25492fe06746b7479b1594c86859272994756c4c812a937aadd7592951060e56",
+      "heading": "FNC-005: 実測ベース",
+      "position": 8,
+      "section_id": "DLID-2zs8fswzav7s"
+    },
+    {
+      "content_hash": "366cbfe001b8eb1078aaa81caa3bc38b08747baad3b67711aaa04ff92e43f897",
+      "heading": "4. 適用対象",
+      "position": 10,
+      "section_id": "DLID-9pk5mmh7rk86"
+    },
+    {
+      "content_hash": "580ace06f359d4a3e2d4ab84a757798d59e359e41f23444e6993c2984d51e91b",
+      "heading": "FNC-006: SKILL ローカル操作境界",
+      "position": 9,
+      "section_id": "DLID-hs0258njy1sb"
+    },
+    {
+      "content_hash": "6c0c9f2d446904b1113b0b2af901cb3af806bcbffcbe172ca58fbc88bc7129bf",
+      "heading": "FNC-003: 1 場面 1 確定済み呼び出し契約",
+      "position": 6,
+      "section_id": "DLID-1x48xq4bt7ma"
+    },
+    {
+      "content_hash": "6ee812264934713655c10f68b00d6fae2802c1c22d1f0593f1f678460c20d099",
+      "heading": "FNC-004: 誤用防御の配置",
+      "position": 7,
+      "section_id": "DLID-vwe1vj63kay7"
+    },
+    {
+      "content_hash": "706351f9d180ded496642fc5a11e96a7d466d76e0dd60a52b76dcda80b2c3d7c",
+      "heading": "REQ-003 SKILL.md と script の責務分離要件",
+      "position": 0,
+      "section_id": "DLID-mvwzdyz7bgm4"
+    },
+    {
+      "content_hash": "cbfb0769b37984883e770dd232014aedf6b160c831ee7830205568ef611793bb",
+      "heading": "3. 要件",
+      "position": 3,
+      "section_id": "DLID-ftkvy8wmdmwp"
+    },
+    {
+      "content_hash": "ccdea6e2c724beba9b587362f4b74ad44c2964f113da31a0251241df9172a8e0",
+      "heading": "2. 目的",
+      "position": 2,
+      "section_id": "DLID-zg9xg2j6mkxr"
+    },
+    {
+      "content_hash": "d07543e35756b53c7695958d28a29412b0fa0a7208ad35e5666f0b7ba6315312",
+      "heading": "FNC-002: 入力の責務分類",
+      "position": 5,
+      "section_id": "DLID-n8d8fqs0gzgd"
+    },
+    {
+      "content_hash": "dd657a059fcafcf4bf28388636f70d7e893bab927c1f53b7d63f9dbdb95e083a",
+      "heading": "1. 背景",
+      "position": 1,
+      "section_id": "DLID-yxkddvrzkf4t"
+    },
+    {
+      "content_hash": "f4c68832853b959ed46903162fb022567f29a94cf0e972b49e8fb771f25b64a5",
+      "heading": "FNC-001: SKILL.md の clean state",
+      "position": 4,
+      "section_id": "DLID-dw219hekkvt3"
+    }
+  ],
   "summary": [
-    "Background: script details in SKILL.md burden AI context; unresolved semantic choices are what should be reduced",
-    "Purpose: SKILL.md keeps interpretation and branching; scripts handle fixed values and mechanical derivation",
-    "FNC-001: what SKILL.md may and may not contain (clean state)",
-    "FNC-002: classification of script inputs by origin and responsibility",
-    "FNC-003: one scene, one fully determined invocation contract",
-    "FNC-004: placement order of misuse defenses, with no prohibition warnings in SKILL.md",
-    "FNC-005: evidence-based refactoring judged by review and grep, no quantitative targets",
-    "FNC-006: SKILL-local wrappers binding fixed values over shared low-level scripts, allowing duplication",
-    "Scope covering all forge SKILL.md files and scripts, and non-goals such as minimizing wrapper count"
+    "Background: SKILL.md as resident context; cognitive load from script-specific details",
+    "Goal: SKILL.md keeps interpretation, progress, branching; scripts handle fixed values and deterministic work",
+    "FNC-001: what SKILL.md may and may not contain",
+    "FNC-002: classification of script inputs by value origin",
+    "FNC-003: one scene, one fixed invocation contract",
+    "FNC-004: placement order for misuse prevention, no prohibition warnings in SKILL.md",
+    "FNC-005: measurement-based refactoring judged by review and grep",
+    "FNC-006: SKILL-local wrapper boundaries over shared low-level scripts",
+    "Scope covers all forge SKILL.md files and scripts",
+    "Non-goals: minimizing wrappers, unified entry point, quantitative targets"
   ],
   "tasks": [
     "Writing or editing a SKILL.md",
-    "Designing script interfaces and arguments",
-    "Creating SKILL-local wrapper scripts",
+    "Designing a script or wrapper for a SKILL",
     "Refactoring noisy SKILL.md content",
-    "Deciding where to place misuse prevention",
-    "Invoking external skills via the Skill tool with fixed values",
-    "Reviewing SKILL.md and script structure"
+    "Reviewing SKILL.md and script responsibility split",
+    "Deciding where misuse guards belong",
+    "Invoking inherited skills via the Skill tool"
   ],
   "title": "REQ-003 SKILL.md と script の責務分離要件"
 }

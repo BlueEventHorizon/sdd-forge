@@ -1,37 +1,209 @@
 {
-  "content_hash": "b6a1775c93644383dea1ed09837f1f5aee175cc2e0599581a6e612abee15191c",
+  "applied_hash": "2f1bdcf996ea83075c637fc0c1f8d94aa7907852ac641ac980ac6b9670bcd424",
+  "content_hash": "2f1bdcf996ea83075c637fc0c1f8d94aa7907852ac641ac980ac6b9670bcd424",
   "doc_link_id": "DLID-42wh7646hjhq",
   "keywords": [
     "plan format",
-    "plan JSON",
-    "task schema",
+    "plan.json",
+    "tasks",
     "traceability",
     "feature_marker",
     "temporary-feature",
     "frontmatter parsing",
-    "task status",
-    "priority"
+    "priority",
+    "status",
+    "start-implement"
   ],
+  "last_check": {
+    "checked_at": "2026-11-25T02:44:01+00:00",
+    "result": "success"
+  },
   "path": "docs/specs/forge/design/DES-074_plan_format_design.md",
-  "purpose": "Defines the default JSON plan format, field definitions and status values, and the feature_marker.py contract for judging parallel (temporary-feature) state of documents.",
+  "purpose": "Defines the default JSON format of implementation plans and the feature_marker.py contract for judging parallel (temporary-feature) state, used when no project-specific plan_format.md exists.",
+  "references": [
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/specs/forge/requirements/REQ-024_implementation_plan_spec.md",
+        "result": "match",
+        "scope": "docs/specs/forge/requirements"
+      },
+      "kind": "document",
+      "position": 2,
+      "recorded_content_hash": "f1c15e9bfe0d",
+      "recorded_path": "../requirements/REQ-024_implementation_plan_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-zehb6ge71vgb",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/specs/forge/requirements/REQ-025_additive_development_spec.md",
+        "result": "match",
+        "scope": "docs/specs/forge/requirements"
+      },
+      "kind": "document",
+      "position": 5,
+      "recorded_content_hash": "a78dcb08e87b",
+      "recorded_path": "../requirements/REQ-025_additive_development_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-8aaxgj88j28q",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/specs/start-implement/design/DES-088_start_implement_design.md",
+        "result": "match",
+        "scope": "docs/specs/start-implement/design"
+      },
+      "kind": "document",
+      "position": 1,
+      "recorded_content_hash": "59241ebe17cb",
+      "recorded_path": "../../start-implement/design/DES-088_start_implement_design.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-f8gem0wa3ac4",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "plugins/forge/docs/additive_development_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 4,
+      "recorded_content_hash": "3be39e634c1c",
+      "recorded_path": "../../../../plugins/forge/docs/additive_development_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-cyrk9xr8vcap",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "plugins/forge/docs/frontmatter_format.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 3,
+      "recorded_content_hash": "867507803b4a",
+      "recorded_path": "../../../../plugins/forge/docs/frontmatter_format.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-jtc4qnjwbdxf",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "plugins/forge/docs/plan_principles_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 0,
+      "recorded_content_hash": "33e1e8046cdc",
+      "recorded_path": "../../../../plugins/forge/docs/plan_principles_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-t8jcg5jkb5mj",
+      "target_section_id": null
+    }
+  ],
+  "sections": [
+    {
+      "content_hash": "2ad85d3f9c15bdd5a0f95d579515ce4d3501940b2c2c19a8a54bcae4f0aa5eb8",
+      "heading": "design_traceability",
+      "position": 6,
+      "section_id": "DLID-zfmpsg19gvba"
+    },
+    {
+      "content_hash": "4c1406dac126bfa71d5d8b5fc781a78cb8d5fe60040da0136975f06251c4d4a6",
+      "heading": "`feature_marker.py` の並行状態判定の契約",
+      "position": 10,
+      "section_id": "DLID-59s7z6h118sr"
+    },
+    {
+      "content_hash": "6a547b3a6b75be3f540a0b3da5e17ac1063870a6f733ca8e710419d276113fc7",
+      "heading": "JSON スキーマ",
+      "position": 3,
+      "section_id": "DLID-wpnav2v7qbqd"
+    },
+    {
+      "content_hash": "71c2c018b9f0b7e7c5e6d646d0fa24670c67d56fd30a6b56e4b5b2e3c141f623",
+      "heading": "計画書 デフォルトフォーマット",
+      "position": 0,
+      "section_id": "DLID-89nwcbbnh6wz"
+    },
+    {
+      "content_hash": "aaa46d226dcd5b0c3dc4e881dca1aa6a0bdbc21401e3256707756517c0d57dbe",
+      "heading": "追加 feature の計画書（frontmatter を付与しない）",
+      "position": 2,
+      "section_id": "DLID-bj51jfdsfh51"
+    },
+    {
+      "content_hash": "b133f43bb3a3db77ec014c9fa4eace17a02d6944b4db73b00f0ee441a38bb55a",
+      "heading": "frontmatter の解析",
+      "position": 11,
+      "section_id": "DLID-5yq8gcm2pq9m"
+    },
+    {
+      "content_hash": "bedc596b216cea4852fc031dbe8aec0d395f5d3dba51afb2bca27fa399f39abb",
+      "heading": "requirements_traceability",
+      "position": 5,
+      "section_id": "DLID-c0a320cz03de"
+    },
+    {
+      "content_hash": "c269c4721b5f6502bff8daf534b095cf9e78423bc471b6540ccdd71e91d98270",
+      "heading": "フィールド定義",
+      "position": 4,
+      "section_id": "DLID-azv7wrdbxj39"
+    },
+    {
+      "content_hash": "c779a4d821c470fd6806b1866fada256d087253980d0ba9a802ed607587277ca",
+      "heading": "優先度の目安",
+      "position": 9,
+      "section_id": "DLID-h1xnfsnj4tvj"
+    },
+    {
+      "content_hash": "d9ba9a7f4ebc83919fc5c7502079deaf46a81e73f8a635c8019e417d5f36af87",
+      "heading": "フォーマット選定理由",
+      "position": 1,
+      "section_id": "DLID-24jey4ez4zdd"
+    },
+    {
+      "content_hash": "dbdbf879258d3b1d75e13b942450d5f4ef76d6d2b15744514819fd6de9adefc9",
+      "heading": "tasks",
+      "position": 7,
+      "section_id": "DLID-90ptpxe2910n"
+    },
+    {
+      "content_hash": "f6bcdf5e91283af0dba791725c2248be3202a8c9ca075a5222a55f7fc8713c83",
+      "heading": "status の遷移",
+      "position": 8,
+      "section_id": "DLID-42csqzcr792e"
+    }
+  ],
   "summary": [
-    "Rationale for choosing JSON for plans so start-implement can parse and update them mechanically",
-    "Plans carry no frontmatter; additive feature status is derived from the linked requirements document",
-    "JSON schema with requirements_traceability, design_traceability and tasks top-level keys",
-    "Field definitions for each section, including task status, build_check and required_reading",
-    "Status values and pointers to the documents that define transitions",
-    "Priority ranges guideline",
-    "feature_marker.py frontmatter parsing using only the standard library",
-    "Three-way judgment: in parallel state, not in parallel state, parse failure",
-    "Parse failure cases and the rule that key order must not change the result",
-    "Callers must stop and report path and reason when judgment is impossible"
+    "Rationale for choosing JSON as the plan format",
+    "Plans carry no frontmatter; additive-feature status is traced via requirements",
+    "Allowed top-level keys: requirements_traceability, design_traceability, tasks",
+    "JSON schema example for plan file {feature}_plan.json",
+    "Field definitions for traceability sections and tasks",
+    "Task status values and pointers to transition rules",
+    "Priority guideline ranges",
+    "feature_marker.py frontmatter parsing contract with three judgments",
+    "Parse failure cases distinguished from not-in-parallel state"
   ],
   "tasks": [
-    "Creating or validating an implementation plan JSON",
-    "Modifying start-implement plan consumption",
+    "Generating an implementation plan",
+    "Validating or parsing plan JSON",
+    "Implementing start-implement plan consumption",
     "Modifying feature_marker.py",
-    "Judging whether a document is a temporary-feature",
-    "Reviewing plan documents against the format"
+    "Reviewing plan documents",
+    "Judging additive development state of documents"
   ],
   "title": "計画書 デフォルトフォーマット"
 }

@@ -420,9 +420,13 @@ script は `plugins/forge/scripts/review/` に置く。基本の script が処�
 - `resolve_doc_structure.py`（改修分）: 宣言するパターンに合うパスへ種別を返し、`exclude: [plan]` の設定でも計画書に `plan` を返すこと。ディスクに無いパス（削除されたファイル）にも種別を返すこと。`--feature-of` が成功するパスでは、同じ種別を返すこと。feature を求められないキー（`**` が複数・一部だけの glob）でも、種別は宣言から決まること。
 - `resolve_review_backend.py`（改修分）: 候補ごとに `retains_context` を返し、値を持たない名前で失敗すること。
 
-**契約テスト対象**
+**契約テスト対象**（定義に書かれた呼び方を、実際の script で実行して確かめる）
 
-- `reviewer.md` が持つ script の呼び方が、§6.6 のラッパーと `resolve_doc_structure.py` の実際の引数と一致すること。`reviewer.md` に、reviewer 以外の主体のラッパー（`evaluator_*`・`body_*`）が現れないこと。
+- `reviewer.md` が持つ script の呼び方が、§6.6 のラッパーと `resolve_doc_structure.py` の実際の引数と一致すること。
+
+**lint 対象**（定義の文面を見る。script は実行しない）
+
+- `reviewer.md` に、reviewer 以外の主体のラッパー（`evaluator_*`・`body_*`）が現れないこと。
 - `criteria/review_target_types.md` が、REQ-027 FNC-308 の全 target 種別と、種別ごとに上乗せする観点文書、全 target 種別に共通の文書を持つこと。
 - `reviewer.md` が、`criteria/review_target_types.md` を読む指示を持つこと。
 
@@ -432,10 +436,10 @@ script は `plugins/forge/scripts/review/` に置く。基本の script が処�
 - reviewer が `target_unreadable` で終えたとき、`resolve_review_path.py` が失敗し、`errors` にエラー値が入ること。
 - reviewer が書き出さずに終えたとき、`resolve_review_path.py` が失敗すること。
 
-[req-029]: ../requirements/REQ-029_review_exchange.md "4e7fe6918eec DLID-5vrs9fnet7de"
-[req-027]: ../requirements/REQ-027_reviewer.md "d1f79607a42d DLID-y42g1frxwkf5"
-[des-083]: DES-083_evaluator_perspective_design.md "04c49729cad3 DLID-mzeyx39mfryw"
+[req-029]: ../requirements/REQ-029_review_exchange.md "d635cdb8307b DLID-5vrs9fnet7de"
+[req-027]: ../requirements/REQ-027_reviewer.md "36bb4e693dd2 DLID-y42g1frxwkf5"
+[des-083]: DES-083_evaluator_perspective_design.md "7f23e0705a84 DLID-mzeyx39mfryw"
 [forge-document-type-roles]: ../../../rules/forge_document_type_roles.md "7b634212b043 DLID-mmxpd4dms815"
-[forge-doc-access-principle]: ../../../rules/forge_doc_access_principle.md "cb6aae1960a3 DLID-1t0vpykg6nq6"
+[forge-doc-access-principle]: ../../../rules/forge_doc_access_principle.md "2f044acb76b2 DLID-1t0vpykg6nq6"
 [plugin-script-error-output-rules]: ../../../rules/plugin_script_error_output_rules.md "f1c5b6752ce7 DLID-fz66nns8q521"
 [plugin-implementation-guidelines]: ../../../rules/plugin_implementation_guidelines.md "231d1a822305 DLID-jzs5n6cre1jh"

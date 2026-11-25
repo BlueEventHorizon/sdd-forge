@@ -88,5 +88,5 @@ reviewer の起動と所見の受け渡しは、レビュー本体が直接行�
 
 なし。
 
-[req-013]: ../../forge/requirements/REQ-013_review_policy.md "66dc0707bf12 DLID-yg0c67zs3zky"
-[req-029]: ../../review/requirements/REQ-029_review_exchange.md "4e7fe6918eec DLID-5vrs9fnet7de"
+[req-013]: ../../forge/requirements/REQ-013_review_policy.md "8447df198f9e DLID-yg0c67zs3zky"
+[req-029]: ../../review/requirements/REQ-029_review_exchange.md "d635cdb8307b DLID-5vrs9fnet7de"

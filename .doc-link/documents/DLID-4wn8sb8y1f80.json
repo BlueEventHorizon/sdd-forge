@@ -1,39 +1,164 @@
 {
-  "content_hash": "3810426fdc1ba38be6c96d7d61bbcba3e23f49876cc3cdbdbe1959b7f90f6c4d",
+  "applied_hash": "1fe6b5d5aa31d206017882f91f88c0199edeb83eb421b911f86e1bd367c72985",
+  "content_hash": "1fe6b5d5aa31d206017882f91f88c0199edeb83eb421b911f86e1bd367c72985",
   "doc_link_id": "DLID-4wn8sb8y1f80",
   "keywords": [
     "error handling",
     "silent fallback",
     "except Exception",
-    "exception propagation",
-    "external-cause error",
+    "exception catching",
     "internal bug",
+    "external-cause error",
     "pure function",
     "error reporting",
-    "bug hiding",
-    "exception policy"
+    "propagate exceptions",
+    "Python scripts"
   ],
+  "last_check": {
+    "checked_at": "2026-11-25T02:44:01+00:00",
+    "result": "success"
+  },
   "path": "docs/specs/common/requirements/COMMON-REQ-002_error_handling_policy.md",
-  "purpose": "Defines the error handling policy that prevents hiding bugs by forbidding silent fallbacks and allowing only external-cause errors to be caught, for early problem detection and easier debugging.",
+  "purpose": "Defines the error handling policy that forbids silent fallbacks hiding internal bugs and permits catching only external-cause errors with specific exception types.",
+  "references": [
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/rules/plugin_script_error_output_rules.md",
+        "result": "match",
+        "scope": "docs/rules"
+      },
+      "kind": "document",
+      "position": 0,
+      "recorded_content_hash": "f1c5b6752ce7",
+      "recorded_path": "../../../rules/plugin_script_error_output_rules.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-fz66nns8q521",
+      "target_section_id": null
+    }
+  ],
+  "sections": [
+    {
+      "content_hash": "0a2ef7e5b596cadd06448a73e3a8a85b58c022abd2ba6fd0cf4f259c48b354e1",
+      "heading": "FR-03: エラー報告",
+      "position": 8,
+      "section_id": "DLID-bx8nv5ret6re"
+    },
+    {
+      "content_hash": "26e1d2aba0943a43205878b2f3f525e524ee23cdc9d2166189a4a45f15ad834c",
+      "heading": "判断フローチャート",
+      "position": 15,
+      "section_id": "DLID-q4nxq5k0w3va"
+    },
+    {
+      "content_hash": "299425f869ab6cb2fc17931c908c1ae48cc25d66c85415bc680a063221cf42d8",
+      "heading": "❌ 禁止パターン: サイレントフォールバック",
+      "position": 12,
+      "section_id": "DLID-k03h2xhx145z"
+    },
+    {
+      "content_hash": "2e512a448df2a5eb01bc53bcf5e87055b837da29f8ea10151057a99530123b11",
+      "heading": "❌ 禁止パターン: 純粋関数のロールバック",
+      "position": 14,
+      "section_id": "DLID-cz46ayq7h2k0"
+    },
+    {
+      "content_hash": "3637330a3a8941172950d7813dec46af717298fd346103f98ca5059b24a11128",
+      "heading": "COMMON-REQ-002: エラーハンドリングポリシー要件定義書",
+      "position": 0,
+      "section_id": "DLID-z46jypeanhsk"
+    },
+    {
+      "content_hash": "41583e13be4a934acb87eb14d11ec6d9cb6edc21918a6e296445428991368d0d",
+      "heading": "概要",
+      "position": 1,
+      "section_id": "DLID-p43yb503sb0z"
+    },
+    {
+      "content_hash": "648275fd496944d2ad00a3eec373fed7cb70b4d77348ede3634d3a640960a4d9",
+      "heading": "FR-02: 許容される例外キャッチ",
+      "position": 7,
+      "section_id": "DLID-25n54tq8nqbe"
+    },
+    {
+      "content_hash": "7245c2cbfa8eaeed27fcef020c280180afea5bae6376b168410455d95ad3fa76",
+      "heading": "✅ 正しいパターン: 外部要因のみキャッチ",
+      "position": 11,
+      "section_id": "DLID-j350zky1pqh5"
+    },
+    {
+      "content_hash": "792404c92a844dbacdec8c6f0533e55948a4130db99bc20bc5a99ade080b6261",
+      "heading": "用語定義",
+      "position": 4,
+      "section_id": "DLID-daxvqr7qcjz2"
+    },
+    {
+      "content_hash": "c006af1d77550427c2510695be51b6060a28252963d30c8644acbe247ae52871",
+      "heading": "FR-01: 例外キャッチの原則",
+      "position": 6,
+      "section_id": "DLID-b45vs0dhdp44"
+    },
+    {
+      "content_hash": "c60bb8f57791277e52dd5975b6030388d0bb694b50bfa26fea0e3246bcca6ac2",
+      "heading": "背景",
+      "position": 3,
+      "section_id": "DLID-b2w8fb18430d"
+    },
+    {
+      "content_hash": "d4f2b8914b7a26fc8850226e9742c0c7999d777b5bd4579503a9bac889b95b61",
+      "heading": "適用済み箇所",
+      "position": 16,
+      "section_id": "DLID-3f0bxhhh0zd4"
+    },
+    {
+      "content_hash": "e52effaba177d6889a1e1aee5a170d8160c37e3fed73136e1a11bc8efc0e48df",
+      "heading": "機能要件",
+      "position": 5,
+      "section_id": "DLID-0qzwj920vfnn"
+    },
+    {
+      "content_hash": "e6de9ed358dc6ce2d6e1c6ffd1179d31ac29eece9ba23ae85fbdc8df69c87160",
+      "heading": "✅ 正しいパターン: 純粋関数は例外を伝播",
+      "position": 13,
+      "section_id": "DLID-08qv3xq8yg6p"
+    },
+    {
+      "content_hash": "e90aaabf3b10adc0e98456be5036fa158c6e6c895d4601f6e394b73460ac2c59",
+      "heading": "適用範囲",
+      "position": 2,
+      "section_id": "DLID-95qwc6539cen"
+    },
+    {
+      "content_hash": "ea0b85f31733b6dfb99fc481148e998ab9ea26e80bd18112b0150338794324d1",
+      "heading": "FR-04: 純粋関数の例外",
+      "position": 9,
+      "section_id": "DLID-5kkfwz0ah2kq"
+    },
+    {
+      "content_hash": "f258697956a04b7607d14b43ec51cbe4f4a9b6c5b443d10ee4bfcce0498f136e",
+      "heading": "設計パターン",
+      "position": 10,
+      "section_id": "DLID-taw7wrnzek1y"
+    }
+  ],
   "summary": [
-    "Overview: prohibit silent fallback and catch only external-cause errors",
-    "Scope: all Python scripts and SKILL.md in the project, with background commits",
-    "Glossary: external-cause error, internal bug, silent fallback",
-    "FR-01 exception catching principle: no broad except, specific types only, propagate bugs",
-    "FR-02 allowed catches: file I/O, network, type conversion, HTTP server handlers",
-    "FR-03 error reporting: deliver error info to caller in format set by script error output rules",
-    "FR-04 pure functions: exceptions are bugs, no rollback, guarantee via tests",
-    "Correct and forbidden code patterns with examples",
-    "Decision flowchart for handling an exception",
-    "Table of applied locations by version"
+    "Overview and scope: applies to all Python scripts and SKILL.md files",
+    "Terminology: external-cause error, internal bug, silent fallback",
+    "FR-01: catch only external-cause errors; ban bare except and except Exception; propagate internal bugs",
+    "FR-02: allowed catches for file I/O, network errors, type conversion, and HTTP server request handling",
+    "FR-03: caught errors must be reported to the caller; format defined by the script error output rules",
+    "FR-04: pure functions must not use try/except rollback; guarantee behavior with tests",
+    "Design patterns with correct and forbidden Python code examples",
+    "Decision flowchart for handling a raised exception",
+    "Table of versions and places where the policy was already applied"
   ],
   "tasks": [
-    "Writing Python scripts with try/except",
-    "Reviewing code for silent fallback or broad except",
-    "Designing script error reporting",
-    "Writing pure functions such as migrations",
-    "Writing SKILL.md error handling instructions",
-    "Fixing bugs hidden by exception handling"
+    "Writing or modifying Python scripts that handle exceptions",
+    "Reviewing code for silent fallback or broad except clauses",
+    "Writing SKILL.md instructions involving error handling",
+    "Designing error reporting in plugin scripts",
+    "Implementing pure functions such as migrations",
+    "Writing tests for error handling behavior"
   ],
   "title": "COMMON-REQ-002: エラーハンドリングポリシー要件定義書"
 }

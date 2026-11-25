@@ -1,41 +1,238 @@
 {
-  "content_hash": "dc0c7761adf36084fcf0a199342dbb5e4f15a300a21695a4f4fba17a1f15846b",
+  "applied_hash": "458b42b8deb4b784a99ac4f1569c913b01f75480e6e290d9dd8fc71d18a1f405",
+  "content_hash": "458b42b8deb4b784a99ac4f1569c913b01f75480e6e290d9dd8fc71d18a1f405",
   "doc_link_id": "DLID-dcec6pr177c9",
   "keywords": [
-    "review priority",
+    "review priorities",
     "P1 P2 P3",
     "severity",
-    "severity catalog",
     "review_criteria",
     "create_issue",
     "gray zone",
-    "SSOT reference",
-    "ADR rejection reason",
-    "forge review"
+    "severity catalog",
+    "SSOT"
   ],
+  "last_check": {
+    "checked_at": "2026-11-25T03:43:00+00:00",
+    "result": "success"
+  },
   "path": "plugins/forge/docs/review_priorities_spec.md",
-  "purpose": "Defines the review priority system (P1/P2/P3), the relation between priority and severity, where severity and gray-zone judgments live, and the fixed structure of review criteria files.",
+  "purpose": "Defines the review priority system (P1/P2/P3), the priority-severity relationship, severity catalogs, exclusions, create_issue conditions, and the fixed three-section structure of review criteria files.",
+  "references": [
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/adr_usage_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 2,
+      "recorded_content_hash": "b87fce46708e",
+      "recorded_path": "adr_usage_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-m77gjek2tw2b",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/document_style_guide.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 0,
+      "recorded_content_hash": "335c3c0eb320",
+      "recorded_path": "document_style_guide.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-c59znr7b8f56",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/scope_proportionality_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 1,
+      "recorded_content_hash": "be634f5152a6",
+      "recorded_path": "scope_proportionality_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-s1dhhaprgf1r",
+      "target_section_id": null
+    }
+  ],
+  "sections": [
+    {
+      "content_hash": "002164053373c9bfac9f064fc994b3ce3aaca63087f33db25fb4e617c5527b0f",
+      "heading": "1.3 P3 — 不要な複雑化",
+      "position": 4,
+      "section_id": "DLID-qr4s774n83st"
+    },
+    {
+      "content_hash": "125bc35266c779a707be7ea309fd6d5b94cbf59b258b84f68ec5ce7653b8f8a1",
+      "heading": "3.7 委譲先 principles への全委譲",
+      "position": 17,
+      "section_id": "DLID-n9adsab2nngv"
+    },
+    {
+      "content_hash": "1384b619c0165ea90b00e6ab37dfad787c3ecd0f52f39a925cd59d811f10e91e",
+      "heading": "5. 各 `review_criteria_*.md` の構造",
+      "position": 20,
+      "section_id": "DLID-9dfa8447ntjx"
+    },
+    {
+      "content_hash": "2bca8a7e85214894c9b583c51cffc156f86bde2a9f621b5d7e32a8c44973da30",
+      "heading": "3.3 固有 perspective の追加禁止",
+      "position": 13,
+      "section_id": "DLID-x55k5ab6ns31"
+    },
+    {
+      "content_hash": "35b30ad656ad832d33ae334b7f8788755fbdb77af9c23edcdf5f61ddbc011cf0",
+      "heading": "3.1 P2 の対象外",
+      "position": 11,
+      "section_id": "DLID-jk648d68gm0v"
+    },
+    {
+      "content_hash": "440aa5cc2b72cc0a99a78d9be5f9d49ec5aad16f8d377391670f83c942665016",
+      "heading": "3.8 失効した棄却理由に基づく所見の除外 [MANDATORY]",
+      "position": 18,
+      "section_id": "DLID-pcef7rqe6c03"
+    },
+    {
+      "content_hash": "46ff4152a3451a82a089120c2c1e73ce419065b014bd7e598c932fbe84dbafbb",
+      "heading": "3.6 criteria はグレーゾーン判定を持たない",
+      "position": 16,
+      "section_id": "DLID-z25d1bsqf8qd"
+    },
+    {
+      "content_hash": "4b6ee7e28586451c9c7c394af13d41a126e857fb3eae4a1762bdba59d4639fc8",
+      "heading": "5.3 複数 SoT 間の優先順位",
+      "position": 23,
+      "section_id": "DLID-g8682pfvd8mq"
+    },
+    {
+      "content_hash": "54a11f46a8f479c6e512415f523eec40ae1e6bd537ecea8c9756cd9c3b057d16",
+      "heading": "3. 除外規定",
+      "position": 10,
+      "section_id": "DLID-3gaw83h5yamm"
+    },
+    {
+      "content_hash": "590173baedb0cd63ae0204451d2c16fc1f7ee99e9bac81bf1a90a82e5924b59a",
+      "heading": "4. `recommendation: create_issue` の判定 3 条件",
+      "position": 19,
+      "section_id": "DLID-87csh9eqpyq5"
+    },
+    {
+      "content_hash": "679d9b4920a465b76b641004bfd04de73b16a41d11a22d669bd4267e7ab854b2",
+      "heading": "5.2 雛形",
+      "position": 22,
+      "section_id": "DLID-74v53724gygb"
+    },
+    {
+      "content_hash": "78d26cfac21569d63156bcf5568fb87ccc160e977e4a2db42916ec4a653c95e2",
+      "heading": "2.1 独立軸であることの帰結",
+      "position": 6,
+      "section_id": "DLID-gtvyehhndc09"
+    },
+    {
+      "content_hash": "7f1d1ba25431181d6ec28eec71610ccb421d3b4256db027d7a99e5a2536d054a",
+      "heading": "1.2 P2 — 矛盾・齟齬",
+      "position": 3,
+      "section_id": "DLID-rj1rrdrbnbce"
+    },
+    {
+      "content_hash": "83a8174bf8b0a277d7c0433a5e4793b704c6528819bc54b102b98c8850597be5",
+      "heading": "3.4 fix 判定の比例性確認",
+      "position": 14,
+      "section_id": "DLID-yk41pjxfgcd5"
+    },
+    {
+      "content_hash": "8e029698edaaeffe2eef2256f966b3d84cdf9a70d48a36cb8f479bf2e7a98d0c",
+      "heading": "5.4 廃止セクション",
+      "position": 24,
+      "section_id": "DLID-91qfqn0je7dj"
+    },
+    {
+      "content_hash": "9eeed5eaa80e959943c8db9c2c3e7f2a244811316f29939e88bf83690b7f0dda",
+      "heading": "1.1 P1 — ルール合致",
+      "position": 2,
+      "section_id": "DLID-9j8q184jn9r3"
+    },
+    {
+      "content_hash": "9f9dbd89b54aa0e145bd2256f5158084b826d745cc7c3f88e90b98f413e75f33",
+      "heading": "1. 優先度の定義",
+      "position": 1,
+      "section_id": "DLID-wempzfyz1xpn"
+    },
+    {
+      "content_hash": "a243b1277878aca5de4f7f62c13116be92afbbee4b3b7130f3e60f37201222f9",
+      "heading": "2. priority と severity の関係",
+      "position": 5,
+      "section_id": "DLID-wnmqm1t1ewam"
+    },
+    {
+      "content_hash": "af2f00250eacc228ecaea956517276f75c871ae3910fcb13e40b855868bec268",
+      "heading": "5.1 固定 3 セクション",
+      "position": 21,
+      "section_id": "DLID-s1h8q4608gs8"
+    },
+    {
+      "content_hash": "c0cef25d2bdc3b10672af94b4d322f08a56a2c75c0c0c9704ff377273084b5cb",
+      "heading": "2.4 重大度カタログ（用語）",
+      "position": 9,
+      "section_id": "DLID-bqrt4frqaxj4"
+    },
+    {
+      "content_hash": "cd30087507edca7df0556aaee0ba40600372b4068af705b3b464c914fb5cd4d6",
+      "heading": "2.2 severity の SoT は委譲先 principles [MANDATORY]",
+      "position": 7,
+      "section_id": "DLID-f90s4ys839cy"
+    },
+    {
+      "content_hash": "d79211b7d712e87b7a0d32c0fcb0e1ca17f7e4ef51b284e9040336a786f4b0b9",
+      "heading": "レビュー優先度仕様",
+      "position": 0,
+      "section_id": "DLID-93gfsh8hwgxw"
+    },
+    {
+      "content_hash": "e5e4d545069636b9e2c90566f8eaf384659218edd2716fc1e59d3a2764782a69",
+      "heading": "3.2 P3 の対象外",
+      "position": 12,
+      "section_id": "DLID-62ay4x1bapwe"
+    },
+    {
+      "content_hash": "ea2ec7d16a6af21762a976c6c18ee173d6acc8a317182872dadd90b386cdbc5d",
+      "heading": "2.3 重大度カタログ（文書参照）",
+      "position": 8,
+      "section_id": "DLID-dg3kght5a0w7"
+    },
+    {
+      "content_hash": "fa38a59b96d0c7909e146cbdee1ea1b0639e3a5bd1af10ba1ea7f3b8e7c27eb2",
+      "heading": "3.5 criteria は severity を宣言しない",
+      "position": 15,
+      "section_id": "DLID-99g21wcqe1et"
+    }
+  ],
   "summary": [
-    "Definitions of review priorities P1 rule conformance, P2 contradiction, P3 unnecessary complexity",
-    "Priority and severity as independent axes, with severity SoT delegated to principles",
-    "Severity catalog for document reference violations",
-    "Severity catalog for terminology (glossary) violations",
-    "Exclusion rules: P2/P3 scope limits, no custom perspectives, no severity or gray-zone judgment in criteria",
-    "Proportionality check before fix decisions",
-    "Handling of findings based on invalidated ADR rejection reasons",
+    "P1 rule conformance, P2 contradiction, P3 unnecessary complexity definitions",
+    "Priority and severity are independent axes; severity source of truth is delegated principles",
+    "Severity catalogs for document references and terminology violations",
+    "Exclusions: no omission detection in P2, no subjective P3, no extra perspectives",
+    "Proportionality check for fix decisions and handling of expired ADR rejection reasons",
     "Three conditions for recommendation create_issue",
-    "Fixed three-section structure and template of review_criteria files",
-    "Priority order among multiple SoTs and deprecated sections"
+    "Fixed three-section structure and template for review_criteria files",
+    "Criteria hold no severity or gray-zone judgments; priority among multiple SoTs"
   ],
   "tasks": [
-    "Writing or revising review_criteria files",
-    "Running document or code review",
-    "Evaluating findings and deciding fix, create_issue, skip, or needs_review",
+    "Authoring review_criteria files",
+    "Running or evaluating a review",
     "Assigning severity to findings",
-    "Reviewing document reference notation",
-    "Reviewing glossary term usage",
-    "Deciding whether to open an issue for a missing rule",
-    "Dropping findings based on an ADR"
+    "Deciding fix, create_issue, skip, or needs_review",
+    "Reviewing document references and terminology"
   ],
   "title": "レビュー優先度仕様"
 }

@@ -1,40 +1,433 @@
 {
-  "content_hash": "a70040e559ab6ba3e7be1e328e568095039bd94db5e937f3c26bd1a04094614e",
+  "applied_hash": "b765007682aa366b66241fda4f21fa84c88913ae8420b604c6d3d97764b01f76",
+  "content_hash": "b765007682aa366b66241fda4f21fa84c88913ae8420b604c6d3d97764b01f76",
   "doc_link_id": "DLID-5k6jt9qvf60d",
   "keywords": [
+    "backend selection",
     "doc-db",
     "doc-link",
-    "backend selection",
     "doc_backend.prefer",
     "query-db",
     "update-db",
-    "Streamable HTTP",
-    "series",
+    "MCP Streamable HTTP",
     "index_missing",
-    "DLID"
+    "series branch",
+    "availability check"
   ],
+  "last_check": {
+    "checked_at": "2026-11-25T02:44:01+00:00",
+    "result": "success"
+  },
   "path": "docs/specs/doc-db/design/DES-057_doc_db_backend_selection_design.md",
-  "purpose": "Design for selecting between the doc-link and doc-db document-search backends via an ordered preference list, covering availability checks, on-demand doc-db startup, index preparation, query/update flows, and error handling.",
+  "purpose": "Design for ordered doc-link/doc-db backend selection in the four doc-search wrappers, covering availability checks, HTTP direct client, on-demand startup, index preparation, delegation, errors and tests.",
+  "references": [
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/rules/plugin_claude_code_authoring_guide.md",
+        "result": "match",
+        "scope": "docs/rules"
+      },
+      "kind": "document",
+      "position": 0,
+      "recorded_content_hash": "65302c63b0e1",
+      "recorded_path": "../../../rules/plugin_claude_code_authoring_guide.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-pvwk8en5c2rq",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/specs/forge/design/DES-024_skill_script_layout_design.md",
+        "result": "match",
+        "scope": "docs/specs/forge/design"
+      },
+      "kind": "document",
+      "position": 1,
+      "recorded_content_hash": "2646153bc1d2",
+      "recorded_path": "../../forge/design/DES-024_skill_script_layout_design.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-ckbysbfdrsv5",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/specs/forge/design/DES-061_forge_settings_file_design.md",
+        "result": "match",
+        "scope": "docs/specs/forge/design"
+      },
+      "kind": "document",
+      "position": 2,
+      "recorded_content_hash": "a90619ea16a5",
+      "recorded_path": "../../forge/design/DES-061_forge_settings_file_design.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-6m16v4qqxjf4",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "plugins/forge/docs/error_classification_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 3,
+      "recorded_content_hash": "94496cc6d044",
+      "recorded_path": "../../../../plugins/forge/docs/error_classification_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-5ykqs19cdbks",
+      "target_section_id": null
+    }
+  ],
+  "sections": [
+    {
+      "content_hash": "0031fb3793de612cbaf5aa039b0d34277888c6efb6b485e81ac105a8af838347",
+      "heading": "索引母集団の差",
+      "position": 32,
+      "section_id": "DLID-kdwtnrw8p66x"
+    },
+    {
+      "content_hash": "0781a3ff260f571e31da6f87682dadca07efbada65bad88c94da5617e83e6b18",
+      "heading": "母集団を所有しない側の件数を数えない [MANDATORY]",
+      "position": 33,
+      "section_id": "DLID-6cfg3af4vt5r"
+    },
+    {
+      "content_hash": "08096304bd396fbeb7a9f7546f5067ae5a3527ae58a2fa059a1a376b186efdd0",
+      "heading": "backend 間の残差",
+      "position": 15,
+      "section_id": "DLID-63vdfhdmqxyw"
+    },
+    {
+      "content_hash": "0a82e205b7a61c8ea9fa5436fce1350dfcc332e21583d40d477724e5dd9b12bc",
+      "heading": "4.2 query",
+      "position": 16,
+      "section_id": "DLID-rn8jq1xwd7z7"
+    },
+    {
+      "content_hash": "0aff5be9b9725ac9126aeb6fe983533d7518501831069054303ffd389e7ee526",
+      "heading": "9.2 wrapper テスト",
+      "position": 50,
+      "section_id": "DLID-ce4wsnmae3b9"
+    },
+    {
+      "content_hash": "0b462a5aa01ec7f64272ab8d9cca3d9d584f81fe2739ac65679c3d59b0b3d182",
+      "heading": "セッション内変更の確認との違い",
+      "position": 41,
+      "section_id": "DLID-e24361n653mk"
+    },
+    {
+      "content_hash": "0c1217f9317cb923a41b4feecafac140b9a2f8d884f12d75bc52fcc61d4c7fa9",
+      "heading": "応答の扱い",
+      "position": 29,
+      "section_id": "DLID-z16gjq9adtqb"
+    },
+    {
+      "content_hash": "14ef82017a5a698a7f36173b80c8794b3bbd756ae1d385ad5204e79c39779ee3",
+      "heading": "成功と障害の区別",
+      "position": 20,
+      "section_id": "DLID-eqgbad36373h"
+    },
+    {
+      "content_hash": "198c5f050c75f60e3735ae54a5208ea29e4fbfdcc002a897e0e4fd325789d569",
+      "heading": "処理の順序",
+      "position": 36,
+      "section_id": "DLID-r5tx9w9v3ntg"
+    },
+    {
+      "content_hash": "1f2e9a1f14f6619e20dd46cecff2d860375f4dbf9f91a77186d1e872902c20c9",
+      "heading": "2.3 on-demand 起動",
+      "position": 5,
+      "section_id": "DLID-5gfqerfxwmbh"
+    },
+    {
+      "content_hash": "222ff77de0a5de7cd0122345781ffd1407f29a86a392831dd442154c213cf7b9",
+      "heading": "3. アーキテクチャ",
+      "position": 9,
+      "section_id": "DLID-wfpz0e25snfy"
+    },
+    {
+      "content_hash": "224d51188af9a280566db896965d422d19d594d1fc2a86428c72e42f4070fe97",
+      "heading": "4.4 doc-db 実行結果",
+      "position": 22,
+      "section_id": "DLID-m1mzmedad68v"
+    },
+    {
+      "content_hash": "264ac43106d6364175e773db06a65a4e86682b24f62a706960edbb5b437eeb8e",
+      "heading": "10. 完全性確認",
+      "position": 53,
+      "section_id": "DLID-nsaefbnnv0p5"
+    },
+    {
+      "content_hash": "2b8b99ce18ee7e084ff2ca79d329ea32913e5c2466e1ba141a7d91a577da00d3",
+      "heading": "1. 概要",
+      "position": 1,
+      "section_id": "DLID-32qprg0x4jba"
+    },
+    {
+      "content_hash": "31ba3e0aa59e7b773f875a4c3e039e8108a98458c8bd555bc8e9ec5f2a1b28f9",
+      "heading": "5.3 query から update への委譲",
+      "position": 38,
+      "section_id": "DLID-kg9jfkc3ft0e"
+    },
+    {
+      "content_hash": "3435c25950df7271b7dd2608cec6d8977b503fb653d56ffb6e94be01acd53996",
+      "heading": "Agent / Bash を選べない理由",
+      "position": 40,
+      "section_id": "DLID-aygs8k7saaxz"
+    },
+    {
+      "content_hash": "37765a21d394f1b076a1741965d02a6b10da26943ed500463d281e47ad1c4c59",
+      "heading": "2.2 HTTP 直結",
+      "position": 4,
+      "section_id": "DLID-agqt44r9ntdt"
+    },
+    {
+      "content_hash": "3f925d4acf32536afb9b56cfef99d1d798b3c8949d6b85c51f29a45e7f2781e0",
+      "heading": "2.5 優先 backend の指定（REQ-014 BL-001）",
+      "position": 8,
+      "section_id": "DLID-xed2t6xbxeh0"
+    },
+    {
+      "content_hash": "4535c29fd4371f867154ca6aa9ba39ad4592f7ac865d763919fe265c618ba99e",
+      "heading": "3.1 コンポーネント図",
+      "position": 10,
+      "section_id": "DLID-kabg8zkb5e83"
+    },
+    {
+      "content_hash": "52ee52faa5d30ccd3ad8344ed259170479c1d6f302cf27daeb437f5bab97e069",
+      "heading": "鮮度の検査は doc-link が行う",
+      "position": 28,
+      "section_id": "DLID-vs1182nr7scf"
+    },
+    {
+      "content_hash": "5e0926d7800b251c179b9e8171d5ed5a906c6d29e51db06d8ef39fd1c60014fb",
+      "heading": "6.3 update シーケンス",
+      "position": 45,
+      "section_id": "DLID-70x1pdqnmsdw"
+    },
+    {
+      "content_hash": "69e9f6c21d731adf8c3ac4c9fc2dbb3541f2b38931f778ae8d5aab2b374cceb2",
+      "heading": "4.3 update",
+      "position": 21,
+      "section_id": "DLID-jr765a9zcd77"
+    },
+    {
+      "content_hash": "6f96338fb55a5ac308489e5c1967fcc203ef0b166c1541b807ce316037487010",
+      "heading": "9.4 doc-link 契約テスト",
+      "position": 52,
+      "section_id": "DLID-8r40ev2ptje3"
+    },
+    {
+      "content_hash": "73c60a62ade3a7092504dd39702c3a74a6d56efaca2ede6dded406787b68bd15",
+      "heading": "5.2 update",
+      "position": 34,
+      "section_id": "DLID-tjpg492kfnwd"
+    },
+    {
+      "content_hash": "75de18a2ed1d2869bec6e7f1d4b03bb337256b12e1c2d0cff27794f75a9a0a9f",
+      "heading": "KEY / series 未整備時の索引整備",
+      "position": 19,
+      "section_id": "DLID-0snvgzadtwyk"
+    },
+    {
+      "content_hash": "7af1e4d02b3f5b92d6ffd9e2db6354d0be985f687f7551ac62b8053b6d277ffa",
+      "heading": "2.4 doc-link の可用性判定",
+      "position": 6,
+      "section_id": "DLID-smecymszrajs"
+    },
+    {
+      "content_hash": "7d91140aef32ae483425df62d7babe6aafcccabdcac3b9ddcdc9722fb45013f4",
+      "heading": "9. テスト設計",
+      "position": 48,
+      "section_id": "DLID-hg1cnh0d3z05"
+    },
+    {
+      "content_hash": "888c25fd6002e79d9c45c3a7779fffe2b7d177b853aa9d80ac9c38d063c759cd",
+      "heading": "DLID の付与",
+      "position": 35,
+      "section_id": "DLID-vxswx6y5mg1k"
+    },
+    {
+      "content_hash": "89b555f47088f28d6f762f0f21484d415eac3b93e30ad28fd6fb7890828f6af8",
+      "heading": "6.1 ユースケース一覧",
+      "position": 43,
+      "section_id": "DLID-khm7srq9nrjr"
+    },
+    {
+      "content_hash": "8cc0726fe382a7dab1d6247562c43d9efb3825a03606a8bc3b56165927a14eb7",
+      "heading": "4.5 doc-db MCP tool 契約（依拠スナップショット）",
+      "position": 23,
+      "section_id": "DLID-xrws9n10aar2"
+    },
+    {
+      "content_hash": "8d23bc797d3319c923e983a2f38de4efd748678254426c19c392fa1a11d63253",
+      "heading": "DES-057 doc-db バックエンド選択 設計書",
+      "position": 0,
+      "section_id": "DLID-vm42nep5js51"
+    },
+    {
+      "content_hash": "9632ec0b5f96662a7ec4f6ac0ec26cec3f7c63e47fd3dbdbe489f0aade8d6bc8",
+      "heading": "出力形式への変換",
+      "position": 30,
+      "section_id": "DLID-we16vtsgstg2"
+    },
+    {
+      "content_hash": "9d03885c316df36e9beef32eb7346f8adfb2a935c180d91a3e496a3450b8d7c3",
+      "heading": "パスの実在確認",
+      "position": 18,
+      "section_id": "DLID-46kqxtqbs8g4"
+    },
+    {
+      "content_hash": "9fa2cef1fa63f3e0aeac932794eff58001717040b3e637226513162acd1b9270",
+      "heading": "索引の置き場と git",
+      "position": 37,
+      "section_id": "DLID-795t8crzw96n"
+    },
+    {
+      "content_hash": "a3e2c66079f5019c60638e5c2d66127a14a9caa0ba7a56d8f3e91c63ffdccbdb",
+      "heading": "4.1 project key と series",
+      "position": 13,
+      "section_id": "DLID-c5sryery8qhz"
+    },
+    {
+      "content_hash": "a40787302ed0f807500d6fbf1c567fa51e2985e6a64c0c69e72f709709089c7e",
+      "heading": "セッション内変更の確認",
+      "position": 17,
+      "section_id": "DLID-7f21j8n82y4j"
+    },
+    {
+      "content_hash": "b0b737e0ce81a002914cb44de7df81945ce07d9b343e5a7bae3f0edcc4787c4a",
+      "heading": "6. ユースケース設計",
+      "position": 42,
+      "section_id": "DLID-8zaj94bcqck6"
+    },
+    {
+      "content_hash": "b6765c3158ebcf54956b7288f2f44f60baeddf65c8f4f2f76d0f34e27ab75202",
+      "heading": "2. 設計方針",
+      "position": 2,
+      "section_id": "DLID-7fxq3xpjcy9t"
+    },
+    {
+      "content_hash": "bca5445be1de4ff8fcaa07f3e73e80570da66849137dfaf58e26a0583c31adcb",
+      "heading": "7. エラーハンドリングと通知",
+      "position": 46,
+      "section_id": "DLID-mb7484v7rrzx"
+    },
+    {
+      "content_hash": "c290a29005460916a85f5d631cacf6050fb8528be0faca4c6e60d7e1234e0cc9",
+      "heading": "8. 使用する既存コンポーネント",
+      "position": 47,
+      "section_id": "DLID-xrg7vw3g4s2n"
+    },
+    {
+      "content_hash": "c895ae8f0dfb8b813f97745926cf39d42a43713a22b7137683f02bf274914a32",
+      "heading": "9.3 統合テスト",
+      "position": 51,
+      "section_id": "DLID-re704gh7z4yy"
+    },
+    {
+      "content_hash": "cd4283b7a30df09b1eff5932f13c0db6202d9fe521a2ad913982693e224226d7",
+      "heading": "series 指定と実在確認",
+      "position": 14,
+      "section_id": "DLID-b6ds9eqyf46d"
+    },
+    {
+      "content_hash": "cdb2721b2eea7149e8b645232c4f5c5a9629f90e038c31c512579ed99fd5899c",
+      "heading": "4. doc-db 処理設計",
+      "position": 12,
+      "section_id": "DLID-ab5jfxw0xweq"
+    },
+    {
+      "content_hash": "d323a5a3f8a3e765ab4a70538d371f371e2d34128cba365020fbd4deb09a2b62",
+      "heading": "backend の指定 [MANDATORY]",
+      "position": 39,
+      "section_id": "DLID-g1t64ggj991b"
+    },
+    {
+      "content_hash": "d7f89e797a4a603041b69cc90550adbf3b0d3bd74743b10b856ea81428afa484",
+      "heading": "5.1 query",
+      "position": 27,
+      "section_id": "DLID-0sn6xmd1v741"
+    },
+    {
+      "content_hash": "d823681e315111eb9596971c14e5a50f6a3150f1864c83cc0d810551a9a9abd7",
+      "heading": "2.1 バックエンド選択境界",
+      "position": 3,
+      "section_id": "DLID-2aht0bdasyc3"
+    },
+    {
+      "content_hash": "d9c81d15b516a7b5730cbac634b4cf41cf445adec6c00d9c09f1d7767c81ae00",
+      "heading": "3.2 モジュール一覧",
+      "position": 11,
+      "section_id": "DLID-ned15mzyqgcb"
+    },
+    {
+      "content_hash": "dc04d4f786b71bac1625f125a09a4210eb733027cbfc9a73c120fac80affbac6",
+      "heading": "6.2 query シーケンス",
+      "position": 44,
+      "section_id": "DLID-srej4vc1vh2h"
+    },
+    {
+      "content_hash": "df21def5946bc4e9a99e5d1b27f3fa22398c7a67b8ab21db0d2014f7a8e77774",
+      "heading": "9.1 単体テスト",
+      "position": 49,
+      "section_id": "DLID-g619cmf7h62d"
+    },
+    {
+      "content_hash": "f0c3e010f662dff2f70eda38bbd56e641349848012a240d176c7f452bb543dcd",
+      "heading": "バージョンを判定に使わない [CRITICAL]",
+      "position": 7,
+      "section_id": "DLID-nqkxnw9f5ywn"
+    },
+    {
+      "content_hash": "f350272713aefd09a80849d38fa1b5fdb5f9e83a6e2930cd1569bd0e5ed0cb2e",
+      "heading": "KEY 状態に関する doc-db の挙動",
+      "position": 25,
+      "section_id": "DLID-xzztdan34c8a"
+    },
+    {
+      "content_hash": "f544bb509efcaf513bbd35ffa72229a0e378963bc32c211a83b5fc54520b0505",
+      "heading": "5. doc-link 処理設計",
+      "position": 26,
+      "section_id": "DLID-9f7yjc4dktjy"
+    },
+    {
+      "content_hash": "f60a125a5d0ead6a41d237abc8c05ff4d0e1e0a752ce078c03422d4730d1f418",
+      "heading": "実測結果（doc-db 0.3.2 / 2026-07-31）",
+      "position": 24,
+      "section_id": "DLID-9ttx4xcn16sr"
+    },
+    {
+      "content_hash": "fb03e3fd5559f2631cd5180b1ec80ac82cb7cb2e9616c82d370105a9e8017416",
+      "heading": "鮮度を推測で判定しない [MANDATORY]",
+      "position": 31,
+      "section_id": "DLID-seyb3155ss7n"
+    }
+  ],
   "summary": [
-    "Ordered backend selection from doc_backend.prefer in .claude/.forge.yaml, default doc-link first, resolved by resolve_backend_order.py",
-    "Responsibility split: each backend owns its availability check; the SKILL orchestrates selection and fallback only on unavailability",
-    "doc-db access via a stdlib Streamable HTTP client, on-demand startup, exit codes 0/10/20/30, and an MCP tool contract snapshot",
-    "doc-db query design: series = current branch, path existence check, session-change confirmation, index-missing approval flow",
-    "doc-db update design: desired-state sync with separate --start and --status polling driven by the SKILL",
-    "doc-link flows: query-docs, freshness checked by doc-link, DLID embedding, index-docs build, no version-based availability judgment",
-    "Delegation from query-db-* to update-db-* with an explicit backend specified, and why it must be a SKILL",
-    "Component architecture, module list, use cases, and sequence diagrams for query and update",
-    "Error handling and user notification table separating unavailability, operation failure, unprepared index, and user decline",
-    "Test design: unit, wrapper, integration with injected HTTP responses, and doc-link contract tests"
+    "Ordered backend selection via .claude/.forge.yaml doc_backend.prefer, default doc-link first",
+    "Responsibility split: selector (SKILL) owns order, each backend owns availability checks",
+    "doc-db stdlib Streamable HTTP client, on-demand startup, exit codes 0/10/20/30",
+    "doc-db query with branch series, path existence check, missing-index approval and sync",
+    "doc-db update via desired-state sync with --start/--status polling by SKILL",
+    "doc-link query-docs, embed-dlid, index-docs flow; freshness check left to doc-link",
+    "Query-to-update delegation with explicit backend specification",
+    "Use case sequences, error handling table, user notifications",
+    "Existing components reused, unit/wrapper/integration/contract test design",
+    "Completeness check against REQ-014 and doc-db MCP contract snapshot"
   ],
   "tasks": [
-    "Implementing or modifying query-db-* and update-db-* SKILLs",
+    "Implementing or modifying query-db-rules/specs and update-db-rules/specs SKILLs",
     "Changing backend selection order or the doc_backend settings schema",
-    "Modifying doc_backend scripts such as query_docdb.py, sync_docdb.py, docdb_runtime.py",
-    "Designing fallback and error handling between document-search backends",
-    "Writing or updating tests for backend selection and doc-db client",
-    "Reviewing document index freshness and index-missing behavior",
-    "Updating the doc-db MCP contract snapshot"
+    "Modifying doc_backend scripts (query_docdb, sync_docdb, docdb_runtime, docdb_client)",
+    "Designing or reviewing doc-link integration and availability judgment",
+    "Writing tests or lint for wrappers and doc-db contract",
+    "Handling doc-db contract changes such as KEY_NOT_FOUND errors",
+    "Reviewing error handling and notification behavior of document search"
   ],
   "title": "DES-057 doc-db バックエンド選択 設計書"
 }

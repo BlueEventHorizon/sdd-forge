@@ -1,39 +1,186 @@
 {
-  "content_hash": "6a371cd09123e9bea90cc3db5b0a0158da8f9eeae3a0f1bbe6885cb84ec9f91a",
+  "applied_hash": "259a88a9ae6e03d407c1978850f58f8d6b3d7d6c403a8b68c9a908689c0c6ce1",
+  "content_hash": "259a88a9ae6e03d407c1978850f58f8d6b3d7d6c403a8b68c9a908689c0c6ce1",
   "doc_link_id": "DLID-s3cjh3q3c0vc",
   "keywords": [
     "consult",
     "consult brief",
     "consult topic",
     "progress list",
+    "dialogue flow",
     "review delegation",
     "record_review_brief",
-    "dialogue flow",
+    "REQ-017",
     "confidence marks",
-    "DES-078",
-    "REQ-017"
+    "hard link publish"
   ],
+  "last_check": {
+    "checked_at": "2026-11-25T02:44:01+00:00",
+    "result": "success"
+  },
   "path": "docs/specs/consult/design/DES-078_consult_dialogue_flow_design.md",
-  "purpose": "Design document realizing REQ-017: how the consult skill presents topics via a progress list, builds and states consult briefs, records them via script, and separates review-specific handling.",
+  "purpose": "Design for the consult dialogue flow: a progress list across all consult topics, per-topic consult briefs (summary and recommendation), recording of briefs via script, and separation of review-specific handling.",
+  "references": [],
+  "sections": [
+    {
+      "content_hash": "0236e12f261e33649734b9f2d6ede6de55d9ca6a228027811693b8dd3339fa99",
+      "heading": "5. 契約",
+      "position": 9,
+      "section_id": "DLID-kv4rvx8m1ngp"
+    },
+    {
+      "content_hash": "0b5344771bbc887efa16c245ef9fc23f2c628f4b8118d94628341e0bda9ea009",
+      "heading": "6.3 利用ライブラリ",
+      "position": 15,
+      "section_id": "DLID-chm7xerw1sf8"
+    },
+    {
+      "content_hash": "12e690582a2338a6b129fd03847dd21aee66e930a3d8696155f49a01450c3a21",
+      "heading": "3.2 クラス図",
+      "position": 5,
+      "section_id": "DLID-3hqhhdqret9k"
+    },
+    {
+      "content_hash": "277b056c21f69fd08982ab58d538dc4989a3991e4d1c4255af0d6559defe60b6",
+      "heading": "3. 責務（構造）",
+      "position": 3,
+      "section_id": "DLID-dtrdgzsst5cm"
+    },
+    {
+      "content_hash": "4543af44a0b830f7d8c65830115410d282dcaeb24cefdbb8c2f2858f841d061e",
+      "heading": "4. 振る舞い",
+      "position": 6,
+      "section_id": "DLID-n54bstm19myb"
+    },
+    {
+      "content_hash": "548454603543a165d2a189e3ce925d89bb04e5012c0327a91697baa537b3f34d",
+      "heading": "4.1 一覧による進行（S-01・S-11・S-12・S-14）",
+      "position": 7,
+      "section_id": "DLID-5r23ffe4wbyw"
+    },
+    {
+      "content_hash": "560946dbf5a3b7bb24ebe8ffd852cc2b0d0f8dac7b5ddd0136a2b6d19a9bead9",
+      "heading": "6.6 review から委譲されたときの手順（文書）",
+      "position": 18,
+      "section_id": "DLID-gn06g4ee39nk"
+    },
+    {
+      "content_hash": "6a6afb59ce21f686fba560ca12b1a1752c1037740dcbd4bf7b853bbec9e85cee",
+      "heading": "6. 詳細設計",
+      "position": 12,
+      "section_id": "DLID-ejr8kg6wgm8f"
+    },
+    {
+      "content_hash": "6cdeb7f155aa7b9559d4f1f6f17b0efc8da25cc24c11fffb814fe8090b2a0ccd",
+      "heading": "DES-078 consult 対話進行フロー設計書",
+      "position": 0,
+      "section_id": "DLID-pmmymvrc1vrq"
+    },
+    {
+      "content_hash": "6d8d11d838c7d9a6f72c29e68bbeddd7f7303de424a1a90edb1735783838de00",
+      "heading": "6.2 構造",
+      "position": 14,
+      "section_id": "DLID-1zx8h56t1meb"
+    },
+    {
+      "content_hash": "6de605c8246e45599eda157238bf7aaa345f759864d473b768d6341e8c182515",
+      "heading": "5.2 モジュール表",
+      "position": 11,
+      "section_id": "DLID-jk2tf42etwtg"
+    },
+    {
+      "content_hash": "775152a61a17ea5bd5af18647474e548c4a44f8876683b0ea4e3e51d5d169ec0",
+      "heading": "2. シナリオ",
+      "position": 2,
+      "section_id": "DLID-wtxvhyszaf87"
+    },
+    {
+      "content_hash": "8da732c2cf35f0b5460bb79289cccb182621f738435c4934e2cee344d48c54e2",
+      "heading": "6.1 手段",
+      "position": 13,
+      "section_id": "DLID-c8y8tv3k6evc"
+    },
+    {
+      "content_hash": "8ecacb0d0e20d08bb832deaf14c627d7333b00981e2b673f0b88e1f16a969d47",
+      "heading": "6.4 アルゴリズム",
+      "position": 16,
+      "section_id": "DLID-6w7p8axdp8s4"
+    },
+    {
+      "content_hash": "9295d3b68ee691c3c14a0c7b3db226a1fe0e2beee69ac9c3bf6871f8648c0f67",
+      "heading": "1. 概要",
+      "position": 1,
+      "section_id": "DLID-f8cv16gcxs6r"
+    },
+    {
+      "content_hash": "9c13843cc84e1025c00ecc179568e6ed57d3a65e86d45dae772fbfe13ccce63e",
+      "heading": "7. 追跡表",
+      "position": 21,
+      "section_id": "DLID-1qzf16xnkvds"
+    },
+    {
+      "content_hash": "afb9999c9421607b9130e8ae6aa098667dd95867e3061ab993fb996ef8f3b9e6",
+      "heading": "4.2 consult topic の提示と記録（S-02・S-05・S-06・S-07・S-08・S-13）",
+      "position": 8,
+      "section_id": "DLID-byg88wrxvf2c"
+    },
+    {
+      "content_hash": "b4896851ba6bd6a599bdb66a1a8e152ea8459342230caf085bd50e689991dccf",
+      "heading": "6.8 brief作成（AI）の出力",
+      "position": 20,
+      "section_id": "DLID-3c23d1zcpgfv"
+    },
+    {
+      "content_hash": "b8be2de88b50d3dd89befaceec60da388cdfa03776098e81f031d9a208827096",
+      "heading": "8. 未確定事項",
+      "position": 22,
+      "section_id": "DLID-3px7cfx6a0ne"
+    },
+    {
+      "content_hash": "c806861a45e960154a77351cf0dfa01582b78c4f0f37a6e4ed524b03425d51d3",
+      "heading": "6.5 動作の原理",
+      "position": 17,
+      "section_id": "DLID-evdah379hk10"
+    },
+    {
+      "content_hash": "d57017cdc6b6f9ee6ef79aec4003f86256ea3cc87e6e53539707168c081883ce",
+      "heading": "6.7 テストの観点",
+      "position": 19,
+      "section_id": "DLID-2p3r3qz8p2jh"
+    },
+    {
+      "content_hash": "dd3b762299c1da3e3b7d3405598c324a2dcd78b2f2919f908124a8b21c87a463",
+      "heading": "5.1 共有データ定義",
+      "position": 10,
+      "section_id": "DLID-kcgqer3adsq2"
+    },
+    {
+      "content_hash": "e4658195693d72f1f35ba08b419a7088d689764017666e705e25dbbae8b2f0ff",
+      "heading": "3.1 クラス定義",
+      "position": 4,
+      "section_id": "DLID-gaksjsvs0k82"
+    }
+  ],
   "summary": [
-    "Overview: consult conveys content clearly and obtains correct user decisions through a whole-picture progress list and per-topic consult briefs",
-    "Scenarios S-01 to S-17 mapped to requirement IDs, covering normal, abnormal, and always-on behaviors",
-    "Responsibilities: dialogue progression, brief creation by the main claude, and a record-writing script, with class diagram",
-    "Behavior: progress list columns, status vocabulary, re-display on each step, and sequence diagrams for topic presentation and recording",
-    "Contracts: shared data definitions (evaluation JSON, consult_brief record, handoff body files, presentation state) and module table M-01 to M-07",
-    "Detailed design of record_review_brief.py: CLI, exit codes, record JSON schema, sequence numbering, atomic hard-link publishing, tests",
-    "Review-delegated procedure document: display format, bulk-fix offer, recording steps, result return",
-    "Brief output rules: summary and recommendation within about 10 lines, confidence marks, no secret values",
-    "Traceability table from requirements to design elements, and TBD-001 for the unwritten dialogue-use design"
+    "Overview realizing REQ-017: whole-list presentation plus per-topic consult briefs",
+    "Scenarios S-01 to S-17 mapping requirements to responses",
+    "Responsibilities: dialogue progression, brief creation, record writing, with class diagram",
+    "Progress list behavior: columns, statuses, re-display on every step, sequence diagram",
+    "Consult topic presentation and recording flow, withdrawal and new topic handling",
+    "Contracts: shared data definitions and module table M-01 to M-07",
+    "Detailed design: record script invocation, JSON record structure, hardlink publishing, algorithm",
+    "Review-delegated procedure document, display format, and test perspectives",
+    "Brief output constraints: roughly 10 lines, confidence marks, secrets excluded",
+    "Traceability table and open item TBD-001 for the dialogue use case"
   ],
   "tasks": [
-    "Implementing or modifying the consult skill SKILL.md",
-    "Implementing record_review_brief.py and its unit tests",
-    "Writing review_handling.md for review-delegated consult",
-    "Reviewing the consult dialogue flow design against REQ-017",
-    "Designing the dialogue-use extension of consult (TBD-001)",
-    "Changing the review skill delegation contract to consult",
-    "Writing ai_tests for consult brief generation quality"
+    "Implementing the consult skill and its SKILL.md",
+    "Implementing record_review_brief.py",
+    "Writing docs/review_handling.md procedure",
+    "Reviewing the consult design document",
+    "Writing tests for the consult record script",
+    "Designing review-to-consult delegation",
+    "Designing the dialogue use case of consult (TBD-001)"
   ],
   "title": "DES-078 consult 対話進行フロー設計書"
 }

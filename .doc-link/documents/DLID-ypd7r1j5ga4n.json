@@ -1,43 +1,305 @@
 {
-  "content_hash": "addaea4651bb84c6f63756e8b343fdf488660417997d7ec5c1ee9695aac921e7",
+  "applied_hash": "8c2f9a2476dafb0166255bd0593fa0bb853aa38f826cbcf04f106b7814e8c69b",
+  "content_hash": "8c2f9a2476dafb0166255bd0593fa0bb853aa38f826cbcf04f106b7814e8c69b",
   "doc_link_id": "DLID-ypd7r1j5ga4n",
   "keywords": [
     "start-implement",
     "implementation plan",
     "task selection",
-    "task group",
-    "executor agent",
     "orchestrator",
+    "executor agent",
+    "task group",
     "TaskContext",
     "TaskResult",
     "final confirmation",
     "resume and failure state"
   ],
+  "last_check": {
+    "checked_at": "2026-11-25T02:44:01+00:00",
+    "result": "success"
+  },
   "path": "docs/specs/start-implement/requirements/REQ-034_start_implement_spec.md",
-  "purpose": "Requirements for /forge:start-implement: selecting plan tasks, implementing, reviewing and updating the plan with state preserved across interruptions and errors, and completion confirmed by the orchestrator.",
+  "purpose": "Requirements for /forge:start-implement: selecting plan tasks, implementing, reviewing and completing them while preserving state across interruptions and errors, with final confirmation by the orchestrator.",
+  "references": [
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/specs/forge/design/DES-074_plan_format_design.md",
+        "result": "match",
+        "scope": "docs/specs/forge/design"
+      },
+      "kind": "document",
+      "position": 6,
+      "recorded_content_hash": "2f1bdcf996ea",
+      "recorded_path": "../../forge/design/DES-074_plan_format_design.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-42wh7646hjhq",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/specs/forge/requirements/REQ-001_orchestrator_pattern.md",
+        "result": "match",
+        "scope": "docs/specs/forge/requirements"
+      },
+      "kind": "document",
+      "position": 1,
+      "recorded_content_hash": "16677411b761",
+      "recorded_path": "../../forge/requirements/REQ-001_orchestrator_pattern.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-ct64b13ee182",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/specs/forge/requirements/REQ-013_review_policy.md",
+        "result": "match",
+        "scope": "docs/specs/forge/requirements"
+      },
+      "kind": "document",
+      "position": 4,
+      "recorded_content_hash": "8447df198f9e",
+      "recorded_path": "../../forge/requirements/REQ-013_review_policy.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-yg0c67zs3zky",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/specs/forge/requirements/REQ-024_implementation_plan_spec.md",
+        "result": "match",
+        "scope": "docs/specs/forge/requirements"
+      },
+      "kind": "document",
+      "position": 0,
+      "recorded_content_hash": "f1c15e9bfe0d",
+      "recorded_path": "../../forge/requirements/REQ-024_implementation_plan_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-zehb6ge71vgb",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/specs/forge/requirements/REQ-025_additive_development_spec.md",
+        "result": "match",
+        "scope": "docs/specs/forge/requirements"
+      },
+      "kind": "document",
+      "position": 5,
+      "recorded_content_hash": "a78dcb08e87b",
+      "recorded_path": "../../forge/requirements/REQ-025_additive_development_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-8aaxgj88j28q",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "plugins/forge/docs/error_classification_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 3,
+      "recorded_content_hash": "94496cc6d044",
+      "recorded_path": "../../../../plugins/forge/docs/error_classification_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-5ykqs19cdbks",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "plugins/forge/docs/spec_priorities_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 2,
+      "recorded_content_hash": "b68b930cec1d",
+      "recorded_path": "../../../../plugins/forge/docs/spec_priorities_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-f9ny9e932trv",
+      "target_section_id": null
+    }
+  ],
+  "sections": [
+    {
+      "content_hash": "006a7c0a31b2033dc2bba7d81b5bca367c86893ff36835b78d8271e5c7a51014",
+      "heading": "FNC-009: 構造化データの受け渡し",
+      "position": 14,
+      "section_id": "DLID-ge6xpw86prqk"
+    },
+    {
+      "content_hash": "0b54a857f16f6d68156d96cf654fc95a0bf99da158afb59ee78209adb4c47c28",
+      "heading": "1.1 対象システムの性質",
+      "position": 2,
+      "section_id": "DLID-6xdw83pqqqba"
+    },
+    {
+      "content_hash": "1e3c257a871c0428f92c4cf5970df38c11641b6c14d73607dc5660cb6c7e8258",
+      "heading": "FNC-007: レビューの依頼と結果の扱い",
+      "position": 12,
+      "section_id": "DLID-bqxhr7x7ef9m"
+    },
+    {
+      "content_hash": "1f0a896050fe0f5cf8231ce4f7f7392759856a0dd3d5415a6380a60e4383a4f9",
+      "heading": "FNC-002: 進行状態の保持と再開",
+      "position": 7,
+      "section_id": "DLID-mp22ejtsg74g"
+    },
+    {
+      "content_hash": "369e9ad722bb8e249f908dc8d5d91068b6f9a84988e5b6c7d46829709391fa03",
+      "heading": "5. データ形式",
+      "position": 19,
+      "section_id": "DLID-0h9b5bkkypqv"
+    },
+    {
+      "content_hash": "3aeecaeccfb12f556f51e6ee5e60e8933b10a34906aee43e2b0b83c57afaf796",
+      "heading": "5.3 executor agent の結果",
+      "position": 22,
+      "section_id": "DLID-ysyzrz04rbrk"
+    },
+    {
+      "content_hash": "3be9c2a561204f899b5c25b7fab84e47daca13cfac6a22091a41cb70e59abd9c",
+      "heading": "2. 前提条件",
+      "position": 3,
+      "section_id": "DLID-jhgs66ypdkz2"
+    },
+    {
+      "content_hash": "4b5a59905f342a675fd7a32fa00e613fbc2e23f49455b14abc2ace603eb620c5",
+      "heading": "1. 概要",
+      "position": 1,
+      "section_id": "DLID-53fx3y9qg52y"
+    },
+    {
+      "content_hash": "52204797a770cc70a4236eb8ee1f1f4d69527eef32d302598b01982fab8daa1d",
+      "heading": "FNC-008: 計画書の形式と更新",
+      "position": 13,
+      "section_id": "DLID-8qjc3qxbgw1e"
+    },
+    {
+      "content_hash": "5a147c538385a1ea9d729f511528e51538c6f6ac694b5786f552753e340b06ce",
+      "heading": "REQ-034 start-implement 要件定義書",
+      "position": 0,
+      "section_id": "DLID-7s1g5943d217"
+    },
+    {
+      "content_hash": "66bf69765b2716a353704874dc169cff7f8732806b627f060d1cdd0a51727708",
+      "heading": "FNC-006: タスクグループ",
+      "position": 11,
+      "section_id": "DLID-0k4wtqqzmj04"
+    },
+    {
+      "content_hash": "6b0bd95ba902569afca785afc5fc36414999de6a91e466e6a2029f754f4fe7a2",
+      "heading": "FNC-013: 完了後の流れ",
+      "position": 18,
+      "section_id": "DLID-gvpe8h2qq3mj"
+    },
+    {
+      "content_hash": "6c62d44937f775860f0c416b89d886353b329d132cea7eebecbc6f14e65b9561",
+      "heading": "5.1 計画書",
+      "position": 20,
+      "section_id": "DLID-ppp5y146x3t9"
+    },
+    {
+      "content_hash": "a4c1bf3cbe0a2f330b041844b34ab618b3e2e7987d795d4ef18a5ccd8d7075d3",
+      "heading": "FNC-011: executor agent の制約",
+      "position": 16,
+      "section_id": "DLID-67va750s8sbq"
+    },
+    {
+      "content_hash": "b9b945c2edbb4758391dead38984a07958977c75e16702b8b0189a473aa3463e",
+      "heading": "NFR-001: 契約に反する結果を成功として扱わない",
+      "position": 24,
+      "section_id": "DLID-vdta46fm8atq"
+    },
+    {
+      "content_hash": "babff6ba9ab7da61c757bda16328f74a4cefe74b85a7c647f10e5c8db2c76d80",
+      "heading": "6. 非機能要件",
+      "position": 23,
+      "section_id": "DLID-6xkaj3sq0qhv"
+    },
+    {
+      "content_hash": "bac67f14efe1c2a7f4adcefbee71efde4355ebac472dfc590b8c1acf6c2260ef",
+      "heading": "4. 機能要件",
+      "position": 5,
+      "section_id": "DLID-z2xm2exxq50j"
+    },
+    {
+      "content_hash": "c71020e28e3a321b251d8185f83290a7aad10a7e79ec6302d34b1522f4fe7939",
+      "heading": "FNC-003: エラーの扱いと再実行",
+      "position": 8,
+      "section_id": "DLID-a6nwrzqgqeyn"
+    },
+    {
+      "content_hash": "ca7c9d7f4de990754d93181fa2abd7e0edf9132ee3f72e2d4a102df6c78db96a",
+      "heading": "FNC-012: 実装中の設計書・要件定義書",
+      "position": 17,
+      "section_id": "DLID-yhywn5et79q7"
+    },
+    {
+      "content_hash": "cbffaef07fa97b74f89a60f66e9b89ad2b081f199f014558e58f19f14430c4af",
+      "heading": "FNC-005: 完了の条件と最終確認",
+      "position": 10,
+      "section_id": "DLID-76nggm5bpkce"
+    },
+    {
+      "content_hash": "e18f7c0db79fc81f2c31cc82e27dfaa3395345620c8f38072abc8f689d37de44",
+      "heading": "5.2 タスクコンテキスト",
+      "position": 21,
+      "section_id": "DLID-7wdbxtr8ge9j"
+    },
+    {
+      "content_hash": "e22d9bb040357660990b56d9389468c3bbc62e0b3f4a3336280750b98a3e8657",
+      "heading": "FNC-001: タスクの選択と提示",
+      "position": 6,
+      "section_id": "DLID-nmdgxxj3d192"
+    },
+    {
+      "content_hash": "e6d77a654ceaadf859cdc0314641f20ce9557cda8ea1dc7bf556d952f34a36f9",
+      "heading": "FNC-010: 並列実行",
+      "position": 15,
+      "section_id": "DLID-a2mpk1n5sdge"
+    },
+    {
+      "content_hash": "ebc15cebbc9c793254994c41861bde30842fdcd066b9ba551a92153cfdf56498",
+      "heading": "3. 用語",
+      "position": 4,
+      "section_id": "DLID-6ha5026bf0h3"
+    },
+    {
+      "content_hash": "f384d29e9ea631064babd42edfa6638df9e19dff98359ffef9bdca226ec69097",
+      "heading": "FNC-004: 任せる前の把握と準備",
+      "position": 9,
+      "section_id": "DLID-427vdzxqknre"
+    }
+  ],
   "summary": [
-    "Overview and problems solved: resumable work, orchestrator understanding before delegation, fewer review round trips",
-    "Task selection and presentation by priority, task group handling, and skipping waiting or finished tasks",
-    "Progress state kept in the plan, written only by the orchestrator, with resume and stale in-progress handling",
-    "Error handling: failed state, rerun rules, reverting dependent implemented tasks, one immediate retry",
-    "Orchestrator comprehension and preparation before delegating to an executor agent",
-    "Completion conditions and final confirmation against acceptance criteria and design/requirement documents",
-    "Task groups: build-passing units, single group review, members marked implemented then completed together",
-    "Review request and result handling, plan file format (JSON per DES-074), structured data exchange, parallel execution",
-    "Executor agent constraints, no edits to design/requirements during implementation, post-completion commit flow",
-    "Data formats TaskContext and TaskResult, plus NFR that contract-violating results are never treated as success"
+    "Overview, premises and glossary (orchestrator, executor agent, task group)",
+    "Task selection and presentation by priority, with task group handling",
+    "Progress state persistence, resume after interruption, orchestrator as sole writer",
+    "Error handling, failed state, rerun and reverting dependent tasks",
+    "Orchestrator understanding of tasks before delegation, and required reading",
+    "Completion criteria and final confirmation against acceptance criteria and design",
+    "Task groups: build-passing units, single group review, bulk completion",
+    "Review requests and result handling, plan JSON format and updates",
+    "Data formats: TaskContext, TaskResult, VerificationPlan, ScopeOutItem",
+    "Parallel execution, executor constraints, spec immutability, post-completion flow, NFR"
   ],
   "tasks": [
-    "Implementing the start-implement skill",
-    "Designing start-implement behavior",
-    "Reviewing start-implement requirements or implementation",
-    "Writing or changing executor agent prompts and constraints",
-    "Implementing task selection and plan state updates",
-    "Defining TaskContext and TaskResult validation",
-    "Implementing task group build and review flow",
-    "Implementing error handling and rerun of failed tasks",
+    "Implementing or modifying the start-implement skill",
+    "Designing the executor agent contract and TaskContext/TaskResult",
+    "Writing or reviewing the implementation plan execution flow",
+    "Implementing task selection and state transitions in the plan JSON",
+    "Designing error handling, failure, and rerun behavior",
+    "Defining task group composition and review timing",
     "Implementing parallel task execution",
-    "Implementing post-completion commit confirmation flow"
+    "Reviewing start-implement design and tests against requirements"
   ],
   "title": "REQ-034 start-implement 要件定義書"
 }

@@ -67,13 +67,26 @@ def _read_json(path):
         raise BuildError(f"索引のファイルを読めない: {path}: {exc}") from None
 
 
+def _document_id(item):
+    """索引の `documents` の 1 要素から、文書 ID を返す。
+
+    doc-link は、この要素の書き方を変えた。旧は `{"doc_link_id": …, …}` のオブジェクト、
+    新（0.1.6 以降）は文書 ID の文字列である。旧は、次に索引を再構築するまで残るので、両方を読む。
+    """
+    if isinstance(item, str):
+        return item
+    if isinstance(item, dict) and isinstance(item.get("doc_link_id"), str):
+        return item["doc_link_id"]
+    raise BuildError(f"索引の documents の要素から文書 ID を読めない: {item!r}")
+
+
 def load_entries(repo_root=REPO_ROOT):
     """索引の各文書の文書情報を、パスの順で返す。文書の集合が一致しなければ BuildError。"""
     store = repo_root / ".doc-link"
     toc = _read_json(store / "tocs" / f"{TOC_KEY}.json")
     entries = {}
     for item in toc.get("documents", []):
-        doc = _read_json(store / "documents" / f"{item['doc_link_id']}.json")
+        doc = _read_json(store / "documents" / f"{_document_id(item)}.json")
         entries[doc["path"]] = doc
 
     sources = set(source_paths(repo_root))

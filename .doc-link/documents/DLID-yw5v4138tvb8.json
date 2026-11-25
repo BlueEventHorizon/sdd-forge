@@ -1,4 +1,5 @@
 {
+  "applied_hash": "33ca402717950090220ca5a32c82b447178cc0c93899e3d8a8f872c98379f4b8",
   "content_hash": "33ca402717950090220ca5a32c82b447178cc0c93899e3d8a8f872c98379f4b8",
   "doc_link_id": "DLID-yw5v4138tvb8",
   "keywords": [
@@ -13,8 +14,255 @@
     "information density",
     "platform guide"
   ],
+  "last_check": {
+    "checked_at": "2026-11-25T03:43:00+00:00",
+    "result": "success"
+  },
   "path": "plugins/forge/skills/start-uxui-design/docs/macos_platform_guide.md",
   "purpose": "macOS-specific UX/UI design guide that consolidates Apple HIG guidance for macOS: pointer and keyboard input, navigation, window management, layout, components, UX patterns and a checklist.",
+  "references": [],
+  "sections": [
+    {
+      "content_hash": "14b8441927b1c925c0a21673a4d7d207b521bc4febbe01dda26cda81c078b77e",
+      "heading": "カーソル形状",
+      "position": 3,
+      "section_id": "DLID-zyz65rpycevh"
+    },
+    {
+      "content_hash": "1bc4fe7d12a25e0c0452c20bc4614f0d1cd3826b2409e9baa3efc100a189ad84",
+      "heading": "5. macOS 標準コンポーネント",
+      "position": 24,
+      "section_id": "DLID-eq6tdfv1x3cr"
+    },
+    {
+      "content_hash": "2c1ca65723f5948efcbf4ebcf7d1d8294642723cebaed1c0b440426388c3cbaa",
+      "heading": "1. 入力モデル: ポインタ + キーボード",
+      "position": 1,
+      "section_id": "DLID-wcwf6n34rsc7"
+    },
+    {
+      "content_hash": "340523f40efffe82a889f354cef7549ae721e45d85d6c1e8f604038e7abe02a1",
+      "heading": "カスタムショートカット",
+      "position": 6,
+      "section_id": "DLID-9wh2skr2ae8b"
+    },
+    {
+      "content_hash": "3513b9d6082739ae11602c8e75b489ed2ecd340b2ab49423f8e9f0c14f930243",
+      "heading": "標準ショートカット（必須）",
+      "position": 5,
+      "section_id": "DLID-r0jewxadkb1x"
+    },
+    {
+      "content_hash": "35c176cae4eb4041089308c3b1474d2d71e7f778ba1712663e09ea88917285a6",
+      "heading": "キーボード",
+      "position": 35,
+      "section_id": "DLID-mynxkr4bhwya"
+    },
+    {
+      "content_hash": "3fe9575560ffe8b0402ce460b63321794fa872a1d56589c760529df43a4faa29",
+      "heading": "標準メニュー構成",
+      "position": 9,
+      "section_id": "DLID-6c22n0dbyyc5"
+    },
+    {
+      "content_hash": "40c4daeebe00f5aca11c2a283d09a08a35528c3c8bf94f92ea047c4080a13565",
+      "heading": "メニュー設計原則",
+      "position": 10,
+      "section_id": "DLID-pwz5zfhekn06"
+    },
+    {
+      "content_hash": "50574553de09fbf81474ce7f542ed82468a81f3d4a9c149c1f7e23e93f2afcab",
+      "heading": "コントロール",
+      "position": 25,
+      "section_id": "DLID-mzhxx8494q1w"
+    },
+    {
+      "content_hash": "6c9ec0d90ef4ef70accc0ab95c0615c0b5767eea237a0583f6c2692e253e91fe",
+      "heading": "メニューバー（必須）",
+      "position": 8,
+      "section_id": "DLID-rreaw2qzxa07"
+    },
+    {
+      "content_hash": "6f0ca8c7a07309c8a5651207dd8473f2882b8a83d9870db1bcf3a6f573414383",
+      "heading": "サイドバー",
+      "position": 12,
+      "section_id": "DLID-kxy7b7jaevht"
+    },
+    {
+      "content_hash": "76950f68c477cac9af6aad22419800a554e2d6de88a23105059098a437eb8450",
+      "heading": "レイアウトパターン",
+      "position": 19,
+      "section_id": "DLID-nav7n5c5x32e"
+    },
+    {
+      "content_hash": "895e376ddaecc58dda01f53828f289b851e502151077b6651236701e501f9ebf",
+      "heading": "メニューバー",
+      "position": 36,
+      "section_id": "DLID-f5b179836na7"
+    },
+    {
+      "content_hash": "8a7505fd2507648b3890d879098b3c8f8067ccb7160044a5009f7c33ee658042",
+      "heading": "ウィンドウスタイル",
+      "position": 17,
+      "section_id": "DLID-6v3r1bfpthpg"
+    },
+    {
+      "content_hash": "8f7cd324eb755e85bae3300620471641bf8d62897cc45962992c9e8ec0286b0e",
+      "heading": "3. ウィンドウ管理",
+      "position": 15,
+      "section_id": "DLID-0vv1yzapjpvm"
+    },
+    {
+      "content_hash": "99e39301832b3ee8ed33aec3e263ea81cdca23deadfbf3f88d47c27117ce8847",
+      "heading": "情報密度",
+      "position": 21,
+      "section_id": "DLID-cw39w8mtbkva"
+    },
+    {
+      "content_hash": "9b75751918d8e15e0dea14cfa19a0183e34c2fafbf42a2fa880f79f9fd662dfc",
+      "heading": "ドラッグ & ドロップ",
+      "position": 30,
+      "section_id": "DLID-zyq1rjes96cm"
+    },
+    {
+      "content_hash": "9fe9fa2d21c5f234a5240b07045e7bde7ba8d79d3bab1bbcd0701bf407685f87",
+      "heading": "ウィンドウの基本",
+      "position": 16,
+      "section_id": "DLID-m9p5a21309ra"
+    },
+    {
+      "content_hash": "a089be8c1a72d750aff000e8fa8e8bb3c2bfa5be9012d1195c41b1b73065697e",
+      "heading": "Undo/Redo",
+      "position": 32,
+      "section_id": "DLID-xtt0cvds3va4"
+    },
+    {
+      "content_hash": "a502168ae8eb70c85617285c266812d0697c04bd79801cf549bb4148c5ab26c6",
+      "heading": "ポインタ操作",
+      "position": 34,
+      "section_id": "DLID-2ytftrraawax"
+    },
+    {
+      "content_hash": "a8047af7987818f39b5d30d6e6ef17c2b77661f084f1796ac1c703a8588ca38f",
+      "heading": "システム連携",
+      "position": 29,
+      "section_id": "DLID-6wbd9kfdtake"
+    },
+    {
+      "content_hash": "adac576fe61488130e6d3bbcb8f9894ba71ffb41c3b9e20b8c1aadcd4c1ede05",
+      "heading": "コンテンツ表示",
+      "position": 26,
+      "section_id": "DLID-9whfsd0awrz7"
+    },
+    {
+      "content_hash": "b9416e6b4f6ed9d03667bcb77f0f2a46e6fada875013b179b4467ff1fdb64845",
+      "heading": "スペーシング標準",
+      "position": 22,
+      "section_id": "DLID-xact9tyd9crc"
+    },
+    {
+      "content_hash": "c2bd4e5d4f465424085527bfa4bfdf9744f1317c364b7e1ebdbe392e4041cca8",
+      "heading": "ウィンドウ管理",
+      "position": 37,
+      "section_id": "DLID-54ka4g7rw16a"
+    },
+    {
+      "content_hash": "c89c97e1cd6d4135ecfb57fd69b5c1110075689d7de353b6014465579158f82e",
+      "heading": "ナビゲーション",
+      "position": 27,
+      "section_id": "DLID-amjk30fk2t3z"
+    },
+    {
+      "content_hash": "c90cbb7462b503aac77c2e2ebb2d485c98eda5c4503737862ef57338f2d88736",
+      "heading": "テキストサイズ",
+      "position": 23,
+      "section_id": "DLID-4bc4h56vs8hy"
+    },
+    {
+      "content_hash": "cba03ab3754c72d92a7cc628bf5313a0b090adc8ae8983739361ccfd71809612",
+      "heading": "インスペクタ",
+      "position": 13,
+      "section_id": "DLID-kgyqv7zpx501"
+    },
+    {
+      "content_hash": "cc5e259bcf9eae47004ce51470d5554d6dd140a160a165eba1e9f27c1750d339",
+      "heading": "7. macOS 評価チェックリスト",
+      "position": 33,
+      "section_id": "DLID-qq8tbhn7qvwb"
+    },
+    {
+      "content_hash": "dbe443a7d733bf5ab9092623ee0aeba41c2e57994c17545faa63a470d1ff00e4",
+      "heading": "ポインタ操作",
+      "position": 2,
+      "section_id": "DLID-jpzy87m0vwf0"
+    },
+    {
+      "content_hash": "de8bb64258a175cc13e1816ffb7c39689c545c7c109c29dbbff358e6cf86797e",
+      "heading": "アクセシビリティ",
+      "position": 39,
+      "section_id": "DLID-gvvbjp53xgdw"
+    },
+    {
+      "content_hash": "e10be1e2529df40af5e4f32058ef597b2353aeb0d9f3e3c0150b9379c88a9197",
+      "heading": "フルスクリーン",
+      "position": 18,
+      "section_id": "DLID-759g4tzeajcr"
+    },
+    {
+      "content_hash": "e1bb6c87ceb4254d5604985ca07cc2800c9d32c853666a07f8df06224766e0ff",
+      "heading": "4. レイアウト",
+      "position": 20,
+      "section_id": "DLID-9vs3hgbbayek"
+    },
+    {
+      "content_hash": "e8811594765dfa884981beb7bfa9b329b9d5d732f5c1f02ebace72e073970390",
+      "heading": "2. ナビゲーションパターン",
+      "position": 7,
+      "section_id": "DLID-p6b5haxk3jjm"
+    },
+    {
+      "content_hash": "e9213d0b56929d639134dd40d1de79a945eab07d15a32a513afdcf86210bde8b",
+      "heading": "macOS プラットフォームガイド",
+      "position": 0,
+      "section_id": "DLID-qfq5z41nvndp"
+    },
+    {
+      "content_hash": "e963887f5938588c9d199735947a03a124f77f1a6d9835fb551a16960794b941",
+      "heading": "タブ",
+      "position": 14,
+      "section_id": "DLID-sbbhkxxj181x"
+    },
+    {
+      "content_hash": "ed49bbe8da8a04044f4e5b09c008fa61f8dd9af31d7485255ab1d3dc036a685b",
+      "heading": "ツールバー",
+      "position": 11,
+      "section_id": "DLID-q2j6bn41cjrx"
+    },
+    {
+      "content_hash": "f038aa2be11761032f904627c2e21fe9637f7f1d9c15a790a1164552263cfb34",
+      "heading": "マルチセレクション",
+      "position": 31,
+      "section_id": "DLID-9k2pe427f632"
+    },
+    {
+      "content_hash": "f12c7bb3be5fee589d7fbf6cee949526f41d79fca6fc9321c0be7005ca17df30",
+      "heading": "6. macOS 固有の UX パターン",
+      "position": 28,
+      "section_id": "DLID-wkzh1k4s8zb9"
+    },
+    {
+      "content_hash": "f4d4bbd9f2db20c2f92dcb5d69fbb0ae92a280a330c3f0cfcbf563d3d1b45c68",
+      "heading": "情報密度",
+      "position": 38,
+      "section_id": "DLID-f6y9nq84ezvh"
+    },
+    {
+      "content_hash": "feaa8d7e3ffa3da35ac52fa59728ff9829c7118d05706da82ff47cc13b9e4854",
+      "heading": "キーボード操作",
+      "position": 4,
+      "section_id": "DLID-yj4861bm3er9"
+    }
+  ],
   "summary": [
     "Pointer and keyboard input model: click targets, cursors, shortcuts",
     "Navigation patterns: menu bar, toolbar, sidebar, inspector, tabs",

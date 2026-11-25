@@ -1,4 +1,5 @@
 {
+  "applied_hash": "3254eefb2b30cf4361700213432a2da9b32ff0d04bff507a0c175e148d1aaea3",
   "content_hash": "3254eefb2b30cf4361700213432a2da9b32ff0d04bff507a0c175e148d1aaea3",
   "doc_link_id": "DLID-690azhnc61t0",
   "keywords": [
@@ -12,8 +13,21 @@
     "navigation structure",
     "CMP-001"
   ],
+  "last_check": {
+    "checked_at": "2026-11-25T03:43:00+00:00",
+    "result": "success"
+  },
   "path": "plugins/forge/skills/start-uxui-design/docs/component_catalog_template.md",
   "purpose": "Output template for generating a UI component catalog document with UX notes, defining the required sections and tables to fill in per feature.",
+  "references": [],
+  "sections": [
+    {
+      "content_hash": "f2786741cc713d6f2bf18628aac0e0e0d0f9a501228c8decc4f7cafc2660d501",
+      "heading": "UI コンポーネント一覧テンプレート",
+      "position": 0,
+      "section_id": "DLID-q1v5azvkth0a"
+    }
+  ],
   "summary": [
     "Design direction table with signature element",
     "Section 0 design principles transcribed from Design Intent",

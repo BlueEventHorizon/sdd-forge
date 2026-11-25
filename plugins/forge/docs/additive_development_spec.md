@@ -286,5 +286,5 @@ specs/
 
 追加 feature 文書の frontmatter キー定義（`feature_type`/`feature_note`/`doc_status`）は [frontmatter_format.md][frontmatter-format] を単一の真実源とする。
 
-[frontmatter-format]: frontmatter_format.md "19cf661699b0 DLID-jtc4qnjwbdxf"
-[strategy-principles-spec]: strategy_principles_spec.md "e1b25ede799d DLID-540ak6kxrsxp"
+[frontmatter-format]: frontmatter_format.md "867507803b4a DLID-jtc4qnjwbdxf"
+[strategy-principles-spec]: strategy_principles_spec.md "3f63be26ad5c DLID-540ak6kxrsxp"

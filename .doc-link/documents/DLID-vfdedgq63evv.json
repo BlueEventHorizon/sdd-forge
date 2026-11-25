@@ -1,38 +1,221 @@
 {
-  "content_hash": "633856e89ea045652746a07da53eceee676f0a735ed3f64af70efba869fbd07f",
+  "applied_hash": "49079c26d04d8b964b8eb511ae4297beb98c01882bf98570329db203f9775519",
+  "content_hash": "49079c26d04d8b964b8eb511ae4297beb98c01882bf98570329db203f9775519",
   "doc_link_id": "DLID-vfdedgq63evv",
   "keywords": [
     "doc_structure",
-    "versioning",
     "migration",
-    "MIGRATIONS",
+    "versioning",
     "CURRENT_VERSION",
+    "MIGRATIONS",
     "migrate_doc_structure",
-    "setup-doc-structure",
     "check_doc_structure",
-    "resolve_doc_structure",
-    "text-based migration"
+    "setup-doc-structure",
+    "dry-run",
+    "COMMON-REQ-001"
   ],
+  "last_check": {
+    "checked_at": "2026-11-25T02:44:01+00:00",
+    "result": "success"
+  },
   "path": "docs/specs/forge/design/DES-016_doc_structure_version_management_design.md",
-  "purpose": "Design of versioning and migration for .doc_structure.yaml: version marker, stepwise text-based migrations, migration script CLI, and how setup-doc-structure invokes it.",
+  "purpose": "Design for versioning and migrating .doc_structure.yaml: version marker, stepwise text-based migration registry, migration script CLI, and setup-doc-structure call flow.",
+  "references": [
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/specs/common/requirements/COMMON-REQ-001_versioned_migration.md",
+        "result": "match",
+        "scope": "docs/specs/common/requirements"
+      },
+      "kind": "document",
+      "position": 0,
+      "recorded_content_hash": "857319588069",
+      "recorded_path": "../../common/requirements/COMMON-REQ-001_versioned_migration.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-dqkf6wa1z2cp",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "plugins/forge/docs/doc_structure_format.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 1,
+      "recorded_content_hash": "776f3c99a799",
+      "recorded_path": "../../../../plugins/forge/docs/doc_structure_format.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-cbr02jpbxfcs",
+      "target_section_id": null
+    }
+  ],
+  "sections": [
+    {
+      "content_hash": "0514c4d14a5e766dccba6a37fa8c87f8bde9f8eb419d01a84e3b13277ac4f0bd",
+      "heading": "v1 形式の構造",
+      "position": 13,
+      "section_id": "DLID-85y47efzs6d5"
+    },
+    {
+      "content_hash": "0a2eb0333775e56f310295ad4f26206dd762ac8ecc0a6d74afd2ebe4f6ba497a",
+      "heading": "CLI インターフェース",
+      "position": 18,
+      "section_id": "DLID-n7p83kcr1743"
+    },
+    {
+      "content_hash": "239feebf5282a627390dc0e44c8530a12a3c115f4d14712c8d614d285a4b37f0",
+      "heading": "バージョン識別子",
+      "position": 2,
+      "section_id": "DLID-073rb28bwvev"
+    },
+    {
+      "content_hash": "26659493a0bd1260bdae14f68fa454a8696d526764789d323ea44520e27b65a3",
+      "heading": "ユーザー設定の保持ルール",
+      "position": 22,
+      "section_id": "DLID-ttpg4fg62d28"
+    },
+    {
+      "content_hash": "36b3f7df21d12e75506dd60fa26b9593ed37ed553da6120194b3a7c91f9d6c70",
+      "heading": "setup-doc-structure からの呼び出しフロー",
+      "position": 21,
+      "section_id": "DLID-qybg2ntza657"
+    },
+    {
+      "content_hash": "4677b88d202d636b01718d05cfb1a739a2e62859223a94a443fe033c636a30fe",
+      "heading": "DES-016 .doc_structure.yaml バージョン管理設計",
+      "position": 0,
+      "section_id": "DLID-k4yt74q513zs"
+    },
+    {
+      "content_hash": "5465f1118d1b7dd3cf51091b20a28b299c71a41231994a12ca1e6165e82ba68b",
+      "heading": "マイグレーション方式",
+      "position": 4,
+      "section_id": "DLID-7rqkv2xxzyk8"
+    },
+    {
+      "content_hash": "5fc2c1dbd535276ec4368c680a99436cc856b71d990b102d1005ae278faf2e03",
+      "heading": "マイグレーション追加手順",
+      "position": 9,
+      "section_id": "DLID-0xpfh4dyky1p"
+    },
+    {
+      "content_hash": "60f2657984cb50f6663ef39cbec380a81853ba4c110e5c689c3a5ccdcfa840e1",
+      "heading": "migrate_v1_to_v2 の変換仕様",
+      "position": 14,
+      "section_id": "DLID-5v5s8q90j07f"
+    },
+    {
+      "content_hash": "7271238086880033617f1b76385c0fa13d2e70c6d799831afbcef20551324cd1",
+      "heading": "エラーハンドリング",
+      "position": 8,
+      "section_id": "DLID-n3q514qr4yqb"
+    },
+    {
+      "content_hash": "7b2ffb0e4b1d411296526cdbd8e32ff6d874cafa338f5414f1aae8e02c11fe94",
+      "heading": "migrate_v2_to_v3 の変換仕様",
+      "position": 15,
+      "section_id": "DLID-3rr35vwh9r0j"
+    },
+    {
+      "content_hash": "7f118189d28747b2cc0998021a470dc7a9cba477e2098502784c0311ba63fc3f",
+      "heading": "バージョン番号の意味",
+      "position": 3,
+      "section_id": "DLID-ywvqdyc08sjr"
+    },
+    {
+      "content_hash": "885f1c79c61be44f43cb134784ff9b12dadeef08840aaccad72842aa6333449c",
+      "heading": "マイグレーションフロー",
+      "position": 5,
+      "section_id": "DLID-8hgbevz33jfr"
+    },
+    {
+      "content_hash": "9935cd6a0b9a417e6e94cd51f85c43e9bd94224b808aa78fc8355a888de91015",
+      "heading": "MIGRATIONS レジストリ",
+      "position": 7,
+      "section_id": "DLID-7hfd7apr9759"
+    },
+    {
+      "content_hash": "a468c0c4e047c096e3054e7f64666e2b7dda4448f8f9911800f17a0f5ec9ee55",
+      "heading": "バージョン検出 API",
+      "position": 23,
+      "section_id": "DLID-6x6g57m5xw8y"
+    },
+    {
+      "content_hash": "a6e83c8a53775dca7c99ca93c483c9ce156a329a593b97bf06f67c5c69099ec5",
+      "heading": "マイグレーションスクリプト",
+      "position": 16,
+      "section_id": "DLID-wa9dw98yxv8z"
+    },
+    {
+      "content_hash": "bc734d6e988156238005b69634a3d889e2deb0901b261ba5d049ed71c54483aa",
+      "heading": "配置",
+      "position": 17,
+      "section_id": "DLID-jykgp085c2xq"
+    },
+    {
+      "content_hash": "d16b2e318ce8fc83bb71313eae777c96969eb7c5386392296ce24229dcdb5235",
+      "heading": "実装上の設計判断",
+      "position": 10,
+      "section_id": "DLID-y0787g0dwmfh"
+    },
+    {
+      "content_hash": "d377aca988eae440ee44d7cd5aa5f94a76e35edbce7c300c8ddf41855b07cdc4",
+      "heading": "出力仕様",
+      "position": 19,
+      "section_id": "DLID-r2mckrv3eqz3"
+    },
+    {
+      "content_hash": "d508f6283bb28b25719dc5e97aa13b2e159875556d53e05f95685b876d2ad4c4",
+      "heading": "書き出しの責務分担",
+      "position": 20,
+      "section_id": "DLID-3pte09120gy1"
+    },
+    {
+      "content_hash": "d65e0cfbb284bef5a06f289e304c7b9fbf955d483a06eaf9e2fcaf5ccc000c52",
+      "heading": "CURRENT_VERSION 定数",
+      "position": 6,
+      "section_id": "DLID-yd1kh5vgjdpp"
+    },
+    {
+      "content_hash": "eb39d9d28d78ba049a7505e623fd0aad76a023df9e2d9fcfda6fa101e1fc83e3",
+      "heading": "バージョン検出の再利用方法",
+      "position": 12,
+      "section_id": "DLID-w2s47vk06a3m"
+    },
+    {
+      "content_hash": "f3b57215f3dd39c5e32e32a1e8efe989285e8f47de324f28ef9601332e071e11",
+      "heading": "概要",
+      "position": 1,
+      "section_id": "DLID-jsh7ymjq4ctb"
+    },
+    {
+      "content_hash": "fa37b9d8eec98eb40df2df061c2efa2e517cb66db1dea37af0171207ca39f3f4",
+      "heading": "data の型: str（テキスト操作）",
+      "position": 11,
+      "section_id": "DLID-vyb83697bdvv"
+    }
+  ],
   "summary": [
-    "Version identifier as a YAML comment and meaning of major and minor bumps",
+    "Version identifier as a YAML comment (doc_structure_version X.Y) and major/minor meaning",
     "Stepwise migration flow with CURRENT_VERSION constant and MIGRATIONS registry",
-    "Error handling: pure functions, propagate bugs, skip newer versions, treat undetectable as v1",
-    "Procedure for adding a new migration",
-    "Design decision to use str text operations since no standard YAML parser exists",
+    "Error handling rules: no silent fallback, newer versions skipped, detection failure treated as v1",
+    "Procedure for adding a new migration function",
+    "Design decision to use str text operations because no stdlib YAML parser exists",
     "Reuse of version detection from resolve_doc_structure.py",
     "Conversion specs for v1 to v2 and v2 to v3",
-    "Migration script placement, CLI modes, output and exit codes",
-    "Write responsibility on caller and setup-doc-structure call flow using check_doc_structure.py",
+    "migrate_doc_structure.py CLI modes (default, --dry-run, --check), output and exit codes",
+    "check_doc_structure.py output and the three-way branching flow in setup-doc-structure",
     "User settings preserved during migration and version detection API"
   ],
   "tasks": [
-    "Adding a new .doc_structure.yaml migration",
-    "Modifying migrate_doc_structure.py or resolve_doc_structure.py",
-    "Changing setup-doc-structure migration flow",
-    "Bumping doc_structure_version",
-    "Reviewing .doc_structure.yaml versioning design"
+    "Modifying .doc_structure.yaml migration logic",
+    "Adding a new doc_structure version migration",
+    "Editing migrate_doc_structure.py or check_doc_structure.py",
+    "Changing the setup-doc-structure skill flow",
+    "Reviewing doc_structure format version compatibility"
   ],
   "title": "DES-016 .doc_structure.yaml バージョン管理設計"
 }

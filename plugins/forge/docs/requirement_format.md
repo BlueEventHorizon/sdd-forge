@@ -108,8 +108,8 @@ doc_link_id: DLID-c13gr4qbk4vm
 | ---------------------------------------------------------------------------- | -------------- | --------------------------------------------------------------------------------------- |
 | 追加 feature 要件定義書に `feature_type: temporary-feature` frontmatter 欠如 | 🟡 major       | 当該範囲の現在の仕様であることと merge 予定が宣言されず、生成経路を問わず取りこぼされる |
 
-[spec-priorities-spec]: spec_priorities_spec.md "f8233c87c564 DLID-f9ny9e932trv"
-[spec-design-boundary-spec]: spec_design_boundary_spec.md "4e2a4cd68a8a DLID-h9h90g9wcy8f"
-[additive-development-spec]: additive_development_spec.md "307dc53425f0 DLID-cyrk9xr8vcap"
-[frontmatter-format]: frontmatter_format.md "19cf661699b0 DLID-jtc4qnjwbdxf"
-[error-classification-spec]: error_classification_spec.md "04397ae80f5c DLID-5ykqs19cdbks"
+[spec-priorities-spec]: spec_priorities_spec.md "b68b930cec1d DLID-f9ny9e932trv"
+[spec-design-boundary-spec]: spec_design_boundary_spec.md "e0d1a83f7e47 DLID-h9h90g9wcy8f"
+[additive-development-spec]: additive_development_spec.md "3be39e634c1c DLID-cyrk9xr8vcap"
+[frontmatter-format]: frontmatter_format.md "867507803b4a DLID-jtc4qnjwbdxf"
+[error-classification-spec]: error_classification_spec.md "94496cc6d044 DLID-5ykqs19cdbks"

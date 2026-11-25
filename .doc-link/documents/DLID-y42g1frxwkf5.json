@@ -1,5 +1,6 @@
 {
-  "content_hash": "d1f79607a42d8d248ea238937b800a2bf0d80c41e49e9afa75f8916eb154dcf5",
+  "applied_hash": "36bb4e693dd264882bdf365d105a1c732d80dc4b59f06f37ffa27ab8d508e20d",
+  "content_hash": "36bb4e693dd264882bdf365d105a1c732d80dc4b59f06f37ffa27ab8d508e20d",
   "doc_link_id": "DLID-y42g1frxwkf5",
   "keywords": [
     "reviewer",
@@ -7,31 +8,198 @@
     "review criteria",
     "findings",
     "target_unreadable",
-    "base_branch",
-    "diff",
+    "doc_structure",
+    "paths base_branch diff",
     "criteria documents",
-    "review mechanism"
+    "uxui"
   ],
+  "last_check": {
+    "checked_at": "2026-11-25T02:44:01+00:00",
+    "result": "success"
+  },
   "path": "docs/specs/review/requirements/REQ-027_reviewer.md",
-  "purpose": "Requirements for the reviewer agent in the review mechanism: how it reads targets, determines target type, which documents it uses per type, and what findings and error values it returns.",
+  "purpose": "Requirements defining the reviewer behavior: how it reads targets, determines target type, which documents it uses per type, what findings it returns, and its single error value.",
+  "references": [
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/specs/review/requirements/REQ-029_review_exchange.md",
+        "result": "match",
+        "scope": "docs/specs/review/requirements"
+      },
+      "kind": "document",
+      "position": 1,
+      "recorded_content_hash": "d635cdb8307b",
+      "recorded_path": "REQ-029_review_exchange.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-5vrs9fnet7de",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "plugins/forge/docs/deterministic_generation_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 3,
+      "recorded_content_hash": "75383cc8c6d8",
+      "recorded_path": "../../../../plugins/forge/docs/deterministic_generation_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-tm2m7nv23dqd",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "plugins/forge/docs/error_classification_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 4,
+      "recorded_content_hash": "94496cc6d044",
+      "recorded_path": "../../../../plugins/forge/docs/error_classification_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-5ykqs19cdbks",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "plugins/forge/docs/spec_design_boundary_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 0,
+      "recorded_content_hash": "e0d1a83f7e47",
+      "recorded_path": "../../../../plugins/forge/docs/spec_design_boundary_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-h9h90g9wcy8f",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "plugins/forge/docs/spec_priorities_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 2,
+      "recorded_content_hash": "b68b930cec1d",
+      "recorded_path": "../../../../plugins/forge/docs/spec_priorities_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-f9ny9e932trv",
+      "target_section_id": null
+    }
+  ],
+  "sections": [
+    {
+      "content_hash": "015ada336ad7fbd6d80bb909d30b0c5eb3529c0a6fdb557293ce4e2a47bd954b",
+      "heading": "用語",
+      "position": 3,
+      "section_id": "DLID-zrv1z7gs5bbv"
+    },
+    {
+      "content_hash": "0c0828cfa0ec2c25a2d75194e20af3a5b86889578af612fb2b55ea8d3088190f",
+      "heading": "要件一覧",
+      "position": 4,
+      "section_id": "DLID-ecm5f8yjvq4k"
+    },
+    {
+      "content_hash": "1a5df9a796f4aa9f2e59b1a56a9a4a01b30f186948887de7f7b552eda81505c1",
+      "heading": "1. 作業",
+      "position": 7,
+      "section_id": "DLID-9r4c9bh8hx4d"
+    },
+    {
+      "content_hash": "2c30765e033d844b115dd3d78c1019a0b32f20c1f90735cf623ef5cc4ff72fd0",
+      "heading": "FNC-301: reviewer の定義が持つ中身",
+      "position": 6,
+      "section_id": "DLID-2qvrx06zm1vg"
+    },
+    {
+      "content_hash": "3104f7b9bc0bef5e54c2a7e33e5906ae4b84bb83f8ae4b9e15270ef7de0a853f",
+      "heading": "0. reviewer の定義が持つもの",
+      "position": 5,
+      "section_id": "DLID-nvca6537fs6z"
+    },
+    {
+      "content_hash": "349203b417e61cada5e95c41df5156b00927eb5bfb113a8ddaeebb4234535a16",
+      "heading": "対象システムの性質",
+      "position": 2,
+      "section_id": "DLID-zqty73pb6rzv"
+    },
+    {
+      "content_hash": "5289655391f5b9d111ddf7e4b1f48378d862cfd9a7b0a07cd4990907040c8d82",
+      "heading": "FNC-315: reviewer が挙げるエラー値",
+      "position": 13,
+      "section_id": "DLID-38bnbha783nq"
+    },
+    {
+      "content_hash": "85239b275c2d6816d09b19025b81859e397482567501f8d6c6bc114fd60d0228",
+      "heading": "2. 出力",
+      "position": 11,
+      "section_id": "DLID-dsq473b4eaxa"
+    },
+    {
+      "content_hash": "ae11fedb0f831363f74a548eed751ba36b875db9192a89ed792d9e52a6a22a63",
+      "heading": "FNC-306: 対象を読む",
+      "position": 8,
+      "section_id": "DLID-v2m03ahq2mbc"
+    },
+    {
+      "content_hash": "c521c4a6023f1a6ab6cf098faf211a72d7f68302419c93aa525dda0c59b097f3",
+      "heading": "FNC-307: 対象ごとに target 種別を判定する",
+      "position": 9,
+      "section_id": "DLID-e5f36xyzh6me"
+    },
+    {
+      "content_hash": "c9b83964cf0d636cbc5d3297ac4883c038de077c5b024d796b077cc3ea17646d",
+      "heading": "REQ-027 reviewer の入力・作業・出力の契約 要件定義書",
+      "position": 0,
+      "section_id": "DLID-xyv3gbcyfz3e"
+    },
+    {
+      "content_hash": "d549faccc2295c667dfbb3738a37b05c59796fb259362c94e2ebc940a00df035",
+      "heading": "FNC-309: reviewer が所見として返すもの",
+      "position": 12,
+      "section_id": "DLID-15zpka7ar2n2"
+    },
+    {
+      "content_hash": "d79a5566e02d42ecc51c0f7748c38a275ec3aa04a54b8ea0d1936e9d218603ca",
+      "heading": "概要",
+      "position": 1,
+      "section_id": "DLID-c1d7z47szkfc"
+    },
+    {
+      "content_hash": "e9a0d2ef344e11bd3ec513f148dcf6e28f7aee22e782eb69e09b283d53f0b742",
+      "heading": "FNC-308: target 種別ごとに扱う文書",
+      "position": 10,
+      "section_id": "DLID-61hb0xx1e7p1"
+    }
+  ],
   "summary": [
-    "Reviewer reads targets and applies review perspectives to return findings",
-    "Defines target type, review perspective, and perspective document terms",
-    "Reviewer definition contents specific to the reviewer (FNC-301)",
-    "Reading targets by targets shape: paths, base_branch, diff, including deletions and renames (FNC-306)",
-    "Target type determination among code, requirement, design, plan, uxui using config and file content (FNC-307)",
-    "Per-target-type documents: common set plus type-specific criteria, norms, project rules and cross-check targets (FNC-308)",
-    "Findings output: none means zero findings; reviewers are interchangeable (FNC-309)",
-    "Only error value is target_unreadable (FNC-315)",
-    "Secret detection is out of scope; shared contract is delegated to REQ-029"
+    "Reviewer purpose: find errors without omission using norms suited to the target",
+    "Scope: reviewer-specific behavior; common exchange contract is delegated; secret detection is out of scope",
+    "FNC-301: contents of the reviewer definition, including script usage and request item handling",
+    "FNC-306: reading targets by shape (paths, base_branch, diff), including deletions and renames",
+    "FNC-307: target type determination into code, requirement, design, plan, uxui via doc structure config then file reading",
+    "FNC-308: documents per target type, common set plus type-specific criteria, norms, project rules and cross-check targets",
+    "FNC-309: findings are returned only when present; zero findings means normal completion",
+    "FNC-315: the only error value is target_unreadable; unreadable documents get no error value",
+    "Undetermined target type is reviewed with common documents only, not an error"
   ],
   "tasks": [
-    "Reviewing or modifying the reviewer agent definition",
-    "Implementing target type determination",
-    "Changing review criteria documents or norm mapping per target type",
-    "Defining reviewer error values",
-    "Reviewing requirement documents on the review mechanism",
-    "Changing resolve_doc_structure script for type resolution"
+    "Writing or revising the reviewer agent definition",
+    "Reviewing the reviewer requirements document",
+    "Changing the mapping of target types to criteria documents",
+    "Implementing target type resolution in resolve_doc_structure",
+    "Adding or changing review criteria documents",
+    "Handling reviewer error values and unreadable targets"
   ],
   "title": "REQ-027 reviewer の入力・作業・出力の契約 要件定義書"
 }

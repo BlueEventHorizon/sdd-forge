@@ -1,4 +1,5 @@
 {
+  "applied_hash": "157820b1afb7f147bb5bcd06705a68ff853fff6c16f4cace53e875b0020f9813",
   "content_hash": "157820b1afb7f147bb5bcd06705a68ff853fff6c16f4cace53e875b0020f9813",
   "doc_link_id": "DLID-pdvdjb49qpr4",
   "keywords": [
@@ -13,8 +14,147 @@
     "traceability table",
     "detailed design"
   ],
+  "last_check": {
+    "checked_at": "2026-11-25T03:43:00+00:00",
+    "result": "success"
+  },
   "path": "plugins/forge/docs/design_method.md",
   "purpose": "Defines the design method that turns requirements into design: viewpoints, inputs and deliverables, and Steps 0 to 6 from scenario reading through contracts and detailed design to consistency checks.",
+  "references": [],
+  "sections": [
+    {
+      "content_hash": "02d5fbffc124255ef5a8e9664de5dc2a23f12bbf4ced9c4f2bc9a4f1ee54896a",
+      "heading": "Step 4. 契約を書く（共有データ定義・モジュール表）",
+      "position": 16,
+      "section_id": "DLID-js6jjce3a70f"
+    },
+    {
+      "content_hash": "06f36c57e24b844edbe775655664c27685fa2d7b40a9494d26083ff2468575ff",
+      "heading": "Step 5. 詳細設計",
+      "position": 19,
+      "section_id": "DLID-tnbxb7zn8dev"
+    },
+    {
+      "content_hash": "0861a3b739c33cc5c50abda43b9f04f7335ec15f5f021b0060b1c4727378e17d",
+      "heading": "Step 2. 責務を見つけ、クラスとして定義する（設計の起点）",
+      "position": 14,
+      "section_id": "DLID-zxnwnf0m3ckk"
+    },
+    {
+      "content_hash": "1c75f95a17014d0a4dcc96446cc9b2545c3369087de1e165995250149caffe98",
+      "heading": "4. 設計の範囲",
+      "position": 21,
+      "section_id": "DLID-6zgrrevpyemg"
+    },
+    {
+      "content_hash": "24d030a7121fcc86dd6bccb034d003fc12adb60358b3f7dbfcb6fff607d45a7a",
+      "heading": "1.6 入力・処理・出力を契約として明確化する理由",
+      "position": 7,
+      "section_id": "DLID-18gchftd1fcj"
+    },
+    {
+      "content_hash": "2642fb11a973c47fb932ce8e372a179f1a66a9f74bd897d693358c0d0336e2bb",
+      "heading": "1.4 アクターを「実装方法が決まっているか」で選ぶ理由",
+      "position": 5,
+      "section_id": "DLID-3743tyhjjx53"
+    },
+    {
+      "content_hash": "2e910c72c0eb7cdf19ff0331b6ebc7ceaf4c7f343a9e08b66682c0fc49dffa3d",
+      "heading": "Step 0. 入力を読む",
+      "position": 12,
+      "section_id": "DLID-9stahhx0fdp0"
+    },
+    {
+      "content_hash": "448fcadcea598dc0b884595fb8a5e73a32de7cdef46c6a833ea1353fbaa894b3",
+      "heading": "3. 手順",
+      "position": 11,
+      "section_id": "DLID-3bf8qxycwmnk"
+    },
+    {
+      "content_hash": "4df1fcf00aa0c345e1ae6f9a77d505cec26567179dca9e1cf1a1db5243a030a6",
+      "heading": "Step 1. 要件をシナリオとして読む",
+      "position": 13,
+      "section_id": "DLID-e4qvjz1fede6"
+    },
+    {
+      "content_hash": "6423e1eff60792c730b4fe20941db12ae19b737b380e0a8e481c6b9ab7b1b3ff",
+      "heading": "1.1 クラスの名前を責務にする理由",
+      "position": 2,
+      "section_id": "DLID-sw3k8z0n02ta"
+    },
+    {
+      "content_hash": "644990278e915b7b2989980249ac1b419a87af9fc07215a68eac3500dd2b1f7e",
+      "heading": "共有データ定義",
+      "position": 17,
+      "section_id": "DLID-3xm6xx08kdy2"
+    },
+    {
+      "content_hash": "69a4554db2620a40973f4e70da68d2c02a47529e31285ddb9f9f37c54f25032b",
+      "heading": "2.2 成果物",
+      "position": 10,
+      "section_id": "DLID-rg34vkq3gc7c"
+    },
+    {
+      "content_hash": "9cd66559bb9aaf2626b08801033267b484be67fd1f737b5e2c33d2d38a2f6f6e",
+      "heading": "Step 3. 要件を演じる（シーケンス図）",
+      "position": 15,
+      "section_id": "DLID-dx3d11qdfxqe"
+    },
+    {
+      "content_hash": "9d3f6c9b8408ed6f710b2cde7afd14ffad2b6601c91bf2ceb629b6d417208ee8",
+      "heading": "1. 考え方：なぜ要件は設計になり得るのか",
+      "position": 1,
+      "section_id": "DLID-2by11g51g1r4"
+    },
+    {
+      "content_hash": "bd3e064497dba39bb0f56f375ee8bb7292623305b2fb618be9a63d1b125f5d2c",
+      "heading": "1.3 クラス図とシーケンス図の両方を書く理由",
+      "position": 4,
+      "section_id": "DLID-ex79s35kj6q2"
+    },
+    {
+      "content_hash": "be080a71026df7d459cf1e6979ff6a74168460e0e3482734344faa91125aa08c",
+      "heading": "1.5 入力で決まっている処理を自己メッセージにする理由",
+      "position": 6,
+      "section_id": "DLID-wyfmjtgwcr78"
+    },
+    {
+      "content_hash": "c701fa09831afc5361c78c53c57ed83c90970922cb0f7891eca9b580c7d75285",
+      "heading": "2.1 入力（既にあるもの）",
+      "position": 9,
+      "section_id": "DLID-a1b6j1y0cqma"
+    },
+    {
+      "content_hash": "d08a5c6140a5c958f4ca09a5d7f50c82b79fb9abcfcbdc0151c9e9b34dd90f3e",
+      "heading": "設計手法",
+      "position": 0,
+      "section_id": "DLID-m5jc8yfneyk6"
+    },
+    {
+      "content_hash": "d43cbad5741ab355553186dbde495bf819bff05ba6e7fced604b7571f0521680",
+      "heading": "モジュール表",
+      "position": 18,
+      "section_id": "DLID-rvg40swxrz7w"
+    },
+    {
+      "content_hash": "f3f76418f44d24fe8356223406a9179a2021279ec96dbf0ca616ec50ac92aaf0",
+      "heading": "Step 6. 整合性を確かめる",
+      "position": 20,
+      "section_id": "DLID-4zxhg4w3945v"
+    },
+    {
+      "content_hash": "fbd165b420e4086d42a811597df78f5bbc7e00d2ea8e8e57f3506411fd0f5c9e",
+      "heading": "2. 入力と成果物",
+      "position": 8,
+      "section_id": "DLID-3d7bb1b9mew2"
+    },
+    {
+      "content_hash": "fe9addb066216f6ae82c49ecd409a2fd5caafbb60234d4e270a69efeb9d0ba9c",
+      "heading": "1.2 クラスに「保持データ」と「メソッド」を書く理由",
+      "position": 3,
+      "section_id": "DLID-hb0af5ybn7nk"
+    }
+  ],
   "summary": [
     "Rationale: requirements decompose into information, actions and scenarios, rewritten as responsibility, behavior, contract and maturity viewpoints",
     "Reasons for responsibility-named classes, class and sequence diagrams, actor selection, self-messages and contracts",

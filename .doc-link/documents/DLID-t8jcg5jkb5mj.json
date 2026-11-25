@@ -1,9 +1,10 @@
 {
-  "content_hash": "122ed8c0e2c204415b769da5fcc1c745339b2a4c8ac0db7dda3dad870536612a",
+  "applied_hash": "33e1e8046cdc7b1dc973a2e621797599b9b860e9f0c6a1510f073457dc9b4994",
+  "content_hash": "33e1e8046cdc7b1dc973a2e621797599b9b860e9f0c6a1510f073457dc9b4994",
   "doc_link_id": "DLID-t8jcg5jkb5mj",
   "keywords": [
     "plan",
-    "task",
+    "tasks",
     "traceability",
     "required_reading",
     "task group",
@@ -13,28 +14,309 @@
     "severity catalog",
     "unit test"
   ],
+  "last_check": {
+    "checked_at": "2026-11-25T03:43:00+00:00",
+    "result": "success"
+  },
   "path": "plugins/forge/docs/plan_principles_spec.md",
-  "purpose": "General principles for authoring plan documents when no project-specific rules exist: structure, task design, dependencies, acceptance criteria, tests, traceability, and severity catalog.",
+  "purpose": "General principles for writing plan documents (JSON plans): structure, task granularity, groups, dependencies, acceptance criteria, tests, traceability, and a severity catalog for violations.",
+  "references": [
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/additive_development_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 2,
+      "recorded_content_hash": "3be39e634c1c",
+      "recorded_path": "additive_development_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-cyrk9xr8vcap",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/document_style_guide.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 0,
+      "recorded_content_hash": "335c3c0eb320",
+      "recorded_path": "document_style_guide.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-c59znr7b8f56",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/frontmatter_format.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 1,
+      "recorded_content_hash": "867507803b4a",
+      "recorded_path": "frontmatter_format.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-jtc4qnjwbdxf",
+      "target_section_id": null
+    }
+  ],
+  "sections": [
+    {
+      "content_hash": "059a62938e1cb144f65c059d4ce0222136d0be3f6daa610eb9de7155c48b45b1",
+      "heading": "`required_reading` フィールドの仕様",
+      "position": 7,
+      "section_id": "DLID-j3d40t180zkp"
+    },
+    {
+      "content_hash": "07f9d9228f8144dac76777f5a83c703fa29d47845596e7483d3d88e5393fd3a6",
+      "heading": "途中を通すための互換コードを書かない [MANDATORY]",
+      "position": 12,
+      "section_id": "DLID-edpd3vqv9h50"
+    },
+    {
+      "content_hash": "132f6c8c416cda8b206c008de2b4044ad4a7a6cb22d2baeaf2daac155982342b",
+      "heading": "トレーサビリティ",
+      "position": 36,
+      "section_id": "DLID-46hanxbahxpq"
+    },
+    {
+      "content_hash": "1a4e578f4086affc5ee4185640684f4ac764b32596fc149e0fbdd2707e373f3b",
+      "heading": "依存関係管理",
+      "position": 34,
+      "section_id": "DLID-03b4bz75c06e"
+    },
+    {
+      "content_hash": "1cd4441d4d61feaf8d66ad7fc47143c0ef1451ee3a75e13b1f54863ef01295b8",
+      "heading": "「やるべき内容」記載原則 (本文書既存)",
+      "position": 31,
+      "section_id": "DLID-7c62r93g2733"
+    },
+    {
+      "content_hash": "206152e9bacf040ecd7f621e14b2579b976167fddca507a3396d39228db3eeb1",
+      "heading": "依存関係管理",
+      "position": 14,
+      "section_id": "DLID-08wyvvtcvbme"
+    },
+    {
+      "content_hash": "21f30cdbe8fa702312a9428f0cda6763d6dbff546eda35d41a0b66bb03389704",
+      "heading": "規範",
+      "position": 23,
+      "section_id": "DLID-t29mc0tqd38r"
+    },
+    {
+      "content_hash": "2a15d153843f84eac32feb2cefa5b6001ec7900d8e7a732c386d21fe0557cf7a",
+      "heading": "「やるべき内容」の記載原則",
+      "position": 6,
+      "section_id": "DLID-cw91n937zpya"
+    },
+    {
+      "content_hash": "2ad2db7dd3d23920f35332676a780d368917a19a1c3c8a95ea5adb5f8177f7dd",
+      "heading": "`required_reading` フィールド (本文書既存)",
+      "position": 32,
+      "section_id": "DLID-rv431mgqp0s8"
+    },
+    {
+      "content_hash": "35c761a2eaa5d3bc71e7709f78ffd0d8bffc0e64fbee4afc5442b1f20f1dcf82",
+      "heading": "タスクID と優先度",
+      "position": 2,
+      "section_id": "DLID-mdkq79c4qd6p"
+    },
+    {
+      "content_hash": "49d282ffb7700d2ea69116c6ef11c74da32a4e7f2a09e408ca665f1b18629eb1",
+      "heading": "タスク受け入れ基準規範",
+      "position": 16,
+      "section_id": "DLID-9e2r2530nhe4"
+    },
+    {
+      "content_hash": "5371d496a7747499559c7a63affa97d954276085b0b1ed6af3a959973147b7c1",
+      "heading": "タスクの粒度 (本文書既存)",
+      "position": 30,
+      "section_id": "DLID-y8exynwkks9q"
+    },
+    {
+      "content_hash": "547488688747eaebfc84373d5848b455ef7603ad8859e53270924091400a2abc",
+      "heading": "受け入れ基準の主観表現禁止例",
+      "position": 18,
+      "section_id": "DLID-xfv3s4gpt29h"
+    },
+    {
+      "content_hash": "551fdd3998500a4b3b4d96e833e212b9e0d2175591dc70dd0d93079cd0a34f45",
+      "heading": "計画書の構成ルール",
+      "position": 3,
+      "section_id": "DLID-ghcj7v176j0d"
+    },
+    {
+      "content_hash": "64d6c28dd7d9b74ad25b2bdce450e44bf8a24620a7511212e77ca8f590143938",
+      "heading": "規範",
+      "position": 17,
+      "section_id": "DLID-ma5efhstsw9g"
+    },
+    {
+      "content_hash": "658fc2cf09ef6d34833d0e97ffe1d4a171c9411c38c8f889931cf5eaf0a9745e",
+      "heading": "タスクグループ (本文書既存)",
+      "position": 33,
+      "section_id": "DLID-5n325z5f9me3"
+    },
+    {
+      "content_hash": "6909b0aa3e31df28188797de286f4737a9b96f6fbd62729245fae152f3bba0d7",
+      "heading": "計画書の定義",
+      "position": 1,
+      "section_id": "DLID-a2pk8p2vmw7t"
+    },
+    {
+      "content_hash": "7564bfaed5663f5d8e5253b9b1507d8c505edb47b99c99847780f8c7db80992e",
+      "heading": "計画書 作成原則",
+      "position": 0,
+      "section_id": "DLID-5fpx9rxg6208"
+    },
+    {
+      "content_hash": "7809d809a89b286a962a5cda34f3eab1fa8f2de6f7724c79294a027174f9050c",
+      "heading": "規範",
+      "position": 20,
+      "section_id": "DLID-gdrnzb94s04m"
+    },
+    {
+      "content_hash": "7a3313e1e21b763b9b12efe4097e522694e846cd9697552ce1d0a740cd5ff000",
+      "heading": "タスクの粒度",
+      "position": 5,
+      "section_id": "DLID-r8sd382mhd5n"
+    },
+    {
+      "content_hash": "92c07e54deac1e04fb4074e110916d84ffd02ce598c8bc261660fcfea5dd7fc8",
+      "heading": "タスクグループ",
+      "position": 8,
+      "section_id": "DLID-08e6yj4j4ym4"
+    },
+    {
+      "content_hash": "937de0b041f80931e67033bc5c241a67959687e73f2d1124c99854702241aa2c",
+      "heading": "グループサイズ（判断の観点）",
+      "position": 10,
+      "section_id": "DLID-9gzzgfncarkg"
+    },
+    {
+      "content_hash": "96cdc0b9b1a13d1a8de2e5bafe1752a4c43ce1d37af10a262ccb9d8ab00706de",
+      "heading": "グループ化の判定基準",
+      "position": 9,
+      "section_id": "DLID-rj1h8g63x5wv"
+    },
+    {
+      "content_hash": "a7786fd5a320954711bb9b56aea0dc5445db36f8a617b577f7a778b89288eb3a",
+      "heading": "規範",
+      "position": 26,
+      "section_id": "DLID-nd1nmnd49a3w"
+    },
+    {
+      "content_hash": "aa49e6dc59cd1ec816eca5a75fe98310a3e4e4ae08e86ec6ae7e30ff01a48711",
+      "heading": "暗黙依存検出規範",
+      "position": 22,
+      "section_id": "DLID-cddhn86t5efr"
+    },
+    {
+      "content_hash": "acdcc8f6a8aab32c98c81ddf6d12c4f1f27a321a82b6ffa1b6e2d0581e72cf23",
+      "heading": "グレーゾーン許容範囲",
+      "position": 27,
+      "section_id": "DLID-8nhae3530kns"
+    },
+    {
+      "content_hash": "ad3d5e5c72ba8bc6cdd97c6de5fcf13cf5e120c4ee4d5b520c3c90c257919e29",
+      "heading": "トレーサビリティ規範",
+      "position": 25,
+      "section_id": "DLID-c56jyqmjpqne"
+    },
+    {
+      "content_hash": "b8b7358875b760785a8d2fe759c578f6587271016352e662f7a55c0d2e27c68c",
+      "heading": "追加 feature の計画書",
+      "position": 37,
+      "section_id": "DLID-ec9yzsk5466p"
+    },
+    {
+      "content_hash": "bc2f005a52e82f8fc8a7fb00335b389a3e66bb54fd2b79f3f6e611d1a7079714",
+      "heading": "典型的な暗黙依存パターン",
+      "position": 24,
+      "section_id": "DLID-x6vcftsykrx7"
+    },
+    {
+      "content_hash": "c9302dfea8e0dd51d96be49f113efee34020adf8cfed50f460e9e5aa27f00a94",
+      "heading": "受け入れ基準・テスト",
+      "position": 35,
+      "section_id": "DLID-4dsbexysxmb0"
+    },
+    {
+      "content_hash": "ca727665914c2e33a3660bd17377eb7f2e2fa3cf2bec30cf9adea920fef61b6b",
+      "heading": "構成ルール (本文書既存)",
+      "position": 29,
+      "section_id": "DLID-553pp1vr9avw"
+    },
+    {
+      "content_hash": "ce94ea419f05742be14ad74b7cdc31854c1e76f663756a3e43f3ef7faa7fd8c4",
+      "heading": "並列実行可能タスクの識別",
+      "position": 15,
+      "section_id": "DLID-qz3t75d0gdhm"
+    },
+    {
+      "content_hash": "d39872b7c1f1c379f41213da9146c2696b5717167306d2c7369b508be3a7ac26",
+      "heading": "重大度カタログ",
+      "position": 28,
+      "section_id": "DLID-mpf05ws34t7a"
+    },
+    {
+      "content_hash": "d39f348e3ce0b1d4a8dab9a88ab9c7ac235a1135d0a9b4dc97a0ed2bcc5a2f95",
+      "heading": "トレーサビリティの 2 つの配列",
+      "position": 4,
+      "section_id": "DLID-ses1djywd1s3"
+    },
+    {
+      "content_hash": "dc255f9b900cd50d9678b99131f92af980464271bdb8396a1bf2b50fee374463",
+      "heading": "早期検証の妥当性（判断の観点）",
+      "position": 13,
+      "section_id": "DLID-rxnxt07saxea"
+    },
+    {
+      "content_hash": "e1208a3a9c0450aa2c16805a1952e63968764e6538c8844bae5bb6814cab14da",
+      "heading": "例外 (許容範囲)",
+      "position": 21,
+      "section_id": "DLID-q6j7b0z7126s"
+    },
+    {
+      "content_hash": "ef512d0a900f05de454c0382ce72a6461bb56576938bc5fe78e4afd1c8172813",
+      "heading": "グループ化の記載方法",
+      "position": 11,
+      "section_id": "DLID-0hfjk3sjsbt8"
+    },
+    {
+      "content_hash": "f31346571abb9da37fab86e8eadd9445d512d13661edb4af113ea77ac7bd6232",
+      "heading": "テスト規範",
+      "position": 19,
+      "section_id": "DLID-m7gn7hh44spj"
+    }
+  ],
   "summary": [
-    "Plan definition: responsibility, lifetime, and JSON format of the plan file",
-    "Task ID prefixes and priority ranges",
-    "Plan structure: only requirements_traceability, design_traceability and tasks; mandatory requirement_ids",
-    "Task granularity and the rule against copying implementation details from design documents",
-    "required_reading field specification, including strategy documents and glossaries",
-    "Task groups, build_check values, and the ban on temporary compatibility code",
+    "Plan definition: responsibility, lifetime, and JSON format",
+    "Task IDs and priority ranges",
+    "Three-section plan structure and traceability arrays with mandatory requirement_ids",
+    "Task granularity and what-to-do description principles",
+    "required_reading field spec including strategy document and glossaries",
+    "Task groups, build_check values, and ban on temporary compatibility code",
     "Dependency management and implicit dependency patterns",
     "Acceptance criteria and test norms",
-    "Traceability norms, with no exemption for requirements lacking tasks",
-    "Severity catalog mapping violations to severities"
+    "Traceability norms and gray-zone tolerances",
+    "Severity catalog mapping violation patterns to severities"
   ],
   "tasks": [
     "Creating a plan document",
     "Reviewing a plan document",
     "Decomposing work into tasks",
-    "Defining task dependencies and groups",
-    "Writing acceptance criteria for tasks",
-    "Setting required_reading for tasks",
-    "Checking requirement traceability"
+    "Defining task groups and build checks",
+    "Setting task dependencies",
+    "Writing acceptance criteria",
+    "Determining severity of plan review findings"
   ],
   "title": "計画書 作成原則"
 }

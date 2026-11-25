@@ -1,35 +1,343 @@
 {
-  "content_hash": "169ae99c4eed0a9036b08eafd6d24b6cfd8f162f8c145bf7691ff145fe8ca192",
+  "applied_hash": "e590554be385d6bade0cafea28481a6c548a8f9c89017c9232bad31368ba163b",
+  "content_hash": "e590554be385d6bade0cafea28481a6c548a8f9c89017c9232bad31368ba163b",
   "doc_link_id": "DLID-061pwjejh6yc",
   "keywords": [
     "design document",
     "design principles",
-    "quantitative targets",
+    "quantitative goals",
     "dependency direction",
-    "SPOF",
     "cohesion",
+    "SPOF",
     "severity catalog",
-    "additive feature",
-    "Mermaid"
+    "Mermaid",
+    "additive development",
+    "deliverables"
   ],
+  "last_check": {
+    "checked_at": "2026-11-25T03:43:00+00:00",
+    "result": "success"
+  },
   "path": "plugins/forge/docs/design_principles_spec.md",
-  "purpose": "General principles for authoring design documents (How): definition, what to omit, quantitative targets, judgment criteria, hierarchy, architecture norms, and a severity catalog for review.",
+  "purpose": "General principles for writing design documents when no project rules exist: definition, prohibited content, quantitative goals, judgment criteria, hierarchy, architecture norms, maintenance, and a severity catalog.",
+  "references": [
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/additive_development_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 3,
+      "recorded_content_hash": "3be39e634c1c",
+      "recorded_path": "additive_development_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-cyrk9xr8vcap",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/adr_format.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 5,
+      "recorded_content_hash": "3a31a2d6bfe3",
+      "recorded_path": "adr_format.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-ns59za8fens1",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/adr_principles_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 6,
+      "recorded_content_hash": "1fb15e199859",
+      "recorded_path": "adr_principles_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-45wzpggz1set",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/design_method.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 1,
+      "recorded_content_hash": "157820b1afb7",
+      "recorded_path": "design_method.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-pdvdjb49qpr4",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/document_style_guide.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 0,
+      "recorded_content_hash": "335c3c0eb320",
+      "recorded_path": "document_style_guide.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-c59znr7b8f56",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/error_classification_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 7,
+      "recorded_content_hash": "94496cc6d044",
+      "recorded_path": "error_classification_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-5ykqs19cdbks",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/frontmatter_format.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 8,
+      "recorded_content_hash": "867507803b4a",
+      "recorded_path": "frontmatter_format.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-jtc4qnjwbdxf",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/spec_design_boundary_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 2,
+      "recorded_content_hash": "e0d1a83f7e47",
+      "recorded_path": "spec_design_boundary_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-h9h90g9wcy8f",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/spec_priorities_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 4,
+      "recorded_content_hash": "b68b930cec1d",
+      "recorded_path": "spec_priorities_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-f9ny9e932trv",
+      "target_section_id": null
+    }
+  ],
+  "sections": [
+    {
+      "content_hash": "053c2e73fe9527dfe54e658e4f351b54b5884c445ee4735fe6ee864cc0e730ba",
+      "heading": "成果物",
+      "position": 23,
+      "section_id": "DLID-agb0ykss1erj"
+    },
+    {
+      "content_hash": "085f14780653afcfcdf7b00fae716a000366318544322bfb84027800278c76a4",
+      "heading": "階層構造ガイドライン",
+      "position": 5,
+      "section_id": "DLID-tp1jsfy8dxfs"
+    },
+    {
+      "content_hash": "08be2b8ef2863f74182578e8ef83970cc015d90f21f86ad27a480ec8d8e32ca1",
+      "heading": "記載してはいけない内容",
+      "position": 2,
+      "section_id": "DLID-08n9p5c56ryr"
+    },
+    {
+      "content_hash": "0c1d95b60a198c67284a5aeef5e95df4a4b549462c59217e2018b86b9c8d3313",
+      "heading": "定量目標の扱い",
+      "position": 3,
+      "section_id": "DLID-zvkde77pz34a"
+    },
+    {
+      "content_hash": "0df2d23ac6eb694883f193267d3d6caf9b7ed0301ee3b94cfcf1cd6a7e5d3f57",
+      "heading": "追加 feature 用 frontmatter",
+      "position": 26,
+      "section_id": "DLID-tg0r1w833qbz"
+    },
+    {
+      "content_hash": "1b831e000baa35391821e1090cb9228c3fb48a17a7ffd8a2c2eb6cb79f26c1e1",
+      "heading": "よくある失敗パターン",
+      "position": 11,
+      "section_id": "DLID-w01ytcecskaa"
+    },
+    {
+      "content_hash": "228be5760a11af68bec4a19517f44bdb8cd2b2b0f0b4fda3f15a0f7e36201981",
+      "heading": "重大度カタログ",
+      "position": 21,
+      "section_id": "DLID-9khqhrkz2vrt"
+    },
+    {
+      "content_hash": "360ce4ef3a85eac52867cc5005197f26c54e37b7ef24c502542e4f588c9a5073",
+      "heading": "規範",
+      "position": 13,
+      "section_id": "DLID-fp9xhhac24d9"
+    },
+    {
+      "content_hash": "40a03a8b8288b448c1d0da11ad624ecd06e71ccac01a7e60d6f9430f1ef16a26",
+      "heading": "アーキテクチャ・責務分割・可用性",
+      "position": 25,
+      "section_id": "DLID-ny8nvb0ykr5r"
+    },
+    {
+      "content_hash": "53ac6a9f353a871810d328dca35e60cf9dd1b5522742c0d79a28e0167f92dddd",
+      "heading": "グレーゾーン許容範囲",
+      "position": 20,
+      "section_id": "DLID-3x9h1e5jmt8b"
+    },
+    {
+      "content_hash": "5673cbfd1a71e9f6e03b9415d6cbc0f1a03d891726e895f1ff648bf5c4325917",
+      "heading": "規範",
+      "position": 16,
+      "section_id": "DLID-a05ddea37wan"
+    },
+    {
+      "content_hash": "57047e3637aaf02e6cbfaaef7ed6c52e75929ae410972f341c126108620c0b70",
+      "heading": "追加可能なオプションセクション",
+      "position": 6,
+      "section_id": "DLID-1j5ytc745axw"
+    },
+    {
+      "content_hash": "5916c08c5dfcda82aa6bf38c3893f1e29f4157caee8adf1c9ae19dd7571ba8d3",
+      "heading": "「記載してはいけない内容」(本文書既存)",
+      "position": 22,
+      "section_id": "DLID-qgewqb6xv0ag"
+    },
+    {
+      "content_hash": "7eebd5daeb9f67ae2b10e2982f95ca768702ec77c99fd5ceb5796ab58c499bcd",
+      "heading": "アーキテクチャ依存方向規範 (Appendix A.7 由来)",
+      "position": 12,
+      "section_id": "DLID-f1m519f19qhw"
+    },
+    {
+      "content_hash": "7f24279601db1403467af243a7589e62733abe2965cc5c2dd3300c54c84c4708",
+      "heading": "判断基準",
+      "position": 4,
+      "section_id": "DLID-s7gx56aem0k4"
+    },
+    {
+      "content_hash": "903c1645793928637a987562e44d7e9239c51e912bcdc12b08c0d032ef4d2df6",
+      "heading": "よくある失敗パターン (本文書既存)",
+      "position": 24,
+      "section_id": "DLID-237zvff56fhd"
+    },
+    {
+      "content_hash": "a13ca9d169c43ebc3e9e6e44b557b4db454ddf4341e7becb6dd49b5b20a97453",
+      "heading": "歴史的記録を置かない",
+      "position": 8,
+      "section_id": "DLID-v47yytp5vbn8"
+    },
+    {
+      "content_hash": "a1c27661e748588dae684d14d58cd2147f74085a3b663d70d7eab52f2dec7ddd",
+      "heading": "設計書の保守",
+      "position": 9,
+      "section_id": "DLID-8j1czzj3eg8v"
+    },
+    {
+      "content_hash": "bb5b2a735d46d1acb2ab8f0d1500fa2a62b6b6cfda17ef40549459c6a0eceabd",
+      "heading": "グレーゾーン許容範囲",
+      "position": 17,
+      "section_id": "DLID-0am1zdzjxhtf"
+    },
+    {
+      "content_hash": "bd1eba53da15fae41fc8b299f0bd88e12a73f009b8f9a5a244880a070157d24e",
+      "heading": "設計書の定義",
+      "position": 1,
+      "section_id": "DLID-bcjhepy60vkb"
+    },
+    {
+      "content_hash": "c68965ea50020650b0f935de2d14b79ada3e2c78b09eaaa65966ea123fd19776",
+      "heading": "設計書 作成原則",
+      "position": 0,
+      "section_id": "DLID-mvjghckvewxj"
+    },
+    {
+      "content_hash": "d07c2a3f419001da9cb70de3a630e570fd3d26c0c3dd5bc18c63472c65e1c2e7",
+      "heading": "規範",
+      "position": 19,
+      "section_id": "DLID-yvheref94rq8"
+    },
+    {
+      "content_hash": "e01ce7c06d2d3f53992b2d75df3c025c174f4fa50aaf0b952becbe150ede2ec2",
+      "heading": "グレーゾーン許容範囲",
+      "position": 14,
+      "section_id": "DLID-3z2z0xvqtveh"
+    },
+    {
+      "content_hash": "e0e8caa0512c9826acb72b341e812864be632f44f6b95341f1c7fff167ff88b0",
+      "heading": "責務分割・凝集度規範 (Appendix A.8 由来)",
+      "position": 15,
+      "section_id": "DLID-1srwnyqds2zg"
+    },
+    {
+      "content_hash": "e8d2f1660f3fbe0b04857dd0c9dd14bf89d14394f7df5bbba7298df1d5333f3f",
+      "heading": "可用性・SPOF 規範 (Appendix A.9 由来)",
+      "position": 18,
+      "section_id": "DLID-2tyg711r6bfc"
+    },
+    {
+      "content_hash": "ed2aa3de8562b89259b0e27b284d74ca2beb988a644077b101e73bcc92424dbe",
+      "heading": "更新時のルール",
+      "position": 10,
+      "section_id": "DLID-wexxdtv7j43m"
+    },
+    {
+      "content_hash": "f185a18f6163e3e07f9965e7c0c62a4d5b67c1b125d5417b97ced9909d97fc3d",
+      "heading": "図表使用ガイドライン",
+      "position": 7,
+      "section_id": "DLID-hrmjtg07zdw8"
+    }
+  ],
   "summary": [
-    "Definition of a design document: responsibility is structure, modules and flows (How); permanent but revisable via additive development",
-    "Prohibited content: bulk source code, unjustified framework choice, features absent from requirements, guaranteed quantitative claims",
-    "Handling of quantitative targets: describe structure and policy only, never guarantee achievement or guess unconfirmed values",
-    "Judgment criterion: can an implementer implement from this; hierarchical splitting guidance and optional sections",
-    "Mermaid diagram guidelines and a ban on history sections; maintenance rule to report design-implementation mismatches to the user",
-    "Architecture dependency direction norms, responsibility and cohesion norms (YAGNI, asset placement), availability and SPOF norms",
-    "Severity catalog mapping violations to critical, major or minor, including deliverable checks and additive feature frontmatter"
+    "Definition of a design document: responsibility (How), what it excludes, lifetime, revision",
+    "Prohibited content: bulk source code, unjustified tech choices, unrequired features, guaranteed numeric goals",
+    "Handling of quantitative goals in design documents",
+    "Judgment criterion: can an implementer implement from this",
+    "Hierarchical splitting, optional sections, and Mermaid diagram guidelines",
+    "No history sections; design maintenance and update rules",
+    "Norms for dependency direction, cohesion, and SPOF/availability with gray zones",
+    "Severity catalog for violations including deliverables and frontmatter"
   ],
   "tasks": [
-    "Creating a design document",
+    "Writing a design document",
     "Reviewing a design document",
-    "Updating a design document after implementation changes",
-    "Deciding whether content belongs in design or requirements",
-    "Assigning severity to design review findings",
-    "Splitting a large design into hierarchical documents"
+    "Updating a design after implementation changes",
+    "Splitting a large design into hierarchy",
+    "Judging design severity of violations",
+    "Choosing architecture and dependency direction"
   ],
   "title": "設計書 作成原則"
 }

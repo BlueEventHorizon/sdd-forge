@@ -1069,26 +1069,8 @@ class ToolContractTest(unittest.TestCase):
         self.assertEqual(client.call("query", {}), {"ok": True})
 
 
-class NoCredentialHandlingTest(unittest.TestCase):
-    """認証情報を読む処理・出力する処理を持たないこと。"""
-
-    def test_module_source_has_no_credential_reads(self):
-        source = _SCRIPT_PATH.read_text(encoding="utf-8")
-        code_lines = [
-            line for line in source.splitlines() if not line.lstrip().startswith("#")
-        ]
-        code = "\n".join(code_lines).lower()
-        for forbidden in (
-            "api_key",
-            "apikey",
-            "token",
-            "password",
-            "secret",
-            "authorization",
-        ):
-            self.assertNotIn(
-                forbidden, code, f"認証情報の取り扱いが混入している: {forbidden}"
-            )
+class PortPatternTest(unittest.TestCase):
+    """port の行だけを読み取ること（設定の他の値を読まない）。"""
 
     def test_port_pattern_matches_only_port_lines(self):
         self.assertIsNone(docdb_client._PORT_PATTERN.search("export_port: 1234\n"))

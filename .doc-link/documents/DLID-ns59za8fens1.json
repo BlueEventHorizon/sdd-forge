@@ -1,36 +1,111 @@
 {
-  "content_hash": "0dc06fb958c8f3ca5b99e3fb8ffb40799e16d2211e84245917320dbf5fab143a",
+  "applied_hash": "3a31a2d6bfe3ab3f1feb09b33218f0b3a9e852fa320c284cb17040e3522db4b9",
+  "content_hash": "3a31a2d6bfe3ab3f1feb09b33218f0b3a9e852fa320c284cb17040e3522db4b9",
   "doc_link_id": "DLID-ns59za8fens1",
   "keywords": [
     "ADR",
     "architecture decision record",
-    "ADR format",
+    "format",
     "template",
-    "file naming",
     "scope box",
     "alternatives considered",
     "section numbering",
-    "rejected decision",
-    "default format"
+    "file naming",
+    "rejection reason"
   ],
+  "last_check": {
+    "checked_at": "2026-11-25T03:43:00+00:00",
+    "result": "success"
+  },
   "path": "plugins/forge/docs/adr_format.md",
-  "purpose": "Defines the default notation for ADR files: file naming, file structure, optional scope box, how to rewrite rejected decisions, and the template, used when a project has no ADR format of its own.",
+  "purpose": "Provides the default ADR format used when a project has no ADR format of its own: file naming, structure, optional scope box, how to rewrite rejected decisions, and a template.",
+  "references": [
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/adr_principles_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 0,
+      "recorded_content_hash": "1fb15e199859",
+      "recorded_path": "adr_principles_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-45wzpggz1set",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/adr_usage_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 1,
+      "recorded_content_hash": "b87fce46708e",
+      "recorded_path": "adr_usage_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-m77gjek2tw2b",
+      "target_section_id": null
+    }
+  ],
+  "sections": [
+    {
+      "content_hash": "024b9ed5eab7476b829fa4ceff9fb4d87478897eacc11fa3a70bb0572a986551",
+      "heading": "スコープ欄",
+      "position": 3,
+      "section_id": "DLID-yjg0y180gm6b"
+    },
+    {
+      "content_hash": "1871efe20a019781215a44b985c6aa37504deb6acafe96c025059e613d84b3b5",
+      "heading": "否決の書き方",
+      "position": 4,
+      "section_id": "DLID-px9pr1zc6138"
+    },
+    {
+      "content_hash": "578651058eaee16edd38b6695d85404b881cd82f14b1cce316a7df4790d86daa",
+      "heading": "ファイルの構成",
+      "position": 2,
+      "section_id": "DLID-dbhf496wayc0"
+    },
+    {
+      "content_hash": "85b33f6709cc26139e4a7f524f4c9d6b5250e8aede5d2db8329fb1a34b59f54f",
+      "heading": "ADR（アーキテクチャ決定記録）デフォルトフォーマット",
+      "position": 0,
+      "section_id": "DLID-gym9brgcd7hg"
+    },
+    {
+      "content_hash": "8d2135bc688ee68288a3c6eb5b3b2ff7c4406f26516b3ee1fe771ab3bee2ea0a",
+      "heading": "ファイル命名規則",
+      "position": 1,
+      "section_id": "DLID-dappkaptvw1v"
+    },
+    {
+      "content_hash": "debeffd8f244aefcb7f2d36512b1945b1d53e781cee80b237c1ccad3f3676d2c",
+      "heading": "テンプレート",
+      "position": 5,
+      "section_id": "DLID-xc0qvbhjn1xv"
+    }
+  ],
   "summary": [
-    "File naming rule ADR-{NNN}_{feature}.md with one ADR file per feature and a fixed number",
-    "File structure: single H1 title, numbered decision sections, fixed four subsections (context, decision, alternatives, impact)",
-    "Section numbers are never renumbered because external references depend on them",
-    "Optional scope box placed after the H1 with paired \"defines\" and \"does not define\" items",
-    "How to handle a rejected decision by rewriting the same section and moving the old option to the alternatives table",
-    "Template with guidance for writing alternatives rejection reasons and evidence-based impact",
-    "No metadata table, status history, or concrete file path listing in impact",
-    "Links to the ADR principles spec for operation, triggers and severity"
+    "File naming rule ADR-NNN_feature.md, one file per feature, number fixed at creation",
+    "File structure: single H1, numbered decision sections with four fixed subsections",
+    "Section numbers must never change",
+    "Optional scope box with paired defined and not-defined items",
+    "How to record a rejected decision: rewrite the same section, move old option to alternatives",
+    "Template with context, decision, alternatives, and impact subsections",
+    "Guidance for writing rejection reasons with explicit premises",
+    "Impact must be evidence-based, not speculative",
+    "No metadata tables or status history sections"
   ],
   "tasks": [
-    "Creating a new ADR file",
-    "Adding a decision section to an existing ADR",
-    "Rewriting a rejected or revised ADR decision",
+    "Writing or updating an ADR",
     "Reviewing an ADR for format compliance",
-    "Writing ADRs when no project-specific ADR format exists"
+    "Naming and numbering an ADR file",
+    "Rewriting a rejected or reversed decision",
+    "Deciding whether to add a scope box"
   ],
   "title": "ADR（アーキテクチャ決定記録）デフォルトフォーマット"
 }

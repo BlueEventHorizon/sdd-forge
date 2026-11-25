@@ -433,15 +433,5 @@ class CliTest(unittest.TestCase):
         self.assertEqual(completed.returncode, 2)
 
 
-class RemovedFilesTest(unittest.TestCase):
-    def test_second_path_and_template_are_gone(self):
-        base = REPO_ROOT / "plugins" / "forge" / "skills" / "start-implement"
-        self.assertFalse((base / "scripts" / "validate_executor_result.py").exists())
-        self.assertFalse((base / "templates" / "executor_result.json").exists())
-        self.assertFalse(
-            Path(__file__).with_name("test_validate_executor_result.py").exists()
-        )
-
-
 if __name__ == "__main__":
     unittest.main()

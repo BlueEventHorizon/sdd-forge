@@ -369,5 +369,5 @@ OS フレームワーク名（SwiftUI、UIKit、Combine 等）は固有名でも
 - 前提となる概念が要る用語は、前提の用語を先に定義する
 - 下流の文書は、上流の用語を再定義せず、そのまま使う。設計側の用語集には、設計で新しく生まれた概念だけを書く
 
-[adr-principles-spec]: adr_principles_spec.md "3ae4e3bfdd65 DLID-45wzpggz1set"
-[glossary-format]: glossary_format.md "dae8698216c5 DLID-z571pg6rda7f"
+[adr-principles-spec]: adr_principles_spec.md "1fb15e199859 DLID-45wzpggz1set"
+[glossary-format]: glossary_format.md "1252d41a14b3 DLID-z571pg6rda7f"

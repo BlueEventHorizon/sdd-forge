@@ -1,4 +1,5 @@
 {
+  "applied_hash": "5800bff02e731cef57920725e8e3abd3a451a8c43732e0446bdc35745ecc2195",
   "content_hash": "5800bff02e731cef57920725e8e3abd3a451a8c43732e0446bdc35745ecc2195",
   "doc_link_id": "DLID-n11844q5g8qn",
   "keywords": [
@@ -11,8 +12,33 @@
     "NFR-001",
     "design notes"
   ],
+  "last_check": {
+    "checked_at": "2026-11-25T02:44:01+00:00",
+    "result": "success"
+  },
   "path": "docs/specs/consult/agenda/design/NOTES_open_design_questions.md",
   "purpose": "Design notes carrying over unresolved design questions from the agenda requirements TBDs (storage format and FNC-004 measurement) for the formal design document.",
+  "references": [],
+  "sections": [
+    {
+      "content_hash": "1ae71e92ab2187d121ca260352bad28ab0757209ea444f1d807eb096f98ac1e9",
+      "heading": "保存形式・ファイル名（旧 REQ-019 TBD-001）",
+      "position": 1,
+      "section_id": "DLID-hjqphz82eb99"
+    },
+    {
+      "content_hash": "1c8bce39296efc0c16e7ca85ff505b3bf8450400fca841cf412024439f0ccb34",
+      "heading": "FNC-004 の測定方法（旧 REQ-019 TBD-002）",
+      "position": 2,
+      "section_id": "DLID-kjnyt6nc6vxq"
+    },
+    {
+      "content_hash": "bf8e34235fb8f87f646e70721d8a495269b1a63a0ea2ac7ebaf9ef0006b68d44",
+      "heading": "agenda 機構 設計メモ（未解決の設計論点）",
+      "position": 0,
+      "section_id": "DLID-zqxpv66x28t9"
+    }
+  ],
   "summary": [
     "Origin: HOW-related TBDs removed from the requirements and handed over to design",
     "Storage format and file name question with constraints (no PyYAML, standard library only)",

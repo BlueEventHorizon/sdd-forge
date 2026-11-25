@@ -159,9 +159,9 @@ frontmatter 定義: [frontmatter_format.md][frontmatter-format] §1.3
 
 解析失敗は「並行状態にない」と区別する（REQ-025 FNC-005）。並行状態にあるかを判定できないまま実装へ進むと、実装者は旧仕様に従って実装しうる。呼び出し側は、判定できないとき、先へ進まずに、対象のパスと理由を伝える。
 
-[plan-principles-spec]: ../../../../plugins/forge/docs/plan_principles_spec.md "122ed8c0e2c2 DLID-t8jcg5jkb5mj"
-[des-088]: ../../start-implement/design/DES-088_start_implement_design.md "5b20e32ba921 DLID-f8gem0wa3ac4"
-[req-024]: ../requirements/REQ-024_implementation_plan_spec.md "0304d66b6d45 DLID-zehb6ge71vgb"
-[frontmatter-format]: ../../../../plugins/forge/docs/frontmatter_format.md "19cf661699b0 DLID-jtc4qnjwbdxf"
-[additive-development-spec]: ../../../../plugins/forge/docs/additive_development_spec.md "307dc53425f0 DLID-cyrk9xr8vcap"
-[req-025]: ../requirements/REQ-025_additive_development_spec.md "1d8889eae72e DLID-8aaxgj88j28q"
+[plan-principles-spec]: ../../../../plugins/forge/docs/plan_principles_spec.md "33e1e8046cdc DLID-t8jcg5jkb5mj"
+[des-088]: ../../start-implement/design/DES-088_start_implement_design.md "59241ebe17cb DLID-f8gem0wa3ac4"
+[req-024]: ../requirements/REQ-024_implementation_plan_spec.md "f1c15e9bfe0d DLID-zehb6ge71vgb"
+[frontmatter-format]: ../../../../plugins/forge/docs/frontmatter_format.md "867507803b4a DLID-jtc4qnjwbdxf"
+[additive-development-spec]: ../../../../plugins/forge/docs/additive_development_spec.md "3be39e634c1c DLID-cyrk9xr8vcap"
+[req-025]: ../requirements/REQ-025_additive_development_spec.md "a78dcb08e87b DLID-8aaxgj88j28q"

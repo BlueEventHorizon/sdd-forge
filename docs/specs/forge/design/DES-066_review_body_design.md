@@ -368,7 +368,7 @@ sequenceDiagram
 | ------- | ---------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | TBD-002 | 2 つ目のバックエンド接続後、本設計の境界が実際に非依存であったかの検証 | 現時点で候補は `agent-review` 1 つであり、この検証は次のバックエンド接続時まで持ち越す。接続時に、バックエンドの責務（可用性検査と `retains_context` の宣言）以外に本体が依存していないこと、本体の定義・利用者向けガイド・呼び出し元スキルの記述に実行主体を前提とした説明が残っていないことを確かめる |
 
-[des-084]: ../../review/design/DES-084_reviewer_design.md "daa286494b24 DLID-j50s0xwkwx00"
-[des-083]: ../../review/design/DES-083_evaluator_perspective_design.md "04c49729cad3 DLID-mzeyx39mfryw"
-[req-017]: ../../consult/requirements/REQ-017_consult_skill.md "8d2adba82a1b DLID-433459yse70c"
-[des-078]: ../../consult/design/DES-078_consult_dialogue_flow_design.md "6a371cd09123 DLID-s3cjh3q3c0vc"
+[des-084]: ../../review/design/DES-084_reviewer_design.md "90cd46356caa DLID-j50s0xwkwx00"
+[des-083]: ../../review/design/DES-083_evaluator_perspective_design.md "7f23e0705a84 DLID-mzeyx39mfryw"
+[req-017]: ../../consult/requirements/REQ-017_consult_skill.md "0a96a70a0d71 DLID-433459yse70c"
+[des-078]: ../../consult/design/DES-078_consult_dialogue_flow_design.md "259a88a9ae6e DLID-s3cjh3q3c0vc"

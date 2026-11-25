@@ -1,37 +1,195 @@
 {
-  "content_hash": "98bf338f755fd8a0e23dd88108130afb096c4bacc527758a45ecf2f426418f22",
+  "applied_hash": "2782ba223e7b264dbab5f596f87c8f964cc2e25ea6fb73c9ba35b688ca92edab",
+  "content_hash": "2782ba223e7b264dbab5f596f87c8f964cc2e25ea6fb73c9ba35b688ca92edab",
   "doc_link_id": "DLID-8s8p9ah1hyry",
   "keywords": [
+    "agenda display",
     "agenda_render",
-    "agenda.html",
-    "HTML generation",
+    "HTML",
     "data-changed",
     "severity badge",
-    "auto refresh",
-    "content_version",
+    "auto reload",
     "agenda_state.js",
+    "file://",
     "WCAG",
-    "display layer"
+    "sessionStorage"
   ],
+  "last_check": {
+    "checked_at": "2026-11-25T02:44:01+00:00",
+    "result": "success"
+  },
   "path": "docs/specs/consult/agenda/design/DES-077_agenda_display_design.md",
-  "purpose": "Design of the agenda display layer (agenda_render.py): HTML generation from agenda.json, change highlighting, state derivation, and automatic tab refresh.",
+  "purpose": "Design of the agenda display layer (agenda_render.py): HTML generation, state and change highlighting, severity badges, auto-reload update scheme, and initial open trigger.",
+  "references": [
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/specs/consult/agenda/design/DES-075_agenda_mechanism_design.md",
+        "result": "match",
+        "scope": "docs/specs/consult/agenda/design"
+      },
+      "kind": "document",
+      "position": 0,
+      "recorded_content_hash": "4d29f17e5566",
+      "recorded_path": "DES-075_agenda_mechanism_design.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-vyz6fzhdfk3a",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/specs/consult/requirements/REQ-017_consult_skill.md",
+        "result": "match",
+        "scope": "docs/specs/consult/requirements"
+      },
+      "kind": "document",
+      "position": 1,
+      "recorded_content_hash": "0a96a70a0d71",
+      "recorded_path": "../../requirements/REQ-017_consult_skill.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-433459yse70c",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "plugins/forge/docs/design_principles_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 2,
+      "recorded_content_hash": "e590554be385",
+      "recorded_path": "../../../../../plugins/forge/docs/design_principles_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-061pwjejh6yc",
+      "target_section_id": null
+    }
+  ],
+  "sections": [
+    {
+      "content_hash": "02d14d360549e21ae59c56d078a3552c7ba4f2486be0259a732e20d8f2ba596e",
+      "heading": "3. テンプレートの構造",
+      "position": 5,
+      "section_id": "DLID-gmcgrtf5m2js"
+    },
+    {
+      "content_hash": "031153882b20db762717403845d843766c3a6e920f420c262fb429b1c7063714",
+      "heading": "3.1b 変更箇所は欄の粒度まで示す",
+      "position": 8,
+      "section_id": "DLID-qb5db41da4ex"
+    },
+    {
+      "content_hash": "1a1ee7fd6859f8b6dd005218c64245ef82f923abdb7c0ab68308f65335f22d9c",
+      "heading": "3.2 CSS の適用対象（値は実装時に決定）",
+      "position": 9,
+      "section_id": "DLID-wda6nrx4kkk3"
+    },
+    {
+      "content_hash": "1dfc0b8c725babfff17dc08acaca22e01558478955d94846389c9a436ef08ceb",
+      "heading": "3.1 状態表示は背景全面ではなく「ガターのドット 1 点」に集約する",
+      "position": 6,
+      "section_id": "DLID-yrbpcez5mcmf"
+    },
+    {
+      "content_hash": "38508a415a30518071c29576a4c8be9c16e99011789b5d86eb86963bc0f235e5",
+      "heading": "6. 使用する既存コンポーネント",
+      "position": 16,
+      "section_id": "DLID-cajbkn0b59p6"
+    },
+    {
+      "content_hash": "5dda8bef5d57d40e7a3497400dcec83130fbb26feaea5a522f50a538979de51b",
+      "heading": "2.1 HTML の採用理由",
+      "position": 3,
+      "section_id": "DLID-ckyqfkz34eb2"
+    },
+    {
+      "content_hash": "66b8ccd16966ce969c2aad2e620058b94ccad6e508d6fe27beee94fd73296ce4",
+      "heading": "5. テスト設計",
+      "position": 15,
+      "section_id": "DLID-ps0be4pzpnf0"
+    },
+    {
+      "content_hash": "741d738c59cd5516bd3a2d4a911bcd3b05c11f31b58b35542d4dd8dd81c23dd1",
+      "heading": "4.1 技術的根拠: `<script src>` タグの動的差し替え",
+      "position": 12,
+      "section_id": "DLID-5dwyjme6s6kw"
+    },
+    {
+      "content_hash": "749e9e3c175abe3676fe13cd288f93dfc008d4c7a529d82fd818c65c9b353c6e",
+      "heading": "4.2 採用方式: 世代番号の比較による全体再読み込み",
+      "position": 13,
+      "section_id": "DLID-s8t7ab2se581"
+    },
+    {
+      "content_hash": "846da80a0bdd2d5a5c5ac3550845fdf8c208a6b12770783de9cd5ffa9ac3338d",
+      "heading": "DES-077 agenda 表示層設計書",
+      "position": 0,
+      "section_id": "DLID-e7xf3zm4rsdg"
+    },
+    {
+      "content_hash": "8ad451cd55529ef4547c4d2cfb17185d9fe3a66ec49de1b9b505145f6f2c93d3",
+      "heading": "4. 表示の更新方式（自動追従）",
+      "position": 11,
+      "section_id": "DLID-x0zexe72k996"
+    },
+    {
+      "content_hash": "9941cb2427e7afea07bf00e2cf5f4eaf12b1f2c86b71279ed81c0384361424dd",
+      "heading": "3.3 「状態」欄の導出（独立フィールドを持たない）",
+      "position": 10,
+      "section_id": "DLID-s0h8dynx7kf8"
+    },
+    {
+      "content_hash": "a67f75a90aca19c0070d398292f28513269d74575e6061517e3419e4bd1a2de3",
+      "heading": "2. 生成形式と初回表示",
+      "position": 2,
+      "section_id": "DLID-gsa241gvajgp"
+    },
+    {
+      "content_hash": "c008a974028fa0b4a94b9446d28e50530a46fc41955628eb35a239cf53ccdec2",
+      "heading": "3.1a 重大度は絵文字ではなく「パステル配色 + テキストラベル」で表す",
+      "position": 7,
+      "section_id": "DLID-h3hyw6q2h0k3"
+    },
+    {
+      "content_hash": "d77f3a4d42fac7ba56799ca8b17a0fd61f79dbad672cee0e7791c2f549c5fbea",
+      "heading": "4.3 スクロール位置の保持",
+      "position": 14,
+      "section_id": "DLID-b4fmdbge19bc"
+    },
+    {
+      "content_hash": "e8bd0b0fedc018ef75b12c09c75ed568bac9605698a7cec286c10857ddb7b39b",
+      "heading": "1. 概要",
+      "position": 1,
+      "section_id": "DLID-j5ckxcbfs60h"
+    },
+    {
+      "content_hash": "f4867c08b378085d510db22c1ab5a6ce2d67a05a48ba39b9ea52b38aad37bbc6",
+      "heading": "2.2 初回表示のトリガー（`open` コマンド）",
+      "position": 4,
+      "section_id": "DLID-ybvr5jsha2k0"
+    }
+  ],
   "summary": [
-    "Choice of HTML and first display via the open command",
-    "Template structure: summary table, item cards, dl fields, generated notice",
-    "Status shown as a single gutter dot rather than full background color",
-    "Severity badge using pastel color plus text label, resolved via config.severity_field",
-    "Field-level change marking with data-changed from last_changed_fields",
-    "CSS selector targets, with concrete values decided at implementation",
-    "Status derivation (not started, in progress, settled) from background, essence and decision",
-    "Auto-refresh by comparing content_version via script src swap, with scroll position preserved",
-    "Test design including unit and manual verification",
-    "Existing components reused"
+    "Why HTML is adopted and how the first display is opened via the open command",
+    "Template structure: summary table, item cards, dl labels, anchor links",
+    "Change indication via gutter dot and field-level data-changed attributes",
+    "Severity shown as pastel color plus text label, via config.severity_field",
+    "CSS selector targets, with concrete values left to be tuned after implementation",
+    "State column derived from background, essence, and decision without a status field",
+    "Auto-follow update: agenda_state.js polling and full reload on content_version change",
+    "Scroll position preserved with sessionStorage across reloads",
+    "Test design and manual verification points",
+    "Existing components reused: discussion template and HTML escape pattern"
   ],
   "tasks": [
-    "Implementing or modifying agenda_render.py",
-    "Changing agenda.html layout or styling",
-    "Changing change highlighting or severity badge display",
-    "Writing tests for the display layer",
+    "Implementing agenda_render.py",
+    "Changing agenda HTML layout or CSS",
+    "Adjusting change highlighting display",
+    "Modifying severity badge display",
+    "Changing the auto-reload mechanism",
+    "Writing render tests",
     "Reviewing agenda display design"
   ],
   "title": "DES-077 agenda 表示層設計書"

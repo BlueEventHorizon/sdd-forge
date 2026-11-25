@@ -57,11 +57,11 @@ P1 で照合すべき委譲先文書一覧。各文書は「規範本体 + 重�
 
 3 条件のいずれかが不成立の場合は `recommendation: skip` (skip_reason に該当条件不成立の理由を記載) とする。
 
-[review-priorities-spec]: ../review_priorities_spec.md "dc0c7761adf3 DLID-dcec6pr177c9"
-[requirement-principles-spec]: ../requirement_principles_spec.md "c1cb19da9ad5 DLID-8y2jh2y06761"
-[spec-design-boundary-spec]: ../spec_design_boundary_spec.md "4e2a4cd68a8a DLID-h9h90g9wcy8f"
-[requirement-format]: ../requirement_format.md "1abf0122bdeb DLID-c13gr4qbk4vm"
-[spec-priorities-spec]: ../spec_priorities_spec.md "f8233c87c564 DLID-f9ny9e932trv"
-[additive-development-spec]: ../additive_development_spec.md "307dc53425f0 DLID-cyrk9xr8vcap"
-[frontmatter-format]: ../frontmatter_format.md "19cf661699b0 DLID-jtc4qnjwbdxf"
-[document-style-guide]: ../document_style_guide.md "69dee42932c2 DLID-c59znr7b8f56"
+[review-priorities-spec]: ../review_priorities_spec.md "458b42b8deb4 DLID-dcec6pr177c9"
+[requirement-principles-spec]: ../requirement_principles_spec.md "8c5971b68aaf DLID-8y2jh2y06761"
+[spec-design-boundary-spec]: ../spec_design_boundary_spec.md "e0d1a83f7e47 DLID-h9h90g9wcy8f"
+[requirement-format]: ../requirement_format.md "c05edc5d1de7 DLID-c13gr4qbk4vm"
+[spec-priorities-spec]: ../spec_priorities_spec.md "b68b930cec1d DLID-f9ny9e932trv"
+[additive-development-spec]: ../additive_development_spec.md "3be39e634c1c DLID-cyrk9xr8vcap"
+[frontmatter-format]: ../frontmatter_format.md "867507803b4a DLID-jtc4qnjwbdxf"
+[document-style-guide]: ../document_style_guide.md "335c3c0eb320 DLID-c59znr7b8f56"

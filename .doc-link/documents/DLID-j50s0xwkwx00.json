@@ -1,38 +1,351 @@
 {
-  "content_hash": "daa286494b24a7ca3817f3db96dedd70c57a236e81274fa83bef7a1f109d1ab9",
+  "applied_hash": "90cd46356caa8e60e529e7e0a167cc764d9c44cec6fc131f05347ef00f4f2259",
+  "content_hash": "90cd46356caa8e60e529e7e0a167cc764d9c44cec6fc131f05347ef00f4f2259",
   "doc_link_id": "DLID-j50s0xwkwx00",
   "keywords": [
     "reviewer",
-    "review request",
+    "review_request.json",
     "review_result.json",
+    "publish_request",
     "finding_id",
     "retains_context",
     "target type",
-    "wrapper scripts",
-    "exit value",
-    "resolve_doc_structure",
-    "publish_request"
+    "wrapper script",
+    "seal_result",
+    "exit value"
   ],
+  "last_check": {
+    "checked_at": "2026-11-25T02:44:01+00:00",
+    "result": "success"
+  },
   "path": "docs/specs/review/design/DES-084_reviewer_design.md",
-  "purpose": "Design for the review start-to-reviewer segment: request publishing, exchange via JSON and scripts, finding numbering, exit values, target type judgment, and the reviewer agent definition.",
+  "purpose": "Design for the review exchange mechanism from review start to the reviewer interval: request publishing, JSON results, finding_id numbering, exit values, scripts and wrappers.",
+  "references": [
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/rules/forge_doc_access_principle.md",
+        "result": "match",
+        "scope": "docs/rules"
+      },
+      "kind": "document",
+      "position": 4,
+      "recorded_content_hash": "2f044acb76b2",
+      "recorded_path": "../../../rules/forge_doc_access_principle.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-1t0vpykg6nq6",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/rules/forge_document_type_roles.md",
+        "result": "match",
+        "scope": "docs/rules"
+      },
+      "kind": "document",
+      "position": 3,
+      "recorded_content_hash": "7b634212b043",
+      "recorded_path": "../../../rules/forge_document_type_roles.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-mmxpd4dms815",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/rules/plugin_implementation_guidelines.md",
+        "result": "match",
+        "scope": "docs/rules"
+      },
+      "kind": "document",
+      "position": 6,
+      "recorded_content_hash": "231d1a822305",
+      "recorded_path": "../../../rules/plugin_implementation_guidelines.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-jzs5n6cre1jh",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/rules/plugin_script_error_output_rules.md",
+        "result": "match",
+        "scope": "docs/rules"
+      },
+      "kind": "document",
+      "position": 5,
+      "recorded_content_hash": "f1c5b6752ce7",
+      "recorded_path": "../../../rules/plugin_script_error_output_rules.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-fz66nns8q521",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/specs/review/design/DES-083_evaluator_perspective_design.md",
+        "result": "match",
+        "scope": "docs/specs/review/design"
+      },
+      "kind": "document",
+      "position": 2,
+      "recorded_content_hash": "7f23e0705a84",
+      "recorded_path": "DES-083_evaluator_perspective_design.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-mzeyx39mfryw",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/specs/review/requirements/REQ-027_reviewer.md",
+        "result": "match",
+        "scope": "docs/specs/review/requirements"
+      },
+      "kind": "document",
+      "position": 1,
+      "recorded_content_hash": "36bb4e693dd2",
+      "recorded_path": "../requirements/REQ-027_reviewer.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-y42g1frxwkf5",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/specs/review/requirements/REQ-029_review_exchange.md",
+        "result": "match",
+        "scope": "docs/specs/review/requirements"
+      },
+      "kind": "document",
+      "position": 0,
+      "recorded_content_hash": "d635cdb8307b",
+      "recorded_path": "../requirements/REQ-029_review_exchange.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-5vrs9fnet7de",
+      "target_section_id": null
+    }
+  ],
+  "sections": [
+    {
+      "content_hash": "0cd5f0165d354055997b284c7366e5297a3a97999593cdda6b8a97088f72ddcc",
+      "heading": "target 種別を判定する",
+      "position": 13,
+      "section_id": "DLID-yzxr4kaexdtj"
+    },
+    {
+      "content_hash": "18437741e076965a836eafe5dcd382832b1fc2da840fea14ad6d2da3f64bd496",
+      "heading": "6.8 `resolve_doc_structure.py`（改修）",
+      "position": 31,
+      "section_id": "DLID-skkwxaxav9q2"
+    },
+    {
+      "content_hash": "1b998cd495ae4176c46a92e3b45df22a1921d6f730f059a4f77cea71cd02af8a",
+      "heading": "3. クラス図",
+      "position": 3,
+      "section_id": "DLID-wvq7y3ksxx2n"
+    },
+    {
+      "content_hash": "1fea14da7f5f3b0109a7c9002b099bfce99db7a0c5d8568e443acde4e3a62d4a",
+      "heading": "1. 概要",
+      "position": 1,
+      "section_id": "DLID-vbe7n0w13fam"
+    },
+    {
+      "content_hash": "3d9146b2e9e058c1f7e9053c0b06682195d43c6d5ae44b48a26e4901a9320640",
+      "heading": "6.3 `append_result.py`",
+      "position": 25,
+      "section_id": "DLID-dvrryerg0thv"
+    },
+    {
+      "content_hash": "508260634d3b5d040d216c3c3fbce579fc3949e267417fb787b6eb941b834512",
+      "heading": "7. テスト設計",
+      "position": 32,
+      "section_id": "DLID-hbc58a2a8q8a"
+    },
+    {
+      "content_hash": "60a9511ec959efbc44d4a75fa86caeade9651ca6c23ae90cc4b519bdac64f45d",
+      "heading": "所見を渡す",
+      "position": 15,
+      "section_id": "DLID-6jbtz4bz8ax6"
+    },
+    {
+      "content_hash": "6e150d208fd1975702ae7ad1dfa22aabb69071982bc708ebb149a48932b5a6bc",
+      "heading": "使う reviewer と `retains_context`（S1・S4）",
+      "position": 9,
+      "section_id": "DLID-e6ghqr70k1sf"
+    },
+    {
+      "content_hash": "70d7b085487efc76d654c2c29ce9591a5c86a53eafd735fee31ffe7f84133653",
+      "heading": "判断の内容",
+      "position": 8,
+      "section_id": "DLID-j4rm8vfwkhq6"
+    },
+    {
+      "content_hash": "78fac7be2195557166e39a5879848b3bff81b6c3638cf14dc38bb88289fca0d8",
+      "heading": "6.4 `seal_result.py`",
+      "position": 27,
+      "section_id": "DLID-5n1rqmnpb5gq"
+    },
+    {
+      "content_hash": "8d8ef6928e9fbb670cdc9e86bf9e380f1b39ef5183fa8b55dea3ff20ffbf9339",
+      "heading": "5.5 `finding_id`",
+      "position": 21,
+      "section_id": "DLID-a41tadb2jvsq"
+    },
+    {
+      "content_hash": "9d00ee1d969d5cec048c7e52462eb7e057e3a20f2054cbc79665b9447ace369b",
+      "heading": "5. JSON",
+      "position": 16,
+      "section_id": "DLID-ek3k12wtpgcr"
+    },
+    {
+      "content_hash": "a49ab45854bbba7e32ff9c52d55ea61f63de67ca496aa50fc5e65de7fd2200ea",
+      "heading": "5.2 依頼（`review_request.json`）",
+      "position": 18,
+      "section_id": "DLID-c44w3621c3ve"
+    },
+    {
+      "content_hash": "ac1b39d72955fe25175b62de669451de5af47a8513a0296e3fe7d4cdb506fe13",
+      "heading": "6.2 `publish_request.py`",
+      "position": 24,
+      "section_id": "DLID-dbnvsvhm5ftr"
+    },
+    {
+      "content_hash": "b15c5a199d81304e85a2f4c1c0d4db78037708c8cb66f2e3518ffc43a6168c1a",
+      "heading": "6.6 ラッパー",
+      "position": 29,
+      "section_id": "DLID-ay2jzjm585n9"
+    },
+    {
+      "content_hash": "b4fa666a34786ea625c93d12d48408b1ab767368aa968413010eaba003f45f34",
+      "heading": "6.1 共通の約束",
+      "position": 23,
+      "section_id": "DLID-jmxtvwpmaq9a"
+    },
+    {
+      "content_hash": "c4a124d2e971792acd33cbc69825da1cbde60ed313054ed54264953f72df60ab",
+      "heading": "2. シーケンス",
+      "position": 2,
+      "section_id": "DLID-0vngzm7zyfx6"
+    },
+    {
+      "content_hash": "c85850a821c4806baf474d2435dfa82890e72cfa548295a2ea0a5826e89a1136",
+      "heading": "5.3 所見の結果（`review_result.json`）",
+      "position": 19,
+      "section_id": "DLID-dxmkn50sg9df"
+    },
+    {
+      "content_hash": "cb110036569570b0fa72b511dc204957bd5522e8a684c8fbbae7ca167e210bbf",
+      "heading": "5.4 終了の値と成否",
+      "position": 20,
+      "section_id": "DLID-00ybm2nj7t3f"
+    },
+    {
+      "content_hash": "d55fe32d8be7aff255a6d5ac98170506373e4dd3d41737b9e3f08ce344d0cbf9",
+      "heading": "6.5 `resolve_review_path.py`",
+      "position": 28,
+      "section_id": "DLID-0fqp5q41k524"
+    },
+    {
+      "content_hash": "deb97d2f3c6cbc474703ba57d06953f6d8b21f250b31e88d41b41e4e87451250",
+      "heading": "定義が持つもの",
+      "position": 11,
+      "section_id": "DLID-vxv75vnn4nmj"
+    },
+    {
+      "content_hash": "df309af5baa8a4868fd3cf7c0dd727bdd49c682fd9ca8c52a5d0334250e1a740",
+      "heading": "6.7 `resolve_review_backend.py`（改修）",
+      "position": 30,
+      "section_id": "DLID-07a0g1j2wgwg"
+    },
+    {
+      "content_hash": "e05d6820ce02615bfbc4cc836437e694650766f1bbd05757fc98cc13a38711ad",
+      "heading": "4. スキル・エージェント",
+      "position": 4,
+      "section_id": "DLID-yek9bknzdtzy"
+    },
+    {
+      "content_hash": "e94131b0e7efc7223c74823fc8604201fa4db7800d6f69da318ad809a148529a",
+      "heading": "4.2 reviewer",
+      "position": 10,
+      "section_id": "DLID-9g02qf2eewvf"
+    },
+    {
+      "content_hash": "ea055d0be28561ed42743fdb758497da44a0972937b613ff713d375f4832a068",
+      "heading": "定義が持つもの",
+      "position": 6,
+      "section_id": "DLID-dgmnrmykd4kk"
+    },
+    {
+      "content_hash": "ef13ab6814f97809d5def988068a70c2ba3f7a4efe5d56a0f39c0b7ad1b58be4",
+      "heading": "5.1 置き場",
+      "position": 17,
+      "section_id": "DLID-h8dbr8frdfq0"
+    },
+    {
+      "content_hash": "f0fad2c4459261dbd60c87c6fcd6ff60a54b338f21c5725941d6b3bc228dd950",
+      "heading": "対象を読む",
+      "position": 12,
+      "section_id": "DLID-fdcms6sasprr"
+    },
+    {
+      "content_hash": "f7fde5bc8616d2b267141a3d82f26b3291d407225b838a22b4274019088d474e",
+      "heading": "target 種別ごとに読む文書",
+      "position": 14,
+      "section_id": "DLID-jwh82yyg7928"
+    },
+    {
+      "content_hash": "f94845485ddcb4d05725022b9d33604400b9db753ff918538079f4799de57c30",
+      "heading": "DES-084 reviewer と受け渡し機構 設計書",
+      "position": 0,
+      "section_id": "DLID-6e1dbyw7qqz4"
+    },
+    {
+      "content_hash": "fb261f8d5629c429e036061d6e12d95a62368c07da27a96d0a7c7d648b401f44",
+      "heading": "`--kind findings`",
+      "position": 26,
+      "section_id": "DLID-hkn9n0bhnn6k"
+    },
+    {
+      "content_hash": "fc5e841b66870f3a433e429cb98bd15480fdf578da20ae62d5983131e64c621d",
+      "heading": "本体の仕事",
+      "position": 7,
+      "section_id": "DLID-8nn47g2ahr2y"
+    },
+    {
+      "content_hash": "ffc420775089372df70e9fd41d5c8aae775bd576d42c48d3096b3c5ce85cc0f5",
+      "heading": "4.1 review 本体",
+      "position": 5,
+      "section_id": "DLID-2kbjb8vdva8t"
+    },
+    {
+      "content_hash": "ffeb1c6e1138f20969f544e6dc3a382684f225504594a8d7bd47c9c84945ec33",
+      "heading": "6. script",
+      "position": 22,
+      "section_id": "DLID-674fb63dr76c"
+    }
+  ],
   "summary": [
-    "Overview: body and reviewer are the actors; JSON is written only by scripts, scripts are deterministic, reviewer uses fixed-kind wrappers",
-    "Sequence S1-S9: backend resolution, request publishing, reviewer run, findings writing and sealing",
-    "Class diagram of body, reviewer, body-only and shared scripts, and request/result JSON",
-    "Body work up to starting the reviewer, including request assembly and retains_context branching",
-    "Reviewer definition: how to read targets, judge target type via resolve_doc_structure, read criteria per type, submit findings",
-    "JSON layout: storage directories, review_request.json, review_result.json, exit values and success judgment, finding_id numbering",
-    "Script specs: common conventions, publish_request, append_result, seal_result, resolve_review_path, wrappers",
-    "Modifications to resolve_review_backend.py (retains_context) and resolve_doc_structure.py (--match-path)",
-    "Test design: unit, contract and integration targets"
+    "Sequence from backend resolution to reviewer writing findings (S1-S9)",
+    "Class diagram of main body, reviewer, shared scripts and JSON files",
+    "Main body duties until reviewer launch, request assembly, and retains_context handling",
+    "Reviewer definition: reading targets by key, determining target type, reading criteria documents",
+    "JSON layout: storage, review_request.json, review_result.json, exit values and success judgment",
+    "finding_id numbering by script across all rounds",
+    "Script specs: publish_request, append_result, seal_result, resolve_review_path, wrappers",
+    "Modifications to resolve_review_backend.py and resolve_doc_structure.py --match-path",
+    "Test design: unit, contract, lint and integration cases"
   ],
   "tasks": [
-    "Implementing publish_request, append_result, seal_result, resolve_review_path scripts",
-    "Implementing or editing the reviewer agent definition",
-    "Editing the review skill start-up steps",
+    "Implementing publish_request, append_result, seal_result and resolve_review_path",
+    "Implementing reviewer.md and reviewer wrapper scripts",
+    "Implementing the review SKILL start-up steps",
     "Modifying resolve_doc_structure.py or resolve_review_backend.py",
-    "Writing tests for review exchange mechanism",
-    "Reviewing the review exchange design"
+    "Writing criteria/review_target_types.md",
+    "Reviewing or revising the reviewer design",
+    "Designing tests and lint for reviewer definitions"
   ],
   "title": "DES-084 reviewer と受け渡し機構 設計書"
 }

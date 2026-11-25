@@ -1,35 +1,136 @@
 {
-  "content_hash": "cff328dfcaec10e442d67240ec0bac698908d34ab2016f11143ddf29119ca8d3",
+  "applied_hash": "0aaf2e1f04138042c759918ea0fefbb57e2a85ca5bece38fa7235b45c7c59c5d",
+  "content_hash": "0aaf2e1f04138042c759918ea0fefbb57e2a85ca5bece38fa7235b45c7c59c5d",
   "doc_link_id": "DLID-wm7t1emetwbx",
   "keywords": [
-    "document review",
     "generic review",
+    "document review",
     "review criteria",
     "style guide",
     "error classification",
     "SSOT reference",
     "create_issue",
-    "term consistency"
+    "term consistency",
+    "query-db-rules",
+    "recommendation"
   ],
+  "last_check": {
+    "checked_at": "2026-11-25T03:43:00+00:00",
+    "result": "success"
+  },
   "path": "plugins/forge/docs/criteria/review_criteria_generic.md",
-  "purpose": "Review criteria for generic documents: lists the delegated SSOT documents, check order, and rules for choosing fix, create_issue or skip.",
+  "purpose": "Defines the generic document review criteria: delegated SSOT documents by priority, the check order for style, project rules and error handling, and the rules for choosing fix, create_issue or skip.",
+  "references": [
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/document_style_guide.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 1,
+      "recorded_content_hash": "335c3c0eb320",
+      "recorded_path": "../document_style_guide.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-c59znr7b8f56",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/error_classification_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 2,
+      "recorded_content_hash": "94496cc6d044",
+      "recorded_path": "../error_classification_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-5ykqs19cdbks",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/review_priorities_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 0,
+      "recorded_content_hash": "458b42b8deb4",
+      "recorded_path": "../review_priorities_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-dcec6pr177c9",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T03:43:00+00:00",
+        "found_path": "plugins/forge/docs/spec_priorities_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 3,
+      "recorded_content_hash": "b68b930cec1d",
+      "recorded_path": "../spec_priorities_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-f9ny9e932trv",
+      "target_section_id": null
+    }
+  ],
+  "sections": [
+    {
+      "content_hash": "45d31bd0228b872585dec2a15c4941fdba6253be4ba67e2cde963e45e3d7698a",
+      "heading": "`recommendation: create_issue` の 3 条件",
+      "position": 4,
+      "section_id": "DLID-f92ap1mvdegp"
+    },
+    {
+      "content_hash": "6c4ad77ee63e14fc6774ca3299867758b41aa5dc3f34ff7f5abc6752b6d538ce",
+      "heading": "2. チェック順",
+      "position": 2,
+      "section_id": "DLID-wn2atcngzmcv"
+    },
+    {
+      "content_hash": "c08f04837a921aa52c8dc3d4ff2e5c0abc8ffc8b9f2dd5f8c61240d612fc8dd8",
+      "heading": "generic レビュー基準",
+      "position": 0,
+      "section_id": "DLID-1d22mabn3k7z"
+    },
+    {
+      "content_hash": "d44c9c8ff975eed07d921db09852ecb0dec7aece24c49ac08d6de97ccd7fa6c4",
+      "heading": "3. 判定ルール",
+      "position": 3,
+      "section_id": "DLID-ygkp2zrfehc0"
+    },
+    {
+      "content_hash": "e99112ef89e7084cc0eab7ede0c304cb684fac2f150e51cfaf6e39756c09f157",
+      "heading": "1. SSOT参照",
+      "position": 1,
+      "section_id": "DLID-63wpw8s262ay"
+    }
+  ],
   "summary": [
-    "Delegates severity and gray-zone judgment to principles documents; holds no judgment itself",
-    "P1 SSOT table: document style guide, project document rules, error classification spec",
-    "P2 contradiction check such as term mismatch and duplication",
-    "P3 unnecessary complexity check via spec priorities spec",
-    "Check order: style, project rules, error handling, contradiction, complexity",
-    "Error handling check: swallowed errors, judgeable events, per-cause values",
-    "Recommendation rules: fix, create_issue, skip",
-    "Three conditions for create_issue",
-    "Fallback to built-in style guide when project rules are missing"
+    "Header stating the SoT is the review priorities spec and that severity comes from delegated principles",
+    "SSOT reference table of P1/P2/P3 delegated documents for generic document review",
+    "P1 sources: document style guide, project document rules via query-db-rules, error classification spec",
+    "Check order: style, project rules, error handling, contradictions, complexity",
+    "P2 contradiction check for term mismatches and duplicated descriptions",
+    "P3 unnecessary complexity check via the spec priorities spec",
+    "Fallback to the built-in style guide when no project rules exist",
+    "Judgment rules table for fix, create_issue and skip recommendations",
+    "Three conditions required for create_issue"
   ],
   "tasks": [
     "Reviewing general documents",
-    "Building a review packet for document review",
-    "Checking documents against the style guide",
-    "Checking error handling descriptions in documents",
-    "Authoring or updating review criteria"
+    "Checking documents against the style guide and project writing rules",
+    "Reviewing how a document defines error handling",
+    "Deciding the recommendation (fix, create_issue, skip) for a document review finding",
+    "Editing or maintaining the generic review criteria"
   ],
   "title": "generic レビュー基準"
 }

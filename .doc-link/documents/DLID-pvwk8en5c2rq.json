@@ -1,34 +1,37 @@
 {
-  "content_hash": "1b4400f836cd80e1d2a282b37cd91be2ca2a4cae9d89c5b83a30f754ad5a3f4b",
+  "content_hash": "65302c63b0e109c2624387d3ccd75565a7423a1591edf5fc94b924ab6d0cd55d",
   "doc_link_id": "DLID-pvwk8en5c2rq",
   "keywords": [
     "custom Agent",
-    "inherited SKILL",
+    "inheriting SKILL",
     "fork SKILL",
     "subagent_type",
-    "defense in depth",
+    "invocation route",
     "allowlist",
+    "multi-layer defense",
+    "Skill tool",
     "ScheduleWakeup",
-    "Skill tool"
+    "plugin authoring"
   ],
   "path": "docs/rules/plugin_claude_code_authoring_guide.md",
-  "purpose": "Project-independent conventions for building plugins that combine SKILLs and custom Agents: naming, invocation paths, defense layers, skill invocation, and waiting for Agent completion.",
+  "purpose": "Project-independent conventions for building plugins from SKILL files and custom Agents: naming, invocation route selection, defense layers, calling other skills, and waiting for Agent completion.",
   "summary": [
-    "Naming rules: use short invocation path names, avoid bare subagent",
-    "Custom Agent preferred over fork-type SKILL for isolated context",
-    "Decision order for choosing an invocation path",
-    "Inherited SKILL rules: keep arguments minimal, no parent context pasted",
-    "Custom Agent requirements: frontmatter, prohibitions, write boundaries",
-    "Multi-layer defense table: Agent boundary, role constraint, allowlist, deny",
-    "Invoke other skills via Skill tool; never self-invoke",
+    "Naming rules: use short route names, never bare \"subagent\", valid subagent_type values",
+    "Preference for custom Agents over fork-type SKILLs for isolated context",
+    "Decision order for choosing an invocation route (Bash subprocess, generic Agent, custom Agent, inheriting SKILL)",
+    "Inheriting SKILL rule: do not paste parent context into $ARGUMENTS",
+    "Custom Agent rules: frontmatter fields, negative prohibitions, write-scope limits and allowlist",
+    "Multi-layer defense table: Agent boundary, role constraint, allowlist, physical deny",
+    "Calling other skills via the Skill tool and forbidding self-invocation",
     "Do not wait for Agent completion with ScheduleWakeup"
   ],
   "tasks": [
-    "Designing a plugin with SKILLs and custom Agents",
-    "Writing a custom Agent definition",
-    "Choosing between Bash subprocess, generic Agent, custom Agent, and inherited SKILL",
-    "Writing prompts passed to Agents",
-    "Reviewing SKILL or Agent documents for convention compliance"
+    "Writing or reviewing a SKILL.md that launches Agents",
+    "Defining a custom Agent in agents/<name>.md",
+    "Choosing an invocation route for a delegated process",
+    "Designing allowlists and write boundaries for Agents",
+    "Writing instructions for calling another skill",
+    "Writing how to wait for Agent completion"
   ],
   "title": "Claude Code 作成ガイド（SKILL / カスタム Agent）"
 }

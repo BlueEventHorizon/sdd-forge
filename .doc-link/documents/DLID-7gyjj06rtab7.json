@@ -1,41 +1,226 @@
 {
-  "content_hash": "e5233def35da6382f8c642fa0772ffc61f6dd8a6399fe87bc10a01f02e636f53",
+  "applied_hash": "5145154553b89165d93d3a647e30a3b183789efddf13c274213bc616f79eca49",
+  "content_hash": "5145154553b89165d93d3a647e30a3b183789efddf13c274213bc616f79eca49",
   "doc_link_id": "DLID-7gyjj06rtab7",
   "keywords": [
+    "ADR",
     "ADR writer",
     "architecture decision record",
     "approval record",
     "judgment record",
     "verdict",
-    "rejection criteria",
-    "ADR file",
-    "isolated context",
+    "context isolation",
+    "adr directory",
     "start-design",
-    "REQ-030"
+    "rejected alternatives"
   ],
+  "last_check": {
+    "checked_at": "2026-11-25T02:44:01+00:00",
+    "result": "success"
+  },
   "path": "docs/specs/adr-writer/requirements/REQ-030_adr_writer.md",
-  "purpose": "Requirements for the ADR writer, an isolated agent that judges, rejects, repairs and records architecture decision records separately from the design flow, with verdicts of created, rejected or insufficient.",
+  "purpose": "Defines the requirements for the ADR writer, an isolated agent that judges, corrects, and records ADRs from requests, returning a create, reject, or insufficient verdict.",
+  "references": [
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "docs/specs/forge/requirements/REQ-028_document_system.md",
+        "result": "match",
+        "scope": "docs/specs/forge/requirements"
+      },
+      "kind": "document",
+      "position": 2,
+      "recorded_content_hash": "5f3e63bd9cc3",
+      "recorded_path": "../../forge/requirements/REQ-028_document_system.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-3c038need73s",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "plugins/forge/docs/adr_principles_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 1,
+      "recorded_content_hash": "1fb15e199859",
+      "recorded_path": "../../../../plugins/forge/docs/adr_principles_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-45wzpggz1set",
+      "target_section_id": null
+    },
+    {
+      "check": {
+        "checked_at": "2026-11-25T02:44:01+00:00",
+        "found_path": "plugins/forge/docs/spec_priorities_spec.md",
+        "result": "match",
+        "scope": "plugins/forge/docs"
+      },
+      "kind": "document",
+      "position": 0,
+      "recorded_content_hash": "b68b930cec1d",
+      "recorded_path": "../../../../plugins/forge/docs/spec_priorities_spec.md",
+      "source_section_id": null,
+      "target_doc_id": "DLID-f9ny9e932trv",
+      "target_section_id": null
+    }
+  ],
+  "sections": [
+    {
+      "content_hash": "02d5cffa724730acb18df17c655ebc2186635f45c15ecaab386593fedb5a4ed6",
+      "heading": "2. 前提条件",
+      "position": 3,
+      "section_id": "DLID-b90cfdhy5nae"
+    },
+    {
+      "content_hash": "0ca0292c552e271ad7c096c74058a1474139ab9b0e8cd30802998ed4de440883",
+      "heading": "3. 用語",
+      "position": 4,
+      "section_id": "DLID-714c9735pmkg"
+    },
+    {
+      "content_hash": "183b1cbb15ee48ed0a78a292a79af78f67f71ee8d5dbdf84220bff0c44f82104",
+      "heading": "FNC-004: 情報が足りないときの扱い",
+      "position": 9,
+      "section_id": "DLID-8edvc3mcrn84"
+    },
+    {
+      "content_hash": "32619adb500861c4c794fa11c531dc4ca19c1f5cbea57206171c94d3e476dadd",
+      "heading": "FNC-003: 修正して記載",
+      "position": 8,
+      "section_id": "DLID-2wpx8qqypk32"
+    },
+    {
+      "content_hash": "3a9fc8181c3360441e5c64cd984ed2628e2c51db01bc6a5053593b7651ad4f94",
+      "heading": "FNC-005: 承認記録の扱い",
+      "position": 10,
+      "section_id": "DLID-mtgp61h294t5"
+    },
+    {
+      "content_hash": "410476e4744d96d0253ce01f6a9c2991d83746cc00cd257f841183e69e9fe9ef",
+      "heading": "FNC-006: 既存の決定の更新",
+      "position": 11,
+      "section_id": "DLID-xcdagmc2276d"
+    },
+    {
+      "content_hash": "46f20debdfd938f77d0dfc3c8436d1f05c05cf2b7239ebef14e0c7540646c327",
+      "heading": "FNC-002: 吟味と棄却",
+      "position": 7,
+      "section_id": "DLID-wehhvy4ycz0f"
+    },
+    {
+      "content_hash": "506b020dd194ca017f749437d481e6e9c08f075c594425156722a8444aac1faf",
+      "heading": "1. 概要",
+      "position": 1,
+      "section_id": "DLID-4yh29j7fwa7q"
+    },
+    {
+      "content_hash": "5504a672099904b48dc9dbe0a37038dc9d883a516fd5479460b01af9cf20c14f",
+      "heading": "FNC-008: 出力先と ADR ファイル",
+      "position": 13,
+      "section_id": "DLID-wjkg452rsrd7"
+    },
+    {
+      "content_hash": "69807298fd5643f1b0871fd0c82124b447b0d999a49e083a98ade2e18f3a5a1c",
+      "heading": "FNC-009: 書き込みの範囲",
+      "position": 14,
+      "section_id": "DLID-dp503jwc4awz"
+    },
+    {
+      "content_hash": "6ab2c92b1386b962433678a1cc6a3282b5bc0e5df51d80066be3717737ac2779",
+      "heading": "FNC-012: 規範の一元化",
+      "position": 17,
+      "section_id": "DLID-rsgy1q6vazgh"
+    },
+    {
+      "content_hash": "6eb2ea9d75a48173ff40d00be6884cb567ac76f08a68e36ad2cc0ce8476f4800",
+      "heading": "NFR-002: 失敗の可視化",
+      "position": 20,
+      "section_id": "DLID-f9vadqr43cqf"
+    },
+    {
+      "content_hash": "81cd820a0ff49fbab027b7f3b751dba2e85b8707d699679383975e3d1dae031f",
+      "heading": "REQ-030 ADR ライター 要件定義書",
+      "position": 0,
+      "section_id": "DLID-5537nc05k58j"
+    },
+    {
+      "content_hash": "8e330107b2829b02da121314f6085062bc36e88169a3a1f6599ad83f463693b9",
+      "heading": "FNC-010: 起動経路",
+      "position": 15,
+      "section_id": "DLID-8mwndmhgbxgh"
+    },
+    {
+      "content_hash": "a90001992eeab5a305b41fec5a5218e08e0de7b11b7ecd0aedced2339b22b1e1",
+      "heading": "FNC-007: 判定の返却",
+      "position": 12,
+      "section_id": "DLID-z0vyz6ngyrd4"
+    },
+    {
+      "content_hash": "bdf5357ff2e8b0cfb841af228e29ebc27e44406041325da75692039387bf9c4a",
+      "heading": "5. 非機能要件",
+      "position": 18,
+      "section_id": "DLID-g3tty5wwz9bf"
+    },
+    {
+      "content_hash": "cad0d1e1ee6662c2a8ccafcfdb9fb7e57e95edfc3dbc9c11417d52bd922646b8",
+      "heading": "6. 未確定事項",
+      "position": 21,
+      "section_id": "DLID-9jw9pnhce68a"
+    },
+    {
+      "content_hash": "cd302674c5a40bc5e875c8c517ffe3bc88363b8df47063a29970fc918f8dbf2d",
+      "heading": "NFR-001: 隔離",
+      "position": 19,
+      "section_id": "DLID-q2kg3vm2crbt"
+    },
+    {
+      "content_hash": "d7ea5624a5d1f037cf21bed021f0a421f3ff01821749a53b4ccaf7383a841d2a",
+      "heading": "FNC-001: 依頼の受付",
+      "position": 6,
+      "section_id": "DLID-ar8p74szay64"
+    },
+    {
+      "content_hash": "e8d8674c2ed1a3a47afa3095c91c77b2277aa616127a5bd60d88c0470ef85f1e",
+      "heading": "1.1 対象システムの性質",
+      "position": 2,
+      "section_id": "DLID-jgcjataqadk4"
+    },
+    {
+      "content_hash": "ff0a9bd221f712666daf52260862918c289cc645b45bac743a4dbda16ae86abb",
+      "heading": "4. 機能要件",
+      "position": 5,
+      "section_id": "DLID-xnp80gbr3f3h"
+    },
+    {
+      "content_hash": "ffe9605918e7792428268e0b65c8c0c7b116b6e63a140c499d53cab1a0e428da",
+      "heading": "FNC-011: 設計フローが ADR の規範を抱えない",
+      "position": 16,
+      "section_id": "DLID-t5421eb9gn5d"
+    }
+  ],
   "summary": [
-    "Overview and scope of the ADR writer as an isolated subject that examines and records ADRs",
-    "Glossary: request types (approval record, judgment record, update) and verdicts (created, rejected, insufficient)",
-    "Request intake rules with required content per request type",
-    "Rejection criteria for judgment records and repair rules for malformed ADRs",
-    "Handling of insufficient information: return what is missing instead of inventing",
-    "Approval records are never rejected, only checked for completeness",
-    "Updating existing decisions by rewriting the same section, moving rejected ideas to alternatives",
-    "Verdict return contract and treating incomplete runs as failures",
-    "Output location: one ADR file per feature, ADR-{NNN}_{feature}.md, write scope limited to ADR files",
-    "Invocation path, start-design decoupling, single source of norms, isolation and failure visibility requirements"
+    "Overview: an isolated ADR writer separates ADR judgment and writing from the design context",
+    "Terminology: request types (approval record, judgment record, update) and verdicts (create, reject, insufficient)",
+    "FNC-001/002: accepting typed requests and rejecting judgment records that do not merit an ADR",
+    "FNC-003/004: fixing malformed content before writing, and returning what is missing instead of inventing facts",
+    "FNC-005: approval records are never rejected; checked only for a valid reason and a verbatim user approval quote",
+    "FNC-006: updating a rejected decision by rewriting the same section and moving the old option into alternatives",
+    "FNC-007: returning a verdict value that callers can branch on, with reasons only for reject and insufficient",
+    "FNC-008/009: one ADR file per feature under adr/, numbered once, with writes limited to the ADR file",
+    "FNC-010/011/012: single entry point, start-design holds no ADR norms, norms centralized in one document",
+    "NFR: context isolation and visible failure when the writer cannot finish"
   ],
   "tasks": [
-    "Designing or implementing the ADR writer agent or skill",
-    "Writing or updating ADR files",
-    "Requesting an ADR from start-design or other skills",
-    "Recording user approval for designs not covered by requirements",
-    "Reviewing ADR-related documents for requirement conformance",
-    "Deciding whether a decision deserves an ADR",
-    "Updating or retracting an existing ADR decision",
-    "Handling ADR writer verdicts in a calling skill"
+    "Implementing or modifying the ADR writer agent or its entry skill",
+    "Designing the ADR writer in a design document",
+    "Reviewing ADR-related requirements and designs",
+    "Requesting an approval record from start-design",
+    "Deciding whether a decision should be recorded as an ADR",
+    "Updating or overturning an existing ADR decision",
+    "Determining ADR file placement and numbering"
   ],
   "title": "REQ-030 ADR ライター 要件定義書"
 }
